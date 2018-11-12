@@ -1284,7 +1284,7 @@ var indicatorView = function (model, options) {
       var id = indicatorId.replace('indicator', '');
       $(el).append($('<a />').text('Download Headline CSV')
       .attr({
-        'href': 'https://G205SDGs.github.io/sdg-data/headline/' + id + '.csv',
+        'href': 'https://sustainabledevelopment-germany.github.io/sdg-data/headline/' + id + '.csv',
         'download': headlineId + '.csv',
         'title': 'Download headline data as CSV',
         'class': 'btn btn-primary btn-download',
@@ -1296,7 +1296,7 @@ var indicatorView = function (model, options) {
   this.createSourceButton = function(indicatorId, el) {
     $(el).append($('<a />').text('Download Source CSV')
     .attr({
-      'href': 'https://G205SDGs.github.io/sdg-data/data/' + indicatorId + '.csv',
+      'href': 'https://sustainabledevelopment-germany.github.io/sdg-data/data/' + indicatorId + '.csv',
       'download': indicatorId + '.csv',
       'title': 'Download source data as CSV',
       'class': 'btn btn-primary btn-download',
@@ -1504,7 +1504,7 @@ indicatorSearch.prototype = {
 
 $(function() {
 
-  $('#main-nav').append('<div id="search" class="menu-target"><label for="indicator_search"><i class="fa fa-search" aria-hidden="true"></i><span>Search:</span></label><input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/sdg-indicators/indicators.json" data-pageurl="/sdg-indicators/search/?" /></div>');
+  $('#main-nav').append('<div id="search" class="menu-target"><label for="indicator_search"><i class="fa fa-search" aria-hidden="true"></i><span>Search:</span></label><input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" /></div>');
   var $el = $('#indicator_search');
   new indicatorSearch($el, new indicatorDataStore($el.data('url')));
 
