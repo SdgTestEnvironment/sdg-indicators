@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-    <head>
+    <head><script>var translations = {};</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
@@ -27,7 +27,7 @@
         <!--[if IE 9]>
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
-        
+
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
@@ -41,9 +41,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20181114150131">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    </head>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20181115104525">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"></head>
 <body>
 <!-- <div class="container"> -->
 
@@ -51,10 +50,11 @@
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
-    <strong class="phase-tag">Alpha</strong> This is a development website. We welcome your
-    <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
+    <strong class="phase-tag">Alpha</strong>
+    This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
   </div>
 </div>
+
 </div>
 
 <header role="banner">
@@ -65,8 +65,7 @@
     </a>
 
   <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul>
-  </div>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
@@ -75,8 +74,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-        <li class="nav-link"
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link"
           >
           <a href="/sdg-indicators/">Goals</a>
         </li>
@@ -93,11 +91,14 @@
         </li>
         <li class="nav-link" >
           <a href="/sdg-indicators/faq">FAQ</a>
-        </li>
-<!--        <li class="nav-link" >
-          <a href="/sdg-indicators/news">News &amp; Events</a>
-        </li> -->
-      </ul>
+        </li></ul>
+
+      <div id="search" class="menu-target">
+  <label for="indicator_search">
+    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
+  </label>
+  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/sdg-indicators/indicators.json" data-pageurl="/sdg-indicators/search/?" />
+</div>
 
 
     </nav>
@@ -118,7 +119,7 @@
   <div class="goal goal-overall" data-goalid="">
       <div class="details">
         <h2 class="status-goal">
-          Overall Reporting Status <span class="total"><span>244</span> indicators</span> 
+          Overall Reporting Status <span class="total"><span>244</span> indicators</span>
         </h2>
         <div class="summary">
           <div class="statuses">
@@ -144,11 +145,8 @@
     <!--</li>-->
     <br style="clear:both;" />
   </div>
-  
-  <h2>Status by Goal</h2>
 
-            
-        
+  <h2>Status by Goal</h2>
         
         
         
@@ -158,13 +156,13 @@
         <div class="goal" data-goalid="1">
           <div class="frame">
             <a href="/sdg-indicators/no-poverty/">
-              <img src="/sdg-indicators/assets/img/goals/1.png" alt="No Poverty - Goal 1" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/1.png" alt="No Poverty - Goal 1" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/no-poverty/">No Poverty</a>
-              <span class="total">14<span></span> indicators</span> 
+              <span class="total">14<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -192,8 +190,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -203,13 +200,13 @@
         <div class="goal" data-goalid="2">
           <div class="frame">
             <a href="/sdg-indicators/zero-hunger/">
-              <img src="/sdg-indicators/assets/img/goals/2.png" alt="Zero Hunger - Goal 2" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/2.png" alt="Zero Hunger - Goal 2" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/zero-hunger/">Zero Hunger</a>
-              <span class="total">13<span></span> indicators</span> 
+              <span class="total">13<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -237,8 +234,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -248,13 +244,13 @@
         <div class="goal" data-goalid="3">
           <div class="frame">
             <a href="/sdg-indicators/good-health-and-well-being/">
-              <img src="/sdg-indicators/assets/img/goals/3.png" alt="Good Health and Well-being - Goal 3" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/3.png" alt="Good Health and Well-being - Goal 3" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/good-health-and-well-being/">Good Health and Well-being</a>
-              <span class="total">27<span></span> indicators</span> 
+              <span class="total">27<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -282,8 +278,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -293,13 +288,13 @@
         <div class="goal" data-goalid="4">
           <div class="frame">
             <a href="/sdg-indicators/quality-education/">
-              <img src="/sdg-indicators/assets/img/goals/4.png" alt="Quality Education - Goal 4" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/4.png" alt="Quality Education - Goal 4" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/quality-education/">Quality Education</a>
-              <span class="total">11<span></span> indicators</span> 
+              <span class="total">11<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -327,8 +322,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -338,13 +332,13 @@
         <div class="goal" data-goalid="5">
           <div class="frame">
             <a href="/sdg-indicators/gender-equality/">
-              <img src="/sdg-indicators/assets/img/goals/5.png" alt="Gender Equality - Goal 5" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/5.png" alt="Gender Equality - Goal 5" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/gender-equality/">Gender Equality</a>
-              <span class="total">14<span></span> indicators</span> 
+              <span class="total">14<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -372,8 +366,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -383,13 +376,13 @@
         <div class="goal" data-goalid="6">
           <div class="frame">
             <a href="/sdg-indicators/clean-water-and-sanitation/">
-              <img src="/sdg-indicators/assets/img/goals/6.png" alt="Clean water and sanitation - Goal 6" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/6.png" alt="Clean water and sanitation - Goal 6" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/clean-water-and-sanitation/">Clean water and sanitation</a>
-              <span class="total">11<span></span> indicators</span> 
+              <span class="total">11<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -417,8 +410,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -428,13 +420,13 @@
         <div class="goal" data-goalid="7">
           <div class="frame">
             <a href="/sdg-indicators/affordable-and-clean-energy/">
-              <img src="/sdg-indicators/assets/img/goals/7.png" alt="Affordable and clean energy - Goal 7" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/7.png" alt="Affordable and clean energy - Goal 7" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/affordable-and-clean-energy/">Affordable and clean energy</a>
-              <span class="total">6<span></span> indicators</span> 
+              <span class="total">6<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -462,8 +454,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -473,13 +464,13 @@
         <div class="goal" data-goalid="8">
           <div class="frame">
             <a href="/sdg-indicators/decent-jobs-and-economic-growth/">
-              <img src="/sdg-indicators/assets/img/goals/8.png" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/8.png" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/decent-jobs-and-economic-growth/">Decent jobs and economic growth</a>
-              <span class="total">17<span></span> indicators</span> 
+              <span class="total">17<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -507,8 +498,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -518,13 +508,13 @@
         <div class="goal" data-goalid="9">
           <div class="frame">
             <a href="/sdg-indicators/industry-innovation-and-infrastructure/">
-              <img src="/sdg-indicators/assets/img/goals/9.png" alt="Industry, innovation and infrastructure - Goal 9" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/9.png" alt="Industry, innovation and infrastructure - Goal 9" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/industry-innovation-and-infrastructure/">Industry, innovation and infrastructure</a>
-              <span class="total">12<span></span> indicators</span> 
+              <span class="total">12<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -552,8 +542,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -563,13 +552,13 @@
         <div class="goal" data-goalid="10">
           <div class="frame">
             <a href="/sdg-indicators/reduced-inequalities/">
-              <img src="/sdg-indicators/assets/img/goals/10.png" alt="Reduced inequalities - Goal 10" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/10.png" alt="Reduced inequalities - Goal 10" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/reduced-inequalities/">Reduced inequalities</a>
-              <span class="total">11<span></span> indicators</span> 
+              <span class="total">11<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -597,8 +586,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -608,13 +596,13 @@
         <div class="goal" data-goalid="11">
           <div class="frame">
             <a href="/sdg-indicators/sustainable-cities-communities/">
-              <img src="/sdg-indicators/assets/img/goals/11.png" alt="Sustainable Cities & Communities - Goal 11" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/11.png" alt="Sustainable Cities & Communities - Goal 11" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/sustainable-cities-communities/">Sustainable Cities & Communities</a>
-              <span class="total">15<span></span> indicators</span> 
+              <span class="total">15<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -642,8 +630,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -653,13 +640,13 @@
         <div class="goal" data-goalid="12">
           <div class="frame">
             <a href="/sdg-indicators/responsible-consumption-and-production/">
-              <img src="/sdg-indicators/assets/img/goals/12.png" alt="Responsible consumption and production - Goal 12" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/responsible-consumption-and-production/">Responsible consumption and production</a>
-              <span class="total">13<span></span> indicators</span> 
+              <span class="total">13<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -687,8 +674,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -698,13 +684,13 @@
         <div class="goal" data-goalid="13">
           <div class="frame">
             <a href="/sdg-indicators/climate-action/">
-              <img src="/sdg-indicators/assets/img/goals/13.png" alt="Climate action - Goal 13" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/13.png" alt="Climate action - Goal 13" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/climate-action/">Climate action</a>
-              <span class="total">8<span></span> indicators</span> 
+              <span class="total">8<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -732,8 +718,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -743,13 +728,13 @@
         <div class="goal" data-goalid="14">
           <div class="frame">
             <a href="/sdg-indicators/life-below-water/">
-              <img src="/sdg-indicators/assets/img/goals/14.png" alt="Life below water - Goal 14" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/14.png" alt="Life below water - Goal 14" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/life-below-water/">Life below water</a>
-              <span class="total">10<span></span> indicators</span> 
+              <span class="total">10<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -777,8 +762,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -788,13 +772,13 @@
         <div class="goal" data-goalid="15">
           <div class="frame">
             <a href="/sdg-indicators/life-on-land/">
-              <img src="/sdg-indicators/assets/img/goals/15.png" alt="Life on land - Goal 15" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/15.png" alt="Life on land - Goal 15" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/life-on-land/">Life on land</a>
-              <span class="total">14<span></span> indicators</span> 
+              <span class="total">14<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -822,8 +806,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -833,13 +816,13 @@
         <div class="goal" data-goalid="16">
           <div class="frame">
             <a href="/sdg-indicators/peace-and-justice-strong-institutions/">
-              <img src="/sdg-indicators/assets/img/goals/16.png" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/16.png" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/peace-and-justice-strong-institutions/">Peace and justice - strong institutions</a>
-              <span class="total">23<span></span> indicators</span> 
+              <span class="total">23<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -867,8 +850,7 @@
         <!--</li>-->
         <br style="clear:both;" />
       </div>
-            
-        
+      
         
         
         
@@ -878,13 +860,13 @@
         <div class="goal" data-goalid="17">
           <div class="frame">
             <a href="/sdg-indicators/partnerships-for-the-goals/">
-              <img src="/sdg-indicators/assets/img/goals/17.png" alt="Partnerships for the goals - Goal 17" width="100" height="100" />
+              <img src="/sdg-indicators/assets/img/goals/en/17.png" alt="Partnerships for the goals - Goal 17" width="100" height="100" />
             </a>
           </div>
           <div class="details">
             <h3 class="status-goal">
               <a href="/sdg-indicators/partnerships-for-the-goals/">Partnerships for the goals</a>
-              <span class="total">25<span></span> indicators</span> 
+              <span class="total">25<span></span> indicators</span>
             </h3>
             <div class="summary">
               <div class="statuses">
@@ -927,7 +909,7 @@
         <a href="mailto:sdg-indicators@destatis.de">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false">@destatis</a>
       </div>
       <div class="col-xs-3 text-right">
-        <a href="/sdg-indicators/faq/">FAQs</a> | <a href="/sdg-indicators/about/cookies-and-privacy/">Cookies</a>
+        <a href="/sdg-indicators/faq/">FAQ</a> | <a href="/sdg-indicators/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -957,14 +939,13 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-<script src="/sdg-indicators/assets/js/lib/d3-simple-slider.min.js"></script>
-<script src="/sdg-indicators/assets/js/plugins/jquery.sdgMap.js"></script>
 <script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
-<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20181114150131'></script>
-<script src="/sdg-indicators/assets/js/lib/classList.js"></script>
-<script src="/sdg-indicators/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script>
+  var remoteDataBaseUrl = 'https://G205SDGs.github.io/sdg-data';
+</script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20181115104525'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -974,9 +955,9 @@ $(function() {
           $(obj).append($('<img />').attr('src', $(obj).data('img')));
       });
 
-      $.ajax({ 
-        url: 'https://G205SDGs.github.io/sdg-data/comb/' + domData.id + '.json', 
-        success: function(res) { 
+      $.ajax({
+        url: 'https://G205SDGs.github.io/sdg-data/comb/' + domData.id + '.json',
+        success: function(res) {
 
           $('.async-loading').remove();
           $('.async-loaded').show();

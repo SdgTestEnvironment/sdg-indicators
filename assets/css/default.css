@@ -570,8 +570,8 @@ h5 + .btn-download {
       position: absolute;
       top: 12px;
       right: 12px;
-    
-      a { 
+  
+      a {
         background-color: white;
         border: none;
         text-indent: -9999px;
@@ -1195,10 +1195,56 @@ footer {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
+.language-options {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  left: 12px;
+  color: #222;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 0px #a6a6a6;
+  padding: .2em 1em .2em .2em;
+  text-shadow: #f5f5f5 0 1px 0; }
+  .language-options li {
+    padding: 5px;
+    padding-left: 0; }
+
+.language-toggle-button {
+  cursor: pointer; }
+
+.navbar ul.navbar-nav li a.language-toggle-button {
+  display: none; }
+  @media only screen and (min-width: 768px) {
+    .navbar ul.navbar-nav li a.language-toggle-button {
+      display: block; } }
+
+.language-toggle-mobile {
+  position: relative;
+  padding-top: 20px;
+  padding-right: 10px;
+  float: right; }
+  .language-toggle-mobile .language-options {
+    left: -36px; }
+    .language-toggle-mobile .language-options li {
+      padding-left: 5px; }
+  .language-toggle-mobile a {
+    text-transform: uppercase; }
+    .language-toggle-mobile a .language-toggle-text {
+      display: none; }
+    .language-toggle-mobile a .language-toggle {
+      display: none !important; }
+    .language-toggle-mobile a .fa-globe {
+      font-size: 2em; }
+
+.contrast-high .language-toggle-mobile .language-options a, .contrast-high ul.navbar-nav .language-options a {
+  color: black; }
+  .contrast-high .language-toggle-mobile .language-options a:hover, .contrast-high ul.navbar-nav .language-options a:hover {
+    color: black; }
+
 #accessibility-nav {
-  width: 25%;
-  padding-top: 10px;
-  padding-right: 20px;
+  padding-top: 20px;
+  padding-right: 10px;
   float: right;
   text-align: right; }
   #accessibility-nav li {
@@ -1217,10 +1263,12 @@ footer {
         margin: auto;
         text-decoration: none; }
     #accessibility-nav li.contrast-default {
+      display: none;
       background: white; }
       #accessibility-nav li.contrast-default a {
         color: black; }
     #accessibility-nav li.contrast-high {
+      display: block;
       background: black; }
       #accessibility-nav li.contrast-high a {
         color: yellow; }
@@ -1228,6 +1276,10 @@ footer {
 /* example stuff */
 body.contrast-high {
   background-color: black; }
+  body.contrast-high #accessibility-nav li.contrast-default {
+    display: block; }
+  body.contrast-high #accessibility-nav li.contrast-high {
+    display: none; }
   body.contrast-high .table {
     background: black; }
   body.contrast-high .btn {
