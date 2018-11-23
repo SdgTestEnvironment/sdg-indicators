@@ -78,7 +78,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-a-1",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "1-a-2",
           "title": "Proportion of total government spending on essential services (education, health and social protection)",
@@ -418,7 +418,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-2-2",
-          "status": "inprogress"
+          "status": "complete"
         },{
           "id": "4-3-1",
           "title": "Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex",
