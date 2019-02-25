@@ -41,17 +41,17 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190213151237">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190225074517">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"></head>
-<body class="language-en">
+<body class="language-de">
 <!-- <div class="container"> -->
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
-    <strong class="phase-tag">Alpha</strong>
-    This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
+    <strong class="phase-tag">Alpha-Version</strong>
+    Diese Seite befindet sich im Entwicklungsstadium.Wir freuen uns über Ihre Kommentare.
   </div>
 </div>
 
@@ -61,34 +61,52 @@
   <div class="container">
 
     <a class="navbar-brand" href="/sdg-indicators/" id="home">
-      <img src="/sdg-indicators/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      <img src="/sdg-indicators/assets/img/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
     </a>
 
   <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsche</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/search/">English</a></li></ul>
+
+    </div></div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
-        <li><span data-target="search">Search</span></li>
+        <li><span data-target="menu">Menü</span></li>
+        <li><span data-target="search">Suche</span></li>
       </ul>
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link active">
-            <a href="/sdg-indicators/">Goals</a>
+            <a href="/sdg-indicators/">Ziele</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/reporting-status/">Reporting Status</a>
+            <a href="/sdg-indicators/reporting-status/">Berichtsstatus</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/about/">About</a>
+            <a href="/sdg-indicators/about/">Über uns</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/guidance/">Guidance</a>
-          </li></ul>
+            <a href="/sdg-indicators/guidance/">Technische Hinweise</a>
+          </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsche</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/search/">English</a></li></ul>
+
+        </li></ul>
 
       <div id="search" class="menu-target">
   <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
+    <i class="fa fa-search" aria-hidden="true"></i><span>Suche:</span>
   </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/sdg-indicators/indicators.json" data-pageurl="/sdg-indicators/search/?" />
+  <input id="indicator_search" title="Indikatorensuche" placeholder="Indikatorensuche" data-url="/sdg-indicators/indicators.json" data-pageurl="/sdg-indicators/search/?" />
 </div>
 
 
@@ -98,19 +116,19 @@
 </header>
 
 <div id="main-content" class="container search-results" role="main">
-  <h1 style="display:none">Search results for '<span id="search-term"></span>'</h1>
+  <h1 style="display:none">Ergebnisse zu '<span id="search-term"></span>'</h1>
   <div class="loader">
-  <img src="/sdg-indicators/assets/img/loading.gif" alt="Loading search results" />
+  <img src="/sdg-indicators/assets/img/loading.gif" alt="Ergebnisse werden geladen" />
 </div>
 
-  <div class="results" data-imgpath="/sdg-indicators/assets/img/goals/en/">
+  <div class="results" data-imgpath="/sdg-indicators/assets/img/goals/de/">
   </div>
 </div>
 
 <script type="text/template" class="results">
 
   <% if(resultsCount) { %>
-    <p><%= resultsCount %> indicator<% if(resultsCount != 1) { %>s<% } %> found in <%= searchResults.length %> goal<% if(searchResults.length != 1) { %>s<% } %></p>
+    <p><%= resultsCount %> indicator<% if(resultsCount != 1) { %>s<% } %> gefunden unter <%= searchResults.length %> ziel<% if(searchResults.length != 1) { %>s<% } %></p>
 
     <% _.each(searchResults, function(goal){ %>
       <div class="row">
@@ -124,14 +142,14 @@
         </div>
         <div class="col col-xs-9 col-md-10 indicator-cards">
           <% _.each(goal.indicators, function(indicator){ %>
-            <a href="<%=indicator.href%>"><span><%= indicator.id %><span class="status <% if(indicator.status == 'notstarted') { %>danger<% } else if(indicator.status == 'inprogress') { %>warning<% } else if(indicator.status == 'complete') { %>success<% } %>"><% if(indicator.status == 'notstarted') { %>Exploring data sources<% } else if(indicator.status == 'inprogress') { %>Statistics in progress<% } else if(indicator.status == 'complete') { %>Reported online<% } %></span></span> <%=indicator.parsedTitle%><% if(indicator.hasDescription) { %><p class="description"><%=indicator.parsedDescription%></p><%}%><% if(indicator.hasKeywords) { %><p class="keywords">Keywords: <%=indicator.parsedKeywords%></p><%}%></a>
+            <a href="<%=indicator.href%>"><span><%= indicator.id %><span class="status <% if(indicator.status == 'notstarted') { %>danger<% } else if(indicator.status == 'inprogress') { %>warning<% } else if(indicator.status == 'complete') { %>success<% } %>"><% if(indicator.status == 'notstarted') { %>Datenquellenanalyse<% } else if(indicator.status == 'inprogress') { %>in Bearbeitung<% } else if(indicator.status == 'complete') { %>Daten verfügbar<% } %></span></span> <%=indicator.parsedTitle%><% if(indicator.hasDescription) { %><p class="description"><%=indicator.parsedDescription%></p><%}%><% if(indicator.hasKeywords) { %><p class="keywords">Schlagworte: <%=indicator.parsedKeywords%></p><%}%></a>
           <% }); %>
         </div>
       </div>
     <% }); %>
 
   <% } else { %>
-    <p>No results</p>
+    <p>Keine Ergebnisse</p>
   <% } %>
 
 </script>
@@ -140,7 +158,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-9">
-        <a href="mailto:sdg-indicators@destatis.de">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false">@destatis</a>
+        <a href="mailto:sdg-indicators@destatis.de">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false">@destatis</a>
       </div>
       <div class="col-xs-3 text-right">
         <a href="/sdg-indicators/faq/">FAQ</a> | <a href="/sdg-indicators/about/cookies-and-privacy/">Cookies</a>
@@ -179,7 +197,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script>
   var remoteDataBaseUrl = 'https://G205SDGs.github.io/sdg-data';
 </script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190213151237'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190225074517'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
