@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190227082156">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190227102137">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"></head>
 <body class="language-en">
 <!-- <div class="container"> -->
@@ -119,36 +119,55 @@
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Guidance</h1>
-        <p>This page shares information for people using this website and for countries wishing to take a copy of it.</p>
+        <h1>Guide NRP</h1>
+        <h2 id="national-reporting-platform---sdg">National reporting platform - SDG</h2>
 
-<p>We have also developed a set of <a href="https://github.com/datasciencecampus/sdg-indicators/wiki">wiki pages</a> which include more detailed technical information.</p>
+<p>National reporting platform - SDG is a publicly available tool serving dissemination and presentation of indicators monitoring Sustainable Development Goals (SDGs) of the 2030 Agenda (with data for Germany) and a set of indicators for monitoring sustainable development on the level of the country.
+Our aproach to NRP</p>
 
-<h2 id="using-this-website">Using this website</h2>
-<p>Answers to some specific questions about the website are included in our <a href="/sdg-indicators/faq/">Frequently Asked Questions</a> page.</p>
-
-<p>View this <a href="/sdg-indicators/public/NRP VIDEO DEMO May2018.ppsx">presentation (.ppsx file 6.45Mb)</a> on the site’s main features.</p>
-
-<p>Our wiki pages also include more detailed information for people adding data and metadata:</p>
+<p>In order to conform with the UN’s Fundamental Principles of Official Statistics, the minimum characteristics an SDG NRP should have are that it should:</p>
 <ul>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Raw-data-format">Raw data format</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Metadata-format">Metadata format</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Data-scenarios-and-characteristics">Data scenarios and characteristics</a></li>
+  <li>is managed by national statistical offices;</li>
+  <li>features official statistics and metadata according to established standard methodology;</li>
+  <li>is publicly accessible;</li>
+  <li>allows for feedback from data users;</li>
+  <li>features open source (free) technology.</li>
 </ul>
 
-<h2 id="creating-a-copy-of-this-website">Creating a copy of this website</h2>
-<p>Other countries wishing to reuse this UK SDG reporting platforms or the <a href="https://sdg.data.gov/">US SDG reporting platform</a> are welcome to do so for free.</p>
+<p>In addition, the German NRP reporting platform has been developed in accordance with accepted ones international guidelines, in particular for open data and software produced in the open source model.</p>
 
-<p>The technical guidance in our <a href="https://github.com/datasciencecampus/sdg-indicators/wiki">wiki pages</a> is aimed at countries taking a copy of the UK website, including information such as:</p>
+<h2 id="nrp---sources">NRP - sources</h2>
+
+<p>German statistics actively supports the development of national reporting platforms, in particular produced in the open-source model for the purpose of monitoring SDGs indicators. Precursors in this field are USA and UK.
+The current version of the German reporting platform has been developed based on earlier version of the UK NRP, and adapted to the needs of German statistics.
+The project code is publicly available in the repository - https://github.com/G205SDGs/sdg-indicators</p>
+
+<p>The new universal version of the open-sdg platform developed by the US, UK and Center for Open Data Enterprise is available.
+We encourage you to familiarize yourself with the national US, UK platforms for SDG and the project documentation.</p>
+
 <ul>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Required-skill-sets">Required skill sets</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/How-do-we-create-our-own-NRP">How do we create our own NRP</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/What-do-we-need-to-change">What do we need to change</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Development-installation-instructions">Development installation instructions</a></li>
-  <li><a href="https://github.com/datasciencecampus/sdg-indicators/wiki/Differences-between-the-US-and-UK-NRPs">Differences between the US and UK</a></li>
+  <li>
+    <p>US NPR SDG - https://gsa.github.io/sdg-indicators-usa/</p>
+  </li>
+  <li>
+    <p>UK NPR SDG - https://sustainabledevelopment-uk.github.io</p>
+  </li>
 </ul>
 
-<p>The US also provide various guidance and information on the <a href="https://gsa.github.io/sdg-indicators/training/">training materials page</a> of their reporting platform.</p>
+<h2 id="nrp---applied-technology">NRP - applied technology</h2>
+
+<h1 id="back-end-it-requirements">Back-end IT requirements:</h1>
+<ul>
+  <li>GitHub: hosting website designed for programming projects using the Git version control system.</li>
+  <li>Jekyll: generator of static pages written in Ruby</li>
+</ul>
+
+<h1 id="front-end-it-requirements">Front-end IT requirements:</h1>
+<ul>
+  <li>XHTML, CSS, JavaScript</li>
+  <li>Chartist: JavaScript library that offers customizable and responsive charts</li>
+  <li>Bootstrap: framework CSS</li>
+</ul>
 
     </div>
 </div>
@@ -196,7 +215,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script>
   var remoteDataBaseUrl = 'https://G205SDGs.github.io/sdg-data';
 </script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190227082156'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190227102137'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
