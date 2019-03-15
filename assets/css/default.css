@@ -21,7 +21,8 @@ body {
   margin: 0 0 50px 0; }
 
 header {
-  background: #fff; }
+  background: #fff;
+  border-bottom: #eaeaea 5px solid; }
   header .container {
     min-height: 113px; }
     header .container .navbar-default {
