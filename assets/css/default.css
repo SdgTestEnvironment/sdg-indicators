@@ -936,6 +936,8 @@ h5 + .btn-download {
       overflow-x: auto; }
   #main-content .tab-content h4 {
     margin-top: 2rem !important; }
+  #main-content .tab-content img {
+    max-height: 130px; }
   #main-content #selectionsTable {
     padding-bottom: 20px; }
     #main-content #selectionsTable div.dataTables_wrapper {
