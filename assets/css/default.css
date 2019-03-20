@@ -937,7 +937,8 @@ h5 + .btn-download {
   #main-content .tab-content h4 {
     margin-top: 2rem !important; }
   #main-content .tab-content img {
-    max-height: 130px; }
+    max-height: 130px;
+    width: auto; }
   #main-content #selectionsTable {
     padding-bottom: 20px; }
     #main-content #selectionsTable div.dataTables_wrapper {
