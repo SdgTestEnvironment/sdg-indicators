@@ -157,7 +157,7 @@
           "status": "complete"
         },{
           "id": "2-a-2",
-          "title": "Öffentliche Leistungen insgesamt (öffentliche Entwicklungszusammenarbeit plus sonstige öffentliche Ausgaben) für den Landwirtschaftssektor",
+          "title": "Öffentliche Leistungen insgesamt (öffentliche Entwicklungszusammenarbeit(ODA) plus sonstige öffentliche Ausgaben) für den Landwirtschaftssektor",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-a-2",
@@ -254,7 +254,7 @@
           "status": "notstarted"
         },{
           "id": "3-b-2",
-          "title": "Gesamte öffentliche Netto-Entwicklungszusammenarbeit für medizinische Forschung und grundlegende Gesundheitsversorgung",
+          "title": "Gesamte öffentliche Netto-Entwicklungszusammenarbeit(ODA) für medizinische Forschung und grundlegende Gesundheitsversorgung",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-b-2",
@@ -268,7 +268,7 @@
           "status": "notstarted"
         },{
           "id": "3-7-2",
-          "title": "Geburtenrate von Jugendlichen (10-14 Jahre 15-19 Jahre) je 1.000 Frauen derselben Altersgruppe",
+          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre 15-19 Jahre) je 1.000 Frauen derselben Altersgruppe",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-7-2",
@@ -317,7 +317,7 @@
           "status": "complete"
         },{
           "id": "3-b-1",
-          "title": "Anteil der Zielbevölkerung, die alle Impfungen laut nationalen Programm besitzt",
+          "title": "Anteil der Zielbevölkerung, die alle Impfungen laut nationalem Programm besitzt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-b-1",
@@ -407,7 +407,7 @@
           "status": "complete"
         },{
           "id": "4-b-1",
-          "title": "Umfang der Ausgaben öffentlicher Entwicklungszusammenarbeit für Stipendien nach Sektor und Art des Studiums",
+          "title": "Umfang der Ausgaben öffentlicher Entwicklungszusammenarbeit (ODA) für Stipendien nach Sektor und Art des Studiums",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-b-1",
@@ -650,7 +650,7 @@
           "status": "complete"
         },{
           "id": "6-a-1",
-          "title": "Betrag der wasser- und sanitärbezogenen öffentlichen Entwicklungszusammenarbeit, die Teil eines geregelten öffentlichen Haushaltsplans ist",
+          "title": "Betrag der wasser- und sanitärbezogenen öffentlichen Entwicklungszusammenarbeit (ODA), die Teil eines geregelten öffentlichen Haushaltsplans ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/6-a-1",
@@ -885,7 +885,7 @@
           "status": "complete"
         },{
           "id": "9-a-1",
-          "title": "Gesamte öffentliche internationale Unterstützung (öffentliche Entwicklungszusammenarbeit und andere öffentliche Mittel) für Infrastruktu",
+          "title": "Gesamte öffentliche internationale Unterstützung (öffentliche Entwicklungszusammenarbeit (ODA) und sonstige öffentliche Ausgaben) für Infrastruktu",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/9-a-1",
@@ -933,14 +933,14 @@
       "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
           "id": "10-7-2",
-          "title": "Anzahl der Staaten mit gut umgesetzter Migrationspolitik",
+          "title": "Anzahl der Staaten mit Migrationspolitik, die eine ordnungsgemäße sichere, regelmäßige und verantwortungsbewusste Migration und Mobilität von Menschen ermöglicht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-7-2",
           "status": "notstarted"
         },{
           "id": "10-2-1",
-          "title": "Anteil der Bevölkerung, die mit weniger als 50% des Medianeinkommens leben, nach Geschlecht, Alter und Menschen mit Behinderung",
+          "title": "Anteil der Bevölkerung, die mit weniger als 50% des Medianeinkommens leben, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-2-1",
@@ -961,7 +961,7 @@
           "status": "notstarted"
         },{
           "id": "10-7-1",
-          "title": "Von Beschäftigten getragene Einstellungskosten als Anteil des Jahreseinkommens des Bestimmungslandes",
+          "title": "Von Beschäftigten getragene Einstellungskosten als Anteil des monatlichen Einkommens des Bestimmungslandes",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-7-1",
@@ -989,7 +989,7 @@
           "status": "notstarted"
         },{
           "id": "10-b-1",
-          "title": "Gesamte Kapitalströme für Entwicklung, nach Nehmer- und Geberländern und Art des Zahlungsstroms (z. B. öffentliche Entwicklungszusammenarbeit, ausländische Direktinvestitionen und sonstige Geldströme)",
+          "title": "Gesamte Kapitalströme für Entwicklung, nach Nehmer- und Geberländern und Art des Zahlungsstroms (z. B. öffentliche Entwicklungszusammenarbeit (ODA), ausländische Direktinvestitionen und sonstige Geldströme)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-b-1",
@@ -1065,7 +1065,7 @@
           "status": "notstarted"
         },{
           "id": "11-7-1",
-          "title": "Durchschnittlicher Anteil der bebauten Fläche in Städten, die als Freifläche öffentlich zugänglich ist, nach Geschlecht, Alter und Personen mit Behinderungen",
+          "title": "Durchschnittlicher Anteil der bebauten Fläche in Städten, die als Freifläche öffentlich zugänglich ist, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-7-1",
@@ -1148,7 +1148,7 @@
           "status": "complete"
         },{
           "id": "12-3-1",
-          "title": "Index zu globalen Nahrungsmittelverlusten",
+          "title": "(a) Index der zu globalen LebensNahrungsmittelverlusten und (b) Index der Lebensmittelabfälle",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-3-1",
@@ -1321,7 +1321,7 @@
           "status": "notstarted"
         },{
           "id": "14-b-1",
-          "title": "Fortschritt der Staaten hinsichtlich der Umsetzung von gesetzlichen/ regulatorischen/ politischen/ institutionellen Rahmenwerken, die Zugangsrechte für kleine Fischereien anerkennen und schützen",
+          "title": "Grad der Umsetzung von gesetzlichen/ regulatorischen/ politischen/ institutionellen Rahmenwerken, die Zugangsrechte für kleine Fischereien anerkennen und schützen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-b-1",
@@ -1376,7 +1376,7 @@
           "status": "complete"
         },{
           "id": "15-b-1",
-          "title": "Öffentliche Entwicklungszusammenarbeit und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung biologischer Vielfalt und der Ökosysteme",
+          "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-b-1",
@@ -1418,7 +1418,7 @@
           "status": "complete"
         },{
           "id": "15-a-1",
-          "title": "Öffentliche Entwicklungszusammenarbeit und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung biologischer Vielfalt und der Ökosysteme",
+          "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-a-1",
@@ -1599,7 +1599,7 @@
           "status": "complete"
         },{
           "id": "16-7-1",
-          "title": "Anteil der Stellen (nach Geschlecht, Alter, Personen mit Behinderungen und Bevölkerungsgruppen) in öffentlichen Institutionen (nationale und lokale Gesetzgebung, öffentlicher Dienst und Judikative) im Vergleich zur nationalen Verteilungen",
+          "title": "Anteil der Stellen (nach Geschlecht, Alter, Personen mit Behinderungen und Bevölkerungsgruppen) in nationalen und lokalen öffentlichen Institutionen einschließlich (a) der(nationale und lokale Gesetzgebung,; (b) des öffentlichern Dienstes; und (c) der Judikativen), im Vergleich zur nationalen Verteilungen, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-7-1",
@@ -1696,7 +1696,7 @@
           "status": "complete"
         },{
           "id": "17-3-1",
-          "title": "Ausländische Direktinvestitionen, öffentliche Entwicklungszusammenarbeit und Süd-Süd-Kooperationen als Anteil am gesamten Haushaltsbudget",
+          "title": "Ausländische Direktinvestitionen, öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Kooperationen als Anteil am gesamten Haushaltsbudget",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-3-1",
