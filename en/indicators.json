@@ -112,7 +112,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/2-2-1",
-          "status": "inprogress"
+          "status": "complete"
         },{
           "id": "2-4-1",
           "title": "Proportion of agricultural area under productive and sustainable agriculture",
@@ -168,7 +168,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/2-1-2",
-          "status": "complete"
+          "status": "notstarted"
         },{
           "id": "2-c-1",
           "title": "Indicator of food price anomalies",

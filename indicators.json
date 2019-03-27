@@ -112,7 +112,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-2-1",
-          "status": "inprogress"
+          "status": "complete"
         },{
           "id": "2-4-1",
           "title": "Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger Bewirtschaftung",
@@ -168,7 +168,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-1-2",
-          "status": "complete"
+          "status": "notstarted"
         },{
           "id": "2-c-1",
           "title": "Indikator zu Preisschwankungen bei Lebensmittelpreisen",
