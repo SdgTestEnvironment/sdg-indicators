@@ -275,7 +275,7 @@
           "status": "complete"
         },{
           "id": "3-9-2",
-          "title": "Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden "Wasser, Sanitäreinrichtungen und Hygiene für alle"-Leistungen (WASH))",
+          "title": "Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden 'Wasser, Sanitäreinrichtungen und Hygiene für alle'-Leistungen (WASH))",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-9-2",
@@ -1359,7 +1359,7 @@
   },{
     "goal": {
       "id": "15",
-      "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und ",
+      "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und",
       "indicators": [{
           "id": "15-3-1",
           "title": "Anteil der Fläche, die von Bodendegradation betroffenen ist, an der gesamten Landfläche",
