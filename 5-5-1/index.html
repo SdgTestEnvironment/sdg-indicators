@@ -50,7 +50,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190329091907">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190329131641">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -213,12 +213,12 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Seats held by women in parliament</h2>
+      <h2></h2>
     </div>
   </div>
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_5-5-1' data-id="5-5-1" data-country=""
-  data-charttitle="Seats held by women in parliament" data-measurementunit="Percentage (%)" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="true" data-graphtype="bar" data-geocoderegex="" data-showmap="">
+  data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="true" data-graphtype="line" data-geocoderegex="" data-showmap="">
     
     <div class="col-md-3">
       <div id="toolbar">
@@ -416,34 +416,7 @@
     
     <div class="plot-container">
         
-
-<canvas id="barchart-5-5-1" class="ct-chart ct-major-eleventh"></canvas>
-<script>
-  // 3.5.2
-  // 1.5.2 // 2 bars
-  // 4.b.1 // 3 bars
-  var chartInfo = chartDataProcessor.getChartInfo(null),
-      chartInstance = new Chart(document.getElementById('barchart-5-5-1'), {
-      type: 'bar',
-      data: chartInfo,
-      options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            yAxes: [{
-              ticks: {
-                  suggestedMin: 0
-              }
-            }]
-          },
-          legend: {
-            display: false
-         },
-      }
-  });
-
-</script>
-
+<canvas></canvas>
     </div>
     <div id="plotLegend"></div>
 
@@ -515,7 +488,7 @@
         <th scope="row">Verfügbare Datenreihenbezeichnung </th>
         <td>
           
-            
+            Sitze im nationalen Parlament, die Frauen inne haben <br> Sitze in den Landesparlamenten, die Frauen inne haben
           
         </td>
         </tr>
@@ -570,8 +543,8 @@
             
 
             
-              <a href="https://github.com/G205SDGs/sdg-data/commit/596a70ecf8ede9b29f257e0c176d2249cd81c3f6" target="_blank">
-                2019-02-08: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              <a href="https://github.com/G205SDGs/sdg-data/commit/6650dca26bad2e802f7c955ac207a8a47b4ed9a9" target="_blank">
+                2019-03-29: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -693,7 +666,7 @@
         <th scope="row">Indikatorenbezeichnung </th>
         <td>
           
-            Proportion of seats held by women in (a) national parliaments and (b) local governments
+            Frauenanteil in (a) nationalen Parlamenten und (b) lokalen Regierungen
           
         </td>
         </tr>
@@ -729,7 +702,7 @@
         <th scope="row">Unterziel </th>
         <td>
           
-            Ensure women’s full and effective participation and equal opportunities  for leadership at all levels of decision-making in political, economic and public  life
+            Die volle und wirksame Teilhabe von Frauen und ihre Chancengleichheit bei der Übernahme von Führungsrollen auf allen Ebenen der Entscheidungsfindung im politischen, wirtschaftlichen und öffentlichen Leben sicherstellen
           
         </td>
         </tr>
@@ -765,7 +738,7 @@
         <th scope="row">VN Custodian Agency </th>
         <td>
           
-            Inter-Parliamentary Union (IPU), The United Nations Entity for Gender Equality and the Empowerment of Women (UN Women)
+            IPU, UN Women
           
         </td>
         </tr>
@@ -784,7 +757,7 @@
 
             
               <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                Metadaten der Ziele der Vereinten Nationen für nachhaltige Entwicklung <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -946,7 +919,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script>
   var remoteDataBaseUrl = 'https://G205SDGs.github.io/sdg-data';
 </script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190329091907'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190329131641'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
