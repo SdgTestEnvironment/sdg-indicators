@@ -1526,4 +1526,5 @@ body.contrast-high {
 
 #main-content.goal-indicators .indicator-cards.target {
   margin-bottom: 1.5rem;
-  clear: left; }
+  clear: left;
+  font-weight: bold; }
