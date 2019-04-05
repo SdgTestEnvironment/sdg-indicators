@@ -8,7 +8,51 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <script>var translations = {};</script>
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we do it for them here.
+    var originalKey = key;
+    if (!key.includes('.') && this.data) {
+      key = 'data.' + key.toLowerCase();
+    }
+
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
@@ -50,7 +94,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190405091640">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190405135346">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -134,7 +178,7 @@
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
-      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
+      <button class='accessBtn' tabindex='0'><h5><%=translations.t(seriesItem.field)%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -144,11 +188,11 @@
           <button data-type="clear">Clear all</button>
         </div>
         <% _.each(seriesItem.values, function(item) { %>
-          <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
+          <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=translations.t(item.value)%></label>
         <% }); %>
       </div>
-      
-      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %>
         <div class="variable-hint">Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
         <div class="no-data-hint">
@@ -164,7 +208,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=translations.t(unitsItem)%></label>
     <% }); %>
   <% } %>
 </script>
@@ -178,13 +222,13 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <a href="/sdg-indicators/en/nachhaltige-städte-und-gemeinden" title="View this goal's indicator list">
+        <a href="/sdg-indicators/en/11" title="View this goal's indicator list">
           <img src="/sdg-indicators/assets/img/goals/en/17/11.png" alt="Sustainable cities & communities - Goal 11" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
-          <a href="/sdg-indicators/en/nachhaltige-städte-und-gemeinden">
+          <a href="/sdg-indicators/en/11">
             <span class="hidden-sm hidden-md hidden-lg">Goal 11: </span>Make cities and human settlements inclusive, safe, resilient and sustainable
           </a>
         </h1>
@@ -198,7 +242,7 @@
   <ol class="breadcrumb">
   <li><a href="/sdg-indicators/en/">Home</a></li>
   
-      <li><a href="/sdg-indicators/en/nachhaltige-städte-und-gemeinden" title="Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten">Goal 11</a></li>
+      <li><a href="/sdg-indicators/en/11" title="Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten">Goal 11</a></li>
       <li class="active">Indicator 11.1.1</li>
   
 </ol>
@@ -238,17 +282,17 @@
     
 
       
-       
- 
+      
+
 
 <div id="headlineTable">
-  
+
   <div id="datatables">
-    
+
     <a href="https://G205SDGs.github.io/sdg-data/headline/11-1-1.csv" class="btn btn-primary btn-download" download="indicator_11-1-1.csv" tabindex="0" role="button">Download Headline CSV</a>
-    
+
     <a href="https://G205SDGs.github.io/sdg-data/data/11-1-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-1-1.csv' tabindex='0' role='button'>Download Source CSV</a>
-    
+
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
       <caption></caption>
@@ -272,11 +316,11 @@
         <tr>
           
           
-          <td>2010</td>    
+          <td>2010</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -288,11 +332,11 @@
         <tr>
           
           
-          <td>2011</td>    
+          <td>2011</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -304,11 +348,11 @@
         <tr>
           
           
-          <td>2012</td>    
+          <td>2012</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -320,11 +364,11 @@
         <tr>
           
           
-          <td>2013</td>    
+          <td>2013</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -336,11 +380,11 @@
         <tr>
           
           
-          <td>2014</td>    
+          <td>2014</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -352,11 +396,11 @@
         <tr>
           
           
-          <td>2015</td>    
+          <td>2015</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -368,11 +412,11 @@
         <tr>
           
           
-          <td>2016</td>    
+          <td>2016</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -384,27 +428,11 @@
         <tr>
           
           
-          <td>2017</td>    
+          <td>2017</td>
           
           
           
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2018</td>    
-          
-          
-          
-          <td>Material deprivation for the housing dimension (one to four items)</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
           
           
           
@@ -416,11 +444,27 @@
         <tr>
           
           
-          <td>2010</td>    
+          <td>2018</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Material deprivation for the housing dimension (one to four items)</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -432,11 +476,11 @@
         <tr>
           
           
-          <td>2011</td>    
+          <td>2011</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -448,11 +492,11 @@
         <tr>
           
           
-          <td>2012</td>    
+          <td>2012</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -464,27 +508,11 @@
         <tr>
           
           
-          <td>2013</td>    
+          <td>2013</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
-          
-          
-          
-          <td class="table-value">4.4</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2014</td>    
-          
-          
-          
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -496,11 +524,27 @@
         <tr>
           
           
-          <td>2015</td>    
+          <td>2014</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
+          
+          
+          
+          <td class="table-value">4.4</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -512,11 +556,11 @@
         <tr>
           
           
-          <td>2016</td>    
+          <td>2016</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -528,27 +572,11 @@
         <tr>
           
           
-          <td>2017</td>    
+          <td>2017</td>
           
           
           
-          <td>Population considering their dwelling as too dark</td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2018</td>    
-          
-          
-          
-          <td>Population considering their dwelling as too dark</td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -560,27 +588,11 @@
         <tr>
           
           
-          <td>2010,"Population living in an area with crime, violence or vandalism",12.0</td>    
+          <td>2018</td>
           
           
           
-          <td></td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011,"Population living in an area with crime, violence or vandalism",12.9</td>    
-          
-          
-          
-          <td></td>    
+          <td>Population considering their dwelling as too dark</td>
           
           
           
@@ -592,27 +604,11 @@
         <tr>
           
           
-          <td>2012,"Population living in an area with crime, violence or vandalism",12.5</td>    
+          <td>2010,"Population living in an area with crime, violence or vandalism",12.0</td>
           
           
           
-          <td></td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2013,"Population living in an area with crime, violence or vandalism",13.5</td>    
-          
-          
-          
-          <td></td>    
+          <td></td>
           
           
           
@@ -624,27 +620,11 @@
         <tr>
           
           
-          <td>2014,"Population living in an area with crime, violence or vandalism",13.1</td>    
+          <td>2011,"Population living in an area with crime, violence or vandalism",12.9</td>
           
           
           
-          <td></td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2015,"Population living in an area with crime, violence or vandalism",13.8</td>    
-          
-          
-          
-          <td></td>    
+          <td></td>
           
           
           
@@ -656,27 +636,11 @@
         <tr>
           
           
-          <td>2016,"Population living in an area with crime, violence or vandalism",14.1</td>    
+          <td>2012,"Population living in an area with crime, violence or vandalism",12.5</td>
           
           
           
-          <td></td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2017,"Population living in an area with crime, violence or vandalism",</td>    
-          
-          
-          
-          <td></td>    
+          <td></td>
           
           
           
@@ -688,11 +652,11 @@
         <tr>
           
           
-          <td>2018,"Population living in an area with crime, violence or vandalism",</td>    
+          <td>2013,"Population living in an area with crime, violence or vandalism",13.5</td>
           
           
           
-          <td></td>    
+          <td></td>
           
           
           
@@ -704,11 +668,91 @@
         <tr>
           
           
-          <td>2010</td>    
+          <td>2014,"Population living in an area with crime, violence or vandalism",13.1</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015,"Population living in an area with crime, violence or vandalism",13.8</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016,"Population living in an area with crime, violence or vandalism",14.1</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017,"Population living in an area with crime, violence or vandalism",</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018,"Population living in an area with crime, violence or vandalism",</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -720,11 +764,11 @@
         <tr>
           
           
-          <td>2011</td>    
+          <td>2011</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -736,27 +780,11 @@
         <tr>
           
           
-          <td>2012</td>    
+          <td>2012</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
-          
-          
-          
-          <td class="table-value">26.1</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2013</td>    
-          
-          
-          
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -768,11 +796,27 @@
         <tr>
           
           
-          <td>2014</td>    
+          <td>2013</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
+          
+          
+          
+          <td class="table-value">26.1</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -784,11 +828,11 @@
         <tr>
           
           
-          <td>2015</td>    
+          <td>2015</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -800,11 +844,11 @@
         <tr>
           
           
-          <td>2016</td>    
+          <td>2016</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -816,27 +860,11 @@
         <tr>
           
           
-          <td>2017</td>    
+          <td>2017</td>
           
           
           
-          <td>Population living in an area with noise pollution</td>    
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2018</td>    
-          
-          
-          
-          <td>Population living in an area with noise pollution</td>    
+          <td>Population living in an area with noise pollution</td>
           
           
           
@@ -848,11 +876,27 @@
         <tr>
           
           
-          <td>2010</td>    
+          <td>2018</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in an area with noise pollution</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -864,11 +908,11 @@
         <tr>
           
           
-          <td>2011</td>    
+          <td>2011</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -880,11 +924,11 @@
         <tr>
           
           
-          <td>2012</td>    
+          <td>2012</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -896,11 +940,11 @@
         <tr>
           
           
-          <td>2013</td>    
+          <td>2013</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -912,11 +956,11 @@
         <tr>
           
           
-          <td>2014</td>    
+          <td>2014</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -928,11 +972,11 @@
         <tr>
           
           
-          <td>2015</td>    
+          <td>2015</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -944,11 +988,11 @@
         <tr>
           
           
-          <td>2016</td>    
+          <td>2016</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -960,11 +1004,11 @@
         <tr>
           
           
-          <td>2017</td>    
+          <td>2017</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -976,11 +1020,11 @@
         <tr>
           
           
-          <td>2018</td>    
+          <td>2018</td>
           
           
           
-          <td>Population living in households with moisture damages</td>    
+          <td>Population living in households with moisture damages</td>
           
           
           
@@ -992,15 +1036,16 @@
       </tbody>
     </table>
   </div>
-  
+
   <div id="datatableFooter">
     
     
     
     
   </div>
-  
+
 </div>
+
       
 
       <section>
@@ -1126,6 +1171,27 @@
   
       
       <tr>
+        <th scope="row">Link to national metadata </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+  
+      
+      <tr>
         <th scope="row">Data last updated </th>
         <td>
           
@@ -1163,27 +1229,6 @@
               <a href="https://github.com/G205SDGs/sdg-data/commit/a6a2210ea1d3da15f2b74157f396c1a9890e849f" target="_blank">
                 2019-04-05: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-  
-      
-      <tr>
-        <th scope="row">Link to national metadata </th>
-        <td>
-          
-            
-            
-            
-            
-
             
 
           
@@ -1536,7 +1581,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script>
   var remoteDataBaseUrl = 'https://G205SDGs.github.io/sdg-data';
 </script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190405091640'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190405135346'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
