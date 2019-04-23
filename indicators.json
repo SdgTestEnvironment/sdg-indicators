@@ -268,7 +268,7 @@
           "status": "notstarted"
         },{
           "id": "3-7-2",
-          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre 15-19 Jahre) je 1.000 Frauen derselben Altersgruppe",
+          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre; 15-19 Jahre) je 1.000 Frauen derselben Altersgruppe",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-7-2",
@@ -1798,7 +1798,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-12-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "17-16-1",
           "title": "Anzahl der Staaten, die Fortschritte bei der Kontrolle der Multi-Stakeholder-Entwicklungswirksamkeit, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen, berichten",
