@@ -15,7 +15,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-1-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "1-2-2",
           "title": "Anteil der Männer, Frauen und Kinder jeden Alters, die in Armut in all ihren Dimensionen gemäß nationaler Definitionen leben",
@@ -1000,7 +1000,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-6-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "10-4-1",
           "title": "Anteil des Arbeitsnehmerentgelts am BIP, bestehend aus Löhnen, Gehältern und Sozialversicherungsbeiträgen",
@@ -1249,7 +1249,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-b-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "13-a-1",
           "title": "Mobilisierter Betrag an US-Dollar pro Jahr zwischen 2020 und 2025, anrechenbar auf die Zusage von 100 Milliarden US-Dollar",
@@ -1353,7 +1353,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-3-1",
-          "status": "notstarted"
+          "status": "complete"
         }]
     }
   },{
@@ -1714,14 +1714,14 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-11-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "17-4-1",
           "title": "Schuldendienst als Anteil an Güter- und Dienstleistungsexporten",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-4-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "17-17-1",
           "title": "Betrag an US-Dollar, der für (a) öffentlich-private Partnerschaften und (b) zivilgesellschaftliche Partnerschaften zugesagt wurde",
@@ -1777,7 +1777,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-10-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "17-18-1",
           "title": "Anteil der Nachhaltigkeitsindikatoren, die auf nationaler Ebene vollständig - sofern gemäß dem Unterziel relevant - disaggregiert sind, in Übereinstimmung mit den Grundprinzipien der amtlichen Statistik",
