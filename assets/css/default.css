@@ -424,14 +424,14 @@ h5 + .btn-download {
   background-color: #FD6925; }
 
 .goal-10.heading {
-  background-color: #DD1367;
-  border-bottom: 5px solid #7f0b3b; }
+  background-color: #E01483;
+  border-bottom: 5px solid #820c4c; }
 .goal-10.goal-indicators div span {
-  border-color: #7f0b3b;
-  color: #7f0b3b; }
+  border-color: #820c4c;
+  color: #820c4c; }
 
 .goal-tiles #goal-10:hover {
-  background-color: #DD1367; }
+  background-color: #E01483; }
 
 .goal-11.heading {
   background-color: #FD9C27;
