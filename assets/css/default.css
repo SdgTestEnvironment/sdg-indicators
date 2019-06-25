@@ -202,14 +202,14 @@ header {
     .navbar #search label {
       position: absolute;
       top: 8px;
-      left: 1px;
+      left: 7px;
       font-size: 1.25em; }
       .navbar #search label span {
         display: none; }
     .navbar #search input {
       padding: 5px;
       padding-left: 29px;
-      width: 140px;
+      width: 180px;
       transition: width 0.4s;
       margin-top: 5px; }
       .navbar #search input:focus {
