@@ -598,7 +598,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/6-6-1",
-          "status": "complete"
+          "status": "inprogress"
         },{
           "id": "6-4-1",
           "title": "Veränderung der Wassernutzungseffizienz im Zeitablauf",
@@ -1777,7 +1777,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-10-1",
-          "status": "notapplicable"
+          "status": "notstarted"
         },{
           "id": "17-18-1",
           "title": "Anteil der Nachhaltigkeitsindikatoren, die auf nationaler Ebene vollständig - sofern gemäß dem Unterziel relevant - disaggregiert sind, in Übereinstimmung mit den Grundprinzipien der amtlichen Statistik",
@@ -1798,7 +1798,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-12-1",
-          "status": "notapplicable"
+          "status": "notstarted"
         },{
           "id": "17-16-1",
           "title": "Anzahl der Staaten, die Fortschritte bei der Kontrolle der Multi-Stakeholder-Entwicklungswirksamkeit, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen, berichten",
