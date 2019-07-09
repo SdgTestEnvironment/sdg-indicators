@@ -7,9 +7,6 @@
 
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -50,12 +47,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we specifically look for that here.
-    if (typeof this.data === 'object' && this.data[key]) {
-      return this.data[key];
+    // their disaggregation data, we do it for them here.
+    var originalKey = key;
+    if (!key.includes('.') && this.data) {
+      key = 'data.' + key.toLowerCase();
     }
 
-    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -123,7 +120,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190709123158">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190709124515">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -131,7 +128,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190709123158"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190709124515"></head>
 <body class="language-de">
 <!-- <div class="container"> -->
 
@@ -261,7 +258,7 @@ var translations = {
             <span class="hidden-sm hidden-md hidden-lg">Ziel 5: </span>Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen
           </a>
         </h1>
-        <h2>Indikator 5.3.1: </h2>
+        <h2>Indikator 5.3.1: Anteil der 20- bis 24-jährigen Frauen, die vor einem Alter von 15 oder 18 Jahren verheiratet oder in einer vergleichbaren Verbindung waren</h2>
       </div>
     </div>
   </div>
@@ -328,8 +325,452 @@ var translations = {
       <caption></caption>
       <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
       </thead>
       <tbody>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>Married girls under 18 years (%)</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value">0.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>Married girls under 15 years (%)</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">225.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">213.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">214.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">245.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">321.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">880.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">700.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value">318.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>Married girls under 18 years (Number)</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
         
       </tbody>
     </table>
@@ -502,7 +943,7 @@ var translations = {
             
 
             
-              <a href="https://github.com/G205SDGs/sdg-data/commit/1a6d8dd4d4797f962238fc01b938f04188858b28" target="_blank">
+              <a href="https://github.com/G205SDGs/sdg-data/commit/2791ea72af3a9ecde29b0836d70634ccfcd77aaf" target="_blank">
                 2019-07-09: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1091,7 +1532,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190709123158'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190709124515'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
