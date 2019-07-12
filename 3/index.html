@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -39,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -110,7 +109,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190711140016">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190712111105">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -118,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190711140016"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190712111105"></head>
 <body class="language-de">
 <!-- <div class="container"> -->
 
@@ -198,9 +197,7 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <!-- einzeiliger Kommentar -->
-        <!-- <img src="/sdg-indicators/assets/img/goals/de/17/3.png" alt="Gesundheit und Wohlergehen - Ziel 3" /> -->
-        <img src="/sdg-indicators/assets/img/goals/de/3.png" alt="Gesundheit und Wohlergehen - Ziel 3" />
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/de/3.png" alt="Gesundheit und Wohlergehen - Ziel 3" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -211,7 +208,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-3">
+<div id="main-content" class="container goal-indicators goal-3 goal-by-target">
 
   
 
@@ -235,6 +232,7 @@ var translations = {
   
     
     
+    
     <div class="indicator-cards target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
@@ -244,49 +242,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-1-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.1.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Müttersterblichkeitsrate
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Müttersterblichkeitsrate
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-1-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.1.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -298,49 +302,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-2-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.2.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate von Kindern unter 5&nbsp;Jahren
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate von Kindern unter 5&nbsp;Jahren
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-2-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.2.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate von Neugeborenen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate von Neugeborenen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -352,112 +362,124 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-3-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.3.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppen
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-3-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.3.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Tuberkulose-Inzidenz je 100&nbsp;000 Einwohner
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Tuberkulose-Inzidenz je 100&nbsp;000 Einwohner
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-3-3">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.3.3
-            <span class="status success">Daten verfügbar</span>
-          </span> Malaria-Inzidenz je 1&nbsp;000 Einwohner
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Malaria-Inzidenz je 1&nbsp;000 Einwohner
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-3-4">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.3.4
-            <span class="status success">Daten verfügbar</span>
-          </span> Hepatitis-B-Inzidenz je 100&nbsp;000 Einwohner
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Hepatitis-B-Inzidenz je 100&nbsp;000 Einwohner
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-3-5">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.3.5
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der Personen, die Maßnahmen gegen vernachlässigte Tropenkrankheiten benötigen
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Personen, die Maßnahmen gegen vernachlässigte Tropenkrankheiten benötigen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -469,49 +491,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-4-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.4.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate infolge von Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate infolge von Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-4-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.4.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate bei Suizid
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate bei Suizid
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -523,49 +551,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-5-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.5.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Abdeckung durch Behandlungsmaßnahmen (pharmakologische, psychosoziale und Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Abdeckung durch Behandlungsmaßnahmen (pharmakologische, psychosoziale und Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-5-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.5.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15&nbsp;Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15&nbsp;Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -577,28 +611,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-6-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.6.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate aufgrund von Straßenverkehrsunfällen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate aufgrund von Straßenverkehrsunfällen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -610,49 +648,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-7-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.7.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Frauen im gebärfähigen Alter (15-49&nbsp;Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Frauen im gebärfähigen Alter (15-49&nbsp;Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-7-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.7.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Geburtenrate bei Jugendlichen (10-14&nbsp;Jahre; 15-19&nbsp;Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Geburtenrate bei Jugendlichen (10-14&nbsp;Jahre; 15-19&nbsp;Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -664,49 +708,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-8-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.8.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Abdeckung der grundlegenden Gesundheitsleistungen (definiert als durchschnittliche Abdeckung der grundlegenden Leistungen basierend auf Tracer-Interventionen, einschließlich reproduktiver, Mütter-, Neugeborenen- und Kindergesundheit, infektiöser Krankheiten und nicht übertragbarer Krankheiten sowie Kapazitäten und Zugang zu Serviceleistungen, innerhalb der allgemein und der überwiegend benachteiligten Bevölkerung)
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Abdeckung der grundlegenden Gesundheitsleistungen (definiert als durchschnittliche Abdeckung der grundlegenden Leistungen basierend auf Tracer-Interventionen, einschließlich reproduktiver, Mütter-, Neugeborenen- und Kindergesundheit, infektiöser Krankheiten und nicht übertragbarer Krankheiten sowie Kapazitäten und Zugang zu Serviceleistungen, innerhalb der allgemein und der überwiegend benachteiligten Bevölkerung)
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-8-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.8.2
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Bevölkerung mit hohen Haushaltsausgaben für Gesundheit als Anteil an den gesamten Haushaltsausgaben oder -einkommen
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Bevölkerung mit hohen Haushaltsausgaben für Gesundheit als Anteil an den gesamten Haushaltsausgaben oder -einkommen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -718,70 +768,78 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-9-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.9.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Sterblichkeitsrate infolge von Luftverschmutzung im Haushalt und der Umgebung
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Sterblichkeitsrate infolge von Luftverschmutzung im Haushalt und der Umgebung
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-9-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.9.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden "Wasser, Sanitäreinrichtungen und Hygiene für alle"-Leistungen (WASH))
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden "Wasser, Sanitäreinrichtungen und Hygiene für alle"-Leistungen (WASH))
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-9-3">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.9.3
-            <span class="status success">Daten verfügbar</span>
-          </span> Sterblichkeit infolge unbeabsichtigter Vergiftung
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeit infolge unbeabsichtigter Vergiftung
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -793,28 +851,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-a-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.a.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15&nbsp;Jahren und älter
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15&nbsp;Jahren und älter
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -826,70 +888,78 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-b-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.b.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Zielbevölkerung, die alle Impfungen laut nationalem Programm besitzt
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Zielbevölkerung, die alle Impfungen laut nationalem Programm besitzt
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-b-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.b.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Gesamte öffentliche Netto-Entwicklungszusammenarbeit (ODA) für medizinische Forschung und grundlegende Gesundheitsversorgung
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Gesamte öffentliche Netto-Entwicklungszusammenarbeit (ODA) für medizinische Forschung und grundlegende Gesundheitsversorgung
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-b-3">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.b.3
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Gesundheitseinrichtungen, die über einen Kernsatz relevanter und wichtiger Medikamente verfügen, die nachhaltig verfügbar und bezahlbar sind
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Gesundheitseinrichtungen, die über einen Kernsatz relevanter und wichtiger Medikamente verfügen, die nachhaltig verfügbar und bezahlbar sind
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -901,28 +971,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-c-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.c.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Dichte und Verteilung von medizinischem Fachpersonal
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Dichte und Verteilung von medizinischem Fachpersonal
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -934,28 +1008,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/3-d-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             3.d.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Kapazitäten für internationale Gesundheitsvorschriften (IGV) und Gesundheitsnotfallvorsorge
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Kapazitäten für internationale Gesundheitsvorschriften (IGV) und Gesundheitsnotfallvorsorge
           
         </a>
       </div>
     
-    </div></div>
+    </div>
+  
+</div>
 
 <footer role="contentinfo">
   <div class="container">
@@ -970,21 +1048,6 @@ var translations = {
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-
-</script>
-
-<!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -1003,7 +1066,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190711140016'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190712111105'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1058,6 +1121,9 @@ $(function() {
 
 });
 </script>
+
+
+
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -39,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -110,7 +109,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190711140016">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190712111105">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -118,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190711140016"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190712111105"></head>
 <body class="language-en">
 <!-- <div class="container"> -->
 
@@ -198,9 +197,7 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <!-- einzeiliger Kommentar -->
-        <!-- <img src="/sdg-indicators/assets/img/goals/en/17/1.png" alt="No poverty - Goal 1" /> -->
-        <img src="/sdg-indicators/assets/img/goals/en/1.png" alt="No poverty - Goal 1" />
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/1.png" alt="No poverty - Goal 1" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -211,7 +208,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-1">
+<div id="main-content" class="container goal-indicators goal-1 goal-by-target">
 
   
 
@@ -235,6 +232,7 @@ var translations = {
   
     
     
+    
     <div class="indicator-cards target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
@@ -244,28 +242,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-1-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.1.1
-            <span class="status notapplicable">Not applicable</span>
-          </span> Proportion of population below the international poverty line, by sex, age, employment status and geographical location (urban/rural)
+            <span class="status notapplicable">
+              Not applicable
+            </span>
+          </span>
+          Proportion of population below the international poverty line, by sex, age, employment status and geographical location (urban/rural)
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -277,49 +279,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-2-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.2.1
-            <span class="status success">Reported online</span>
-          </span> Proportion of population living below the national poverty line, by sex and age
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Proportion of population living below the national poverty line, by sex and age
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-2-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.2.2
-            <span class="status success">Reported online</span>
-          </span> Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -331,28 +339,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-3-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.3.1
-            <span class="status success">Reported online</span>
-          </span> Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -364,49 +376,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-4-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.4.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Proportion of population living in households with access to basic services
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Proportion of population living in households with access to basic services
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-4-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.4.2
-            <span class="status danger">Exploring data sources</span>
-          </span> Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -418,91 +436,101 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-5-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.5.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-5-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.5.2
-            <span class="status danger">Exploring data sources</span>
-          </span> Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-5-3">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.5.3
-            <span class="status warning">Statistics in progress</span>
-          </span> Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030
+            <span class="status inprogress">
+              Statistics in progress
+            </span>
+          </span>
+          Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-5-4">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.5.4
-            <span class="status danger">Exploring data sources</span>
-          </span> Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -514,70 +542,78 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-a-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.a.1
-            <span class="status success">Reported online</span>
-          </span> Proportion of domestically generated resources allocated by the government directly to poverty reduction programmes
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Proportion of domestically generated resources allocated by the government directly to poverty reduction programmes
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-a-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.a.2
-            <span class="status success">Reported online</span>
-          </span> Proportion of total government spending on essential services (education, health and social protection)
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Proportion of total government spending on essential services (education, health and social protection)
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-a-3">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.a.3
-            <span class="status danger">Exploring data sources</span>
-          </span> Sum of total grants and non-debt-creating inflows directly allocated to poverty reduction programmes as a proportion of GDP
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Sum of total grants and non-debt-creating inflows directly allocated to poverty reduction programmes as a proportion of GDP
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -589,28 +625,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/1-b-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             1.b.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Proportion of government recurrent and capital spending to sectors that disproportionately benefit women, the poor and vulnerable groups
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Proportion of government recurrent and capital spending to sectors that disproportionately benefit women, the poor and vulnerable groups
           
         </a>
       </div>
     
-    </div></div>
+    </div>
+  
+</div>
 
 <footer role="contentinfo">
   <div class="container">
@@ -625,21 +665,6 @@ var translations = {
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-
-</script>
-
-<!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -658,7 +683,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190711140016'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190712111105'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -713,6 +738,9 @@ $(function() {
 
 });
 </script>
+
+
+
 
 </body>
 </html>

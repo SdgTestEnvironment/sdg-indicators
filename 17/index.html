@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -39,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -110,7 +109,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190711140016">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190712111105">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -118,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190711140016"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190712111105"></head>
 <body class="language-de">
 <!-- <div class="container"> -->
 
@@ -198,9 +197,7 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <!-- einzeiliger Kommentar -->
-        <!-- <img src="/sdg-indicators/assets/img/goals/de/17/17.png" alt="Partnerschaften zur Erreichung der Ziele - Ziel 17" /> -->
-        <img src="/sdg-indicators/assets/img/goals/de/17.png" alt="Partnerschaften zur Erreichung der Ziele - Ziel 17" />
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/de/17.png" alt="Partnerschaften zur Erreichung der Ziele - Ziel 17" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -211,7 +208,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-17">
+<div id="main-content" class="container goal-indicators goal-17 goal-by-target">
 
   
 
@@ -235,6 +232,7 @@ var translations = {
   
     
     
+    
     <div class="indicator-cards target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
@@ -244,49 +242,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-1-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.1.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Gesamte Staatseinnahmen als Anteil am BIP, nach Quelle
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Gesamte Staatseinnahmen als Anteil am BIP, nach Quelle
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-1-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.1.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil des Haushaltsbudgets, das durch inländische Steuern finanziert wird
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil des Haushaltsbudgets, das durch inländische Steuern finanziert wird
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -298,28 +302,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-2-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.2.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Öffentliche Nettoentwicklungsausgaben, insgesamt und an am wenigsten entwickelte Länder, als Anteil am Bruttonationaleinkommen (BNE) der Geberländer des Ausschusses für Entwicklungshilfe der Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Öffentliche Nettoentwicklungsausgaben, insgesamt und an am wenigsten entwickelte Länder, als Anteil am Bruttonationaleinkommen (BNE) der Geberländer des Ausschusses für Entwicklungshilfe der Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -331,49 +339,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-3-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.3.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Ausländische Direktinvestitionen, öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Kooperationen als Anteil am gesamten Haushaltsbudget
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Ausländische Direktinvestitionen, öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Kooperationen als Anteil am gesamten Haushaltsbudget
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-3-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.3.2
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Volumen der (Rück-)Überweisungen (in US-Dollar) als Anteil am gesamten BIP
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Volumen der (Rück-)Überweisungen (in US-Dollar) als Anteil am gesamten BIP
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -385,28 +399,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-4-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.4.1
-            <span class="status notapplicable">Nicht zutreffend</span>
-          </span> Schuldendienst als Anteil an Güter- und Dienstleistungsexporten
+            <span class="status notapplicable">
+              Nicht zutreffend
+            </span>
+          </span>
+          Schuldendienst als Anteil an Güter- und Dienstleistungsexporten
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -418,28 +436,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-5-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.5.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der Staaten, die Investitionsförderprogramme für die am wenigsten entwickelten Länder einführen und umsetzen
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Staaten, die Investitionsförderprogramme für die am wenigsten entwickelten Länder einführen und umsetzen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -451,49 +473,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-6-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.6.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der Vereinbarungen und Programme über Wissenschafts- und/oder Technologie-Kooperationen zwischen Staaten, nach Art der Kooperation
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Vereinbarungen und Programme über Wissenschafts- und/oder Technologie-Kooperationen zwischen Staaten, nach Art der Kooperation
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-6-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.6.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Internet-Breitband-Verträge je 100 Einwohner, nach Geschwindigkeit
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Internet-Breitband-Verträge je 100 Einwohner, nach Geschwindigkeit
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -505,28 +533,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-7-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.7.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Gesamtbetrag der für Entwicklungsländer genehmigten Mittel zur Förderung der Entwicklung, des Transfers, der öffentlichen Bereitstellung und der Verbreitung umweltfreundlicher Technologien
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Gesamtbetrag der für Entwicklungsländer genehmigten Mittel zur Förderung der Entwicklung, des Transfers, der öffentlichen Bereitstellung und der Verbreitung umweltfreundlicher Technologien
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -538,28 +570,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-8-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.8.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Einzelpersonen, die das Internet nutzen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Einzelpersonen, die das Internet nutzen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -571,28 +607,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-9-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.9.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Dollar-Wert der finanziellen und technischen Zusammenarbeit (einschließlich durch Nord-Süd-, Süd-Süd- und Dreieckskooperationen) mit Entwicklungsländern
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Dollar-Wert der finanziellen und technischen Zusammenarbeit (einschließlich durch Nord-Süd-, Süd-Süd- und Dreieckskooperationen) mit Entwicklungsländern
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -604,28 +644,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-10-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.10.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Weltweit gewichtete durchschnittliche Einfuhrzollsätze
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Weltweit gewichtete durchschnittliche Einfuhrzollsätze
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -637,28 +681,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-11-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.11.1
-            <span class="status notapplicable">Nicht zutreffend</span>
-          </span> Anteil der Entwicklungsländer und der am wenigsten entwickelten Länder an den weltweiten Exporten
+            <span class="status notapplicable">
+              Nicht zutreffend
+            </span>
+          </span>
+          Anteil der Entwicklungsländer und der am wenigsten entwickelten Länder an den weltweiten Exporten
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -670,28 +718,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-12-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.12.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Durchschnittliche Importzölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Durchschnittliche Importzölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -703,28 +755,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-13-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.13.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Makroökonomisches Dashboard
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Makroökonomisches Dashboard
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -736,28 +792,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-14-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.14.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anzahl der Staaten mit Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anzahl der Staaten mit Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -769,28 +829,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-15-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.15.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Umfang der Nutzung ländereigener Ergebnisrahmenwerke und Planungsinstrumente durch Geber von Entwicklungszusammenarbeit
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Umfang der Nutzung ländereigener Ergebnisrahmenwerke und Planungsinstrumente durch Geber von Entwicklungszusammenarbeit
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -802,28 +866,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-16-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.16.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der Staaten, die Fortschritte bei der Kontrolle der Multi-Stakeholder-Entwicklungswirksamkeit, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen, berichten
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Staaten, die Fortschritte bei der Kontrolle der Multi-Stakeholder-Entwicklungswirksamkeit, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen, berichten
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -835,28 +903,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-17-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.17.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Betrag an US-Dollar, der für (a) öffentlich-private Partnerschaften und (b) zivilgesellschaftliche Partnerschaften zugesagt wurde
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Betrag an US-Dollar, der für (a) öffentlich-private Partnerschaften und (b) zivilgesellschaftliche Partnerschaften zugesagt wurde
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -868,70 +940,78 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-18-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.18.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Nachhaltigkeitsindikatoren, die auf nationaler Ebene vollständig - sofern gemäß dem Unterziel relevant - disaggregiert sind, in Übereinstimmung mit den Grundprinzipien der amtlichen Statistik
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Nachhaltigkeitsindikatoren, die auf nationaler Ebene vollständig - sofern gemäß dem Unterziel relevant - disaggregiert sind, in Übereinstimmung mit den Grundprinzipien der amtlichen Statistik
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-18-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.18.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Anzahl der Staaten mit einer nationalen statistischen Gesetzgebung im Einklang mit den Grundprinzipien der amtlichen Statistik
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anzahl der Staaten mit einer nationalen statistischen Gesetzgebung im Einklang mit den Grundprinzipien der amtlichen Statistik
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-18-3">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.18.3
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der Staaten mit einem nationalen statistischen Plan, der vollständig finanziert ist und umgesetzt wird, nach Quelle der Finanzierung
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Staaten mit einem nationalen statistischen Plan, der vollständig finanziert ist und umgesetzt wird, nach Quelle der Finanzierung
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -943,49 +1023,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-19-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.19.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Dollar-Wert aller zur Verfügung gestellten Ressourcen zur Stärkung der statistischen Kapazität in Entwicklungsländern
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Dollar-Wert aller zur Verfügung gestellten Ressourcen zur Stärkung der statistischen Kapazität in Entwicklungsländern
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/17-19-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             17.19.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben
           
         </a>
       </div>
     
-    </div></div>
+    </div>
+  
+</div>
 
 <footer role="contentinfo">
   <div class="container">
@@ -1000,21 +1086,6 @@ var translations = {
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-
-</script>
-
-<!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -1033,7 +1104,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190711140016'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190712111105'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1088,6 +1159,9 @@ $(function() {
 
 });
 </script>
+
+
+
 
 </body>
 </html>

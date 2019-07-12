@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -39,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -110,7 +109,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190711140016">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190712111105">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -118,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190711140016"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190712111105"></head>
 <body class="language-de">
 <!-- <div class="container"> -->
 
@@ -198,9 +197,7 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <!-- einzeiliger Kommentar -->
-        <!-- <img src="/sdg-indicators/assets/img/goals/de/17/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" /> -->
-        <img src="/sdg-indicators/assets/img/goals/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" />
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -211,7 +208,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-11">
+<div id="main-content" class="container goal-indicators goal-11 goal-by-target">
 
   
 
@@ -235,6 +232,7 @@ var translations = {
   
     
     
+    
     <div class="indicator-cards target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
@@ -244,28 +242,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-1-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.1.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der urbanen Bevölkerung, die in Slums, informellen Siedlungen oder unangemessenen Unterkünften lebt
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der urbanen Bevölkerung, die in Slums, informellen Siedlungen oder unangemessenen Unterkünften lebt
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -277,28 +279,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-2-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.2.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Bevölkerung, die einen angemessenen Zugang zu öffentlichen Verkehrsmitteln hat, nach Geschlecht, Alter und Menschen mit Behinderungen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Bevölkerung, die einen angemessenen Zugang zu öffentlichen Verkehrsmitteln hat, nach Geschlecht, Alter und Menschen mit Behinderungen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -310,49 +316,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-3-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.3.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Verhältnis der Flächennutzungs- zur Bevölkerungswachstumsrate
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Verhältnis der Flächennutzungs- zur Bevölkerungswachstumsrate
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-3-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.3.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Städte mit einer direkten Beteiligungsstruktur der Zivilgesellschaft an der Stadtplanung und -verwaltung, die regelmäßig und demokratisch arbeitet
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Städte mit einer direkten Beteiligungsstruktur der Zivilgesellschaft an der Stadtplanung und -verwaltung, die regelmäßig und demokratisch arbeitet
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -364,28 +376,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-4-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.4.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Gesamtausgaben (öffentlich und privat) pro Kopf für die Bewahrung, den Schutz und die Erhaltung des Kultur- und Naturerbes, nach Art des Erbes (Kultur, Natur, gemischt und durch das Welterbezentrum ernannt), Regierungsebene (national, regional und lokal/kommunal), Art der Ausgabe (Betriebsausgabe/Investition) und Art der privaten Finanzierung (Sachspenden, privater gemeinnütziger Sektor und Förderer)
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Gesamtausgaben (öffentlich und privat) pro Kopf für die Bewahrung, den Schutz und die Erhaltung des Kultur- und Naturerbes, nach Art des Erbes (Kultur, Natur, gemischt und durch das Welterbezentrum ernannt), Regierungsebene (national, regional und lokal/kommunal), Art der Ausgabe (Betriebsausgabe/Investition) und Art der privaten Finanzierung (Sachspenden, privater gemeinnütziger Sektor und Förderer)
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -397,49 +413,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-5-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.5.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-5-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.5.2
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Unmittelbarer wirtschaftlicher Schaden im Verhältnis zum globalen BIP, Schäden kritischer Infrastruktur und Anzahl der Ausfälle von Grundversorgungsleistungen infolge von Katastrophen
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Unmittelbarer wirtschaftlicher Schaden im Verhältnis zum globalen BIP, Schäden kritischer Infrastruktur und Anzahl der Ausfälle von Grundversorgungsleistungen infolge von Katastrophen
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -451,49 +473,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-6-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.6.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Anteil der Siedlungsabfälle, die regelmäßig gesammelt und ordnungsgemäß entsorgt werden, an den insgesamt erzeugten Siedlungsabfällen, nach Städten
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Siedlungsabfälle, die regelmäßig gesammelt und ordnungsgemäß entsorgt werden, an den insgesamt erzeugten Siedlungsabfällen, nach Städten
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-6-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.6.2
-            <span class="status success">Daten verfügbar</span>
-          </span> Jahresmittelwerte für Feinstaub (z. B. PM2,5 und PM10) in Städten (bevölkerungsgewichtet)
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Jahresmittelwerte für Feinstaub (z. B. PM2,5 und PM10) in Städten (bevölkerungsgewichtet)
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -505,49 +533,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-7-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.7.1
-            <span class="status success">Daten verfügbar</span>
-          </span> Durchschnittlicher Anteil der bebauten Fläche in Städten, die als Freifläche öffentlich zugänglich ist, nach Geschlecht, Alter und Menschen mit Behinderungen
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Durchschnittlicher Anteil der bebauten Fläche in Städten, die als Freifläche öffentlich zugänglich ist, nach Geschlecht, Alter und Menschen mit Behinderungen
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-7-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.7.2
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Personen, die in den vergangenen 12&nbsp;Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Ort des Geschehens
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Personen, die in den vergangenen 12&nbsp;Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Ort des Geschehens
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -559,28 +593,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-a-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.a.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der Bevölkerung in Städten, die Stadt- und Regionalentwicklungspläne unter Berücksichtigung der Bevölkerungsprognosen und des Ressourcenbedarfs umsetzen, nach Größe der Stadt
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Bevölkerung in Städten, die Stadt- und Regionalentwicklungspläne unter Berücksichtigung der Bevölkerungsprognosen und des Ressourcenbedarfs umsetzen, nach Größe der Stadt
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -592,49 +630,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-b-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.b.1
-            <span class="status warning">in Bearbeitung</span>
-          </span> Anzahl der Staaten, die nationale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit dem Sendai-Rahmenwerk zur Katastrophenvorsorge 2015-2030 verabschiedet und umgesetzt haben
+            <span class="status inprogress">
+              in Bearbeitung
+            </span>
+          </span>
+          Anzahl der Staaten, die nationale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit dem Sendai-Rahmenwerk zur Katastrophenvorsorge 2015-2030 verabschiedet und umgesetzt haben
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-b-2">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.b.2
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der lokalen Regierungen, die lokale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit den nationalen Strategien zur Katastrophenvorsorge verabschiedet und umgesetzt haben
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der lokalen Regierungen, die lokale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit den nationalen Strategien zur Katastrophenvorsorge verabschiedet und umgesetzt haben
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -646,28 +690,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/11-c-1">
           <span>
-            <label class="hidden-md hidden-lg">Indikator</label>
             11.c.1
-            <span class="status danger">Datenquellenanalyse</span>
-          </span> Anteil der finanziellen Unterstützung, die den am wenigsten entwickelten Ländern für den Umbau zu und Neubau von nachhaltigen, widerstandsfähigen und ressourceneffizienten Gebäuden unter Verwendung lokaler Materialien bereitgestellt wird
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der finanziellen Unterstützung, die den am wenigsten entwickelten Ländern für den Umbau zu und Neubau von nachhaltigen, widerstandsfähigen und ressourceneffizienten Gebäuden unter Verwendung lokaler Materialien bereitgestellt wird
           
         </a>
       </div>
     
-    </div></div>
+    </div>
+  
+</div>
 
 <footer role="contentinfo">
   <div class="container">
@@ -682,21 +730,6 @@ var translations = {
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-
-</script>
-
-<!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -715,7 +748,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190711140016'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190712111105'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -770,6 +803,9 @@ $(function() {
 
 });
 </script>
+
+
+
 
 </body>
 </html>

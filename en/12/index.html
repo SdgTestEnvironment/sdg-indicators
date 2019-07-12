@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
@@ -39,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -110,7 +109,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190711140016">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20190712111105">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -118,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190711140016"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20190712111105"></head>
 <body class="language-en">
 <!-- <div class="container"> -->
 
@@ -198,9 +197,7 @@ var translations = {
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <!-- einzeiliger Kommentar -->
-        <!-- <img src="/sdg-indicators/assets/img/goals/en/17/12.png" alt="Responsible consumption and production - Goal 12" /> -->
-        <img src="/sdg-indicators/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" />
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -211,7 +208,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-12">
+<div id="main-content" class="container goal-indicators goal-12 goal-by-target">
 
   
 
@@ -235,6 +232,7 @@ var translations = {
   
     
     
+    
     <div class="indicator-cards target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
@@ -244,28 +242,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-1-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.1.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -277,49 +279,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-2-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.2.1
-            <span class="status success">Reported online</span>
-          </span> Material footprint, material footprint per capita, and material footprint per GDP
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Material footprint, material footprint per capita, and material footprint per GDP
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-2-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.2.2
-            <span class="status success">Reported online</span>
-          </span> Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -331,28 +339,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-3-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.3.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Global food loss index
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Global food loss index
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -364,49 +376,55 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-4-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.4.1
-            <span class="status success">Reported online</span>
-          </span> Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Number of parties to international multilateral environmental agreements on hazardous waste, and other chemicals that meet their commitments and obligations in transmitting information as required by each relevant agreement
           
         </a>
       </div>
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-4-2">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.4.2
-            <span class="status success">Reported online</span>
-          </span> Hazardous waste generated per capita and proportion of hazardous waste treated, by type of treatment
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Hazardous waste generated per capita and proportion of hazardous waste treated, by type of treatment
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -418,28 +436,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-5-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.5.1
-            <span class="status success">Reported online</span>
-          </span> National recycling rate, tons of material recycled
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          National recycling rate, tons of material recycled
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -451,28 +473,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-6-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.6.1
-            <span class="status success">Reported online</span>
-          </span> Number of companies publishing sustainability reports
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Number of companies publishing sustainability reports
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -484,28 +510,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-7-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.7.1
-            <span class="status success">Reported online</span>
-          </span> Number of countries implementing sustainable public procurement policies and action plans
+            <span class="status complete">
+              Reported online
+            </span>
+          </span>
+          Number of countries implementing sustainable public procurement policies and action plans
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -517,28 +547,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-8-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.8.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -550,28 +584,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-a-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.a.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Amount of support to developing countries on research and development for sustainable consumption and production and environmentally sound technologies
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Amount of support to developing countries on research and development for sustainable consumption and production and environmentally sound technologies
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -583,28 +621,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-b-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.b.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools
           
         </a>
       </div>
     
     </div>
+  
+    
     
     
     <div class="indicator-cards target col-md-6">
@@ -616,28 +658,32 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
-      
-      
-      
-      
-      
-      
-      
 
+      
+      
+      
+      
+      
+      
+      
       
 
       <div class="col-md-12 ">
         <a href="/sdg-indicators/en/12-c-1">
           <span>
-            <label class="hidden-md hidden-lg">Indicator</label>
             12.c.1
-            <span class="status danger">Exploring data sources</span>
-          </span> Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as a proportion of total national expenditure on fossil fuels
+            <span class="status notstarted">
+              Exploring data sources
+            </span>
+          </span>
+          Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as a proportion of total national expenditure on fossil fuels
           
         </a>
       </div>
     
-    </div></div>
+    </div>
+  
+</div>
 
 <footer role="contentinfo">
   <div class="container">
@@ -652,21 +698,6 @@ var translations = {
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-
-
-</script>
-
-<!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -685,7 +716,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20190711140016'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20190712111105'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -740,6 +771,9 @@ $(function() {
 
 });
 </script>
+
+
+
 
 </body>
 </html>
