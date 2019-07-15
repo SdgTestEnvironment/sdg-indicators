@@ -27,6 +27,11 @@
   margin-bottom: 1.5rem;
   clear: left;
   font-weight: bold; }
+  #main-content.goal-indicators .indicator-cards.target span {
+    font-size: larger; }
+    @media screen and (min-width: 992px) {
+      #main-content.goal-indicators .indicator-cards.target span {
+        font-size: inherit; } }
 
 #main-content .tab-content img {
   max-height: 130px;
