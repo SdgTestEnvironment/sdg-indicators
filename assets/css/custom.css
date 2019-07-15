@@ -28,6 +28,10 @@
   clear: left;
   font-weight: bold; }
 
+#main-content .tab-content img {
+  max-height: 130px;
+  width: auto; }
+
 header {
   background: #fff;
   border-bottom: #eaeaea 5px solid; }
