@@ -242,7 +242,7 @@
           "id": "3-d-1",
           "title": "Kapazitäten für internationale Gesundheitsvorschriften (IGV) und Gesundheitsnotfallvorsorge",
           "description": "",
-          "keywords": "Indikator 3.d.1, Durchschnitt der 13 IGV-Kapazitäten-Punktwerte",
+          "keywords": "Indikator 3.d.1, Durchschnitt der 13 IGV-Kapazitäten-Punktwerte, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-d-1",
           "status": "complete"
         },{
@@ -402,21 +402,21 @@
           "id": "4-4-1",
           "title": "Anteil der Jugendlichen und Erwachsenen mit Kompetenzen in Informations- und Kommunikationstechnologie (IKT), nach Art der Kompetenz",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.4.1, Personen (10 Jahre und älter) mit computerbezogenen Aktivitäten in den letzten 12 Monaten, Organisation der Vereinten Nationen für Bildung Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Internationale Fernmeldeunion (ITU)",
           "href": "/sdg-indicators/4-4-1",
           "status": "complete"
         },{
           "id": "4-b-1",
           "title": "Umfang der Ausgaben öffentlicher Entwicklungszusammenarbeit (ODA) für Stipendien nach Sektor und Art des Studiums",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.b.1, Bruttoentwicklungsausgaben für Studienplatzkosten, Bruttoentwicklungsausgaben für Stipendien, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/4-b-1",
           "status": "complete"
         },{
           "id": "4-a-1",
           "title": "Anteil der Schulen mit Zugang zu (a) Strom; (b) Internet für Unterrichtszwecke; (c) Computern für Unterrichtszwecke; (d) angepasste Infrastruktur und Materialien für Schüler mit Behinderungen; (e) Trinkwasser; (f) geschlechterspezifischen sanitären Anlagen; und g) grundlegende Ausstattung zum Händewaschen (gemäß den WASH-Indikator-Definitionen)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.a.1, Schulen mit Zugang zu, a) Elektrizität, b) Internet für pädagogische Zwecke, c) Computer für pädagogische Zwecke, d) Infrastruktur und Materialien für Studierende mit Behinderung, e) Trinkwasser, f) geschlechterspezifische, grundlegende sanitäre Anlagen, g) grundlegender Ausstattung zum Händewaschen (gemäß der WASH Indikator-Definition), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Kultusministerkonferenz",
           "href": "/sdg-indicators/4-a-1",
           "status": "complete"
         },{
@@ -430,7 +430,7 @@
           "id": "4-1-1",
           "title": "Anteil der Kinder und Jugendlichen, die (a) in Klasse 2/3; (b) am Ende der Grundschule und (c) am Ende der Sekundarstufe I ein Mindestleistungsniveau in (i) Lesen und (ii) Mathematik erreichen, nach Geschlecht",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.1.1, a) Kinder und Jugendliche in den Klassen 2/3 mit einem Mindestleistungsniveau in, Lesen, Mathematik, Kinder und Jugendliche am Ende der Grundschule mit einem Mindestleistungsniveau in, Kinder und Jugendliche am Ende der Sekundarstufe I mit einem Mindestleistungsniveau in, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD), PISA",
           "href": "/sdg-indicators/4-1-1",
           "status": "complete"
         },{
@@ -444,14 +444,14 @@
           "id": "4-2-2",
           "title": "Teilnahmequote an frühkindlicher Bildung (ein Jahr vor dem offiziellen Einschulungsalter), nach Geschlecht",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.2.2, Kinder in Kindertagesbetreuung im Alter von 5 Jahren, Organisation der Vereinten Nationen für Bildung Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
           "href": "/sdg-indicators/4-2-2",
           "status": "complete"
         },{
           "id": "4-6-1",
           "title": "Anteil der Bevölkerung einer bestimmten Altersgruppe, die über ein festes Mindestniveau an funktionalen (a) Lese- und (b) Rechenfähigkeiten verfügt, nach Geschlecht",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.6.1, a) Mindestkompetenz Lesen,  b) Mindestkompetenz Rechnen, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/4-6-1",
           "status": "complete"
         },{
@@ -465,14 +465,14 @@
           "id": "4-5-1",
           "title": "Paritäts-Indizes (weiblich/männlich, rural/urban, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.5.1, Geschlechtsparitätsindex, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/4-5-1",
           "status": "complete"
         },{
           "id": "4-3-1",
           "title": "Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vergangenen 12&nbsp;Monaten, nach Geschlecht",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 4.3.1, Teilnahmequote der 15 bis unter 25-Jährigen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Teilnahmequote der Erwachsenen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Organisation der Vereinten Nationen für Bildung Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
           "href": "/sdg-indicators/4-3-1",
           "status": "complete"
         }]
