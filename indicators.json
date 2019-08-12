@@ -270,7 +270,7 @@
           "id": "3-7-2",
           "title": "Geburtenrate bei Jugendlichen (10-14&nbsp;Jahre; 15-19&nbsp;Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe",
           "description": "",
-          "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren",
+          "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren, Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)",
           "href": "/sdg-indicators/3-7-2",
           "status": "complete"
         },{
@@ -1129,7 +1129,7 @@
           "id": "12-5-1",
           "title": "Nationale Recyclingquote, Tonnen an recyceltem Material",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.5.1, Recycelte Siedlungsabfälle, Nationale Recyclingquote von Siedlungsabfällen, Abfall, Statistischen Division der UN (UNSD), Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-5-1",
           "status": "complete"
         },{
@@ -1143,7 +1143,7 @@
           "id": "12-6-1",
           "title": "Anzahl der Unternehmen, die Nachhaltigkeitsberichte veröffentlichen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.6.1, Organisationen mit Umweltmanagement und Registrierung bei der Umweltprüfung (EMAS), Umweltprogramm der Vereinten Nationen (UNEP), Welthandels- und Entwicklungskonferenz (UNCTAD)",
           "href": "/sdg-indicators/12-6-1",
           "status": "complete"
         },{
@@ -1157,14 +1157,14 @@
           "id": "12-7-1",
           "title": "Anzahl der Staaten, die nachhaltige öffentliche Beschaffungspolitik und Aktionspläne umsetzen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.7.1, Nachhaltigkeitsstrategie, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-7-1",
           "status": "complete"
         },{
           "id": "12-2-2",
           "title": "Inländischer Materialverbrauch, inländischer Materialverbrauch pro Kopf und inländischer Materialverbrauch pro BIP",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.2.2, Inländische Materialverwendung (DMC; abiotische und biotische Rohstoffe), Inländische Materialverwendung (DMC) je Einwohner, Inländische Materialverwendung (DMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-2-2",
           "status": "complete"
         },{
@@ -1178,7 +1178,7 @@
           "id": "12-4-1",
           "title": "Anzahl der Vertragsparteien internationaler multilateraler Umweltabkommen über gefährliche Abfälle und andere Chemikalien, die ihren Bekenntnissen und Verpflichtungen nachkommen, indem sie die gemäß dem jeweiligen Übereinkommen geforderten Informationen übermitteln",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.4.1, Übereinstimmung mit dem Basler Übereinkommen, Übereinstimmung mit dem Minamata Übereinkommen, Übereinstimmung mit dem Montrealer Protokoll, Übereinstimmung mit dem Rotterdamer Übereinkommen, Übereinstimmung mit dem Stockholmer Übereinkommen, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-4-1",
           "status": "complete"
         },{
@@ -1199,7 +1199,7 @@
           "id": "12-4-2",
           "title": "Erzeugte gefährliche Abfälle pro Kopf und Anteil der behandelten gefährlichen Abfälle, nach Art der Behandlung",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.4.2, a) Erzeugte gefährliche Abfälle, b) Behandelte gefährliche Abfälle, Abfall, Sondermüll, Statistischen Division der UN (UNSD), Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-4-2",
           "status": "complete"
         },{
@@ -1213,7 +1213,7 @@
           "id": "12-2-1",
           "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck pro BIP",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 12.2.1, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC; abiotische und biotische Rohstoffe), Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) je Einwohner, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-2-1",
           "status": "complete"
         }]
@@ -1240,7 +1240,7 @@
           "id": "13-1-2",
           "title": "Anzahl der Staaten, die nationale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit dem Sendai-Rahmenwerk zur Katastrophenvorsorge 2015-2030 verabschiedet und umgesetzt haben",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 13.1.2, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/13-1-2",
           "status": "inprogress"
         },{
@@ -1275,7 +1275,7 @@
           "id": "13-2-1",
           "title": "Anzahl der Staaten, die die Ausarbeitung oder Umsetzung einer/s integrierten Politik/Strategie/Plans verkündet haben, welche/r ihre Fähigkeit zur Anpassung an die negativen Auswirkungen des Klimawandels erhöht und die Widerstandsfähigkeit gegenüber Klimaänderungen als auch eine rückläufige Entwicklung der Treibhausgasemissionen fördert ohne die Nahrungsmittelproduktion zu gefährden (einschließlich eines nationalen Anpassungsplans, national festgelegten Beitrags, nationaler Kommunikation, zweijährlichen Aktualisierungsberichts oder anderer)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 13.2.1, Anpassungsstrategie an den Klimawandel, Rahmenübereinkommen der Vereinten Nationen über Klimaänderungen (UNFCCC)",
           "href": "/sdg-indicators/13-2-1",
           "status": "complete"
         }]
@@ -1288,7 +1288,7 @@
           "id": "14-4-1",
           "title": "Anteil der Fischbestände innerhalb des biologisch nachhaltigen Niveaus",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 14.4.1, Nachhaltig befischte Fischbestände, Untersuchte Fischbestände zu den wirtschaftlich genutzten Beständen, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/14-4-1",
           "status": "complete"
         },{
@@ -1309,7 +1309,7 @@
           "id": "14-6-1",
           "title": "Grad der Umsetzung internationaler Instrumente mit dem Ziel zur Bekämpfung illegaler, nicht gemeldeter und unregulierter Fischerei",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 14.6.1, Grad der Bekämpfung illegaler, nicht gemeldeter und ungeregelter Fischerei, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/14-6-1",
           "status": "complete"
         },{
@@ -1330,7 +1330,7 @@
           "id": "14-5-1",
           "title": "Abdeckung von Meeresgebieten durch Schutzgebiete",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 14.5.1, Marine Schlüsselgebiete der biologischen Vielfalt, die unter Schutz stehen, Meeresschutzgebiete, UNEP Weltüberwachungszentrum für Naturschutz (UNEP-WCMC), BirdLife International (BLI), Internationale Union zur Bewahrung der Natur (IUCN)",
           "href": "/sdg-indicators/14-5-1",
           "status": "complete"
         },{
@@ -1344,14 +1344,14 @@
           "id": "14-a-1",
           "title": "Anteil am gesamten Forschungsbudget für Forschung im Bereich der Meerestechnik",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 14.a.1, Bundeshaushalt für Forschung und Entwicklung im Bereich Küsten-, Ozean- und Polarforschung, Geowissenschaft, Zwischenstaatliche Ozeanographische Kommission (IOC)",
           "href": "/sdg-indicators/14-a-1",
           "status": "complete"
         },{
           "id": "14-3-1",
           "title": "Durchschnittliche Versauerung der Meere (pH) gemessen an einer vereinbarten Reihe von repräsentativen Probeentnahmestationen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 14.3.1, Durchschnittliche pH-Konzentration in der Deutschen Bucht, Zwischenstaatliche Ozeanographische Kommission (IOC), Versäuerung der Meere",
           "href": "/sdg-indicators/14-3-1",
           "status": "complete"
         }]
@@ -1371,14 +1371,14 @@
           "id": "15-c-1",
           "title": "Anteil der gehandelten Wildtiere, die gewildert oder geschmuggelt wurden",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.c.1, Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten, Aufgriffe aufgrund des Artenschutzes, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/15-c-1",
           "status": "complete"
         },{
           "id": "15-b-1",
           "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.b.1, Verpflichtungen (ODA) für Biodiversität, Bruttoentwicklungsausgaben für den Forstsektor,",
           "href": "/sdg-indicators/15-b-1",
           "status": "complete"
         },{
@@ -1392,42 +1392,42 @@
           "id": "15-4-2",
           "title": "Index der Grünbedeckung in den Bergen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.4.2, Montain Green Cover Index, Bundesamt für Kartographie und Geodäsie (BKG)",
           "href": "/sdg-indicators/15-4-2",
           "status": "complete"
         },{
           "id": "15-2-1",
           "title": "Fortschritt bei der nachhaltigen Waldbewirtschaftung",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.2.1, Gesamtbestand der obererdigen Biomasse in Wäldern, Waldfläche in Schutzgebieten, Jährliche Veränderung der Waldfläche, Waldflächen mit einem unabhängig geprüften Wald-Management-System, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/15-2-1",
           "status": "complete"
         },{
           "id": "15-1-1",
           "title": "Waldfläche als Anteil an der gesamten Landfläche",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.1.1, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/15-1-1",
           "status": "complete"
         },{
           "id": "15-5-1",
           "title": "Rote Liste Index",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.5.1, Internationale Union zur Bewahrung der Natur (IUCN), BirdLife International (BLI)",
           "href": "/sdg-indicators/15-5-1",
           "status": "complete"
         },{
           "id": "15-a-1",
           "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.a.1, Bruttoentwicklungsausgaben für Biodiversität, Umweltschutzausgaben, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/15-a-1",
           "status": "complete"
         },{
           "id": "15-1-2",
           "title": "Anteil der bedeutenden Gebiete für Biodiversität an Land und im Süßwasser, die in Schutzgebieten liegen, nach Ökosystemtyp",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.1.2, Schlüsselgebiete der biologischen Vielfalt, die unter Schutz stehen, Schutzgebiete an Land, Umweltprogramm der Vereinten Nationen - Weltüberwachungszentrum für Naturschutz (UNEP-WCMC), Umweltprogramm der Vereinten Nationen (UNEP), Internationale Union zur Bewahrung der Natur (IUCN)",
           "href": "/sdg-indicators/15-1-2",
           "status": "complete"
         },{
@@ -1455,7 +1455,7 @@
           "id": "15-7-1",
           "title": "Anteil der gehandelten Wildtiere, die gewildert oder geschmuggelt wurden",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 15.7.1, Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten, Aufgriffe aufgrund des Artenschutzes, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/15-7-1",
           "status": "complete"
         }]
