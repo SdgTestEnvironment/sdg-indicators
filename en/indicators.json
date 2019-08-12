@@ -942,7 +942,7 @@
           "id": "10-2-1",
           "title": "Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 10.2.1, Bevölkerung, die mit weniger als 50% des mittleren Einkommens lebt, Armut, Einkommen, Weltbank (WB)",
           "href": "/sdg-indicators/en/10-2-1",
           "status": "complete"
         },{
@@ -970,14 +970,14 @@
           "id": "10-1-1",
           "title": "Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 10.1.1, Wachstumsrate des Einkommens der ärmsten 40 Prozent der Bevölkerung, Wachstumsrate des Einkommens der gesamten Bevölkerung, Weltbank (WB)",
           "href": "/sdg-indicators/en/10-1-1",
           "status": "complete"
         },{
           "id": "10-5-1",
           "title": "Financial Soundness Indicators",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 10.5.1, Eigenkapitalquote, Verbindlichkeiten, Relation zwischen offener Fremdwährungsposition und regulatorischen Eigenmitteln, Relation zwischen notleidenden Krediten (abzüglich Risikovorsorge) und bilanziellem Eigenkapital, Anteil der notleidenden Kredite an den Bruttokrediten insgesamt, Relation zwischen regulatorischem Kernkapital (Tier 1) und anrechnungspflichtigen Positionen, Gesamtkapitalrentabilität, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/en/10-5-1",
           "status": "complete"
         },{
@@ -991,7 +991,7 @@
           "id": "10-b-1",
           "title": "Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 10.b.1, Öffentliche und Private Nettoentwicklungsausgaben insgesamt, Öffentliche Nettoentwicklungsausgaben (ODA), Andere öffentliche Nettoleistungen (OOF), Öffentlich unterstützte Exportkredite (Nettoauszahlungen), Private konzessionäre Leistungen (der Nichtregierungsorganisationen) (Nettoauszahlungen), Private Leistungen zu marktüblichen Bedingungen (Nettoauszahlungen), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/en/10-b-1",
           "status": "complete"
         },{
@@ -1005,7 +1005,7 @@
           "id": "10-4-1",
           "title": "Labour share of GDP, comprising wages and social protection transfers",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 10.4.1, Anteil des Arbeitnehmerentgelts am BIP, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/en/10-4-1",
           "status": "complete"
         }]
@@ -1025,7 +1025,7 @@
           "id": "11-6-1",
           "title": "Proportion of urban solid waste regularly collected and with adequate final discharge out of total urban solid waste generated, by cities",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.6.1, Siedlungsabfälle, die regelmäßig gesammelt und behandelt werden, Erzeugte Siedlungsabfälle, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat), Statistischen Division der VN (UNSD)",
           "href": "/sdg-indicators/en/11-6-1",
           "status": "complete"
         },{
@@ -1039,21 +1039,21 @@
           "id": "11-6-2",
           "title": "Annual mean levels of fine particulate matter (e.g. PM2.5 and PM10) in cities (population weighted)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.6.2, Bevölkerungsgewichtete Jahresmittelwerte von PM10, Weltgesundheitsorganisation (WHO), Umweltbundesamt (UBA)",
           "href": "/sdg-indicators/en/11-6-2",
           "status": "complete"
         },{
           "id": "11-2-1",
           "title": "Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.2.1, Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 10 Minuten zu Fuß), Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 500 Metern), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/en/11-2-1",
           "status": "complete"
         },{
           "id": "11-b-1",
           "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.b.1, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/en/11-b-1",
           "status": "inprogress"
         },{
@@ -1067,7 +1067,7 @@
           "id": "11-7-1",
           "title": "Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.7.1, Anteil der Erholungsflächen an der Siedlungs- und Verkehrsfläche in Städten ab 100 000 Einwohner",
           "href": "/sdg-indicators/en/11-7-1",
           "status": "complete"
         },{
@@ -1081,14 +1081,14 @@
           "id": "11-3-2",
           "title": "Proportion of cities with a direct participation structure of civil society in urban planning and management that operate regularly and democratically",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.3.2, Städte mit gesetzlich vorgeschriebener öffentlicher Beteiligung bei der Stadtplanung, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/en/11-3-2",
           "status": "complete"
         },{
           "id": "11-3-1",
           "title": "Ratio of land consumption rate to population growth rate",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.3.1, Flächenverbrauchsrate,  Bevölkerungsentwicklung, Verhältnis der Siedlungs- und Verkehrsfläche zur Bevölkerung, Verhältnis Flächenverbrauchsrate zur Bevölkerungsentwicklung, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/en/11-3-1",
           "status": "complete"
         },{
@@ -1109,14 +1109,14 @@
           "id": "11-1-1",
           "title": "Proportion of urban population living in slums, informal settlements or inadequate housing",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.1.1, Materielle Deprivation bezogen auf die Wohn-Dimension (ein bis vier Probleme), Bevölkerung, deren Wohnung/Haus zu wenig Tageslicht bietet, Bevölkerung, in deren Wohnumgebung es Kriminalität, Gewalt oder Vandalismus gibt, Bevölkerung mit Lärmbelästigung in deren Wohnumgebung, Bevölkerung, in deren Wohnung/Haus es Feuchtigkeitsschäden gibt, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/en/11-1-1",
           "status": "complete"
         },{
           "id": "11-4-1",
           "title": "Total expenditure (public and private) per capita spent on the preservation, protection and conservation of all cultural and natural heritage, by type of heritage (cultural, natural, mixed and World Heritage Centre designation), level of government (national, regional and local/municipal), type of expenditure (operating expenditure/investment) and type of private funding (donations in kind, private non-profit sector and sponsorship)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 11.4.1, Ausgaben des Staates für Umweltschutz (COFOG Gruppe 5), Ausgaben des Staates für Freizeitgestaltung, Sport, Kultur und Religion (COFOG Gruppe 8), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/en/11-4-1",
           "status": "complete"
         }]
