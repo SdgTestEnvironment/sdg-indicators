@@ -124,7 +124,7 @@
           "id": "2-5-2",
           "title": "Anteil der einheimischen Arten, die als gefährdet oder nicht gefährdet klassifiziert sind oder deren Gefährdungsgrad unbekannt ist",
           "description": "",
-          "keywords": "Indikator 2.5.2, Gefährdungskategorie (nach FAO-Klassifikation), Gefährdungskategorie (nach nationaler Klassifikation), "Einheimische Nutztierrassen (Pferde, Rinder, Schweine, Schafe und Ziegen)"",
+          "keywords": "Indikator 2.5.2, Gefährdungskategorie (nach FAO-Klassifikation), Gefährdungskategorie (nach nationaler Klassifikation), Einheimische Nutztierrassen",
           "href": "/sdg-indicators/2-5-2",
           "status": "complete"
         },{
@@ -228,7 +228,7 @@
           "id": "3-1-2",
           "title": "Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.1.2, Lebendgeborene in Krankenhäusern",
           "href": "/sdg-indicators/3-1-2",
           "status": "complete"
         },{
@@ -326,21 +326,21 @@
           "id": "3-3-2",
           "title": "Tuberkulose-Inzidenz je 100&nbsp;000 Einwohner",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.3.2, Auftreten von Tuberkulose",
           "href": "/sdg-indicators/3-3-2",
           "status": "complete"
         },{
           "id": "3-1-1",
           "title": "Müttersterblichkeitsrate",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.1.1, Müttersterblichkeit",
           "href": "/sdg-indicators/3-1-1",
           "status": "complete"
         },{
           "id": "3-3-1",
           "title": "Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.3.1, Auftreten von HIV",
           "href": "/sdg-indicators/3-3-1",
           "status": "complete"
         },{
@@ -368,7 +368,7 @@
           "id": "3-2-1",
           "title": "Sterblichkeitsrate von Kindern unter 5&nbsp;Jahren",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.2.1, Säuglingssterblichkeit (unter 1 Jahr), Kindersterblichkeit unter 5 Jahren",
           "href": "/sdg-indicators/3-2-1",
           "status": "complete"
         },{
@@ -389,7 +389,7 @@
           "id": "3-2-2",
           "title": "Sterblichkeitsrate von Neugeborenen",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 3.2.2, Sterberate bei Neugeborenen",
           "href": "/sdg-indicators/3-2-2",
           "status": "complete"
         }]
