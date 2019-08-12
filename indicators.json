@@ -110,21 +110,21 @@
           "id": "2-2-1",
           "title": "Prävalenz von Kleinwuchs (Körpergröße zum Alter <&nbsp;-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5&nbsp;Jahren",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.2.1, Kleinwuchs bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-1",
           "status": "complete"
         },{
           "id": "2-4-1",
           "title": "Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger Bewirtschaftung",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.4.1, Landwirtschaftliche Flächen unter ökologischer Bewirtschaftung, Ökoanbaufläche an der gesamten Agrarfläche",
           "href": "/sdg-indicators/2-4-1",
           "status": "complete"
         },{
           "id": "2-5-2",
           "title": "Anteil der einheimischen Arten, die als gefährdet oder nicht gefährdet klassifiziert sind oder deren Gefährdungsgrad unbekannt ist",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.5.2, Gefährdungskategorie (nach FAO-Klassifikation), Gefährdungskategorie (nach nationaler Klassifikation), "Einheimische Nutztierrassen (Pferde, Rinder, Schweine, Schafe und Ziegen)"",
           "href": "/sdg-indicators/2-5-2",
           "status": "complete"
         },{
@@ -145,21 +145,21 @@
           "id": "2-2-2",
           "title": "Prävalenz von Fehlernährung (Gewicht zur Körpergröße >&nbsp;+2 oder <&nbsp;-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der WHO) bei Kindern unter 5&nbsp;Jahren, nach der Art (Auszehrung und Übergewicht)",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.2.2, Übergewicht bei Kindern unter 5 Jahren, Untergewicht (bezogen auf die Größe) bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-2",
           "status": "complete"
         },{
           "id": "2-b-1",
           "title": "Ausfuhrsubventionen für landwirtschaftliche Güter",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.b.1, Ausfuhrerstattungen",
           "href": "/sdg-indicators/2-b-1",
           "status": "complete"
         },{
           "id": "2-a-2",
           "title": "Öffentliche Leistungen insgesamt (öffentliche Entwicklungszusammenarbeit (ODA) plus sonstige öffentliche Ausgaben) für den Landwirtschaftssektor",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.a.2, Bruttoentwicklungsausgaben für die Landwirtschaft",
           "href": "/sdg-indicators/2-a-2",
           "status": "complete"
         },{
@@ -180,21 +180,21 @@
           "id": "2-5-1",
           "title": "Anzahl der pflanzlichen und tierischen genetischen Ressourcen für Ernährung und Landwirtschaft, die entweder in mittel- oder langfristigen Einrichtungen zu deren Erhalt gesichert sind",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.5.1, Tiergenetische Ressourcen, Pflanzengenetische Ressourcen",
           "href": "/sdg-indicators/2-5-1",
           "status": "complete"
         },{
           "id": "2-3-1",
           "title": "Produktionsvolumen je Arbeitskraft nach Unternehmensgrößenklassen der Betriebsgröße in Land-/Weide-/Forstwirtschaft",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.3.1, Arbeitsproduktivität in der Landwirtschaft, Arbeitsproduktivität in der Forstwirtschaft",
           "href": "/sdg-indicators/2-3-1",
           "status": "complete"
         },{
           "id": "2-a-1",
           "title": "Der 'Agriculture Orientation Index' für staatliche Ausgaben",
           "description": "",
-          "keywords": "",
+          "keywords": "Indikator 2.a.1, Agriculture Orientation Index für Staatsausgaben",
           "href": "/sdg-indicators/2-a-1",
           "status": "complete"
         }]
