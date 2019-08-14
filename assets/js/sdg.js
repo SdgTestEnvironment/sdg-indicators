@@ -1265,7 +1265,7 @@ var mapView = function () {
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
       mapOptions: {"tileURL":"https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}","tileOptions":{"id":null,"accessToken":null,"attribution":null},"minZoom":6},
-      mapLayers: [{"min_zoom":3,"max_zoom":10,"serviceUrl":"https://opendata.arcgis.com/datasets/33a15b8fd5624dd4800cc33ab5bad761_0.geojson","nameProperty":"GEN","idProperty":"OBJECTID","staticBorders":true}],
+      mapLayers: [{"min_zoom":3,"max_zoom":15,"serviceUrl":"https://opendata.arcgis.com/datasets/33a15b8fd5624dd4800cc33ab5bad761_0.geojson","nameProperty":"GEN","idProperty":"OBJECTID","staticBorders":true}],
     });
   };
 };
