@@ -130,7 +130,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           feature.properties[record.Year] = record.Value;
         });
         // Next normalize the geocode and name.
-        feature.properties.name = name;
+        feature.properties.name = translations.t(name);
         feature.properties.geocode = geocode;
         delete feature.properties[idProperty];
         delete feature.properties[nameProperty];
@@ -970,7 +970,7 @@ var indicatorDataStore = function(dataUrl) {
       datasetIndex = 0,
       getCombinationDescription = function(combination) {
         return _.map(Object.keys(combination), function(key) {
-          return combination[key];
+          return translations.t(combination[key]);
           //return key + ' ' + combination[key];
         }).join(', ');
       },
