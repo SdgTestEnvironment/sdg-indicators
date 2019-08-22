@@ -1264,7 +1264,7 @@ var mapView = function () {
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}","tileOptions":{"id":"mapbox.mapbox-terrain-v2","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":null},"colorRange":["#F6E8EC","#EED3DB","#E5BFCA","#DDAAB9","#D495A8","#CC8197","#C46C86","#BB5775","#B34264","#AA2E53","#A21942"],"noValueColor":"#f0f0f0"},
+      mapOptions: {"tileURL":"https://api.mapbox.com/tilesets/v1/sources/mobosse/hello-world?access_token={accessToken}","tileOptions":{"id":"mapbox.mapbox-terrain-v2","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":null},"colorRange":["#F6E8EC","#EED3DB","#E5BFCA","#DDAAB9","#D495A8","#CC8197","#C46C86","#BB5775","#B34264","#AA2E53","#A21942"],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":0,"max_zoom":20,"serviceUrl":"https://opendata.arcgis.com/datasets/33a15b8fd5624dd4800cc33ab5bad761_0.geojson","nameProperty":"GEN","idProperty":"OBJECTID","staticBorders":true}],
     });
   };
