@@ -25,7 +25,7 @@
           "status": "inprogress"
         },{
           "id": "1-4-2",
-          "title": "Anteil der erwachsenen Gesamtbevölkerung mit gesicherter Verfügungsgewalt über Grundeigentum, (a) mit gesetzlich anerkannter Dokumentation und (b) die ihr Eigentumsrecht als sicher erachten, nach Geschlecht und Art der Eigentumsverhältnisse",
+          "title": "Anteil der erwachsenen Gesamtbevölkerung mit gesicherter Verfügungsgewalt über Grundeigentum, (a) mit gesetzlich anerkannter Dokumentation und (b) die ihr Eigentumsrecht als sicher erachten, nach Geschlecht und nach Art der Eigentumsverhältnisse",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-4-2",
@@ -67,7 +67,7 @@
           "status": "notstarted"
         },{
           "id": "1-5-1",
-          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner",
+          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100.000 Einwohner",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-5-1",
@@ -88,14 +88,14 @@
           "status": "complete"
         },{
           "id": "1-1-1",
-          "title": "Anteil der Bevölkerung, die unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Erwerbsstatus  und geographischer Lage (urban/rural)",
+          "title": "Anteil der Bevölkerung, die unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Erwerbsstatus und geographischer Lage (urban/rural)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-1-1",
           "status": "notapplicable"
         },{
           "id": "1-2-1",
-          "title": "Anteil der Bevölkerung, die unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter",
+          "title": "Anteil der Bevölkerung, die unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter <img src='https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png' alt='Sonne' />",
           "description": "",
           "keywords": "Indikator 1.2.1, Armutsgefährdungsquote (nach Eurostat-Definition)",
           "href": "/sdg-indicators/1-2-1",
@@ -115,7 +115,7 @@
           "status": "notstarted"
         },{
           "id": "2-2-1",
-          "title": "Prävalenz von Kleinwuchs (Körpergröße zum Alter <&nbsp;-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5&nbsp;Jahren",
+          "title": "Prävalenz von Kleinwuchs (Körpergröße zum Alter < -2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5 Jahren",
           "description": "",
           "keywords": "Indikator 2.2.1, Kleinwuchs bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-1",
@@ -129,14 +129,14 @@
           "status": "notstarted"
         },{
           "id": "2-4-1",
-          "title": "Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger Bewirtschaftung",
+          "title": "Landwirtschaftliche Fläche unter produktiver und nachhaltiger Bewirtschaftung",
           "description": "",
           "keywords": "Indikator 2.4.1, Landwirtschaftliche Flächen unter ökologischer Bewirtschaftung, Ökoanbaufläche an der gesamten Agrarfläche",
           "href": "/sdg-indicators/2-4-1",
           "status": "complete"
         },{
           "id": "2-2-2",
-          "title": "Prävalenz von Fehlernährung (Gewicht zur Körpergröße >&nbsp;+2 oder <&nbsp;-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der WHO) bei Kindern unter 5&nbsp;Jahren, nach der Art (Auszehrung und Übergewicht)",
+          "title": "Prävalenz von Fehlernährung (Gewicht zur Körpergröße > +2 oder < -2 Standardabweichung vom Median des Wachstumsstandards für Kinder der WHO) bei Kindern unter 5 Jahren, nach der Art (Auszehrung und Übergewicht)",
           "description": "",
           "keywords": "Indikator 2.2.2, Übergewicht bei Kindern unter 5 Jahren, Untergewicht (bezogen auf die Größe) bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-2",
@@ -192,7 +192,7 @@
           "status": "complete"
         },{
           "id": "2-a-1",
-          "title": "Der 'Agriculture Orientation Index' für staatliche Ausgaben",
+          "title": "Der Agriculture Orientation Index für staatliche Ausgaben",
           "description": "",
           "keywords": "Indikator 2.a.1, Agriculture Orientation Index für Staatsausgaben",
           "href": "/sdg-indicators/2-a-1",
@@ -205,7 +205,7 @@
       "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
       "indicators": [{
           "id": "3-5-2",
-          "title": "Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15&nbsp;Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol",
+          "title": "Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15 Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol",
           "description": "",
           "keywords": "Indikator 3.5.2, Schädlicher Alkoholgebrauch,  Weltgesundheitsorganisation (WHO), Bundesministerium für Ernährung und Landwirtschaft (BMEL)",
           "href": "/sdg-indicators/3-5-2",
@@ -226,7 +226,7 @@
           "status": "complete"
         },{
           "id": "3-3-4",
-          "title": "Hepatitis-B-Inzidenz je 100&nbsp;000 Einwohner",
+          "title": "Auftreten von Hepatitis B je 100&nbsp;000 Einwohner",
           "description": "",
           "keywords": "Indikator 3.3.4, Auftreten von Hepatitis B, Weltgesundheitsorganisation (WHO), Robert Koch Institut (RKI)",
           "href": "/sdg-indicators/3-3-4",
@@ -247,7 +247,7 @@
           "status": "complete"
         },{
           "id": "3-4-2",
-          "title": "Sterblichkeitsrate bei Suizid",
+          "title": "Sterblichkeitsrate durch Suizid",
           "description": "",
           "keywords": "Indikator 3.4.2, Sterblichkeitsrate durch Suizid, Selbstmord, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-4-2",
@@ -296,14 +296,14 @@
           "status": "complete"
         },{
           "id": "3-7-1",
-          "title": "Anteil der Frauen im gebärfähigen Alter (15-49&nbsp;Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können",
+          "title": "Anteil der Frauen im gebärfähigen Alter (15-49 Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-7-1",
           "status": "notstarted"
         },{
           "id": "3-2-1",
-          "title": "Sterblichkeitsrate von Kindern unter 5&nbsp;Jahren",
+          "title": "Sterblichkeitsrate von Kindern unter 5 Jahren",
           "description": "",
           "keywords": "Indikator 3.2.1, Säuglingssterblichkeit (unter 1 Jahr), Kindersterblichkeit unter 5 Jahren",
           "href": "/sdg-indicators/3-2-1",
@@ -324,7 +324,7 @@
           "status": "complete"
         },{
           "id": "3-1-2",
-          "title": "Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal",
+          "title": "Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersona",
           "description": "",
           "keywords": "Indikator 3.1.2, Lebendgeborene in Krankenhäusern",
           "href": "/sdg-indicators/3-1-2",
@@ -338,28 +338,28 @@
           "status": "complete"
         },{
           "id": "3-9-3",
-          "title": "Sterblichkeit infolge unbeabsichtigter Vergiftung",
+          "title": "Sterblichkeitsrate infolge von unbeabsichtigtem Vergiften",
           "description": "",
           "keywords": "Indikator 3.9.3, Sterblichkeit infolge unbeabsichtigter Vergiftung, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-9-3",
           "status": "complete"
         },{
           "id": "3-a-1",
-          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15&nbsp;Jahren und älter",
+          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15 Jahren und älter",
           "description": "",
           "keywords": "Indikator 3.a.1, Tabakgebrauch in der Bevölkerung ab 15 Jahren, Weltgesundheitsorganisation (WHO), Rahmenübereinkommen der WHO zur Eindämmung des Tabakgebrauchs (WHO FCTC)",
           "href": "/sdg-indicators/3-a-1",
           "status": "complete"
         },{
           "id": "3-3-1",
-          "title": "Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppen",
+          "title": "Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppe",
           "description": "",
           "keywords": "Indikator 3.3.1, Auftreten von HIV",
           "href": "/sdg-indicators/3-3-1",
           "status": "complete"
         },{
           "id": "3-7-2",
-          "title": "Geburtenrate bei Jugendlichen (10-14&nbsp;Jahre; 15-19&nbsp;Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe",
+          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre; 15-19 Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe",
           "description": "",
           "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren, Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)",
           "href": "/sdg-indicators/3-7-2",
@@ -414,7 +414,7 @@
           "status": "complete"
         },{
           "id": "4-c-1",
-          "title": "Anteil der Lehrer in: (a) Vorschule (b) Grundschule (c ) Sekundarstufe I und (d) Sekundarstufe II, die vor oder während ihrer Tätigkeit mindestens die geforderte Grundausbildung (z. B. pädagogisches Training) zum Unterrichten für die entsprechende Klassenstufe im jeweiligen Land erhalten haben",
+          "title": "Anteil der Lehrer in: (a) Vorschule; (b) Grundschule; (c ) Sekundarstufe I; und (d) Sekundarstufe II, die vor oder während ihrer Tätigkeit mindestens die geforderte Grundausbildung (z. B. pädagogisches Training) zum Unterrichten für die entsprechende Klassenstufe im jeweiligen Land erhalten haben",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-c-1",
@@ -428,28 +428,28 @@
           "status": "complete"
         },{
           "id": "4-a-1",
-          "title": "Anteil der Schulen mit Zugang zu (a) Strom; (b) Internet für Unterrichtszwecke; (c) Computern für Unterrichtszwecke; (d) angepasste Infrastruktur und Materialien für Schüler mit Behinderungen; (e) Trinkwasser; (f) geschlechterspezifischen sanitären Anlagen; und g) grundlegende Ausstattung zum Händewaschen (gemäß den WASH-Indikator-Definitionen)",
+          "title": "Anteil der Schulen mit Zugang zu: (a) Strom; (b) Internet für Unterrichtszwecke; (c) Computern für Unterrichtszwecke; (d) angepasste Infrastruktur und Materialien für Schüler mit Behinderungen; (e) Trinkwasser; (f) geschlechterspezifischen sanitären Anlagen und (g) grundlegender Ausstattung zum Händewaschen (gemäß den WASH-Indikator-Definitionen)",
           "description": "",
           "keywords": "Indikator 4.a.1, Schulen mit Zugang zu, a) Elektrizität, b) Internet für pädagogische Zwecke, c) Computer für pädagogische Zwecke, d) Infrastruktur und Materialien für Studierende mit Behinderung, e) Trinkwasser, f) geschlechterspezifische, grundlegende sanitäre Anlagen, g) grundlegender Ausstattung zum Händewaschen (gemäß der WASH Indikator-Definition), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Kultusministerkonferenz",
           "href": "/sdg-indicators/4-a-1",
           "status": "complete"
         },{
           "id": "4-3-1",
-          "title": "Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vergangenen 12&nbsp;Monaten, nach Geschlecht",
+          "title": "Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vergangenen 12 Monaten, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.3.1, Teilnahmequote der 15 bis unter 25-Jährigen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Teilnahmequote der Erwachsenen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Organisation der Vereinten Nationen für Bildung Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
           "href": "/sdg-indicators/4-3-1",
           "status": "complete"
         },{
           "id": "4-7-1",
-          "title": "Umfang, in dem (i) Bildung zu globaler Staatsbürgerschaft und (ii) Bildung für nachhaltige Entwicklung, einschließlich der Geschlechtergleichstellung und der Menschenrechte, auf allen Ebenen in (a) nationale Bildungspolitik; (b) Lehrpläne; (c) Lehrerausbildung; und (d) Schulleistungsuntersuchung berücksichtigt werden",
+          "title": "Umfang, in dem (i) Bildung zu globaler Staatsbürgerschaft und (ii) Bildung für nachhaltige Entwicklung, einschließlich der Geschlechtergleichstellung und der Menschenrechte, auf allen Ebenen in: (a) nationale Bildungspolitik, (b) Lehrpläne, (c) Lehrerausbildung und (d) Schulleistungsuntersuchung berücksichtigt werden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-7-1",
           "status": "notstarted"
         },{
           "id": "4-2-1",
-          "title": "Anteil der Kinder unter 5&nbsp;Jahren mit einer altersgemäßen  Entwicklung hinsichtlich Gesundheit, Lernen und psycho-sozialem Wohlbefinden, nach Geschlecht",
+          "title": "Anteil der Kinder unter 5 Jahren mit einer altersgemäßen  Entwicklung hinsichtlich Gesundheit, Lernen und psycho-sozialem Wohlbefinden, nach Geschlecht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-2-1",
@@ -463,7 +463,7 @@
           "status": "complete"
         },{
           "id": "4-1-1",
-          "title": "Anteil der Kinder und Jugendlichen, die (a) in Klasse 2/3; (b) am Ende der Grundschule und (c) am Ende der Sekundarstufe I ein Mindestleistungsniveau in (i) Lesen und (ii) Mathematik erreichen, nach Geschlecht",
+          "title": "Anteil der Kinder und Jugendlichen, die (a) in Klasse 2/3; (b) am Ende der Grundschule; und (c) am Ende der Sekundarstufe I ein Mindestleistungsniveau in (i) Lesen und (ii) Mathematik erreichen, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.1.1, a) Kinder und Jugendliche in den Klassen 2/3 mit einem Mindestleistungsniveau in, Lesen, Mathematik, Kinder und Jugendliche am Ende der Grundschule mit einem Mindestleistungsniveau in, Kinder und Jugendliche am Ende der Sekundarstufe I mit einem Mindestleistungsniveau in, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD), PISA",
           "href": "/sdg-indicators/4-1-1",
@@ -525,7 +525,7 @@
           "status": "complete"
         },{
           "id": "5-6-2",
-          "title": "Anzahl der Staaten mit Gesetzen und Vorschriften, die einen uneingeschränkten und gleichberechtigten Zugang für Frauen und Männer im Alter von 15 Jahren und älter zu sexuellen und reproduktiven Gesundheitsleistungen, Information und Bildung garantieren",
+          "title": "Anzahl der Staaten mit Gesetzen und Vorschriften, die einen uneingeschränkten und gleichberechtigten Zugang für Frauen und Männer im Alter von 15 Jahren und älter zu sexuellen und reproduktiven Gesundheitsleistungen, Informationen und Bildung garantieren",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-6-2",
@@ -539,7 +539,7 @@
           "status": "complete"
         },{
           "id": "5-2-1",
-          "title": "Anteil der Frauen und Mädchen im Alter von 15&nbsp;Jahren und älter, die sich in ihrer jetzigen oder früheren Partnerschaft physischer, sexueller oder psychischer Gewalt durch ihren aktuellen oder früheren Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Art der Gewalt und Alter",
+          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die sich in ihrer jetzigen oder früheren Partnerschaft physischer, sexueller oder psychischer Gewalt durch ihren aktuellen oder früheren Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Art der Gewalt und Alter",
           "description": "",
           "keywords": "Indikator 5.2.1, Weibliche Opfer von Straftaten mit einer aktuellen oder früheren intimen Beziehung zum Verdächtigen, Kinderhilfswerk der Vereinten Nationen (UNICEF), Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women), Bevölkerungsfonds der Vereinten Nationen (UNFPA), Weltgesundheitsorganisation (WHO), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/5-2-1",
@@ -560,21 +560,21 @@
           "status": "notstarted"
         },{
           "id": "5-3-2",
-          "title": "Anteil der Mädchen und Frauen im Alter von 15-49&nbsp;Jahren, die weiblicher Genitalverstümmelung unterzogen wurden, nach Alter",
+          "title": "Anteil der Mädchen und Frauen im Alter von 15-49 Jahren, die weiblicher Genitalverstümmelung unterzogen wurden, nach Alter",
           "description": "",
           "keywords": "Indikator 5.3.2, Opfer von Verstümmelung weiblicher Genitalien, Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/5-3-2",
           "status": "complete"
         },{
           "id": "5-5-2",
-          "title": "Frauenanteil an  Führungspositionen",
+          "title": "Frauenanteil an Führungspositionen",
           "description": "",
           "keywords": "Indikator 5.5.2, Frauen in Führungspositionen, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/5-5-2",
           "status": "complete"
         },{
           "id": "5-2-2",
-          "title": "Anteil der Frauen und Mädchen im Alter von 15&nbsp;Jahren und älter, die sexueller Gewalt durch andere Personen als einen Intimpartner in den vergangenen 12&nbsp;Monaten ausgesetzt waren, nach Alter und Ort des Geschehens",
+          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die sexueller Gewalt durch andere Personen als einen Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Alter und Ort des Geschehens",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-2-2",
@@ -725,7 +725,7 @@
           "status": "complete"
         },{
           "id": "8-6-1",
-          "title": "Anteil der Jugendlichen (im Alter von 15-24&nbsp;Jahren), die nicht in schulischer Ausbildung, in Beschäftigung oder Berufsaus- oder -weiterbildung sind",
+          "title": "Anteil der Jugendlichen (im Alter von 15-24 Jahren), die nicht in schulischer Ausbildung, in Beschäftigung oder Berufsaus- oder -weiterbildung sind",
           "description": "",
           "keywords": "Indikator 8.6.1, Jugendliche (15 bis unter 25 Jahre), die weder eine Arbeit haben, noch in einer schulischen oder beruflichen Ausbildung sind (NEET-Raten), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-6-1",
@@ -795,7 +795,7 @@
           "status": "notstarted"
         },{
           "id": "8-5-2",
-          "title": "Arbeitslosenquote, nach Geschlecht, Alter und Personen mit Behinderungen",
+          "title": "Erwerbslosenquote, nach Geschlecht, Alter und Personen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 8.5.2, Arbeitslosenquote (15 bis unter 75 Jahre), Erwerbslosenquote (15 bis unter 75 Jahre), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-5-2",
@@ -809,14 +809,14 @@
           "status": "complete"
         },{
           "id": "8-7-1",
-          "title": "Anteil und Anzahl der Kinder im Alter von 5-17&nbsp;Jahren, die Kinderarbeit verrichten, nach Geschlecht und Alter",
+          "title": "Anteil und Anzahl der Kinder im Alter von 5-17 Jahren, die Kinderarbeit verrichten, nach Geschlecht und Alter",
           "description": "",
           "keywords": "Indikator 8.7.1, Kinder als Opfer von Menschenhandel zum Zweck der Ausbeutung der Arbeitskraft, Internationale Arbeitsorganisation (ILO), Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/8-7-1",
           "status": "complete"
         },{
           "id": "8-10-1",
-          "title": "(a) Anzahl der Bankfilialen je 100&nbsp;000 Erwachsener und (b) Anzahl der Geldautomaten je 100&nbsp;000 Erwachsener",
+          "title": "(a) Anzahl der Bankfilialen je 100.000 Erwachsener und (b) Anzahl der Geldautomaten je 100.000 Erwachsener",
           "description": "",
           "keywords": "Indikator 8.10.1, a) Zweigstellen von Zahlungsverkehrsdienstleistern, b) Bankautomaten von inländischen Zahlungsdienstleistern, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/8-10-1",
@@ -830,7 +830,7 @@
           "status": "complete"
         },{
           "id": "8-b-1",
-          "title": "Existenz einer entwickelten und operationalisierten nationalen Strategie zu Jugendbeschäftigung , als eigenständige Strategie oder als Teil einer nationalen Beschäftigungsstrategie",
+          "title": "Existenz einer entwickelten und operationalisierten nationalen Strategie zu Jugendbeschäftigung, als eigenständige Strategie oder als Teil einer nationalen Beschäftigungsstrategie",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/8-b-1",
@@ -864,7 +864,7 @@
           "status": "complete"
         },{
           "id": "9-1-1",
-          "title": "Anteil der ländlichen Bevölkerung, die bis zu 2&nbsp;km entfernt von einer ganzjährig befahrbaren Straße lebt",
+          "title": "Anteil der ländlichen Bevölkerung, die bis zu 2 km entfernt von einer ganzjährig befahrbaren Straße lebt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/9-1-1",
@@ -940,7 +940,7 @@
           "status": "notstarted"
         },{
           "id": "10-1-1",
-          "title": "Wachstumsraten der Haushaltsausgaben oder -einkommen pro Kopf der unteren 40&nbsp;Prozent der Bevölkerung und der Gesamtbevölkerung",
+          "title": "Wachstumsraten der Haushaltsausgaben oder -einkommen pro Kopf der unteren 40 Prozent der Bevölkerung und der Gesamtbevölkerung",
           "description": "",
           "keywords": "Indikator 10.1.1, Wachstumsrate des Einkommens der ärmsten 40 Prozent der Bevölkerung, Wachstumsrate des Einkommens der gesamten Bevölkerung, Weltbank (WB)",
           "href": "/sdg-indicators/10-1-1",
@@ -954,7 +954,7 @@
           "status": "notstarted"
         },{
           "id": "10-3-1",
-          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12&nbsp;Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
+          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-3-1",
@@ -996,14 +996,14 @@
           "status": "complete"
         },{
           "id": "10-2-1",
-          "title": "Anteil der Bevölkerung, die mit weniger als 50% des Medianeinkommens leben, nach Geschlecht, Alter und Menschen mit Behinderungen",
+          "title": "Anteil der Bevölkerung, die mit weniger als 50% des Medianeinkommens lebt, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 10.2.1, Bevölkerung, die mit weniger als 50% des mittleren Einkommens lebt, Armut, Einkommen, Weltbank (WB)",
           "href": "/sdg-indicators/10-2-1",
           "status": "complete"
         },{
           "id": "10-c-1",
-          "title": "Überweisungskosten  als Anteil am überwiesenen Betrag",
+          "title": "Rücküberweisungskosten als Anteil am überwiesenen Betrag",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-c-1",
@@ -1023,7 +1023,7 @@
           "status": "complete"
         },{
           "id": "11-7-2",
-          "title": "Anteil der Personen, die in den vergangenen 12&nbsp;Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Ort des Geschehens",
+          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Ort des Geschehens",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-7-2",
@@ -1058,7 +1058,7 @@
           "status": "notstarted"
         },{
           "id": "11-5-1",
-          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner",
+          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100.000 Einwohner",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-5-1",
@@ -1259,7 +1259,7 @@
           "status": "complete"
         },{
           "id": "13-1-1",
-          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner",
+          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100.000 Einwohner",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-1-1",
@@ -1473,7 +1473,7 @@
           "status": "complete"
         },{
           "id": "16-10-1",
-          "title": "Anzahl der bestätigten Fälle von Tötung, Entführung, erzwungenem Verschwinden, willkürlicher Inhaftierung und Folter von Journalisten, zugehörigem Medienpersonal, Gewerkschaftern und Menschenrechtsanwälten in den vergangenen 12&nbsp;Monaten",
+          "title": "Anzahl der bestätigten Fälle von Tötung, Entführung, erzwungenem Verschwinden, willkürlicher Inhaftierung und Folter von Journalisten, zugehörigem Medienpersonal, Gewerkschaftern und Menschenrechtsanwälten in den vergangenen 12 Monaten",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-10-1",
@@ -1494,7 +1494,7 @@
           "status": "notstarted"
         },{
           "id": "16-1-1",
-          "title": "Anzahl der Opfer vorsätzlicher Tötung je 100&nbsp;000 Einwohner, nach Geschlecht und Alter",
+          "title": "Anzahl der Opfer vorsätzlicher Tötung je 100.000 Einwohner, nach Geschlecht und Alter",
           "description": "",
           "keywords": "Indikator 16.1.1, Opfer vorsätzlicher Tötung, Mord, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC), Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/16-1-1",
@@ -1508,7 +1508,7 @@
           "status": "complete"
         },{
           "id": "16-5-1",
-          "title": "Anteil der Personen, die in den vergangenen 12&nbsp;Monaten mindestens einen Kontakt zu einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
+          "title": "Anteil der Personen, die in den vergangenen 12 Monaten mindestens einen Kontakt zu einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
           "description": "",
           "keywords": "Indikator 16.5.1, Bevölkerung, die den Eindruck hatte, dass Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Tatverdächtige Privatpersonen (Geber) im Rahmen von Korruptionsstraftaten, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-5-1",
@@ -1522,14 +1522,14 @@
           "status": "complete"
         },{
           "id": "16-3-1",
-          "title": "Anteil der Opfer von Gewalttaten in den vergangenen 12&nbsp;Monaten, die ihre Viktimisierung den zuständigen Behörden oder anderen offiziell anerkannten Stellen der Konfliktaufarbeitung gemeldet haben",
+          "title": "Anteil der Opfer von Gewalttaten in den vergangenen 12 Monaten, die ihre Viktimisierung den zuständigen Behörden oder anderen offiziell anerkannten Stellen der Konfliktaufarbeitung gemeldet haben",
           "description": "",
           "keywords": "Indikator 16.3.1, Anzeigequote bei Körperverletzung, Anzeigequote bei Raub, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-3-1",
           "status": "complete"
         },{
           "id": "16-2-1",
-          "title": "Anteil der Kinder im Alter von 1-17&nbsp;Jahren, die im vergangenen Monat eine körperliche Strafe und/oder psychische Aggression durch Betreuungspersonen erfahren haben",
+          "title": "Anteil der Kinder im Alter von 1-17 Jahren, die im vergangenen Monat eine körperliche Strafe und/oder psychische Aggression durch Betreuungspersonen erfahren haben",
           "description": "",
           "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
           "href": "/sdg-indicators/16-2-1",
@@ -1550,7 +1550,7 @@
           "status": "notstarted"
         },{
           "id": "16-2-3",
-          "title": "Anteil der jungen Frauen und Männer im Alter von 18-29&nbsp;Jahren, die bis zum Alter von 18&nbsp;Jahren sexuelle Gewalt erlebt haben",
+          "title": "Anteil der jungen Frauen und Männer im Alter von 18-29 Jahren, die bis zum Alter von 18 Jahren sexuelle Gewalt erlebt haben",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-2-3",
@@ -1564,14 +1564,14 @@
           "status": "complete"
         },{
           "id": "16-1-3",
-          "title": "Anteil der Bevölkerung, die in den vergangenen 12&nbsp;Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt und (c) sexueller Gewalt ausgesetzt war",
+          "title": "Anteil der Bevölkerung, die in den vergangenen 12 Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt und (c) sexueller Gewalt ausgesetzt war",
           "description": "",
           "keywords": "Indikator 16.1.3, Bevölkerung, die physischer Gewalt ausgesetzt ist, Bevölkerung, die Opfer von Straftaten wurde, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-1-3",
           "status": "complete"
         },{
           "id": "16-2-2",
-          "title": "Anzahl der Opfer von Menschenhandel je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Art der Ausbeutung",
+          "title": "Anzahl von Opfer von Menschenhandel je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Art der Ausbeutung",
           "description": "",
           "keywords": "Indikator 16.2.2, Ausbeutung der Arbeitskraft, Sexuelle Ausbeutung, Opfer von Menschenhandel, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-2-2",
@@ -1585,7 +1585,7 @@
           "status": "complete"
         },{
           "id": "16-9-1",
-          "title": "Anteil der Kinder unter 5&nbsp;Jahre, deren Geburt von einer Zivilbehörde registriert wurde, nach Alter",
+          "title": "Anteil der Kinder unter 5 Jahre, deren Geburt von einer Zivilbehörde registriert wurde, nach Alter",
           "description": "",
           "keywords": "Indikator 16.9.1, Kinder unter 5 Jahren, deren Geburt von einer Zivilbehörde registriert worden ist, Kinderhilfswerk der Vereinten Nationen (UNICEF), Statistischen Division der UN (UNSD)",
           "href": "/sdg-indicators/16-9-1",
@@ -1606,14 +1606,14 @@
           "status": "notapplicable"
         },{
           "id": "16-1-2",
-          "title": "Konfliktbedingte Todesfälle je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Ursache",
+          "title": "Konfliktbedingte Todesfälle je 100.000 Einwohner, nach Geschlecht, Alter und Ursache",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-1-2",
           "status": "notapplicable"
         },{
           "id": "16-5-2",
-          "title": "Anteil der Unternehmen, die in den vergangenen 12&nbsp;Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
+          "title": "Anteil der Unternehmen, die in den vergangenen 12 Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
           "description": "",
           "keywords": "Indikator 16.5.2, Unternehmen, die den Eindruck hatten, Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Weltbank (WB), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-5-2",
@@ -1773,7 +1773,7 @@
           "status": "notapplicable"
         },{
           "id": "17-19-2",
-          "title": "Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben",
+          "title": "Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben; und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben",
           "description": "",
           "keywords": "Indikator 17.19.2, a) Durchführung mindestens einer Bevölkerungs- und Wohnungszählung in den letzten 10 Jahren, b) Registrierung der Geburten, c) Registrierung der Sterbefälle",
           "href": "/sdg-indicators/17-19-2",
