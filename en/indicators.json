@@ -18,7 +18,7 @@
           "status": "complete"
         },{
           "id": "1-5-3",
-          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/1-5-3",
@@ -178,7 +178,7 @@
           "status": "complete"
         },{
           "id": "2-5-2",
-          "title": "Proportion of local breeds classified as being at risk, not- at- risk or at unknown level of risk of extinction",
+          "title": "Proportion of local breeds classified as being at risk, not at risk or at unknown level of risk of extinction",
           "description": "",
           "keywords": "Indikator 2.5.2, Gefährdungskategorie (nach FAO-Klassifikation), Gefährdungskategorie (nach nationaler Klassifikation), Einheimische Nutztierrassen",
           "href": "/sdg-indicators/en/2-5-2",
@@ -192,7 +192,7 @@
           "status": "complete"
         },{
           "id": "2-a-1",
-          "title": "The agriculture orientation index for government expenditures",
+          "title": "The 'agriculture orientation index' for government expenditures",
           "description": "",
           "keywords": "Indikator 2.a.1, Agriculture Orientation Index für Staatsausgaben",
           "href": "/sdg-indicators/en/2-a-1",
@@ -296,7 +296,7 @@
           "status": "complete"
         },{
           "id": "3-7-1",
-          "title": "Proportion of women of reproductive age (aged 15-49 years) who have their need for family planning satisfied with modern methods",
+          "title": "Proportion of women of reproductive age (aged 15–49 years) who have their need for family planning satisfied with modern methods",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/3-7-1",
@@ -359,7 +359,7 @@
           "status": "complete"
         },{
           "id": "3-7-2",
-          "title": "Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group",
+          "title": "Adolescent birth rate (aged 10–14 years; aged 15–19 years) per 1,000 women in that age group",
           "description": "",
           "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren, Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)",
           "href": "/sdg-indicators/en/3-7-2",
@@ -490,7 +490,7 @@
           "status": "notstarted"
         },{
           "id": "5-a-2",
-          "title": "Proportion of countries where the legal framework (including customary law) guarantees women equal rights to land ownership and/or control",
+          "title": "Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/5-a-2",
@@ -504,7 +504,7 @@
           "status": "complete"
         },{
           "id": "5-6-1",
-          "title": "Proportion of women aged 15-49 years who make their own informed decisions",
+          "title": "Proportion of women aged 15–49 years who make their own informed decisions regarding sexual relations, contraceptive use and reproductive health care",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/5-6-1",
@@ -518,14 +518,14 @@
           "status": "complete"
         },{
           "id": "5-1-1",
-          "title": "Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex",
+          "title": "Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‐discrimination on the basis of sex",
           "description": "",
           "keywords": "Indikator 5.1.1, Rechtliche Rahmenbedingungen zur Förderung, Durchsetzung und Überwachung der Gleichstellung der Geschlechter, Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women), Weltbank (WB), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD), Bundesministerium für Familie, Senioren, Frauen und Jugend (BMFSFJ)",
           "href": "/sdg-indicators/en/5-1-1",
           "status": "complete"
         },{
           "id": "5-6-2",
-          "title": "Number of countries with laws and regulations that guarantee full and equal  access to women and men aged 15 years and older to sexual and reproductive health  care, information and education",
+          "title": "Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/5-6-2",
@@ -546,7 +546,7 @@
           "status": "complete"
         },{
           "id": "5-3-1",
-          "title": "Proportion of women aged 20-24 years who were married or in a union before age 15 and before age 18",
+          "title": "Proportion of women aged 20–24 years who were married or in a union before age 15 and before age 18",
           "description": "",
           "keywords": "Indikator 5.3.1, Verheiratete Mädchen unter 15 Jahren, Verheiratete Mädchen unter 18 Jahren, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
           "href": "/sdg-indicators/en/5-3-1",
@@ -560,7 +560,7 @@
           "status": "notstarted"
         },{
           "id": "5-3-2",
-          "title": "Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age",
+          "title": "Proportion of girls and women aged 15–49 years who have undergone female genital mutilation/cutting, by age",
           "description": "",
           "keywords": "Indikator 5.3.2, Opfer von Verstümmelung weiblicher Genitalien, Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/en/5-3-2",
@@ -636,7 +636,7 @@
           "status": "complete"
         },{
           "id": "6-5-1",
-          "title": "Degree of integrated water resources management implementation (0-100)",
+          "title": "Degree of integrated water resources management implementation (0–100)",
           "description": "",
           "keywords": "Indikator 6.5.1, Grad der Implementierung eines integrierten Wasserressourcenmanagements, Umweltprogramm der Vereinten Nationen (UNEP), Bundesministerium für Umwelt, Naturschutz und nukleare Sicherheit (BMU)",
           "href": "/sdg-indicators/en/6-5-1",
@@ -725,7 +725,7 @@
           "status": "complete"
         },{
           "id": "8-6-1",
-          "title": "Proportion of youth (aged 15-24 years) not in education, employment or training",
+          "title": "Proportion of youth (aged 15–24 years) not in education, employment or training",
           "description": "",
           "keywords": "Indikator 8.6.1, Jugendliche (15 bis unter 25 Jahre), die weder eine Arbeit haben, noch in einer schulischen oder beruflichen Ausbildung sind (NEET-Raten), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/en/8-6-1",
@@ -760,7 +760,7 @@
           "status": "complete"
         },{
           "id": "8-3-1",
-          "title": "Proportion of informal employment in non‑agriculture employment, by sex",
+          "title": "Proportion of informal employment in non‐agriculture employment, by sex",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/8-3-1",
@@ -809,7 +809,7 @@
           "status": "complete"
         },{
           "id": "8-7-1",
-          "title": "Proportion and number of children aged 5-17 years engaged in child labour, by sex and age",
+          "title": "Proportion and number of children aged 5–17 years engaged in child labour, by sex and age",
           "description": "",
           "keywords": "Indikator 8.7.1, Kinder als Opfer von Menschenhandel zum Zweck der Ausbeutung der Arbeitskraft, Internationale Arbeitsorganisation (ILO), Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/en/8-7-1",
@@ -933,7 +933,7 @@
       "title": "Reduce inequality within and among countries",
       "indicators": [{
           "id": "10-7-1",
-          "title": "Recruitment cost borne by employee as a proportion of monthly income earned in country of destination",
+          "title": "Recruitment cost borne by employee as a proportion of yearly income earned in country of destination",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/10-7-1",
@@ -968,7 +968,7 @@
           "status": "complete"
         },{
           "id": "10-7-2",
-          "title": "Number of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people",
+          "title": "Number of countries that have implemented well-managed migration policies",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/10-7-2",
@@ -1079,14 +1079,14 @@
           "status": "complete"
         },{
           "id": "11-b-1",
-          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
           "description": "",
           "keywords": "Indikator 11.b.1, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/en/11-b-1",
           "status": "inprogress"
         },{
           "id": "11-c-1",
-          "title": "Anteil der finanziellen Unterstützung, die den am wenigsten entwickelten Ländern für den Umbau zu und Neubau von nachhaltigen, widerstandsfähigen und ressourceneffizienten Gebäuden unter Verwendung lokaler Materialien bereitgestellt wird",
+          "title": "Proportion of financial support to the least developed countries that is allocated to the construction and retrofitting of sustainable, resilient and resource-efficient buildings utilizing local materials",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/11-c-1",
@@ -1190,7 +1190,7 @@
           "status": "notstarted"
         },{
           "id": "12-3-1",
-          "title": "(a) Food loss index and (b) food waste index",
+          "title": "Global food loss index",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/12-3-1",
@@ -1245,7 +1245,7 @@
           "status": "notstarted"
         },{
           "id": "13-1-2",
-          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015–2030",
           "description": "",
           "keywords": "Indikator 13.1.2, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/en/13-1-2",
@@ -1259,7 +1259,7 @@
           "status": "complete"
         },{
           "id": "13-1-1",
-          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100.000 Einwohner",
+          "title": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/13-1-1",
@@ -1293,7 +1293,7 @@
           "status": "complete"
         },{
           "id": "14-2-1",
-          "title": "Proportion of national exclusive economic zones managed using ecosystem based approaches",
+          "title": "Proportion of national exclusive economic zones managed using ecosystem-based approaches",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/14-2-1",
@@ -1307,7 +1307,7 @@
           "status": "complete"
         },{
           "id": "14-b-1",
-          "title": "Grad der Umsetzung von gesetzlichen/ regulatorischen/ politischen/ institutionellen Rahmenwerken, die Zugangsrechte für kleine Fischereien anerkennen und schützen",
+          "title": "Progress by countries in the degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/14-b-1",
@@ -1328,7 +1328,7 @@
           "status": "complete"
         },{
           "id": "14-6-1",
-          "title": "Degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing",
+          "title": "Progress by countries in the degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing",
           "description": "",
           "keywords": "Indikator 14.6.1, Grad der Bekämpfung illegaler, nicht gemeldeter und ungeregelter Fischerei, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/en/14-6-1",
@@ -1390,7 +1390,7 @@
           "status": "complete"
         },{
           "id": "15-9-1",
-          "title": "Progress towards national targets established in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011-2020",
+          "title": "Progress towards national targets established in accordance with Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011–2020",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/15-9-1",
@@ -1501,7 +1501,7 @@
           "status": "complete"
         },{
           "id": "16-a-1",
-          "title": "Existence of independent national human rights institutions in compliance with the Paris Principles",
+          "title": "Existence of independent national human rights institutions in compliance with the 'Paris Principles'",
           "description": "",
           "keywords": "Indikator 16.a.1, Mitgliedschaft GANHRI (Kategorie A), Hoher Kommissar der Vereinten Nationen für Menschenrechte (OHCHR)",
           "href": "/sdg-indicators/en/16-a-1",
@@ -1529,7 +1529,7 @@
           "status": "complete"
         },{
           "id": "16-2-1",
-          "title": "Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
+          "title": "Proportion of children aged 1–17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
           "description": "",
           "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
           "href": "/sdg-indicators/en/16-2-1",
@@ -1550,14 +1550,14 @@
           "status": "notstarted"
         },{
           "id": "16-2-3",
-          "title": "Proportion of young women and men aged 18‑29 years who experienced sexual violence by age 18",
+          "title": "Proportion of young women and men aged 18–29 years who experienced sexual violence by age 1",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-2-3",
           "status": "notstarted"
         },{
           "id": "16-7-1",
-          "title": "Proportions of positions in national and local public institutions, including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups",
+          "title": "Proportions of positions (by sex, age, persons with disabilities and population groups) in public institutions (national and local legislatures, public service, and judiciary) compared to national distributions",
           "description": "",
           "keywords": "Indikator 16.7.1, Weibliche Beschäftigte des öffentlichen Dienstes, Weibliche Erwerbstätige insgesamt, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/en/16-7-1",
@@ -1640,7 +1640,7 @@
           "status": "notstarted"
         },{
           "id": "17-9-1",
-          "title": "Dollar value of financial and technical assistance (including through North-South, South-South and triangular cooperation) committed to developing countries",
+          "title": "Dollar value of financial and technical assistance (including through North-South, South‐South and triangular cooperation) committed to developing countries",
           "description": "",
           "keywords": "Indikator 17.9.1, Verpflichtungen (ODA und OOF) an Entwicklungsländer zum Kapazitätenaufbau und nationalen Planungen (ohne Süd-Süd-Kooperationen), Bruttozahlungen (ODA und OOF) an Entwicklungsländer zum Kapazitätenaufbau und nationalen Planungen (ohne Süd-Süd-Kooperationen), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/en/17-9-1",
