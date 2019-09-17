@@ -835,7 +835,7 @@ var indicatorDataStore = function(dataUrl) {
   }());
 
   var headlineColor = '777777';
-  if (this.indicatorId == 'indicator_1-2-1'){
+  if (this.indicatorId[9:10] == '_1'){
     var colors = ['e5243b', 'b71c2f', '891523', '5b0e17', '2d070b', 'ea4f62', 'ef7b89', 'f4a7b0', 'fce9eb'];
   }
   else{
