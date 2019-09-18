@@ -54,3 +54,5 @@ header {
     background-color: inherit;
     text-align: left;
     width: 100%; } }
+#liRight {
+  float: right; }
