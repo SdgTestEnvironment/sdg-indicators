@@ -1365,7 +1365,7 @@ var mapView = function () {
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">6copy; Statistisches Bundesamt (Destatis), 2019</a>"},"colorRange":["#F6E8EC","#EED3DB","#E5BFCA","#DDAAB9","#D495A8","#CC8197","#C46C86","#BB5775","#B34264","#AA2E53","#A21942"],"noValueColor":"#f0f0f0"},
+      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a>"},"colorRange":["#F6E8EC","#EED3DB","#E5BFCA","#DDAAB9","#D495A8","#CC8197","#C46C86","#BB5775","#B34264","#AA2E53","#A21942"],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":0,"max_zoom":20,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":true}],
     });
   };
@@ -2377,7 +2377,7 @@ $(function() {
     },
 
     onAdd: function() {
-      var controlTpl = '' +
+      var controlTpl = '<span id="mapHead">{title}</span>' + //<<<-------------------
         '<ul id="selection-list"></ul>' +
         '<div class="legend-swatches">' +
           '{legendSwatches}' +
@@ -2397,10 +2397,25 @@ $(function() {
         });
       }).join('');
       var div = L.DomUtil.create('div', 'selection-legend');
+
+      //-----------------------------------------------------------------------
+      var headline
+      if (this.plugin.ageName){
+        headline = this.plugin.timeSeriesName + ', <br>' + this.plugin.ageName + ', <br>' + this.plugin.unitName;
+      } else {
+        headline = this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
+      }
+      //-----------------------------------------------------------------------
+
       div.innerHTML = L.Util.template(controlTpl, {
         lowValue: this.plugin.valueRange[0],
         highValue: this.plugin.valueRange[1],
         legendSwatches: swatches,
+
+        //---
+        title: headline,
+        //---
+
       });
       return div;
     },
@@ -2410,7 +2425,7 @@ $(function() {
       var selectionTpl = '' +
         '<li class="{valueStatus}">' +
           '<span class="selection-name">{name}</span>' +
-          '<span class="selection-value" style="left: {percentage}%;">{value}</span>' +
+          //'<span class="selection-value" style="left: {percentage}%;">{value}</span>' +
           '<span class="selection-bar" style="width: {percentage}%;"></span>' +
           '<i class="selection-close fa fa-remove"></i>' +
         '</li>';
@@ -2454,7 +2469,6 @@ $(function() {
     return new L.Control.SelectionLegend(plugin);
   };
 }());
-
 /*
  * Leaflet year Slider.
  *

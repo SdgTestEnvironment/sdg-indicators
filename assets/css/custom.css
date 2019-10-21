@@ -54,5 +54,12 @@ header {
     background-color: inherit;
     text-align: left;
     width: 100%; } }
-#liRight {
-  float: right; }
+#mapHead {
+  display: block;
+  font-size: 1.0em;
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  padding-left: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold; }
