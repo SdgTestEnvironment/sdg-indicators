@@ -2389,8 +2389,8 @@ $(function() {
           '<span class="arrow right"></span>' +
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
-      var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
-      var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) {
+      var swatchWidth = 100 / this.plugin.options.colorRange.length;
+      var swatches = this.plugin.options.colorRange.map(function(swatchColor) {
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
@@ -2399,12 +2399,12 @@ $(function() {
       var div = L.DomUtil.create('div', 'selection-legend');
 
       //-----------------------------------------------------------------------
-      var headline = this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
-      //if (this.plugin.ageName){
-      //  headline = this.plugin.timeSeriesName + ', <br>' + this.plugin.ageName + ', <br>' + this.plugin.unitName;
-      //} else {
-      //  headline = this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
-      //}
+      var headline;
+      if (this.plugin.ageName){
+        headline = this.plugin.timeSeriesName + ', <br>' + this.plugin.ageName + ', <br>' + this.plugin.unitName;
+      } else {
+        headline = this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
+      }
       //-----------------------------------------------------------------------
 
       div.innerHTML = L.Util.template(controlTpl, {
