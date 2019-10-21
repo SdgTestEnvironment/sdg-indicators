@@ -2427,7 +2427,7 @@ $(function() {
       if (this.plugin.ageName){
         headline = this.plugin.timeSeriesName + ', <br>' + this.plugin.ageName + ', <br>' + this.plugin.unitName;
       } else {
-        headline = this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
+        headline = 'Test 4.4'; //this.plugin.timeSeriesName + ' <br>' + this.plugin.unitName;
       }
       //-----------------------------------------------------------------------
 
