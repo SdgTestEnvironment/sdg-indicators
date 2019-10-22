@@ -1361,14 +1361,13 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(geoData, geoCodeRegEx) { //, goal) {
+  this.initialise = function(geoData, geoCodeRegEx) {
     $('.map').show();
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
       mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a>"},"colorRangeMap":["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],"colorRange":[["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"]],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":0,"max_zoom":20,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":true}],
-      //goal: goal,
     });
   };
 };
@@ -2411,8 +2410,8 @@ $(function() {
           '<span class="arrow right"></span>' +
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
-      var swatchWidth = 100 / this.plugin.options.colorRange[2].length; //[this.plugin.goalNr].length;
-      var swatches = this.plugin.options.colorRange[2].map(function(swatchColor) { //[this.plugin.goalNr].map(function(swatchColor) {
+      var swatchWidth = 100 / this.plugin.options.colorRange[3].length; //[this.plugin.goalNr].length;
+      var swatches = this.plugin.options.colorRange[3].map(function(swatchColor) { //[this.plugin.goalNr].map(function(swatchColor) {
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
