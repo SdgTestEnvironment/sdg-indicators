@@ -1366,7 +1366,7 @@ var mapView = function () {
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a>"},"colorRange":["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],"noValueColor":"#f0f0f0"},
+      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"]],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":0,"max_zoom":20,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":true}],
       //goal: goal,
     });
@@ -2411,8 +2411,8 @@ $(function() {
           '<span class="arrow right"></span>' +
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
-      var swatchWidth = 100 / this.plugin.options.colorRange.length; //[this.plugin.goalNr].length;
-      var swatches = this.plugin.options.colorRange.map(function(swatchColor) { //[this.plugin.goalNr].map(function(swatchColor) {
+      var swatchWidth = 100 / this.plugin.options.colorRange[1].length; //[this.plugin.goalNr].length;
+      var swatches = this.plugin.options.colorRange[1].map(function(swatchColor) { //[this.plugin.goalNr].map(function(swatchColor) {
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
