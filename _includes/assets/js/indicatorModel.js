@@ -239,10 +239,9 @@ var indicatorModel = function (options) {
   }
   else if(this.indicatorId.includes('_17-')){
     var colors = ['19486a', '0a1c2a', '8ca3b4', '16377c', 'd1dae1', '11324a', '466c87', '5b73a3', '0f2656'];
-  }
+  };
   //SDG goal colors
   //['e5243b', 'e5b735', '4c9f38', 'c5192d', 'ff3a21', '26bde2', 'fcc30b', 'a21942', 'fd6925', 'dd1367'];
-
 
   // allow headline + (2 x others)
   var maxDatasetCount = 2 * colors.length;
@@ -411,6 +410,7 @@ var indicatorModel = function (options) {
           //return key + ' ' + combination[key];
         }).join(', ');
       },
+
       getColor = function(datasetIndex) {
 
         // offset if there is no headline data:
@@ -430,8 +430,8 @@ var indicatorModel = function (options) {
 
         return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
-      getBorderDash = function(datasetIndex) {
 
+      getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
         if(!this.hasHeadline) {
           datasetIndex += 1;
@@ -623,7 +623,9 @@ var indicatorModel = function (options) {
         hasGeoData: this.hasGeoData,
         geoData: this.geoData,
         geoCodeRegEx: this.geoCodeRegEx,
-        showMap: this.showMap
+        showMap: this.showMap//,
+
+        //indicatorId: this.indicatorId
       });
 
 

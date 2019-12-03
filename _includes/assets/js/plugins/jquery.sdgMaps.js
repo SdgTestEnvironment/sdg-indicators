@@ -58,6 +58,7 @@
     this.mapLayers = [];
     this.geoData = options.geoData;
     this.geoCodeRegEx = options.geoCodeRegEx;
+    //this.goalNr = options.goal;
 
     // Require at least one geoLayer.
     if (!options.mapLayers.length) {
@@ -74,12 +75,21 @@
     this._name = 'sdgMap';
 
     this.valueRange = [_.min(_.pluck(this.geoData, 'Value')), _.max(_.pluck(this.geoData, 'Value'))];
-    this.colorScale = chroma.scale(this.options.colorRange)
+    this.colorScale = chroma.scale()//[this.goalNr])
       .domain(this.valueRange)
-      .classes(this.options.colorRange.length);
+      .classes(9); //[this.goalNr].length);
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years[0];
+
+    //----------------------------------------------
+    //this.timeSeries = _.pluck(this.geoData, 'timeseries');
+    //this.timeSeriesName = translations.t(this.timeSeries[0]);
+    this.unit = _.pluck(this.geoData, 'Units');
+    this.unitName = translations.t(this.unit[0]);
+    //this.age = _.pluck(this.geoData, 'age');
+    //this.ageName = translations.t(this.age[0]);
+    //---------------------------------------------------
 
     this.init();
   }
@@ -226,10 +236,10 @@
       this.map.addControl(new L.Control.Fullscreen());
 
       // Add scale.
-      this.map.addControl(L.control.scale({position: 'bottomleft'}));
+      this.map.addControl(L.control.scale({position: 'bottomright'}));
 
       // Add tile imagery.
-      //L.tileLayer(this.options.tileURL, this.options.tileOptions).addTo(this.map);
+      L.tileLayer(this.options.tileURL, this.options.tileOptions).addTo(this.map);
 
       // Because after this point, "this" rarely works.
       var plugin = this;
