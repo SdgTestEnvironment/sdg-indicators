@@ -111,3 +111,26 @@ header {
   padding-top: 12px; }
   .header_img img {
     width: 100%; }
+
+#disclaimer {
+  background: #BF0C16; }
+  #disclaimer .phase-tag {
+    background: #005ea5;
+    color: white;
+    text-transform: uppercase;
+    padding: 2px 5px 0; }
+  #disclaimer .alert {
+    color: white;
+    margin-bottom: 0;
+    padding: 10px; }
+    #disclaimer .alert a {
+      color: white; }
+  #disclaimer .alert-danger {
+    border: none;
+    margin-bottom: 0;
+    background: #BF0C16; }
+    #disclaimer .alert-danger a {
+      text-decoration: underline; }
+    @media only screen and (max-width: 680px) {
+      #disclaimer .alert-danger {
+        font-size: 0.75em; } }
