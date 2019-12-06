@@ -89,6 +89,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.mapLayers = [];
     this.geoData = options.geoData;
     this.geoCodeRegEx = options.geoCodeRegEx;
+    //this.goalNr = options.goal;
 
     // Require at least one geoLayer.
     if (!options.mapLayers.length) {
@@ -105,12 +106,21 @@ opensdg.autotrack = function(preset, category, action, label) {
     this._name = 'sdgMap';
 
     this.valueRange = [_.min(_.pluck(this.geoData, 'Value')), _.max(_.pluck(this.geoData, 'Value'))];
-    this.colorScale = chroma.scale(this.options.colorRange)
+    this.colorScale = chroma.scale()//[this.goalNr])
       .domain(this.valueRange)
-      .classes(this.options.colorRange.length);
+      .classes(9); //[this.goalNr].length);
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years[0];
+
+    //----------------------------------------------
+    //this.timeSeries = _.pluck(this.geoData, 'timeseries');
+    //this.timeSeriesName = translations.t(this.timeSeries[0]);
+    this.unit = _.pluck(this.geoData, 'Units');
+    this.unitName = translations.t(this.unit[0]);
+    //this.age = _.pluck(this.geoData, 'age');
+    //this.ageName = translations.t(this.age[0]);
+    //---------------------------------------------------
 
     this.init();
   }
@@ -274,6 +284,17 @@ opensdg.autotrack = function(preset, category, action, label) {
           plugin.selectionLegend.update();
         }
       }));
+
+      // mapbox logo.----------------------------------------------------------------------------------------------------
+      var logo = L.control({position: 'bottomleft'});
+      logo.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'logo');
+        div.innerHTML = '<a href="https://mapbox.com"> <img src="https://g205sdgs.github.io/sdg-indicators/public/mapbox-logo-white.png"/ width=140 height=30> </a>'
+        return div;
+      };
+      logo.addTo(this.map);
+      //-----------------------------------------------------------------------------------------------------------------
+
 
       // Add the selection legend.
       this.selectionLegend = L.Control.selectionLegend(plugin);
