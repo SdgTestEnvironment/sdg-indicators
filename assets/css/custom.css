@@ -305,10 +305,6 @@ header {
       #disclaimer .alert-danger {
         font-size: 0.75em; } }
 
-/*
-//reporting status
-.goal-stats{
+.goal-stats {
   font-size: 0;
-  margin-top:10px;
-}
-*/
+  margin-top: 10px; }
