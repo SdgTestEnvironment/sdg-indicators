@@ -139,7 +139,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20191209142843">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20191209144307">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -147,7 +147,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20191209142843"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20191209144307"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -265,10 +265,10 @@ var translations = {
 </script>
 
 <script type="text/template" id="units_template">
-  //---#9 notShowingSingleUnitSelection---start---------------
-  //<% if(units.length) { %>
+  //<!---#9 notShowingSingleUnitSelection---start--------------->
+  //<!---<% if(units.length) { %>-->
   <% if(units.length>1) { %>
-  //---#9 notShowingSingleUnitSelection---stop---------------
+  //<!---#9 notShowingSingleUnitSelection---stop--------------->
     <h5>Einheit</h5>
     <% _.each(units, function(unitsItem, index) { %>
       <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
@@ -317,17 +317,24 @@ var translations = {
 
   <!---3 Btns if there is a corresponding Indicator-->
   
-    <div class="col-xs-6 col-md-6 col-lg-6">
+    <div class="col-xs-3 col-md-3 col-lg-4">
       <a href="/sdg-indicators/2-3-2" class="btn btn-primary btn-block G2-background" role="button">
         <i class="fa fa-chevron-left" aria-hidden="true"></i> <b><span class="hidden-sm hidden-xs">Vorheriger Indikator</span></b>
       </a>
     </div>
 
-    <div class="col-xs-6 col-md-6 col-lg-6">
+    <div class="col-xs-6 col-md-6 col-lg-4">
+      <a href="https://g205sdgs.github.io/sdg-indicators/2-1-b/" class="btn btn-primary btn-block G2-background" title="" role="button">
+        <b><span class="hidden-sm hidden-xs">Verwandter nationaler Indikator:</span> SDG-2.1.b</b>
+      </a>
+    </div>
+
+    <div class="col-xs-3 col-md-3 col-lg-4">
       <a href="/sdg-indicators/2-5-1" class="btn btn-primary btn-block G2-background" role="button">
         <b><span class="hidden-sm hidden-xs">Nächster Indikator</span></b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
     </div>
+  <!---2 Btns if there is no corresponding Indicator-->
   
 
 <!---Goal page-->
@@ -630,8 +637,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/G205SDGs/sdg-data/commit/695a2607ec06599423ce816aba0bd9874d056c80" target="_blank">
-                2019-11-26: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              <a href="https://github.com/G205SDGs/sdg-data/commit/ad79ca75811149b81cc4e8a6dd517e69ebbbf21a" target="_blank">
+                2019-12-09: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -1421,7 +1428,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20191209142843'></script><script src="/sdg-indicators/assets/js/custom.js?v=20191209142843"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20191209144307'></script><script src="/sdg-indicators/assets/js/custom.js?v=20191209144307"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
