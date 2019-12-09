@@ -1630,7 +1630,7 @@ var mapView = function () {
       //---#1 GoalDependendMapColor---start--------------------------------------
       goal: goal,
       //---#1 GoalDependendMapColor---stop---------------------------------------
-      title: title
+      //title: title
     });
   };
 };
