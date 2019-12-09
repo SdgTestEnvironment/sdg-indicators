@@ -92,7 +92,6 @@ opensdg.autotrack = function(preset, category, action, label) {
     //---#1 GoalDependendMapColor---start--------------------------------------
     this.goalNr = options.goal;
     //---#1 GoalDependendMapColor---stop---------------------------------------
-    //this.title = options.title;
 
     // Require at least one geoLayer.
     if (!options.mapLayers.length) {
@@ -121,8 +120,6 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years[0];
-
-    //this.title = translations.t(this.title)
 
     //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
     this.timeSeries = _.pluck(this.geoData, 'timeseries');
@@ -1978,19 +1975,8 @@ var indicatorView = function (model, options) {
   };
 
   this.updatePlot = function(chartInfo) {
-    /*// No Line for Targets--------------------------------------------------------------------------------------------
-    for (var set = 0; set<chartInfo.datasets.length; set++){
 
-      //if (chartInfo.datasets[set].label.substr(0,4)=='Ziel'){
-        //cartInfo.datasets[set].push("showLines: false")
-      //}
-      console.log (set, chartInfo.datasets);
-    };
-    //----------------------------------------------------------------------------------------------------------------
-    */
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
-
-
 
     if(chartInfo.selectedUnit) {
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.labelString = translations.t(chartInfo.selectedUnit);
