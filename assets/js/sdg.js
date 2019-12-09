@@ -89,8 +89,8 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.mapLayers = [];
     this.geoData = options.geoData;
     this.geoCodeRegEx = options.geoCodeRegEx;
-    this.goalNr = options.goal;
-    this.title = options.title;
+    //this.goalNr = options.goal;
+    //this.title = options.title;
 
     // Require at least one geoLayer.
     if (!options.mapLayers.length) {
@@ -107,14 +107,14 @@ opensdg.autotrack = function(preset, category, action, label) {
     this._name = 'sdgMap';
 
     this.valueRange = [_.min(_.pluck(this.geoData, 'Value')), _.max(_.pluck(this.geoData, 'Value'))];
-    this.colorScale = chroma.scale(this.options.colorRange[this.goalNr])
+    this.colorScale = chroma.scale()//this.colorScale = chroma.scale(this.options.colorRange[this.goalNr])
       .domain(this.valueRange)
-      .classes(this.options.colorRange[this.goalNr].length);
+      .classes(9); //.classes(this.options.colorRange[this.goalNr].length);
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years[0];
 
-    //----------------------------------------------
+    /*//----------------------------------------------
     this.title = translations.t(this.title)
     this.timeSeries = _.pluck(this.geoData, 'timeseries');
     this.timeSeriesName = translations.t(this.timeSeries[this.timeSeries.length -1]);
@@ -126,13 +126,14 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.typificationName = translations.t(this.typification[this.typification.length -1]);
     this.criminalOffence = _.pluck(this.geoData, 'criminal offences');
     this.criminalOffenceName = translations.t(this.criminalOffence[this.criminalOffence.length -1]);
+    */
     this.unit = _.pluck(this.geoData, 'Units');
-    this.unitName = translations.t(this.unit[this.unit.length -1]);
-
+    this.unitName = translations.t(this.unit[0]);//this.unitName = translations.t(this.unit[this.unit.length -1]);
+    /*
     this.startExp = 0;
     this.reloadCounter = 0; // to avoid multiple search buttons
     this.hasMapDisaggs = false;
-    //---------------------------------------------------
+    *///---------------------------------------------------
 
     this.init();
   }
@@ -143,12 +144,14 @@ opensdg.autotrack = function(preset, category, action, label) {
 
 
     // Add time series to GeoJSON data and normalize the name and geocode.
-    prepareGeoJson: function(geoJson, idProperty, nameProperty, cat, exp) { //--------------------------------added cat & exp
+    prepareGeoJson: function(geoJson, idProperty, nameProperty) {//prepareGeoJson: function(geoJson, idProperty, nameProperty, cat, exp) { //--------------------------------added cat & exp
       var geoData = this.geoData;
       geoJson.features.forEach(function(feature) {
         var geocode = feature.properties[idProperty];
         var name = feature.properties[nameProperty];
 
+        var records = _.where(geoData, { GeoCode: geocode });
+        /*
         //----Legend with Disagg---------------------------------------
         // First add the time series data.
         //Normal version, if there is no Disaggregation-cathegory with more than one expression.
@@ -159,7 +162,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         else{
           var records = _.where(geoData, { GeoCode: geocode, [cat]: exp });
         }
-        //-----------------------------------------------------------------------
+        *///-----------------------------------------------------------------------
         //var records = _.where(geoData, { GeoCode: geocode, cat: exp });
         records.forEach(function(record) {
           // Add the Year data into the properties.
@@ -175,7 +178,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       return geoJson;
     },
 
-    //---Legend with Disagg---------------
+    /*//---Legend with Disagg---------------
     //Find those disaggregation-categories that have more then one expression in all lines that have geoData
     findCat: function(){
       var categories = ['title','sex','age'];
@@ -197,7 +200,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       return unique;
     },
 
-    //---------------------------
+    *///---------------------------
 
     // Zoom to a feature.
     zoomToFeature: function(layer) {
@@ -327,7 +330,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       var plugin = this;
 
 
-      //Add the radio buttons------------------------------------------------------------------------------------------------------------------------
+      /*//Add the radio buttons------------------------------------------------------------------------------------------------------------------------
       //Create a Button for every expression and add it to the map
       var cat = plugin.findCat();
       if (cat != ''){
@@ -380,7 +383,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           plugin.init();
         });
       }
-      //------------------------------------------------------------------------------------------------------------------------
+      *///------------------------------------------------------------------------------------------------------------------------
 
       // Add the year slider.
       this.map.addControl(L.Control.yearSlider({
@@ -393,7 +396,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
       }));
 
-      // mapbox logo.
+      /*// mapbox logo.
       var logo = L.control({position: 'bottomleft'});
       logo.onAdd = function (map) {
         var div = L.DomUtil.create('div', 'logo');
@@ -401,7 +404,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         return div;
       };
       logo.addTo(this.map);
-
+      */
       // Add the selection legend.
       this.selectionLegend = L.Control.selectionLegend(plugin);
       this.map.addControl(this.selectionLegend);
@@ -444,13 +447,13 @@ opensdg.autotrack = function(preset, category, action, label) {
           // Now go on to add the geoJson again as choropleth dynamic regions.
           var idProperty = plugin.mapLayers[i].idProperty;
           var nameProperty = plugin.mapLayers[i].nameProperty;
-
-          //----------------------------------------------------------------------------------------------------------------------
+          var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty);//-
+          /*//----------------------------------------------------------------------------------------------------------------------
           var cat = plugin.findCat();
           var expression = plugin.expression;
 
           var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty, cat, expression);
-          //----------------------------------------------------------------------------------------------------------------------
+          *///----------------------------------------------------------------------------------------------------------------------
 
           var layer = L.geoJson(geoJson, {
             style: plugin.options.styleNormal,
@@ -472,10 +475,23 @@ opensdg.autotrack = function(preset, category, action, label) {
         plugin.updateColors();
 
         // Now that we have layers, we can add the search feature.
-        //-------------------------------------------------------------------
+        plugin.searchControl = new L.Control.Search({
+          layer: plugin.getAllLayers(),
+          propertyName: 'name',
+          marker: false,
+          moveToLocation: function(latlng) {
+            plugin.zoomToFeature(latlng.layer);
+            if (!plugin.selectionLegend.isSelected(latlng.layer)) {
+              plugin.highlightFeature(latlng.layer);
+              plugin.selectionLegend.addSelection(latlng.layer);
+            }
+          },
+          autoCollapse: true,
+        });
+        /*//-------------------------------------------------------------------
         //A reload due to Radio-button change creates a second search-Button.
         //Therefor we need to ask if it is the first load here:
-        
+        if (plugin.reloadCounter == 1){
           //----------------------------------------------------------------
           plugin.searchControl = new L.Control.Search({
             layer: plugin.getAllLayers(),
@@ -491,9 +507,9 @@ opensdg.autotrack = function(preset, category, action, label) {
             autoCollapse: true,
           });
 
-        if (plugin.reloadCounter == 1){
-        plugin.map.addControl(plugin.searchControl);
         }//---------------------------------
+        */
+        plugin.map.addControl(plugin.searchControl);
         // The search plugin messes up zoomShowHide, so we have to reset that
         // with this hacky method. Is there a better way?
         var zoom = plugin.map.getZoom();
@@ -1031,8 +1047,8 @@ var indicatorDataStore = function(dataUrl) {
   };
   //SDG goal colors
   //['e5243b', 'e5b735', '4c9f38', 'c5192d', 'ff3a21', '26bde2', 'fcc30b', 'a21942', 'fd6925', 'dd1367'];
-  var headlinePointstyle = 'circle';
-  var pointStyles = ['circle', 'triangle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'];
+  //var headlinePointstyle = 'circle';
+  //var pointStyles = ['circle', 'triangle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'];
 
   // allow headline + (2 x others)
   var maxDatasetCount = 2 * colors.length;
@@ -1197,8 +1213,8 @@ var indicatorDataStore = function(dataUrl) {
       datasetIndex = 0,
 
       //-----------------
-      nameList = []
-      indexList = []
+      //nameList = []
+      //indexList = []
       //----------------
 
 
@@ -1229,7 +1245,7 @@ var indicatorDataStore = function(dataUrl) {
 
         return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
-      //------------------------------------------------------------------------------------------------------------------------
+      /*//------------------------------------------------------------------------------------------------------------------------
       getPointStyle = function (combinationDescription) {
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
           return 'rect';
@@ -1268,7 +1284,7 @@ var indicatorDataStore = function(dataUrl) {
           return 'line';
         }
       },
-      //----------------------------------------------------------------------------------------------------------------------
+      *///----------------------------------------------------------------------------------------------------------------------
 
       getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
@@ -1285,7 +1301,7 @@ var indicatorDataStore = function(dataUrl) {
         //     return f === field;
         //   }) : undefined,
 
-        //--------------------
+        /*//--------------------
 
         var categ = combinationDescription.substring(0, 4)
         if (categ == 'Ziel' || categ == 'Zeit' || categ == 'Targ' || categ == 'Time') {
@@ -1315,16 +1331,16 @@ var indicatorDataStore = function(dataUrl) {
           // Nimm den normalen Indexwert
           var datasetIndexMod = datasetIndex;
         }
-
+        */
         var fieldIndex,
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
-            borderColor: getLineStyle(combinationDescription, datasetIndexMod),
-            backgroundColor: '#' + getColor(datasetIndexMod),
-            pointStyle: getPointStyle(combinationDescription),
-            radius: 6,
-            pointBorderColor: '#' + getColor(datasetIndexMod),
+            borderColor: '#' + getColor(datasetIndex),//borderColor: getLineStyle(combinationDescription, datasetIndexMod),
+            backgroundColor: '#' + getColor(datasetIndex),//backgroundColor: '#' + getColor(datasetIndexMod),
+            //pointStyle: getPointStyle(combinationDescription),
+            //radius: 6,
+            pointBorderColor: '#' + getColor(datasetIndex),//pointBorderColor: '#' + getColor(datasetIndexMod),
             borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
@@ -1332,7 +1348,7 @@ var indicatorDataStore = function(dataUrl) {
               });
               return found ? found.Value : null;
             }),
-            type: getChartStyle(combinationDescription),
+            //type: getChartStyle(combinationDescription),
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
         //----------------------------------
@@ -1502,8 +1518,8 @@ var indicatorDataStore = function(dataUrl) {
         geoCodeRegEx: this.geoCodeRegEx,
         showMap: this.showMap,
         //------------------------------------------------
-        indicatorId: this.indicatorId,
-        title: this.chartTitle,
+        //indicatorId: this.indicatorId,
+        //title: this.chartTitle,
         //------------------------------------------------
       });
 
@@ -1594,15 +1610,13 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(geoData, geoCodeRegEx, goal, title) {
+  this.initialise = function(geoData, geoCodeRegEx) {
     $('.map').show();
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a> | <a href=\"https://www.mapbox.com/map-feedback/\"><b>Impove this map</b>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0"},
+      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjanplNTNhMmQwMTFjM21wNHEzazRlejhwIn0.ecHE5G83cklfW5AXYjI_0A","attribution":"<a href=\"https://www.mapbox.com\">Mapbox</a> | <a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> | <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> | <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a> | <a href=\"https://www.mapbox.com/map-feedback/\"><b>Impove this map</b>"},"colorRange":["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":0,"max_zoom":20,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":true}],
-      goal: goal,
-      title: title
     });
   };
 };
@@ -1721,7 +1735,7 @@ var indicatorView = function (model, options) {
   this._model.onSeriesComplete.attach(function(sender, args) {
     view_obj.initialiseSeries(args);
 
-    //--------------------------------
+    /*//--------------------------------
     if (args.indicatorId.includes('_1-')){var goalNr = 0;}
     else if (args.indicatorId.includes('_2-')) {var goalNr = 1;}
     else if (args.indicatorId.includes('_3-')) {var goalNr = 2;}
@@ -1739,10 +1753,10 @@ var indicatorView = function (model, options) {
     else if (args.indicatorId.includes('_15-')) {var goalNr = 14;}
     else if (args.indicatorId.includes('_16-')) {var goalNr = 15;}
     else if (args.indicatorId.includes('_17-')) {var goalNr = 16;}
-
+    */
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
-      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title);
+            view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx); //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title);
     }
   });
 
@@ -1952,7 +1966,7 @@ var indicatorView = function (model, options) {
   };
 
   this.updatePlot = function(chartInfo) {
-    // No Line for Targets--------------------------------------------------------------------------------------------
+    /*// No Line for Targets--------------------------------------------------------------------------------------------
     for (var set = 0; set<chartInfo.datasets.length; set++){
 
       //if (chartInfo.datasets[set].label.substr(0,4)=='Ziel'){
@@ -1961,7 +1975,7 @@ var indicatorView = function (model, options) {
       console.log (set, chartInfo.datasets);
     };
     //----------------------------------------------------------------------------------------------------------------
-
+    */
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
 
 
@@ -2024,14 +2038,15 @@ var indicatorView = function (model, options) {
 
             _.each(chart.data.datasets, function(dataset, datasetIndex) {
               text.push('<li data-datasetindex="' + datasetIndex + '">');
-              //-make shure targets don´t get dashed--------------------------------------------------------------------------------------------------------------
+              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
+              /*//-make shure targets don´t get dashed--------------------------------------------------------------------------------------------------------------
               if (dataset.label.substr(0,4) == 'Ziel' || dataset.label.substr(0,6) == 'Target'){
                 text.push('<span class="swatchTgt' + '" style="background-color: ' + dataset.backgroundColor + '">');
               }
               else{
                 text.push('<span class="swatchTsr' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
               }
-              //--------------------------------------------------------------------------------------------------------------------------------------------------
+              *///--------------------------------------------------------------------------------------------------------------------------------------------------
               text.push('</span>');
               text.push(translations.t(dataset.label));
               text.push('</li>');
@@ -2042,7 +2057,7 @@ var indicatorView = function (model, options) {
         },
 
         legend: {
-          display: false,
+          display: false
         },
         title: {
           display: false
@@ -2651,7 +2666,7 @@ $(function() {
     },
 
     onAdd: function() {
-      var controlTpl = '<span id="mapHead">{title}</span>' +//<<<----------------
+      var controlTpl = '' +//var controlTpl = '<span id="mapHead">{title}</span>' +//<<<----------------
         '<ul id="selection-list"></ul>' +
         '<div class="legend-swatches">' + //bar
           '{legendSwatches}' +
@@ -2663,8 +2678,8 @@ $(function() {
           '<span class="arrow right"></span>' +
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
-      var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
-      var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) {
+      var swatchWidth = 100 / this.plugin.options.colorRange.length; //var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
+      var swatches = this.plugin.options.colorRange.map(function(swatchColor) { //var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) {
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
@@ -2672,7 +2687,7 @@ $(function() {
       }).join('');
       var div = L.DomUtil.create('div', 'selection-legend');
 
-      //-----------------------------------------------------------------------
+      /*//-----------------------------------------------------------------------
       var headline = this.plugin.timeSeriesName
       if (this.plugin.sexName){
         headline += ', <br>' + this.plugin.sexName;
@@ -2687,7 +2702,7 @@ $(function() {
         headline += ', <br>' + this.plugin.criminalOffenceName;
       }
       headline += ', <br>' + this.plugin.unitName;
-      //-----------------------------------------------------------------------
+      *///-----------------------------------------------------------------------
 
       div.innerHTML = L.Util.template(controlTpl, {
         lowValue: this.plugin.valueRange[0],
@@ -2695,7 +2710,7 @@ $(function() {
         legendSwatches: swatches,
 
         //---
-        title: headline,
+        //title: headline,
         //---
 
       });
