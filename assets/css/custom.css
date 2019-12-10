@@ -234,54 +234,6 @@ header {
   border-color: transparent;
   margin-bottom: 5px; }
 
-#legend {
-  padding-left: 0;
-  text-align: center;
-  margin-top: -32px; }
-  #legend li {
-    font-size: 13px;
-    list-style-type: none;
-    display: inline-block;
-    color: #666;
-    line-height: 18px;
-    cursor: pointer;
-    padding: 5px; }
-    #legend li:hover {
-      background: #eee; }
-    #legend li.notshown {
-      text-decoration: line-through; }
-  #legend .swatchTsr {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 3px;
-    border-radius: 7.5px; }
-    #legend .swatchTsr.dashed {
-      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
-      background-repeat: repeat;
-      background-position: -5px 0; }
-  #legend .swatchTgt {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 3px; }
-  #legend span {
-    vertical-align: middle;
-    line-height: 18px; }
-  #legend:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-.header_img {
-  display: block;
-  float: right;
-  width: 30px;
-  padding-right: 8px;
-  padding-top: 12px; }
-  .header_img img {
-    width: 100%; }
-
 #disclaimer {
   background: #BF0C16; }
   #disclaimer .phase-tag {
