@@ -127,20 +127,10 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.unit = _.pluck(this.geoData, 'Units');
     this.unitName = translations.t(this.unit[this.unit.length -1]);
     //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-
-    /*
-    this.startExp = 0;
-    this.reloadCounter = 0; // to avoid multiple search buttons
-    this.hasMapDisaggs = false;
-    *///---------------------------------------------------
-
     this.init();
   }
 
-
   Plugin.prototype = {
-
-
 
     // Add time series to GeoJSON data and normalize the name and geocode.
     prepareGeoJson: function(geoJson, idProperty, nameProperty) {//prepareGeoJson: function(geoJson, idProperty, nameProperty, cat, exp) { //--------------------------------added cat & exp
@@ -150,18 +140,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         var name = feature.properties[nameProperty];
 
         var records = _.where(geoData, { GeoCode: geocode });
-        /*
-        //----Legend with Disagg---------------------------------------
-        // First add the time series data.
-        //Normal version, if there is no Disaggregation-cathegory with more than one expression.
-        if (cat == ''){
-          var records = _.where(geoData, { GeoCode: geocode});
-        }
-        //If there is a Disaggregation-cathegory with more than one expression:
-        else{
-          var records = _.where(geoData, { GeoCode: geocode, [cat]: exp });
-        }
-        *///-----------------------------------------------------------------------
+
         //var records = _.where(geoData, { GeoCode: geocode, cat: exp });
         records.forEach(function(record) {
           // Add the Year data into the properties.
@@ -176,30 +155,6 @@ opensdg.autotrack = function(preset, category, action, label) {
       });
       return geoJson;
     },
-
-    /*//---Legend with Disagg---------------
-    //Find those disaggregation-categories that have more then one expression in all lines that have geoData
-    findCat: function(){
-      var categories = ['title','sex','age'];
-      var category = '';
-
-      for (var i = 0; i<categories.length; i++){
-        if (this.findDisagg(categories[i]).length>1){ //if more than one expression for this categorie exists...
-          var category = categories[i];
-          this.hasMapDisaggs = true;
-        }
-      };
-      return category;
-    },
-
-    // Get the found category and return an array with the corresponding expressions
-    findDisagg: function(category){
-      var expressions = _.pluck(this.geoData, category);
-      unique = [ ...new Set(expressions) ];
-      return unique;
-    },
-
-    *///---------------------------
 
     // Zoom to a feature.
     zoomToFeature: function(layer) {
@@ -328,62 +283,6 @@ opensdg.autotrack = function(preset, category, action, label) {
       // Because after this point, "this" rarely works.
       var plugin = this;
 
-
-      /*//Add the radio buttons------------------------------------------------------------------------------------------------------------------------
-      //Create a Button for every expression and add it to the map
-      var cat = plugin.findCat();
-      if (cat != ''){
-        var exp = plugin.findDisagg(cat);
-        for (var i = 0; i<exp.length; i++) {
-          var label = exp[i];
-          var command = L.control({position: 'bottomright'});
-          command.onAdd = function (map) {
-              var div = L.DomUtil.create('div', 'command');
-              //set the Button on position 'startExp' to status checked
-              if (i == plugin.startExp){
-                div.innerHTML = '<label><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'" checked> '+translations.t(label)+'</label><br>';
-              }
-              else{
-                div.innerHTML = '<label><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'"> '+translations.t(label)+'</label><br>';
-              }
-              return div;
-          };
-          command.addTo(this.map);
-        };
-
-        //set var "expression" to the array(exp) value at position of checked button
-        this.expression = exp[$('input[name="disagg"]:checked').val()];
-        //count up the reloadCounter to avoid multiple builds of the search buttnon
-        this.reloadCounter ++;
-        //adjust the values for the selectionLegend
-        if (cat == 'sex'){
-          plugin.sexName = translations.t(plugin.expression);
-        }
-        else if (cat == 'title'){
-          plugin.timeSeries = translations.t(plugin.expression);
-        }
-        else if (cat == 'age'){
-          plugin.ageName = translations.t(plugin.expression);
-        }
-
-        //action, when click:
-        $('input[type="radio"]').on('click change', function(e) {
-
-          //console.log(e.type, plugin.startExp, plugin.sexName);
-
-
-          //set startExp to the intiger of the Position of selectet Expression
-          plugin.startExp = $('input[name="disagg"]:checked').val();
-
-          //alert('You clicked radio!');
-
-          //reload the map with different startExp
-          plugin.map.remove();
-          plugin.init();
-        });
-      }
-      *///------------------------------------------------------------------------------------------------------------------------
-
       // Add the year slider.
       this.map.addControl(L.Control.yearSlider({
         years: this.years,
@@ -448,12 +347,6 @@ opensdg.autotrack = function(preset, category, action, label) {
           var idProperty = plugin.mapLayers[i].idProperty;
           var nameProperty = plugin.mapLayers[i].nameProperty;
           var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty);//-
-          /*//----------------------------------------------------------------------------------------------------------------------
-          var cat = plugin.findCat();
-          var expression = plugin.expression;
-
-          var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty, cat, expression);
-          *///----------------------------------------------------------------------------------------------------------------------
 
           var layer = L.geoJson(geoJson, {
             style: plugin.options.styleNormal,
@@ -488,27 +381,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           },
           autoCollapse: true,
         });
-        /*//-------------------------------------------------------------------
-        //A reload due to Radio-button change creates a second search-Button.
-        //Therefor we need to ask if it is the first load here:
-        if (plugin.reloadCounter == 1){
-          //----------------------------------------------------------------
-          plugin.searchControl = new L.Control.Search({
-            layer: plugin.getAllLayers(),
-            propertyName: 'name',
-            marker: false,
-            moveToLocation: function(latlng) {
-              plugin.zoomToFeature(latlng.layer);
-              if (!plugin.selectionLegend.isSelected(latlng.layer)) {
-                plugin.highlightFeature(latlng.layer);
-                plugin.selectionLegend.addSelection(latlng.layer);
-              }
-            },
-            autoCollapse: true,
-          });
-
-        }//---------------------------------
-        */
+        
         plugin.map.addControl(plugin.searchControl);
         // The search plugin messes up zoomShowHide, so we have to reset that
         // with this hacky method. Is there a better way?
@@ -1212,13 +1085,6 @@ var indicatorDataStore = function(dataUrl) {
       headlineTable = undefined,
       datasetIndex = 0,
 
-      //-----------------
-      //nameList = []
-      //indexList = []
-      //----------------
-
-
-
       getCombinationDescription = function(combination) {
         return _.map(Object.keys(combination), function(key) {
           return translations.t(combination[key]);
@@ -1245,46 +1111,6 @@ var indicatorDataStore = function(dataUrl) {
 
         return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
-      /*//------------------------------------------------------------------------------------------------------------------------
-      getPointStyle = function (combinationDescription) {
-        if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
-          return 'rect';
-        }
-        else {
-          return 'circle';
-        }
-      },
-      //-------------------------------------------------------------------------------------------------------------------------
-
-      //-Since showLines does not work we set the opacity to 0.0 if it is a target--------------------------------------------------------------------------------------------------
-      getLineStyle = function (combinationDescription, datasetIndexMod) {
-        if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
-          return 'rgba(0, 0, 0, 0.0)';
-        }
-        else{
-          return '#' + getColor(datasetIndexMod);
-        }
-      },
-      //---------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-      //--Mixed charts -----------------------------------------------------------------------------------------------------------------------------------------------
-      barCharts = [translations.t('a) time series')+", "+translations.t('calculated annual values'),
-                  translations.t('a) time series')+", "+translations.t('air pollutants overall'),
-                  translations.t('b) target (max)')+", "+translations.t('air pollutants overall'),
-                  translations.t('a) time series')+", "+translations.t('funding balance (share of gross domestic product (at current prices) in %)'),
-                  translations.t('a) time series')+", "+translations.t('structural funding balance (share of gross domestic product (at current prices) in %)'),
-                  translations.t('a) time series')+", "+translations.t('proportion of msy examined in all managed stocks'),
-                  translations.t('a) time series')+", "+translations.t('index overall'),
-                  translations.t('b) target (min)')+", "+translations.t('index overall')]
-      getChartStyle = function (combinationDescription) {
-        if (barCharts.includes(String(combinationDescription))) {
-          return 'bar';
-        }
-        else {
-          return 'line';
-        }
-      },
-      *///----------------------------------------------------------------------------------------------------------------------
 
       getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
@@ -1301,45 +1127,12 @@ var indicatorDataStore = function(dataUrl) {
         //     return f === field;
         //   }) : undefined,
 
-        /*//--------------------
-
-        var categ = combinationDescription.substring(0, 4)
-        if (categ == 'Ziel' || categ == 'Zeit' || categ == 'Targ' || categ == 'Time') {
-          if (combinationDescription.indexOf(',') != -1){
-            if (!nameList.includes(combinationDescription.substring(combinationDescription.indexOf(','), combinationDescription.length))) {
-              // Ziel oder Zeitreihe - Mit Disaggregationen - Pendant ist noch nicht aufgerufen worden
-              // Schreibe den Index auf die Liste, damit dieser beim Aufruf des Pendants gefunden werden kann
-              nameList.push(combinationDescription.substring(combinationDescription.indexOf(','), combinationDescription.length));
-              indexList.push(datasetIndex);
-              var datasetIndexMod = datasetIndex;
-            }
-            else {
-              // Ziel oder Zeitreihe - Mit Disaggregationen - Pendant ist schon aufgerufen worden
-              // --> finde den Index des Pendants
-              var tempIndex = nameList.indexOf(combinationDescription.substring(combinationDescription.indexOf(','), combinationDescription.length));
-              var datasetIndexMod = indexList[tempIndex];
-            }
-          }
-          else {
-            // Ziel oder Zeitreihe - Keine weiteren Disaggregationen
-            // Nimm die erste farbe aus der Liste
-            var datasetIndexMod = 0;
-          }
-        }
-        else {
-          // Keine Ziel-/Zeitreihen-Unterteilung
-          // Nimm den normalen Indexwert
-          var datasetIndexMod = datasetIndex;
-        }
-        */
         var fieldIndex,
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
             borderColor: '#' + getColor(datasetIndex),//borderColor: getLineStyle(combinationDescription, datasetIndexMod),
             backgroundColor: '#' + getColor(datasetIndex),//backgroundColor: '#' + getColor(datasetIndexMod),
-            //pointStyle: getPointStyle(combinationDescription),
-            //radius: 6,
             pointBorderColor: '#' + getColor(datasetIndex),//pointBorderColor: '#' + getColor(datasetIndexMod),
             borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
