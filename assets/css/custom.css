@@ -257,6 +257,11 @@ header {
       #disclaimer .alert-danger {
         font-size: 0.75em; } }
 
+.link_btn {
+  padding-top: 0px;
+  padding-left: 0px;
+  margin-top: -7px; }
+
 .goal-stats {
   font-size: 0;
   margin-top: 10px; }
