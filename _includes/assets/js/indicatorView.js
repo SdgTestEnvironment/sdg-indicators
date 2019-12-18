@@ -113,29 +113,31 @@ var indicatorView = function (model, options) {
   this._model.onSeriesComplete.attach(function(sender, args) {
     view_obj.initialiseSeries(args);
 
-    //--------------------------------
-    //if (args.indicatorId.includes('_1-')){var goalNr = 0;}
-    //else if (args.indicatorId.includes('_2-')) {var goalNr = 1;}
-    //else if (args.indicatorId.includes('_3-')) {var goalNr = 2;}
-    //else if (args.indicatorId.includes('_4-')) {var goalNr = 3;}
-    //else if (args.indicatorId.includes('_5-')) {var goalNr = 4;}
-    //else if (args.indicatorId.includes('_6-')) {var goalNr = 5;}
-    //else if (args.indicatorId.includes('_7-')) {var goalNr = 6;}
-    //else if (args.indicatorId.includes('_8-')) {var goalNr = 7;}
-    //else if (args.indicatorId.includes('_9-')) {var goalNr = 8;}
-    //else if (args.indicatorId.includes('_10-')) {var goalNr = 9;}
-    //else if (args.indicatorId.includes('_11-')) {var goalNr = 10;}
-    //else if (args.indicatorId.includes('_12-')) {var goalNr = 11;}
-    //else if (args.indicatorId.includes('_13-')) {var goalNr = 12;}
-    //else if (args.indicatorId.includes('_14-')) {var goalNr = 13;}
-    //else if (args.indicatorId.includes('_15-')) {var goalNr = 14;}
-    //else if (args.indicatorId.includes('_16-')) {var goalNr = 15;}
-    //else if (args.indicatorId.includes('_17-')) {var goalNr = 16;}
-
-
+    //---#1 GoalDependendMapColor---start--------------------------
+    if (args.indicatorId.includes('_1-')){var goalNr = 0;}
+    else if (args.indicatorId.includes('_2-')) {var goalNr = 1;}
+    else if (args.indicatorId.includes('_3-')) {var goalNr = 2;}
+    else if (args.indicatorId.includes('_4-')) {var goalNr = 3;}
+    else if (args.indicatorId.includes('_5-')) {var goalNr = 4;}
+    else if (args.indicatorId.includes('_6-')) {var goalNr = 5;}
+    else if (args.indicatorId.includes('_7-')) {var goalNr = 6;}
+    else if (args.indicatorId.includes('_8-')) {var goalNr = 7;}
+    else if (args.indicatorId.includes('_9-')) {var goalNr = 8;}
+    else if (args.indicatorId.includes('_10-')) {var goalNr = 9;}
+    else if (args.indicatorId.includes('_11-')) {var goalNr = 10;}
+    else if (args.indicatorId.includes('_12-')) {var goalNr = 11;}
+    else if (args.indicatorId.includes('_13-')) {var goalNr = 12;}
+    else if (args.indicatorId.includes('_14-')) {var goalNr = 13;}
+    else if (args.indicatorId.includes('_15-')) {var goalNr = 14;}
+    else if (args.indicatorId.includes('_16-')) {var goalNr = 15;}
+    else if (args.indicatorId.includes('_17-')) {var goalNr = 16;}
+    //---#1 GoalDependendMapColor---stop---------------------------
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
-      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx); //, goalNr);
+            //---#1 GoalDependendMapColor---start--------------------------
+            //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
+            view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
+            //---#1 GoalDependendMapColor---stop---------------------------
     }
   });
 
@@ -345,6 +347,7 @@ var indicatorView = function (model, options) {
   };
 
   this.updatePlot = function(chartInfo) {
+
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
 
     if(chartInfo.selectedUnit) {
@@ -369,11 +372,10 @@ var indicatorView = function (model, options) {
   };
 
 
-
   this.createPlot = function (chartInfo) {
 
+    //console.log (chartInfo);
     var that = this;
-
     var chartConfig = {
       type: this._model.graphType,
       data: chartInfo,
@@ -415,6 +417,7 @@ var indicatorView = function (model, options) {
             text.push('</ul>');
             return text.join('');
         },
+
         legend: {
           display: false
         },
@@ -428,8 +431,8 @@ var indicatorView = function (model, options) {
     };
     chartConfig = opensdg.chartConfigAlter(chartConfig);
 
-    this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
 
+    this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
     Chart.pluginService.register({
       afterDraw: function(chart) {
         var $canvas = $(that._rootElement).find('canvas'),

@@ -16,7 +16,7 @@
     },
     // Zoom limits.
     minZoom: 5,
-    maxZoom: 10,
+    maxZoom: 15,
     // Visual/choropleth considerations.
     colorRange: chroma.brewer.BuGn,
     noValueColor: '#f0f0f0',
@@ -58,7 +58,9 @@
     this.mapLayers = [];
     this.geoData = options.geoData;
     this.geoCodeRegEx = options.geoCodeRegEx;
-    //this.goalNr = options.goal;
+    //---#1 GoalDependendMapColor---start--------------------------------------
+    this.goalNr = options.goal;
+    //---#1 GoalDependendMapColor---stop---------------------------------------
 
     // Require at least one geoLayer.
     if (!options.mapLayers.length) {
@@ -75,39 +77,45 @@
     this._name = 'sdgMap';
 
     this.valueRange = [_.min(_.pluck(this.geoData, 'Value')), _.max(_.pluck(this.geoData, 'Value'))];
-    this.colorScale = chroma.scale()//[this.goalNr])
+    //---#1 GoalDependendMapColor---start--------------------------------------
+    //this.colorScale = chroma.scale()
+    this.colorScale = chroma.scale(this.options.colorRange[this.goalNr])
+    //---#1 GoalDependendMapColor---stop---------------------------------------
       .domain(this.valueRange)
-      .classes(9); //[this.goalNr].length);
+      //---#1 GoalDependendMapColor---start--------------------------------------
+      //.classes(9);
+      .classes(this.options.colorRange[this.goalNr].length);
+      //---#1 GoalDependendMapColor---stop-------------------------------------
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years[0];
 
-    //----------------------------------------------
-    //this.timeSeries = _.pluck(this.geoData, 'timeseries');
-    //this.timeSeriesName = translations.t(this.timeSeries[0]);
+    //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
+    this.timeSeries = _.pluck(this.geoData, 'timeseries');
+    this.timeSeriesName = translations.t(this.timeSeries[this.timeSeries.length -1]);
     this.unit = _.pluck(this.geoData, 'Units');
-    this.unitName = translations.t(this.unit[0]);
-    //this.age = _.pluck(this.geoData, 'age');
-    //this.ageName = translations.t(this.age[0]);
-    //---------------------------------------------------
-
+    this.unitName = translations.t(this.unit[this.unit.length -1]);
+    //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.init();
   }
 
   Plugin.prototype = {
 
     // Add time series to GeoJSON data and normalize the name and geocode.
-    prepareGeoJson: function(geoJson, idProperty, nameProperty) {
+    prepareGeoJson: function(geoJson, idProperty, nameProperty) {//prepareGeoJson: function(geoJson, idProperty, nameProperty, cat, exp) { //--------------------------------added cat & exp
       var geoData = this.geoData;
       geoJson.features.forEach(function(feature) {
         var geocode = feature.properties[idProperty];
         var name = feature.properties[nameProperty];
-        // First add the time series data.
+
         var records = _.where(geoData, { GeoCode: geocode });
+
+        //var records = _.where(geoData, { GeoCode: geocode, cat: exp });
         records.forEach(function(record) {
           // Add the Year data into the properties.
           feature.properties[record.Year] = record.Value;
         });
+
         // Next normalize the geocode and name.
         feature.properties.name = translations.t(name);
         feature.properties.geocode = geocode;
@@ -216,14 +224,13 @@
 
     // Initialize the map itself.
     init: function() {
-
       // Create the map.
       this.map = L.map(this.element, {
         minZoom: this.options.minZoom,
         maxZoom: this.options.maxZoom,
         zoomControl: false,
       });
-      this.map.setView([0, 0], 0);
+      this.map.setView([51.9, 10.26],0);
       this.dynamicLayers = new ZoomShowHide();
       this.dynamicLayers.addTo(this.map);
       this.staticLayers = new ZoomShowHide();
@@ -238,6 +245,7 @@
       // Add scale.
       this.map.addControl(L.control.scale({position: 'bottomright'}));
 
+
       // Add tile imagery.
       L.tileLayer(this.options.tileURL, this.options.tileOptions).addTo(this.map);
 
@@ -251,8 +259,19 @@
           plugin.currentYear = new Date(e.time).getFullYear();
           plugin.updateColors();
           plugin.selectionLegend.update();
+
         }
       }));
+
+      //---#7 addMapboxWordmark---start-----------------------------------------------------------------------------------------
+      var logo = L.control({position: 'bottomleft'});
+      logo.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'logo');
+        div.innerHTML = '<a href="https://mapbox.com"> <img src="https://g205sdgs.github.io/sdg-indicators/public/mapbox-logo-white.png"/ width=140 height=30> </a>'
+        return div;
+      };
+      logo.addTo(this.map);
+      //---#7 addMapboxWordmark---stop-----------------------------------------------------------------------------------------
 
       // Add the selection legend.
       this.selectionLegend = L.Control.selectionLegend(plugin);
@@ -296,7 +315,7 @@
           // Now go on to add the geoJson again as choropleth dynamic regions.
           var idProperty = plugin.mapLayers[i].idProperty;
           var nameProperty = plugin.mapLayers[i].nameProperty;
-          var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty);
+          var geoJson = plugin.prepareGeoJson(geoJsons[i][0], idProperty, nameProperty);//-
 
           var layer = L.geoJson(geoJson, {
             style: plugin.options.styleNormal,
@@ -313,6 +332,8 @@
           // Add the layer to the ZoomShowHide group.
           plugin.dynamicLayers.addLayer(layer);
         }
+
+
         plugin.updateColors();
 
         // Now that we have layers, we can add the search feature.
@@ -329,6 +350,7 @@
           },
           autoCollapse: true,
         });
+        
         plugin.map.addControl(plugin.searchControl);
         // The search plugin messes up zoomShowHide, so we have to reset that
         // with this hacky method. Is there a better way?
