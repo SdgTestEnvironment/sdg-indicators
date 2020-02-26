@@ -1098,7 +1098,7 @@ var indicatorDataStore = function(dataUrl) {
         }).join(', ');
       },
 
-      getColor = function(datasetIndex) {
+      getColor = function(datasetIndex, indicatorId) {
 
         // offset if there is no headline data:
         if(!that.hasHeadline) {
@@ -1115,6 +1115,7 @@ var indicatorDataStore = function(dataUrl) {
           }
         }
 
+        console.log("getCol",indicatorId);
         return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
 
@@ -1173,9 +1174,9 @@ var indicatorDataStore = function(dataUrl) {
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
-            borderColor: '#' + getColor(datasetIndex),
-            backgroundColor: '#' + getColor(datasetIndex),
-            pointBorderColor: '#' + getColor(datasetIndex),
+            borderColor: '#' + getColor(datasetIndex, that.indicatorId),
+            backgroundColor: '#' + getColor(datasetIndex, that.indicatorId),
+            pointBorderColor: '#' + getColor(datasetIndex, that.indicatorId),
             borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
