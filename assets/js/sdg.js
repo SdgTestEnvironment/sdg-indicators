@@ -1140,6 +1140,20 @@ var indicatorDataStore = function(dataUrl) {
       },
       //--#14.1 barsOnly---stop--------------------------------------------------------------------------------------------------------
 
+      stackedCharts = ['indicator_3-5-1'];
+      getStacked = function(indicatorId){
+        if (stackedCharts.indexOf(indicatorId) != -1) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      },
+
+
+
+
+
       getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
         if(!this.hasHeadline) {
@@ -1173,6 +1187,7 @@ var indicatorDataStore = function(dataUrl) {
             //--#14.1 barsOnly---start------------------------------------------------
             type: getChartStyle(that.indicatorId, combinationDescription),
             //--#14.1 barsOnly---stop-------------------------------------------------
+            stacked: getStacked(that.indicatorId),
 
             //type: getChartStyle(combinationDescription),
             borderWidth: combinationDescription ? 2 : 4
