@@ -1102,7 +1102,7 @@ var indicatorDataStore = function(dataUrl) {
         console.log(combinationDescription);
         //---#22 allowDisplayOfRangeValues---start-----------------
         if (combinationDescription == ("treatment demand in facilities for addiction support (substances opioids, cocaine and stimulants) of the age group 18 to under 65 years(lower bound)")){
-          return '00ffffff';
+          return 'rgba(255, 255, 255, 0)';
         }
         //---#22 allowDisplayOfRangeValues---stop-------------------
 
@@ -1112,15 +1112,15 @@ var indicatorDataStore = function(dataUrl) {
         }
 
         if(datasetIndex === 0) {
-          return headlineColor;
+          return '#',headlineColor;
         } else {
           if(datasetIndex > colors.length) {
-            return colors[datasetIndex - 1 - colors.length];
+            return '#',colors[datasetIndex - 1 - colors.length];
           } else {
-            return colors[datasetIndex - 1];
+            return '#',colors[datasetIndex - 1];
           }
-        }      
-        return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
+        }
+        return datasetIndex === 0 ? '#',headlineColor : '#',colors[datasetIndex];
       },
 
       //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
@@ -1178,9 +1178,9 @@ var indicatorDataStore = function(dataUrl) {
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
-            borderColor: '#' + getColor(datasetIndex, combinationDescription),
-            backgroundColor: '#' + getColor(datasetIndex, combinationDescription),
-            pointBorderColor: '#' + getColor(datasetIndex, combinationDescription),
+            borderColor: getColor(datasetIndex, combinationDescription),
+            backgroundColor: getColor(datasetIndex, combinationDescription),
+            pointBorderColor: getColor(datasetIndex, combinationDescription),
             borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
