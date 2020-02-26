@@ -1098,13 +1098,7 @@ var indicatorDataStore = function(dataUrl) {
         }).join(', ');
       },
 
-      getColor = function(datasetIndex, combinationDescription) {
-        console.log(combinationDescription);
-        //---#22 allowDisplayOfRangeValues---start-----------------
-        if (combinationDescription == ("treatment demand in facilities for addiction support (substances opioids, cocaine and stimulants) of the age group 18 to under 65 years, lower bound")){
-          return 'rgba(255, 255, 255, 0)';
-        }
-        //---#22 allowDisplayOfRangeValues---stop-------------------
+      getColor = function(datasetIndex) {
 
         // offset if there is no headline data:
         if(!that.hasHeadline) {
@@ -1112,62 +1106,17 @@ var indicatorDataStore = function(dataUrl) {
         }
 
         if(datasetIndex === 0) {
-          return '#'+headlineColor;
+          return headlineColor;
         } else {
           if(datasetIndex > colors.length) {
-            return '#'+colors[datasetIndex - 1 - colors.length];
+            return colors[datasetIndex - 1 - colors.length];
           } else {
-            return '#'+colors[datasetIndex - 1];
+            return colors[datasetIndex - 1];
           }
         }
-        return datasetIndex === 0 ? ('#'+headlineColor) : ('#'+colors[datasetIndex]);
+
+        return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
-
-      //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
-      barCharts = ['indicator_3-5-1'];
-
-      exceptions = [translations.t('inpatient treatment of dependence syndrom due to psychoactive substance use (1 000)') + ', ' + translations.t('total'),
-                    translations.t('inpatient treatment of dependence syndrom due to psychoactive substance use (1 000)') + ', ' + translations.t('inpatient treatment of alcohol dependence')];
-
-      getChartStyle = function (indicatorId, combinationDescription) {
-
-        if (barCharts.indexOf(indicatorId) != -1) {
-          if (exceptions.indexOf(combinationDescription) != -1){
-            return 'line';
-          }
-          else{
-            return 'bar';
-          }
-        }
-        else {
-          return 'line';
-        }
-      },
-      //--#14.1 barsOnly---stop--------------------------------------------------------------------------------------------------------
-
-      stackedCharts = ['indicator_3-5-1'];
-      exceptions = [translations.t('inpatient treatment of dependence syndrom due to psychoactive substance use (1 000)') + ', ' + translations.t('total'),
-                    translations.t('inpatient treatment of dependence syndrom due to psychoactive substance use (1 000)') + ', ' + translations.t('inpatient treatment of alcohol dependence')];
-      getStacked = function(indicatorId, combinationDescription){
-        if (stackedCharts.indexOf(indicatorId) != -1) {
-          if (exceptions.indexOf(combinationDescription) != -1){
-            console.log("a",combinationDescription);
-            return false;
-          }
-          else{
-            console.log("b",combinationDescription);
-            return true;
-          }
-        }
-        else {
-          console.log("c",combinationDescription);
-          return false;
-        }
-      },
-
-
-
-
 
       getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
@@ -1188,9 +1137,9 @@ var indicatorDataStore = function(dataUrl) {
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
-            borderColor: getColor(datasetIndex, combinationDescription), // #22 borderColor: '#', getColor(datasetIndex, combinationDescription),
-            backgroundColor: getColor(datasetIndex, combinationDescription),// #22 backgroundColor: '#', getColor(datasetIndex, combinationDescription),
-            pointBorderColor: getColor(datasetIndex, combinationDescription),// #22 pointBorderColor: '#', getColor(datasetIndex, combinationDescription),
+            borderColor: '#' + getColor(datasetIndex),
+            backgroundColor: '#' + getColor(datasetIndex),
+            pointBorderColor: '#' + getColor(datasetIndex),
             borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
@@ -1198,12 +1147,6 @@ var indicatorDataStore = function(dataUrl) {
               });
               return found ? found.Value : null;
             }),
-
-            //--#14.1 barsOnly---start------------------------------------------------
-            type: getChartStyle(that.indicatorId, combinationDescription),
-            //--#14.1 barsOnly---stop-------------------------------------------------
-            stacked: getStacked(that.indicatorId, combinationDescription),
-
             //type: getChartStyle(combinationDescription),
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
@@ -1890,13 +1833,11 @@ var indicatorView = function (model, options) {
             var text = ['<ul id="legend">'];
 
             _.each(chart.data.datasets, function(dataset, datasetIndex) {
-              if (dataset.label != ("treatment demand in facilities for addiction support (substances opioids, cocaine and stimulants) of the age group 18 to under 65 years, lower bound")){
-                text.push('<li data-datasetindex="' + datasetIndex + '">');
-                text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
-                text.push('</span>');
-                text.push(translations.t(dataset.label));
-                text.push('</li>');
-              }
+              text.push('<li data-datasetindex="' + datasetIndex + '">');
+              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
+              text.push('</span>');
+              text.push(translations.t(dataset.label));
+              text.push('</li>');
             });
 
             text.push('</ul>');
