@@ -144,7 +144,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200227125046">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200227131236">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -152,7 +152,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200227125046"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200227131236"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -470,13 +470,6 @@ data-event-action="Change data view"
 data-event-label="Change to Map tab"
 ><i class="fa fa-map" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Map</span></a>
               <!---#12 addIconsForTabs---stop-------------------------------------------->
-            </li><li role="presentation" class="nav-item embedded-map" >
-
-              <a data-no-disagg="true" class="nav-link" data-toggle="tab" href="https://onedrive.live.com/embed?resid=CD81916F8BF5E88B%21105&authkey=%21AI2kLHCdAQSzPqQ&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True" aria-controls="embeddedmapview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change data view"
-data-event-label="Change to embedded item tab"
-><i class="fa fa-plus-square" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Zusätzliche Zeitreihe</span></a>
             </li></ul>
 
           <!-- Tab panes -->
@@ -526,20 +519,6 @@ data-event-label="Change to embedded item tab"
                 
               </div>
               <!---#16 showMapDataSources---stop---------------------->
-            </div>
-            
-            <div role="tabpanel" class="tab-pane" id="embeddedmapview" class="embedded-map">
-              <div role="tabpanel" class="tab-pane" id="embeddedmapview" >
-              <div class="row">
-              <div class="col-xs-12">
-                <h3 tabindex="0">Behandlungsnachfrage in Suchthilfezentren (Stoffgruppen Opioide, Kokain und Stimulanzien) in der Altersklasse 18 bis unter 65 Jahre</h3>
-              </div>
-            </div>
-              <div class="embedded-map" id="embeddedmapframe">
-                <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
-                <script>document.querySelector("li.nav-item.embedded-map").addEventListener("click",function(){ var pymParent = new pym.Parent('embeddedmapframe', 'https://onedrive.live.com/embed?resid=CD81916F8BF5E88B%21105&authkey=%21AI2kLHCdAQSzPqQ&em=2&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True', {});})</script>
-
-              </div>
             </div>
             
           </div>
@@ -686,7 +665,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/G205SDGs/sdg-data/commit/8c012035a38add886405d2f71a0067f18895a7fe" target="_blank">
+              <a href="https://github.com/G205SDGs/sdg-data/commit/d75f92bb54e167fa1076167b22b815e68f3a4aa5" target="_blank">
                 2020-02-27: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1059,7 +1038,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200227125046'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200227125046"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200227131236'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200227131236"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
