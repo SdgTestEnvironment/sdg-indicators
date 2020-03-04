@@ -144,7 +144,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200303081526">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200304080401">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -152,7 +152,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200303081526"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200304080401"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -534,7 +534,14 @@ data-event-label="Change to Map tab"
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="nav-item active">
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <li role="presentation" class="nav-item active">
+          
+          <!--<li role="presentation" class="nav-item active">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
+
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
@@ -564,7 +571,14 @@ data-event-label="Change to Sources tab"
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <div role="tabpanel" class="tab-pane active" id="metadata">
+          
+          <!--<div role="tabpanel" class="tab-pane active" id="metadata">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
             <!-- National Metadata -->
             <div > <!-- formerly class="collapsible expanded" -->
               <!-- <h3 tabindex='0'>National Metadata</h3> -->
@@ -591,127 +605,175 @@ data-event-label="Change to Sources tab"
   
   
       
-      <tr>
-        <th scope="row">Indicator available </th>
-        <td>
-          
-            <p>Population who had the impression that public officials are corruptible (during their interactions with public agencies in the previous two years) <br /> Private persons (donors) suspected in the context of corruption offences</p>
 
-          
-        </td>
-        </tr>
-        
-      
+    
   
       
       <tr>
-        <th scope="row">Comparability with UN metadata </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>The time series provided is based on the impression of persons that public officials are corruptible rather than if they actually paid a bribe or were asked for one.</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Comparability with UN metadata</th>
+
+            <td colspan="4">
+              
+                <p>The time series provided is based on the impression of persons that public officials are corruptible rather than if they actually paid a bribe or were asked for one.</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to national metadata </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/16.5.1.pdf" target="_blank">
-                National metadata <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to national metadata</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/16.5.1.pdf" target="_blank">
+                    National metadata <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Last modification the code <small>(data)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/e236b103fcf4eec313afc631f8de8adc7992aa39" target="_blank">
-                2019-08-21: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Last modification the code <small>(data)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/e236b103fcf4eec313afc631f8de8adc7992aa39" target="_blank">
+                    2019-08-21: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Last modification the code <small>(text)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/6e298d01836c52a09e5c2e7f8d6146d89420475f" target="_blank">
-                2020-02-17: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Last modification the code <small>(text)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/6e298d01836c52a09e5c2e7f8d6146d89420475f" target="_blank">
+                    2020-02-17: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
       
       <tr>
-        <th scope="row">Additional Information </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -799,119 +861,232 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Indicator name </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator name</th>
+
+            <td colspan="4">
+              
+                <p>Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indicator number </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>16.5.1</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator number</th>
+
+            <td colspan="4">
+              
+                <p>16.5.1</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indicator display order (within Goal page) </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>16-05-01</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator display order (within Goal page)</th>
+
+            <td colspan="4">
+              
+                <p>16-05-01</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Target name </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Substantially reduce corruption and bribery in all their forms</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Target name</th>
+
+            <td colspan="4">
+              
+                <p>Substantially reduce corruption and bribery in all their forms</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Target number </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>16.5</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Target number</th>
+
+            <td colspan="4">
+              
+                <p>16.5</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row"><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for further information on the UN_Tier classification.">UN designated tier</a> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>2</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for further information on the UN_Tier classification.">UN designated tier</a></th>
+
+            <td colspan="4">
+              
+                <p>2</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">UN custodian agency </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>United Nations Office on Drugs and Crime (UNODC)</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >UN custodian agency</th>
+
+            <td colspan="4">
+              
+                <p>United Nations Office on Drugs and Crime (UNODC)</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to the global metadata of this indicator </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-05-01.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to the global metadata of this indicator</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-05-01.pdf" target="_blank">
+                    United Nations Sustainable Development Goals Metadata <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1048,117 +1223,154 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p><a href="https://www.destatis.de"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/destatis.png" alt="Logo Destatis" /></a></p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                <p><a href="https://www.destatis.de"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/destatis.png" alt="Logo Destatis" /></a></p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Organisation </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Federal Statistical Office (Destatis)</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Federal Statistical Office (Destatis)</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to <br>data source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.amtlich-einfach.de/DE/Home/home_node.html" target="_blank">
-                Special analysis - Other results from the Life Situation Survey (Only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to <br>data source</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.amtlich-einfach.de/DE/Home/home_node.html" target="_blank">
+                    Special analysis - Other results from the Life Situation Survey (Only available in German) <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1261,7 +1473,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200303081526'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200303081526"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200304080401'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200304080401"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

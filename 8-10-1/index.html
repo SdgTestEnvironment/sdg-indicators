@@ -144,7 +144,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200303081526">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200304080401">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -152,7 +152,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200303081526"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200304080401"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -527,7 +527,14 @@ data-event-label="Change to Map tab"
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="nav-item active">
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <li role="presentation" class="nav-item active">
+          
+          <!--<li role="presentation" class="nav-item active">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
+
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
@@ -557,7 +564,14 @@ data-event-label="Change to Sources tab"
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <div role="tabpanel" class="tab-pane active" id="metadata">
+          
+          <!--<div role="tabpanel" class="tab-pane active" id="metadata">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
             <!-- National Metadata -->
             <div > <!-- formerly class="collapsible expanded" -->
               <!-- <h3 tabindex='0'>National Metadata</h3> -->
@@ -584,127 +598,175 @@ data-event-label="Change to Sources tab"
   
   
       
-      <tr>
-        <th scope="row">Verfügbare Datenreihenbezeichnung </th>
-        <td>
-          
-            <p>a) Zweigstellen von Zahlungsverkehrsdienstleistern <br /> b) Bankautomaten von inländischen Zahlungsdienstleistern</p>
 
-          
-        </td>
-        </tr>
-        
-      
+    
   
       
       <tr>
-        <th scope="row">Vergleichbarkeit mit UN Metadaten </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Entspricht den UN-Metadaten.</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Vergleichbarkeit mit UN Metadaten</th>
+
+            <td colspan="4">
+              
+                <p>Entspricht den UN-Metadaten.</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link zu den nationalen Metadaten </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/8.10.1.pdf" target="_blank">
-                Nationale Metadaten <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link zu den nationalen Metadaten</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/8.10.1.pdf" target="_blank">
+                    Nationale Metadaten <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Letzte Änderung des Codes <small>(Daten)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/72dc866f1cb58add96dfd1bf30fd7c9240ed4354" target="_blank">
-                2019-09-23: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Letzte Änderung des Codes <small>(Daten)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/72dc866f1cb58add96dfd1bf30fd7c9240ed4354" target="_blank">
+                    2019-09-23: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Letzte Änderung des Codes <small>(Texte)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/bd18ca4dda0587601c4a9d61272fd600f5cf5126" target="_blank">
-                2020-01-15: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Letzte Änderung des Codes <small>(Texte)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/bd18ca4dda0587601c4a9d61272fd600f5cf5126" target="_blank">
+                    2020-01-15: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
       
       <tr>
-        <th scope="row">Zusätzliche Informationen </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -792,119 +854,232 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Indikatorenbezeichnung </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>(a) Anzahl der Bankfilialen je 100.000 Erwachsener und (b) Anzahl der Geldautomaten je 100.000 Erwachsener</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indikatorenbezeichnung</th>
+
+            <td colspan="4">
+              
+                <p>(a) Anzahl der Bankfilialen je 100.000 Erwachsener und (b) Anzahl der Geldautomaten je 100.000 Erwachsener</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indikatorennummerierung </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>8.10.1</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indikatorennummerierung</th>
+
+            <td colspan="4">
+              
+                <p>8.10.1</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indikatorenreihenfolge (in der Zielübersicht) </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>08-10-01</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indikatorenreihenfolge (in der Zielübersicht)</th>
+
+            <td colspan="4">
+              
+                <p>08-10-01</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Unterziel </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Die Kapazitäten der nationalen Finanzinstitutionen stärken, um den Zugang zu Bank-, Versicherungs- und Finanzdienstleistungen für alle zu begünstigen und zu erweitern</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Unterziel</th>
+
+            <td colspan="4">
+              
+                <p>Die Kapazitäten der nationalen Finanzinstitutionen stärken, um den Zugang zu Bank-, Versicherungs- und Finanzdienstleistungen für alle zu begünstigen und zu erweitern</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Unterzielnummerierung </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>8.10</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Unterzielnummerierung</th>
+
+            <td colspan="4">
+              
+                <p>8.10</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row"><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Klicken Sie hier um weitere Informationen zur UN-Tierklassifikation zu erhalten.">UN Tier Klassifikation</a> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>1</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Klicken Sie hier um weitere Informationen zur UN-Tierklassifikation zu erhalten.">UN Tier Klassifikation</a></th>
+
+            <td colspan="4">
+              
+                <p>1</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">UN Custodian Agency </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Internationale Währungsfonds (IMF)</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >UN Custodian Agency</th>
+
+            <td colspan="4">
+              
+                <p>Internationale Währungsfonds (IMF)</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link zu den globalen Metadaten dieses Indikators </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-10-01.pdf" target="_blank">
-                Metadaten der Ziele der Vereinten Nationen für nachhaltige Entwicklung <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link zu den globalen Metadaten dieses Indikators</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-10-01.pdf" target="_blank">
+                    Metadaten der Ziele der Vereinten Nationen für nachhaltige Entwicklung <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1041,129 +1216,217 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p><a href="https://www.bundesbank.de/de"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/bundesbank.png" alt="Logo Deutsche Bundesbank" /></a></p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                <p><a href="https://www.bundesbank.de/de"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/bundesbank.png" alt="Logo Deutsche Bundesbank" /></a></p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Organisation </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Deutsche Bundesbank</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Deutsche Bundesbank</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link zur <br>Datenquelle </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
-                Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2007 to 2013 – Institutions offering payment services to non-MFIs, table 4 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link zur <br>Datenquelle</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
+                    Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2007 to 2013 – Institutions offering payment services to non-MFIs, table 4 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
-                Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2013 to 2017 – Institutions offering payment services to non-MFIs, table 4 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
+                    Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2013 to 2017 – Institutions offering payment services to non-MFIs, table 4 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
-                Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2007 to 2013 – Terminals provided by resident PSPs - ATMs, table 5 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
+                    Statistics on paymnents and Securities Trading, Clearing and Settlement in Germany 2007 to 2013 – Terminals provided by resident PSPs - ATMs, table 5 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
-                2013 to 2017 – Terminals provided by resident PSPs - ATMs, table 5 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundesbank.de/de/statistiken/-/statistik-internetseiten-ueberarbeitet-796770" target="_blank">
+                    2013 to 2017 – Terminals provided by resident PSPs - ATMs, table 5 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1266,7 +1529,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200303081526'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200303081526"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200304080401'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200304080401"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

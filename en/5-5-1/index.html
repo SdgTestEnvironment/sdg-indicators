@@ -144,7 +144,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200303081526">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200304080401">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -152,7 +152,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200303081526"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200304080401"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -527,7 +527,14 @@ data-event-label="Change to Map tab"
 
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="nav-item active">
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <li role="presentation" class="nav-item active">
+          
+          <!--<li role="presentation" class="nav-item active">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
+
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
@@ -557,7 +564,14 @@ data-event-label="Change to Sources tab"
 
         <!-- Tab panes -->
         <div class="tab-content">
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+
+          <!--#22 additionalDataAsEmbedded---start-------------------------->
+          
+            <div role="tabpanel" class="tab-pane active" id="metadata">
+          
+          <!--<div role="tabpanel" class="tab-pane active" id="metadata">-->
+          <!--#22 additionalDataAsEmbedded---stop--------------------------->
+
             <!-- National Metadata -->
             <div > <!-- formerly class="collapsible expanded" -->
               <!-- <h3 tabindex='0'>National Metadata</h3> -->
@@ -584,127 +598,175 @@ data-event-label="Change to Sources tab"
   
   
       
-      <tr>
-        <th scope="row">Indicator available </th>
-        <td>
-          
-            <p>Seats held by women in national parliament <br /> Seats held by women in the parliament of states</p>
 
-          
-        </td>
-        </tr>
-        
-      
+    
   
       
       <tr>
-        <th scope="row">Comparability with UN metadata </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>The time series provided shows the proportion of women in the national parliament based on the results of the election. In comparison the UN metadata calls for the time period 2013 till present the proportion as at 1 February of reporting year.</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Comparability with UN metadata</th>
+
+            <td colspan="4">
+              
+                <p>The time series provided shows the proportion of women in the national parliament based on the results of the election. In comparison the UN metadata calls for the time period 2013 till present the proportion as at 1 February of reporting year.</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to national metadata </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/5.5.1.pdf" target="_blank">
-                National metadata <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to national metadata</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/5.5.1.pdf" target="_blank">
+                    National metadata <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Last modification the code <small>(data)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/5a975cc220da2bc7e6703b7490713a9bee66c7bb" target="_blank">
-                2019-12-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Last modification the code <small>(data)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/5a975cc220da2bc7e6703b7490713a9bee66c7bb" target="_blank">
+                    2019-12-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row">Last modification the code <small>(text)</small> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/G205SDGs/sdg-data/commit/a7631ed3f973b81500911ad6cfd412b6ce4b8971" target="_blank">
-                2020-01-30: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Last modification the code <small>(text)</small></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/a7631ed3f973b81500911ad6cfd412b6ce4b8971" target="_blank">
+                    2020-01-30: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
       
       <tr>
-        <th scope="row">Additional Information </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -792,119 +854,232 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Indicator name </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Proportion of seats held by women in (a) national parliaments and (b) local governments</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator name</th>
+
+            <td colspan="4">
+              
+                <p>Proportion of seats held by women in (a) national parliaments and (b) local governments</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indicator number </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>5.5.1</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator number</th>
+
+            <td colspan="4">
+              
+                <p>5.5.1</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Indicator display order (within Goal page) </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>05-05-01</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Indicator display order (within Goal page)</th>
+
+            <td colspan="4">
+              
+                <p>05-05-01</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Target name </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>Ensure women’s full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Target name</th>
+
+            <td colspan="4">
+              
+                <p>Ensure women’s full and effective participation and equal opportunities for leadership at all levels of decision-making in political, economic and public life</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Target number </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>5.5</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Target number</th>
+
+            <td colspan="4">
+              
+                <p>5.5</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row"><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for further information on the UN_Tier classification.">UN designated tier</a> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>1/2</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for further information on the UN_Tier classification.">UN designated tier</a></th>
+
+            <td colspan="4">
+              
+                <p>1/2</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">UN custodian agency </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>The United Nations Entity for Gender Equality and the Empowerment of Women (UN Women)</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >UN custodian agency</th>
+
+            <td colspan="4">
+              
+                <p>The United Nations Entity for Gender Equality and the Empowerment of Women (UN Women)</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to the global metadata of this indicator </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://unstats.un.org/sdgs/metadata/" target="_blank">
-                United Nations Sustainable Development Goals Metadata <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to the global metadata of this indicator</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://unstats.un.org/sdgs/metadata/" target="_blank">
+                    United Nations Sustainable Development Goals Metadata <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1041,125 +1216,196 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p><a href="https://www.bundeswahlleiter.de/bundeswahlleiter.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/bundeswahlleiter.png" alt="Logo Bundeswahlleiter" /></a></p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                <p><a href="https://www.bundeswahlleiter.de/bundeswahlleiter.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/LogosEn/bundeswahlleiter.png" alt="Logo Bundeswahlleiter" /></a></p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Organisation </th>
-        <td>
+        
+
+          <!--#22 additionalDataAsEmbedded---start---------->
           
-            <p>The Federal Returning Officer</p>
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>The Federal Returning Officer</p>
+
+              
+            </td>
 
           
-        </td>
-        </tr>
+
+        <!--#22 additionalDataAsEmbedded---start---------->
         
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
       <tr>
-        <th scope="row">Link to <br>data source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2013/publikationen.html" target="_blank">
-                Data for the election in 2013 <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" >Link to <br>data source</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2013/publikationen.html" target="_blank">
+                    Data for the election in 2013 <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2017/publikationen.html" target="_blank">
-                Data for the election in 2017 <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2017/publikationen.html" target="_blank">
+                    Data for the election in 2017 <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://www.bundeswahlleiter.de/en/service/landtagswahlen.html" target="_blank">
-                Election statistics <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+          <!--#22 additionalDataAsEmbedded---stop----------->
+
+            <th scope="row" height="" ></th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bundeswahlleiter.de/en/service/landtagswahlen.html" target="_blank">
+                    Election statistics <span class="visuallyhidden">opens in a new window</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
       
       <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-
-          
-        </td>
-        </tr>
         
+
+          <!--#22 additionalDataAsEmbedded---start---------->
+          
+
+        <!--#22 additionalDataAsEmbedded---start---------->
+        
+        <!--#22 additionalDataAsEmbedded---stop----------->
+      </tr>
       
+
+    
   
       
-      
+
+    
   
   
   
@@ -1262,7 +1508,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200303081526'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200303081526"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200304080401'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200304080401"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
