@@ -681,7 +681,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/7-b-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "7-3-1",
           "title": "Energieintensität gemessen als Primärenergie zum BIP",
@@ -1180,7 +1180,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-a-1",
-          "status": "notstarted"
+          "status": "notapplicable"
         },{
           "id": "12-1-1",
           "title": "Anzahl der Staaten mit nationalen Aktionsplänen zu nachhaltigem Konsum und Produktion (SCP) oder SCP, die als Priorität oder Ziel in nationale Politik aufgenommen wurden",
