@@ -783,7 +783,7 @@
           "id": "8-4-1",
           "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck pro BIP",
           "description": "",
-          "keywords": "Indikator 8.4.1, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC; abiotische und biotische Rohstoffe), Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) je Einwohner, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
+          "keywords": "Indikator 8.4.1, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC; abiotische und biotische Rohstoffe), Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) je Einwohner, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) zum",
           "href": "/sdg-indicators/8-4-1",
           "status": "complete"
         },{
@@ -873,7 +873,7 @@
           "id": "9-4-1",
           "title": "CO<sub>2</sub>-Emissionen pro Wertschöpfungseinheit",
           "description": "",
-          "keywords": "Indikator 9.4.1, CO2-Emissionen (ohne Landnutzung, Landnutzungsänderungen und Forstwirtschaft) zum realen BIP, CO2-Emissionen zur Bruttowertschöpfung (preisbereinigt) im Verarbeitenden Gewerbe, Internationale Energieagentur (IEA), Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
+          "keywords": "Indikator 9.4.1, CO2-Emissionen (ohne Landnutzung, Landnutzungsänderungen und Forstwirtschaft) zum realen BIP, CO2-Emissionen zur Bruttowertschöpfung (preisbereinigt) im Verarbeitenden Gewerbe, Internationale Energieagentur (IEA), Organisation der Vereint",
           "href": "/sdg-indicators/9-4-1",
           "status": "complete"
         },{
@@ -1093,7 +1093,7 @@
           "status": "notstarted"
         },{
           "id": "11-6-2",
-          "title": "Jahresmittelwerte für Feinstaub (z. B. PM2,5 und PM10) in Städten (bevölkerungsgewichtet)",
+          "title": "Jahresmittelwerte für Feinstaub (z. B. PM<sub>2,5</sub> und PM<sub>10</sub>) in Städten (bevölkerungsgewichtet)",
           "description": "",
           "keywords": "Indikator 11.6.2, Bevölkerungsgewichtete Jahresmittelwerte von PM10, Weltgesundheitsorganisation (WHO), Umweltbundesamt (UBA)",
           "href": "/sdg-indicators/11-6-2",
@@ -1199,7 +1199,7 @@
           "id": "12-2-1",
           "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck pro BIP",
           "description": "",
-          "keywords": "Indikator 12.2.1, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC; abiotische und biotische Rohstoffe), Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) je Einwohner, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
+          "keywords": "Indikator 12.2.2, Inländische Materialverwendung (DMC; abiotische und biotische Rohstoffe), Inländische Materialverwendung (DMC) je Einwohner, Inländische Materialverwendung (DMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-2-1",
           "status": "complete"
         },{
