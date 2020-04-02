@@ -437,7 +437,7 @@
           "id": "4-3-1",
           "title": "Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vergangenen 12&nbsp;Monaten, nach Geschlecht",
           "description": "",
-          "keywords": "Indikator 4.3.1, Teilnahmequote der 15 bis unter 25-Jährigen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Teilnahmequote der Erwachsenen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Organisation der Vereinten Nationen für Bildung Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
+          "keywords": "Indikator 4.3.1, Teilnahmequote der 15 bis unter 25-Jährigen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Teilnahmequote der Erwachsenen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten",
           "href": "/sdg-indicators/4-3-1",
           "status": "complete"
         },{
@@ -845,7 +845,7 @@
           "id": "9-b-1",
           "title": "Anteil der Wertschöpfung der Medium- und High-Tech-Industrie an der Wertschöpfung insgesamt",
           "description": "",
-          "keywords": "Indikator 9.b.1, Bruttowertschöpfung der High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium- und High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium-High-Tech-Industrien am Verarbeitenden Gewerbe, Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
+          "keywords": "nIndikator 9.b.1, Bruttowertschöpfung der High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium- und High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium-High-Tech-Industrien am Verarbeitenden Gewerbe, Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
           "href": "/sdg-indicators/9-b-1",
           "status": "complete"
         },{
@@ -1046,7 +1046,7 @@
           "id": "11-2-1",
           "title": "Anteil der Bevölkerung, die einen angemessenen Zugang zu öffentlichen Verkehrsmitteln hat, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
-          "keywords": "Indikator 11.2.1, Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 10 Minuten zu Fuß), Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 500 Metern), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
+          "keywords": "Indikator 11.2.1, Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 10 Minuten zu Fuß), Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 500 Metern), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)Indikator 11.2.1, Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 10 Minuten zu Fuß), Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 500 Metern), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/11-2-1",
           "status": "complete"
         },{
@@ -1164,7 +1164,7 @@
           "id": "12-4-1",
           "title": "Anzahl der Vertragsparteien internationaler multilateraler Umweltabkommen über gefährliche Abfälle und andere Chemikalien, die ihren Bekenntnissen und Verpflichtungen nachkommen, indem sie die gemäß dem jeweiligen Übereinkommen geforderten Informationen übermitteln",
           "description": "",
-          "keywords": "Indikator 12.4.1, Übereinstimmung mit dem Basler Übereinkommen, Übereinstimmung mit dem Minamata Übereinkommen, Übereinstimmung mit dem Montrealer Protokoll, Übereinstimmung mit dem Rotterdamer Übereinkommen, Übereinstimmung mit dem Stockholmer Übereinkommen, Umweltprogramm der Vereinten Nationen (UNEP)",
+          "keywords": "Indikator 12.4.1, Übereinstimmung mit dem Basler Übereinkommen, Übereinstimmung mit dem Minamata Übereinkommen, Übereinstimmung mit dem Montrealer Protokoll, Übereinstimmung mit dem Rotterdamer Übereinkommen, Übereinstimmung mit dem Stockholmer Übereinkommen",
           "href": "/sdg-indicators/12-4-1",
           "status": "complete"
         },{
@@ -1531,7 +1531,7 @@
           "id": "16-2-1",
           "title": "Anteil der Kinder im Alter von 1-17&nbsp;Jahren, die im vergangenen Monat eine körperliche Strafe und/oder psychische Aggression durch Betreuungspersonen erfahren haben",
           "description": "",
-          "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
+          "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk",
           "href": "/sdg-indicators/16-2-1",
           "status": "complete"
         },{
@@ -1615,7 +1615,7 @@
           "id": "16-5-2",
           "title": "Anteil der Unternehmen, die in den vergangenen 12&nbsp;Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
           "description": "",
-          "keywords": "Indikator 16.5.2, Unternehmen, die den Eindruck hatten, Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Weltbank (WB), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
+          "keywords": "Indikator 16.5.2, Unternehmen, die den Eindruck hatten, Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Weltbank (WB), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNDOC)",
           "href": "/sdg-indicators/16-5-2",
           "status": "complete"
         },{
