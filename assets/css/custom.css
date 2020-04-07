@@ -370,10 +370,3 @@ header {
   @media only screen and (max-width: 680px) {
     #main-content #map .selection-legend {
       width: 200px; } }
-
-contrast-high .status-toggle-mobile .status-options a, contrast-high ul.navbar-nav .status-options a {
-  color: black; }
-  contrast-high .status-toggle-mobile .status-options a:hover, contrast-high ul.navbar-nav .status-options a:hover {
-    color: black; }
-contrast-high .btn-label {
-  color: pink; }
