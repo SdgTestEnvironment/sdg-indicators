@@ -1137,7 +1137,7 @@ var indicatorDataStore = function(dataUrl) {
         var fieldIndex,
           ds = _.extend({
 
-            label: combinationDescription ? combinationDescription : translations.data.total; //that.country,
+            label: combinationDescription ? combinationDescription : translations.data.total, //that.country,
             borderColor: '#' + getColor(datasetIndex),
             backgroundColor: '#' + getColor(datasetIndex),
             pointBorderColor: '#' + getColor(datasetIndex),
