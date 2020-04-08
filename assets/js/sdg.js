@@ -739,6 +739,8 @@ var indicatorDataStore = function(dataUrl) {
   this.geoCodeRegEx = options.geoCodeRegEx;
   this.showMap = options.showMap;
 
+  console.log("a", this.data);
+
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
 
