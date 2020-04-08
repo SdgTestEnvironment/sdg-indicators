@@ -739,7 +739,9 @@ var indicatorDataStore = function(dataUrl) {
   this.geoCodeRegEx = options.geoCodeRegEx;
   this.showMap = options.showMap;
 
-  console.log("b", this.edgesData);
+  console.log("a", this.allowedFields);
+  console.log("b", this.selectedFields);
+  console.log("c", this.validParentsByChild);
 
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
@@ -1106,7 +1108,9 @@ var indicatorDataStore = function(dataUrl) {
         // offset if there is no headline data:
         if(!that.hasHeadline) {
           datasetIndex += 1;
-          clonedColors.push(colors[0]);
+          for (var i=0; i<=colors.length; i++){
+            clonedColors.push(colors[i]);
+          }
         } else{
 
           for (var i=1; i<=colors.length; i++){
