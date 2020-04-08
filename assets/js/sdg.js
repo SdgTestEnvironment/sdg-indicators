@@ -1104,6 +1104,8 @@ var indicatorDataStore = function(dataUrl) {
         // offset if there is no headline data:
         if(!that.hasHeadline) {
           datasetIndex += 1;
+        } else{
+          colors = colors[1:colors.lengh]
         }
 
         if(datasetIndex === 0) {
