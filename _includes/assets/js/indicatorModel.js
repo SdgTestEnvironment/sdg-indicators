@@ -55,6 +55,11 @@ var indicatorModel = function (options) {
   this.geoCodeRegEx = options.geoCodeRegEx;
   this.showMap = options.showMap;
 
+  console.log("a", this.allowedFields);
+  console.log("b", this.selectedFields);
+  console.log("c", this.validParentsByChild);
+  console.log("d", this.data);
+
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
 
@@ -188,7 +193,7 @@ var indicatorModel = function (options) {
     that.footerFields = _.pick(that.footerFields, _.identity);
   }());
 
-  var headlineColor = '777777';
+  //var headlineColor = '777777';
   if (this.indicatorId.includes('_1-')){
     var colors = ['e5243b', '891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'];
   }
@@ -240,6 +245,7 @@ var indicatorModel = function (options) {
   else if(this.indicatorId.includes('_17-')){
     var colors = ['19486a', '0a1c2a', '8ca3b4', '16377c', 'd1dae1', '11324a', '466c87', '5b73a3', '0f2656'];
   };
+  var headlineColor =colors[0];
   //SDG goal colors
   //['e5243b', 'e5b735', '4c9f38', 'c5192d', 'ff3a21', '26bde2', 'fcc30b', 'a21942', 'fd6925', 'dd1367'];
   //var headlinePointstyle = 'circle';
@@ -415,19 +421,27 @@ var indicatorModel = function (options) {
       },
 
       getColor = function(datasetIndex) {
-
+        var clonedColors = [];
         // offset if there is no headline data:
         if(!that.hasHeadline) {
           datasetIndex += 1;
+          for (var i=0; i<=colors.length; i++){
+            clonedColors.push(colors[i]);
+          }
+        } else{
+
+          for (var i=1; i<=colors.length; i++){
+            clonedColors.push(colors[i]);
+          }
         }
 
         if(datasetIndex === 0) {
           return headlineColor;
         } else {
-          if(datasetIndex > colors.length) {
-            return colors[datasetIndex - 1 - colors.length];
+          if(datasetIndex > clonedColors.length) {
+            return clonedColors[datasetIndex - 1 - clonedColors.length];
           } else {
-            return colors[datasetIndex - 1];
+            return clonedColors[datasetIndex - 1];
           }
         }
 
@@ -452,7 +466,7 @@ var indicatorModel = function (options) {
         var fieldIndex,
           ds = _.extend({
 
-            label: combinationDescription ? combinationDescription : that.country,
+            label: combinationDescription ? combinationDescription : translations.data.total, //that.country,
             borderColor: '#' + getColor(datasetIndex),
             backgroundColor: '#' + getColor(datasetIndex),
             pointBorderColor: '#' + getColor(datasetIndex),
