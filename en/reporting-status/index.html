@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -12,14 +11,12 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://G205SDGs.github.io/sdg-data',
+  remoteDataBaseUrl: 'https://G205SDGs.github.io/sdg-data/en',
 
-  // A hook which can be replaced to modify the configuration for Chart.js.
-  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
-  // To see an example of replacing it, see binary.html.
-  chartConfigAlter: function(config) {
-    // Alterations go here.
-    return config;
+  chartConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Chart.js.
+  chartConfigAlter: function(callback) {
+    this.chartConfigAlterations.push(callback);
   },
 
   // A hook which can be replaced to alter whether/how the values that are
@@ -28,6 +25,8 @@ var opensdg = {
     // Alterations go here.
     return value;
   },
+
+  language: 'en',
 };
 
 // For backwards compatibility, some of these might need to be global.
@@ -91,21 +90,13 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
-        <!---#15 setCorrectTitle---start-------------------->
-        
-        
-        
         <title>
           
             German Indicators For The Sustainable Development Goals
           
         </title>
-        <!---#15 setCorrectTitle---stop--------------------->
 
-        
-          <meta name="description" content= "Current status of the national indicators for the 17 Sustainable Development Goals (SDGs) in Germany with a publicly available data basis" >
-        
-
+        <meta name="description" content="">
         <meta property="og:description" content="">
         
         <meta name="robots" content="noindex, nofollow">
@@ -131,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200423072138">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200427135027">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -139,21 +130,20 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200423072138"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-reportingstatus">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Alpha","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
   <div class="container">
-  <div class="alert alert-danger" role="alert">
+  <div class="disclaimer-alert" role="alert">
     <strong class="phase-tag">Alpha</strong>
+    
     This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
   </div>
 </div>
@@ -175,6 +165,7 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
+
 <ul class="language-options language-toggle"><li><a href="/sdg-indicators/reporting-status/">Deutsch</a></li></ul>
 
     </div></div>
@@ -192,14 +183,24 @@ var translations = {
         <li><span data-target="search">Search</span></li>
       </ul>
 
+      <div id="search" class="menu-target">
+  <form action="/sdg-indicators/en/search">
+    <input name="q" id="indicator_search" title="Search" />
+    <label for="indicator_search">
+      <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Search:</span>
+    </label>
+  </form>
+</div>
+
+
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-            <a href="/sdg-indicators/en/">Goals</a>
+            <a href="/sdg-indicators/en//">Goals</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/en/reporting-status/">Reporting Status</a>
+            <a href="/sdg-indicators/en//reporting-status/">Reporting Status</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/en/about/">About</a>
+            <a href="/sdg-indicators/en//about/">About</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators/en/guidance/">Guidance</a>
+            <a href="/sdg-indicators/en//guidance/">Guidance</a>
           </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
@@ -207,1019 +208,1009 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
+
 <ul class="language-options language-toggle"><li><a href="/sdg-indicators/reporting-status/">Deutsch</a></li></ul>
 
-        </li><li class="nav-link">
-          <a href="https://sustainabledevelopment-deutschland.github.io/en/">
+        </li><!--Add Btn to link to DNS Page-->
+        <li class="nav-link">
+          <a href="https://sustainabledevelopment-deutschland.github.io/en">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/>
             <span class="hidden-sm hidden-md hidden-lg">DNS-platform</span>
           </a>
         </li>
+        <!--     -->
 
       </ul>
-
-      <div id="search" class="menu-target">
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/sdg-indicators/en/indicators.json" data-pageurl="/sdg-indicators/en/search/?q=" />
-  <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
-  </label>
-</div>
 
     </nav>
   </div>
 
 
 </header>
-
-
-<div id="main-content" class="container reportingstatus">
-
-  <h1>Reporting Status</h1><div class="goal goal-overall">
+<div id="main-content" class="container reportingstatus"><h1>Reporting Status</h1><div class="goal goal-overall">
       <div class="details">
         <h2 class="status-goal">
             Overall Reporting Status <span class="total"><span>244</span> indicators</span>
         </h2>
         <div class="summary">
           <div class="statuses"><div>
-              <span class="status complete">151</span><strong>Reported online</strong><span class="value">62%</span>
+              <span class="status complete">151</span><strong>complete</strong><span class="value">62%</span>
             </div><div>
-              <span class="status inprogress">5</span><strong>Statistics in progress</strong><span class="value">2%</span>
+              <span class="status inprogress">5</span><strong>inprogress</strong><span class="value">2%</span>
             </div><div>
-              <span class="status notstarted">78</span><strong>Exploring data sources</strong><span class="value">32%</span>
+              <span class="status notstarted">78</span><strong>notstarted</strong><span class="value">32%</span>
             </div><div>
-              <span class="status notapplicable">10</span><strong>Not applicable</strong><span class="value">4%</span>
+              <span class="status notapplicable">10</span><strong>notapplicable</strong><span class="value">4%</span>
             </div><br style="clear:both;">
           </div>
         </div>
         <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-              <!--<span class="complete" style="width:61.9%" title="Reported online: 62%"></span>-->
+              <!--<span class="complete" style="width:61.885%" title="complete: 62%"></span>-->
               
               
               
-              <span class="complete" style="width:61.88524590163934%" title="Reported online: 62%"></span>
+              <span class="complete" style="width:61.88524590163934%" title="complete: 62%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-              <!--<span class="inprogress" style="width:2.0%" title="Statistics in progress: 2%"></span>-->
+              <!--<span class="inprogress" style="width:2.049%" title="inprogress: 2%"></span>-->
               
               
               
-              <span class="inprogress" style="width:2.0491803278688527%" title="Statistics in progress: 2%"></span>
+              <span class="inprogress" style="width:2.0491803278688527%" title="inprogress: 2%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-              <!--<span class="notstarted" style="width:32.0%" title="Exploring data sources: 32%"></span>-->
+              <!--<span class="notstarted" style="width:31.967%" title="notstarted: 32%"></span>-->
               
               
               
-              <span class="notstarted" style="width:31.9672131147541%" title="Exploring data sources: 32%"></span>
+              <span class="notstarted" style="width:31.9672131147541%" title="notstarted: 32%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-              <!--<span class="notapplicable" style="width:4.1%" title="Not applicable: 4%"></span>-->
+              <!--<span class="notapplicable" style="width:4.098%" title="notapplicable: 4%"></span>-->
               
               
               
-              <span class="notapplicable" style="width:4.098360655737705%" title="Not applicable: 4%"></span>
+              <span class="notapplicable" style="width:4.098360655737705%" title="notapplicable: 4%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
 
       </div>
-    <!--</li>-->
     <br style="clear:both;">
   </div>
 
-  <h2>Status by goal</h2><div class="goal">
+  
+  <h2>Status by goal</h2>
+  
+
+  <div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/1/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/1.png" alt=" - Goal 1" width="100" height="100" />
+          <a href="/sdg-indicators/en/1">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/1.png" alt="No poverty - Goal 1" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/1/">No poverty</a>
-            <span class="total">14<span></span> indicators</span>
+            <a href="/sdg-indicators/en/1">No poverty</a>
+            <span class="total">14 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">5</span><strong>Reported online</strong><span class="value">36%</span>
+                <span class="status complete">5</span><strong>complete</strong><span class="value">36%</span>
               </div><div>
-                <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">7%</span>
+                <span class="status inprogress">1</span><strong>inprogress</strong><span class="value">7%</span>
               </div><div>
-                <span class="status notstarted">7</span><strong>Exploring data sources</strong><span class="value">50%</span>
+                <span class="status notstarted">7</span><strong>notstarted</strong><span class="value">50%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">7%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">7%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:35.7%" title="Reported online: 36%"></span>-->
+            <!--<span class="complete" style="width:35.714%" title="complete: 36%"></span>-->
             
             
             
-            <span class="complete" style="width:35.714285714285715%" title="Reported online: 36%"></span>
+            <span class="complete" style="width:35.714285714285715%" title="complete: 36%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:7.1%" title="Statistics in progress: 7%"></span>-->
+            <!--<span class="inprogress" style="width:7.143%" title="inprogress: 7%"></span>-->
             
             
             
-            <span class="inprogress" style="width:7.142857142857142%" title="Statistics in progress: 7%"></span>
+            <span class="inprogress" style="width:7.142857142857142%" title="inprogress: 7%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>-->
+            <!--<span class="notstarted" style="width:50.0%" title="notstarted: 50%"></span>-->
             
             
             
-            <span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>
+            <span class="notstarted" style="width:50.0%" title="notstarted: 50%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:7.1%" title="Not applicable: 7%"></span>-->
+            <!--<span class="notapplicable" style="width:7.143%" title="notapplicable: 7%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:7.142857142857142%" title="Not applicable: 7%"></span>
+            <span class="notapplicable" style="width:7.142857142857142%" title="notapplicable: 7%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/2/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/2.png" alt=" - Goal 2" width="100" height="100" />
+          <a href="/sdg-indicators/en/2">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/2.png" alt="Zero hunger - Goal 2" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/2/">Zero hunger</a>
-            <span class="total">13<span></span> indicators</span>
+            <a href="/sdg-indicators/en/2">Zero hunger</a>
+            <span class="total">13 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">9</span><strong>Reported online</strong><span class="value">69%</span>
+                <span class="status complete">9</span><strong>complete</strong><span class="value">69%</span>
               </div><div>
-                <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">8%</span>
+                <span class="status inprogress">1</span><strong>inprogress</strong><span class="value">8%</span>
               </div><div>
-                <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">23%</span>
+                <span class="status notstarted">3</span><strong>notstarted</strong><span class="value">23%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:69.2%" title="Reported online: 69%"></span>-->
+            <!--<span class="complete" style="width:69.231%" title="complete: 69%"></span>-->
             
             
             
-            <span class="complete" style="width:69.23076923076923%" title="Reported online: 69%"></span>
+            <span class="complete" style="width:69.23076923076923%" title="complete: 69%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:7.7%" title="Statistics in progress: 8%"></span>-->
+            <!--<span class="inprogress" style="width:7.692%" title="inprogress: 8%"></span>-->
             
             
             
-            <span class="inprogress" style="width:7.692307692307693%" title="Statistics in progress: 8%"></span>
+            <span class="inprogress" style="width:7.692307692307693%" title="inprogress: 8%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:23.1%" title="Exploring data sources: 23%"></span>-->
+            <!--<span class="notstarted" style="width:23.077%" title="notstarted: 23%"></span>-->
             
             
             
-            <span class="notstarted" style="width:23.076923076923077%" title="Exploring data sources: 23%"></span>
+            <span class="notstarted" style="width:23.076923076923077%" title="notstarted: 23%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/3/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/3.png" alt=" - Goal 3" width="100" height="100" />
+          <a href="/sdg-indicators/en/3">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/3.png" alt="Good health and well-being - Goal 3" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/3/">Good health and well-being</a>
-            <span class="total">27<span></span> indicators</span>
+            <a href="/sdg-indicators/en/3">Good health and well-being</a>
+            <span class="total">27 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">21</span><strong>Reported online</strong><span class="value">78%</span>
+                <span class="status complete">21</span><strong>complete</strong><span class="value">78%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">6</span><strong>Exploring data sources</strong><span class="value">22%</span>
+                <span class="status notstarted">6</span><strong>notstarted</strong><span class="value">22%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:77.8%" title="Reported online: 78%"></span>-->
+            <!--<span class="complete" style="width:77.778%" title="complete: 78%"></span>-->
             
             
             
-            <span class="complete" style="width:77.77777777777779%" title="Reported online: 78%"></span>
+            <span class="complete" style="width:77.77777777777779%" title="complete: 78%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:22.2%" title="Exploring data sources: 22%"></span>-->
+            <!--<span class="notstarted" style="width:22.222%" title="notstarted: 22%"></span>-->
             
             
             
-            <span class="notstarted" style="width:22.22222222222222%" title="Exploring data sources: 22%"></span>
+            <span class="notstarted" style="width:22.22222222222222%" title="notstarted: 22%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/4/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/4.png" alt=" - Goal 4" width="100" height="100" />
+          <a href="/sdg-indicators/en/4">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/4.png" alt="Quality education - Goal 4" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/4/">Quality education</a>
-            <span class="total">11<span></span> indicators</span>
+            <a href="/sdg-indicators/en/4">Quality education</a>
+            <span class="total">11 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">8</span><strong>Reported online</strong><span class="value">73%</span>
+                <span class="status complete">8</span><strong>complete</strong><span class="value">73%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">27%</span>
+                <span class="status notstarted">3</span><strong>notstarted</strong><span class="value">27%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:72.7%" title="Reported online: 73%"></span>-->
+            <!--<span class="complete" style="width:72.727%" title="complete: 73%"></span>-->
             
             
             
-            <span class="complete" style="width:72.72727272727273%" title="Reported online: 73%"></span>
+            <span class="complete" style="width:72.72727272727273%" title="complete: 73%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:27.3%" title="Exploring data sources: 27%"></span>-->
+            <!--<span class="notstarted" style="width:27.273%" title="notstarted: 27%"></span>-->
             
             
             
-            <span class="notstarted" style="width:27.27272727272727%" title="Exploring data sources: 27%"></span>
+            <span class="notstarted" style="width:27.27272727272727%" title="notstarted: 27%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/5/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/5.png" alt=" - Goal 5" width="100" height="100" />
+          <a href="/sdg-indicators/en/5">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/5.png" alt="Gender equality - Goal 5" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/5/">Gender equality</a>
-            <span class="total">14<span></span> indicators</span>
+            <a href="/sdg-indicators/en/5">Gender equality</a>
+            <span class="total">14 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">8</span><strong>Reported online</strong><span class="value">57%</span>
+                <span class="status complete">8</span><strong>complete</strong><span class="value">57%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">6</span><strong>Exploring data sources</strong><span class="value">43%</span>
+                <span class="status notstarted">6</span><strong>notstarted</strong><span class="value">43%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:57.1%" title="Reported online: 57%"></span>-->
+            <!--<span class="complete" style="width:57.143%" title="complete: 57%"></span>-->
             
             
             
-            <span class="complete" style="width:57.14285714285714%" title="Reported online: 57%"></span>
+            <span class="complete" style="width:57.14285714285714%" title="complete: 57%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:42.9%" title="Exploring data sources: 43%"></span>-->
+            <!--<span class="notstarted" style="width:42.857%" title="notstarted: 43%"></span>-->
             
             
             
-            <span class="notstarted" style="width:42.857142857142854%" title="Exploring data sources: 43%"></span>
+            <span class="notstarted" style="width:42.857142857142854%" title="notstarted: 43%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/6/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/6.png" alt=" - Goal 6" width="100" height="100" />
+          <a href="/sdg-indicators/en/6">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/6.png" alt="Clean water and sanitation - Goal 6" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/6/">Clean water and sanitation</a>
-            <span class="total">11<span></span> indicators</span>
+            <a href="/sdg-indicators/en/6">Clean water and sanitation</a>
+            <span class="total">11 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">9</span><strong>Reported online</strong><span class="value">82%</span>
+                <span class="status complete">9</span><strong>complete</strong><span class="value">82%</span>
               </div><div>
-                <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">9%</span>
+                <span class="status inprogress">1</span><strong>inprogress</strong><span class="value">9%</span>
               </div><div>
-                <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">9%</span>
+                <span class="status notstarted">1</span><strong>notstarted</strong><span class="value">9%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:81.8%" title="Reported online: 82%"></span>-->
+            <!--<span class="complete" style="width:81.818%" title="complete: 82%"></span>-->
             
             
             
-            <span class="complete" style="width:81.81818181818181%" title="Reported online: 82%"></span>
+            <span class="complete" style="width:81.81818181818181%" title="complete: 82%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:9.1%" title="Statistics in progress: 9%"></span>-->
+            <!--<span class="inprogress" style="width:9.091%" title="inprogress: 9%"></span>-->
             
             
             
-            <span class="inprogress" style="width:9.090909090909092%" title="Statistics in progress: 9%"></span>
+            <span class="inprogress" style="width:9.090909090909092%" title="inprogress: 9%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:9.1%" title="Exploring data sources: 9%"></span>-->
+            <!--<span class="notstarted" style="width:9.091%" title="notstarted: 9%"></span>-->
             
             
             
-            <span class="notstarted" style="width:9.090909090909092%" title="Exploring data sources: 9%"></span>
+            <span class="notstarted" style="width:9.090909090909092%" title="notstarted: 9%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/7/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/7.png" alt=" - Goal 7" width="100" height="100" />
+          <a href="/sdg-indicators/en/7">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/7.png" alt="Affordable and clean energy - Goal 7" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/7/">Affordable and clean energy</a>
-            <span class="total">6<span></span> indicators</span>
+            <a href="/sdg-indicators/en/7">Affordable and clean energy</a>
+            <span class="total">6 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">4</span><strong>Reported online</strong><span class="value">67%</span>
+                <span class="status complete">4</span><strong>complete</strong><span class="value">67%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">17%</span>
+                <span class="status notstarted">1</span><strong>notstarted</strong><span class="value">17%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">17%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">17%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:66.7%" title="Reported online: 67%"></span>-->
+            <!--<span class="complete" style="width:66.667%" title="complete: 67%"></span>-->
             
             
             
-            <span class="complete" style="width:66.66666666666666%" title="Reported online: 67%"></span>
+            <span class="complete" style="width:66.66666666666666%" title="complete: 67%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:16.7%" title="Exploring data sources: 17%"></span>-->
+            <!--<span class="notstarted" style="width:16.667%" title="notstarted: 17%"></span>-->
             
             
             
-            <span class="notstarted" style="width:16.666666666666664%" title="Exploring data sources: 17%"></span>
+            <span class="notstarted" style="width:16.666666666666664%" title="notstarted: 17%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:16.7%" title="Not applicable: 17%"></span>-->
+            <!--<span class="notapplicable" style="width:16.667%" title="notapplicable: 17%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:16.666666666666664%" title="Not applicable: 17%"></span>
+            <span class="notapplicable" style="width:16.666666666666664%" title="notapplicable: 17%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/8/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/8.png" alt=" - Goal 8" width="100" height="100" />
+          <a href="/sdg-indicators/en/8">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/8.png" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/8/">Decent jobs and economic growth</a>
-            <span class="total">17<span></span> indicators</span>
+            <a href="/sdg-indicators/en/8">Decent jobs and economic growth</a>
+            <span class="total">17 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">14</span><strong>Reported online</strong><span class="value">82%</span>
+                <span class="status complete">14</span><strong>complete</strong><span class="value">82%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">18%</span>
+                <span class="status notstarted">3</span><strong>notstarted</strong><span class="value">18%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:82.4%" title="Reported online: 82%"></span>-->
+            <!--<span class="complete" style="width:82.353%" title="complete: 82%"></span>-->
             
             
             
-            <span class="complete" style="width:82.35294117647058%" title="Reported online: 82%"></span>
+            <span class="complete" style="width:82.35294117647058%" title="complete: 82%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:17.6%" title="Exploring data sources: 18%"></span>-->
+            <!--<span class="notstarted" style="width:17.647%" title="notstarted: 18%"></span>-->
             
             
             
-            <span class="notstarted" style="width:17.647058823529413%" title="Exploring data sources: 18%"></span>
+            <span class="notstarted" style="width:17.647058823529413%" title="notstarted: 18%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/9/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/9.png" alt=" - Goal 9" width="100" height="100" />
+          <a href="/sdg-indicators/en/9">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/9.png" alt="Industry, innovation and infrastructure - Goal 9" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/9/">Industry, innovation and infrastructure</a>
-            <span class="total">12<span></span> indicators</span>
+            <a href="/sdg-indicators/en/9">Industry, innovation and infrastructure</a>
+            <span class="total">12 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">10</span><strong>Reported online</strong><span class="value">83%</span>
+                <span class="status complete">10</span><strong>complete</strong><span class="value">83%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">2</span><strong>Exploring data sources</strong><span class="value">17%</span>
+                <span class="status notstarted">2</span><strong>notstarted</strong><span class="value">17%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:83.3%" title="Reported online: 83%"></span>-->
+            <!--<span class="complete" style="width:83.333%" title="complete: 83%"></span>-->
             
             
             
-            <span class="complete" style="width:83.33333333333334%" title="Reported online: 83%"></span>
+            <span class="complete" style="width:83.33333333333334%" title="complete: 83%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:16.7%" title="Exploring data sources: 17%"></span>-->
+            <!--<span class="notstarted" style="width:16.667%" title="notstarted: 17%"></span>-->
             
             
             
-            <span class="notstarted" style="width:16.666666666666664%" title="Exploring data sources: 17%"></span>
+            <span class="notstarted" style="width:16.666666666666664%" title="notstarted: 17%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/10/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/10.png" alt=" - Goal 10" width="100" height="100" />
+          <a href="/sdg-indicators/en/10">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/10.png" alt="Reduced inequalities - Goal 10" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/10/">Reduced inequalities</a>
-            <span class="total">11<span></span> indicators</span>
+            <a href="/sdg-indicators/en/10">Reduced inequalities</a>
+            <span class="total">11 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">5</span><strong>Reported online</strong><span class="value">46%</span>
+                <span class="status complete">5</span><strong>complete</strong><span class="value">45%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">46%</span>
+                <span class="status notstarted">5</span><strong>notstarted</strong><span class="value">45%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">9%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">9%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:45.5%" title="Reported online: 46%"></span>-->
+            <!--<span class="complete" style="width:45.455%" title="complete: 45%"></span>-->
             
             
             
-            <span class="complete" style="width:45.45454545454545%" title="Reported online: 46%"></span>
+            <span class="complete" style="width:45.45454545454545%" title="complete: 45%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:45.5%" title="Exploring data sources: 46%"></span>-->
+            <!--<span class="notstarted" style="width:45.455%" title="notstarted: 45%"></span>-->
             
             
             
-            <span class="notstarted" style="width:45.45454545454545%" title="Exploring data sources: 46%"></span>
+            <span class="notstarted" style="width:45.45454545454545%" title="notstarted: 45%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:9.1%" title="Not applicable: 9%"></span>-->
+            <!--<span class="notapplicable" style="width:9.091%" title="notapplicable: 9%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:9.090909090909092%" title="Not applicable: 9%"></span>
+            <span class="notapplicable" style="width:9.090909090909092%" title="notapplicable: 9%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/11/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/11.png" alt=" - Goal 11" width="100" height="100" />
+          <a href="/sdg-indicators/en/11">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/11.png" alt="Sustainable cities &amp; communities - Goal 11" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/11/">Sustainable cities & communities</a>
-            <span class="total">15<span></span> indicators</span>
+            <a href="/sdg-indicators/en/11">Sustainable cities & communities</a>
+            <span class="total">15 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">8</span><strong>Reported online</strong><span class="value">53%</span>
+                <span class="status complete">8</span><strong>complete</strong><span class="value">53%</span>
               </div><div>
-                <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">7%</span>
+                <span class="status inprogress">1</span><strong>inprogress</strong><span class="value">7%</span>
               </div><div>
-                <span class="status notstarted">6</span><strong>Exploring data sources</strong><span class="value">40%</span>
+                <span class="status notstarted">6</span><strong>notstarted</strong><span class="value">40%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:53.3%" title="Reported online: 53%"></span>-->
+            <!--<span class="complete" style="width:53.333%" title="complete: 53%"></span>-->
             
             
             
-            <span class="complete" style="width:53.33333333333333%" title="Reported online: 53%"></span>
+            <span class="complete" style="width:53.33333333333333%" title="complete: 53%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:6.7%" title="Statistics in progress: 7%"></span>-->
+            <!--<span class="inprogress" style="width:6.667%" title="inprogress: 7%"></span>-->
             
             
             
-            <span class="inprogress" style="width:6.666666666666667%" title="Statistics in progress: 7%"></span>
+            <span class="inprogress" style="width:6.666666666666667%" title="inprogress: 7%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span>-->
+            <!--<span class="notstarted" style="width:40.0%" title="notstarted: 40%"></span>-->
             
             
             
-            <span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span>
+            <span class="notstarted" style="width:40.0%" title="notstarted: 40%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/12/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/12.png" alt=" - Goal 12" width="100" height="100" />
+          <a href="/sdg-indicators/en/12">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/12.png" alt="Responsible consumption and production - Goal 12" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/12/">Responsible consumption and production</a>
-            <span class="total">13<span></span> indicators</span>
+            <a href="/sdg-indicators/en/12">Responsible consumption and production</a>
+            <span class="total">13 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">7</span><strong>Reported online</strong><span class="value">54%</span>
+                <span class="status complete">7</span><strong>complete</strong><span class="value">54%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">39%</span>
+                <span class="status notstarted">5</span><strong>notstarted</strong><span class="value">38%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">8%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">8%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:53.8%" title="Reported online: 54%"></span>-->
+            <!--<span class="complete" style="width:53.846%" title="complete: 54%"></span>-->
             
             
             
-            <span class="complete" style="width:53.84615384615384%" title="Reported online: 54%"></span>
+            <span class="complete" style="width:53.84615384615384%" title="complete: 54%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:38.5%" title="Exploring data sources: 39%"></span>-->
+            <!--<span class="notstarted" style="width:38.462%" title="notstarted: 38%"></span>-->
             
             
             
-            <span class="notstarted" style="width:38.46153846153847%" title="Exploring data sources: 39%"></span>
+            <span class="notstarted" style="width:38.46153846153847%" title="notstarted: 38%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:7.7%" title="Not applicable: 8%"></span>-->
+            <!--<span class="notapplicable" style="width:7.692%" title="notapplicable: 8%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:7.692307692307693%" title="Not applicable: 8%"></span>
+            <span class="notapplicable" style="width:7.692307692307693%" title="notapplicable: 8%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/13/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/13.png" alt=" - Goal 13" width="100" height="100" />
+          <a href="/sdg-indicators/en/13">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/13.png" alt="Climate action - Goal 13" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/13/">Climate action</a>
-            <span class="total">8<span></span> indicators</span>
+            <a href="/sdg-indicators/en/13">Climate action</a>
+            <span class="total">8 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">1</span><strong>Reported online</strong><span class="value">13%</span>
+                <span class="status complete">1</span><strong>complete</strong><span class="value">13%</span>
               </div><div>
-                <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">13%</span>
+                <span class="status inprogress">1</span><strong>inprogress</strong><span class="value">13%</span>
               </div><div>
-                <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">63%</span>
+                <span class="status notstarted">5</span><strong>notstarted</strong><span class="value">63%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">13%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">13%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:12.5%" title="Reported online: 13%"></span>-->
+            <!--<span class="complete" style="width:12.5%" title="complete: 13%"></span>-->
             
             
             
-            <span class="complete" style="width:12.5%" title="Reported online: 13%"></span>
+            <span class="complete" style="width:12.5%" title="complete: 13%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:12.5%" title="Statistics in progress: 13%"></span>-->
+            <!--<span class="inprogress" style="width:12.5%" title="inprogress: 13%"></span>-->
             
             
             
-            <span class="inprogress" style="width:12.5%" title="Statistics in progress: 13%"></span>
+            <span class="inprogress" style="width:12.5%" title="inprogress: 13%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:62.5%" title="Exploring data sources: 63%"></span>-->
+            <!--<span class="notstarted" style="width:62.5%" title="notstarted: 63%"></span>-->
             
             
             
-            <span class="notstarted" style="width:62.5%" title="Exploring data sources: 63%"></span>
+            <span class="notstarted" style="width:62.5%" title="notstarted: 63%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:12.5%" title="Not applicable: 13%"></span>-->
+            <!--<span class="notapplicable" style="width:12.5%" title="notapplicable: 13%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:12.5%" title="Not applicable: 13%"></span>
+            <span class="notapplicable" style="width:12.5%" title="notapplicable: 13%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/14/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/14.png" alt=" - Goal 14" width="100" height="100" />
+          <a href="/sdg-indicators/en/14">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/14.png" alt="Life below water - Goal 14" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/14/">Life below water</a>
-            <span class="total">10<span></span> indicators</span>
+            <a href="/sdg-indicators/en/14">Life below water</a>
+            <span class="total">10 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">5</span><strong>Reported online</strong><span class="value">50%</span>
+                <span class="status complete">5</span><strong>complete</strong><span class="value">50%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">4</span><strong>Exploring data sources</strong><span class="value">40%</span>
+                <span class="status notstarted">4</span><strong>notstarted</strong><span class="value">40%</span>
               </div><div>
-                <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">10%</span>
+                <span class="status notapplicable">1</span><strong>notapplicable</strong><span class="value">10%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:50.0%" title="Reported online: 50%"></span>-->
+            <!--<span class="complete" style="width:50.0%" title="complete: 50%"></span>-->
             
             
             
-            <span class="complete" style="width:50.0%" title="Reported online: 50%"></span>
+            <span class="complete" style="width:50.0%" title="complete: 50%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span>-->
+            <!--<span class="notstarted" style="width:40.0%" title="notstarted: 40%"></span>-->
             
             
             
-            <span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span>
+            <span class="notstarted" style="width:40.0%" title="notstarted: 40%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:10.0%" title="Not applicable: 10%"></span>-->
+            <!--<span class="notapplicable" style="width:10.0%" title="notapplicable: 10%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:10.0%" title="Not applicable: 10%"></span>
+            <span class="notapplicable" style="width:10.0%" title="notapplicable: 10%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/15/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/15.png" alt=" - Goal 15" width="100" height="100" />
+          <a href="/sdg-indicators/en/15">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/15.png" alt="Life on land - Goal 15" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/15/">Life on land</a>
-            <span class="total">14<span></span> indicators</span>
+            <a href="/sdg-indicators/en/15">Life on land</a>
+            <span class="total">14 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">9</span><strong>Reported online</strong><span class="value">64%</span>
+                <span class="status complete">9</span><strong>complete</strong><span class="value">64%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">36%</span>
+                <span class="status notstarted">5</span><strong>notstarted</strong><span class="value">36%</span>
               </div><div>
-                <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+                <span class="status notapplicable">0</span><strong>notapplicable</strong><span class="value">0%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:64.3%" title="Reported online: 64%"></span>-->
+            <!--<span class="complete" style="width:64.286%" title="complete: 64%"></span>-->
             
             
             
-            <span class="complete" style="width:64.28571428571429%" title="Reported online: 64%"></span>
+            <span class="complete" style="width:64.28571428571429%" title="complete: 64%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:35.7%" title="Exploring data sources: 36%"></span>-->
+            <!--<span class="notstarted" style="width:35.714%" title="notstarted: 36%"></span>-->
             
             
             
-            <span class="notstarted" style="width:35.714285714285715%" title="Exploring data sources: 36%"></span>
+            <span class="notstarted" style="width:35.714285714285715%" title="notstarted: 36%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>-->
+            <!--<span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span>
+            <span class="notapplicable" style="width:0.0%" title="notapplicable: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/16/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/16.png" alt=" - Goal 16" width="100" height="100" />
+          <a href="/sdg-indicators/en/16">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/16.png" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/16/">Peace and justice - strong institutions</a>
-            <span class="total">23<span></span> indicators</span>
+            <a href="/sdg-indicators/en/16">Peace and justice - strong institutions</a>
+            <span class="total">23 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">16</span><strong>Reported online</strong><span class="value">70%</span>
+                <span class="status complete">16</span><strong>complete</strong><span class="value">70%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">22%</span>
+                <span class="status notstarted">5</span><strong>notstarted</strong><span class="value">22%</span>
               </div><div>
-                <span class="status notapplicable">2</span><strong>Not applicable</strong><span class="value">9%</span>
+                <span class="status notapplicable">2</span><strong>notapplicable</strong><span class="value">9%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:69.6%" title="Reported online: 70%"></span>-->
+            <!--<span class="complete" style="width:69.565%" title="complete: 70%"></span>-->
             
             
             
-            <span class="complete" style="width:69.56521739130434%" title="Reported online: 70%"></span>
+            <span class="complete" style="width:69.56521739130434%" title="complete: 70%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:21.7%" title="Exploring data sources: 22%"></span>-->
+            <!--<span class="notstarted" style="width:21.739%" title="notstarted: 22%"></span>-->
             
             
             
-            <span class="notstarted" style="width:21.73913043478261%" title="Exploring data sources: 22%"></span>
+            <span class="notstarted" style="width:21.73913043478261%" title="notstarted: 22%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:8.7%" title="Not applicable: 9%"></span>-->
+            <!--<span class="notapplicable" style="width:8.696%" title="notapplicable: 9%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:8.695652173913043%" title="Not applicable: 9%"></span>
+            <span class="notapplicable" style="width:8.695652173913043%" title="notapplicable: 9%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
     </div><div class="goal">
         <div class="frame">
-          <a href="/sdg-indicators/en/17/">
-            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/17.png" alt=" - Goal 17" width="100" height="100" />
+          <a href="/sdg-indicators/en/17">
+            <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/en/17.png" alt="Partnerships for the goals - Goal 17" width="100" height="100" />
           </a>
         </div>
         <div class="details">
           <h3 class="status-goal">
-            <a href="/sdg-indicators/en/17/">Partnerships for the goals</a>
-            <span class="total">25<span></span> indicators</span>
+            <a href="/sdg-indicators/en/17">Partnerships for the goals</a>
+            <span class="total">25 indicators</span>
           </h3>
           <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete">12</span><strong>Reported online</strong><span class="value">48%</span>
+                <span class="status complete">12</span><strong>complete</strong><span class="value">48%</span>
               </div><div>
-                <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+                <span class="status inprogress">0</span><strong>inprogress</strong><span class="value">0%</span>
               </div><div>
-                <span class="status notstarted">11</span><strong>Exploring data sources</strong><span class="value">44%</span>
+                <span class="status notstarted">11</span><strong>notstarted</strong><span class="value">44%</span>
               </div><div>
-                <span class="status notapplicable">2</span><strong>Not applicable</strong><span class="value">8%</span>
+                <span class="status notapplicable">2</span><strong>notapplicable</strong><span class="value">8%</span>
               </div><br style="clear:both;">
             </div>
           </div>
           <div class="goal-stats"><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="complete" style="width:48.0%" title="Reported online: 48%"></span>-->
+            <!--<span class="complete" style="width:48.0%" title="complete: 48%"></span>-->
             
             
             
-            <span class="complete" style="width:48.0%" title="Reported online: 48%"></span>
+            <span class="complete" style="width:48.0%" title="complete: 48%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>-->
+            <!--<span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>-->
             
             
             
-            <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+            <span class="inprogress" style="width:0.0%" title="inprogress: 0%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notstarted" style="width:44.0%" title="Exploring data sources: 44%"></span>-->
+            <!--<span class="notstarted" style="width:44.0%" title="notstarted: 44%"></span>-->
             
             
             
-            <span class="notstarted" style="width:44.0%" title="Exploring data sources: 44%"></span>
+            <span class="notstarted" style="width:44.0%" title="notstarted: 44%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------><!--#10 fixReportingStatus---start---------------------------------------------------------------------------------------------------------------------------------------------------------------->
-            <!--<span class="notapplicable" style="width:8.0%" title="Not applicable: 8%"></span>-->
+            <!--<span class="notapplicable" style="width:8.0%" title="notapplicable: 8%"></span>-->
             
             
             
-            <span class="notapplicable" style="width:8.0%" title="Not applicable: 8%"></span>
+            <span class="notapplicable" style="width:8.0%" title="notapplicable: 8%"></span>
             <!--#10 fixReportingStatus---stop-----------------------------------------------------------------------------------------------------------------------------------------------------------------></div>
           <div class="divider">
           </div>
         </div>
-      <!--</li>-->
       <br style="clear:both;">
-    </div><!--<p>Coming in Spring 2017, this page will provide a dashboard summarising the status of data discovery, statistical production, and national reporting of statistics for the Sustainable Development Goals global indicators.</p>
--->
+    </div>
 
 </div>
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-9">
-        <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
-      </div>
-      <div class="col-xs-3 text-right">
-        <a href="/sdg-indicators/en/faq/">FAQ</a> | <a href="/sdg-indicators/en/imprint/">Legal Notice</a>
+      <div class="col-xs-12">
+        <div id="footerLinks">
+          <ul>
+            <li><a href="https://open-sdg.readthedocs.io/en/latest/">Built using Open SDG</a></li>
+            
+              
+                <li>
+                
+                  <a href="mailto:my-email-address@example.com" target="_blank">Contact us</a>
+                
+                </li>
+              
+                <li>
+                
+                  <a href="https://twitter.com/MyTwitterAccount" target="_blank">general.twitter</a>
+                
+                </li>
+              
+            
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </footer>
-
-<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<!-- Google Analytics -->
+<!-- /.container </div> -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
-<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
-<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200423072138'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200423072138"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200427135027'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200427135027"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1228,8 +1219,13 @@ $(function() {
           $(obj).append($('<img />').attr('src', $(obj).data('img')));
       });
 
+      var remoteUrl = '/comb/' + domData.id + '.json';
+      if (opensdg.remoteDataBaseUrl !== '/') {
+        remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
+      }
+
       $.ajax({
-        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
+        url: remoteUrl,
         success: function(res) {
 
           $('.async-loading').remove();
@@ -1238,12 +1234,12 @@ $(function() {
           var model = new indicatorModel({
             data: res.data,
             edgesData: res.edges,
-            geoCodeRegEx: domData.geocoderegex,
             showMap: domData.showmap,
             country: domData.country,
             indicatorId: domData.indicatorid,
             shortIndicatorId: domData.id,
             chartTitle: domData.charttitle,
+            chartTitles: domData.charttitles,
             measurementUnit: domData.measurementunit,
             copyright: domData.copyright,
             dataSource: domData.datasource,
@@ -1251,7 +1247,9 @@ $(function() {
             showData: domData.showdata,
             footnote: domData.footnote,
             graphType: domData.graphtype,
-            startValues: domData.startvalues
+            startValues: domData.startvalues,
+            graphLimits: domData.graphlimits,
+            stackedDisaggregation: domData.stackeddisaggregation,
           }),
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
@@ -1274,8 +1272,6 @@ $(function() {
 
 });
 </script>
-
-
 
 
 </body>
