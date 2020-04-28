@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -11,12 +11,14 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://G205SDGs.github.io/sdg-data/de',
+  remoteDataBaseUrl: 'https://G205SDGs.github.io/sdg-data',
 
-  chartConfigAlterations: [],
-  // A hook which can be used to modify the configuration for Chart.js.
-  chartConfigAlter: function(callback) {
-    this.chartConfigAlterations.push(callback);
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
   },
 
   // A hook which can be replaced to alter whether/how the values that are
@@ -25,8 +27,6 @@ var opensdg = {
     // Alterations go here.
     return value;
   },
-
-  language: 'de',
 };
 
 // For backwards compatibility, some of these might need to be global.
@@ -90,13 +90,21 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
+        <!---#15 setCorrectTitle---start-------------------->
+        
+        
+        
         <title>
           
             Ziel 3 - Gesundheit und Wohlergehen
           
         </title>
+        <!---#15 setCorrectTitle---stop--------------------->
 
-        <meta name="description" content="">
+        
+          <meta name="description" content= "Übersichtlicher Stand der Indikatoren der 17 Sustainable Development Goals (SDGs) in Deutschland samt öffentlich zur Verfügung stehender Datengrundlage" >
+        
+
         <meta property="og:description" content="">
         
         <meta name="robots" content="noindex, nofollow">
@@ -122,7 +130,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200427135027">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/default.css?v=20200428065917">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -130,20 +138,21 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-indicators/assets/css/custom.css?v=20200428065917"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-de layout-goal">
+<body class="language-de layout-goal-by-target">
 <!-- <div class="container"> -->
+
+
 
 <script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
   <div class="container">
-  <div class="disclaimer-alert" role="alert">
+  <div class="alert alert-danger" role="alert">
     <strong class="phase-tag">Alpha-Version</strong>
-    
     Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
   </div>
 </div>
@@ -165,7 +174,6 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-
 <ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/3/">English</a></li></ul>
 
     </div></div>
@@ -183,24 +191,14 @@ var translations = {
         <li><span data-target="search">Suche</span></li>
       </ul>
 
-      <div id="search" class="menu-target">
-  <form action="/sdg-indicators/search">
-    <input name="q" id="indicator_search" title="Suche" />
-    <label for="indicator_search">
-      <button aria-label="Suche" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Suche:</span>
-    </label>
-  </form>
-</div>
-
-
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-            <a href="/sdg-indicators//">Ziele</a>
+            <a href="/sdg-indicators/">Ziele</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators//reporting-status/">Berichtsstatus</a>
+            <a href="/sdg-indicators/reporting-status/">Berichtsstatus</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators//about/">Über uns</a>
+            <a href="/sdg-indicators/about/">Über uns</a>
           </li><li class="nav-link ">
-            <a href="/sdg-indicators//guidance/">Technische&nbspHinweise</a>
+            <a href="/sdg-indicators/guidance/">Technische&nbspHinweise</a>
           </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
@@ -208,25 +206,34 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-
 <ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/3/">English</a></li></ul>
 
-        </li><!--Add Btn to link to DNS Page-->
-        <li class="nav-link">
-          <a href="https://sustainabledevelopment-deutschland.github.io/de">
+        </li><li class="nav-link">
+          <a href="https://sustainabledevelopment-deutschland.github.io//">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/>
             <span class="hidden-sm hidden-md hidden-lg">DNS-Berichtsplattform</span>
           </a>
         </li>
-        <!--     -->
 
       </ul>
+
+      <div id="search" class="menu-target">
+  <input id="indicator_search" title="Indikatorensuche" placeholder="Indikatorensuche" data-url="/sdg-indicators/indicators.json" data-pageurl="/sdg-indicators/search/?q=" />
+  <label for="indicator_search">
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indikatorensuche></i></button><span>Suche:</span>
+  </label>
+</div>
 
     </nav>
   </div>
 
 
 </header>
+
+
+
+
+
 
 
 <div class="heading goal-3">
@@ -244,744 +251,922 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-3">
+<div id="main-content" class="container goal-indicators goal-3 goal-by-target">
 
   
 
   <ol class="breadcrumb">
-    <li><a href="/sdg-indicators/">Start</a></li>
-    <li class="active">Ziel 3</li>
-  </ol>
+  <li><a href="/sdg-indicators/">Start</a></li>
+  
+      <li class="active">Ziel 3</li>
+  
+</ol>
+
+  <!---#8 addNavigationButtons---start----------------------------------->
+  <!---#8 addNavigationButtons---start------------------------------------->
+
+<!---Indicator page-->
+
+  
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators/2" class="btn btn-primary btn-block G3-background" role="button">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriges Ziel</b>
+    </a>
+  </div>
+
+  <div class="col-xs-6 col-md-6 col-lg-4">
+    <a href="https://sustainabledevelopment-deutschland.github.io//3" class="btn btn-primary btn-block G3-background" title="Hier gelangen Sie zur Seite des Ziels der SDG-Indikatoren" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Nationale Indikatoren zu Ziel 3 </b><b class="btn-label visible-sm visible-xs">Ziel 3 - National</b>
+    </a>
+  </div>
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators/4" class="btn btn-primary btn-block G3-background" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Nächstes Ziel</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
+<!--#8 addNavigationButtons---stop-------------------------------------->
+
+  <!---#8 addNavigationButtons---stop------------------------------------>
+
+  <div class="visible-md-block visible-lg-block">
+    <div class="col-md-6">
+      <h4>Unterziele</h4>
+    </div>
+    <div class="col-md-6">
+      <h4>Indikatoren</h4>
+    </div>
+  </div>
 
   
   
-
-    
-      
-      
-      
-      
     
     
     
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-1-1">
-            <span>
-              3.1.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Müttersterblichkeitsrate
-            
-          </a>
-        </div>
     
     
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-1-2">
-            <span>
-              3.1.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-2-1">
-            <span>
-              3.2.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Sterblichkeitsrate von Kindern unter 5 Jahren
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-2-2">
-            <span>
-              3.2.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Sterblichkeitsrate von Neugeborenen
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.1
+      </span>
+      Bis 2030 die weltweite Müttersterblichkeit auf unter 70 je 100&nbsp;000 Lebendgeburten senken
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-3-1">
-            <span>
-              3.3.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-1-1">
+          <span>
+            3.1.1
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppe
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Müttersterblichkeitsrate
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-3-2">
-            <span>
-              3.3.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-1-2">
+          <span>
+            3.1.2
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Tuberkulose-Inzidenz je 100&nbsp;000 Einwohner
-            
-          </a>
-        </div>
+          </span>
+          Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal
+          
+        </a>
+      </div>
     
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-3-3">
-            <span>
-              3.3.3
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Malaria-Inzidenz je 1&nbsp;000 Einwohner
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-3-4">
-            <span>
-              3.3.4
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Hepatitis-B-Inzidenz je 100&nbsp;000 Einwohner
-            
-          </a>
-        </div>
     </div>
-    
-
-    
-      
-      
-      
-      
+  
     
     
     
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-3-5">
-            <span>
-              3.3.5
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
-            </span>
-            Anzahl der Personen, die Maßnahmen gegen vernachlässigte Tropenkrankheiten benötigen
-            
-          </a>
-        </div>
     
     
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-4-1">
-            <span>
-              3.4.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Sterblichkeitsrate infolge von Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-4-2">
-            <span>
-              3.4.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Sterblichkeitsrate bei Suizid
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-5-1">
-            <span>
-              3.5.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Abdeckung durch Behandlungsmaßnahmen (pharmakologische, psychosoziale und Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.2
+      </span>
+      Bis 2030 den vermeidbaren Todesfällen bei Neugeborenen und Kindern unter 5 Jahren ein Ende setzen, mit dem von allen Ländern zu verfolgenden Ziel, die Sterblichkeit bei Neugeborenen mindestens auf 12 je 1&nbsp;000 Lebendgeburten und bei Kindern unter 5 Jahren mindestens auf 25 je 1&nbsp;000 Lebendgeburten zu senken
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-5-2">
-            <span>
-              3.5.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-2-1">
+          <span>
+            3.2.1
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15 Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Sterblichkeitsrate von Kindern unter 5&nbsp;Jahren
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-6-1">
-            <span>
-              3.6.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-2-2">
+          <span>
+            3.2.2
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Sterblichkeitsrate aufgrund von Straßenverkehrsunfällen
-            
-          </a>
-        </div>
+          </span>
+          Sterblichkeitsrate von Neugeborenen
+          
+        </a>
+      </div>
     
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-7-1">
-            <span>
-              3.7.1
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
-            </span>
-            Anteil der Frauen im gebärfähigen Alter (15-49 Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-7-2">
-            <span>
-              3.7.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Geburtenrate bei Jugendlichen (10-14 Jahre; 15-19 Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe
-            
-          </a>
-        </div>
     </div>
-    
-
-    
-      
-      
-      
-      
+  
     
     
     
-
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-8-1">
-            <span>
-              3.8.1
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
-            </span>
-            Abdeckung der grundlegenden Gesundheitsleistungen (definiert als durchschnittliche Abdeckung der grundlegenden Leistungen basierend auf Tracer-Interventionen, einschließlich reproduktiver, Mütter-, Neugeborenen- und Kindergesundheit, infektiöser Krankheiten und nicht übertragbarer Krankheiten sowie Kapazitäten und Zugang zu Serviceleistungen, innerhalb der allgemein und der überwiegend benachteiligten Bevölkerung)
-            
-          </a>
-        </div>
     
     
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-8-2">
-            <span>
-              3.8.2
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
-            </span>
-            Anteil der Bevölkerung mit hohen Haushaltsausgaben für Gesundheit als Anteil an den gesamten Haushaltsausgaben oder -einkommen
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-9-1">
-            <span>
-              3.9.1
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
-            </span>
-            Sterblichkeitsrate infolge von Luftverschmutzung im Haushalt und der Umgebung
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
-    
-
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-9-2">
-            <span>
-              3.9.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
-            </span>
-            Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden "Wasser, Sanitäreinrichtungen und Hygiene für alle"-Leistungen (WASH))
-            
-          </a>
-        </div>
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.3
+      </span>
+      Bis 2030 die Aids-, Tuberkulose- und Malariaepidemien und die vernachlässigten Tropenkrankheiten beseitigen und Hepatitis, durch Wasser übertragene Krankheiten und andere übertragbare Krankheiten bekämpfen
     </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-9-3">
-            <span>
-              3.9.3
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-3-1">
+          <span>
+            3.3.1
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Sterblichkeitsrate infolge von unbeabsichtigtem Vergiften
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Anzahl der HIV-Neuinfektionen je 1&nbsp;000 nicht infizierter Einwohner, nach Geschlecht, Alter und Risikogruppen
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-a-1">
-            <span>
-              3.a.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-3-2">
+          <span>
+            3.3.2
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15 Jahren und älter
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Tuberkulose-Inzidenz je 100&nbsp;000 Einwohner
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-b-1">
-            <span>
-              3.b.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-3-3">
+          <span>
+            3.3.3
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Anteil der Zielbevölkerung, die alle Impfungen laut nationalem Programm besitzt
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Malaria-Inzidenz je 1&nbsp;000 Einwohner
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-b-2">
-            <span>
-              3.b.2
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-3-4">
+          <span>
+            3.3.4
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Gesamte öffentliche Netto-Entwicklungszusammenarbeit (ODA) für medizinische Forschung und grundlegende Gesundheitsversorgung
-            
-          </a>
-        </div>
+          </span>
+          Hepatitis-B-Inzidenz je 100&nbsp;000 Einwohner
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-3-5">
+          <span>
+            3.3.5
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anzahl der Personen, die Maßnahmen gegen vernachlässigte Tropenkrankheiten benötigen
+          
+        </a>
+      </div>
+    
     </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.4
+      </span>
+      Bis 2030 die vorzeitige Sterblichkeit aufgrund von nichtübertragbaren Krankheiten durch Prävention und Behandlung um ein Drittel senken und die psychische Gesundheit und das Wohlergehen fördern
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-b-3">
-            <span>
-              3.b.3
-              <span class="status notstarted">
-                Datenquellenanalyse
-              </span>
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-4-1">
+          <span>
+            3.4.1
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Anteil der Gesundheitseinrichtungen, die über einen Kernsatz relevanter und wichtiger Medikamente verfügen, die nachhaltig verfügbar und bezahlbar sind
-            
-          </a>
-        </div>
-    
-    
-
-    
-      
-      
-      
-      
-    
-    
+          </span>
+          Sterblichkeitsrate infolge von Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen
+          
+        </a>
+      </div>
     
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-c-1">
-            <span>
-              3.c.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-4-2">
+          <span>
+            3.4.2
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Dichte und Verteilung von medizinischem Fachpersonal
-            
-          </a>
-        </div>
+          </span>
+          Sterblichkeitsrate bei Suizid
+          
+        </a>
+      </div>
     
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.5
+      </span>
+      Die Prävention und Behandlung des Substanzmissbrauchs, namentlich des Suchtstoffmissbrauchs und des schädlichen Gebrauchs von Alkohol, verstärken
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
     
 
-    
       
       
       
       
-    
-    
-    
+      
+      
+      
+      
 
-    
-        <div class="col-md-6 col-lg-3 ">
-          <a href="/sdg-indicators/3-d-1">
-            <span>
-              3.d.1
-              <span class="status complete">
-                Daten verfügbar
-              </span>
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-5-1">
+          <span>
+            3.5.1
+            <span class="status complete">
+              Daten verfügbar
             </span>
-            Kapazitäten für internationale Gesundheitsvorschriften (IGV) und Gesundheitsnotfallvorsorge
-            
-          </a>
-        </div>
+          </span>
+          Abdeckung durch Behandlungsmaßnahmen (pharmakologische, psychosoziale und Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-5-2">
+          <span>
+            3.5.2
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15&nbsp;Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol
+          
+        </a>
+      </div>
+    
+    </div>
+  
     
     
-	 	
-		
-			</div>
-		
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.6
+      </span>
+      Bis 2020 die Zahl der Todesfälle und Verletzungen infolge von Straßenverkehrsunfällen weltweit halbieren
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-6-1">
+          <span>
+            3.6.1
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate aufgrund von Straßenverkehrsunfällen
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.7
+      </span>
+      Bis 2030 den allgemeinen Zugang zu sexual- und reproduktionsmedizinischer Versorgung, einschließlich Familienplanung, Information und Aufklärung, und die Einbeziehung der reproduktiven Gesundheit in nationale Strategien und Programme gewährleisten
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-7-1">
+          <span>
+            3.7.1
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Frauen im gebärfähigen Alter (15-49&nbsp;Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-7-2">
+          <span>
+            3.7.2
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Geburtenrate bei Jugendlichen (10-14&nbsp;Jahre; 15-19&nbsp;Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.8
+      </span>
+      Die allgemeine Gesundheitsversorgung, einschließlich der Absicherung gegen finanzielle Risiken, den Zugang zu hochwertigen grundlegenden Gesundheitsdiensten und den Zugang zu sicheren, wirksamen, hochwertigen und bezahlbaren unentbehrlichen Arzneimitteln und Impfstoffen für alle erreichen
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-8-1">
+          <span>
+            3.8.1
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Abdeckung der grundlegenden Gesundheitsleistungen (definiert als durchschnittliche Abdeckung der grundlegenden Leistungen basierend auf Tracer-Interventionen, einschließlich reproduktiver, Mütter-, Neugeborenen- und Kindergesundheit, infektiöser Krankheiten und nicht übertragbarer Krankheiten sowie Kapazitäten und Zugang zu Serviceleistungen, innerhalb der allgemein und der überwiegend benachteiligten Bevölkerung)
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-8-2">
+          <span>
+            3.8.2
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Bevölkerung mit hohen Haushaltsausgaben für Gesundheit als Anteil an den gesamten Haushaltsausgaben oder -einkommen
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.9
+      </span>
+      Bis 2030 die Zahl der Todesfälle und Erkrankungen aufgrund gefährlicher Chemikalien und der Verschmutzung und Verunreinigung von Luft, Wasser und Boden erheblich verringern
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-9-1">
+          <span>
+            3.9.1
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Sterblichkeitsrate infolge von Luftverschmutzung im Haushalt und der Umgebung
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-9-2">
+          <span>
+            3.9.2
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden "Wasser, Sanitäreinrichtungen und Hygiene für alle"-Leistungen (WASH))
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-9-3">
+          <span>
+            3.9.3
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Sterblichkeit infolge unbeabsichtigter Vergiftung
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.a
+      </span>
+      Die Durchführung des R<small>AHMENÜBEREINKOMMENS DER</small> W<small>ELTGESUNDHEITSORGANISATION ZUR </small> E<small>INDÄMMUNG DES</small> T<small>ABAKGEBRAUCHS</small> in allen Ländern nach Bedarf stärken
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-a-1">
+          <span>
+            3.a.1
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15&nbsp;Jahren und älter
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.b
+      </span>
+      Forschung und Entwicklung zu Impfstoffen und Medikamenten für übertragbare und nichtübertragbare Krankheiten, von denen hauptsächlich Entwicklungsländer betroffen sind, unterstützen, den Zugang zu bezahlbaren unentbehrlichen Arzneimitteln und Impfstoffen gewährleisten, im Einklang mit der E<small>RKLÄRUNG VON</small> D<small>OHA ÜBER DAS</small> TRIPS-Ü<small>BEREINKOMMEN UND DIE ÖFFENTLICHE</small> G<small>ESUNDHEIT</small>, die das Recht der Entwicklungsländer bekräftigt, die Bestimmungen in dem Ü<small>BEREINKOMMEN ÜBER HANDELSBEZOGENE</small> A<small>SPEKTE DER</small> R<small>ECHTE DES GEISTIGEN</small> E<small>IGENTUMS</small> über Flexibilitäten zum Schutz der öffentlichen Gesundheit voll auszuschöpfen, und insbesondere den Zugang zu Medikamenten für alle zu gewährleisten
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-b-1">
+          <span>
+            3.b.1
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Anteil der Zielbevölkerung, die alle Impfungen laut nationalem Programm besitzt
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-b-2">
+          <span>
+            3.b.2
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Gesamte öffentliche Netto-Entwicklungszusammenarbeit (ODA) für medizinische Forschung und grundlegende Gesundheitsversorgung
+          
+        </a>
+      </div>
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-b-3">
+          <span>
+            3.b.3
+            <span class="status notstarted">
+              Datenquellenanalyse
+            </span>
+          </span>
+          Anteil der Gesundheitseinrichtungen, die über einen Kernsatz relevanter und wichtiger Medikamente verfügen, die nachhaltig verfügbar und bezahlbar sind
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.c
+      </span>
+      Die Gesundheitsfinanzierung und die Rekrutierung, Aus- und Weiterbildung und Bindung von Gesundheitsfachkräften in den Entwicklungsländern und insbesondere in den am wenigsten entwickelten Ländern und den kleinen Inselentwicklungsländern deutlich erhöhen
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-c-1">
+          <span>
+            3.c.1
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Dichte und Verteilung von medizinischem Fachpersonal
+          
+        </a>
+      </div>
+    
+    </div>
+  
+    
+    
+    
+    
+    
+    <div class="indicator-cards target col-md-6">
+      <span>
+        <label class="hidden-md hidden-lg">Unterziel</label>
+        3.d
+      </span>
+      Die Kapazitäten aller Länder, insbesondere der Entwicklungsländer, in den Bereichen Frühwarnung, Risikominderung und Management nationaler und globaler Gesundheitsrisiken stärken
+    </div>
+    <div class="indicator-cards col-md-6 row no-gutters">
+    
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <div class="col-md-12 ">
+        <a href="/sdg-indicators/3-d-1">
+          <span>
+            3.d.1
+            <span class="status complete">
+              Daten verfügbar
+            </span>
+          </span>
+          Kapazitäten für internationale Gesundheitsvorschriften (IGV) und Gesundheitsnotfallvorsorge
+          
+        </a>
+      </div>
+    
+    </div>
+  
 </div>
 
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div id="footerLinks">
-          <ul>
-            <li><a href="https://open-sdg.readthedocs.io/en/latest/">Seite basiert auf Open SDG</a></li>
-            
-              
-                <li>
-                
-                  <a href="mailto:my-email-address@example.com" target="_blank">Kontakt</a>
-                
-                </li>
-              
-                <li>
-                
-                  <a href="https://twitter.com/MyTwitterAccount" target="_blank">general.twitter</a>
-                
-                </li>
-              
-            
-          </ul>
-        </div>
+      <div class="col-xs-9">
+        <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+      </div>
+      <div class="col-xs-3 text-right">
+        <a href="/sdg-indicators/faq/">FAQ</a> | <a href="/sdg-indicators/imprint/">Im­pres­s­um</a>
       </div>
     </div>
   </div>
 </footer>
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-<!-- /.container </div> -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200427135027'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200427135027"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200428065917'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200428065917"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -990,13 +1175,8 @@ $(function() {
           $(obj).append($('<img />').attr('src', $(obj).data('img')));
       });
 
-      var remoteUrl = '/comb/' + domData.id + '.json';
-      if (opensdg.remoteDataBaseUrl !== '/') {
-        remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
-      }
-
       $.ajax({
-        url: remoteUrl,
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
         success: function(res) {
 
           $('.async-loading').remove();
@@ -1005,12 +1185,12 @@ $(function() {
           var model = new indicatorModel({
             data: res.data,
             edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
             showMap: domData.showmap,
             country: domData.country,
             indicatorId: domData.indicatorid,
             shortIndicatorId: domData.id,
             chartTitle: domData.charttitle,
-            chartTitles: domData.charttitles,
             measurementUnit: domData.measurementunit,
             copyright: domData.copyright,
             dataSource: domData.datasource,
@@ -1018,9 +1198,7 @@ $(function() {
             showData: domData.showdata,
             footnote: domData.footnote,
             graphType: domData.graphtype,
-            startValues: domData.startvalues,
-            graphLimits: domData.graphlimits,
-            stackedDisaggregation: domData.stackeddisaggregation,
+            startValues: domData.startvalues
           }),
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
@@ -1043,6 +1221,8 @@ $(function() {
 
 });
 </script>
+
+
 
 
 </body>
