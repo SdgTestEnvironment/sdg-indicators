@@ -829,6 +829,10 @@ body.contrast-high #disclaimer .phase-tag {
 body.contrast-high #disclaimer .disclaimer-alert {
   color: white; }
 
+body {
+  background: #fff url("../img/sdgbg.png") top left repeat-x;
+  padding-top: 15px; }
+
 #skiplink {
   position: absolute;
   top: 0;
@@ -844,12 +848,10 @@ body.contrast-high #disclaimer .disclaimer-alert {
   color: black;
   display: block; }
 
-header {
-  background: #fff url("../img/sdgbg.png") bottom left repeat-x; }
-  header .container {
-    min-height: 113px; }
-    header .container .navbar-default {
-      border: none; }
+header .container {
+  min-height: 113px; }
+  header .container .navbar-default {
+    border: none; }
 
 .navbar-brand {
   display: block;
@@ -1098,11 +1100,11 @@ footer {
       footer #footerLinks ul li:first-child {
         margin-left: 0px; }
 
-#main-content #indicatorData.no-series #series-help, #main-content #indicatorData.no-series #fields, #main-content #indicatorData.no-series #legend-help, #main-content #indicatorData.no-series #clear {
+#main-content #indicatorData.no-fields #series-help, #main-content #indicatorData.no-fields #fields, #main-content #indicatorData.no-fields #legend-help, #main-content #indicatorData.no-fields #clear {
   display: none; }
-#main-content #indicatorData.no-series.no-units > .col-md-3 {
+#main-content #indicatorData.no-fields.no-units > .col-md-3 {
   display: none; }
-#main-content #indicatorData.no-series.no-units > .col-md-9 {
+#main-content #indicatorData.no-fields.no-units > .col-md-9 {
   width: 100%; }
 #main-content .indicator-sidebar-hidden {
   padding: 0;
