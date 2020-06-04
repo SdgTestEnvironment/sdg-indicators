@@ -1615,15 +1615,15 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
     font-size: 16px; }
     #main-content .statuses > div .status.notstarted {
       border: 1px solid black;
-      color: #333; }
+      color: black; }
     #main-content .statuses > div .status.complete {
-      color: white; }
+      color: black; }
     #main-content .statuses > div .status.inprogress {
-      color: white; }
+      color: black; }
     #main-content .statuses > div .status.notstarted {
-      color: #333; }
+      color: black; }
     #main-content .statuses > div .status.notapplicable {
-      color: #333; }
+      color: black; }
 #main-content .value {
   color: #333;
   font-weight: bold;
