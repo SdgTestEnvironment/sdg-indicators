@@ -654,8 +654,8 @@ var accessibilitySwitcher = function() {
 
 };
 opensdg.chartColors = function(indicatorId) {
-  var colorSet = null;
-  var numberOfColors = null;
+  var colorSet = "goal";
+  var numberOfColors = 9;
   var customColorList = null;
   
   this.goalNumber = parseInt(indicatorId.slice(indicatorId.indexOf('_')+1,indicatorId.indexOf('-')));
