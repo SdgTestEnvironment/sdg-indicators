@@ -140,6 +140,45 @@ h3 {
   clip: rect(0, 0, 0, 0);
   border: 0; }
 
+a,
+a:hover {
+  text-decoration: underline; }
+
+a {
+  color: #1d70b8; }
+
+a:hover {
+  color: #003078; }
+
+a:visited {
+  color: #4c2c92; }
+
+body.contrast-high a:visited {
+  color: #F47738; }
+
+.nav li a,
+.nav li a:hover,
+a.btn {
+  text-decoration: none; }
+
+.navbar ul.navbar-nav li:not(.contrast) a {
+  border-bottom: 2px solid transparent; }
+
+.navbar ul.navbar-nav li:not(.contrast) a:hover {
+  border-bottom: 2px solid #aaaaaa; }
+
+#search-results .search-result a {
+  text-decoration: none; }
+
+footer a {
+  color: black; }
+
+footer a:hover {
+  color: #333333; }
+
+body.contrast-high footer a:visited {
+  color: white; }
+
 #main-content #back-to-top {
   cursor: pointer;
   position: fixed;
@@ -717,7 +756,7 @@ body.contrast-high {
     body.contrast-high .table-hover tbody tr:hover th {
       color: black; }
     body.contrast-high .table-hover tbody tr:hover a {
-      color: #337ab7;
+      color: #1d70b8;
       text-decoration: underline; }
   body.contrast-high .container, body.contrast-high #main-content, body.contrast-high header, body.contrast-high #disclaimer {
     background: black;
@@ -898,10 +937,6 @@ header .container {
       background: black; }
       .navbar ul.navbar-nav li.contrast-high a {
         color: yellow; }
-    .navbar ul.navbar-nav li:not(.contrast) a {
-      border-bottom: 2px solid transparent; }
-      .navbar ul.navbar-nav li:not(.contrast) a:hover {
-        border-bottom: 2px solid #595959; }
     @media screen and (min-width: 769px) {
       .navbar ul.navbar-nav > li:first-child a {
         margin-left: 0; } }
@@ -1082,11 +1117,6 @@ footer {
     @media only screen and (max-width: 767px) {
       footer .row {
         padding: 5px 0; } }
-  footer a {
-    color: black;
-    text-decoration: underline; }
-    footer a:hover, footer a:focus {
-      color: #333333; }
   footer #footerLinks ul {
     padding-left: 0; }
     footer #footerLinks ul li {
@@ -1353,11 +1383,9 @@ footer {
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
   height: 100%;
-  width: 100%;
-  text-decoration: none; }
+  width: 100%; }
   #main-content.goal-indicators .indicator-cards a:hover {
-    background: transparent;
-    text-decoration: underline; }
+    background: transparent; }
 #main-content.goal-indicators .indicator-cards span {
   display: block;
   margin-bottom: 0.5rem;
@@ -1564,13 +1592,20 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
     margin: 0; }
 
 .notapplicable {
+  background-color: repeating-linear-gradient(135deg, #ccc, white 10px, #ccc 10px, white 20px);
   background: repeating-linear-gradient(135deg, #ccc, white 10px, #ccc 10px, white 20px); }
 
+.notstarted {
+  background-color: white;
+  background: white; }
+
 .inprogress {
-  background-color: #757575; }
+  background-color: #757575;
+  background: #757575; }
 
 .complete {
-  background-color: #2B2B2B; }
+  background-color: #2B2B2B;
+  background: #2B2B2B; }
 
 #main-content .statuses strong {
   font-weight: normal; }
@@ -1592,6 +1627,8 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
       color: white; }
     #main-content .statuses > div .status.inprogress {
       color: white; }
+    #main-content .statuses > div .status.notstarted {
+      color: #333; }
     #main-content .statuses > div .status.notapplicable {
       color: #333; }
 #main-content .value {
@@ -1657,13 +1694,19 @@ body.contrast-high .summary .statuses .notstarted {
   border: 1px solid white !important; }
 body.contrast-high .complete {
   background-color: white;
+  background: white;
   color: black !important; }
 body.contrast-high .inprogress {
   background-color: #767676;
+  background: #767676;
   color: black; }
 body.contrast-high .notstarted {
+  background-color: black;
+  background: black;
   color: white !important; }
 body.contrast-high .notapplicable {
+  background-color: repeating-linear-gradient(135deg, #ccc, white 10px, #ccc 10px, white 20px);
+  background: repeating-linear-gradient(135deg, #ccc, white 10px, #ccc 10px, white 20px);
   color: black !important; }
 
 #jump-to-search a {
@@ -1677,7 +1720,6 @@ body.contrast-high .notapplicable {
     margin-top: 20px;
     margin-bottom: 20px; }
     #search-results .search-result a {
-      text-decoration: none;
       margin-bottom: 5px;
       margin-top: 10px; }
       #search-results .search-result a .title {
