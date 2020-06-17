@@ -122,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200617093708">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200617095431">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -263,9 +263,43 @@ var translations = {
   </div>
 
   
-  <h2>Status by goal</h2>
+  <ul class="nav nav-tabs reporting-status-view" role="tablist">
+    <li role="presentation" class="nav-item active">
+      <a class="nav-link" data-toggle="tab" href="#goalsview" aria-controls="goals" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change reporting status view"
+data-event-label="Change reporting status view to goals"
+>Status by goal</a>
+    </li>
+    
+    
+    
+    
+    <li role="presentation" class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#un_designated_tierview" aria-controls="un_designated_tier" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change reporting status view"
+data-event-label="Change reporting status view to un_designated_tier"
+></a>
+    </li>
+    
+    
+    
+    
+    <li role="presentation" class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#un_custodian_agencyview" aria-controls="un_custodian_agency" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change reporting status view"
+data-event-label="Change reporting status view to un_custodian_agency"
+></a>
+    </li>
+    
+  </ul>
   
 
+  
+  <div class="tab-content reporting-status-view">
+    <div role="tabpanel" class="tab-pane active" id="goalsview">
   <div class="goal">
         <div class="frame">
           <a href="/sdg-indicators/en/1">
@@ -947,6 +981,3286 @@ var translations = {
         </div>
       <br style="clear:both;">
     </div>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="un_designated_tierview"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier I</span>
+          <span class="total">105
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">80</span><strong>Reported online</strong><span class="value">76%</span>
+            </div><div>
+              <span class="status inprogress">5</span><strong>Statistics in progress</strong><span class="value">5%</span>
+            </div><div>
+              <span class="status notstarted">15</span><strong>Exploring data sources</strong><span class="value">14%</span>
+            </div><div>
+              <span class="status notapplicable">5</span><strong>Not applicable</strong><span class="value">5%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:76.19047619047619%" title="Reported online: 76%"></span>
+        
+        
+          <span class="inprogress" style="width:4.761904761904762%" title="Statistics in progress: 5%"></span>
+        
+        
+          <span class="notstarted" style="width:14.285714285714285%" title="Exploring data sources: 14%"></span>
+        
+        
+          <span class="notapplicable" style="width:4.761904761904762%" title="Not applicable: 5%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier I (ODA)/ Tier II (FDI)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier I (a)/ Tier II (b)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier I/II depending on indice</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier I/III</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier II</span>
+          <span class="total">116
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">63</span><strong>Reported online</strong><span class="value">54%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">51</span><strong>Exploring data sources</strong><span class="value">44%</span>
+            </div><div>
+              <span class="status notapplicable">2</span><strong>Not applicable</strong><span class="value">2%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:54.31034482758621%" title="Reported online: 54%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:43.96551724137931%" title="Exploring data sources: 44%"></span>
+        
+        
+          <span class="notapplicable" style="width:1.7241379310344827%" title="Not applicable: 2%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Tier III</span>
+          <span class="total">18
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">3</span><strong>Reported online</strong><span class="value">17%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">12</span><strong>Exploring data sources</strong><span class="value">67%</span>
+            </div><div>
+              <span class="status notapplicable">3</span><strong>Not applicable</strong><span class="value">17%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:16.666666666666664%" title="Reported online: 17%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:66.66666666666666%" title="Exploring data sources: 67%"></span>
+        
+        
+          <span class="notapplicable" style="width:16.666666666666664%" title="Not applicable: 17%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"></div>
+    <div role="tabpanel" class="tab-pane" id="un_custodian_agencyview"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Bevölkerungsfonds der Vereinten Nationen (UNFPA)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">2</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)</span>
+          <span class="total">9
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">8</span><strong>Reported online</strong><span class="value">89%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">11%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:88.88888888888889%" title="Reported online: 89%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:11.11111111111111%" title="Exploring data sources: 11%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)/Büro der Vereinten Nationen für Abrüstungsfragen (UNODA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)/Weltgesundheitsorganisation (WHO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)/Welthandels- und Entwicklungskonferenz (UNCTAD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)</span>
+          <span class="total">11
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">3</span><strong>Statistics in progress</strong><span class="value">27%</span>
+            </div><div>
+              <span class="status notstarted">8</span><strong>Exploring data sources</strong><span class="value">73%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:27.27272727272727%" title="Statistics in progress: 27%"></span>
+        
+        
+          <span class="notstarted" style="width:72.72727272727273%" title="Exploring data sources: 73%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">CBD-Secretariat</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">CBD-Sekretariat/Umweltprogramm der Vereinten Nationen (UNEP)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Climate Technology Centre and Network (UNEP-CTCN)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women)/Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women)/Weltbank (WB)/Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Entwicklungsprogramm der Vereinten Nationen (UNDP)</span>
+          <span class="total">3
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">3</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)</span>
+          <span class="total">19
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">12</span><strong>Reported online</strong><span class="value">63%</span>
+            </div><div>
+              <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">5%</span>
+            </div><div>
+              <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">26%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">5%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:63.1578947368421%" title="Reported online: 63%"></span>
+        
+        
+          <span class="inprogress" style="width:5.263157894736842%" title="Statistics in progress: 5%"></span>
+        
+        
+          <span class="notstarted" style="width:26.31578947368421%" title="Exploring data sources: 26%"></span>
+        
+        
+          <span class="notapplicable" style="width:5.263157894736842%" title="Not applicable: 5%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)/Umweltprogramm der Vereinten Nationen (UNEP)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)/Umweltprogramm der Vereinten Nationen - Weltüberwachungszentrum für Naturschutz (UNEP-WCMC)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Gemeinsames Programm der Vereinten Nationen für HIV/Aids (UNAIDS)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Hoher Kommissar der Vereinten Nationen für Menschenrechte (OHCHR)</span>
+          <span class="total">5
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">20%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">60%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">20%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:20.0%" title="Reported online: 20%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:60.0%" title="Exploring data sources: 60%"></span>
+        
+        
+          <span class="notapplicable" style="width:20.0%" title="Not applicable: 20%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Inter-Parliamentary Union (IPU)/Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Arbeitsorganisation (ILO)</span>
+          <span class="total">11
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">8</span><strong>Reported online</strong><span class="value">73%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">27%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:72.72727272727273%" title="Reported online: 73%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:27.27272727272727%" title="Exploring data sources: 27%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Arbeitsorganisation (ILO)/Kinderhilfswerk der Vereinten Nationen (UNICEF)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Arbeitsorganisation (ILO)/Weltbank (WB)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Energieagentur (IEA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">100%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:100.0%" title="Not applicable: 100%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Energieagentur (IEA)/Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Energieagentur (IEA)/Statistischen Division der UN (UNSD)/UN Energy</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Energieagentur (IEA)/Statistischen Division der UN (UNSD)/UN Energy, Internationale Organisation für erneuerbare Energien (IRENA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Fernmeldeunion (ITU)</span>
+          <span class="total">4
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">4</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Union zur Bewahrung der Natur (IUCN)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Union zur Bewahrung der Natur (IUCN)/BirdLife International (BLI)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Währungsfonds (IMF)</span>
+          <span class="total">4
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">4</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationale Zivilluftfahrtorganisation (ICAO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Internationales Handelszentrum (ITC)/Welthandels- und Entwicklungskonferenz (UNCTAD)/Welthandelsorganisation (WTO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Kinderhilfswerk der Vereinten Nationen (UNICEF)</span>
+          <span class="total">7
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">5</span><strong>Reported online</strong><span class="value">71%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">2</span><strong>Exploring data sources</strong><span class="value">29%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:71.42857142857143%" title="Reported online: 71%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:28.57142857142857%" title="Exploring data sources: 29%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Kinderhilfswerk der Vereinten Nationen (UNICEF)/Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women)/Bevölkerungsfonds der Vereinten Nationen (UNFPA)/Weltgesundheitsorganisation (WHO)/Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:50.0%" title="Reported online: 50%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Kinderhilfswerk der Vereinten Nationen (UNICEF)/Statistischen Division der UN (UNSD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Kinderhilfswerk der Vereinten Nationen (UNICEF)/Weltgesundheitsorganisation (WHO)</span>
+          <span class="total">3
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">3</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">OHRLLS/Regional Commissions/AOSIS/SIDS/Samoa Pathway</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">100%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:100.0%" title="Not applicable: 100%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)</span>
+          <span class="total">4
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">4</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)</span>
+          <span class="total">10
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">6</span><strong>Reported online</strong><span class="value">60%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">4</span><strong>Exploring data sources</strong><span class="value">40%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:60.0%" title="Reported online: 60%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)/Internationale Fernmeldeunion (ITU)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)/Wirtschaftskommission für Europa der Vereinten Nationen (UNECE)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)</span>
+          <span class="total">4
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">4</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)/Weltbank (WB)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)</span>
+          <span class="total">10
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">10</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)/Entwicklungsprogramm der Vereinten Nationen (UNDP)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:50.0%" title="Reported online: 50%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)/Internationale Organisation für erneuerbare Energien (IRENA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)/Welthandels- und Entwicklungskonferenz (UNCTAD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Partnership in Statistics for Development in the 21st Century (PARIS21)</span>
+          <span class="total">3
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">67%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">33%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:66.66666666666666%" title="Reported online: 67%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:33.33333333333333%" title="Exploring data sources: 33%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Population Division, Department of Economic ans Social Affairs (DESA)/United Nations Population Fund (UNFPA)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Programm der Vereinten Nationen für menschliche Siedlungen (UN-HABITAT)</span>
+          <span class="total">9
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">6</span><strong>Reported online</strong><span class="value">67%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">3</span><strong>Exploring data sources</strong><span class="value">33%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:66.66666666666666%" title="Reported online: 67%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:33.33333333333333%" title="Exploring data sources: 33%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Rahmenübereinkommen der Vereinten Nationen über Klimaänderungen (UNFCCC)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Rahmenübereinkommen der Vereinten Nationen über Klimaänderungen (UNFCCC)/Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">2</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Rahmenübereinkommen der Vereinten Nationen über Klimaänderungen (UNFCCC)/Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Statistische Division der UN (UNSD)/Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Statistischen Division der UN (UNSD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Statistischen Division der UN (UNSD)/Umweltprogramm der Vereinten Nationen (UNEP)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Statistischen Division der VN (UNSD)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">UN-DOALOS/FAO/UNEP/ILO/ other UN-Oceans agencies</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">UNEP Weltüberwachungszentrum für Naturschutz (UNEP-WCMC)/BirdLife International (BLI)/Internationale Union zur Bewahrung der Natur (IUCN)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">UNESCO Institute for Statistics (UIS)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Umweltprogramm der Vereinten Nationen (UNEP)</span>
+          <span class="total">13
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">9</span><strong>Reported online</strong><span class="value">69%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">4</span><strong>Exploring data sources</strong><span class="value">31%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:69.23076923076923%" title="Reported online: 69%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:30.76923076923077%" title="Exploring data sources: 31%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Umweltprogramm der Vereinten Nationen (UNEP)/Secretariat of the Ramsar Convention on Wetlands</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">1</span><strong>Statistics in progress</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:100.0%" title="Statistics in progress: 100%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Umweltprogramm der Vereinten Nationen (UNEP)/Welthandels- und Entwicklungskonferenz (UNCTAD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Umweltprogramm der Vereinten Nationen - Weltüberwachungszentrum für Naturschutz (UNEP-WCMC)/BirdLife International (BLI)/Internationale Union zur Bewahrung der Natur (IUCN)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Umweltprogramm der Vereinten Nationen - Weltüberwachungszentrum für Naturschutz (UNEP-WCMC)/Umweltprogramm der Vereinten Nationen (UNEP)/Internationale Union zur Bewahrung der Natur (IUCN)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Under discussion among agencies (OECD, UNEP, UNESCO-UIS, World Bank)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">100%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:100.0%" title="Not applicable: 100%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">United Nations Department of Economic and Social Affairs (DESA)/ International Organization for Migration (IOM)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">United Nations Department of Economic and Social Affairs - Financing for Development Office (DESA - FFDO)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">2</span><strong>Not applicable</strong><span class="value">100%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:100.0%" title="Not applicable: 100%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Vertragspartei des Übereinkommens der Vereinten Nationen zur Bekämpfung der Wüstenbildung (UNCCD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltbank (WB)</span>
+          <span class="total">13
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">7</span><strong>Reported online</strong><span class="value">54%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">38%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">8%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:53.84615384615384%" title="Reported online: 54%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:38.46153846153847%" title="Exploring data sources: 38%"></span>
+        
+        
+          <span class="notapplicable" style="width:7.692307692307693%" title="Not applicable: 8%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltbank (WB)/Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltbank (WB)/International Labour Organization (ILO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">100%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:100.0%" title="Not applicable: 100%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltbank (WB)/Programm der Vereinten Nationen für menschliche Siedlungen (UN-HABITAT)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)</span>
+          <span class="total">20
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">15</span><strong>Reported online</strong><span class="value">75%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">5</span><strong>Exploring data sources</strong><span class="value">25%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:75.0%" title="Reported online: 75%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:25.0%" title="Exploring data sources: 25%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)/Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)/Kinderhilfswerk der Vereinten Nationen (UNICEF)</span>
+          <span class="total">3
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">3</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)/Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)/Statistischen Division der UN (UNSD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)/Rahmenübereinkommen der WHO zur Eindämmung des Tabakgebrauchs (WHO FCTC)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltgesundheitsorganisation (WHO)/Umweltprogramm der Vereinten Nationen (UNEP)/Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:50.0%" title="Reported online: 50%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Welthandels- und Entwicklungskonferenz (UNCTAD)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:100.0%" title="Exploring data sources: 100%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Welthandelsorganisation (WTO)</span>
+          <span class="total">1
+            
+              indicator
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Welthandelsorganisation (WTO)/Internationales Handelszentrum (ITC)/Welthandels- und Entwicklungskonferenz (UNCTAD)</span>
+          <span class="total">3
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">0</span><strong>Reported online</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">2</span><strong>Exploring data sources</strong><span class="value">67%</span>
+            </div><div>
+              <span class="status notapplicable">1</span><strong>Not applicable</strong><span class="value">33%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:0.0%" title="Reported online: 0%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:66.66666666666666%" title="Exploring data sources: 67%"></span>
+        
+        
+          <span class="notapplicable" style="width:33.33333333333333%" title="Not applicable: 33%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Weltorganisation für Tourismus (UNWTO)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">1</span><strong>Reported online</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">1</span><strong>Exploring data sources</strong><span class="value">50%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:50.0%" title="Reported online: 50%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:50.0%" title="Exploring data sources: 50%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"><div class="goal details">
+        <h3 class="status-goal">
+          <span class="status-field">Zwischenstaatliche Ozeanographische Kommission (IOC)</span>
+          <span class="total">2
+            
+              indicators
+            
+          </span>
+        </h3>
+        <div class="summary">
+          <div class="statuses"><div>
+              <span class="status complete">2</span><strong>Reported online</strong><span class="value">100%</span>
+            </div><div>
+              <span class="status inprogress">0</span><strong>Statistics in progress</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notstarted">0</span><strong>Exploring data sources</strong><span class="value">0%</span>
+            </div><div>
+              <span class="status notapplicable">0</span><strong>Not applicable</strong><span class="value">0%</span>
+            </div><br style="clear:both;">
+          </div>
+        </div>
+        <div class="goal-stats">
+        
+        
+          <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+        
+        
+          <span class="inprogress" style="width:0.0%" title="Statistics in progress: 0%"></span>
+        
+        
+          <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span>
+        
+        
+          <span class="notapplicable" style="width:0.0%" title="Not applicable: 0%"></span></div>
+        <div class="divider"></div>
+      </div>
+      <br style="clear:both;"></div></div>
+  
 
   <!---->
 
@@ -996,7 +4310,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200617093708'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200617093708"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200617095431'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200617095431"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
