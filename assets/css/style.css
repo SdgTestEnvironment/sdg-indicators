@@ -1751,6 +1751,111 @@ body.contrast-high #search-results .search-result .content {
  * This file left blank intentionally. Implementations of Open SDG can use
  * a similarly named file for custom styles.
  */
+.goal-1.goal-banner {
+  background-color: #E52B3D; }
+.goal-1.navigation-btn {
+  background-color: #E52B3D;
+  color: white; }
+
+.goal-2.goal-banner {
+  background-color: #DDA63A; }
+.goal-2.navigation-btn {
+  background-color: #DDA63A;
+  color: white; }
+
+.goal-3.goal-banner {
+  background-color: #4C9F38; }
+.goal-3.navigation-btn {
+  background-color: #4C9F38;
+  color: white; }
+
+.goal-4.goal-banner {
+  background-color: #C42130; }
+.goal-4.navigation-btn {
+  background-color: #C42130;
+  color: white; }
+
+.goal-5.goal-banner {
+  background-color: #FF3E24; }
+.goal-5.navigation-btn {
+  background-color: #FF3E24;
+  color: white; }
+
+.goal-6.goal-banner {
+  background-color: #28BCE1; }
+.goal-6.navigation-btn {
+  background-color: #28BCE1;
+  color: white; }
+
+.goal-7.goal-banner {
+  background-color: #FCC30B; }
+.goal-7.navigation-btn {
+  background-color: #FCC30B;
+  color: white; }
+
+.goal-8.goal-banner {
+  background-color: #A21942; }
+.goal-8.navigation-btn {
+  background-color: #A21942;
+  color: white; }
+
+.goal-9.goal-banner {
+  background-color: #FD6925; }
+.goal-9.navigation-btn {
+  background-color: #FD6925;
+  color: white; }
+
+.goal-10.goal-banner {
+  background-color: #DD1367; }
+.goal-10.navigation-btn {
+  background-color: #DD1367;
+  color: white; }
+
+.goal-11.goal-banner {
+  background-color: #FD9C27; }
+.goal-11.navigation-btn {
+  background-color: #FD9C27;
+  color: white; }
+
+.goal-12.goal-banner {
+  background-color: #BF8B2E; }
+.goal-12.navigation-btn {
+  background-color: #BF8B2E;
+  color: white; }
+
+.goal-13.goal-banner {
+  background-color: #417D46; }
+.goal-13.navigation-btn {
+  background-color: #417D46;
+  color: white; }
+
+.goal-14.goal-banner {
+  background-color: #0A96D8; }
+.goal-14.navigation-btn {
+  background-color: #0A96D8;
+  color: white; }
+
+.goal-15.goal-banner {
+  background-color: #57BE2F; }
+.goal-15.navigation-btn {
+  background-color: #57BE2F;
+  color: white; }
+
+.goal-16.goal-banner {
+  background-color: #00689C; }
+.goal-16.navigation-btn {
+  background-color: #00689C;
+  color: white; }
+
+.goal-17.goal-banner {
+  background-color: #1F4A6A; }
+.goal-17.navigation-btn {
+  background-color: #1F4A6A;
+  color: white; }
+
+.goal-banner h1, .goal-banner p {
+  color: white; }
+
 .G1-background {
   background-color: #E5243B;
   border-color: transparent;
