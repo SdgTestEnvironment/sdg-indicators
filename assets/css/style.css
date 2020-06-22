@@ -1961,12 +1961,121 @@ body.contrast-high #search-results .search-result .content {
 
 /*#2.1*/
 /*#4.1 Keinen Rahmen um die farbigen Balken im Reportingstatus*/
-.goal-stats {
+.notapplicable {
+  background-color: #B7B7B7;
+  background: #B7B7B7; }
+
+.notstarted {
+  background-color: #E27874;
+  background: #E27874; }
+
+.inprogress {
+  background-color: #f0ad4e;
+  background: #f0ad4e; }
+
+.complete {
+  background-color: #5cb85c;
+  background: #5cb85c; }
+
+#main-content .statuses strong {
+  font-weight: normal; }
+#main-content .statuses > div {
+  display: inline-block;
+  margin-right: 10px; }
+  #main-content .statuses > div .status {
+    display: inline-block;
+    margin-right: 3px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    width: 40px;
+    text-align: center;
+    font-size: 16px; }
+    #main-content .statuses > div .status.notstarted {
+      border: 1px solid black;
+      color: black; }
+    #main-content .statuses > div .status.complete {
+      color: black; }
+    #main-content .statuses > div .status.inprogress {
+      color: black; }
+    #main-content .statuses > div .status.notstarted {
+      color: black; }
+    #main-content .statuses > div .status.notapplicable {
+      color: black; }
+#main-content .value {
+  color: #333;
+  font-weight: bold;
+  margin-left: 3px; }
+#main-content .goal-stats {
   font-size: 0;
   margin-top: 10px; }
-  .goal-stats span {
+  #main-content .goal-stats span {
     display: inline-block;
     height: 10px;
     font-weight: bold; }
+#main-content .divider {
+  height: 15px; }
+#main-content .goal {
+  clear: left;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ccc; }
+  #main-content .goal .total {
+    line-height: 24px;
+    vertical-align: middle;
+    font-size: 16px;
+    width: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: -2px;
+    border-radius: 4px;
+    border: 1px solid #ccc; }
+#main-content .frame {
+  width: 115px;
+  float: left;
+  min-height: 1px; }
+#main-content .details {
+  width: calc(100% - 125px);
+  float: left; }
+  #main-content .details h3 {
+    margin-top: 10px;
+    line-height: 24px; }
+    @media only screen and (max-width: 720px) {
+      #main-content .details h3 {
+        margin-top: 3px; } }
+    @media only screen and (max-width: 520px) {
+      #main-content .details h3 {
+        margin-bottom: 3px; } }
+#main-content .goal-overall {
+  margin-bottom: 20px; }
+  #main-content .goal-overall .details {
+    width: 100%; }
+
+body.contrast-high .goal-stats {
+  border: 1px solid white !important; }
+body.contrast-high .statuses strong {
+  color: white; }
+body.contrast-high .statuses .value {
+  color: white !important; }
+body.contrast-high .summary .statuses .notstarted {
+  border: 1px solid white !important; }
+body.contrast-high .complete {
+  background-color: white;
+  background: white;
+  color: black !important; }
+body.contrast-high .inprogress {
+  background-color: #767676;
+  background: #767676;
+  color: black; }
+body.contrast-high .notstarted {
+  background-color: black;
+  background: black;
+  color: white !important; }
+body.contrast-high .notapplicable {
+  background-color: #B7B7B7;
+  background: #B7B7B7;
+  color: black !important; }
 
 /*4.1*/
