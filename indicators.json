@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Anteil der Bevölkerung, die unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Erwerbsstatus und geographischer Lage (urban/rural)",
+          "title": "Anteil der Bevölkerung, der unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Beschäftigungsstatus und geografischem Standort (städtisch/ ländlich)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-1-1",
@@ -23,7 +23,7 @@
         },
         {
           "id": "1-2-2",
-          "title": "Anteil der Männer, Frauen und Kinder jeden Alters, die in Armut in all ihren Dimensionen gemäß nationaler Definitionen leben",
+          "title": "Anteil der Männer, Frauen und Kinder jeden Alters, die in Armut in all ihren Dimensionen nach der jeweiligen nationalen Definition leben",
           "description": "",
           "keywords": "Indikator 1.2.2, Armutsgefährdung oder soziale Ausgrenzung (nach Eurostat-Definition), Erhebliche materielle Deprivation",
           "href": "/sdg-indicators/1-2-2",
