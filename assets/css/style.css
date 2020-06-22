@@ -1751,6 +1751,7 @@ body.contrast-high #search-results .search-result .content {
  * This file left blank intentionally. Implementations of Open SDG can use
  * a similarly named file for custom styles.
  */
+/*#2.1 Navigation Buttond */
 .goal-1.goal-banner {
   background-color: #E52B3D; }
 .goal-1.navigation-btn {
@@ -1957,3 +1958,15 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-banner h1, .goal-banner p {
   color: white; }
+
+/*#2.1*/
+/*#4.1 Keinen Rahmen um die farbigen Balken im Reportingstatus*/
+.goal-stats {
+  font-size: 0;
+  margin-top: 10px; }
+  .goal-stats span {
+    display: inline-block;
+    height: 10px;
+    font-weight: bold; }
+
+/*4.1*/
