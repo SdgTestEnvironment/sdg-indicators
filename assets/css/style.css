@@ -1975,8 +1975,17 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-banner h1, .goal-banner p {
   color: white; }
-  @media screen and (min-width: 300px) {
+  @media screen and (max-width: 600px) {
     .goal-banner h1, .goal-banner p {
       font-size: 2vw; } }
+  @media screen and (max-width: 500px) {
+    .goal-banner h1, .goal-banner p {
+      font-size: 3vw; } }
+  @media screen and (max-width: 400px) {
+    .goal-banner h1, .goal-banner p {
+      font-size: 4vw; } }
+  @media screen and (max-width: 300px) {
+    .goal-banner h1, .goal-banner p {
+      font-size: 5vw; } }
 
 /*#2.1*/
