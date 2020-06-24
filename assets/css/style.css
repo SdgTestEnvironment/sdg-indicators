@@ -1977,15 +1977,15 @@ body.contrast-high #search-results .search-result .content {
   color: white; }
   @media screen and (max-width: 600px) {
     .goal-banner h1, .goal-banner p {
-      font-size: 2vw; } }
+      font-size: 4vw; } }
   @media screen and (max-width: 500px) {
     .goal-banner h1, .goal-banner p {
-      font-size: 3vw; } }
+      font-size: 5vw; } }
   @media screen and (max-width: 400px) {
     .goal-banner h1, .goal-banner p {
-      font-size: 4vw; } }
+      font-size: 6vw; } }
   @media screen and (max-width: 300px) {
     .goal-banner h1, .goal-banner p {
-      font-size: 5vw; } }
+      font-size: 7vw; } }
 
 /*#2.1*/
