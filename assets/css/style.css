@@ -1975,7 +1975,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-banner h1, .goal-banner p {
   color: white; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 300px) {
     .goal-banner h1, .goal-banner p {
       font-size: 2vw; } }
 
