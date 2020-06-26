@@ -1989,3 +1989,6 @@ body.contrast-high #search-results .search-result .content {
       font-size: 7vw; } }
 
 /*#2.1*/
+body {
+  background: white;
+  padding-top: 15px; }
