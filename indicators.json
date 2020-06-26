@@ -14,6 +14,14 @@
           "status": "notapplicable"
         },
         {
+          "id": "1-1-2",
+          "title": "Dies ist der Name eines Fiktiven Indikators, der im Zuge der Revisionierung 2020 eingefügt wird",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/1-1-2",
+          "status": "inprogress"
+        },
+        {
           "id": "1-2-1",
           "title": "Anteil der Bevölkerung, die unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter",
           "description": "",

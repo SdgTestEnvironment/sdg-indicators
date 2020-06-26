@@ -14,6 +14,14 @@
           "status": "notapplicable"
         },
         {
+          "id": "1-1-2",
+          "title": "This is the name of a fictional indicator to be add due to revision 2020",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/en/1-1-2",
+          "status": "inprogress"
+        },
+        {
           "id": "1-2-1",
           "title": "Proportion of population living below the national poverty line, by sex and age",
           "description": "",
