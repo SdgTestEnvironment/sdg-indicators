@@ -1992,3 +1992,12 @@ body.contrast-high #search-results .search-result .content {
 body {
   background: white;
   padding-top: 15px; }
+
+#imgDown {
+  z-index: 0; }
+
+#imgUp {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 1; }
