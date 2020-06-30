@@ -1994,14 +1994,13 @@ body {
   padding-top: 15px; }
 
 .imgWrap {
-  background: url(g205sdgs.github.io/sdg-indicators/public/testImgInfo.PNG) no-repeat; }
+  background: url("g205sdgs.github.io/sdg-indicators/public/testImgInfo.PNG");
+  position: absolute; }
 
 #imgDown {
   position: absolute;
-  top: 15px;
-  left: 20px;
   z-index: 0; }
 
 #imgUp {
-  position: relative;
+  position: absolute;
   z-index: 1; }
