@@ -1936,6 +1936,8 @@ var indicatorView = function (model, options) {
   this._model.onFieldsComplete.attach(function(sender, args) {
     view_obj.initialiseFields(args);
 
+    console.log("args", arg);
+
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
       view_obj._mapView.initialise(args.indicatorId);
@@ -2932,8 +2934,7 @@ $(function() {
       var headline = this.plugin.timeSeriesName
       headline += ', <br>' + this.plugin.unitName;
       //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-      console.log("headline",headline);
-      
+
       div.innerHTML = L.Util.template(controlTpl, {
         lowValue: this.plugin.valueRange[0],
         highValue: this.plugin.valueRange[1],
