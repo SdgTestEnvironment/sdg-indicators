@@ -106,7 +106,16 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     this._defaults = defaults;
     this._name = 'sdgMap';
-
+    console.log("a: options", this.options);
+    //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
+    this.geoData = options.geoData;
+    this.geoCodeRegEx = options.geoCodeRegEx;
+    this.timeSeries = _.pluck(this.geoData, 'timeseries');
+    this.timeSeriesName = translations.t(this.timeSeries[this.timeSeries.length -1]);
+    this.unit = _.pluck(this.geoData, 'Units');
+    this.unitName = translations.t(this.unit[this.unit.length -1]);
+    console.log("b: timeseries", this.timeSeries);
+    //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.init();
   }
 
@@ -2922,7 +2931,8 @@ $(function() {
       var headline = this.plugin.timeSeriesName
       headline += ', <br>' + this.plugin.unitName;
       //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-
+      console.log("headline",headline);
+      
       div.innerHTML = L.Util.template(controlTpl, {
         lowValue: this.plugin.valueRange[0],
         highValue: this.plugin.valueRange[1],
@@ -2931,7 +2941,7 @@ $(function() {
         //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
         title: headline,
         //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-        
+
       });
       return div;
     },
