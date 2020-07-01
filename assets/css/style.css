@@ -1990,3 +1990,13 @@ body.contrast-high #search-results .search-result .content {
 body {
   background: white;
   padding-top: 15px; }
+
+#mapHead {
+  display: block;
+  font-size: 1.0em;
+  margin-top: 1.0em;
+  margin-bottom: 1.0em;
+  padding-left: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold; }
