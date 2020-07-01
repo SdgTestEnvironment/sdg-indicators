@@ -1990,15 +1990,3 @@ body.contrast-high #search-results .search-result .content {
 body {
   background: white;
   padding-top: 15px; }
-
-.imgWrap {
-  background: url("g205sdgs.github.io/sdg-indicators/public/testImgInfo.PNG");
-  position: absolute; }
-
-#imgDown {
-  position: absolute;
-  z-index: 0; }
-
-#imgUp {
-  position: absolute;
-  z-index: 1; }
