@@ -119,11 +119,11 @@ opensdg.autotrack = function(preset, category, action, label) {
     // this.title = 'mapTitle_' + options.indicatorId
     // this.unit = 'mapUnit_' + options.indicatorId
     // this.timeSeriesName = translations.indicator[this.title];
-    this.unitName = translations.t(this.unit);
-    
 
-    this.timeSeriesName = opensdg.maptitles(this.indicatorId);
 
+
+    this.timeSeriesName = opensdg.maptitles(this.indicatorId)[0];
+    this.unitName = opensdg.maptitles(this.indicatorId)[0];
     //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.init();
   }
@@ -710,11 +710,12 @@ opensdg.chartColors = function(indicatorId) {
 };
 opensdg.maptitles = function(indicatorId) {
   if(indicatorId == "indicator_8-5-1"){
-    
+
     this.mapTitle = "Test2345"
+    this.mapUnit = "TestUnit"
   }
 
-  return this.mapTitle;
+  return this.mapTitle, this.mapUnit ;
 
 };
 var indicatorModel = function (options) {
