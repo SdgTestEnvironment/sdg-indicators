@@ -707,6 +707,14 @@ opensdg.chartColors = function(indicatorId) {
   return this.colors;
 
 };
+opensdg.maptitles = function(indicatorId) {
+  if(indicatorId == "indicator_8-5-1"){
+    this.mapTitle = "Test2345"
+  }
+
+  return this.mapTitle;
+
+};
 var indicatorModel = function (options) {
 
   var helpers = 
