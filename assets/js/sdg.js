@@ -116,10 +116,12 @@ opensdg.autotrack = function(preset, category, action, label) {
     // this.unitName = translations.t(this.unit[this.unit.length -1]);
     // console.log("b: timeseries", this.timeSeriesName);
 
-    this.title = 'mapTitle_' + options.indicatorId
-    this.unit = 'mapUnit_' + options.indicatorId
-    this.timeSeriesName = translations.indicator[this.title];
+    // this.title = 'mapTitle_' + options.indicatorId
+    // this.unit = 'mapUnit_' + options.indicatorId
+    // this.timeSeriesName = translations.indicator[this.title];
     this.unitName = translations.t(this.unit);
+
+    this.timeSeriesName = opensdg.maptitles(this.indicatorId);
 
     //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.init();
