@@ -1754,7 +1754,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #E52B3D; }
 .goal-1.sub-goal-banner {
   height: 5px;
-  background-color: #c51829; }
+  background-color: #c51829;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-1.navigation-btn {
   background-color: #E52B3D;
   color: white;
@@ -1771,7 +1773,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #DDA63A; }
 .goal-2.sub-goal-banner {
   height: 5px;
-  background-color: #c28c22; }
+  background-color: #c28c22;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-2.navigation-btn {
   background-color: #DDA63A;
   color: white;
@@ -1788,7 +1792,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #4C9F38; }
 .goal-3.sub-goal-banner {
   height: 5px;
-  background-color: #3a792b; }
+  background-color: #3a792b;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-3.navigation-btn {
   background-color: #4C9F38;
   color: white;
@@ -1805,7 +1811,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #C42130; }
 .goal-4.sub-goal-banner {
   height: 5px;
-  background-color: #981a25; }
+  background-color: #981a25;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-4.navigation-btn {
   background-color: #C42130;
   color: white;
@@ -1822,7 +1830,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #FF3E24; }
 .goal-5.sub-goal-banner {
   height: 5px;
-  background-color: #f01c00; }
+  background-color: #f01c00;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-5.navigation-btn {
   background-color: #FF3E24;
   color: white;
@@ -1839,7 +1849,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #28BCE1; }
 .goal-6.sub-goal-banner {
   height: 5px;
-  background-color: #1a9bbc; }
+  background-color: #1a9bbc;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-6.navigation-btn {
   background-color: #28BCE1;
   color: white;
@@ -1856,7 +1868,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #FCC30B; }
 .goal-7.sub-goal-banner {
   height: 5px;
-  background-color: #d1a103; }
+  background-color: #d1a103;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-7.navigation-btn {
   background-color: #FCC30B;
   color: white;
@@ -1873,7 +1887,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #A21942; }
 .goal-8.sub-goal-banner {
   height: 5px;
-  background-color: #761230; }
+  background-color: #761230;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-8.navigation-btn {
   background-color: #A21942;
   color: white;
@@ -1890,7 +1906,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #FD6925; }
 .goal-9.sub-goal-banner {
   height: 5px;
-  background-color: #ed4c02; }
+  background-color: #ed4c02;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-9.navigation-btn {
   background-color: #FD6925;
   color: white;
@@ -1907,7 +1925,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #DD1367; }
 .goal-10.sub-goal-banner {
   height: 5px;
-  background-color: #ae0f51; }
+  background-color: #ae0f51;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-10.navigation-btn {
   background-color: #DD1367;
   color: white;
@@ -1924,7 +1944,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #FD9C27; }
 .goal-11.sub-goal-banner {
   height: 5px;
-  background-color: #ef8402; }
+  background-color: #ef8402;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-11.navigation-btn {
   background-color: #FD9C27;
   color: white;
@@ -1941,7 +1963,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #BF8B2E; }
 .goal-12.sub-goal-banner {
   height: 5px;
-  background-color: #966d24; }
+  background-color: #966d24;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-12.navigation-btn {
   background-color: #BF8B2E;
   color: white;
@@ -1958,7 +1982,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #417D46; }
 .goal-13.sub-goal-banner {
   height: 5px;
-  background-color: #305b33; }
+  background-color: #305b33;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-13.navigation-btn {
   background-color: #417D46;
   color: white;
@@ -1975,7 +2001,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #0A96D8; }
 .goal-14.sub-goal-banner {
   height: 5px;
-  background-color: #0874a7; }
+  background-color: #0874a7;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-14.navigation-btn {
   background-color: #0A96D8;
   color: white;
@@ -1992,7 +2020,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #57BE2F; }
 .goal-15.sub-goal-banner {
   height: 5px;
-  background-color: #449525; }
+  background-color: #449525;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-15.navigation-btn {
   background-color: #57BE2F;
   color: white;
@@ -2009,7 +2039,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #00689C; }
 .goal-16.sub-goal-banner {
   height: 5px;
-  background-color: #004669; }
+  background-color: #004669;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-16.navigation-btn {
   background-color: #00689C;
   color: white;
@@ -2026,7 +2058,9 @@ body.contrast-high #search-results .search-result .content {
   background-color: #1F4A6A; }
 .goal-17.sub-goal-banner {
   height: 5px;
-  background-color: #132e43; }
+  background-color: #132e43;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-17.navigation-btn {
   background-color: #1F4A6A;
   color: white;
