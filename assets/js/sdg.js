@@ -123,7 +123,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
 
     this.timeSeriesName = opensdg.maptitles(this.indicatorId)[0];
-    this.unitName = opensdg.maptitles(this.indicatorId)[0];
+    this.unitName = opensdg.maptitles(this.indicatorId)[1];
     //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.init();
   }
@@ -715,7 +715,7 @@ opensdg.maptitles = function(indicatorId) {
     this.mapUnit = "TestUnit"
   }
 
-  return this.mapTitle, this.mapUnit ;
+  return [this.mapTitle, this.mapUnit] ;
 
 };
 var indicatorModel = function (options) {
