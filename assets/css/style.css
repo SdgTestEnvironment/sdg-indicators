@@ -1752,6 +1752,9 @@ body.contrast-high #search-results .search-result .content {
 /*#2.1 Navigation Buttond */
 .goal-1.goal-banner {
   background-color: #E52B3D; }
+.goal-1.sub-goal-banner {
+  height: 5px;
+  background-color: #c51829; }
 .goal-1.navigation-btn {
   background-color: #E52B3D;
   color: white;
@@ -1766,6 +1769,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-2.goal-banner {
   background-color: #DDA63A; }
+.goal-2.sub-goal-banner {
+  height: 5px;
+  background-color: #c28c22; }
 .goal-2.navigation-btn {
   background-color: #DDA63A;
   color: white;
@@ -1780,6 +1786,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-3.goal-banner {
   background-color: #4C9F38; }
+.goal-3.sub-goal-banner {
+  height: 5px;
+  background-color: #3a792b; }
 .goal-3.navigation-btn {
   background-color: #4C9F38;
   color: white;
@@ -1794,6 +1803,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-4.goal-banner {
   background-color: #C42130; }
+.goal-4.sub-goal-banner {
+  height: 5px;
+  background-color: #981a25; }
 .goal-4.navigation-btn {
   background-color: #C42130;
   color: white;
@@ -1808,6 +1820,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-5.goal-banner {
   background-color: #FF3E24; }
+.goal-5.sub-goal-banner {
+  height: 5px;
+  background-color: #f01c00; }
 .goal-5.navigation-btn {
   background-color: #FF3E24;
   color: white;
@@ -1822,6 +1837,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-6.goal-banner {
   background-color: #28BCE1; }
+.goal-6.sub-goal-banner {
+  height: 5px;
+  background-color: #1a9bbc; }
 .goal-6.navigation-btn {
   background-color: #28BCE1;
   color: white;
@@ -1836,6 +1854,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-7.goal-banner {
   background-color: #FCC30B; }
+.goal-7.sub-goal-banner {
+  height: 5px;
+  background-color: #d1a103; }
 .goal-7.navigation-btn {
   background-color: #FCC30B;
   color: white;
@@ -1850,6 +1871,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-8.goal-banner {
   background-color: #A21942; }
+.goal-8.sub-goal-banner {
+  height: 5px;
+  background-color: #761230; }
 .goal-8.navigation-btn {
   background-color: #A21942;
   color: white;
@@ -1864,6 +1888,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-9.goal-banner {
   background-color: #FD6925; }
+.goal-9.sub-goal-banner {
+  height: 5px;
+  background-color: #ed4c02; }
 .goal-9.navigation-btn {
   background-color: #FD6925;
   color: white;
@@ -1878,6 +1905,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-10.goal-banner {
   background-color: #DD1367; }
+.goal-10.sub-goal-banner {
+  height: 5px;
+  background-color: #ae0f51; }
 .goal-10.navigation-btn {
   background-color: #DD1367;
   color: white;
@@ -1892,6 +1922,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-11.goal-banner {
   background-color: #FD9C27; }
+.goal-11.sub-goal-banner {
+  height: 5px;
+  background-color: #ef8402; }
 .goal-11.navigation-btn {
   background-color: #FD9C27;
   color: white;
@@ -1906,6 +1939,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-12.goal-banner {
   background-color: #BF8B2E; }
+.goal-12.sub-goal-banner {
+  height: 5px;
+  background-color: #966d24; }
 .goal-12.navigation-btn {
   background-color: #BF8B2E;
   color: white;
@@ -1920,6 +1956,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-13.goal-banner {
   background-color: #417D46; }
+.goal-13.sub-goal-banner {
+  height: 5px;
+  background-color: #305b33; }
 .goal-13.navigation-btn {
   background-color: #417D46;
   color: white;
@@ -1934,6 +1973,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-14.goal-banner {
   background-color: #0A96D8; }
+.goal-14.sub-goal-banner {
+  height: 5px;
+  background-color: #0874a7; }
 .goal-14.navigation-btn {
   background-color: #0A96D8;
   color: white;
@@ -1948,6 +1990,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-15.goal-banner {
   background-color: #57BE2F; }
+.goal-15.sub-goal-banner {
+  height: 5px;
+  background-color: #449525; }
 .goal-15.navigation-btn {
   background-color: #57BE2F;
   color: white;
@@ -1962,6 +2007,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-16.goal-banner {
   background-color: #00689C; }
+.goal-16.sub-goal-banner {
+  height: 5px;
+  background-color: #004669; }
 .goal-16.navigation-btn {
   background-color: #00689C;
   color: white;
@@ -1976,6 +2024,9 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-17.goal-banner {
   background-color: #1F4A6A; }
+.goal-17.sub-goal-banner {
+  height: 5px;
+  background-color: #132e43; }
 .goal-17.navigation-btn {
   background-color: #1F4A6A;
   color: white;
