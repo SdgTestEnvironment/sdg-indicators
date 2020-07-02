@@ -120,6 +120,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     // this.unit = 'mapUnit_' + options.indicatorId
     // this.timeSeriesName = translations.indicator[this.title];
     this.unitName = translations.t(this.unit);
+    console.log("language:", page.language);
 
     this.timeSeriesName = opensdg.maptitles(this.indicatorId);
 
@@ -709,7 +710,7 @@ opensdg.chartColors = function(indicatorId) {
 };
 opensdg.maptitles = function(indicatorId) {
   if(indicatorId == "indicator_8-5-1"){
-    console.log("language:", page.language)
+    
     this.mapTitle = "Test2345"
   }
 
