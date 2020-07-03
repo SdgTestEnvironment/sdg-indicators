@@ -1752,7 +1752,7 @@ body.contrast-high #search-results .search-result .content {
 /*#2.1 Navigation Buttond */
 .goal-1.goal-banner {
   background-color: #E52B3D; }
-.goal-1.sub-goal-banner {
+.goal-1.sup-goal-banner {
   height: 5px;
   background-color: #eb5867;
   padding-top: 0px;
@@ -1776,7 +1776,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-2.goal-banner {
   background-color: #DDA63A; }
-.goal-2.sub-goal-banner {
+.goal-2.sup-goal-banner {
   height: 5px;
   background-color: #e5ba65;
   padding-top: 0px;
@@ -1800,7 +1800,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-3.goal-banner {
   background-color: #4C9F38; }
-.goal-3.sub-goal-banner {
+.goal-3.sup-goal-banner {
   height: 5px;
   background-color: #61bf4b;
   padding-top: 0px;
@@ -1824,7 +1824,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-4.goal-banner {
   background-color: #C42130; }
-.goal-4.sub-goal-banner {
+.goal-4.sup-goal-banner {
   height: 5px;
   background-color: #de3a49;
   padding-top: 0px;
@@ -1848,7 +1848,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-5.goal-banner {
   background-color: #FF3E24; }
-.goal-5.sub-goal-banner {
+.goal-5.sup-goal-banner {
   height: 5px;
   background-color: #ff6b57;
   padding-top: 0px;
@@ -1872,7 +1872,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-6.goal-banner {
   background-color: #28BCE1; }
-.goal-6.sub-goal-banner {
+.goal-6.sup-goal-banner {
   height: 5px;
   background-color: #55cae7;
   padding-top: 0px;
@@ -1896,7 +1896,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-7.goal-banner {
   background-color: #FCC30B; }
-.goal-7.sub-goal-banner {
+.goal-7.sup-goal-banner {
   height: 5px;
   background-color: #fdcf3d;
   padding-top: 0px;
@@ -1920,7 +1920,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-8.goal-banner {
   background-color: #A21942; }
-.goal-8.sub-goal-banner {
+.goal-8.sup-goal-banner {
   height: 5px;
   background-color: #ce2054;
   padding-top: 0px;
@@ -1944,7 +1944,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-9.goal-banner {
   background-color: #FD6925; }
-.goal-9.sub-goal-banner {
+.goal-9.sup-goal-banner {
   height: 5px;
   background-color: #fd8c58;
   padding-top: 0px;
@@ -1968,7 +1968,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-10.goal-banner {
   background-color: #DD1367; }
-.goal-10.sub-goal-banner {
+.goal-10.sup-goal-banner {
   height: 5px;
   background-color: #ee3582;
   padding-top: 0px;
@@ -1992,7 +1992,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-11.goal-banner {
   background-color: #FD9C27; }
-.goal-11.sub-goal-banner {
+.goal-11.sup-goal-banner {
   height: 5px;
   background-color: #fdb35a;
   padding-top: 0px;
@@ -2016,7 +2016,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-12.goal-banner {
   background-color: #BF8B2E; }
-.goal-12.sub-goal-banner {
+.goal-12.sup-goal-banner {
   height: 5px;
   background-color: #d4a34c;
   padding-top: 0px;
@@ -2040,7 +2040,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-13.goal-banner {
   background-color: #417D46; }
-.goal-13.sub-goal-banner {
+.goal-13.sup-goal-banner {
   height: 5px;
   background-color: #529f59;
   padding-top: 0px;
@@ -2064,7 +2064,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-14.goal-banner {
   background-color: #0A96D8; }
-.goal-14.sub-goal-banner {
+.goal-14.sup-goal-banner {
   height: 5px;
   background-color: #20b1f5;
   padding-top: 0px;
@@ -2088,7 +2088,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-15.goal-banner {
   background-color: #57BE2F; }
-.goal-15.sub-goal-banner {
+.goal-15.sup-goal-banner {
   height: 5px;
   background-color: #72d34d;
   padding-top: 0px;
@@ -2112,7 +2112,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-16.goal-banner {
   background-color: #00689C; }
-.goal-16.sub-goal-banner {
+.goal-16.sup-goal-banner {
   height: 5px;
   background-color: #008acf;
   padding-top: 0px;
@@ -2136,7 +2136,7 @@ body.contrast-high #search-results .search-result .content {
 
 .goal-17.goal-banner {
   background-color: #1F4A6A; }
-.goal-17.sub-goal-banner {
+.goal-17.sup-goal-banner {
   height: 5px;
   background-color: #2b6691;
   padding-top: 0px;
