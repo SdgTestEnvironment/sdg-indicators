@@ -1576,7 +1576,7 @@ function prepareData(rows) {
       // object, for easier control: opensdg.dataRounding()
       if (typeof opensdg.dataRounding === 'function') {
         if (typeof opensdg.dataRoundingDp === 'function' & item.dcmplc){
-
+          item.Value = opensdg.dataRoundingDp(item.Value);
         }
         else{
           item.Value = opensdg.dataRounding(item.Value);
