@@ -1568,6 +1568,7 @@ function getHeadline(selectableFields, rows) {
  */
 function prepareData(rows) {
   return rows.map(function(item) {
+    console.log(item);
 
     if (item[VALUE_COLUMN] != 0) {
       // For rounding, use a function that can be set on the global opensdg
