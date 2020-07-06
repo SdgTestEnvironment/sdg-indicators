@@ -813,6 +813,7 @@ function nonFieldColumns() {
     'Observation status',
     'Unit multiplier',
     'Unit measure',
+    'dcmplc',
   ];
 }
 
