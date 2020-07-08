@@ -2187,3 +2187,21 @@ body {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold; }
+
+.nav-tabs {
+  border-bottom: 1px solid #888; }
+  .nav-tabs .nav-item {
+    background: none;
+    border: none; }
+    .nav-tabs .nav-item a {
+      border: none;
+      color: black; }
+    .nav-tabs .nav-item.active a {
+      border: 1px solid #888;
+      border-bottom: 0; }
+    .nav-tabs .nav-item:not(.active) a {
+      background-color: #eeeeee; }
+      .nav-tabs .nav-item:not(.active) a:hover {
+        text-decoration: underline; }
+    .nav-tabs .nav-item.contrast-heigh {
+      color: black; }
