@@ -127,7 +127,7 @@
         },
         {
           "id": "2-1-2",
-          "title": "Prävalenz mittlerer oder schwerer Ernährungsunsicherheit in der Bevölkerung, basierend auf der Erfahrungsskala für Ernährungsunsicherheit (FIES)",
+          "title": "Prävalenz von mittlerer oder schwerer Ernährungsunsicherheit in der Bevölkerung gemäß der Erfahrungsskala für Ernährungsunsicherheit (FIES)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-1-2",
@@ -135,7 +135,7 @@
         },
         {
           "id": "2-2-1",
-          "title": "Prävalenz von Kleinwuchs (Körpergröße zum Alter < -2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5 Jahren",
+          "title": "Prävalenz von Kleinwuchs (Körpergröße zum Alter <-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5 Jahren",
           "description": "",
           "keywords": "Indikator 2.2.1, Kleinwuchs bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-1",
@@ -143,7 +143,7 @@
         },
         {
           "id": "2-2-2",
-          "title": "Prävalenz von Fehlernährung (Gewicht zur Körpergröße > +2 oder < -2 Standardabweichung vom Median des Wachstumsstandards für Kinder der WHO) bei Kindern unter 5 Jahren, nach der Art (Auszehrung und Übergewicht)",
+          "title": "Prävalenz von Fehlernährung (Gewicht zur Körpergröße >+2 oder <-2 Standardabweichung vom Median des Wachstumsstandards für Kinder der Weltgesundheitsorganisation (WHO)) bei Kindern unter 5 Jahren nach der Art (Auszehrung und Übergewicht)",
           "description": "",
           "keywords": "Indikator 2.2.2, Übergewicht bei Kindern unter 5 Jahren, Untergewicht (bezogen auf die Größe) bei Kindern unter 5 Jahren",
           "href": "/sdg-indicators/2-2-2",
@@ -151,7 +151,7 @@
         },
         {
           "id": "2-3-1",
-          "title": "Produktionsvolumen je Arbeitskraft nach Unternehmensgrößenklassen der Betriebsgröße in Land-/Weide-/Forstwirtschaft",
+          "title": "Produktionsvolumen je Arbeitskraft, nach Größenklassen der Land-/Weide-/Forstwirtschaftsbetriebe",
           "description": "",
           "keywords": "Indikator 2.3.1, Arbeitsproduktivität in der Landwirtschaft, Arbeitsproduktivität in der Forstwirtschaft",
           "href": "/sdg-indicators/2-3-1",
@@ -159,7 +159,7 @@
         },
         {
           "id": "2-3-2",
-          "title": "Durchschnittliches Einkommen kleiner Nahrungsmittelproduzenten, nach Geschlecht und indigenem Status",
+          "title": "Durchschnittliches Einkommen kleiner Nahrungsmittelproduzenten, nach Geschlecht und Zugehörigkeit zu einer indigenen Bevölkerungsgruppe",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-3-2",
@@ -175,7 +175,7 @@
         },
         {
           "id": "2-5-1",
-          "title": "Anzahl der pflanzlichen und tierischen genetischen Ressourcen für Ernährung und Landwirtschaft, die entweder in mittel- oder langfristigen Einrichtungen zu deren Erhalt gesichert sind",
+          "title": "Anzahl der für Ernährung und Landwirtschaft nutzbaren pflanzlichen und tierischen genetischen Ressourcen, die zu deren Erhalt entweder mittel- oder langfristig in Einrichtungen gesichert werden",
           "description": "",
           "keywords": "Indikator 2.5.1, Tiergenetische Ressourcen, Pflanzengenetische Ressourcen",
           "href": "/sdg-indicators/2-5-1",
@@ -183,7 +183,7 @@
         },
         {
           "id": "2-5-2",
-          "title": "Anteil der einheimischen Arten, die als gefährdet oder nicht gefährdet klassifiziert sind oder deren Gefährdungsgrad unbekannt ist",
+          "title": "Anteil heimischer Rassen, die als vom Aussterben bedroht eingestuft sind",
           "description": "",
           "keywords": "Indikator 2.5.2, Gefährdungskategorie (nach FAO-Klassifikation), Gefährdungskategorie (nach nationaler Klassifikation), Einheimische Nutztierrassen",
           "href": "/sdg-indicators/2-5-2",
@@ -215,7 +215,7 @@
         },
         {
           "id": "2-c-1",
-          "title": "Indikator zu Schwankungen bei Lebensmittelpreisen",
+          "title": "Indikator für Preisanomalien bei Lebensmitteln",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/2-c-1",
