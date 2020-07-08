@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Anteil der Bevölkerung, der unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Erwerbsstatus und geografischem Standort (städtisch/ ländlich)",
+          "title": "Anteil der Bevölkerung, der unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Beschäftigungsstatus und geografischem Standort (städtisch/ ländlich)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-1-1",
@@ -15,7 +15,7 @@
         },
         {
           "id": "1-2-1",
-          "title": "Anteil der Bevölkerung, die unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter",
+          "title": "Anteil der Bevölkerung, der unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter",
           "description": "",
           "keywords": "Indikator 1.2.1, Armutsgefährdungsquote (nach Eurostat-Definition), nationale Armutsgrenze",
           "href": "/sdg-indicators/1-2-1",
@@ -47,7 +47,7 @@
         },
         {
           "id": "1-4-2",
-          "title": "Anteil an der gesamten erwachsenen Bevölke-rung, der sichere Landnutzungs- und -besitzrechte hat, a) über gesetzlich anerkannte Dokumente verfügt und b) seine Landrechte als sicher ansieht, nach Geschlecht und nach Art der Nutzungs- und Besitzrechte",
+          "title": "Anteil an der gesamten erwachsenen Bevölkerung, der sichere Landnutzungs- und -besitzrechte hat, a) über gesetzlich anerkannte Dokumente verfügt und b) seine Landrechte als sicher ansieht, nach Geschlecht und nach Art der Nutzungs- und Besitzrechte",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-4-2",
@@ -55,7 +55,7 @@
         },
         {
           "id": "1-5-1",
-          "title": "Anzahl der Katastrophen zugeschriebenen Todesopfer, Vermissten und direkt Betroffenen je 100&nbsp;000 Personen",
+          "title": "Anzahl der infolge von Katastrophen getöteten, vermissten und direkt betroffenen Personen, je 100&nbsp;000 Einwohner",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-5-1",
@@ -71,7 +71,7 @@
         },
         {
           "id": "1-5-3",
-          "title": "Anzahl der Länder, die nationale Katastrophenvorsorgestrategien im Einklang mit dem Sendai-Rahmen für Katastrophenvorsorge 2015-2030 beschließen und umsetzen",
+          "title": "Anzahl der Staaten, die nationale Strategien zur Katastrophenvorsorge im Einklang mit dem Sendai-Rahmenwerk für Katastrophenvorsorge 2015-2030 beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-5-3",
@@ -79,7 +79,7 @@
         },
         {
           "id": "1-5-4",
-          "title": "Anteil der Kommunalverwaltungen, die lokale Katastrophenvorsorgestrategien, die mit nationalen Katastrophenvorsorgestrategien im Einklang stehen, beschließen und umsetzen",
+          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-5-4",
@@ -87,11 +87,11 @@
         },
         {
           "id": "1-a-1",
-          "title": "Anteil der inländisch erwirtschafteten Ressourcen, die von der Regierung direkt für Programme zur Armutsbekämpfung bereitgestellt werden",
+          "title": "Gesamtumfang der Zuschüsse im Rahmen der öffentlichen Entwicklungszusammenarbeit (ODA) aller Geber mit Schwerpunkt auf der Minderung der Armut, gemessen am Bruttonationaleinkommen (BNE) des Empfängerlands",
           "description": "",
-          "keywords": "Indikator 1.a.1, Staatsausgaben für Wirtschaftshilfe für das Ausland (COFOG Gruppe 01.2)",
+          "keywords": "",
           "href": "/sdg-indicators/1-a-1",
-          "status": "complete"
+          "status": "notstarted"
         },
         {
           "id": "1-a-2",
@@ -103,7 +103,7 @@
         },
         {
           "id": "1-b-1",
-          "title": "Anteil der wiederkehrenden staatlichen und Investitionsausgaben für Sektoren, die überdurchschnittlich Frauen, Arme und benachteiligte Gruppen begünstigen",
+          "title": "Armutsorientierte öffentliche Sozialausgaben",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-b-1",
