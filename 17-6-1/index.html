@@ -122,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200708085201">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200708090053">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -339,7 +339,7 @@ var translations = {
       <div class="col-xs-8 col-md-9 col-lg-10 indicator-details">
         <div>
           <h1>Indikator 17.6.1</h1>
-          <p class="lead-copy">Anzahl der Vereinbarungen und Programme über Wissenschafts- und/oder Technologie-Kooperationen zwischen Staaten, nach Art der Kooperation</p>
+          <p class="lead-copy">Internet-Breitband-Verträge je 100 Einwohner, nach Geschwindigkeit</p>
         </div>
       </div>
     </div>
@@ -366,7 +366,7 @@ var translations = {
     </div>
 
     <div class="col-xs-6 col-md-6 col-lg-6">
-      <a href="/sdg-indicators/17-6-2" class="btn btn-primary btn-block goal-17 navigation-btn" role="button">
+      <a href="/sdg-indicators/17-7-1" class="btn btn-primary btn-block goal-17 navigation-btn" role="button">
         <b class="btn-label hidden-sm hidden-xs">Nächster Indikator </b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
     </div>
@@ -378,18 +378,6 @@ var translations = {
   
 
   
-
-<div class="row" id="page-content">
-  <div class="col-xs-12">
-    <p><span style="background-color:#E27874;padding-bottom: 1px;padding-top: 2px;padding-left: 3px;padding-right: 3px;"> Datenquellenanalyse </span><br />
-Nach möglichen Datenquellen für diesen Indikator wird derzeit gesucht.
-Dieser Indikator ist ein sogenannter Tier III Indikator. Dies bedeutet, dass für diesen bislang keine international etablierte Methodik bzw. kein einheitlicher statistischer Standard existieren. 
-Entsprechende Methoden bzw. Standards werden derzeit durch die zuständigen internationalen Organisationen entwickelt und anschließend in Zusammenarbeit mit den nationalen statistischen Ämtern getestet.</p>
-
-<p>Gerne können Sie uns Feedback oder Vorschläge zu geeigneten Datenquellen zu diesem Indikator über das Kontaktformular zukommen lassen.</p>
-
-  </div>
-</div>
 
 
   
@@ -405,14 +393,14 @@ Entsprechende Methoden bzw. Standards werden derzeit durch die zuständigen inte
   data-indicatorid='indicator_17-6-1'
   data-id="17-6-1"
   data-country="Deutschland"
-  data-charttitle=""
+  data-charttitle="Internet-Breitband-Zugänge"
   data-charttitles="null"
-  data-measurementunit=""
+  data-measurementunit="Je 100 Einwohner"
   data-datasource=""
   data-copyright="&copy; Statistisches Bundesamt (Destatis), 2020"
   data-geographicalarea="Deutschland"
-  data-footnote=""
-  data-showdata="false"
+  data-footnote="2017 vorläufige Daten"
+  data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
@@ -421,7 +409,278 @@ Entsprechende Methoden bzw. Standards werden derzeit durch die zuständigen inte
   data-stackeddisaggregation=""
 >
   
-  <div id="indicator-main" class="indicator-main col-md-12">
+  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
+    <div id="units"></div>
+<div id="toolbar">
+  <span id="series-help">
+    <h4>Auswahl</h4>
+    <p>Wählen Sie hier aus, was in der Grafik bzw. Tabelle angezeigt werden soll.</p>
+  </span>
+  <p id="legend-help">Klicken Sie auf die Legende um Zeitreihen aus der Grafik zu entfernen.</p>
+  <div id="fields">
+    <p class="async-loading" data-img="/sdg-indicators/assets/img/loading-small.gif"></p>
+  </div>
+</div>
+
+  </div>
+  <div id="indicator-main" class="indicator-main col-md-9">
+    
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    <a href="https://G205SDGs.github.io/sdg-data/de/headline/17-6-1.csv" class="btn btn-primary btn-download" download="indicator_17-6-1.csv" tabindex="0" role="button">Speichern der Headline im CSV-Format</a>
+
+    <a href="https://G205SDGs.github.io/sdg-data/de/data/17-6-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_17-6-1.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
+
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Internet-Breitband-Zugänge</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td class="table-value">32.0</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td class="table-value">33.94</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td class="table-value">34.71</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td class="table-value">35.48</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td class="table-value">36.45</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td class="table-value">37.36</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td class="table-value">38.78</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td class="table-value">40.1</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td class="table-value">41.2</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="datatableFooter">
+    
+    
+    <p>Geographische Abdeckung: Deutschland</p>
+    
+    
+    <p>Einheit: Je 100 Einwohner</p>
+    
+    
+    <p>Anmerkung: 2017 vorläufige Daten</p>
+    
+  </div>
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/sdg-indicators/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded spacer medium" style="display:none;">
+
+    <ul class="nav nav-tabs data-view" role="tablist">
+  <li role="presentation" class="nav-item active">
+    <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+><i class="fa fa-line-chart" aria-hidden="true"></i> <span class="hidden-xs" style="color:black">Grafik</span></a>
+  </li>
+  <li role="presentation" class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+><i class="fa fa-table" aria-hidden="true"></i> <span class="hidden-xs" style="color:black">Tabelle</span></a>
+  </li>
+  <li role="presentation" class="nav-item map" style="display:none">
+    <a data-no-disagg="true" class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+><i class="fa fa-map" aria-hidden="true"></i> <span class="hidden-xs"style="color:black">Karte</span></a>
+  </li></ul>
+
+    <div class="tab-content data-view">
+  <div role="tabpanel" class="tab-pane active" id="chartview">
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> Zu viele Zeitreihen ausgewählt, um diese in einer Grafik darzustellen. Es können nicht alle Zeitreihen dargestellt werden.
+    </div>
+
+    
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">
+          
+            Internet-Breitband-Zugänge
+          
+        </h3>
+        <div id="chart" class="plot-container">
+          
+<canvas></canvas>
+<script>
+// Add a chart alteration to support the chart_graph_limits metadata field.
+opensdg.chartConfigAlter(function(config, info) {
+  if (info.graphLimits) {
+    var limit = _.findWhere(info.graphLimits, { unit: info.selectedUnit }) || info.graphLimits[0];
+    var overrides = {
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              min: limit.minimum,
+              max: limit.maximum,
+            }
+          }]
+        }
+      }
+    }
+    // Add these overrides onto the normal config.
+    $.extend(true, config, overrides);
+  }
+});
+</script>
+
+
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        Grafik als Bild speichern
+      </button>
+    </div>
+    <div id="chartSelectionDownload"></div>
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="tableview">
+    <div id="selectionsTable"></div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+    <div id="map">
+  <img src="/sdg-indicators/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+  </div>
+  
+</div>
+
+
+  </div>
+
+</section>
+
   
   <ul class="nav nav-tabs spacer medium" role="tablist">
 
@@ -498,7 +757,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                
+                <p>Internet-Breitband-Zugänge</p>
 
               
             </td>
@@ -531,7 +790,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                
+                <p>Die Zeitreihe entspricht den globalen Metadaten.</p>
 
               
             </td>
@@ -566,6 +825,10 @@ data-event-label="Change to Sources tab"
                 
                 
 
+                
+                  <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/17.6.1.pdf" target="_blank">
+                    Nationale Metadaten <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
                 
 
               
@@ -630,8 +893,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/G205SDGs/sdg-data/commit/2d635295bda496256a73e337c6f647e9de44d95d" target="_blank">
-                    2018-09-25: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/dc14a4abc63a13e7abc466b6f1450c8b3888e3a0" target="_blank">
+                    2020-07-08: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -676,8 +939,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/G205SDGs/sdg-data/commit/ecd47283ca28851fb21b75d33677bd4861133d30" target="_blank">
-                    2020-07-03: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/f3c0f1edcba7b4c5744fdbf7c84a255f9840b7b7" target="_blank">
+                    2020-07-08: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -886,7 +1149,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                <p>Anzahl der Vereinbarungen und Programme über Wissenschafts- und/oder Technologie-Kooperationen zwischen Staaten, nach Art der Kooperation</p>
+                <p>Internet-Breitband-Verträge je 100 Einwohner, nach Geschwindigkeit</p>
 
               
             </td>
@@ -946,7 +1209,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                <p>Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)</p>
+                <p>Internationale Fernmeldeunion (ITU)</p>
 
               
             </td>
@@ -982,7 +1245,7 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://unstats.un.org/sdgs/tierIII-indicators/files/Tier3-17-06-01.pdf" target="_blank">
+                  <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-17-06-02.pdf" target="_blank">
                     Metadaten der Ziele der Vereinten Nationen für nachhaltige Entwicklung <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
@@ -1260,7 +1523,7 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200708085201'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200708085201"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200708090053'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200708090053"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
