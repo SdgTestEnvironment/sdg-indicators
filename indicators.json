@@ -150,6 +150,14 @@
           "status": "complete"
         },
         {
+          "id": "2-2-3",
+          "title": "Prävalenz von Anämie bei Frauen im Alter von 15-49 Jahren, nach Schwangerschaftsstatus (in Prozent)",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/2-2-3",
+          "status": "notstarted"
+        },
+        {
           "id": "2-3-1",
           "title": "Produktionsvolumen je Arbeitskraft, nach Größenklassen der Land-/Weide-/Forstwirtschaftsbetriebe",
           "description": "",
@@ -239,7 +247,7 @@
         },
         {
           "id": "3-1-2",
-          "title": "Anteil der Geburten unter der Aufsicht von qualifiziertem Gesundheitspersonal",
+          "title": "Anteil der von qualifiziertem Gesundheitspersonal betreuten Geburten",
           "description": "",
           "keywords": "Indikator 3.1.2, Lebendgeborene in Krankenhäusern",
           "href": "/sdg-indicators/3-1-2",
@@ -295,7 +303,7 @@
         },
         {
           "id": "3-3-5",
-          "title": "Anzahl der Personen, die Maßnahmen gegen vernachlässigte Tropenkrankheiten benötigen",
+          "title": "Anzahl der Personen mit Behandlungsbedarf bei vernachlässigten Tropenkrankheiten",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-3-5",
@@ -303,7 +311,7 @@
         },
         {
           "id": "3-4-1",
-          "title": "Sterblichkeitsrate infolge von Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen",
+          "title": "Sterblichkeitsrate durch Herz-Kreislauf-Erkrankungen, Krebs, Diabetes oder chronischen Atemwegserkrankungen",
           "description": "",
           "keywords": "Indikator 3.4.1, Sterblichkeit, Herz-Kreislauferkrankungen, bösartigen Neubildungen, Krebs,  Diabetes mellitus, chronischen Atemwegserkrankungen, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-4-1",
@@ -311,7 +319,7 @@
         },
         {
           "id": "3-4-2",
-          "title": "Sterblichkeitsrate bei Suizid",
+          "title": "Sterblichkeitsrate durch Suizid",
           "description": "",
           "keywords": "Indikator 3.4.2, Sterblichkeitsrate durch Suizid, Selbstmord, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-4-2",
@@ -319,7 +327,7 @@
         },
         {
           "id": "3-5-1",
-          "title": "Abdeckung durch Behandlungsmaßnahmen (pharmakologische, psychosoziale und Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch",
+          "title": "Behandlungsumfang (pharmakologische, psychosoziale sowie Rehabilitations- und Nachsorgeleistungen) bei Substanzmissbrauch",
           "description": "",
           "keywords": "Indikator 3.5.1, Statonäre Behandlung bei Abhängigkeit durch psychoaktive Substanzen, Stationäre Behandlung bei Alkoholabhänigkeit, Drogensucht, Drogenentzug, Weltgesundheitsorganisation (WHO), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämp",
           "href": "/sdg-indicators/3-5-1",
@@ -327,7 +335,7 @@
         },
         {
           "id": "3-5-2",
-          "title": "Schädlicher Alkoholgebrauch, definiert gemäß den nationalen Gegebenheiten als Alkoholkonsum pro Kopf (15 Jahre und älter) innerhalb eines Kalenderjahres in Litern reinem Alkohol",
+          "title": "Alkoholkonsum pro Kopf (15 Jahre und älter) innerhalb eines Kalenderjahres in Litern reinen Alkohols",
           "description": "",
           "keywords": "Indikator 3.5.2, Schädlicher Alkoholgebrauch,  Weltgesundheitsorganisation (WHO), Bundesministerium für Ernährung und Landwirtschaft (BMEL)",
           "href": "/sdg-indicators/3-5-2",
@@ -335,7 +343,7 @@
         },
         {
           "id": "3-6-1",
-          "title": "Sterblichkeitsrate aufgrund von Straßenverkehrsunfällen",
+          "title": "Sterblichkeitsrate durch Straßenverkehrsunfälle",
           "description": "",
           "keywords": "Indikator 3.6.1, Todesfälle durch Straßenverkehrsunfälle, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-6-1",
@@ -351,7 +359,7 @@
         },
         {
           "id": "3-7-2",
-          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre; 15-19 Jahre) je 1&nbsp;000 Frauen derselben Altersgruppe",
+          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre und 15-19 Jahre) je 1&nbsp;000 Frauen in dieser Altersgruppe",
           "description": "",
           "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren, Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)",
           "href": "/sdg-indicators/3-7-2",
@@ -359,7 +367,7 @@
         },
         {
           "id": "3-8-1",
-          "title": "Abdeckung der grundlegenden Gesundheitsleistungen (definiert als durchschnittliche Abdeckung der grundlegenden Leistungen basierend auf Tracer-Interventionen, einschließlich reproduktiver, Mütter-, Neugeborenen- und Kindergesundheit, infektiöser Krankheiten und nicht übertragbarer Krankheiten sowie Kapazitäten und Zugang zu Serviceleistungen, innerhalb der allgemein und der überwiegend benachteiligten Bevölkerung)",
+          "title": "Anteil der Zielbevölkerung, die durch grundlegende Gesundheitsleistungen abgedeckt ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-8-1",
@@ -375,7 +383,7 @@
         },
         {
           "id": "3-9-1",
-          "title": "Sterblichkeitsrate infolge von Luftverschmutzung im Haushalt und der Umgebung",
+          "title": "Sterblichkeitsrate durch Verschmutzung der Raum- und Außenluft",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-9-1",
@@ -383,7 +391,7 @@
         },
         {
           "id": "3-9-2",
-          "title": "Sterblichkeitsrate infolge von Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden 'Wasser, Sanitäreinrichtungen und Hygiene für alle'-Leistungen (WASH))",
+          "title": "Sterblichkeitsrate durch Kontakt mit verunreinigtem Wasser, unzureichenden sanitären Verhältnissen und mangelnder Hygiene (Kontakt mit unzureichenden 'Wasser, Sanitäreinrichtungen und Hygiene für alle'-Leistungen (WASH))",
           "description": "",
           "keywords": "Indikator 3.9.2, Sterblichkeit aufgrund von Durchfallerkrankungen, Sterblichkeit aufgrund von Energie- und Eiweißmangelernährung, Sterblichkeit aufgrund von intestinalen Nematodeninfektionen, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-9-2",
@@ -391,7 +399,7 @@
         },
         {
           "id": "3-9-3",
-          "title": "Sterblichkeitsrate infolge von unbeabsichtigtem Vergiften",
+          "title": "Sterblichkeitsrate aufgrund unbeabsichtigter Vergiftungen",
           "description": "",
           "keywords": "Indikator 3.9.3, Sterblichkeit infolge unbeabsichtigter Vergiftung, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-9-3",
@@ -399,7 +407,7 @@
         },
         {
           "id": "3-a-1",
-          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15 Jahren und älter",
+          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen ab 15 Jahren",
           "description": "",
           "keywords": "Indikator 3.a.1, Tabakgebrauch in der Bevölkerung ab 15 Jahren, Weltgesundheitsorganisation (WHO), Rahmenübereinkommen der WHO zur Eindämmung des Tabakgebrauchs (WHO FCTC)",
           "href": "/sdg-indicators/3-a-1",
@@ -423,7 +431,7 @@
         },
         {
           "id": "3-b-3",
-          "title": "Anteil der Gesundheitseinrichtungen, die über einen Kernsatz relevanter und wichtiger Medikamente verfügen, die nachhaltig verfügbar und bezahlbar sind",
+          "title": "Anteil der Gesundheitseinrichtungen, die über einen Kernbestand relevanter unentbehrlicher Arzneimittel verfügen, die nachhaltig verfügbar und bezahlbar sind",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-b-3",
@@ -431,7 +439,7 @@
         },
         {
           "id": "3-c-1",
-          "title": "Dichte und Verteilung von medizinischem Fachpersonal",
+          "title": "Dichte und Verteilung von Gesundheitspersonal",
           "description": "",
           "keywords": "Indikator 3.c.1, Gesundheitspersonal, Ärzte, Zahnärzte,  Medizinisches Pflegepersonal sowie Personal in der Geburtshilfe, Apotheker, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-c-1",
@@ -444,6 +452,14 @@
           "keywords": "Indikator 3.d.1, Durchschnitt der 13 IGV-Kapazitäten-Punktwerte, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/3-d-1",
           "status": "complete"
+        },
+        {
+          "id": "3-d-2",
+          "title": "Prozentualer Anteil von Infektionen des Blutkreislaufs durch ausgewählte antimikrobiell-resistente Organismen",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/3-d-2",
+          "status": "notstarted"
         }]
     }
   },
@@ -462,8 +478,16 @@
           "status": "complete"
         },
         {
+          "id": "4-1-2",
+          "title": "Schulabschlussquote (Grundschule, Sekundarstufe I und Sekundarstufe II)",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/4-1-2",
+          "status": "notstarted"
+        },
+        {
           "id": "4-2-1",
-          "title": "Anteil der Kinder unter 5 Jahren mit einer altersgemäßen Entwicklung hinsichtlich Gesundheit, Lernen und psycho-sozialem Wohlbefinden, nach Geschlecht",
+          "title": "Anteil der Kinder im Alter von 24-59 Monaten mit altersgemäßer Entwicklung hinsichtlich Gesundheit, Lernen und psychosozialem Wohlbefinden, nach Geschlecht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-2-1",
@@ -479,7 +503,7 @@
         },
         {
           "id": "4-3-1",
-          "title": "Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vergangenen 12 Monaten, nach Geschlecht",
+          "title": "Anteil der Jugendlichen und der Erwachsenen, die in den vergangenen 12 Monaten an formaler oder non-formaler Bildung oder Ausbildung teilgenommen haben, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.3.1, Teilnahmequote der 15 bis unter 25-Jährigen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten, Teilnahmequote der Erwachsenen in der formalen und non-formalen Bildung und Ausbildung in den letzten 12 Monaten",
           "href": "/sdg-indicators/4-3-1",
@@ -495,7 +519,7 @@
         },
         {
           "id": "4-5-1",
-          "title": "Paritäts-Indizes (weiblich/männlich, rural/urban, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
+          "title": "Paritäts-Indizes (weiblich/männlich, ländlich/ städtisch, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
           "description": "",
           "keywords": "Indikator 4.5.1, Geschlechtsparitätsindex, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/4-5-1",
@@ -503,7 +527,7 @@
         },
         {
           "id": "4-6-1",
-          "title": "Anteil der Bevölkerung einer bestimmten Altersgruppe, die über ein festes Mindestniveau an funktionalen (a) Lese- und (b) Rechenfähigkeiten verfügt, nach Geschlecht",
+          "title": "Anteil der Bevölkerung einer bestimmten Altersgruppe, die über ein bestimmtes Mindestniveau an funktionalen (a) Lese- und Schreibe- und (b) Rechenfähigkeiten verfügt, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.6.1, a) Mindestkompetenz Lesen,  b) Mindestkompetenz Rechnen, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/4-6-1",
@@ -511,7 +535,7 @@
         },
         {
           "id": "4-7-1",
-          "title": "Umfang, in dem (i) Bildung zu globaler Staatsbürgerschaft und (ii) Bildung für nachhaltige Entwicklung, einschließlich der Geschlechtergleichstellung und der Menschenrechte, auf allen Ebenen in: (a) nationale Bildungspolitik, (b) Lehrpläne, (c) Lehrerausbildung und (d) Schulleistungsuntersuchung berücksichtigt werden",
+          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-7-1",
@@ -519,7 +543,7 @@
         },
         {
           "id": "4-a-1",
-          "title": "Anteil der Schulen mit Zugang zu: (a) Strom; (b) Internet für Unterrichtszwecke; (c) Computern für Unterrichtszwecke; (d) angepasste Infrastruktur und Materialien für Schüler mit Behinderungen; (e) Trinkwasser; (f) geschlechterspezifischen sanitären Anlagen und (g) grundlegende Ausstattung zum Händewaschen (gemäß den WASH-Indikator-Definitionen)",
+          "title": "Anteil der Schulen mit Basisversorgung, nach Art der Versorgungsleistung",
           "description": "",
           "keywords": "Indikator 4.a.1, Schulen mit Zugang zu, a) Elektrizität, b) Internet für pädagogische Zwecke, c) Computer für pädagogische Zwecke, d) Infrastruktur und Materialien für Studierende mit Behinderung, e) Trinkwasser, f) geschlechterspezifische, grundlegende sanitäre Anlagen, g) grundlegender Ausstattung zum Händewaschen (gemäß der WASH Indikator-Definition), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Kultusministerkonferenz",
           "href": "/sdg-indicators/4-a-1",
@@ -535,7 +559,7 @@
         },
         {
           "id": "4-c-1",
-          "title": "Anteil der Lehrer in: (a) Vorschule; (b) Grundschule; (c ) Sekundarstufe I; und (d) Sekundarstufe II, die vor oder während ihrer Tätigkeit mindestens die geforderte Grundausbildung (z. B. pädagogisches Training) zum Unterrichten für die entsprechende Klassenstufe im jeweiligen Land erhalten haben",
+          "title": "Anteil der Lehrkräfte mit den erforderlichen Mindestqualifikationen, nach Bildungsstand",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-c-1",
@@ -567,7 +591,7 @@
         },
         {
           "id": "5-2-2",
-          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die sexueller Gewalt durch andere Personen als einen Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Alter und Ort des Geschehens",
+          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die sexueller Gewalt durch andere Personen als einen Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Alter und Tatort",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-2-2",
@@ -575,7 +599,7 @@
         },
         {
           "id": "5-3-1",
-          "title": "Anteil der 20- bis 24-jährigen Frauen, die vor einem Alter von 15 oder 18 Jahren verheiratet oder in einer vergleichbaren Verbindung waren",
+          "title": "Anteil der 20-24-jährigen Frauen, die vor dem vollendeten 15. bzw. 18. Lebensjahr verheiratet oder in einer vergleichbaren Verbindung waren",
           "description": "",
           "keywords": "Indikator 5.3.1, Verheiratete Mädchen unter 15 Jahren, Verheiratete Mädchen unter 18 Jahren, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
           "href": "/sdg-indicators/5-3-1",
@@ -583,7 +607,7 @@
         },
         {
           "id": "5-3-2",
-          "title": "Anteil der Mädchen und Frauen im Alter von 15-49 Jahren, die weiblicher Genitalverstümmelung unterzogen wurden, nach Alter",
+          "title": "Anteil der Mädchen und Frauen von 15-49 Jahren, die weiblicher Genitalverstümmelung/Beschneidung unterzogen wurden, nach Alter",
           "description": "",
           "keywords": "Indikator 5.3.2, Opfer von Verstümmelung weiblicher Genitalien, Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/5-3-2",
@@ -631,7 +655,7 @@
         },
         {
           "id": "5-a-1",
-          "title": "(a) Anteil der gesamten landwirtschaftlichen Bevölkerung mit Eigentum oder sicheren Rechten an landwirtschaftlichen Flächen, nach Geschlecht; und (b) Anteil der Frauen an den Eigentümern oder Rechteinhabern landwirtschaftlicher Flächen, nach Art der Eigentumsverhältnisse",
+          "title": "a) Anteil der Agrarbevölkerung mit Eigentum oder sicheren Rechten an landwirtschaftlichen Flächen, nach Geschlecht, und b) Frauenanteil unter den Eigentümern und sonstigen Rechteinhabern landwirtschaftlicher Flächen, nach Art der Nutzungs- und Besitzrechte",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-a-1",
@@ -639,7 +663,7 @@
         },
         {
           "id": "5-a-2",
-          "title": "Anteil der Staaten, in denen der Rechtsrahmen (einschließlich Gewohnheitsrecht) Frauen die gleichen Rechte auf Landeigentum und/oder -nutzung garantiert",
+          "title": "Anteil der Staaten mit einem Rechtsrahmen (einschließlich Gewohnheitsrecht), der Frauen die gleichen Rechte auf Eigentum an und/oder Verfügungsgewalt über Grund und Boden garantiert",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-a-2",
@@ -687,7 +711,7 @@
         },
         {
           "id": "6-3-1",
-          "title": "Anteil des sicher behandelten Abwassers",
+          "title": "Anteil der sicher behandelten Haushalts- und Industrieabwässer",
           "description": "",
           "keywords": "Indikator 6.3.1, Sicher behandeltes Abwasser, Abwässer, Weltgesundheitsorganisation (WHO), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat), Statistischen Division der UN (UNSD)",
           "href": "/sdg-indicators/6-3-1",
@@ -719,7 +743,7 @@
         },
         {
           "id": "6-5-1",
-          "title": "Grad der Umsetzung eines integrierten Wasserressourcenmanagements (0-100)",
+          "title": "Grad der integrierten Wasserbewirtschaftung",
           "description": "",
           "keywords": "Indikator 6.5.1, Grad der Implementierung eines integrierten Wasserressourcenmanagements, Umweltprogramm der Vereinten Nationen (UNEP), Bundesministerium für Umwelt, Naturschutz und nukleare Sicherheit (BMU)",
           "href": "/sdg-indicators/6-5-1",
@@ -775,7 +799,7 @@
         },
         {
           "id": "7-1-2",
-          "title": "Anteil der Bevölkerung mit überwiegender Abhängigkeit von sauberen Energieträgern und Technologien",
+          "title": "Anteil der Bevölkerung, der vorwiegend saubere Energieträger und Technologien nutzt",
           "description": "",
           "keywords": "Indikator 7.1.2, Bevölkerung mit überwiegender Abhängigkeit von sauberen Energieträgern und Technologien, Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/7-1-2",
@@ -807,7 +831,7 @@
         },
         {
           "id": "7-b-1",
-          "title": "Investitionen in Energieeffizienz als Anteil am BIP und der Betrag der ausländischen Direktinvestitionen in Form von Finanzmitteln für Infrastruktur und Technologien der Dienstleistungen für nachhaltige Entwicklung",
+          "title": "Installierte Kapazitäten zur Erzeugung erneuerbarer Energie in Entwicklungsländern (in Watt pro Kopf)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/7-b-1",
