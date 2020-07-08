@@ -122,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200708134748">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200708150724">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -366,7 +366,7 @@ var translations = {
     </div>
 
     <div class="col-xs-6 col-md-6 col-lg-6">
-      <a href="/sdg-indicators/13-3-1" class="btn btn-primary btn-block goal-13 navigation-btn" role="button">
+      <a href="/sdg-indicators/13-2-2" class="btn btn-primary btn-block goal-13 navigation-btn" role="button">
         <b class="btn-label hidden-sm hidden-xs">Next indicator </b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
     </div>
@@ -378,6 +378,17 @@ var translations = {
   
 
   
+
+<div class="row" id="page-content">
+  <div class="col-xs-12">
+    <p><span style="background-color:#E27874;padding-bottom: 1px;padding-top: 2px;padding-left: 3px;padding-right: 3px;"> Exploring data sources </span><br />
+Suitable data sources for this indicator are currently being explored.
+This indicator is classified as Tier 3 and therefore no internationally established methodology or statistical standards are yet available. Corresponding methodologies or standards are being developed by the responsible international organizations and subsequently tested in cooperation with national statistical offices.</p>
+
+<p>If you have any feedback or suggestions on data please contact us through the contact form below.</p>
+
+  </div>
+</div>
 
 
   
@@ -395,12 +406,12 @@ var translations = {
   data-country="Germany"
   data-charttitle=""
   data-charttitles="null"
-  data-measurementunit="Number"
+  data-measurementunit=""
   data-datasource="The Federal Government, Bundesministerium für Umwelt, Naturschutz und nukleare Sicherheit (BMU)"
   data-copyright="&copy; Federal Statistical Office (Destatis), 2020"
   data-geographicalarea="Germany"
   data-footnote=""
-  data-showdata="true"
+  data-showdata="false"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
@@ -409,164 +420,7 @@ var translations = {
   data-stackeddisaggregation=""
 >
   
-  <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
-    <div id="units"></div>
-<div id="toolbar">
-  <span id="series-help">
-    <h4>Selection</h4>
-    <p>Select here what should be displayed in the chart and in the table.</p>
-  </span>
-  <p id="legend-help">Click on the legend to remove individual lines from the chart.</p>
-  <div id="fields">
-    <p class="async-loading" data-img="/sdg-indicators/assets/img/loading-small.gif"></p>
-  </div>
-</div>
-
-  </div>
-  <div id="indicator-main" class="indicator-main col-md-9">
-    
-
-
-<div id="headlineTable">
-
-  <div id="datatables">
-
-    <a href="https://G205SDGs.github.io/sdg-data/en/headline/13-2-1.csv" class="btn btn-primary btn-download" download="indicator_13-2-1.csv" tabindex="0" role="button">Download Headline CSV</a>
-
-    <a href="https://G205SDGs.github.io/sdg-data/en/data/13-2-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_13-2-1.csv' tabindex='0' role='button'>Download Source CSV</a>
-
-    <h3>Headline data</h3>
-    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption></caption>
-      <thead>
-        
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
-  </div>
-
-  <div id="datatableFooter">
-    
-    <p>Source: The Federal Government</p>
-    
-    
-    <p>Geographical Area: Germany</p>
-    
-    
-    <p>Unit of measurement: Number</p>
-    
-    
-    <p>Specification: </p>
-    
-  </div>
-
-</div>
-
-
-<section>
-
-  <p class="async-loading" data-img="/sdg-indicators/assets/img/loading-small.gif"></p>
-
-  <div class="async-loaded spacer medium" style="display:none;">
-
-    <ul class="nav nav-tabs data-view" role="tablist">
-  <li role="presentation" class="nav-item active">
-    <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change data view"
-data-event-label="Change to Chart tab"
-><i class="fa fa-line-chart" aria-hidden="true"></i> <span class="hidden-xs" style="color:black">Chart</span></a>
-  </li>
-  <li role="presentation" class="nav-item">
-    <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change data view"
-data-event-label="Change to Table tab"
-><i class="fa fa-table" aria-hidden="true"></i> <span class="hidden-xs" style="color:black">Table</span></a>
-  </li>
-  <li role="presentation" class="nav-item map" style="display:none">
-    <a data-no-disagg="true" class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change data view"
-data-event-label="Change to Map tab"
-><i class="fa fa-map" aria-hidden="true"></i> <span class="hidden-xs"style="color:black">Map</span></a>
-  </li></ul>
-
-    <div class="tab-content data-view">
-  <div role="tabpanel" class="tab-pane active" id="chartview">
-    
-
-    <div id="dataset-size-warning" style="display:none">
-      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
-    </div>
-
-    
-    <div id="selectionsChart">
-      <div id="chart-canvas">
-        <h3 class="chart-title">
-          
-            
-          
-        </h3>
-        <div id="chart" class="plot-container">
-          
-<canvas></canvas>
-<script>
-// Add a chart alteration to support the chart_graph_limits metadata field.
-opensdg.chartConfigAlter(function(config, info) {
-  if (info.graphLimits) {
-    var limit = _.findWhere(info.graphLimits, { unit: info.selectedUnit }) || info.graphLimits[0];
-    var overrides = {
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              min: limit.minimum,
-              max: limit.maximum,
-            }
-          }]
-        }
-      }
-    }
-    // Add these overrides onto the normal config.
-    $.extend(true, config, overrides);
-  }
-});
-</script>
-
-
-        </div>
-        <div id="plotLegend"></div>
-      </div>
-      <button id="btnSave" title="" class='btn btn-primary btn-download'>
-        Download Chart Image
-      </button>
-    </div>
-    <div id="chartSelectionDownload"></div>
-
-
-
-  </div>
-  <div role="tabpanel" class="tab-pane" id="tableview">
-    <div id="selectionsTable"></div>
-
-  </div>
-  <div role="tabpanel" class="tab-pane" id="mapview" class="map">
-    <div id="map">
-  <img src="/sdg-indicators/assets/img/loading.gif" alt="Loading map" />
-</div>
-
-  </div>
-  
-</div>
-
-
-  </div>
-
-</section>
-
+  <div id="indicator-main" class="indicator-main col-md-12">
   
   <ul class="nav nav-tabs spacer medium" role="tablist">
 
@@ -643,7 +497,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                <p>Intended Nationally Determined Contribution of the EU and its Member States<br />Climate Action Plan 2050</p>
+                
 
               
             </td>
@@ -676,7 +530,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                <p>No global metadata available.</p>
+                
 
               
             </td>
@@ -711,10 +565,6 @@ data-event-label="Change to Sources tab"
                 
                 
 
-                
-                  <a href="https://g205sdgs.github.io/sdg-indicators/public/MetaDe/13.2.1.pdf" target="_blank">
-                    National metadata <span class="visuallyhidden">opens in a new window</span>
-                  </a>
                 
 
               
@@ -825,8 +675,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/G205SDGs/sdg-data/commit/9b24302196c1d665c30e67cd36d3379afe1b6c36" target="_blank">
-                    2020-07-03: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+                  <a href="https://github.com/G205SDGs/sdg-data/commit/70ac35393945ec6a6c429ea46a2dd6459612d89e" target="_blank">
+                    2020-07-08: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
                   </a>
                 
 
@@ -1095,7 +945,7 @@ data-event-label="Change to Sources tab"
 
             <td>
               
-                <p>United Nations Framework Convention on Climate Change (UNFCCC)</p>
+                
 
               
             </td>
@@ -2015,7 +1865,7 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200708134748'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200708134748"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200708150724'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200708150724"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

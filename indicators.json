@@ -835,7 +835,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/7-b-1",
-          "status": "notapplicable"
+          "status": "notstarted"
         }]
     }
   },
@@ -855,7 +855,7 @@
         },
         {
           "id": "8-2-1",
-          "title": "Jährliche Wachstumsrate des realen BIP je Beschäftigtem",
+          "title": "Jährliche Wachstumsrate des realen BIP je Erwerbstätigem",
           "description": "",
           "keywords": "Indikator 8.2.1, Jährliche Wachstumsrate des realen BIP pro Beschäftigten, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-2-1",
@@ -863,7 +863,7 @@
         },
         {
           "id": "8-3-1",
-          "title": "Anteil der informellen Beschäftigung an allen Beschäftigungsverhältnissen außerhalb der Landwirtschaft, nach Geschlecht",
+          "title": "Anteil der informellen Erwerbstätigkeit an der Gesamterwerbstätigkeit, nach Sektor und Geschlecht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/8-3-1",
@@ -871,7 +871,7 @@
         },
         {
           "id": "8-4-1",
-          "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck pro BIP",
+          "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP",
           "description": "",
           "keywords": "Indikator 8.4.1, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC; abiotische und biotische Rohstoffe), Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) je Einwohner, Inländische Rohstoffverwendung in Rohstoffäquivalenten (RMC) zum",
           "href": "/sdg-indicators/8-4-1",
@@ -879,7 +879,7 @@
         },
         {
           "id": "8-4-2",
-          "title": "Inländischer Materialverbrauch, inländischer Materialverbrauch pro Kopf und inländischer Materialverbrauch pro BIP",
+          "title": "Inländische Materialnutzung, inländische Materialnutzung pro Kopf und inländische Materialnutzung im Verhältnis zum BIP",
           "description": "",
           "keywords": "Indikator 8.4.2, Inländische Materialverwendung (DMC; abiotische und biotische Rohstoffe), Inländische Materialverwendung (DMC) je Einwohner, Inländische Materialverwendung (DMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/8-4-2",
@@ -887,7 +887,7 @@
         },
         {
           "id": "8-5-1",
-          "title": "Durchschnittlicher Stundenlohn von weiblichen und männlichen Beschäftigten, nach Beruf, Alter und Menschen mit Behinderungen",
+          "title": "Durchschnittlicher Stundenverdienst von Beschäftigten, nach Geschlecht, Alter, Beruf und für Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 8.5.1, Durchschnittlicher Stundenlohn Beschäftigter, Verdienstabstand, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-5-1",
@@ -903,7 +903,7 @@
         },
         {
           "id": "8-6-1",
-          "title": "Anteil der Jugendlichen (im Alter von 15-24 Jahren), die nicht in schulischer Ausbildung, in Beschäftigung oder Berufsaus- oder -weiterbildung sind",
+          "title": "Anteil junger Menschen (15-24 Jahre), die ohne Erwerbstätigkeit sind und keine Schul- oder Berufsausbildung durchlaufen",
           "description": "",
           "keywords": "Indikator 8.6.1, Jugendliche (15 bis unter 25 Jahre), die weder eine Arbeit haben, noch in einer schulischen oder beruflichen Ausbildung sind (NEET-Raten), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-6-1",
@@ -919,7 +919,7 @@
         },
         {
           "id": "8-8-1",
-          "title": "Häufigkeitsraten von tödlichen und nicht-tödlichen Arbeitsunfällen, nach Geschlecht und Migrationsstatus",
+          "title": "Anzahl tödlicher und nicht tödlicher Arbeitsunfälle je 100&nbsp;000 Erwerbstätige, nach Geschlecht und Migrationsstatus",
           "description": "",
           "keywords": "Indikator 8.8.1, Tödliche Arbeitsunfälle, Nicht-tödliche Arbeitsunfälle, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-8-1",
@@ -983,7 +983,7 @@
         
         {
           "id": "9-1-1",
-          "title": "Anteil der ländlichen Bevölkerung, die bis zu 2 km entfernt von einer ganzjährig befahrbaren Straße lebt",
+          "title": "Anteil der ländlichen Bevölkerung, der höchstens 2 km von einer ganzjährig befahrbaren Straße entfernt lebt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/9-1-1",
@@ -1007,7 +1007,7 @@
         },
         {
           "id": "9-2-2",
-          "title": "Beschäftigung im Verarbeitenden Gewerbe als Anteil an der Beschäftigung insgesamt",
+          "title": "Anteil der Erwerbstätigkeit im Verarbeitenden Gewerbe an der Erwerbstätigkeit insgesamt",
           "description": "",
           "keywords": "Indikator 9.2.2, Erwerbstätige im Verarbeitenden Gewerbe, Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
           "href": "/sdg-indicators/9-2-2",
@@ -1015,7 +1015,7 @@
         },
         {
           "id": "9-3-1",
-          "title": "Anteil kleiner Unternehmen an der gesamten Wertschöpfung der Industrie",
+          "title": "Anteil kleiner Industrieunternehmen an der gesamten industriellen Wertschöpfung",
           "description": "",
           "keywords": "Indikator 9.3.1, Bruttowertschöpfung kleiner Unternehmen im Verarbeitenden Gewerbe, Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
           "href": "/sdg-indicators/9-3-1",
@@ -1023,7 +1023,7 @@
         },
         {
           "id": "9-3-2",
-          "title": "Anteil kleiner Unternehmen mit einem Kredit oder einem Kreditrahmen",
+          "title": "Anteil kleiner Industrieunternehmen mit einem Darlehen oder einem Kreditrahmen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/9-3-2",
@@ -1047,7 +1047,7 @@
         },
         {
           "id": "9-5-2",
-          "title": "Wissenschaftler (in Vollzeit-Äquivalenten) je eine Million Einwohner",
+          "title": "In der Forschung und Entwicklung tätige Personen (in Vollzeitäquivalenten) je einer Million Einwohner",
           "description": "",
           "keywords": "Indikator 9.5.2, Wissenschaftler in Vollzeitäquivalenten, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/9-5-2",
@@ -1063,7 +1063,7 @@
         },
         {
           "id": "9-b-1",
-          "title": "Anteil der Wertschöpfung der Medium- und High-Tech-Industrie an der Wertschöpfung insgesamt",
+          "title": "Anteil der Medium- und High-Tech-Industrien an der Gesamtwertschöpfung",
           "description": "",
           "keywords": "nIndikator 9.b.1, Bruttowertschöpfung der High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium- und High-Tech-Industrien am Verarbeitenden Gewerbe, Bruttowertschöpfung der Medium-High-Tech-Industrien am Verarbeitenden Gewerbe, Organisation der Vereinten Nationen für industrielle Entwicklung (UNIDO)",
           "href": "/sdg-indicators/9-b-1",
@@ -1087,7 +1087,7 @@
         
         {
           "id": "10-1-1",
-          "title": "Wachstumsraten der Haushaltsausgaben oder -einkommen pro Kopf der unteren 40 Prozent der Bevölkerung und der Gesamtbevölkerung",
+          "title": "Wachstumsrate der Haushaltsausgaben oder des Haushaltseinkommens pro Kopf unter den ärmsten 40 Prozent der Bevölkerung und unter der Gesamtbevölkerung",
           "description": "",
           "keywords": "Indikator 10.1.1, Wachstumsrate des Einkommens der ärmsten 40 Prozent der Bevölkerung, Wachstumsrate des Einkommens der gesamten Bevölkerung, Weltbank (WB)",
           "href": "/sdg-indicators/10-1-1",
@@ -1095,7 +1095,7 @@
         },
         {
           "id": "10-2-1",
-          "title": "Anteil der Bevölkerung, die mit weniger als 50% des Medianeinkommens lebt, nach Geschlecht, Alter und Menschen mit Behinderungen",
+          "title": "Anteil der Bevölkerung, dessen Einkommen weniger als 50 Prozent des Medians beträgt, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 10.2.1, Bevölkerung, die mit weniger als 50% des mittleren Einkommens lebt, Armut, Einkommen, Weltbank (WB)",
           "href": "/sdg-indicators/10-2-1",
@@ -1118,8 +1118,16 @@
           "status": "complete"
         },
         {
+          "id": "10-4-2",
+          "title": "Umverteilende Wirkung der Fiskalpolitik",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/10-4-2",
+          "status": "notstarted"
+        },
+        {
           "id": "10-5-1",
-          "title": "Financial Soundness Indicators",
+          "title": "Indikatoren zur Finanzstabilität",
           "description": "",
           "keywords": "Indikator 10.5.1, Eigenkapitalquote, Verbindlichkeiten, Relation zwischen offener Fremdwährungsposition und regulatorischen Eigenmitteln, Relation zwischen notleidenden Krediten (abzüglich Risikovorsorge) und bilanziellem Eigenkapital, Anteil der notleidenden Kredite an den Bruttokrediten insgesamt, Relation zwischen regulatorischem Kernkapital (Tier 1) und anrechnungspflichtigen Positionen, Gesamtkapitalrentabilität, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/10-5-1",
@@ -1147,6 +1155,22 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-7-2",
+          "status": "notstarted"
+        },
+        {
+          "id": "10-7-3",
+          "title": "Anzahl der Personen, die im Laufe ihrer Migration zu einem internationalen Zielort gestorben oder verschwunden sind",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/10-7-3",
+          "status": "notstarted"
+        },
+        {
+          "id": "10-7-4",
+          "title": "Anteil der Flüchtlinge an der Bevölkerung, nach Herkunftsland",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/10-7-4",
           "status": "notstarted"
         },
         {
@@ -1183,7 +1207,7 @@
         
         {
           "id": "11-1-1",
-          "title": "Anteil der urbanen Bevölkerung, die in Slums, informellen Siedlungen oder unangemessenen Unterkünften lebt",
+          "title": "Anteil der städtische Bevölkerung, die in Slums, informellen Siedlungen oder unzureichendem Wohnraum leben",
           "description": "",
           "keywords": "Indikator 11.1.1, Materielle Deprivation bezogen auf die Wohn-Dimension (ein bis vier Probleme), Bevölkerung, deren Wohnung/Haus zu wenig Tageslicht bietet, Bevölkerung, in deren Wohnumgebung es Kriminalität, Gewalt oder Vandalismus gibt, Bevölkerung mit Lärmbelästigung in deren Wohnumgebung, Bevölkerung, in deren Wohnung/Haus es Feuchtigkeitsschäden gibt, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/11-1-1",
@@ -1215,7 +1239,7 @@
         },
         {
           "id": "11-4-1",
-          "title": "Gesamtausgaben (öffentlich und privat) pro Kopf für die Bewahrung, den Schutz und die Erhaltung des Kultur- und Naturerbes, nach Art des Erbes (Kultur, Natur, gemischt und durch das Welterbezentrum ernannt), Regierungsebene (national, regional und lokal/kommunal), Art der Ausgabe (Betriebsausgabe/Investition) und Art der privaten Finanzierung (Sachspenden, privater gemeinnütziger Sektor und Förderer)",
+          "title": "Gesamtausgaben pro Kopf für die Erhaltung und den Schutz des gesamten Kultur- und Naturerbes, nach Finanzierungsquelle (öffentlich, privat), Art des Erbes (Kulturerbe, Naturerbe) und Verwaltungsebene (national, regional oder lokal/kommunal)",
           "description": "",
           "keywords": "Indikator 11.4.1, Ausgaben des Staates für Umweltschutz (COFOG Gruppe 5), Ausgaben des Staates für Freizeitgestaltung, Sport, Kultur und Religion (COFOG Gruppe 8), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/11-4-1",
@@ -1231,7 +1255,7 @@
         },
         {
           "id": "11-5-2",
-          "title": "Unmittelbarer wirtschaftlicher Schaden im Verhältnis zum globalen BIP, Schäden kritischer Infrastruktur und Anzahl der Ausfälle von Grundversorgungsleistungen infolge von Katastrophen",
+          "title": "Katastrophen zugeschriebene direkte wirtschaftliche Schäden im Verhältnis zum globalen Bruttoinlandsprodukt (BIP), Schäden an kritischen Infrastrukturen und Zahl der Unterbrechungen der Grundversorgung",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-5-2",
@@ -1239,7 +1263,7 @@
         },
         {
           "id": "11-6-1",
-          "title": "Anteil der Siedlungsabfälle, die regelmäßig gesammelt und ordnungsgemäß entsorgt werden, an den insgesamt erzeugten Siedlungsabfällen, nach Städten",
+          "title": "Anteil der in kontrollierten Einrichtungen gesammelten und behandelten festen Siedlungsabfälle an den insgesamt erzeugten Siedlungsabfällen, nach Städten",
           "description": "",
           "keywords": "Indikator 11.6.1, Siedlungsabfälle, die regelmäßig gesammelt und behandelt werden, Erzeugte Siedlungsabfälle, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat), Statistischen Division der VN (UNSD)",
           "href": "/sdg-indicators/11-6-1",
@@ -1247,7 +1271,7 @@
         },
         {
           "id": "11-6-2",
-          "title": "Jahresmittelwerte für Feinstaub (z. B. PM<sub>2,5</sub> und PM<sub>10</sub>) in Städten (bevölkerungsgewichtet)",
+          "title": "Bevölkerungsgewichtete Jahresmittelwerte der Feinstaubkonzentration (z. B. PM<sub>2,5</sub> und PM<sub>10</sub>) in Städten",
           "description": "",
           "keywords": "Indikator 11.6.2, Bevölkerungsgewichtete Jahresmittelwerte von PM10, Weltgesundheitsorganisation (WHO), Umweltbundesamt (UBA)",
           "href": "/sdg-indicators/11-6-2",
@@ -1263,7 +1287,7 @@
         },
         {
           "id": "11-7-2",
-          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Ort des Geschehens",
+          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Tatort",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-7-2",
@@ -1271,7 +1295,7 @@
         },
         {
           "id": "11-a-1",
-          "title": "Anteil der Bevölkerung in Städten, die Stadt- und Regionalentwicklungspläne unter Berücksichtigung der Bevölkerungsprognosen und des Ressourcenbedarfs umsetzen, nach Größe der Stadt",
+          "title": "Anzahl der Staaten, die über eine nationale Städtepolitik oder regionale Entwicklungsplanung verfügen, die a) auf die Bevölkerungsdynamik reagiert, b) eine ausgewogene Raumentwicklung gewährleistet und c) den lokalen Haushaltsspielraum vergrößert",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-a-1",
@@ -1279,7 +1303,7 @@
         },
         {
           "id": "11-b-1",
-          "title": "Anzahl der Staaten, die nationale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit dem Sendai-Rahmenwerk zur Katastrophenvorsorge 2015-2030 verabschiedet und umgesetzt haben",
+          "title": "Anzahl der Staaten, die nationale Strategien zur Katastrophenvorsorge im Einklang mit dem Sendai-Rahmenwerk für Katastrophenvorsorge 2015-2030 beschließen und umsetzen",
           "description": "",
           "keywords": "Indikator 11.b.1, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/11-b-1",
@@ -1287,7 +1311,7 @@
         },
         {
           "id": "11-b-2",
-          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit den nationalen Strategien zur Katastrophenvorsorge verabschiedet und umgesetzt haben",
+          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-b-2",
@@ -1303,7 +1327,7 @@
         
         {
           "id": "12-1-1",
-          "title": "Anzahl der Staaten mit nationalen Aktionsplänen zu nachhaltigem Konsum und Produktion (SCP) oder SCP, die als Priorität oder Ziel in nationale Politik aufgenommen wurden",
+          "title": "Anzahl der Staaten, die Politikinstrumente zur Unterstützung des Übergangs zu nachhaltigem Konsum und nachhaltiger Produktion entwickeln, beschließen oder anwenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-1-1",
@@ -1311,7 +1335,7 @@
         },
         {
           "id": "12-2-1",
-          "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck pro BIP",
+          "title": "Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP",
           "description": "",
           "keywords": "Indikator 12.2.2, Inländische Materialverwendung (DMC; abiotische und biotische Rohstoffe), Inländische Materialverwendung (DMC) je Einwohner, Inländische Materialverwendung (DMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-2-1",
@@ -1319,7 +1343,7 @@
         },
         {
           "id": "12-2-2",
-          "title": "Inländischer Materialverbrauch, inländischer Materialverbrauch pro Kopf und inländischer Materialverbrauch pro BIP",
+          "title": "Inländische Materialnutzung, inländische Materialnutzung pro Kopf und inländische Materialnutzung im Verhältnis zum BIP",
           "description": "",
           "keywords": "Indikator 12.2.2, Inländische Materialverwendung (DMC; abiotische und biotische Rohstoffe), Inländische Materialverwendung (DMC) je Einwohner, Inländische Materialverwendung (DMC) zum realen BIP, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-2-2",
@@ -1335,7 +1359,7 @@
         },
         {
           "id": "12-4-1",
-          "title": "Anzahl der Vertragsparteien internationaler multilateraler Umweltabkommen über gefährliche Abfälle und andere Chemikalien, die ihren Bekenntnissen und Verpflichtungen nachkommen, indem sie die gemäß dem jeweiligen Übereinkommen geforderten Informationen übermitteln",
+          "title": "Anzahl der Vertragsparteien internationaler multilateraler Umweltabkommen über gefährliche Abfälle und andere Chemikalien, die ihre Verpflichtungen und Zusagen zur Übermittlung von Informationen nach den jeweiligen Umweltabkommen einhalten",
           "description": "",
           "keywords": "Indikator 12.4.1, Übereinstimmung mit dem Basler Übereinkommen, Übereinstimmung mit dem Minamata Übereinkommen, Übereinstimmung mit dem Montrealer Protokoll, Übereinstimmung mit dem Rotterdamer Übereinkommen, Übereinstimmung mit dem Stockholmer Übereinkommen",
           "href": "/sdg-indicators/12-4-1",
@@ -1343,7 +1367,7 @@
         },
         {
           "id": "12-4-2",
-          "title": "Erzeugte gefährliche Abfälle pro Kopf und Anteil der behandelten gefährlichen Abfälle, nach Art der Behandlung",
+          "title": "(a) Erzeugte gefährliche Abfälle pro Kopf und (b) Anteil der behandelten gefährlichen Abfälle, nach Art der Behandlung",
           "description": "",
           "keywords": "Indikator 12.4.2, a) Erzeugte gefährliche Abfälle, b) Behandelte gefährliche Abfälle, Abfall, Sondermüll, Statistischen Division der UN (UNSD), Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-4-2",
@@ -1367,7 +1391,7 @@
         },
         {
           "id": "12-7-1",
-          "title": "Anzahl der Staaten, die nachhaltige öffentliche Beschaffungspolitik und Aktionspläne umsetzen",
+          "title": "Umsetzungsgrad der Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung",
           "description": "",
           "keywords": "Indikator 12.7.1, Nachhaltigkeitsstrategie, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/12-7-1",
@@ -1375,7 +1399,7 @@
         },
         {
           "id": "12-8-1",
-          "title": "Umfang, in dem (i) Bildung zu globaler Staatsbürgerschaft und (ii) Bildung für nachhaltige Entwicklung, einschließlich der Geschlechtergleichstellung und der Menschenrechte, auf allen Ebenen in: (a) nationale Bildungspolitik, (b) Lehrpläne, (c) Lehrerausbildung und (d) Schulleistungsuntersuchung berücksichtigt werden",
+          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-8-1",
@@ -1383,15 +1407,15 @@
         },
         {
           "id": "12-a-1",
-          "title": "Umfang der Unterstützung für Entwicklungsländer bei Forschung und Entwicklung im Hinblick auf nachhaltigen Konsum und nachhaltige Produktion sowie umweltfreundliche Technologien",
+          "title": "Installierte Kapazitäten zur Erzeugung erneuerbarer Energie in Entwicklungsländern (in Watt pro Kopf)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-a-1",
-          "status": "notapplicable"
+          "status": "notstarted"
         },
         {
           "id": "12-b-1",
-          "title": "Anzahl der Strategien oder Politiken für einen nachhaltigen Tourismus und umgesetzte Aktionspläne mit vereinbarten Kontroll- und Bewertungsinstrumenten",
+          "title": "Anwendung von standardisierten Gesamtrechnungssystemen zur Beobachtung der wirtschaftlichen und ökologischen Aspekte der Nachhaltigkeit des Tourismus",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-b-1",
@@ -1399,7 +1423,7 @@
         },
         {
           "id": "12-c-1",
-          "title": "Betrag der Subventionen für fossile Energieträger je Einheit BIP (Produktion und Konsum) und als Anteil an den gesamten nationalen Ausgaben für fossile Energieträger",
+          "title": "Höhe der Subventionen für fossile Brennstoffe je BIP-Einheit (Produktion und Konsum)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-c-1",
@@ -1423,7 +1447,7 @@
         },
         {
           "id": "13-1-2",
-          "title": "Anzahl der Staaten, die nationale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit dem Sendai-Rahmenwerk zur Katastrophenvorsorge 2015-2030 verabschiedet und umgesetzt haben",
+          "title": "Anzahl der Staaten, die nationale Strategien zur Katastrophenvorsorge im Einklang mit dem Sendai-Rahmenwerk für Katastrophenvorsorge 2015-2030 beschließen und umsetzen",
           "description": "",
           "keywords": "Indikator 13.1.2, Anpassungsstrategie an den Klimawandel, Büro der Vereinten Nationen für Katastrophenvorsorge (UNDRR)",
           "href": "/sdg-indicators/13-1-2",
@@ -1431,7 +1455,7 @@
         },
         {
           "id": "13-1-3",
-          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Reduzierung des Katastrophenrisikos in Einklang mit den nationalen Strategien zur Katastrophenvorsorge verabschiedet und umgesetzt haben",
+          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-1-3",
@@ -1439,15 +1463,23 @@
         },
         {
           "id": "13-2-1",
-          "title": "Anzahl der Staaten mit national festgelegten Beiträgen (NDCs), Langzeitstrategien, nationalen Anpassungsplänen, in Anpassungskommunikationen und nationalen Mitteilungen gemeldeten Strategien",
+          "title": "Anzahl der Staaten mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Strategien, die in Anpassungsmitteilungen und nationalen Mitteilungen gemeldet werden",
           "description": "",
-          "keywords": "Indikator 13.2.1, Anpassungsstrategie an den Klimawandel, Rahmenübereinkommen der Vereinten Nationen über Klimaänderungen (UNFCCC)",
+          "keywords": "",
           "href": "/sdg-indicators/13-2-1",
-          "status": "complete"
+          "status": "notstarted"
+        },
+        {
+          "id": "13-2-2",
+          "title": "Total greenhouse gas emissions per year",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/13-2-2",
+          "status": "notstarted"
         },
         {
           "id": "13-3-1",
-          "title": "Anzahl der Staaten, die die Minderung, Anpassung, Reduzierung der Auswirkungen und Frühwarnsysteme in den primären, sekundären und tertiären Lehrplänen integriert haben",
+          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-3-1",
@@ -1455,7 +1487,7 @@
         },
         {
           "id": "13-a-1",
-          "title": "Mobilisierter Betrag an US-Dollar pro Jahr zwischen 2020 und 2025, anrechenbar auf die Zusage von 100 Milliarden US-Dollar",
+          "title": "Jährlich bereitgestellte und mobilisierte Mittel für das fortbestehende Ziel, pro Jahr bis 2025 die zugesagten 100 Milliarden Dollar gemeinsam zu mobilisieren, in US-Dollar",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-a-1",
@@ -1463,11 +1495,11 @@
         },
         {
           "id": "13-b-1",
-          "title": "Anzahl der am wenigsten entwickelten Länder und kleinen Inselentwicklungsstaaten, die besondere Unterstützung erhalten und der Betrag der Unterstützung (Finanzmittel, Technologie und capacity-building umfassend) für Mechanismen zum Aufbau von Kapazitäten für eine wirksame klimawandelbezogene Planung und Verwaltung, mit Fokus auf Frauen, Jugendliche und lokale und marginalisierte Gemeinschaften",
+          "title": "Anzahl der am wenigsten entwickelten Länder und kleinen Inselentwicklungsländer mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Strategien, die in Anpassungsmitteilungen und nationalen Mitteilungen gemeldet werden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-b-1",
-          "status": "notapplicable"
+          "status": "notstarted"
         }]
     }
   },
@@ -1479,7 +1511,7 @@
         
         {
           "id": "14-1-1",
-          "title": "Index der Eutrophierung der Küsten und Konzentration des schwimmenden Plastikmülls",
+          "title": "a) Küsteneutrophierungsindex und b) Konzentration von Plastikmüll",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-1-1",
@@ -1487,7 +1519,7 @@
         },
         {
           "id": "14-2-1",
-          "title": "Anteil der nationalen ausschließlichen Wirtschaftszonen, die mit ökosystembasierten Ansätzen verwaltet werden",
+          "title": "Anzahl der Staaten, die Meeresgebiete ökosystemorientiert bewirtschaften",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-2-1",
@@ -1495,7 +1527,7 @@
         },
         {
           "id": "14-3-1",
-          "title": "Durchschnittliche Versauerung der Meere (pH) gemessen an einer vereinbarten Reihe von repräsentativen Probeentnahmestationen",
+          "title": "Durchschnittlicher Säuregehalt der Meere (pH), gemessen an einer Reihe vereinbarter repräsentativer Messstellen",
           "description": "",
           "keywords": "Indikator 14.3.1, Durchschnittliche pH-Konzentration in der Deutschen Bucht, Zwischenstaatliche Ozeanographische Kommission (IOC), Versäuerung der Meere",
           "href": "/sdg-indicators/14-3-1",
@@ -1503,7 +1535,7 @@
         },
         {
           "id": "14-4-1",
-          "title": "Anteil der Fischbestände innerhalb des biologisch nachhaltigen Niveaus",
+          "title": "Anteil der Fischbestände innerhalb biologisch nachhaltiger Grenzen",
           "description": "",
           "keywords": "Indikator 14.4.1, Nachhaltig befischte Fischbestände, Untersuchte Fischbestände zu den wirtschaftlich genutzten Beständen, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/14-4-1",
@@ -1511,7 +1543,7 @@
         },
         {
           "id": "14-5-1",
-          "title": "Abdeckung von Meeresgebieten durch Schutzgebiete",
+          "title": "Ausdehnung von Schutzgebieten im Verhältnis zu den gesamten Meeresgebieten",
           "description": "",
           "keywords": "Indikator 14.5.1, Marine Schlüsselgebiete der biologischen Vielfalt, die unter Schutz stehen, Meeresschutzgebiete, UNEP Weltüberwachungszentrum für Naturschutz (UNEP-WCMC), BirdLife International (BLI), Internationale Union zur Bewahrung der Natur (IUCN)",
           "href": "/sdg-indicators/14-5-1",
@@ -1527,7 +1559,7 @@
         },
         {
           "id": "14-7-1",
-          "title": "Nachhaltige Fischerei als Anteil am BIP in kleinen Inselentwicklungsstaaten, in den am wenigsten entwickelten Ländern und allen Ländern",
+          "title": "Anteil der nachhaltigen Fischerei am BIP der kleinen Inselentwicklungsländer, der am wenigsten entwickelten Länder und aller Länder",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-7-1",
@@ -1543,7 +1575,7 @@
         },
         {
           "id": "14-b-1",
-          "title": "Grad der Umsetzung von gesetzlichen/ regulatorischen/ politischen/ institutionellen Rahmenwerken, die Zugangsrechte für kleine Fischereien anerkennen und schützen",
+          "title": "Umsetzungsgrad eines rechtlichen/regulatorischen/politischen/institutionellen Rahmenwerks, der Zugangsrechte für Kleinfischerei anerkennt und schützt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-b-1",
@@ -1551,7 +1583,7 @@
         },
         {
           "id": "14-c-1",
-          "title": "Anzahl der Staaten, die durch rechtliche, politische und institutionelle Rahmenbedingungen bei der Ratifizierung, Verabschiedung und Umsetzung meeresbezogener Instrumentarien, die internationales Recht zum Schutz und zur nachhaltigen Nutzung der Ozeane und ihrer Ressourcen (wie es dem Seerechtsübereinkommen der Vereinten Nationen entspricht) umsetzen, Fortschritte machen",
+          "title": "Anzahl der Staaten, die durch rechtliche, politische und institutionelle Rahmen bei der Ratifizierung, Annahme und Durchführung von ozeanbezogenen Übereinkünften zur Umsetzung des Völkerrechts, wie es im Seerechtsübereinkommen der Vereinten Nationen niede",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-c-1",
@@ -1575,7 +1607,7 @@
         },
         {
           "id": "15-1-2",
-          "title": "Anteil der bedeutenden Gebiete für Biodiversität an Land und im Süßwasser, die in Schutzgebieten liegen, nach Ökosystemtyp",
+          "title": "Von Schutzgebieten erfasster Anteil der für die biologische Vielfalt der Land- und Süßwasserökosysteme bedeutsamen Gebiete, nach Art des Ökosystems",
           "description": "",
           "keywords": "Indikator 15.1.2, Schlüsselgebiete der biologischen Vielfalt, die unter Schutz stehen, Schutzgebiete an Land, Umweltprogramm der Vereinten Nationen - Weltüberwachungszentrum für Naturschutz (UNEP-WCMC), Umweltprogramm der Vereinten Nationen (UNEP), Internationale Union zur Bewahrung der Natur (IUCN)",
           "href": "/sdg-indicators/15-1-2",
@@ -1591,7 +1623,7 @@
         },
         {
           "id": "15-3-1",
-          "title": "Anteil der Fläche, die von Bodendegradation betroffenen ist, an der gesamten Landfläche",
+          "title": "Anteil der degradierten Fläche an der gesamten Landfläche",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-3-1",
@@ -1599,7 +1631,7 @@
         },
         {
           "id": "15-4-1",
-          "title": "Abdeckung der bedeutenden Gebiete für Biodiversität in den Bergen durch Schutzgebiete",
+          "title": "Abdeckung der Bergökosysteme, die für Biodiversität von Bedeutung sind, durch Schutzgebiete",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-4-1",
@@ -1615,7 +1647,7 @@
         },
         {
           "id": "15-5-1",
-          "title": "Rote Liste Index",
+          "title": "Rote-Liste-Index",
           "description": "",
           "keywords": "Indikator 15.5.1, Internationale Union zur Bewahrung der Natur (IUCN), BirdLife International (BLI)",
           "href": "/sdg-indicators/15-5-1",
@@ -1631,7 +1663,7 @@
         },
         {
           "id": "15-7-1",
-          "title": "Anteil der gehandelten Wildtiere, die gewildert oder geschmuggelt wurden",
+          "title": "Anteil der gehandelten Wildtiere und Wildpflanzen, die aus Wilderei oder illegalem Handel stammen",
           "description": "",
           "keywords": "Indikator 15.7.1, Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten, Aufgriffe aufgrund des Artenschutzes, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/15-7-1",
@@ -1647,7 +1679,7 @@
         },
         {
           "id": "15-9-1",
-          "title": "Fortschritte bei der Erreichung nationaler Ziele, die in Übereinstimmung mit dem Aichi-Biodiversitätsziel 2 des Strategischen Plans zur Biodiversität 2011-2020 beschlossen wurden",
+          "title": "a) Anzahl der Staaten, die nationale Zielvorgaben gemäß oder ähnlich dem Aichi-Biodiversitätsziel 2 des Strategieplans für die biologische Vielfalt 2011-2020 in ihre nationalen Strategien und Aktionspläne zugunsten der biologischen Vielfalt aufgenommen ha",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-9-1",
@@ -1655,23 +1687,23 @@
         },
         {
           "id": "15-a-1",
-          "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
+          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und b) Mittels ???? generierte Einnahmen und mobilisierte Finanzmittel",
           "description": "",
-          "keywords": "Indikator 15.a.1, Bruttoentwicklungsausgaben für Biodiversität, Umweltschutzausgaben, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
+          "keywords": "",
           "href": "/sdg-indicators/15-a-1",
-          "status": "complete"
+          "status": "notstarted"
         },
         {
           "id": "15-b-1",
-          "title": "Öffentliche Entwicklungszusammenarbeit (ODA) und öffentliche Ausgaben für den Erhalt und die nachhaltige Nutzung der Biodiversität und der Ökosysteme",
+          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und b) Mittels ???? generierte Einnahmen und mobilisierte Finanzmittel",
           "description": "",
-          "keywords": "Indikator 15.b.1, Verpflichtungen (ODA) für Biodiversität, Bruttoentwicklungsausgaben für den Forstsektor,",
+          "keywords": "",
           "href": "/sdg-indicators/15-b-1",
-          "status": "complete"
+          "status": "notstarted"
         },
         {
           "id": "15-c-1",
-          "title": "Anteil der gehandelten Wildtiere, die gewildert oder geschmuggelt wurden",
+          "title": "Anteil der gehandelten Wildtiere und Wildpflanzen, die aus Wilderei oder illegalem Handel stammen",
           "description": "",
           "keywords": "Indikator 15.c.1, Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten, Aufgriffe aufgrund des Artenschutzes, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/15-c-1",
@@ -1695,7 +1727,7 @@
         },
         {
           "id": "16-1-2",
-          "title": "Konfliktbedingte Todesfälle je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Ursache",
+          "title": "Konfliktbedingte Todesfälle je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Todesursache",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-1-2",
@@ -1711,7 +1743,7 @@
         },
         {
           "id": "16-1-4",
-          "title": "Anteil der Bevölkerung, die sich in ihrem Wohngebiet alleine sicher fühlt",
+          "title": "Anteil der Bevölkerung, der sich in seiner Wohnumgebung allein sicher fühlt",
           "description": "",
           "keywords": "Indikator 16.1.4, Bevölkerung, in deren Wohnumgebung es keine Kriminalität, Gewalt oder Vandalismus gibt, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-1-4",
@@ -1719,7 +1751,7 @@
         },
         {
           "id": "16-2-1",
-          "title": "Anteil der Kinder im Alter von 1-17 Jahren, die im vergangenen Monat eine körperliche Strafe und/oder psychische Aggression durch Betreuungspersonen erfahren haben",
+          "title": "Anteil der Kinder zwischen 1 und 17 Jahren, die im vorangegangenen Monat körperlicher Züchtigung und/oder psychischer Aggression durch Betreuungspersonen ausgesetzt waren",
           "description": "",
           "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk",
           "href": "/sdg-indicators/16-2-1",
@@ -1727,7 +1759,7 @@
         },
         {
           "id": "16-2-2",
-          "title": "Anzahl von Opfer von Menschenhandel je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Art der Ausbeutung",
+          "title": "Anzahl der Opfer von Menschenhandel je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Art der Ausbeutung",
           "description": "",
           "keywords": "Indikator 16.2.2, Ausbeutung der Arbeitskraft, Sexuelle Ausbeutung, Opfer von Menschenhandel, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-2-2",
@@ -1743,7 +1775,7 @@
         },
         {
           "id": "16-3-1",
-          "title": "Anteil der Opfer von Gewalttaten in den vergangenen 12 Monaten, die ihre Viktimisierung den zuständigen Behörden oder anderen offiziell anerkannten Stellen der Konfliktaufarbeitung gemeldet haben",
+          "title": "Anteil der Opfer von in den vorangegangenen 12 Monaten verübten Gewalttaten, die den zuständigen Behörden oder anderen offiziell anerkannten Mechanismen zur Konfliktbeilegung diese Gewalt angezeigt haben",
           "description": "",
           "keywords": "Indikator 16.3.1, Anzeigequote bei Körperverletzung, Anzeigequote bei Raub, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-3-1",
@@ -1751,11 +1783,19 @@
         },
         {
           "id": "16-3-2",
-          "title": "Nicht-verurteilte Gefangene als Anteil an der gesamten Gefangenenpopulation",
+          "title": "Nicht strafrechtlich verurteilte Inhaftierte im Verhältnis zur gesamten Gefängnisbevölkerung",
           "description": "",
           "keywords": "Indikator 16.3.1, Nicht-verurteilte Gefangene, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-3-2",
           "status": "complete"
+        },
+        {
+          "id": "16-3-3",
+          "title": "Anteil der Bevölkerung, der in den vorangegangenen zwei Jahren eine Streitigkeit durchlebt und einen formellen oder informellen Streitbeilegungsmechanismus in Anspruch genommen hat, nach Art des Mechanismus",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/16-3-3",
+          "status": "notstarted"
         },
         {
           "id": "16-4-1",
@@ -1847,7 +1887,7 @@
         },
         {
           "id": "16-b-1",
-          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12 Monaten persönlich auf Basis einer Diskriminierung, die nach internationalem Menschenrecht verboten ist, diskriminiert oder belästigt gefühlt zu haben",
+          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-b-1",
@@ -1903,7 +1943,7 @@
         },
         {
           "id": "17-3-1",
-          "title": "Ausländische Direktinvestitionen, öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Kooperationen als Anteil am gesamten Haushaltsbudget",
+          "title": "Ausländische Direktinvestitionen (FDI), öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Zusammenarbeit im Verhältnis zum Bruttonationaleinkommen (BNE)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-3-1",
@@ -1927,7 +1967,7 @@
         },
         {
           "id": "17-5-1",
-          "title": "Anzahl der Staaten, die Investitionsförderprogramme für die am wenigsten entwickelten Länder einführen und umsetzen",
+          "title": "Anzahl der Staaten, die Investitionsförderungssysteme für die Entwicklungsländer, einschließlich der am wenigsten entwickelten Länder, beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-5-1",
@@ -1943,7 +1983,7 @@
         },
         {
           "id": "17-7-1",
-          "title": "Gesamtbetrag der für Entwicklungsländer genehmigten Mittel zur Förderung der Entwicklung, des Transfers, der öffentlichen Bereitstellung und der Verbreitung umweltfreundlicher Technologien",
+          "title": "Gesamtbetrag der Finanzmittel für Entwicklungsländer zur Förderung der Entwicklung, des Transfers, der Bereitstellung und der Verbreitung von umweltverträglichen Technologien",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-7-1",
@@ -1983,7 +2023,7 @@
         },
         {
           "id": "17-12-1",
-          "title": "Durchschnittliche Importzölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer",
+          "title": "Gewichtete Durchschnittszölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-12-1",
@@ -2023,7 +2063,7 @@
         },
         {
           "id": "17-17-1",
-          "title": "Betrag an US-Dollar, der für (a) öffentlich-private Partnerschaften und (b) zivilgesellschaftliche Partnerschaften zugesagt wurde",
+          "title": "Zugesagte Beträge für öffentlich-private Partnerschaften im Bereich Infrastruktur, in US-Dollar",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-17-1",
@@ -2031,7 +2071,7 @@
         },
         {
           "id": "17-18-1",
-          "title": "Anteil der Nachhaltigkeitsindikatoren, die auf nationaler Ebene vollständig - sofern gemäß dem Unterziel relevant - disaggregiert sind, in Übereinstimmung mit den Grundprinzipien der amtlichen Statistik",
+          "title": "Statistischer Kapazitätsindikator für die Messung der Nachhaltigkeitsziele",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-18-1",
@@ -2063,7 +2103,7 @@
         },
         {
           "id": "17-19-2",
-          "title": "Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben",
+          "title": "Anteil der Staaten, die (a) in den letzten 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben; und (b) 100% bei der Geburtenregistrierung sowie 80% bei der Registrierung der Sterbefälle erreicht haben",
           "description": "",
           "keywords": "Indikator 17.19.2, a) Durchführung mindestens einer Bevölkerungs- und Wohnungszählung in den letzten 10 Jahren, b) Registrierung der Geburten, c) Registrierung der Sterbefälle",
           "href": "/sdg-indicators/17-19-2",
