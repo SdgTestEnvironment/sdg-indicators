@@ -1624,15 +1624,15 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
     font-size: 16px; }
     #main-content .statuses > div .status.notstarted {
       border: 1px solid black;
-      color: #28BCE1; }
+      color: black; }
     #main-content .statuses > div .status.complete {
-      color: #28BCE1; }
+      color: black; }
     #main-content .statuses > div .status.inprogress {
-      color: #28BCE1; }
+      color: black; }
     #main-content .statuses > div .status.notstarted {
-      color: #28BCE1; }
+      color: black; }
     #main-content .statuses > div .status.notapplicable {
-      color: #28BCE1; }
+      color: black; }
 #main-content .value {
   color: #333;
   font-weight: bold;
@@ -2203,10 +2203,10 @@ body {
   border-radius: 3px; }
   .status.complete {
     border: 0px;
-    color: #28BCE1; }
+    color: black; }
   .status.inprogress {
-    color: #28BCE1; }
+    color: black; }
   .status.notstarted {
-    color: #28BCE1; }
+    color: black; }
   .status.notapplicable {
-    color: #28BCE1; }
+    color: black; }
