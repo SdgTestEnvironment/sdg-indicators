@@ -122,7 +122,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200708154125">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20200709083432">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -285,7 +285,7 @@ var translations = {
 
 
 <div id="main-content" class="container reportingstatus"><h1>Reporting Status</h1>
-  <p></p><div class="goal goal-overall">
+  <p>Here you can have a look at how many of the SDG indicators can be calculated for Germany at this time. The time series for the calculation of the indicators are based on data of official statistics, as well as on other sources.<br>Not all of the globally agreed SDG indicators can be backed up with statistical data. There can be various reasons for this: Certain internationally relevant indicators cannot be calculated sensibly for Germany. SDG indicators to which this applies are marked in grey (“Not applicable”). For other SDG indicators there are not all not all necessary statistical source data available yet. They are recognisable by being marked as red (“Exploring data sources”). <br>When there is data available, the SDG indicator is marked in green (“Reported online”). <br>If the data is available and being processed right now, the SDG indicator is marked orange (“Statistics in process”).</p><div class="goal goal-overall">
       <div class="details">
         <h2 class="status-goal">
             Overall Reporting Status<span class="total"><span>247</span></span> indicators
@@ -1312,7 +1312,7 @@ data-event-label="Change reporting status view to un_designated_tier"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20200708154125'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200708154125"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20200709083432'></script><script src="/sdg-indicators/assets/js/custom.js?v=20200709083432"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
