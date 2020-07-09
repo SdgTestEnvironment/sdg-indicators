@@ -2202,6 +2202,7 @@ body {
 .status {
   border-radius: 3px; }
   .status.complete {
+    border: 0px;
     color: #28BCE1; }
   .status.inprogress {
     color: #28BCE1; }
