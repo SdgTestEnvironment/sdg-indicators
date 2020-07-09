@@ -2198,3 +2198,25 @@ body {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold; }
+
+#main-content .statuses strong {
+  font-weight: normal; }
+#main-content .statuses > div {
+  display: inline-block;
+  margin-right: 10px; }
+  #main-content .statuses > div .status {
+    display: inline-block;
+    margin-right: 3px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    width: 40px;
+    text-align: center;
+    font-size: 16px; }
+    #main-content .statuses > div .status.complete {
+      color: black; }
+    #main-content .statuses > div .status.inprogress {
+      color: black; }
+    #main-content .statuses > div .status.notstarted {
+      color: black; }
+    #main-content .statuses > div .status.notapplicable {
+      color: black; }
