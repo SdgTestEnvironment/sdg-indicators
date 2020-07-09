@@ -2207,6 +2207,7 @@ body {
   .status.inprogress {
     color: black; }
   .status.notstarted {
+    border: 0px;
     color: black; }
   .status.notapplicable {
     color: black; }
