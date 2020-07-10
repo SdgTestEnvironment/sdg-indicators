@@ -2208,15 +2208,16 @@ body {
   margin-right: 0;
   font-weight: bold; }
 
-.status {
-  border-radius: 3px; }
-  .status.complete {
-    border: 0px;
-    color: black; }
-  .status.inprogress {
-    color: black; }
-  .status.notstarted {
-    border: 0px;
-    color: black; }
-  .status.notapplicable {
-    color: black; }
+.responsiveImg {
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+
+.responsiveSubtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
