@@ -2212,3 +2212,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.status {
+  border-radius: 3px; }
