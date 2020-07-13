@@ -47,7 +47,7 @@
         },
         {
           "id": "1-4-2",
-          "title": "Anteil an der gesamten erwachsenen Bevölkerung, der sichere Landnutzungs- und -besitzrechte hat, a) über gesetzlich anerkannte Dokumente verfügt und b) seine Landrechte als sicher ansieht, nach Geschlecht und nach Art der Nutzungs- und Besitzrechte",
+          "title": "Anteil an der gesamten erwachsenen Bevölkerung, der sichere Landnutzungs- und -besitzrechte hat, (a) über gesetzlich anerkannte Dokumente verfügt und (b) seine Landrechte als sicher ansieht, nach Geschlecht und nach Art der Nutzungs- und Besitzrechte",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-4-2",
@@ -79,7 +79,7 @@
         },
         {
           "id": "1-5-4",
-          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
+          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließt und umsetzt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-5-4",
@@ -335,7 +335,7 @@
         },
         {
           "id": "3-5-2",
-          "title": "Alkoholkonsum pro Kopf (15 Jahre und älter) innerhalb eines Kalenderjahres in Litern reinen Alkohols",
+          "title": "Alkoholkonsum pro Kopf (im Alter von 15 Jahren und älter) innerhalb eines Kalenderjahres in Litern reinen Alkohols",
           "description": "",
           "keywords": "Indikator 3.5.2, Schädlicher Alkoholgebrauch,  Weltgesundheitsorganisation (WHO), Bundesministerium für Ernährung und Landwirtschaft (BMEL)",
           "href": "/sdg-indicators/3-5-2",
@@ -351,7 +351,7 @@
         },
         {
           "id": "3-7-1",
-          "title": "Anteil der Frauen im gebärfähigen Alter (15-49 Jahre), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können",
+          "title": "Anteil der Frauen im gebärfähigen Alter (im Alter von 15-49 Jahren), die ihren Anspruch auf Familienplanung durch moderne Methoden umsetzen können",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-7-1",
@@ -359,7 +359,7 @@
         },
         {
           "id": "3-7-2",
-          "title": "Geburtenrate bei Jugendlichen (10-14 Jahre und 15-19 Jahre) je 1&nbsp;000 Frauen in dieser Altersgruppe",
+          "title": "Geburtenrate bei Jugendlichen (im Alter von 10-14 Jahren und 15-19 Jahren) je 1&nbsp;000 Frauen in dieser Altersgruppe",
           "description": "",
           "keywords": "Indikator 3.7.2, Geburten im Alter von 10 bis unter 15 Jahren, Geburten im Alter von 15 bis unter 20 Jahren, Hauptabteilung Wirtschaftliche und Soziale Angelegenheiten (DESA)",
           "href": "/sdg-indicators/3-7-2",
@@ -367,7 +367,7 @@
         },
         {
           "id": "3-8-1",
-          "title": "Anteil der Zielbevölkerung, die durch grundlegende Gesundheitsleistungen abgedeckt ist",
+          "title": "Anteil der Zielbevölkerung, der durch grundlegende Gesundheitsleistungen abgedeckt ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-8-1",
@@ -407,7 +407,7 @@
         },
         {
           "id": "3-a-1",
-          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen ab 15 Jahren",
+          "title": "Altersstandardisierte Prävalenz des aktuellen Tabakkonsums bei Personen im Alter von 15 Jahren und älter",
           "description": "",
           "keywords": "Indikator 3.a.1, Tabakgebrauch in der Bevölkerung ab 15 Jahren, Weltgesundheitsorganisation (WHO), Rahmenübereinkommen der WHO zur Eindämmung des Tabakgebrauchs (WHO FCTC)",
           "href": "/sdg-indicators/3-a-1",
@@ -471,7 +471,7 @@
         
         {
           "id": "4-1-1",
-          "title": "Anteil der Kinder und Jugendlichen, die (a) in Klasse 2/3; (b) am Ende der Grundschule; und (c) am Ende der Sekundarstufe I ein Mindestleistungsniveau in (i) Lesen und (ii) Mathematik erreichen, nach Geschlecht",
+          "title": "Anteil der Kinder und Jugendlichen, die (a) in Klasse 2/3; (b) am Ende der Grundschule und (c) am Ende der Sekundarstufe I ein Mindestleistungsniveau in (i) Lesen und (ii) Mathematik erreichen, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.1.1, a) Kinder und Jugendliche in den Klassen 2/3 mit einem Mindestleistungsniveau in, Lesen, Mathematik, Kinder und Jugendliche am Ende der Grundschule mit einem Mindestleistungsniveau in, Kinder und Jugendliche am Ende der Sekundarstufe I mit einem Mindestleistungsniveau in, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD), PISA",
           "href": "/sdg-indicators/4-1-1",
@@ -519,7 +519,7 @@
         },
         {
           "id": "4-5-1",
-          "title": "Paritäts-Indizes (weiblich/männlich, ländlich/städtisch, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
+          "title": "Paritäts-Indizes (weiblich/männlich, ländlich/städtisch, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Behinderungsstatus, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
           "description": "",
           "keywords": "Indikator 4.5.1, Geschlechtsparitätsindex, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/4-5-1",
@@ -527,7 +527,7 @@
         },
         {
           "id": "4-6-1",
-          "title": "Anteil der Bevölkerung einer bestimmten Altersgruppe, die über ein bestimmtes Mindestniveau an funktionalen (a) Lese- und Schreibe- und (b) Rechenfähigkeiten verfügt, nach Geschlecht",
+          "title": "Anteil der Bevölkerung einer bestimmten Altersgruppe mit einem bestimmten Mindestniveau an funktionalen (a) Lese- und Schreib- und (b) Rechenfähigkeiten, nach Geschlecht",
           "description": "",
           "keywords": "Indikator 4.6.1, a) Mindestkompetenz Lesen,  b) Mindestkompetenz Rechnen, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/4-6-1",
@@ -535,7 +535,7 @@
         },
         {
           "id": "4-7-1",
-          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
+          "title": "Umfang der systematischen Einbeziehung (i) einer weltbürgerlichen Bildung und (ii) einer Bildung für nachhaltige Entwicklung in (a) die nationale Bildungspolitik, (b) die Lehrpläne, (c) die Ausbildung von Lehrkräften und (d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-7-1",
@@ -551,7 +551,7 @@
         },
         {
           "id": "4-b-1",
-          "title": "Umfang der Ausgaben öffentlicher Entwicklungszusammenarbeit (ODA) für Stipendien nach Sektor und Art des Studiums",
+          "title": "Umfang der Ausgaben öffentlicher Entwicklungszusammenarbeit (ODA) für Stipendien, nach Sektor und Art des Studiums",
           "description": "",
           "keywords": "Indikator 4.b.1, Bruttoentwicklungsausgaben für Studienplatzkosten, Bruttoentwicklungsausgaben für Stipendien, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/4-b-1",
@@ -655,7 +655,7 @@
         },
         {
           "id": "5-a-1",
-          "title": "a) Anteil der Agrarbevölkerung mit Eigentum oder sicheren Rechten an landwirtschaftlichen Flächen, nach Geschlecht, und b) Frauenanteil unter den Eigentümern und sonstigen Rechteinhabern landwirtschaftlicher Flächen, nach Art der Nutzungs- und Besitzrechte",
+          "title": "(a) Anteil der Agrarbevölkerung mit Eigentum oder sicheren Rechten an landwirtschaftlichen Flächen, nach Geschlecht und (b) Frauenanteil unter den Eigentümern und sonstigen Rechteinhabern landwirtschaftlicher Flächen, nach Art der Nutzungs- und Besitzrechte",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-a-1",
@@ -679,7 +679,7 @@
         },
         {
           "id": "5-c-1",
-          "title": "Anteil der Staaten mit Systemen zur transparenten Verfolgung und Veröffentlichung von Zuwendungen für Geschlechtergleichstellung und Stärkung der Rolle der Frau",
+          "title": "Anteil der Staaten mit Systemen zur transparenten Verfolgung und Veröffentlichung von Mittelzuwendungen für Geschlechtergleichstellung und Stärkung der Rolle der Frau",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/5-c-1",
@@ -767,7 +767,7 @@
         },
         {
           "id": "6-a-1",
-          "title": "Betrag der wasser- und sanitärbezogenen öffentlichen Entwicklungszusammenarbeit (ODA), die Teil eines geregelten öffentlichen Haushaltsplans ist",
+          "title": "Betrag der wasser- und sanitärbezogenen öffentlichen Entwicklungszusammenarbeit (ODA), der Teil eines geregelten öffentlichen Haushaltsplans ist",
           "description": "",
           "keywords": "Indikator 6.a.1, Bruttoentwicklungsausgaben für Wasser und Sanitär, Bruttoentwicklungsausgaben für verwandte Zwecke, Weltgesundheitsorganisation (WHO), Umweltprogramm der Vereinten Nationen (UNEP), Organisation für wirtschaftliche Zusammenarbeit und Entwi",
           "href": "/sdg-indicators/6-a-1",
@@ -887,7 +887,7 @@
         },
         {
           "id": "8-5-1",
-          "title": "Durchschnittlicher Stundenverdienst von Beschäftigten, nach Geschlecht, Alter, Beruf und für Menschen mit Behinderungen",
+          "title": "Durchschnittlicher Stundenverdienst von Beschäftigten, nach Geschlecht, Alter, Beruf und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 8.5.1, Durchschnittlicher Stundenlohn Beschäftigter, Verdienstabstand, Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-5-1",
@@ -895,7 +895,7 @@
         },
         {
           "id": "8-5-2",
-          "title": "Erwerbslosenquote, nach Geschlecht, Alter und Personen mit Behinderungen",
+          "title": "Erwerbslosenquote, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 8.5.2, Arbeitslosenquote (15 bis unter 75 Jahre), Erwerbslosenquote (15 bis unter 75 Jahre), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-5-2",
@@ -903,7 +903,7 @@
         },
         {
           "id": "8-6-1",
-          "title": "Anteil junger Menschen (15-24 Jahre), die ohne Erwerbstätigkeit sind und keine Schul- oder Berufsausbildung durchlaufen",
+          "title": "Anteil junger Menschen (im Alter von 15-24 Jahren), die ohne Erwerbstätigkeit sind und keine Schul- oder Berufsausbildung durchlaufen",
           "description": "",
           "keywords": "Indikator 8.6.1, Jugendliche (15 bis unter 25 Jahre), die weder eine Arbeit haben, noch in einer schulischen oder beruflichen Ausbildung sind (NEET-Raten), Internationale Arbeitsorganisation (ILO)",
           "href": "/sdg-indicators/8-6-1",
@@ -951,7 +951,7 @@
         },
         {
           "id": "8-b-1",
-          "title": "Existenz einer entwickelten und operationalisierten nationalen Strategie zu Jugendbeschäftigung, als eigenständige Strategie oder als Teil einer nationalen Beschäftigungsstrategie",
+          "title": "Existenz einer entwickelten und operationalisierten nationalen Strategie für Jugendbeschäftigung, als eigenständige Strategie oder als Teil einer nationalen Beschäftigungsstrategie",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/8-b-1",
@@ -959,7 +959,7 @@
         },
         {
           "id": "8-10-1",
-          "title": "(a) Anzahl der Bankfilialen je 100&nbsp;000 Erwachsener und (b) Anzahl der Geldautomaten je 100&nbsp;000 Erwachsener",
+          "title": "(a) Anzahl der Bankfilialen je 100&nbsp;000 Erwachsene und (b) Anzahl der Geldautomaten je 100&nbsp;000 Erwachsene",
           "description": "",
           "keywords": "Indikator 8.10.1, a) Zweigstellen von Zahlungsverkehrsdienstleistern, b) Bankautomaten von inländischen Zahlungsdienstleistern, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/8-10-1",
@@ -1071,7 +1071,7 @@
         },
         {
           "id": "9-c-1",
-          "title": "Anteil der Bevölkerung, die durch ein Mobilfunknetz abgedeckt ist, nach Technologie",
+          "title": "Anteil der Bevölkerung, der durch ein Mobilfunknetz abgedeckt ist, nach Technologie",
           "description": "",
           "keywords": "Indikator 9.c.1, Haushalte, die mit 3G oder LTE abgedeckt sind, Breitband, Internationale Fernmeldeunion (ITU)",
           "href": "/sdg-indicators/9-c-1",
@@ -1095,7 +1095,7 @@
         },
         {
           "id": "10-2-1",
-          "title": "Anteil der Bevölkerung, dessen Einkommen weniger als 50 Prozent des Medians beträgt, nach Geschlecht, Alter und Menschen mit Behinderungen",
+          "title": "Anteil der Bevölkerung, deren Einkommen weniger als 50 Prozent des Medians beträgt, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 10.2.1, Bevölkerung, die mit weniger als 50% des mittleren Einkommens lebt, Armut, Einkommen, Weltbank (WB)",
           "href": "/sdg-indicators/10-2-1",
@@ -1103,7 +1103,7 @@
         },
         {
           "id": "10-3-1",
-          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
+          "title": "Anteil der Bevölkerung, der angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-3-1",
@@ -1151,7 +1151,7 @@
         },
         {
           "id": "10-7-2",
-          "title": "Anzahl der Staaten mit Migrationspolitik, die eine ordnungsgemäße sichere, regelmäßige und verantwortungsbewusste Migration und Mobilität von Menschen ermöglicht",
+          "title": "Anzahl der Staaten mit Migrationspolitik, die eine ordnungsgemäße, sichere, regelmäßige und verantwortungsbewusste Migration und Mobilität von Menschen ermöglicht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-7-2",
@@ -1239,7 +1239,7 @@
         },
         {
           "id": "11-4-1",
-          "title": "Gesamtausgaben pro Kopf für die Erhaltung und den Schutz des gesamten Kultur- und Naturerbes, nach Finanzierungsquelle (öffentlich, privat), Art des Erbes (Kulturerbe, Naturerbe) und Verwaltungsebene (national, regional oder lokal/kommunal)",
+          "title": "Gesamtausgaben pro Kopf für die Erhaltung und den Schutz des gesamten Kultur- und Naturerbes, nach Finanzierungsquelle (öffentlich, privat), Art des Erbes (Kulturerbe, Naturerbe) und Verwaltungsebene (national, regional, lokal/kommunal)",
           "description": "",
           "keywords": "Indikator 11.4.1, Ausgaben des Staates für Umweltschutz (COFOG Gruppe 5), Ausgaben des Staates für Freizeitgestaltung, Sport, Kultur und Religion (COFOG Gruppe 8), Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/11-4-1",
@@ -1287,7 +1287,7 @@
         },
         {
           "id": "11-7-2",
-          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungstatus und Tatort",
+          "title": "Anteil der Personen, der in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurde, nach Geschlecht, Alter, Behinderungsstatus und Tatort",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-7-2",
@@ -1295,7 +1295,7 @@
         },
         {
           "id": "11-a-1",
-          "title": "Anzahl der Staaten, die über eine nationale Städtepolitik oder regionale Entwicklungsplanung verfügen, die a) auf die Bevölkerungsdynamik reagiert, b) eine ausgewogene Raumentwicklung gewährleistet und c) den lokalen Haushaltsspielraum vergrößert",
+          "title": "Anzahl der Staaten, die über eine nationale Städtepolitik oder regionale Entwicklungsplanung verfügen, welche (a) auf die Bevölkerungsdynamik reagiert, (b) eine ausgewogene Raumentwicklung gewährleistet und (c) den lokalen Haushaltsspielraum vergrößert",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-a-1",
@@ -1311,7 +1311,7 @@
         },
         {
           "id": "11-b-2",
-          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
+          "title": "Anteil der lokalen Regierungen, der lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließt und umsetzt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-b-2",
@@ -1399,7 +1399,7 @@
         },
         {
           "id": "12-8-1",
-          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
+          "title": "Umfang der systematischen Einbeziehung (i) einer weltbürgerlichen Bildung und (ii) einer Bildung für nachhaltige Entwicklung in (a) die nationale Bildungspolitik, (b) die Lehrpläne, (c) die Ausbildung von Lehrkräften und (d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/12-8-1",
@@ -1455,7 +1455,7 @@
         },
         {
           "id": "13-1-3",
-          "title": "Anteil der lokalen Regierungen, die lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließen und umsetzen",
+          "title": "Anteil der lokalen Regierungen, der lokale Strategien zur Katastrophenvorsorge, die mit nationalen Strategien zur Katastrophenvorsorge im Einklang stehen, beschließt und umsetzt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-1-3",
@@ -1479,7 +1479,7 @@
         },
         {
           "id": "13-3-1",
-          "title": "Umfang der systematischen Einbeziehung i) einer weltbürgerlichen Bildung und ii) einer Bildung für nachhaltige Entwicklung in a) die nationale Bildungspolitik, b) die Lehrpläne, c) die Ausbildung von Lehrkräften und d) die Leistungsbewertung der Lernenden",
+          "title": "Umfang der systematischen Einbeziehung (i) einer weltbürgerlichen Bildung und (ii) einer Bildung für nachhaltige Entwicklung in (a) die nationale Bildungspolitik, (b) die Lehrpläne, (c) die Ausbildung von Lehrkräften und (d) die Leistungsbewertung der Lernenden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-3-1",
@@ -1551,7 +1551,7 @@
         },
         {
           "id": "14-6-1",
-          "title": "Grade der Umsetzung internationaler Instrumente mit dem Ziel zur Bekämpfung illegaler, nicht gemeldeter und unregulierter Fischerei",
+          "title": "Grad der Umsetzung internationaler Instrumente mit dem Ziel zur Bekämpfung illegaler, nicht gemeldeter und unregulierter Fischerei",
           "description": "",
           "keywords": "Indikator 14.6.1, Grad der Bekämpfung illegaler, nicht gemeldeter und ungeregelter Fischerei, Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)",
           "href": "/sdg-indicators/14-6-1",
@@ -1687,7 +1687,7 @@
         },
         {
           "id": "15-a-1",
-          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der Biodiversität und b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
+          "title": "(a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und (b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-a-1",
@@ -1695,7 +1695,7 @@
         },
         {
           "id": "15-b-1",
-          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der Biodiversität und b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
+          "title": "(a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und (b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-b-1",
@@ -1735,7 +1735,7 @@
         },
         {
           "id": "16-1-3",
-          "title": "Anteil der Bevölkerung, der in den vergangenen 12 Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt und (c) sexueller Gewalt ausgesetzt war",
+          "title": "Anteil der Bevölkerung, der in den vergangenen 12 Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt oder (c) sexueller Gewalt ausgesetzt war",
           "description": "",
           "keywords": "Indikator 16.1.3, Bevölkerung, die physischer Gewalt ausgesetzt ist, Bevölkerung, die Opfer von Straftaten wurde, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-1-3",
@@ -1815,7 +1815,7 @@
         },
         {
           "id": "16-5-1",
-          "title": "Anteil der Personen, die in den vergangenen 12 Monaten mindestens einen Kontakt zu einem öffentlichen Bediensteten hatten und diesem ein Bestechungsgeld gezahlt haben oder von diesen um eine Bestechung gebeten wurden",
+          "title": "Anteil der Personen, der in den vergangenen 12 Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatte und diesem ein Bestechungsgeld gezahlt hat oder von diesem um eine Bestechung gebeten wurde",
           "description": "",
           "keywords": "Indikator 16.5.1, Bevölkerung, die den Eindruck hatte, dass Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Tatverdächtige Privatpersonen (Geber) im Rahmen von Korruptionsstraftaten, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-5-1",
@@ -1831,7 +1831,7 @@
         },
         {
           "id": "16-6-1",
-          "title": "Primärausgaben des Staates als Anteil am ursprünglich genehmigten Budget, nach Sektor (oder nach Haushaltscodes oder Ähnlichem)",
+          "title": "Anteil der Primärausgaben des Staates am ursprünglich genehmigten Budget, nach Sektor (oder nach Haushaltscodes oder Ähnlichem)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-6-1",
@@ -1839,7 +1839,7 @@
         },
         {
           "id": "16-6-2",
-          "title": "Anteil der Bevölkerung, die mit ihrer letzten Erfahrung mit öffentlichen Dienstleistungen zufrieden war",
+          "title": "Anteil der Bevölkerung, der mit seiner letzten Erfahrung mit öffentlichen Dienstleistungen zufrieden war",
           "description": "",
           "keywords": "Indikator 16.6.2, Bevölkerung, die mit den Behördendiensten während der letzten zwei Jahre zufrieden war, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/16-6-2",
@@ -1847,7 +1847,7 @@
         },
         {
           "id": "16-7-1",
-          "title": "Anteil der Stellen in nationalen und lokalen öffentlichen Institutionen einschließlich (a) der Gesetzgebung; (b) des öffentlichen Dienstes; und (c) der Judikativen, im Vergleich zu nationalen Verteilungen, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppen",
+          "title": "Anteil der Stellen in nationalen und lokalen öffentlichen Institutionen einschließlich (a) der Gesetzgebung; (b) des öffentlichen Dienstes und (c) der Judikativen, im Vergleich zu nationalen Verteilungen, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppen",
           "description": "",
           "keywords": "Indikator 16.7.1, Weibliche Beschäftigte des öffentlichen Dienstes, Weibliche Erwerbstätige insgesamt, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/16-7-1",
@@ -1855,7 +1855,7 @@
         },
         {
           "id": "16-7-2",
-          "title": "Anteil der Bevölkerung, die glaubt, dass die Entscheidungsfindung inklusiv und bedarfsgesteuert ist, nach Geschlecht, Alter, Behinderung und Bevölkerungsgruppe",
+          "title": "Anteil der Bevölkerung, der glaubt, dass die Entscheidungsfindung inklusiv und bedarfsgesteuert ist, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppe",
           "description": "",
           "keywords": "Indikator 16.7.2, Bevölkerung, die in den letzten zwei Jahren ihre Erfahrungen mit öffentlichen Einrichtungen als diskriminierungsfrei erachtet, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/16-7-2",
@@ -1887,7 +1887,7 @@
         },
         {
           "id": "16-b-1",
-          "title": "Anteil der Bevölkerung, die angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
+          "title": "Anteil der Bevölkerung, der angibt sich in den vergangenen 12 Monaten persönlich diskriminiert oder belästigt gefühlt zu haben, basierend auf einem Diskriminierungsgrund, der nach internationalem Menschenrechtsgesetzen verboten ist",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/16-b-1",
@@ -1903,7 +1903,7 @@
         },
         {
           "id": "16-10-2",
-          "title": "Anzahl der Staaten, die verfassungsrechtliche, gesetzliche und/oder politische Garantieren für den öffentlichen Zugang zu Informationen verabschiedet und umgesetzt haben",
+          "title": "Anzahl der Staaten, die verfassungsrechtliche, gesetzliche und/oder politische Garantien für den öffentlichen Zugang zu Informationen verabschiedet und umgesetzt haben",
           "description": "",
           "keywords": "Indikator; 16.10.2, Öffentlicher Zugang zu Informationen, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
           "href": "/sdg-indicators/16-10-2",
@@ -1967,7 +1967,7 @@
         },
         {
           "id": "17-5-1",
-          "title": "Anzahl der Staaten, die Investitionsförderungssysteme für die Entwicklungsländer, einschließlich der am wenigsten entwickelten Länder, beschließen und umsetzen",
+          "title": "Anzahl der Staaten, die Investitionsförderungssysteme für Entwicklungsländer, einschließlich der am wenigsten entwickelten Länder, beschließen und umsetzen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-5-1",
