@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-1",
-          "title": "Anteil der Bevölkerung, der unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Beschäftigungsstatus und geografischem Standort (städtisch/ ländlich)",
+          "title": "Anteil der Bevölkerung, der unter der internationalen Armutsgrenze lebt, nach Geschlecht, Alter, Erwerbsstatus und geografischem Standort (städtisch/ländlich)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-1-1",
@@ -519,7 +519,7 @@
         },
         {
           "id": "4-5-1",
-          "title": "Paritäts-Indizes (weiblich/männlich, ländlich/ städtisch, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
+          "title": "Paritäts-Indizes (weiblich/männlich, ländlich/städtisch, unterstes/oberstes Vermögensquantil und sonstige, wie z. B. Grad der Behinderung, indigene Bevölkerung und konfliktbetroffen, sobald Daten verfügbar werden) für alle Bildungsindikatoren dieser Liste, die disaggregiert werden können",
           "description": "",
           "keywords": "Indikator 4.5.1, Geschlechtsparitätsindex, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur (UNESCO)",
           "href": "/sdg-indicators/4-5-1",
@@ -583,7 +583,7 @@
         },
         {
           "id": "5-2-1",
-          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die sich in ihrer jetzigen oder früheren Partnerschaft physischer, sexueller oder psychischer Gewalt durch ihren aktuellen oder früheren Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Art der Gewalt und Alter",
+          "title": "Anteil der Frauen und Mädchen im Alter von 15 Jahren und älter, die in ihrer jetzigen oder früheren Partnerschaft physischer, sexueller oder psychischer Gewalt durch ihren aktuellen oder früheren Intimpartner in den vergangenen 12 Monaten ausgesetzt waren, nach Art der Gewalt und Alter",
           "description": "",
           "keywords": "Indikator 5.2.1, Weibliche Opfer von Straftaten mit einer aktuellen oder früheren intimen Beziehung zum Verdächtigen, Kinderhilfswerk der Vereinten Nationen (UNICEF), Einheit der Vereinten Nationen für Gleichstellung und Ermächtigung der Frauen (UN Women), Bevölkerungsfonds der Vereinten Nationen (UNFPA), Weltgesundheitsorganisation (WHO), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/5-2-1",
@@ -599,7 +599,7 @@
         },
         {
           "id": "5-3-1",
-          "title": "Anteil der 20-24-jährigen Frauen, die vor dem vollendeten 15. bzw. 18. Lebensjahr verheiratet oder in einer vergleichbaren Verbindung waren",
+          "title": "Anteil der Frauen im Alter von 20-24 Jahren, die vor dem vollendeten 15. bzw. 18. Lebensjahr verheiratet oder in einer vergleichbaren Verbindung waren",
           "description": "",
           "keywords": "Indikator 5.3.1, Verheiratete Mädchen unter 15 Jahren, Verheiratete Mädchen unter 18 Jahren, Kinderhilfswerk der Vereinten Nationen (UNICEF)",
           "href": "/sdg-indicators/5-3-1",
@@ -607,7 +607,7 @@
         },
         {
           "id": "5-3-2",
-          "title": "Anteil der Mädchen und Frauen von 15-49 Jahren, die weiblicher Genitalverstümmelung/Beschneidung unterzogen wurden, nach Alter",
+          "title": "Anteil der Mädchen und Frauen im Alter von 15-49 Jahren, die weiblicher Genitalverstümmelung/Beschneidung unterzogen wurden, nach Alter",
           "description": "",
           "keywords": "Indikator 5.3.2, Opfer von Verstümmelung weiblicher Genitalien, Kinderhilfswerk der Vereinten Nationen (UNICEF), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/5-3-2",
@@ -1207,7 +1207,7 @@
         
         {
           "id": "11-1-1",
-          "title": "Anteil der städtische Bevölkerung, die in Slums, informellen Siedlungen oder unzureichendem Wohnraum leben",
+          "title": "Anteil der städtischen Bevölkerung, der in Slums, informellen Siedlungen oder unzureichendem Wohnraum lebt",
           "description": "",
           "keywords": "Indikator 11.1.1, Materielle Deprivation bezogen auf die Wohn-Dimension (ein bis vier Probleme), Bevölkerung, deren Wohnung/Haus zu wenig Tageslicht bietet, Bevölkerung, in deren Wohnumgebung es Kriminalität, Gewalt oder Vandalismus gibt, Bevölkerung mit Lärmbelästigung in deren Wohnumgebung, Bevölkerung, in deren Wohnung/Haus es Feuchtigkeitsschäden gibt, Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/11-1-1",
@@ -1215,7 +1215,7 @@
         },
         {
           "id": "11-2-1",
-          "title": "Anteil der Bevölkerung, die einen angemessenen Zugang zu öffentlichen Verkehrsmitteln hat, nach Geschlecht, Alter und Menschen mit Behinderungen",
+          "title": "Anteil der Bevölkerung, der einen angemessenen Zugang zu öffentlichen Verkehrsmitteln hat, nach Geschlecht, Alter und Menschen mit Behinderungen",
           "description": "",
           "keywords": "Indikator 11.2.1, Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 10 Minuten zu Fuß), Bevölkerung, die Zugang zu öffentlichen Verkehrsmitteln hat (innerhalb von 500 Metern), Programm der Vereinten Nationen für menschliche Siedlungen (UN-Habitat)",
           "href": "/sdg-indicators/11-2-1",
@@ -1287,7 +1287,7 @@
         },
         {
           "id": "11-7-2",
-          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Tatort",
+          "title": "Anteil der Personen, die in den vergangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungstatus und Tatort",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-7-2",
@@ -1511,7 +1511,7 @@
         
         {
           "id": "14-1-1",
-          "title": "a) Küsteneutrophierungsindex und b) Konzentration von Plastikmüll",
+          "title": "(a) Küsteneutrophierungsindex und (b) Konzentration von Plastikmüll",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-1-1",
@@ -1575,7 +1575,7 @@
         },
         {
           "id": "14-b-1",
-          "title": "Umsetzungsgrad eines rechtlichen/regulatorischen/politischen/institutionellen Rahmenwerks, der Zugangsrechte für Kleinfischerei anerkennt und schützt",
+          "title": "Umsetzungsgrad eines rechtlichen/regulatorischen/politischen/institutionellen Rahmenwerks, das Zugangsrechte für Kleinfischerei anerkennt und schützt",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-b-1",
@@ -1631,7 +1631,7 @@
         },
         {
           "id": "15-4-1",
-          "title": "Abdeckung der Bergökosysteme, die für Biodiversität von Bedeutung sind, durch Schutzgebiete",
+          "title": "Abdeckung der Bergökosysteme, die für biologische Vielfalt von Bedeutung sind, durch Schutzgebiete",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-4-1",
@@ -1679,7 +1679,7 @@
         },
         {
           "id": "15-9-1",
-          "title": "a) Anzahl der Staaten, die nationale Zielvorgaben gemäß oder ähnlich dem Aichi-Biodiversitätsziel 2 des Strategieplans für die biologische Vielfalt 2011-2020 in ihre nationalen Strategien und Aktionspläne zugunsten der biologischen Vielfalt aufgenommen ha",
+          "title": "(a) Anzahl der Staaten, die nationale Zielvorgaben gemäß oder ähnlich dem Aichi-Biodiversitätsziel 2 des Strategieplans für die biologische Vielfalt 2011-2020 in ihre nationalen Strategien und Aktionspläne zugunsten der biologischen Vielfalt aufgenommen haben, und die bei der Umsetzung dieser Zielvorgaben gemeldeten Fortschritte und (b) Aufnahme der biologischen Vielfalt in die nationalen Rechnungslegungs- und Berichterstattungssysteme, definiert als die Anwendung des Systems der umweltökonomischen Gesamtrechnungen",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-9-1",
@@ -1687,7 +1687,7 @@
         },
         {
           "id": "15-a-1",
-          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und b) Mittels ???? generierte Einnahmen und mobilisierte Finanzmittel",
+          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der Biodiversität und b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-a-1",
@@ -1695,7 +1695,7 @@
         },
         {
           "id": "15-b-1",
-          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der biologischen Vielfalt und b) Mittels ???? generierte Einnahmen und mobilisierte Finanzmittel",
+          "title": "a) Öffentliche Entwicklungszusammenarbeit (ODA) für die Erhaltung und nachhaltige Nutzung der Biodiversität und b) Einnahmen und Finanzmittel, die über die für die biologische Vielfalt maßgeblichen ökologischen Instrumente generiert wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/15-b-1",
@@ -1735,7 +1735,7 @@
         },
         {
           "id": "16-1-3",
-          "title": "Anteil der Bevölkerung, die in den vergangenen 12 Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt und (c) sexueller Gewalt ausgesetzt war",
+          "title": "Anteil der Bevölkerung, der in den vergangenen 12 Monaten (a) körperlicher Gewalt, (b) psychischer Gewalt und (c) sexueller Gewalt ausgesetzt war",
           "description": "",
           "keywords": "Indikator 16.1.3, Bevölkerung, die physischer Gewalt ausgesetzt ist, Bevölkerung, die Opfer von Straftaten wurde, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-1-3",
@@ -1751,7 +1751,7 @@
         },
         {
           "id": "16-2-1",
-          "title": "Anteil der Kinder zwischen 1 und 17 Jahren, die im vorangegangenen Monat körperlicher Züchtigung und/oder psychischer Aggression durch Betreuungspersonen ausgesetzt waren",
+          "title": "Anteil der Kinder im Alter von 1-17 Jahren, die im vorangegangenen Monat körperlicher Züchtigung und/oder psychischer Aggression durch Betreuungspersonen ausgesetzt waren",
           "description": "",
           "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk",
           "href": "/sdg-indicators/16-2-1",
@@ -1775,7 +1775,7 @@
         },
         {
           "id": "16-3-1",
-          "title": "Anteil der Opfer von in den vorangegangenen 12 Monaten verübten Gewalttaten, die den zuständigen Behörden oder anderen offiziell anerkannten Mechanismen zur Konfliktbeilegung diese Gewalt angezeigt haben",
+          "title": "Anteil der Opfer von Gewalttaten in den vorangegangenen 12 Monaten, die die Gewalttat den zuständigen Behörden oder anderen offiziell anerkannten Mechanismen zur Konfliktbeilegung angezeigt haben",
           "description": "",
           "keywords": "Indikator 16.3.1, Anzeigequote bei Körperverletzung, Anzeigequote bei Raub, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/16-3-1",
