@@ -38,8 +38,8 @@ var indicatorView = function (model, options) {
 
     // Provide the hide/show functionality for the sidebar.
     $('.data-view .nav-link').on('click', function(e) {
-      var $sidebar = $('#indicator-sidebar'),
-          $main = $('#indicator-main'),
+      var $sidebar = $('.indicator-sidebar'),
+          $main = $('.indicator-main'),
           hideSidebar = $(this).data('no-disagg'),
           mobile = window.matchMedia("screen and (max-width: 990px)");
       if (hideSidebar) {
@@ -73,110 +73,42 @@ var indicatorView = function (model, options) {
     }
 
     view_obj.createSelectionsTable(args);
+
+    view_obj.updateChartTitle(args.chartTitle);
   });
 
-  this._model.onNoHeadlineData.attach(function(sender, args) {
-    // Force a unit if necessary.
-    if (args && args.forceUnit) {
-      $('#units input[type="radio"]')
-        .filter('[value="' + args.forceUnit + '"]')
-        .first()
-        .click();
-    }
-    // Force particular minimum field selections if necessary. We have to delay
-    // this slightly to make it work...
-    if (args && args.minimumFieldSelections && _.size(args.minimumFieldSelections)) {
-      function getClickFunction(fieldToSelect, fieldValue) {
-        return function() {
-          $('#fields .variable-options input[type="checkbox"]')
-            .filter('[data-field="' + fieldToSelect + '"]')
-            .filter('[value="' + fieldValue + '"]')
-            .filter(':not(:checked)')
-            .first()
-            .click();
-        }
-      }
-      for (var fieldToSelect in args.minimumFieldSelections) {
-        var fieldValue = args.minimumFieldSelections[fieldToSelect];
-        setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
-      }
-    }
-    else {
-      // Fallback behavior - just click on the first one, whatever it is.
-      // Also needs to be delayed...
-      setTimeout(function() {
-        $('#fields .variable-options :checkbox:eq(0)').trigger('click');
-      }, 500);
-    }
-  });
+  this._model.onFieldsComplete.attach(function(sender, args) {
+    view_obj.initialiseFields(args);
 
-  this._model.onSeriesComplete.attach(function(sender, args) {
-    view_obj.initialiseSeries(args);
+    console.log("args", args);
 
-    //---#1 GoalDependendMapColor---start--------------------------
-    if (args.indicatorId.includes('_1-')){var goalNr = 0;}
-    else if (args.indicatorId.includes('_2-')) {var goalNr = 1;}
-    else if (args.indicatorId.includes('_3-')) {var goalNr = 2;}
-    else if (args.indicatorId.includes('_4-')) {var goalNr = 3;}
-    else if (args.indicatorId.includes('_5-')) {var goalNr = 4;}
-    else if (args.indicatorId.includes('_6-')) {var goalNr = 5;}
-    else if (args.indicatorId.includes('_7-')) {var goalNr = 6;}
-    else if (args.indicatorId.includes('_8-')) {var goalNr = 7;}
-    else if (args.indicatorId.includes('_9-')) {var goalNr = 8;}
-    else if (args.indicatorId.includes('_10-')) {var goalNr = 9;}
-    else if (args.indicatorId.includes('_11-')) {var goalNr = 10;}
-    else if (args.indicatorId.includes('_12-')) {var goalNr = 11;}
-    else if (args.indicatorId.includes('_13-')) {var goalNr = 12;}
-    else if (args.indicatorId.includes('_14-')) {var goalNr = 13;}
-    else if (args.indicatorId.includes('_15-')) {var goalNr = 14;}
-    else if (args.indicatorId.includes('_16-')) {var goalNr = 15;}
-    else if (args.indicatorId.includes('_17-')) {var goalNr = 16;}
-    //---#1 GoalDependendMapColor---stop---------------------------
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
-            //---#1 GoalDependendMapColor---start--------------------------
-            //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
-            view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
-            //---#1 GoalDependendMapColor---stop---------------------------
+      view_obj._mapView.initialise(args.indicatorId);
     }
-  });
-
-  this._model.onSeriesSelectedChanged.attach(function(sender, args) {
-    // var selector;
-    // if (args.series.length === view_obj._fieldLimit) {
-    //   selector = $('#fields input:not(:checked)');
-    //   selector.attr('disabled', true);
-    //   selector.parent().addClass('disabled').attr('title', 'Maximum of ' + view_obj._fieldLimit + ' selections; unselect another to select this field');
-    // } else {
-    //   selector = $('#fields input');
-    //   selector.removeAttr('disabled');
-    //   selector.parent().removeClass('disabled').removeAttr('title');
-    // }
   });
 
   this._model.onUnitsComplete.attach(function(sender, args) {
     view_obj.initialiseUnits(args);
   });
 
-  this._model.onUnitsSelectedChanged.attach(function(sender, args) {
-    // update the plot's y axis label
-    // update the data
-  });
-
   this._model.onFieldsCleared.attach(function(sender, args) {
     $(view_obj._rootElement).find(':checkbox').prop('checked', false);
-    $(view_obj._rootElement).find('#clear').addClass('disabled');
+    $(view_obj._rootElement).find('#clear').addClass('disabled').attr('aria-disabled', 'true');
 
     // reset available/unavailable fields
     updateWithSelectedFields();
 
-    // #246
     $(view_obj._rootElement).find('.selected').css('width', '0');
-    // end of #246
   });
 
   this._model.onSelectionUpdate.attach(function(sender, args) {
-    $(view_obj._rootElement).find('#clear')[args.selectedFields.length ? 'removeClass' : 'addClass']('disabled');
+    if (args.selectedFields.length) {
+      $(view_obj._rootElement).find('#clear').removeClass('disabled').attr('aria-disabled', 'false');
+    }
+    else {
+      $(view_obj._rootElement).find('#clear').addClass('disabled').attr('aria-disabled', 'true');
+    }
 
     // loop through the available fields:
     $('.variable-selector').each(function(index, element) {
@@ -195,7 +127,6 @@ var indicatorView = function (model, options) {
   });
 
   this._model.onFieldsStatusUpdated.attach(function (sender, args) {
-    //console.log('updating field states with: ', args);
 
     // reset:
     $(view_obj._rootElement).find('label').removeClass('selected possible excluded');
@@ -228,7 +159,7 @@ var indicatorView = function (model, options) {
 
   $(this._rootElement).on('click', '#fields label', function (e) {
 
-    if(!$(this).closest('.variable-options').hasClass('disallowed')) {
+    if(!$(this).closest('.variable-selector').hasClass('disallowed')) {
       $(this).find(':checkbox').trigger('click');
     }
 
@@ -310,24 +241,24 @@ var indicatorView = function (model, options) {
     }
   }
 
-  this.initialiseSeries = function(args) {
-    if(args.series.length) {
+  this.initialiseFields = function(args) {
+    if(args.fields.length) {
       var template = _.template($("#item_template").html());
 
       if(!$('button#clear').length) {
-        $('<button id="clear" class="disabled">' + translations.indicator.clear_selections + ' <i class="fa fa-remove"></i></button>').insertBefore('#fields');
+        $('<button id="clear" aria-disabled="true" class="disabled">' + translations.indicator.clear_selections + ' <i class="fa fa-remove"></i></button>').insertBefore('#fields');
       }
 
       $('#fields').html(template({
-        series: args.series,
+        fields: args.fields,
         allowedFields: args.allowedFields,
         edges: args.edges
       }));
 
-      $(this._rootElement).removeClass('no-series');
+      $(this._rootElement).removeClass('no-fields');
 
     } else {
-      $(this._rootElement).addClass('no-series');
+      $(this._rootElement).addClass('no-fields');
     }
   };
 
@@ -346,8 +277,19 @@ var indicatorView = function (model, options) {
     }
   };
 
-  this.updatePlot = function(chartInfo) {
+  this.alterChartConfig = function(config, info) {
+    opensdg.chartConfigAlterations.forEach(function(callback) {
+      callback(config, info);
+    });
+  };
 
+  this.updateChartTitle = function(chartTitle) {
+    if (typeof chartTitle !== 'undefined') {
+      $('.chart-title').text(chartTitle);
+    }
+  }
+
+  this.updatePlot = function(chartInfo) {
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
 
     if(chartInfo.selectedUnit) {
@@ -357,11 +299,12 @@ var indicatorView = function (model, options) {
     // Create a temp object to alter, and then apply. We go to all this trouble
     // to avoid completely replacing view_obj._chartInstance -- and instead we
     // just replace it's properties: "type", "data", and "options".
-    var updatedConfig = opensdg.chartConfigAlter({
+    var updatedConfig = {
       type: view_obj._chartInstance.type,
       data: view_obj._chartInstance.data,
       options: view_obj._chartInstance.options
-    });
+    }
+    this.alterChartConfig(updatedConfig, chartInfo);
     view_obj._chartInstance.type = updatedConfig.type;
     view_obj._chartInstance.data = updatedConfig.data;
     view_obj._chartInstance.options = updatedConfig.options;
@@ -369,13 +312,18 @@ var indicatorView = function (model, options) {
     view_obj._chartInstance.update(1000, true);
 
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
+
+    view_obj.updateChartDownloadButton(chartInfo.selectionsTable);
   };
+
 
 
   this.createPlot = function (chartInfo) {
 
-    //console.log (chartInfo);
     var that = this;
+    var gridColor = that.getGridColor();
+    var tickColor = that.getTickColor();
+
     var chartConfig = {
       type: this._model.graphType,
       data: chartInfo,
@@ -390,16 +338,24 @@ var indicatorView = function (model, options) {
           xAxes: [{
             maxBarThickness: 150,
             gridLines: {
-              color: '#ddd',
-            }
+              color: gridColor,
+            },
+            ticks: {
+              fontColor: tickColor,
+            },
           }],
           yAxes: [{
+            gridLines: {
+              color: gridColor,
+            },
             ticks: {
-              suggestedMin: 0
+              suggestedMin: 0,
+              fontColor: tickColor,
             },
             scaleLabel: {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
-              labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit
+              labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              fontColor: tickColor,
             }
           }]
         },
@@ -408,7 +364,7 @@ var indicatorView = function (model, options) {
 
             _.each(chart.data.datasets, function(dataset, datasetIndex) {
               text.push('<li data-datasetindex="' + datasetIndex + '">');
-              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
+              text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.borderColor + '">');
               text.push('</span>');
               text.push(translations.t(dataset.label));
               text.push('</li>');
@@ -417,7 +373,6 @@ var indicatorView = function (model, options) {
             text.push('</ul>');
             return text.join('');
         },
-
         legend: {
           display: false
         },
@@ -429,10 +384,21 @@ var indicatorView = function (model, options) {
         }
       }
     };
-    chartConfig = opensdg.chartConfigAlter(chartConfig);
-
+    this.alterChartConfig(chartConfig, chartInfo);
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
+
+    window.addEventListener('contrastChange', function(e) {
+      var gridColor = that.getGridColor(e.detail);
+      var tickColor = that.getTickColor(e.detail);
+      view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.fontColor = tickColor;
+      view_obj._chartInstance.options.scales.yAxes[0].gridLines.color = gridColor;
+      view_obj._chartInstance.options.scales.yAxes[0].ticks.fontColor = tickColor;
+      view_obj._chartInstance.options.scales.xAxes[0].gridLines.color = gridColor;
+      view_obj._chartInstance.options.scales.xAxes[0].ticks.fontColor = tickColor;
+      view_obj._chartInstance.update();
+    });
+
     Chart.pluginService.register({
       afterDraw: function(chart) {
         var $canvas = $(that._rootElement).find('canvas'),
@@ -455,7 +421,8 @@ var indicatorView = function (model, options) {
     $("#btnSave").click(function() {
       var filename = chartInfo.indicatorId + '.png',
           element = document.getElementById('chart-canvas'),
-          height = element.clientHeight + 25,
+          footer = document.getElementById('selectionChartFooter'),
+          height = element.clientHeight + 25 + ((footer) ? footer.clientHeight : 0),
           width = element.clientWidth + 25;
       var options = {
         // These options fix the height, width, and position.
@@ -498,6 +465,23 @@ var indicatorView = function (model, options) {
     });
 
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
+  };
+
+  this.getGridColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '#222' : '#ddd';
+  };
+
+  this.getTickColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '#fff' : '#000';
+  }
+
+  this.isHighContrast = function(contrast) {
+    if (contrast) {
+      return contrast === 'high';
+    }
+    else {
+      return $('body').hasClass('contrast-high');
+    }
   };
 
   this.toCsv = function (tableData) {
@@ -575,11 +559,7 @@ var indicatorView = function (model, options) {
   };
 
   this.createSelectionsTable = function(chartInfo) {
-    //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-    var tableUnit = (chartInfo.selectedUnit && !chartInfo.footerFields[translations.indicator.unit_of_measurement]) ? translations.t(chartInfo.selectedUnit) : '';
-    //this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
-    this.createTable(chartInfo.selectionsTable, tableUnit, chartInfo.indicatorId, '#selectionsTable', true);
-    //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
+    this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
     this.createTableFooter('selectionTableFooter', chartInfo.footerFields, '#selectionsTable');
     this.createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#selectionsTable');
     this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsTable');
@@ -596,18 +576,34 @@ var indicatorView = function (model, options) {
         downloadKey = 'download_table';
       }
       var gaLabel = 'Download ' + name + ' CSV: ' + indicatorId.replace('indicator_', '');
-      $(el).append($('<a />').text(translations.indicator[downloadKey])
-      .attr(opensdg.autotrack('download_data_current', 'Downloads', 'Download CSV', gaLabel))
-      .attr({
-        'href': URL.createObjectURL(new Blob([this.toCsv(table)], {
-          type: 'text/csv'
-        })),
-        'download': indicatorId + '.csv',
-        'title': translations.indicator.download_csv_title,
-        'class': 'btn btn-primary btn-download',
-        'tabindex': 0
-      })
-      .data('csvdata', this.toCsv(table)));
+      var tableCsv = this.toCsv(table);
+      var fileName = indicatorId + '.csv';
+      var downloadButton = $('<a />').text(translations.indicator[downloadKey])
+        .attr(opensdg.autotrack('download_data_current', 'Downloads', 'Download CSV', gaLabel))
+        .attr({
+          'download': fileName,
+          'title': translations.indicator.download_csv_title,
+          'class': 'btn btn-primary btn-download',
+          'tabindex': 0
+        });
+      var blob = new Blob([tableCsv], {
+        type: 'text/csv'
+      });
+      if (window.navigator && window.navigator.msSaveBlob) {
+        // Special behavior for IE.
+        downloadButton.on('click.openSdgDownload', function(event) {
+          window.navigator.msSaveBlob(blob, fileName);
+        });
+      }
+      else {
+        downloadButton
+          .attr('href', URL.createObjectURL(blob))
+          .data('csvdata', tableCsv);
+      }
+      if (name == 'Chart') {
+        this._chartDownloadButton = downloadButton;
+      }
+      $(el).append(downloadButton);
     } else {
       var headlineId = indicatorId.replace('indicator', 'headline');
       var id = indicatorId.replace('indicator_', '');
@@ -624,6 +620,28 @@ var indicatorView = function (model, options) {
     }
   }
 
+  this.updateChartDownloadButton = function(table) {
+    if (typeof this._chartDownloadButton !== 'undefined') {
+      var tableCsv = this.toCsv(table);
+      var blob = new Blob([tableCsv], {
+        type: 'text/csv'
+      });
+      var fileName = this._chartDownloadButton.attr('download');
+      if (window.navigator && window.navigator.msSaveBlob) {
+        // Special behavior for IE.
+        this._chartDownloadButton.off('click.openSdgDownload')
+        this._chartDownloadButton.on('click.openSdgDownload', function(event) {
+          window.navigator.msSaveBlob(blob, fileName);
+        });
+      }
+      else {
+        this._chartDownloadButton
+          .attr('href', URL.createObjectURL(blob))
+          .data('csvdata', tableCsv);
+      }
+    }
+  }
+
   this.createSourceButton = function(indicatorId, el) {
     var gaLabel = 'Download Source CSV: ' + indicatorId;
     $(el).append($('<a />').text(translations.indicator.download_source)
@@ -637,20 +655,10 @@ var indicatorView = function (model, options) {
     }));
   }
 
-  //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-  //this.createTable = function(table, indicatorId, el) {
-  this.createTable = function(table, tableUnit, indicatorId, el) {
-  //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
-
+  this.createTable = function(table, indicatorId, el) {
 
     options = options || {};
     var that = this,
-    csv_path = options.csv_path,
-    allow_download = options.allow_download || false,
-    csv_options = options.csv_options || {
-      separator: ',',
-      delimiter: '"'
-    },
     table_class = options.table_class || 'table table-hover';
 
     // clear:
@@ -658,9 +666,8 @@ var indicatorView = function (model, options) {
 
     if(table && table.data.length) {
       var currentTable = $('<table />').attr({
-        'class': /*'table-responsive ' +*/ table_class,
+        'class': table_class,
         'width': '100%'
-        //'id': currentId
       });
 
       currentTable.append('<caption>' + that._model.chartTitle + '</caption>');
@@ -670,10 +677,7 @@ var indicatorView = function (model, options) {
       var getHeading = function(heading, index) {
         var span = '<span class="sort" />';
         var span_heading = '<span>' + translations.t(heading) + '</span>';
-        //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-        //return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
-        return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading + ((tableUnit == '') ? '' : ('<br>(' + tableUnit)+')');
-        //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
+        return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
       };
 
       table.headings.forEach(function (heading, index) {

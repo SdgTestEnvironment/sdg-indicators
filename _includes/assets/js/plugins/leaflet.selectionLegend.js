@@ -7,6 +7,10 @@
 (function () {
   "use strict";
 
+  if (typeof L === 'undefined') {
+    return;
+  }
+
   L.Control.SelectionLegend = L.Control.extend({
 
     initialize: function(plugin) {
@@ -35,22 +39,18 @@
       var controlTpl = '<span id="mapHead">{title}</span>' +
       //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
         '<ul id="selection-list"></ul>' +
-        '<div class="legend-swatches">' + //bar
+        '<div class="legend-swatches">' +
           '{legendSwatches}' +
         '</div>' +
-        '<div class="legend-values">' + //values
+        '<div class="legend-values">' +
           '<span class="legend-value left">{lowValue}</span>' +
           '<span class="arrow left"></span>' +
           '<span class="legend-value right">{highValue}</span>' +
           '<span class="arrow right"></span>' +
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
-      //---#1 GoalDependendMapColor---start---------------------------------------------------------------------------------------------------------------
-      //var swatchWidth = 100 / this.plugin.options.colorRange.length;
-      var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
-      //var swatches = this.plugin.options.colorRange.map(function(swatchColor) {
-      var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) {
-      //---#1 GoalDependendMapColor---stop----------------------------------------------------------------------------------------------------------------
+      var swatchWidth = 100 / this.plugin.options.colorRange.length;
+      var swatches = this.plugin.options.colorRange.map(function(swatchColor) {
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
