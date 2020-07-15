@@ -344,7 +344,7 @@ opensdg.autotrack = function(preset, category, action, label) {
             }
           });
         }
-
+        console.log("plugin",plugin);
         // Calculate the ranges of values, years and colors.
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
         plugin.colorScale = chroma.scale(plugin.options.colorRange)
