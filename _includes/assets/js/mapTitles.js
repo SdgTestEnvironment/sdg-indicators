@@ -11,7 +11,7 @@ opensdg.maptitles = function(indicatorId) {
   }
   else if(indicatorId == "indicator_9-5-1"){
 
-    this.mapTitle = translations.t("roportion of r&d expenditures to gdp")
+    this.mapTitle = translations.t("proportion of r&d expenditures to gdp")
     this.mapUnit = translations.t("%")
   }
 
