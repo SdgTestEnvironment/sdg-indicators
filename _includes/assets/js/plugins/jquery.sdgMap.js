@@ -320,9 +320,9 @@
         var stop = plugin.indicatorId.indexOf("-");
         var goal = plugin.indicatorId.slice(start, stop);
 
-        plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)])
+        plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
           .domain(plugin.valueRange)
-          .classes(plugin.options.colorRange[parseInt(goal)].length);
+          .classes(plugin.options.colorRange[parseInt(goal)-1].length);
         plugin.years = _.uniq(availableYears).sort();
         plugin.currentYear = plugin.years[0];
 
