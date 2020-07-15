@@ -347,13 +347,19 @@ opensdg.autotrack = function(preset, category, action, label) {
         console.log("plugin",plugin);
         // Calculate the ranges of values, years and colors.
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
+
+        //#1 map color depending on goal --- start ---
         var start = plugin.indicatorId.indexOf("_") + 1;
         var stop = plugin.indicatorId.indexOf("-");
         var goal = plugin.indicatorId.slice(start, stop);
 
+
+        //plugin.colorScale = chroma.scale(plugin.options.colorRange)
         plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
           .domain(plugin.valueRange)
+          //.classes(plugin.options.colorRange.length);
           .classes(plugin.options.colorRange[parseInt(goal)-1].length);
+          // --- stop ---
         plugin.years = _.uniq(availableYears).sort();
         plugin.currentYear = plugin.years[0];
 
@@ -739,7 +745,7 @@ opensdg.maptitles = function(indicatorId) {
   }
   else if(indicatorId == "indicator_9-5-1"){
 
-    this.mapTitle = translations.t("roportion of r&d expenditures to gdp")
+    this.mapTitle = translations.t("proportion of r&d expenditures to gdp")
     this.mapUnit = translations.t("%")
   }
 
