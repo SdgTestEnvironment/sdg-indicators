@@ -107,7 +107,7 @@ menu:
 
 
 footer_menu:
-  - path: https://www.destatis.de/DE/Service/Kontakt/Kontakt.html #mailto:my-email-address@example.com
+  - path: https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
     translation_key: menu.contact_us
   - path: https://twitter.com/destatis?lang=de
     translation_key: general.twitter
@@ -172,7 +172,7 @@ map_options:
                ["#E6F0F5", "#B3D2E2", "#80B4CE", "#4D95BA", "#1A77A7", "#00689D", "#00537E", "#003E5E", "#002A3F", "#00151F"],
                ["#E8EDF0", "#BAC8D2", "#8CA4B5", "#5E7F97", "#305A79", "#19486A", "#143A55", "#0F2B40", "#0A1D2A", "#050E15"]]
   # --- stop ---
-  
+
   # Set the color for boundaries that have no data.
   noValueColor: '#f0f0f0'
   # For documentation on the style options below, see here:
