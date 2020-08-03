@@ -8,22 +8,11 @@
             {% if site.footer_menu %}
               {% for item in site.footer_menu %}
                 <li>
-                {%- if item.de -%}
-                  {%- if page.language == "de" -%}
-                    {%- assign item_path = item.de -%}
-                  {%- else -%}
-                    {%- assign item_path = item.en -%}
-                  {%- endif -%}
-                  <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
-
-
-                {% elsif item.path contains ":" %}
+                {% if item.path contains ":" %}
                   <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
-
                   {%- assign item_path = item.path -%}
                   {%- assign item_path_first = item_path | slice: 0 %}
-
                   {%- if item_path_first == '/' -%}
                     {%- assign item_path = item_path | slice: 1, item_path.size -%}
                   {%- endif -%}
