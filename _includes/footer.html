@@ -14,7 +14,7 @@
                   {% else %}
                     {%- assign item_path = item.path %}
                   {% endif %}
-                  <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
+                  <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
                   {%- assign item_path = item.path -%}
                   {%- assign item_path_first = item_path | slice: 0 %}
