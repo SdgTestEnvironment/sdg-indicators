@@ -9,6 +9,7 @@
               {% for item in site.footer_menu %}
                 <li>
                 {% if item.pathes %}
+                  console.log(page.language)
                   {% assign item_path = item.pathes.page.language %}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
 
