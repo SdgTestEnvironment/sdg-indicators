@@ -8,14 +8,19 @@
             {% if site.footer_menu %}
               {% for item in site.footer_menu %}
                 <li>
-                {% if item.path contains ":" %}
-                  {% if item.translation_key contains "contact_us" %}
-                    {%- assign item_path = page.t.menu.contactPath %}
-                  {% else %}
-                    {%- assign item_path = item.path %}
-                  {% endif %}
+                {% if item.pathes %}
+                  {% for language in item.pathes %}
+                    {% if language == page.language %}
+                      {% assign item_path = item.pathes.language %}
+                    {% endif %}
+                  {% enfor %}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
+
+
+                {% elsif item.path contains ":" %}
+                  <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
+
                   {%- assign item_path = item.path -%}
                   {%- assign item_path_first = item_path | slice: 0 %}
 
