@@ -10,9 +10,9 @@
                 <li>
                 {% if item.pathes %}
                   {% for language in item.pathes %}
-                    {% if language == page.language %}
-                      {% assign item_path = item.pathes.language %}
-                    {% endif %}
+                    {%- if language == page.language -%}
+                      {%- assign item_path = item.pathes.language -%}
+                    {%- endif -%}
                   {% endfor %}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
 
