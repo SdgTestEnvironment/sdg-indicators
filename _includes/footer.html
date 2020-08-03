@@ -8,12 +8,12 @@
             {% if site.footer_menu %}
               {% for item in site.footer_menu %}
                 <li>
-                {% if item.pathes %}
-                  {% if page.language == "de" %}
-                    {% assign item_path = item.pathes.de.path %}
-                  {% else %}
-                    {% assign item_path = item.pathes.en.path %}
-                  {% endif %}
+                {%- if item.de -%}
+                  {%- if page.language == "de" -%}
+                    {%- assign item_path = item.de -%}
+                  {%- else -%}
+                    {%- assign item_path = item.en -%}
+                  {%- endif -%}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
 
 
