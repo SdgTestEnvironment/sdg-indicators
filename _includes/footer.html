@@ -9,18 +9,20 @@
               {% for item in site.footer_menu %}
                 <li>
                 {% if item.path contains ":" %}
+                  {% if item.translation_key contains "contact_us" %}
+                    {%- assign item_path = "contactPath" | t %}
+                  {% else %}
+                    {%- assign item_path = item.path %}
+                  {% endif %}
                   <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
-                  {% if item.translation_key contains "contact_us" %}
-                    {%- assign item_path = "test" %}
-                  {% else %}
-                    {%- assign item_path = item.path -%}
-                    {%- assign item_path_first = item_path | slice: 0 %}
-                    {%- if item_path_first == '/' -%}
-                      {%- assign item_path = item_path | slice: 1, item_path.size -%}
-                    {%- endif -%}
-                    <a href="{{ page.baseurl }}{{ item_path }}">{{ item.translation_key | t }}</a>
-                  {% endif %}
+                  {%- assign item_path = item.path -%}
+                  {%- assign item_path_first = item_path | slice: 0 %}
+
+                  {%- if item_path_first == '/' -%}
+                    {%- assign item_path = item_path | slice: 1, item_path.size -%}
+                  {%- endif -%}
+                  <a href="{{ page.baseurl }}{{ item_path }}">{{ item.translation_key | t }}</a>
                 {% endif %}
                 </li>
               {% endfor %}
