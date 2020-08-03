@@ -10,7 +10,7 @@
                 <li>
                 {% if item.path contains ":" %}
                   {% if item.translation_key contains "contact_us" %}
-                    {%- assign item_path = "contactPath" | t %}
+                    {%- assign item_path = page.t.menu.contactPath %}
                   {% else %}
                     {%- assign item_path = item.path %}
                   {% endif %}
