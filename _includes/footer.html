@@ -12,7 +12,7 @@
                   <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
                   {% if item.translation_key contains "contact_us" %}
-                    {%- assign item_path = item.path | t %}
+                    {%- assign item_path = "test" %}
                   {% else %}
                     {%- assign item_path = item.path -%}
                     {%- assign item_path_first = item_path | slice: 0 %}
