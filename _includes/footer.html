@@ -13,7 +13,7 @@
                     {% if language == page.language %}
                       {% assign item_path = item.pathes.language %}
                     {% endif %}
-                  {% enfor %}
+                  {% endfor %}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
 
 
