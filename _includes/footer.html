@@ -9,8 +9,11 @@
               {% for item in site.footer_menu %}
                 <li>
                 {% if item.pathes %}
-                  console.log(page.language)
-                  {% assign item_path = item.pathes.page.language %}
+                  {% if page.language == "de" %}
+                    {% assign item_path = item.pathes.de.path %}
+                  {% else %}
+                    {% assign item_path = item.pathes.en.path %}
+                  {% endif %}
                   <a href="{{ item_path }}" target="_blank">{{ item.translation_key | t }}</a>
 
 
