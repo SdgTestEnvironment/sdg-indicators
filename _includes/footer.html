@@ -11,7 +11,8 @@
                 {% if item.path contains ":" %}
                   <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% elsif item.path contains "menu." %}
-                  <a href="{{ item.path | t }}" target="_blank">{{ item.translation_key | t }}</a>
+                  {{ assign item_path = item.path | t }}
+                  <a href="{{ item_path | t }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
                   {%- assign item_path = item.path -%}
                   {%- assign item_path_first = item_path | slice: 0 %}
