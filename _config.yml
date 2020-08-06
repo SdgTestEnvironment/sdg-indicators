@@ -106,6 +106,7 @@ menu:
 
 
 
+
 footer_menu:
   - path: https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
     translation_key: menu.contact_us
