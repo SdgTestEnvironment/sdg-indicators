@@ -8,13 +8,10 @@
             {% if site.footer_menu %}
               {% for item in site.footer_menu %}
                 <li>
+                {% assign item_path = item.path | t %}
                 {% if item.path contains ":" %}
                   <a href="{{ item.path }}" target="_blank">{{ item.translation_key | t }}</a>
-                {% elsif item.path contains "menu." %}
-                  {{ assign item_path = item.path | t }}
-                  <a href="{{ item_path | t }}" target="_blank">{{ item.translation_key | t }}</a>
                 {% else %}
-                  {%- assign item_path = item.path -%}
                   {%- assign item_path_first = item_path | slice: 0 %}
                   {%- if item_path_first == '/' -%}
                     {%- assign item_path = item_path | slice: 1, item_path.size -%}
