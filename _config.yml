@@ -107,7 +107,7 @@ menu:
 
 
 footer_menu:
-  - path: menu.contactPath #https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
+  - path: https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
     translation_key: menu.contact_us
   - path: https://twitter.com/destatis?lang=de
     translation_key: general.twitter
