@@ -105,9 +105,8 @@ menu:
     translation_key: menu.facts_dns
 
 
-
 footer_menu:
-  - path: https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
+  - path: menu.contactPath #https://www.destatis.de/DE/Service/Kontakt/Kontakt.html
     translation_key: menu.contact_us
   - path: https://twitter.com/destatis?lang=de
     translation_key: general.twitter
