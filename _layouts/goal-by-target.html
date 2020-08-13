@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | group_by: 'target_number' %}
+  {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | sort: 'indicator_sort_order' | group_by: 'target_id' %}
   {% for group in goal_indicators %}
     {% assign target = group.name | sdg_lookup %}
     <div class="indicator-cards target col-md-6">
