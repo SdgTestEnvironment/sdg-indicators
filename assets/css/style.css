@@ -183,45 +183,18 @@ body.contrast-high footer a:visited {
     background: #0275d8; }
 
 .breadcrumb {
-  margin-bottom: 0;
-  background-color: white;
-  padding: 0; }
+  margin-bottom: 15px; }
   .breadcrumb a {
-    color: #333; }
+    color: #285f8f;
+    text-decoration: underline; }
   .breadcrumb > .active {
     display: inline;
     color: #333; }
-  .breadcrumb > li {
-    position: relative; }
-  .breadcrumb > li + li {
-    margin-left: 10px;
-    padding-left: 17px; }
-  .breadcrumb > li + li::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -4px;
-    width: 7px;
-    height: 7px;
-    margin: auto 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border: solid;
-    border-width: 1px 1px 0 0;
-    border-color: #333;
-    padding: 0; }
 
 body.contrast-high .breadcrumb {
-  background: black; }
+  background: white; }
   body.contrast-high .breadcrumb li, body.contrast-high .breadcrumb a {
-    color: white; }
-  body.contrast-high .breadcrumb a:hover {
-    color: yellow; }
-  body.contrast-high .breadcrumb > li + li::before {
-    border-color: white; }
+    color: black !important; }
 
 #main-content .collapsible {
   border-top: 1px solid #e0e0e0;
@@ -264,20 +237,9 @@ body.contrast-high .breadcrumb {
   margin-top: 1.5rem;
   margin-right: 0.8rem;
   border: none !important;
-  background: #00703c !important;
-  color: white !important;
-  box-shadow: 0 2px 0 #002d18;
-  border-radius: 0;
-  position: relative; }
-  .btn-download:hover, .btn-download:active {
-    background: #005a30 !important; }
-  .btn-download:visited {
-    color: white !important; }
-  .btn-download:active {
-    top: 2px; }
-  .btn-download:focus {
-    background: #fd0 !important;
-    color: #333 !important; }
+  background: #0F8243 !important; }
+  .btn-download:hover, .btn-download:active, .btn-download:focus {
+    background: #0b5d30 !important; }
 
 h5.download {
   font-weight: bold; }
@@ -300,9 +262,6 @@ h5 + .btn-download {
   .zip-download-container #zip-download-info {
     margin-top: 5px;
     margin-left: 10px; }
-
-#selectionsChart .btn-download, #selectionsTable .btn-download {
-  float: left; }
 
 body.contrast-high .btn {
   background: white !important;
@@ -627,9 +586,6 @@ body.contrast-high #zip-download-info {
     background-color: rgba(150, 150, 150, 0.6);
     padding: 0;
     width: 300px; }
-    @media only screen and (max-width: 680px) {
-      #main-content #map .selection-legend {
-        display: none; } }
     #main-content #map .selection-legend .legend-swatches {
       height: 10px; }
       #main-content #map .selection-legend .legend-swatches .legend-swatch {
@@ -742,15 +698,6 @@ body.contrast-high #main-content .nav-tabs .nav-item.active a {
 body.contrast-high a.nav-link:focus {
   background: white;
   color: black; }
-
-.card .card-title {
-  border-top: 2px solid;
-  border-color: #ccc;
-  padding-top: 7px; }
-.card img {
-  max-width: 100%; }
-.card .btn {
-  white-space: normal; }
 
 #accessibility-nav {
   padding-top: 20px;
@@ -995,9 +942,6 @@ header .container {
     clear: both;
     float: right;
     margin-bottom: 20px; }
-    @media only screen and (max-width: 768px) {
-      .navbar #search {
-        margin-bottom: 0; } }
     .navbar #search label {
       position: absolute;
       top: 5px;
@@ -1008,7 +952,6 @@ header .container {
     .navbar #search input {
       padding: 5px;
       padding-left: 5px;
-      padding-right: 45px;
       width: 240px;
       height: 34px;
       transition: width 0.4s;
@@ -1016,7 +959,6 @@ header .container {
       font-size: 16px; }
 
 #search-btn {
-  line-height: 15px;
   height: 34px; }
 
 .table .table-value {
@@ -1056,8 +998,6 @@ header .container {
           color: #E5E6E7;
           display: block;
           padding: 15px; }
-          .navbar .top-level li span[data-target="search"] {
-            text-transform: capitalize; }
         .navbar .top-level li button {
           color: #E5E6E7;
           display: block;
@@ -1083,13 +1023,13 @@ header .container {
           padding: 6px 0 6px;
           color: #E5E6E7;
           font-size: 15px; }
-          .navbar ul.navbar-nav li a:hover, .navbar ul.navbar-nav li a:focus {
+          .navbar ul.navbar-nav li a:hover {
             color: #E5E6E7; }
-        .navbar ul.navbar-nav li.nav-link.active a {
+        .navbar ul.navbar-nav li.active a {
+          border: none;
           color: white;
-          background: #58595B;
           font-weight: bold; }
-          .navbar ul.navbar-nav li.nav-link.active a:hover {
+          .navbar ul.navbar-nav li.active a:hover {
             color: white; }
         .navbar ul.navbar-nav li:last-child {
           padding-bottom: 10px; }
@@ -1455,18 +1395,10 @@ footer {
     right: 0;
     display: inline;
     font-size: 12px; }
-    #main-content.goal-indicators .indicator-cards span.status.complete {
-      color: black;
-      border: none; }
-    #main-content.goal-indicators .indicator-cards span.status.inprogress {
-      color: black;
-      border: none; }
+    #main-content.goal-indicators .indicator-cards span.status.complete, #main-content.goal-indicators .indicator-cards span.status.inprogress {
+      color: white; }
     #main-content.goal-indicators .indicator-cards span.status.notstarted {
-      color: black;
-      border: none; }
-    #main-content.goal-indicators .indicator-cards span.status.notapplicable {
-      color: black;
-      border: none; }
+      border: 1px solid black; }
 #main-content.goal-indicators .indicator-cards .tags {
   padding: 0;
   margin: 6px 10px 0 0;
@@ -1521,8 +1453,6 @@ footer {
     margin-top: 2rem !important; }
 #main-content #selectionsTable {
   padding-bottom: 20px; }
-  #main-content #selectionsTable.table-has-no-data #selectionTableFooter {
-    display: none; }
   #main-content #selectionsTable div.dataTables_wrapper {
     overflow-x: auto; }
     #main-content #selectionsTable div.dataTables_wrapper .row {
@@ -1553,8 +1483,6 @@ footer {
       margin: 0 0 5px; }
 #main-content #selectionsChart {
   padding-bottom: 20px; }
-  #main-content #selectionsChart.chart-has-no-data #selectionChartFooter {
-    display: none; }
 #main-content #selectionChartFooter {
   font-size: 12px;
   line-height: 1.2;
@@ -1683,17 +1611,16 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
     width: 40px;
     text-align: center;
     font-size: 16px; }
+    #main-content .statuses > div .status.notstarted {
+      border: 1px solid black;
+      color: black; }
     #main-content .statuses > div .status.complete {
-      border: none;
       color: black; }
     #main-content .statuses > div .status.inprogress {
-      border: none;
       color: black; }
     #main-content .statuses > div .status.notstarted {
-      border: none;
       color: black; }
     #main-content .statuses > div .status.notapplicable {
-      border: none;
       color: black; }
 #main-content .value {
   color: #333;
@@ -1772,8 +1699,6 @@ body.contrast-high .notapplicable {
   background-color: #B7B7B7;
   background: #B7B7B7;
   color: black !important; }
-body.contrast-high .reporting-status-description {
-  color: white; }
 
 #jump-to-search a {
   cursor: pointer; }
@@ -1817,57 +1742,6 @@ body.contrast-high #search-results .search-result .content {
     background-position: right 60px top;
     background-size: 180px;
     background-repeat: no-repeat; } }
-
-.layout-goal-by-target-vertical .tags {
-  padding: 0;
-  margin: 6px 10px 0 0;
-  list-style-type: none; }
-  .layout-goal-by-target-vertical .tags li {
-    margin-right: 6px;
-    padding: 4px 6px;
-    display: inline;
-    border-radius: 10px; }
-.layout-goal-by-target-vertical .goal-target, .layout-goal-by-target-vertical .goal-target > div {
-  margin-bottom: 20px; }
-.layout-goal-by-target-vertical .goal-target::after {
-  content: "";
-  height: 1px;
-  width: 84%;
-  border-bottom: 1px solid #ccc;
-  margin: 0 auto;
-  padding-bottom: 10px; }
-.layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards a {
-  padding: 0; }
-.layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column .status {
-  position: static;
-  display: inline-block;
-  margin-top: 10px;
-  margin-bottom: 10px; }
-@media only screen and (min-width: 992px) {
-  .layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column {
-    text-align: right; }
-    .layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column .status {
-      position: absolute;
-      right: 15px;
-      margin-top: 0;
-      margin-bottom: 0; } }
-
-.layout-frontpage-alt .frontpage-goals-grid {
-  margin: 40px 0 20px 0;
-  border-top: 2px solid #ccc; }
-@media only screen and (min-width: 992px) {
-  .layout-frontpage-alt .goal-tiles .goal-tile {
-    width: 11%; } }
-.layout-frontpage-alt .frontpage-cards {
-  margin-top: 40px; }
-  .layout-frontpage-alt .frontpage-cards .row {
-    margin-bottom: 20px; }
-
-.layout-goals .goals-page-description {
-  margin-bottom: 20px; }
-
-.layout-goals.contrast-high .goals-page-description {
-  color: white; }
 
 /**
  * custom.scss

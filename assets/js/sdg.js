@@ -1452,7 +1452,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination).sort();
+  var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
   }
@@ -2838,25 +2838,16 @@ $(function() {
 });
 $(function() {
 
-  // @deprecated start
-  if (typeof translations.search === 'undefined') {
-    translations.search = { search: 'Search' };
-  }
-  if (typeof translations.general === 'undefined') {
-    translations.general = { hide: 'Hide' };
-  }
-  // @deprecated end
-
   var topLevelSearchLink = $('.top-level span:eq(1), .top-level button:eq(1)');
 
   var resetForSmallerViewport = function() {
     topLevelSearchLink.text('Search');
     $('.top-level li').removeClass('active');
     $('.top-level span').removeClass('open');
-  };
-
+  };  
+  
   var topLevelMenuToggle = document.querySelector("#menuToggle");
-
+  
   topLevelMenuToggle.addEventListener("click", function(){
     setTopLevelMenuAccessibilityActions();
   });
@@ -2898,16 +2889,16 @@ $(function() {
 
     if(target === 'search') {
       $(this).toggleClass('open');
-
+      
       if($(this).hasClass('open') || !wasVisible) {
-        $(this).text(translations.general.hide);
+        $(this).text('Hide');
       } else {
-        $(this).text(translations.search.search);
+        $(this).text('Search');
       }
     } else {
       // menu click, always hide search:
       topLevelSearchLink.removeClass('open');
-      topLevelSearchLink.text(translations.search.search);
+      topLevelSearchLink.text('Search');
     }
 
     if(!wasVisible) {
