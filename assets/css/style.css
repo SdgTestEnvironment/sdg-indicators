@@ -705,6 +705,15 @@ body.contrast-high a.nav-link:focus {
   background: white;
   color: black; }
 
+.card .card-title {
+  border-top: 2px solid;
+  border-color: #ccc;
+  padding-top: 7px; }
+.card img {
+  max-width: 100%; }
+.card .btn {
+  white-space: normal; }
+
 #accessibility-nav {
   padding-top: 20px;
   padding-right: 10px;
@@ -1406,10 +1415,18 @@ footer {
     right: 0;
     display: inline;
     font-size: 12px; }
-    #main-content.goal-indicators .indicator-cards span.status.complete, #main-content.goal-indicators .indicator-cards span.status.inprogress {
-      color: white; }
+    #main-content.goal-indicators .indicator-cards span.status.complete {
+      color: black;
+      border: none; }
+    #main-content.goal-indicators .indicator-cards span.status.inprogress {
+      color: black;
+      border: none; }
     #main-content.goal-indicators .indicator-cards span.status.notstarted {
-      border: 1px solid black; }
+      color: black;
+      border: none; }
+    #main-content.goal-indicators .indicator-cards span.status.notapplicable {
+      color: black;
+      border: none; }
 #main-content.goal-indicators .indicator-cards .tags {
   padding: 0;
   margin: 6px 10px 0 0;
@@ -1622,16 +1639,17 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
     width: 40px;
     text-align: center;
     font-size: 16px; }
-    #main-content .statuses > div .status.notstarted {
-      border: 1px solid black;
-      color: black; }
     #main-content .statuses > div .status.complete {
+      border: none;
       color: black; }
     #main-content .statuses > div .status.inprogress {
+      border: none;
       color: black; }
     #main-content .statuses > div .status.notstarted {
+      border: none;
       color: black; }
     #main-content .statuses > div .status.notapplicable {
+      border: none;
       color: black; }
 #main-content .value {
   color: #333;
@@ -1710,6 +1728,8 @@ body.contrast-high .notapplicable {
   background-color: #B7B7B7;
   background: #B7B7B7;
   color: black !important; }
+body.contrast-high .reporting-status-description {
+  color: white; }
 
 #jump-to-search a {
   cursor: pointer; }
@@ -1753,6 +1773,51 @@ body.contrast-high #search-results .search-result .content {
     background-position: right 60px top;
     background-size: 180px;
     background-repeat: no-repeat; } }
+
+.layout-goal-by-target-vertical .tags {
+  padding: 0;
+  margin: 6px 10px 0 0;
+  list-style-type: none; }
+  .layout-goal-by-target-vertical .tags li {
+    margin-right: 6px;
+    padding: 4px 6px;
+    display: inline;
+    border-radius: 10px; }
+.layout-goal-by-target-vertical .goal-target, .layout-goal-by-target-vertical .goal-target > div {
+  margin-bottom: 20px; }
+.layout-goal-by-target-vertical .goal-target::after {
+  content: "";
+  height: 1px;
+  width: 84%;
+  border-bottom: 1px solid #ccc;
+  margin: 0 auto;
+  padding-bottom: 10px; }
+.layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards a {
+  padding: 0; }
+.layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column .status {
+  position: static;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+@media only screen and (min-width: 992px) {
+  .layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column {
+    text-align: right; }
+    .layout-goal-by-target-vertical #main-content.goal-indicators .indicator-cards .status-column .status {
+      position: absolute;
+      right: 15px;
+      margin-top: 0;
+      margin-bottom: 0; } }
+
+.layout-frontpage-alt .frontpage-goals-grid {
+  margin: 40px 0 20px 0;
+  border-top: 2px solid #ccc; }
+@media only screen and (min-width: 992px) {
+  .layout-frontpage-alt .goal-tiles .goal-tile {
+    width: 11%; } }
+.layout-frontpage-alt .frontpage-cards {
+  margin-top: 40px; }
+  .layout-frontpage-alt .frontpage-cards .row {
+    margin-bottom: 20px; }
 
 /**
  * custom.scss
