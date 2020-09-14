@@ -50,7 +50,7 @@ Neben den eigenen Inhalten bietet das Statistische Bundesamt Querverweise („ex
 <b>Das Statistische Bundesamt nimmt den Schutz Ihrer Privat- und Persönlichkeitssphäre ernst und beachtet die datenschutzrechtlichen Bestimmungen. Ihr Vertrauen ist uns wichtig!</b>
 
 Mit diesen Hinweisen kommen wir unseren Informationspflichten nach Artikel 13 der Datenschutz-Grundverordnung (DS-GVO) bei der Erhebung personenbezogener Daten nach.
-Beim Zugriff auf die DNS-Online Plattform werden vom Statistischen Bundesamt keine personenbezogenen Daten erhoben. Sie nutzen allerdings die Dienste des Anbieters GitHub.  Die Datenschutzerklärung von GitHub finden Sie unter [https://help.github.com/en/articles/github-privacy-statement](https://help.github.com/en/articles/github-privacy-statement).
+Beim Zugriff auf die SDG-Online Plattform werden vom Statistischen Bundesamt keine personenbezogenen Daten erhoben. Sie nutzen allerdings die Dienste des Anbieters GitHub.  Die Datenschutzerklärung von GitHub finden Sie unter [https://help.github.com/en/articles/github-privacy-statement](https://help.github.com/en/articles/github-privacy-statement).
 
 Als Website-Besucher werden technische Informationen, auch die IP-Adresse, erfasst: diese kann ggf. ein personenbezogenes Datum sein. Personenbezogene Daten werden erfasst, wenn Sie einen Account anlegen.
 
