@@ -19,11 +19,11 @@ Die SDG-Online Plattform
 Darüber hinaus wurde die SDG-Online Plattform nach anerkannten internationalen Richtlinien entwickelt, insbesondere hinsichtlich frei zugänglicher Daten und Software.
 
 
-### Quellen
+## Quellen
 
 Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Online Plattformen, insbesondere als Open-Source Lösung zur Darstellung von SDG-Indikatoren. Vorreiter in diesem Bereich sind die USA und Großbritannien. Die aktuelle Version der deutschen Online Plattform wurde auf der Grundlage einer früheren Version der britischen Online Plattform entwickelt und an die Bedürfnisse der deutschen Statistik angepasst. Der Projektcode für die SDG-Online Plattform ist im folgenden [GitHub Repository](https://github.com/G205SDGs/sdg-indicators) öffentlich zugänglich.
 
-Eine universelle Version der von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Online Plattform ist verfügbar. Auf diesem basiert die SDG-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA und in Großbritannien sowie mit der entsprechenden [Open SDG-Projektdokumentation](https://open-sdg.readthedocs.io/en/latest/) vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Online Plattform erstellt werden kann.
+Eine universelle Version der von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Online Plattform ist verfügbar. Auf diesem basiert die SDG-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA und in Großbritannien sowie mit der entsprechenden [Open-SDG Projektdokumentation](https://open-sdg.readthedocs.io/en/latest/) vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Online Plattform erstellt werden kann.
 
 - [SDG-Berichtsplattform USA](https://sdg.data.gov/)
 
@@ -31,7 +31,7 @@ Eine universelle Version der von den USA, Großbritannien und dem Center for Ope
 
 Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an [Open SDG GitHub](https://github.com/open-sdg/open-sdg/issues).
 
-### Genutzte Software
+## Genutzte Software
 
 #### Back-end IT-Anforderungen:
 - GitHub: Hosting der Website, die für die Programmierung von Projekten mit dem Git-Versionskontrollsystem entwickelt wurde.
@@ -42,7 +42,7 @@ Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SD
 - Chartist: JavaScript Bibliothek
 - Bootstrap: framework CSS
 
-### Aktuelle Darstellung
+## Aktuelle Darstellung
 
 Aufgrund von technischen Schwierigkeiten finden sich auf der aktuellen Version der SDG-Online Plattform einige suboptimale Darstellungen, auf die an dieser Stelle hingewiesen wird:
 - Ganze Zahlen werden ohne Nachkommastelle dargestellt (auch in Zeitreihen, in denen andere Zahlenwerte mit Nachkommastelle vorhanden sind).
