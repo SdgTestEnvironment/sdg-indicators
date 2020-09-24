@@ -15,12 +15,12 @@ Beide Indikatorensets sind nach den 17 Zielen der Agenda 2030 der Vereinten Nati
 <div class="container" style="padding-left: 0px;">
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIcons.PNG" alt="Abbildung 1: SDG Icons" class="responsiveImg" style="width: 100%;">
-<small> Abb. 1: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG Online Plattform für Deutschland</b></small>
+<small> Abb. 1: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG-Online Plattform für Deutschland</b></small>
 </div>
 
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 2: SDG Icons inverted" class="responsiveImg" style="width: 100%;">
-<small> Abb. 2: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS Online Plattform</b></small>
+<small> Abb. 2: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS-Online Plattform</b></small>
 </div>
 
 </div>
