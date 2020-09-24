@@ -4,13 +4,14 @@
   {% assign language = page.language %}
 {% endif %}
 
-{% if page.environment == 'staging' %}
+{% if site.environment == 'staging' %}
   {% assign baseurl = 'g205sdgs.github.io/sdg-indicators' %}
 {% else %}
   {% assign baseurl = 'sdg-indikatoren.de' %}
 {% endif %}
 
-
+<p> {{ site.environment }} </p>
+<p> {{ baseurl }} </p>
 <!---Indicator page-->
 <!---3 Btns if there is a corresponding Indicator-->
 
