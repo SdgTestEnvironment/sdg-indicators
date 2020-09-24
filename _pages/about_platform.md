@@ -4,7 +4,7 @@ permalink: /about_platform/
 layout: page
 ---
 
-Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen ([Sustainable Development Goals, SDGs](https://www.un.org/sustainabledevelopment/sustainable-development-goals/)) der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der [deutschen Nachhaltigkeitsstrategie](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie) (DNS). Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
+Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen ([Sustainable Development Goals, SDGs](https://www.un.org/sustainabledevelopment/sustainable-development-goals/)) der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der [Deutschen Nachhaltigkeitsstrategie](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie) (DNS). Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
 
 Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
 
