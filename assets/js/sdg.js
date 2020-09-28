@@ -1303,13 +1303,29 @@ function getDataBySelectedFields(rows, selectedFields) {
  * @param {string} currentTitle
  * @param {Array} allTitles Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
+ * @param {String} selectedSeries
  * @return {String} Updated title
  */
-function getChartTitle(currentTitle, allTitles, selectedUnit) {
+function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
   var newTitle = currentTitle;
   if (allTitles && allTitles.length > 0) {
-    var unitTitle = allTitles.find(function(title) { return title.unit === selectedUnit });
-    newTitle = (unitTitle) ? unitTitle.title : allTitles[0].title;
+    var matchedTitle;
+    if (selectedUnit && selectedSeries) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.unit === selectedUnit && title.series === selectedSeries;
+      });
+    }
+    if (!matchedTitle && selectedSeries) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.series === selectedSeries;
+      });
+    }
+    if (!matchedTitle && selectedUnit) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.unit === selectedUnit;
+      });
+    }
+    newTitle = (matchedTitle) ? matchedTitle.title : allTitles[0].title;
   }
   return newTitle;
 }
@@ -1426,6 +1442,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderColor: color,
     backgroundColor: background,
     pointBorderColor: color,
+    pointBackgroundColor: background,
     borderDash: border,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
@@ -1439,7 +1456,6 @@ function getBaseDataset() {
   return Object.assign({}, {
     fill: false,
     pointHoverRadius: 5,
-    pointBackgroundColor: '#FFFFFF',
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true
@@ -1497,6 +1513,7 @@ function makeHeadlineDataset(years, rows, label) {
     borderColor: getHeadlineColor(),
     backgroundColor: getHeadlineColor(),
     pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
   });
@@ -1511,8 +1528,8 @@ function footerFields(model) {
   fields[translations.indicator.source] = model.dataSource;
   fields[translations.indicator.geographical_area] = model.geographicalArea;
   fields[translations.indicator.unit_of_measurement] = model.measurementUnit;
-  fields[translations.indicator.copyright] = model.copyright;
   fields[translations.indicator.footnote] = model.footnote;
+  fields[translations.indicator.copyright] = model.copyright;
   // Filter out the empty values.
   return _.pick(fields, _.identity);
 }
