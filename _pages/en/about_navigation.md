@@ -48,7 +48,7 @@ Below the tab “National Metadata” the national time series that are availabl
 
 Every SDG indicator is administrated by one or more Custodian Agencies. After consultation with the IAEG-SDG, a statistical UN working group, the Custodian Agencies define the methodological guidelines for the calculation of the respective SDG indicator and publish those as global metadata. The global metadata can be found below the tab of the same name (figure 3). Here, the target is added in full length, as well as the [Tier classification](https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/) of the SDG indicator.
 
-Below „Data Sources“ there are web links to the organisation:s, that provided the data for the time series, and – if possible ¬– there are web links directly to the particular data source.
+Below „Data Sources“ there are web links to the organisation:s, that provided the data for the time series, and – if possible – there are web links directly to the particular data source.
 
 ## Comparison of SDG and DNS indicators
 
