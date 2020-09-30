@@ -4,7 +4,7 @@ permalink: /about_platform/
 layout: page
 ---
 
-Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen ([Sustainable Development Goals, SDGs](https://www.un.org/sustainabledevelopment/sustainable-development-goals/)) der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der [deutschen Nachhaltigkeitsstrategie](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie) (DNS). Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
+Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen ([Sustainable Development Goals, SDGs](https://www.un.org/sustainabledevelopment/sustainable-development-goals/)) der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der [Deutschen Nachhaltigkeitsstrategie](https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie) (DNS). Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
 
 Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
 
@@ -15,12 +15,12 @@ Beide Indikatorensets sind nach den 17 Zielen der Agenda 2030 der Vereinten Nati
 <div class="container" style="padding-left: 0px;">
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIcons.PNG" alt="Abbildung 1: SDG Icons" class="responsiveImg" style="width: 100%;">
-<small> Abb. 1: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG Online Plattform für Deutschland</b></small>
+<small> Abb. 1: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG-Online Plattform für Deutschland</b></small>
 </div>
 
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 2: SDG Icons inverted" class="responsiveImg" style="width: 100%;">
-<small> Abb. 2: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS Online Plattform</b></small>
+<small> Abb. 2: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS-Online Plattform</b></small>
 </div>
 
 </div>
