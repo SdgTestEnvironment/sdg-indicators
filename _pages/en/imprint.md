@@ -20,8 +20,14 @@ Bonn Branch Office<br>
 Graurheindorfer Straße 198<br>
 D-53117 Bonn
 <br><br>
+<b>Postal address</b><br>
+Federal Statistical Office<br>
+Bonn Branch Office<br>
+Postfach 17 03 77<br>
+D-53029 Bonn
+<br><br>
 tel:	+49 (0)611 75-8855<br>
-e-mail:	[sdg-indicators@destatis.de](mailto:sdg-indicators@destatis.de)
+e-mail:	[sdg-indicators@destatis.de](mailto:sdg-indicators@destatis.de)<br>
 <br><br>
 <b>Editorial office</b><br>
 e-mail:	[sdg-indicators@destatis.de](mailto:sdg-indicators@destatis.de)
