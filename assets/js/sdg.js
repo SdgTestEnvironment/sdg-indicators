@@ -2569,7 +2569,15 @@ var indicatorView = function (model, options) {
       'tabindex': 0
     }));
   }
-
+  
+  this.tableHasData = function(table) {
+    for (var i = 0; i < table.data.length; i++) {
+      if (table.data[i].length > 1) {
+        return true;
+      }
+    }
+    return false;
+  }
   this.createTable = function(table, indicatorId, el) {
 
     options = options || {};
@@ -2579,7 +2587,7 @@ var indicatorView = function (model, options) {
     // clear:
     $(el).html('');
 
-    if(table && table.data.length) {
+    if(table && this.tableHasData(table)) {
       var currentTable = $('<table />').attr({
         'class': table_class,
         'width': '100%'
@@ -2621,9 +2629,12 @@ var indicatorView = function (model, options) {
 
       // initialise data table
       initialiseDataTable(el);
+      
+      $(el).removeClass('table-has-no-data');
 
     } else {
-      $(el).append($('<p />').text('There is no data for this breakdown.'));
+      $(el).append($('<h3 />').text(translations.indicator.data_not_available));
+      $(el).addClass('table-has-no-data');
     }
   };
 
