@@ -127,7 +127,7 @@ plugins:
   - jekyll-open-sdg-plugins
 
 # Use a remote Jekyll theme.
-remote_theme: open-sdg/open-sdg@07a121a626fd75cebfed0454d16d3a0c1177d9a7
+remote_theme: open-sdg/open-sdg@series-column
 #remote_theme: open-sdg/open-sdg@1.1.0
 #remote_theme: open-sdg/open-sdg@master
 #remote_theme: brockfanning/open-sdg@goal-page-status-css
