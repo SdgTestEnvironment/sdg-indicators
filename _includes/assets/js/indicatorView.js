@@ -654,7 +654,15 @@ var indicatorView = function (model, options) {
       'tabindex': 0
     }));
   }
-
+  
+  this.tableHasData = function(table) {
+    for (var i = 0; i < table.data.length; i++) {
+      if (table.data[i].length > 1) {
+        return true;
+      }
+    }
+    return false;
+  }
   this.createTable = function(table, indicatorId, el) {
 
     options = options || {};
@@ -664,7 +672,7 @@ var indicatorView = function (model, options) {
     // clear:
     $(el).html('');
 
-    if(table && table.data.length) {
+    if(table && this.tableHasData(table)) {
       var currentTable = $('<table />').attr({
         'class': table_class,
         'width': '100%'
