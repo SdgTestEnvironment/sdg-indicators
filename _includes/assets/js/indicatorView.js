@@ -714,9 +714,12 @@ var indicatorView = function (model, options) {
 
       // initialise data table
       initialiseDataTable(el);
+      
+      $(el).removeClass('table-has-no-data');
 
     } else {
-      $(el).append($('<p />').text('There is no data for this breakdown.'));
+      $(el).append($('<h3 />').text(translations.indicator.data_not_available));
+      $(el).addClass('table-has-no-data');
     }
   };
 
