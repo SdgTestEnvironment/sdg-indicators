@@ -119,6 +119,13 @@ footer_menu:
 # non-global metadata tab.
 non_global_metadata: indicator.national_metadata
 
+search_index_extra_fields:
+  - indicator_number
+  - national_indicator_available
+  - indicator_name
+  - target_name
+  - data_keywords
+  - graph_title
 
 hide_empty_metadata: true
 
