@@ -1719,7 +1719,7 @@
         
         {
           "id": "16-1-1",
-          "title": "Anzahl der Opfer vorsätzlicher Tötung je 100&nbsp;000 Einwohner, nach Geschlecht und Alter",
+          "title": "Number of victims of intentional homicide per 100,000 population, by sex and age",
           "description": "",
           "keywords": "Indikator 16.1.1, Opfer vorsätzlicher Tötung, Mord, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC), Weltgesundheitsorganisation (WHO)",
           "href": "/sdg-indicators/en/16-1-1",
@@ -1727,7 +1727,7 @@
         },
         {
           "id": "16-1-2",
-          "title": "Konfliktbezogene Todesfälle je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Todesursache",
+          "title": "Conflict-related deaths per 100,000 population, by sex, age and cause",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-1-2",
@@ -1735,7 +1735,7 @@
         },
         {
           "id": "16-1-3",
-          "title": "Anteil der Bevölkerung, der in den vorangegangenen 12 Monaten (a) physischer Gewalt, (b) psychischer Gewalt und/oder (c) sexueller Gewalt ausgesetzt war",
+          "title": "Proportion of population subjected to (a) physical violence, (b) psychological violence and (c) sexual violence in the previous 12 months",
           "description": "",
           "keywords": "Indikator 16.1.3, Bevölkerung, die physischer Gewalt ausgesetzt ist, Bevölkerung, die Opfer von Straftaten wurde, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-1-3",
@@ -1743,7 +1743,7 @@
         },
         {
           "id": "16-1-4",
-          "title": "Anteil der Bevölkerung, der sich in seiner Wohnumgebung allein sicher fühlt",
+          "title": "Proportion of population that feel safe walking alone around the area they live",
           "description": "",
           "keywords": "Indikator 16.1.4, Bevölkerung, in deren Wohnumgebung es keine Kriminalität, Gewalt oder Vandalismus gibt, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-1-4",
@@ -1751,7 +1751,7 @@
         },
         {
           "id": "16-2-1",
-          "title": "Anteil der Kinder im Alter von 1-17 Jahren, die im vorangegangenen Monat körperlicher Züchtigung und/oder psychischer Aggression durch Betreuungspersonen ausgesetzt waren",
+          "title": "Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
           "description": "",
           "keywords": "Indikator 16.2.1, Akute Kindeswohlgefährdung mit Anzeichen für physischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für physischen oder psychischen Missbrauch, Akute Kindeswohlgefährdung mit Anzeichen für psychischen Missbrauch, Kinderhilfswerk",
           "href": "/sdg-indicators/en/16-2-1",
@@ -1759,7 +1759,7 @@
         },
         {
           "id": "16-2-2",
-          "title": "Anzahl der Opfer von Menschenhandel je 100&nbsp;000 Einwohner, nach Geschlecht, Alter und Form der Ausbeutung",
+          "title": "Number of victims of human trafficking per 100,000 population, by sex, age and form of exploitation",
           "description": "",
           "keywords": "Indikator 16.2.2, Ausbeutung der Arbeitskraft, Sexuelle Ausbeutung, Opfer von Menschenhandel, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-2-2",
@@ -1767,7 +1767,7 @@
         },
         {
           "id": "16-2-3",
-          "title": "Anteil junger Frauen und Männer im Alter von 18-29 Jahren, die vor Vollendung des 18. Lebensjahrs sexuelle Gewalt erlebt haben",
+          "title": "Proportion of young women and men aged 18‑29 years who experienced sexual violence by age 18",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-2-3",
@@ -1775,7 +1775,7 @@
         },
         {
           "id": "16-3-1",
-          "title": "Anteil der Opfer von Gewalttaten in den vorangegangenen 12 Monaten, die den zuständigen Behörden oder anderen offiziell anerkannten Mechanismen zur Konfliktbeilegung diese Gewalt angezeigt haben",
+          "title": "Proportion of victims of violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms",
           "description": "",
           "keywords": "Indikator 16.3.1, Anzeigequote bei Körperverletzung, Anzeigequote bei Raub, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-3-1",
@@ -1783,7 +1783,7 @@
         },
         {
           "id": "16-3-2",
-          "title": "Nicht strafrechtlich verurteilte Inhaftierte im Verhältnis zur gesamten Gefängnisbevölkerung",
+          "title": "Unsentenced detainees as a proportion of overall prison population",
           "description": "",
           "keywords": "Indikator 16.3.1, Nicht-verurteilte Gefangene, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-3-2",
@@ -1791,7 +1791,7 @@
         },
         {
           "id": "16-3-3",
-          "title": "Anteil der Bevölkerung, der in den vorangegangenen zwei Jahren eine Streitigkeit durchlebt und einen formellen oder informellen Streitbeilegungsmechanismus in Anspruch genommen hat, nach Art des Mechanismus",
+          "title": "Proportion of the population who have experienced a dispute in the past two years and who accessed a formal or informal dispute resolution mechanism, by type of mechanism",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-3-3",
@@ -1799,7 +1799,7 @@
         },
         {
           "id": "16-4-1",
-          "title": "Gesamtwert der ein- und ausgehenden illegalen Finanzströme (in aktuellen US-Dollar)",
+          "title": "Total value of inward and outward illicit financial flows (in current United States dollars)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-4-1",
@@ -1807,7 +1807,7 @@
         },
         {
           "id": "16-4-2",
-          "title": "Anteil der beschlagnahmten, aufgefundenen oder abgegebenen Waffen, deren illegaler Ursprung oder Kontext im Einklang mit internationalen Übereinkünften von einer zuständigen Behörde rückverfolgt oder nachgewiesen wurde",
+          "title": "Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments",
           "description": "",
           "keywords": "Indikator 16.4.2, Sichergestellte Waffen und Waffenteile, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC), Büro der Vereinten Nationen für Abrüstungsfragen (UNODA), Bundeskriminalamt (BKA)",
           "href": "/sdg-indicators/en/16-4-2",
@@ -1815,7 +1815,7 @@
         },
         {
           "id": "16-5-1",
-          "title": "Anteil der Personen, die in den vorangegangenen 12 Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatten und eine Bestechungszahlung an diesen geleistet haben oder von diesem dazu aufgefordert wurden",
+          "title": "Proportion of persons who had at least one contact with a public official and who paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months",
           "description": "",
           "keywords": "Indikator 16.5.1, Bevölkerung, die den Eindruck hatte, dass Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Tatverdächtige Privatpersonen (Geber) im Rahmen von Korruptionsstraftaten, Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNODC)",
           "href": "/sdg-indicators/en/16-5-1",
@@ -1823,7 +1823,7 @@
         },
         {
           "id": "16-5-2",
-          "title": "Anteil der Unternehmen, die in den vorangegangenen 12 Monaten mindestens einen Kontakt mit einem öffentlichen Bediensteten hatten und eine Bestechungszahlung an diesen geleistet haben oder von diesem dazu aufgefordert wurden",
+          "title": "Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months",
           "description": "",
           "keywords": "Indikator 16.5.2, Unternehmen, die den Eindruck hatten, Beschäftigte des öffentlichen Dienstes bestechlich waren (während ihrer Interaktionen mit öffentlichen Einrichtungen in den vergangenen zwei Jahren), Weltbank (WB), Büro der Vereinten Nationen für Drogen- und Verbrechensbekämpfung (UNDOC)",
           "href": "/sdg-indicators/en/16-5-2",
@@ -1831,7 +1831,7 @@
         },
         {
           "id": "16-6-1",
-          "title": "Primärausgaben des Staates im Verhältnis zum ursprünglich genehmigten Budget, nach Sektor (oder nach Haushaltscode oder Ähnlichem)",
+          "title": "Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-6-1",
@@ -1839,7 +1839,7 @@
         },
         {
           "id": "16-6-2",
-          "title": "Anteil der Bevölkerung, der mit seiner letzten Erfahrung mit öffentlichen Dienstleistungen zufrieden war",
+          "title": "Proportion of population satisfied with their last experience of public services",
           "description": "",
           "keywords": "Indikator 16.6.2, Bevölkerung, die mit den Behördendiensten während der letzten zwei Jahre zufrieden war, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/en/16-6-2",
@@ -1847,7 +1847,7 @@
         },
         {
           "id": "16-7-1",
-          "title": "Anteil der Stellen in nationalen und lokalen öffentlichen Institutionen, einschließlich (a) Gesetzgebungsorganen, (b) des öffentlichen Dienstes und (c) Rechtsprechungsorganen, im Vergleich zur nationalen Stellenverteilung, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppen",
+          "title": "Proportions of positions in national and local public institutions, including (a) the legislatures; (b) the public service; and (c) the judiciary, compared to national distributions, by sex, age, persons with disabilities and population groups",
           "description": "",
           "keywords": "Indikator 16.7.1, Weibliche Beschäftigte des öffentlichen Dienstes, Weibliche Erwerbstätige insgesamt, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/en/16-7-1",
@@ -1855,7 +1855,7 @@
         },
         {
           "id": "16-7-2",
-          "title": "Anteil der Bevölkerung, der der Ansicht ist, dass die Entscheidungsfindung inklusiv und bedarfsorientiert ist, nach Geschlecht, Alter, Menschen mit Behinderungen und Bevölkerungsgruppen",
+          "title": "Proportion of population who believe decision-making is inclusive and responsive, by sex, age, disability and population group",
           "description": "",
           "keywords": "Indikator 16.7.2, Bevölkerung, die in den letzten zwei Jahren ihre Erfahrungen mit öffentlichen Einrichtungen als diskriminierungsfrei erachtet, Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/en/16-7-2",
@@ -1863,7 +1863,7 @@
         },
         {
           "id": "16-8-1",
-          "title": "Mitglieder- und Stimmrechtsanteil von Entwicklungsländern in internationalen Organisationen",
+          "title": "Proportion of members and voting rights of developing countries in international organizations",
           "description": "",
           "keywords": "Indikator 16.8.1",
           "href": "/sdg-indicators/en/16-8-1",
@@ -1871,7 +1871,7 @@
         },
         {
           "id": "16-9-1",
-          "title": "Anteil der Kinder unter 5 Jahren, deren Geburt von einer Zivilbehörde registriert wurde, nach Alter",
+          "title": "Proportion of children under 5 years of age whose births have been registered with a civil authority, by age",
           "description": "",
           "keywords": "Indikator 16.9.1, Kinder unter 5 Jahren, deren Geburt von einer Zivilbehörde registriert worden ist, Kinderhilfswerk der Vereinten Nationen (UNICEF), Statistischen Division der UN (UNSD)",
           "href": "/sdg-indicators/en/16-9-1",
@@ -1879,7 +1879,7 @@
         },
         {
           "id": "16-a-1",
-          "title": "Existenz unabhängiger nationaler Menschenrechtsinstitutionen, die mit den 'Pariser Grundsätzen' übereistimmen",
+          "title": "Existence of independent national human rights institutions in compliance with the Paris Principles",
           "description": "",
           "keywords": "Indikator 16.a.1, Mitgliedschaft GANHRI (Kategorie A), Hoher Kommissar der Vereinten Nationen für Menschenrechte (OHCHR)",
           "href": "/sdg-indicators/en/16-a-1",
@@ -1887,7 +1887,7 @@
         },
         {
           "id": "16-b-1",
-          "title": "Anteil der Bevölkerung, der sich in den vorangegangenen 12 Monaten wegen eines nach den internationalen Menschenrechtsgesetzen verbotenen Diskriminierungsgrunds persönlich diskriminiert oder belästigt gefühlt hat",
+          "title": "Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-b-1",
@@ -1895,7 +1895,7 @@
         },
         {
           "id": "16-10-1",
-          "title": "Anzahl der bestätigten Fälle von Tötung, Entführung, gewaltsamem Verschwindenlassen, willkürlicher Inhaftierung und Folter von Journalisten und zugehörigem Medienpersonal, Gewerkschaftern und Menschenrechtsanwälten in den vorangegangenen 12 Monaten",
+          "title": "Number of verified cases of killing, kidnapping, enforced disappearance, arbitrary detention and torture of journalists, associated media personnel, trade unionists and human rights advocates in the previous 12 months",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/16-10-1",
@@ -1903,7 +1903,7 @@
         },
         {
           "id": "16-10-2",
-          "title": "Anzahl der Staaten mit verfassungsmäßigen, gesetzlichen und/oder politischen Garantien für den öffentlichen Zugang zu Informationen",
+          "title": "Number of countries that adopt and implement constitutional, statutory and/or policy guarantees for public access to information",
           "description": "",
           "keywords": "Indikator; 16.10.2, Öffentlicher Zugang zu Informationen, Organisation der Vereinten Nationen für Bildung, Wissenschaft und Kultur - Statistische Behörde (UNESCO-UIS)",
           "href": "/sdg-indicators/en/16-10-2",
@@ -1919,7 +1919,7 @@
         
         {
           "id": "17-1-1",
-          "title": "Gesamte Staatseinnahmen im Verhältnis zum BIP, nach Quelle",
+          "title": "Total government revenue as a proportion of GDP, by source",
           "description": "",
           "keywords": "Indikator 17.1.1, Verhältnis der Gesamteinnahmen des Staates zum BIP, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/en/17-1-1",
@@ -1927,7 +1927,7 @@
         },
         {
           "id": "17-1-2",
-          "title": "Durch inländische Steuern finanzierter Anteil des Staatshaushalts",
+          "title": "Proportion of domestic budget funded by domestic taxes",
           "description": "",
           "keywords": "Indikator 17.1.2, Anteil der Staatsausgaben, die durch Steuern finanziert werden, Anteil der Staatsausgaben, die durch Steuern und Sozialversicherungsausgaben finanziert werden, Internationale Währungsfonds (IMF)",
           "href": "/sdg-indicators/en/17-1-2",
@@ -1935,7 +1935,7 @@
         },
         {
           "id": "17-2-1",
-          "title": "Öffentliche Netto-Entwicklungsausgaben, insgesamt und an die am wenigsten entwickelten Länder, im Verhältnis zum Bruttonationaleinkommen (BNE) der Geberländer des Ausschusses für Entwicklungshilfe der Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
+          "title": "Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)",
           "description": "",
           "keywords": "Indikator 17.2.1, Verhältnis der bilateralen sowie multilateralen öffentlichen Nettoentwicklungslausgaben für die am wenigsten entwickelten Länder (LDCs) zum BNE, Verhältnis der öffentlichen Nettoentwicklungsausgaben zum BNE, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/en/17-2-1",
@@ -1943,7 +1943,7 @@
         },
         {
           "id": "17-3-1",
-          "title": "Ausländische Direktinvestitionen (FDI), öffentliche Entwicklungszusammenarbeit (ODA) und Süd-Süd-Zusammenarbeit im Verhältnis zum Bruttonationaleinkommen (BNE)",
+          "title": "Foreign direct investment (FDI), official development assistance and South-South cooperation as a proportion of gross national income (GNI)",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-3-1",
@@ -1951,7 +1951,7 @@
         },
         {
           "id": "17-3-2",
-          "title": "Umfang der Rücküberweisungen im Verhältnis zum gesamten BIP, in US-Dollar",
+          "title": "Volume of remittances (in United States dollars) as a proportion of total GDP",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-3-2",
@@ -1959,7 +1959,7 @@
         },
         {
           "id": "17-4-1",
-          "title": "Schuldendienst im Verhältnis zu den Waren- und Dienstleistungsexporten",
+          "title": "Debt service as a proportion of exports of goods and services",
           "description": "",
           "keywords": "Indikator 17.2.1, Weltbank (WB)",
           "href": "/sdg-indicators/en/17-4-1",
@@ -1967,7 +1967,7 @@
         },
         {
           "id": "17-5-1",
-          "title": "Anzahl der Staaten, die Investitionsförderprogramme für die Entwicklungsländer, einschließlich der am wenigsten entwickelten Länder, beschließen und umsetzen",
+          "title": "Number of countries that adopt and implement investment promotion regimes for developing countries, including LDCs",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-5-1",
@@ -1975,7 +1975,7 @@
         },
         {
           "id": "17-6-1",
-          "title": "Anzahl der Verträge von Festnetz-Breitbandanschlüssen je 100 Einwohner, nach Geschwindigkeit",
+          "title": "Fixed Internet broadband subscriptions per 100 inhabitants, by speed",
           "description": "",
           "keywords": "Indikator 17.6.1, Internet-Breitband-Zugänge, Internationale Fernmeldeunion (ITU)",
           "href": "/sdg-indicators/en/17-6-1",
@@ -1991,7 +1991,7 @@
         },
         {
           "id": "17-8-1",
-          "title": "Anteil der Internetnutzerinnen und -nutzer",
+          "title": "Proportion of individuals using the Internet",
           "description": "",
           "keywords": "Indikator 17.8.1, Bevölkerung, die das Internet in den letzten drei Monaten genutzt hat, Internationale Fernmeldeunion (ITU)",
           "href": "/sdg-indicators/en/17-8-1",
@@ -1999,7 +1999,7 @@
         },
         {
           "id": "17-9-1",
-          "title": "Wert der finanziellen und technischen Hilfe (einschließlich durch Nord-Süd-, Süd-Süd- und Dreieckskooperationen) in Entwicklungsländern, in US-Dollar",
+          "title": "Dollar value of financial and technical assistance (including through North-South, South-South and triangular cooperation) committed to developing countries",
           "description": "",
           "keywords": "Indikator 17.9.1, Verpflichtungen (ODA und OOF) an Entwicklungsländer zum Kapazitätenaufbau und nationalen Planungen (ohne Süd-Süd-Kooperationen), Bruttozahlungen (ODA und OOF) an Entwicklungsländer zum Kapazitätenaufbau und nationalen Planungen (ohne Süd-Süd-Kooperationen), Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)",
           "href": "/sdg-indicators/en/17-9-1",
@@ -2007,7 +2007,7 @@
         },
         {
           "id": "17-10-1",
-          "title": "Weltweit gewichtete Durchschnittszölle",
+          "title": "Worldwide weighted tariff-average",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-10-1",
@@ -2015,7 +2015,7 @@
         },
         {
           "id": "17-11-1",
-          "title": "Anteil der Entwicklungsländer und der am wenigsten entwickelten Länder an den weltweiten Exporten",
+          "title": "Developing countries’ and least developed countries’ share of global exports",
           "description": "",
           "keywords": "Indikator 17.11.1, Welthandelsorganisation (WTO), Internationales Handelszentrum (ITC), Welthandels- und Entwicklungskonferenz (UNCTAD)",
           "href": "/sdg-indicators/en/17-11-1",
@@ -2023,7 +2023,7 @@
         },
         {
           "id": "17-12-1",
-          "title": "Gewichtete Durchschnittszölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer",
+          "title": "Weighted average tariffs faced by developing countries, least developed countries and small island developing States",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-12-1",
@@ -2031,7 +2031,7 @@
         },
         {
           "id": "17-13-1",
-          "title": "Makroökonomisches Dashboard",
+          "title": "Macroeconomic Dashboard",
           "description": "",
           "keywords": "Indikator 17.13.1, Jährliche Wachstumsrate des realen BIP, Verfügbares Einkommen privater Haushalte, Konsum privater Haushalte, Schuldenstand des öffentlichen Gesamthaushaltes, Finanzierungssaldo des Staates, Bruttoanlageinvestitionen, Geleistete Arbeitsstunden der Arbeitnehmer, Geleistete Arbeitsstunden der Erwerbstätigen, Arbeitsproduktivität je geleisteter Arbeitnehmerstunde, Arbeitsproduktivität je geleisteter Erwerbstätigenstunde, Erwerbstätige, Reales BIP pro Kopf, Außenbeitrag, Weltbank (WB)",
           "href": "/sdg-indicators/en/17-13-1",
@@ -2039,7 +2039,7 @@
         },
         {
           "id": "17-14-1",
-          "title": "Anzahl der Staaten mit Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung",
+          "title": "Number of countries with mechanisms in place to enhance policy coherence of sustainable development",
           "description": "",
           "keywords": "Indikator 17.14.1, Nationale nachhaltige Entwicklungsstrategie, Umweltprogramm der Vereinten Nationen (UNEP)",
           "href": "/sdg-indicators/en/17-14-1",
@@ -2047,7 +2047,7 @@
         },
         {
           "id": "17-15-1",
-          "title": "Umfang der Nutzung ländereigener Ergebnisrahmenwerke und Planungsinstrumente durch Geber von Entwicklungszusammenarbeit",
+          "title": "Extent of use of country-owned results frameworks and planning tools by providers of development cooperation",
           "description": "",
           "keywords": "Indikator 17.15.1, Anteil neuer Entwicklungsmaßnahmen in den länderspezifischen Ergebnisframeworks von Gebern von Entwicklungszusammenarbeit, Anteil der Ergebnisindikatoren in den länderspezifischen Ergebnisframeworks von Gebern von Entwicklungszusammenarbeit, Anteil von Ergebnisindikatoren, die von Gebern von Entwicklungszusammenarbeit unter Einsatz von Regierungsquellen und Monitoringsystemen überwacht werden, Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD),  Entwicklungsprogramm der Vereinten Nationen (UNDP)",
           "href": "/sdg-indicators/en/17-15-1",
@@ -2055,7 +2055,7 @@
         },
         {
           "id": "17-16-1",
-          "title": "Anzahl der Staaten, die Fortschritte bei der Überwachung von Multi-Stakeholder-Rahmenwerken zur Wirksamkeit von Entwicklungszusammenarbeit berichten, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen",
+          "title": "Number of countries reporting progress in multi-stakeholder development effectiveness monitoring frameworks that support the achievement of the sustainable development goals",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-16-1",
@@ -2063,7 +2063,7 @@
         },
         {
           "id": "17-17-1",
-          "title": "Zugesagte Beträge für öffentlich-private Partnerschaften im Bereich Infrastruktur, in US-Dollar",
+          "title": "Amount in United States dollars committed to public-private partnerships for infrastructure",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-17-1",
@@ -2071,7 +2071,7 @@
         },
         {
           "id": "17-18-1",
-          "title": "Statistischer Kapazitätsindikator für die Überwachung der Nachhaltigkeitsziele",
+          "title": "Statistical capacity indicator for Sustainable Development Goal monitoring",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-18-1",
@@ -2079,7 +2079,7 @@
         },
         {
           "id": "17-18-2",
-          "title": "Anzahl der Staaten, deren nationale statistische Gesetzgebung mit den Grundprinzipien der amtlichen Statistik übereinstimmt",
+          "title": "Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official Statistics",
           "description": "",
           "keywords": "Indikator 17.18.2, Länder mit nationaler statistischer Gesetzgebung im Einklang mit den Grundsätzen der amtlichen Statistik, PARIS21",
           "href": "/sdg-indicators/en/17-18-2",
@@ -2087,7 +2087,7 @@
         },
         {
           "id": "17-18-3",
-          "title": "Anzahl der Staaten mit einem vollständig finanzierten und in Umsetzung befindlichen nationalen statistischen Plan, nach Finanzierungsquelle",
+          "title": "Number of countries with a national statistical plan that is fully funded and under implementation, by source of funding",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-18-3",
@@ -2095,7 +2095,7 @@
         },
         {
           "id": "17-19-1",
-          "title": "Wert aller zur Verfügung gestellten Ressourcen zur Stärkung der statistischen Kapazitäten in Entwicklungsländern, in US-Dollar",
+          "title": "Dollar value of all resources made available to strengthen statistical capacity in developing countries",
           "description": "",
           "keywords": "Indikator 17.19.1, Finanzzusagen (ODA und OOF) zum Ausbau statistischer Kapazitäten in Entwicklungsländern, Bruttozahlungen (ODA und OOF) zum Ausbau statistischer Kapazitäten in Entwicklungsländern, PARIS21",
           "href": "/sdg-indicators/en/17-19-1",
@@ -2103,7 +2103,7 @@
         },
         {
           "id": "17-19-2",
-          "title": "Anteil der Staaten, die (a) in den vorangegangenen 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und (b) bei der Geburtenregistrierung 100 Prozent und bei der Registrierung von Todesfällen 80 Prozent erreicht haben",
+          "title": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
           "description": "",
           "keywords": "Indikator 17.19.2, a) Durchführung mindestens einer Bevölkerungs- und Wohnungszählung in den letzten 10 Jahren, b) Registrierung der Geburten, c) Registrierung der Sterbefälle",
           "href": "/sdg-indicators/en/17-19-2",
