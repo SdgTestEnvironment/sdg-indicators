@@ -4,7 +4,7 @@ about: 'Dieses Issue wird angelegt, um einen Indikator als "zu prüfen" zu marki
 title: 'Indikator:'
 labels: ''
 assignees: ''
-project: 'test1'
+projects: 'test1'
 
 ---
 
