@@ -27,13 +27,13 @@
     styleNormal: {
       weight: 1,
       opacity: 1,
-      color: '#888',
+      color: '#888888',
       fillOpacity: 0.7
     },
     styleHighlighted: {
       weight: 1,
       opacity: 1,
-      color: '#111',
+      color: '#111111',
       fillOpacity: 0.7
     },
     styleStatic: {
@@ -57,6 +57,24 @@
   function Plugin(element, options) {
 
     this.element = element;
+
+    // Support colorRange map option in string format.
+    if (typeof options.mapOptions.colorRange === 'string') {
+      var colorRangeParts = options.mapOptions.colorRange.split('.'),
+          colorRange = window,
+          overrideColorRange = true;
+      for (var colorRangePart of colorRangeParts) {
+        if (typeof colorRange[colorRangePart] !== 'undefined') {
+          colorRange = colorRange[colorRangePart];
+        }
+        else {
+          overrideColorRange = false;
+          break;
+        }
+      }
+      options.mapOptions.colorRange = (overrideColorRange) ? colorRange : defaults.colorRange;
+    }
+
     this.options = $.extend(true, {}, defaults, options.mapOptions);
     this.mapLayers = [];
     this.indicatorId = options.indicatorId;
@@ -73,13 +91,16 @@
       this.mapLayers[i] = $.extend(true, {}, mapLayerDefaults, options.mapLayers[i]);
     }
 
+    // Sort the map layers according to zoom levels.
+    this.mapLayers.sort(function(a, b) {
+      if (a.min_zoom === b.min_zoom) {
+        return a.max_zoom - b.max_zoom;
+      }
+      return a.min_zoom - b.min_zoom;
+    });
+
     this._defaults = defaults;
     this._name = 'sdgMap';
-
-    //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
-    this.timeSeriesName = opensdg.maptitles(this.indicatorId)[0];
-    this.unitName = opensdg.maptitles(this.indicatorId)[1];
-    //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
 
     this.init();
   }
@@ -235,7 +256,9 @@
       this.map.addControl(L.control.scale({position: 'bottomright'}));
 
       // Add tile imagery.
-      L.tileLayer(this.options.tileURL, this.options.tileOptions).addTo(this.map);
+      if (this.options.tileURL && this.options.tileURL !== 'undefined' && this.options.tileURL != '') {
+        L.tileLayer(this.options.tileURL, this.options.tileOptions).addTo(this.map);
+      }
 
       // Because after this point, "this" rarely works.
       var plugin = this;
@@ -264,7 +287,37 @@
           geoJsons = [geoJsons];
         }
 
+        // Do a quick loop through to see which layers actually have data.
         for (var i = 0; i < geoJsons.length; i++) {
+          var layerHasData = true;
+          if (typeof geoJsons[i][0].features === 'undefined') {
+            layerHasData = false;
+          }
+          else if (!plugin.featuresShouldDisplay(geoJsons[i][0].features)) {
+            layerHasData = false;
+          }
+          if (layerHasData === false) {
+            // If a layer has no data, we'll be skipping it.
+            plugin.mapLayers[i].skipLayer = true;
+            // We also need to alter a sibling layer's min_zoom or max_zoom.
+            var hasLayerBefore = i > 0;
+            var hasLayerAfter = i < (geoJsons.length - 1);
+            if (hasLayerBefore) {
+              plugin.mapLayers[i - 1].max_zoom = plugin.mapLayers[i].max_zoom;
+            }
+            else if (hasLayerAfter) {
+              plugin.mapLayers[i + 1].min_zoom = plugin.mapLayers[i].min_zoom;
+            }
+          }
+          else {
+            plugin.mapLayers[i].skipLayer = false;
+          }
+        }
+
+        for (var i = 0; i < geoJsons.length; i++) {
+          if (plugin.mapLayers[i].skipLayer) {
+            continue;
+          }
           // First add the geoJson as static (non-interactive) borders.
           if (plugin.mapLayers[i].staticBorders) {
             var staticLayer = L.geoJson(geoJsons[i][0], {
@@ -313,22 +366,12 @@
             }
           });
         }
-        console.log("plugin",plugin);
+
         // Calculate the ranges of values, years and colors.
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
-
-        //#1 map color depending on goal --- start ---
-        var start = plugin.indicatorId.indexOf("_") + 1;
-        var stop = plugin.indicatorId.indexOf("-");
-        var goal = plugin.indicatorId.slice(start, stop);
-
-
-        //plugin.colorScale = chroma.scale(plugin.options.colorRange)
-        plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
+        plugin.colorScale = chroma.scale(plugin.options.colorRange)
           .domain(plugin.valueRange)
-          //.classes(plugin.options.colorRange.length);
-          .classes(plugin.options.colorRange[parseInt(goal)-1].length);
-          // --- stop ---
+          .classes(plugin.options.colorRange.length);
         plugin.years = _.uniq(availableYears).sort();
         plugin.currentYear = plugin.years[0];
 
@@ -339,7 +382,7 @@
         plugin.map.addControl(L.Control.zoomHome());
 
         // Add full-screen functionality.
-        plugin.map.addControl(new L.Control.Fullscreen());
+        plugin.map.addControl(new L.Control.FullscreenAccessible());
 
         // Add the year slider.
         plugin.map.addControl(L.Control.yearSlider({
@@ -357,7 +400,9 @@
         plugin.map.addControl(plugin.selectionLegend);
 
         // Add the search feature.
-        plugin.searchControl = new L.Control.Search({
+        plugin.searchControl = new L.Control.SearchAccessible({
+          textPlaceholder: 'Search map',
+          autoCollapseTime: 7000,
           layer: plugin.getAllLayers(),
           propertyName: 'name',
           marker: false,
@@ -368,7 +413,6 @@
               plugin.selectionLegend.addSelection(latlng.layer);
             }
           },
-          autoCollapse: true,
         });
         plugin.map.addControl(plugin.searchControl);
         // The search plugin messes up zoomShowHide, so we have to reset that
@@ -376,6 +420,11 @@
         var zoom = plugin.map.getZoom();
         plugin.map.setZoom(plugin.options.maxZoom);
         plugin.map.setZoom(zoom);
+
+        // Hide the loading image.
+        $('.map-loading-image').hide();
+        // Make the map unfocusable.
+        $('#map').removeAttr('tabindex');
 
         // The list of handlers to apply to each feature on a GeoJson layer.
         function onEachFeature(feature, layer) {
@@ -466,6 +515,15 @@
       display = display && typeof feature.properties.disaggregations !== 'undefined';
       return display;
     },
+
+    featuresShouldDisplay: function(features) {
+      for (var i = 0; i < features.length; i++) {
+        if (this.featureShouldDisplay(features[i])) {
+          return true;
+        }
+      }
+      return false;
+    }
   };
 
   // A really lightweight plugin wrapper around the constructor,

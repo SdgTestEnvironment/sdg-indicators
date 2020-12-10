@@ -7,6 +7,8 @@ var indicatorModel = function (options) {
   this.onFieldsComplete = new event(this);
   this.onUnitsComplete = new event(this);
   this.onUnitsSelectedChanged = new event(this);
+  this.onSeriesesComplete = new event(this);
+  this.onSeriesesSelectedChanged = new event(this);
   this.onFieldsStatusUpdated = new event(this);
   this.onFieldsCleared = new event(this);
   this.onSelectionUpdate = new event(this);
@@ -23,10 +25,6 @@ var indicatorModel = function (options) {
   this.chartTitles = options.chartTitles;
   this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
-  this.copyright = options.copyright;
-  this.dataSource = options.dataSource;
-  this.geographicalArea = options.geographicalArea;
-  this.footnote = options.footnote;
   this.startValues = options.startValues;
   this.showData = options.showData;
   this.selectedFields = [];
@@ -34,12 +32,17 @@ var indicatorModel = function (options) {
   this.selectedUnit = undefined;
   this.fieldsByUnit = undefined;
   this.dataHasUnitSpecificFields = false;
+  this.selectedSeries = undefined;
+  this.fieldsBySeries = undefined;
+  this.dataHasSeriesSpecificFields = false;
   this.fieldValueStatuses = [];
   this.validParentsByChild = {};
   this.hasGeoData = false;
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
+  this.graphAnnotations = options.graphAnnotations;
+  this.indicatorDownloads = options.indicatorDownloads;
 
   // calculate some initial values:
   this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
@@ -54,12 +57,21 @@ var indicatorModel = function (options) {
   else {
     this.hasUnits = false;
   }
+  if (helpers.SERIES_TOGGLE && helpers.dataHasSerieses(this.data)) {
+    this.hasSerieses = true;
+    this.serieses = helpers.getUniqueValuesByProperty(helpers.SERIES_COLUMN, this.data);
+    this.selectedSeries = this.serieses[0];
+    this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data);
+    this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
+  }
+  else {
+    this.hasSerieses = false;
+  }
   this.fieldItemStates = helpers.getInitialFieldItemStates(this.data, this.edgesData);
   this.validParentsByChild = helpers.validParentsByChild(this.edgesData, this.fieldItemStates, this.data);
   this.selectableFields = helpers.getFieldNames(this.fieldItemStates);
   this.allowedFields = helpers.getInitialAllowedFields(this.selectableFields, this.edgesData);
   this.data = helpers.prepareData(this.data);
-  this.footerFields = helpers.footerFields(this);
   this.colors = opensdg.chartColors(this.indicatorId);
   this.maxDatasetCount = 2 * this.colors.length;
   this.hasStartValues = Array.isArray(this.startValues) && this.startValues.length > 0;
@@ -86,28 +98,46 @@ var indicatorModel = function (options) {
   };
 
   this.updateChartTitle = function() {
-    this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit);
+    this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateSelectedUnit = function(selectedUnit) {
     this.selectedUnit = selectedUnit;
-
-    // if fields are dependent on the unit, reset:
     this.getData({
-      unitsChangeSeries: this.dataHasUnitSpecificFields
+      updateFields: this.dataHasUnitSpecificFields
     });
-
     this.onUnitsSelectedChanged.notify(selectedUnit);
+  };
+
+  this.updateSelectedSeries = function(selectedSeries) {
+    this.selectedSeries = selectedSeries;
+    this.getData({
+      updateFields: this.dataHasSeriesSpecificFields
+    });
+    this.onSeriesesSelectedChanged.notify(selectedSeries);
   };
 
   this.getData = function(options) {
     options = Object.assign({
       initial: false,
-      unitsChangeSeries: false
+      updateFields: false
     }, options);
 
-    var headlineWithoutUnit = helpers.getHeadline(this.selectableFields, this.data);
-    var headline = this.hasUnits ? helpers.getDataByUnit(headlineWithoutUnit, this.selectedUnit) : headlineWithoutUnit;
+    var headlineUnfiltered = helpers.getHeadline(this.selectableFields, this.data);
+    var headline;
+    if (this.hasUnits && !this.hasSerieses) {
+      headline = helpers.getDataByUnit(headlineUnfiltered, this.selectedUnit);
+    }
+    else if (this.hasSerieses && !this.hasUnits) {
+      headline = helpers.getDataBySeries(headlineUnfiltered, this.selectedSeries);
+    }
+    else if (this.hasSerieses && this.hasUnits) {
+      headline = helpers.getDataByUnit(headlineUnfiltered, this.selectedUnit);
+      headline = helpers.getDataBySeries(headline, this.selectedSeries);
+    }
+    else {
+      headline = headlineUnfiltered;
+    }
 
     // If this is the initial load, check for special cases.
     var selectionUpdateNeeded = false;
@@ -124,15 +154,38 @@ var indicatorModel = function (options) {
         else {
           // If our selected unit causes the headline to be empty, change it
           // to the first one available that would work.
-          if (headlineWithoutUnit.length > 0 && headline.length === 0) {
-            startingUnit = helpers.getFirstUnitInData(headlineWithoutUnit);
+          if (headlineUnfiltered.length > 0 && headline.length === 0) {
+            startingUnit = helpers.getFirstUnitInData(headlineUnfiltered);
           }
         }
         // Re-query the headline if needed.
         if (this.selectedUnit !== startingUnit) {
-          headline = helpers.getDataByUnit(headlineWithoutUnit, startingUnit);
+          headline = helpers.getDataByUnit(headlineUnfiltered, startingUnit);
         }
         this.selectedUnit = startingUnit;
+      }
+
+      // Decide on a starting series.
+      if (this.hasSerieses) {
+        var startingSeries = this.selectedSeries;
+        if (this.hasStartValues) {
+          var seriesInStartValues = helpers.getSeriesFromStartValues(this.startValues);
+          if (seriesInStartValues) {
+            startingSeries = seriesInStartValues;
+          }
+        }
+        else {
+          // If our selected series causes the headline to be empty, change it
+          // to the first one available that would work.
+          if (headlineUnfiltered.length > 0 && headline.length === 0) {
+            startingSeries = helpers.getFirstSeriesInData(headlineUnfiltered);
+          }
+        }
+        // Re-query the headline if needed.
+        if (this.selectedSeries !== startingSeries) {
+          headline = helpers.getDataBySeries(headlineUnfiltered, startingSeries);
+        }
+        this.selectedSeries = startingSeries;
       }
 
       // Decide on starting field values.
@@ -154,16 +207,25 @@ var indicatorModel = function (options) {
         units: this.units,
         selectedUnit: this.selectedUnit
       });
+
+      this.onSeriesesComplete.notify({
+        serieses: this.serieses,
+        selectedSeries: this.selectedSeries
+      });
     }
 
-    if (options.initial || options.unitsChangeSeries) {
+    if (options.initial || options.updateFields) {
       this.onFieldsComplete.notify({
         fields: helpers.fieldItemStatesForView(
           this.fieldItemStates,
           this.fieldsByUnit,
           this.selectedUnit,
           this.dataHasUnitSpecificFields,
-          this.selectedFields
+          this.fieldsBySeries,
+          this.selectedSeries,
+          this.dataHasSeriesSpecificFields,
+          this.selectedFields,
+          this.edgesData
         ),
         allowedFields: this.allowedFields,
         edges: this.edgesData,
@@ -180,6 +242,9 @@ var indicatorModel = function (options) {
     var filteredData = helpers.getDataBySelectedFields(this.data, this.selectedFields);
     if (this.hasUnits) {
       filteredData = helpers.getDataByUnit(filteredData, this.selectedUnit);
+    }
+    if (this.hasSerieses) {
+      filteredData = helpers.getDataBySeries(filteredData, this.selectedSeries);
     }
 
     filteredData = helpers.sortData(filteredData, this.selectedUnit);
@@ -214,10 +279,12 @@ var indicatorModel = function (options) {
       indicatorId: this.indicatorId,
       shortIndicatorId: this.shortIndicatorId,
       selectedUnit: this.selectedUnit,
-      footerFields: this.footerFields,
+      selectedSeries: this.selectedSeries,
       graphLimits: this.graphLimits,
       stackedDisaggregation: this.stackedDisaggregation,
-      chartTitle: this.chartTitle
+      graphAnnotations: this.graphAnnotations,
+      chartTitle: this.chartTitle,
+      indicatorDownloads: this.indicatorDownloads,
     });
   };
 };

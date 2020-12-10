@@ -34,10 +34,7 @@
     },
 
     onAdd: function() {
-      //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
-      //var controlTpl = '' +
-      var controlTpl = '<span id="mapHead">{title}</span>' +
-      //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
+      var controlTpl = '' +
         '<ul id="selection-list"></ul>' +
         '<div class="legend-swatches">' +
           '{legendSwatches}' +
@@ -57,21 +54,10 @@
         });
       }).join('');
       var div = L.DomUtil.create('div', 'selection-legend');
-
-      //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
-      var headline = this.plugin.timeSeriesName
-      headline += ', <br>' + this.plugin.unitName;
-      //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-
       div.innerHTML = L.Util.template(controlTpl, {
         lowValue: this.plugin.valueRange[0],
         highValue: this.plugin.valueRange[1],
         legendSwatches: swatches,
-
-        //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
-        title: headline,
-        //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-
       });
       return div;
     },
@@ -81,7 +67,7 @@
       var selectionTpl = '' +
         '<li class="{valueStatus}">' +
           '<span class="selection-name">{name}</span>' +
-          //'<span class="selection-value" style="left: {percentage}%;">{value}</span>' +
+          '<span class="selection-value" style="left: {percentage}%;">{value}</span>' +
           '<span class="selection-bar" style="width: {percentage}%;"></span>' +
           '<i class="selection-close fa fa-remove"></i>' +
         '</li>';
@@ -125,3 +111,6 @@
     return new L.Control.SelectionLegend(plugin);
   };
 }());
+© 2020 GitHub, Inc.
+Terms
+Priva

@@ -25,17 +25,6 @@ var indicatorView = function (model, options) {
       }
     });
 
-    $(view_obj._legendElement).on('click', 'li', function(e) {
-      $(this).toggleClass('notshown');
-
-      var ci = view_obj._chartInstance,
-          index = $(this).data('datasetindex'),
-          meta = ci.getDatasetMeta(index);
-
-      meta.hidden = meta.hidden === null? !ci.data.datasets[index].hidden : null;
-      ci.update();
-    });
-
     // Provide the hide/show functionality for the sidebar.
     $('.data-view .nav-link').on('click', function(e) {
       var $sidebar = $('.indicator-sidebar'),
@@ -80,8 +69,6 @@ var indicatorView = function (model, options) {
   this._model.onFieldsComplete.attach(function(sender, args) {
     view_obj.initialiseFields(args);
 
-    console.log("args", args);
-
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
       view_obj._mapView.initialise(args.indicatorId);
@@ -92,9 +79,18 @@ var indicatorView = function (model, options) {
     view_obj.initialiseUnits(args);
   });
 
+  if (this._model.onSeriesesComplete) {
+    this._model.onSeriesesComplete.attach(function(sender, args) {
+      view_obj.initialiseSerieses(args);
+    });
+  }
+
   this._model.onFieldsCleared.attach(function(sender, args) {
     $(view_obj._rootElement).find(':checkbox').prop('checked', false);
-    $(view_obj._rootElement).find('#clear').addClass('disabled').attr('aria-disabled', 'true');
+    $(view_obj._rootElement).find('#clear')
+      .addClass('disabled')
+      .attr('aria-disabled', 'true')
+      .attr('disabled', 'disabled');
 
     // reset available/unavailable fields
     updateWithSelectedFields();
@@ -104,10 +100,16 @@ var indicatorView = function (model, options) {
 
   this._model.onSelectionUpdate.attach(function(sender, args) {
     if (args.selectedFields.length) {
-      $(view_obj._rootElement).find('#clear').removeClass('disabled').attr('aria-disabled', 'false');
+      $(view_obj._rootElement).find('#clear')
+        .removeClass('disabled')
+        .attr('aria-disabled', 'false')
+        .removeAttr('disabled');
     }
     else {
-      $(view_obj._rootElement).find('#clear').addClass('disabled').attr('aria-disabled', 'true');
+      $(view_obj._rootElement).find('#clear')
+        .addClass('disabled')
+        .attr('aria-disabled', 'true')
+        .attr('disabled', 'disabled');
     }
 
     // loop through the available fields:
@@ -122,7 +124,14 @@ var indicatorView = function (model, options) {
       $(element).find('.bar .selected').css('width', width);
 
       // is this an allowed field:
-      $(element)[_.contains(args.allowedFields, currentField) ? 'removeClass' : 'addClass']('disallowed');
+      if (_.contains(args.allowedFields, currentField)) {
+        $(element).removeClass('disallowed');
+        $(element).find('> button').removeAttr('aria-describedby');
+      }
+      else {
+        $(element).addClass('disallowed');
+        $(element).find('> button').attr('aria-describedby', 'variable-hint-' + currentField);
+      }
     });
   });
 
@@ -139,6 +148,15 @@ var indicatorView = function (model, options) {
       // Indicate whether the fieldGroup had any data.
       var fieldGroupElement = $(view_obj._rootElement).find('.variable-selector[data-field="' + fieldGroup.field + '"]');
       fieldGroupElement.attr('data-has-data', fieldGroup.hasData);
+      var fieldGroupButton = fieldGroupElement.find('> button'),
+          describedByCurrent = fieldGroupButton.attr('aria-describedby') || '',
+          noDataHintId = 'no-data-hint-' + fieldGroup.field.replace(/ /g, '-');
+      if (!fieldGroup.hasData && !describedByCurrent.includes(noDataHintId)) {
+        fieldGroupButton.attr('aria-describedby', describedByCurrent + ' ' + noDataHintId);
+      }
+      else {
+        fieldGroupButton.attr('aria-describedby', describedByCurrent.replace(noDataHintId, ''));
+      }
 
       // Re-sort the items.
       view_obj.sortFieldGroup(fieldGroupElement);
@@ -169,6 +187,10 @@ var indicatorView = function (model, options) {
 
   $(this._rootElement).on('change', '#units input', function() {
     view_obj._model.updateSelectedUnit($(this).val());
+  });
+
+  $(this._rootElement).on('change', '#serieses input', function() {
+    view_obj._model.updateSelectedSeries($(this).val());
   });
 
   // generic helper function, used by clear all/select all and individual checkbox changes:
@@ -246,7 +268,7 @@ var indicatorView = function (model, options) {
       var template = _.template($("#item_template").html());
 
       if(!$('button#clear').length) {
-        $('<button id="clear" aria-disabled="true" class="disabled">' + translations.indicator.clear_selections + ' <i class="fa fa-remove"></i></button>').insertBefore('#fields');
+        $('<button id="clear" disabled="disabled" aria-disabled="true" class="disabled">' + translations.indicator.clear_selections + ' <i class="fa fa-remove"></i></button>').insertBefore('#fields');
       }
 
       $('#fields').html(template({
@@ -277,6 +299,24 @@ var indicatorView = function (model, options) {
     }
   };
 
+  this.initialiseSerieses = function(args) {
+    var templateElement = $('#series_template');
+    if (templateElement.length > 0) {
+      var template = _.template(templateElement.html()),
+          serieses = args.serieses || [],
+          selectedSeries = args.selectedSeries || null;
+
+      $('#serieses').html(template({
+        serieses: serieses,
+        selectedSeries: selectedSeries
+      }));
+
+      if(!serieses.length) {
+        $(this._rootElement).addClass('no-serieses');
+      }
+    }
+  };
+
   this.alterChartConfig = function(config, info) {
     opensdg.chartConfigAlterations.forEach(function(callback) {
       callback(config, info);
@@ -290,6 +330,7 @@ var indicatorView = function (model, options) {
   }
 
   this.updatePlot = function(chartInfo) {
+    this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
 
     if(chartInfo.selectedUnit) {
@@ -312,7 +353,6 @@ var indicatorView = function (model, options) {
     view_obj._chartInstance.update(1000, true);
 
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
-
     view_obj.updateChartDownloadButton(chartInfo.selectionsTable);
   };
 
@@ -360,16 +400,16 @@ var indicatorView = function (model, options) {
           }]
         },
         legendCallback: function(chart) {
-            var text = ['<ul id="legend">'];
-
-            _.each(chart.data.datasets, function(dataset, datasetIndex) {
-              text.push('<li data-datasetindex="' + datasetIndex + '">');
+            var text = [];
+            text.push('<h5 class="sr-only">' + translations.indicator.plot_legend_description + '</h5>');
+            text.push('<ul id="legend">');
+            _.each(chart.data.datasets, function(dataset) {
+              text.push('<li>');
               text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.borderColor + '">');
               text.push('</span>');
               text.push(translations.t(dataset.label));
               text.push('</li>');
             });
-
             text.push('</ul>');
             return text.join('');
         },
@@ -385,12 +425,16 @@ var indicatorView = function (model, options) {
       }
     };
     this.alterChartConfig(chartConfig, chartInfo);
+    if (this.isHighContrast()) {
+      this.updateGraphAnnotationColors('high', chartConfig);
+    }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
 
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
+      that.updateGraphAnnotationColors(e.detail, view_obj._chartInstance);
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.fontColor = tickColor;
       view_obj._chartInstance.options.scales.yAxes[0].gridLines.color = gridColor;
       view_obj._chartInstance.options.scales.yAxes[0].ticks.fontColor = tickColor;
@@ -404,7 +448,6 @@ var indicatorView = function (model, options) {
         var $canvas = $(that._rootElement).find('canvas'),
         font = '12px Arial',
         canvas = $canvas.get(0),
-        textRowHeight = 20,
         ctx = canvas.getContext("2d");
 
         ctx.font = font;
@@ -414,9 +457,9 @@ var indicatorView = function (model, options) {
       }
     });
 
-    this.createTableFooter('selectionChartFooter', chartInfo.footerFields, '#chart-canvas');
-    this.createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#selectionsChart');
-    this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsChart');
+    this.createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
+    this.createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
+    this.createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
     $("#btnSave").click(function() {
       var filename = chartInfo.indicatorId + '.png',
@@ -481,6 +524,19 @@ var indicatorView = function (model, options) {
     }
     else {
       return $('body').hasClass('contrast-high');
+    }
+  };
+
+  this.updateGraphAnnotationColors = function(contrast, chartInfo) {
+    if (chartInfo.options.annotation) {
+      chartInfo.options.annotation.annotations.forEach(function(annotation) {
+        if (contrast === 'default') {
+          $.extend(true, annotation, annotation.defaultContrast);
+        }
+        else if (contrast === 'high') {
+          $.extend(true, annotation, annotation.highContrast);
+        }
+      });
     }
   };
 
@@ -554,15 +610,17 @@ var indicatorView = function (model, options) {
     datatables_options.aaSorting = [];
 
     table.DataTable(datatables_options);
-
+    table.removeAttr('role');
+    table.find('thead th').removeAttr('rowspan').removeAttr('colspan').removeAttr('aria-label');
     setDataTableWidth(table);
   };
 
   this.createSelectionsTable = function(chartInfo) {
     this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
-    this.createTableFooter('selectionTableFooter', chartInfo.footerFields, '#selectionsTable');
-    this.createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#selectionsTable');
-    this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsTable');
+    $('#tableSelectionDownload').empty();
+    this.createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload');
+    this.createSourceButton(chartInfo.shortIndicatorId, '#tableSelectionDownload');
+    this.createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#tableSelectionDownload');
   };
 
 
@@ -642,6 +700,45 @@ var indicatorView = function (model, options) {
     }
   }
 
+  this.updateIndicatorDataViewStatus = function(oldDatasets, newDatasets) {
+    var status = '',
+        hasData = newDatasets.length > 0,
+        dataAdded = newDatasets.length > oldDatasets.length,
+        dataRemoved = newDatasets.length < oldDatasets.length,
+        getDatasetLabel = function(dataset) { return dataset.label; },
+        oldLabels = oldDatasets.map(getDatasetLabel),
+        newLabels = newDatasets.map(getDatasetLabel);
+
+    if (!hasData) {
+      status = translations.indicator.announce_data_not_available;
+    }
+    else if (dataAdded) {
+      status = translations.indicator.announce_data_added;
+      var addedLabels = [];
+      newLabels.forEach(function(label) {
+        if (!oldLabels.includes(label)) {
+          addedLabels.push(label);
+        }
+      });
+      status += ' ' + addedLabels.join(', ');
+    }
+    else if (dataRemoved) {
+      status = translations.indicator.announce_data_removed;
+      var removedLabels = [];
+      oldLabels.forEach(function(label) {
+        if (!newLabels.includes(label)) {
+          removedLabels.push(label);
+        }
+      });
+      status += ' ' + removedLabels.join(', ');
+    }
+
+    var current = $('#indicator-data-view-status').text();
+    if (current != status) {
+      $('#indicator-data-view-status').text(status);
+    }
+  }
+
   this.createSourceButton = function(indicatorId, el) {
     var gaLabel = 'Download Source CSV: ' + indicatorId;
     $(el).append($('<a />').text(translations.indicator.download_source)
@@ -654,7 +751,26 @@ var indicatorView = function (model, options) {
       'tabindex': 0
     }));
   }
-  
+
+  this.createIndicatorDownloadButtons = function(indicatorDownloads, indicatorId, el) {
+    if (indicatorDownloads) {
+      for (var buttonLabel of Object.keys(indicatorDownloads)) {
+        var href = indicatorDownloads[buttonLabel].href;
+        var buttonLabelTranslated = translations.t(buttonLabel);
+        var gaLabel = buttonLabel + ': ' + indicatorId;
+        $(el).append($('<a />').text(buttonLabelTranslated)
+        .attr(opensdg.autotrack(buttonLabel, 'Downloads', buttonLabel, gaLabel))
+        .attr({
+          'href': opensdg.remoteDataBaseUrl + '/' + href,
+          'download': href.split('/').pop(),
+          'title': buttonLabelTranslated,
+          'class': 'btn btn-primary btn-download',
+          'tabindex': 0
+        }));
+      }
+    }
+  }
+
   this.tableHasData = function(table) {
     for (var i = 0; i < table.data.length; i++) {
       if (table.data[i].length > 1) {
@@ -663,6 +779,7 @@ var indicatorView = function (model, options) {
     }
     return false;
   }
+
   this.createTable = function(table, indicatorId, el) {
 
     options = options || {};
@@ -683,9 +800,9 @@ var indicatorView = function (model, options) {
       var table_head = '<thead><tr>';
 
       var getHeading = function(heading, index) {
-        var span = '<span class="sort" />';
-        var span_heading = '<span>' + translations.t(heading) + '</span>';
-        return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
+        var arrows = '<span class="sort"><i class="fa fa-sort-down"></i><i class="fa fa-sort-up"></i></span>';
+        var button = '<span tabindex="0" role="button" aria-describedby="column-sort-info">' + translations.t(heading) + '</span>';
+        return (!index || heading.toLowerCase() == 'units') ? button + arrows : arrows + button;
       };
 
       table.headings.forEach(function (heading, index) {
@@ -714,28 +831,22 @@ var indicatorView = function (model, options) {
 
       // initialise data table
       initialiseDataTable(el);
-      
-      $(el).removeClass('table-has-no-data');
 
+      $(el).removeClass('table-has-no-data');
+      $('#selectionTableFooter').show();
+
+      $(el).find('th')
+        .removeAttr('tabindex')
+        .click(function() {
+          var sortDirection = $(this).attr('aria-sort');
+          $(this).find('span[role="button"]').attr('aria-sort', sortDirection);
+        });
     } else {
       $(el).append($('<h3 />').text(translations.indicator.data_not_available));
       $(el).addClass('table-has-no-data');
+      $('#selectionTableFooter').hide();
     }
   };
-
-  this.createTableFooter = function(divid, footerFields, el) {
-    var footdiv = $('<div />').attr({
-      'id': divid,
-      'class': 'table-footer-text'
-    });
-
-    _.each(footerFields, function(val, key) {
-      footdiv.append($('<p />').text(key + ': ' + val));
-    });
-
-    $(el).append(footdiv);
-  };
-
 
   this.sortFieldGroup = function(fieldGroupElement) {
     var sortLabels = function(a, b) {
