@@ -3532,9 +3532,6 @@ $(function() {
     return new L.Control.SelectionLegend(plugin);
   };
 }());
-© 2020 GitHub, Inc.
-Terms
-Priva
 /*
  * Leaflet year Slider.
  *
