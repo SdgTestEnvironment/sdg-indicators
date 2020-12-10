@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -90,11 +90,10 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
-        <title>
-          
-            Ziel 11 - Nachhaltige Städte und Gemeinden
-          
-        </title>
+        
+    <title>Ziel 11 - Nachhaltige Städte und Gemeinden - German Indicators For The Sustainable Development Goals</title>
+
+
 
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -122,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201210010903">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201210111808">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +140,7 @@ var translations = {
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
   <div class="container">
-  <div class="disclaimer-alert" role="alert">
+  <div class="disclaimer-alert">
     <strong class="phase-tag">Alpha-Version</strong>
     
     Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
@@ -153,139 +152,163 @@ var translations = {
 <header role="banner">
   <div class="container">
 
-    <a class="navbar-brand" href="/sdg-indicators/" id="home">
-      <img src="/sdg-indicators/assets/img/de/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
-    </a>
+    <div class="logo-and-mobile-widgets">
+      <a class="navbar-brand" href="/sdg-indicators/" id="home">
+        <img src="/sdg-indicators/assets/img/de/SDG_logo.png" alt="Ziele für Nachhaltige Entwicklung - " />
+      </a>
 
-    <div class='hidden visible-xs float-right'>
-      <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
-        <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
+      <div class="mobile-widgets">
+        <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+          <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Deutsch</span>
+      <span class="language-abbreviation">de</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/en/11/">
+              English
+            </a>
+          </li></ul>
+  </div>
+</div>
 
-<ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/11/">English</a></li></ul>
-
-      </div></div>
+        </div></div>
+    </div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
         <li id="menuToggle"
-            aria-label="Menu toggle. Click to expand or collapse the menu."
-            aria-haspopup="true"
-            aria-expanded="false">
-          <span data-target="menu" tabindex="0"
-          role="navigation">Menü</span>
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="menu-mobile" aria-expanded="false">Menü</button>
+          <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
+    <a href="/sdg-indicators/">17 Ziele</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/reporting-status/">Datenverfügbarkeit</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_platform/">Die&nbspSDG&#8209;Online&nbspPlattform</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_navigation/">Navigation</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/facts_dns/">DNS</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Deutsch</span>
+      <span class="language-abbreviation">de</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/en/11/">
+              English
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li></ul>
+
         </li>
-        <li><span data-target="search">Suche</span></li>
+        <li id="searchToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="search-mobile" aria-expanded="false">Suche</button>
+          <div id="search-mobile" class="menu-target">
+  <form action="/sdg-indicators/search">
+    <input type="text" name="q" id="indicator_search-mobile" title="Suche" />
+    <label class="sr-only" for="indicator_search-mobile">Suche</label>
+    <button aria-label="Suche" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+        </li>
       </ul>
 
       <div id="search" class="menu-target">
   <form action="/sdg-indicators/search">
-    <input name="q" id="indicator_search" title="Suche" />
-    <label for="indicator_search">
-      <button aria-label="Suche" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Suche:</span>
-    </label>
+    <input type="text" name="q" id="indicator_search" title="Suche" />
+    <label class="sr-only" for="indicator_search">Suche</label>
+    <button aria-label="Suche" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
 
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-              <li class="nav-link ">
-                <a href="/sdg-indicators/">17 Ziele</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/sdg-indicators/reporting-status/">Datenverfügbarkeit</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/about_platform/">Über: Die&nbspSDG&#8209;Online&nbspPlattform</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/about_navigation/">Über: Navigation</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/about_guidance/">Über: Technische&nbspHinweise</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/facts_agenda/">Wissenswertes: Agenda&nbsp2030</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/facts_dns/">Wissenswertes: DNS</a>
-              </li>
-            <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;" style="margin-right: 0px;">
-            <span class="language-toggle-text">Über uns</span>
-            <i class="language-toggle fa fa-chevron-down"></i>
-          </a>
-          <ul class="language-options language-toggle"><li class="nav-link ">
-                    <a href="/sdg-indicators/about_platform/">Die&nbspSDG&#8209;Online&nbspPlattform</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/about_navigation/">Navigation</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
-                  </li>
-              </ul>
-        </li>
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+    <a href="/sdg-indicators/">17 Ziele</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/reporting-status/">Datenverfügbarkeit</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_platform/">Die&nbspSDG&#8209;Online&nbspPlattform</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_navigation/">Navigation</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/facts_dns/">DNS</a>
+    </li><li class="language-toggle-menu-header">
+    
 
-        <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;" style="margin-right: 0px;">
-            <span class="language-toggle-text">Wissenswertes</span>
-            <i class="language-toggle fa fa-chevron-down"></i>
-          </a>
-          <ul class="language-options language-toggle"><li class="nav-link ">
-                    <a href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/facts_dns/">DNS</a>
-                  </li>
-              </ul>
 
-        </li><li>
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
 
-<ul class="language-options language-toggle"><li><a href="/sdg-indicators/en/11/">English</a></li></ul>
 
-        </li><!--Add Btn to link to DNS Page-->
-        <li class="nav-link">
-          
-            <a href="https://sustainabledevelopment-deutschland.github.io">
-              <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/>
-              <span class="hidden-sm hidden-md hidden-lg">DNS-Berichtsplattform</span>
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Deutsch</span>
+      <span class="language-abbreviation">de</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/en/11/">
+              English
             </a>
-          
-        </li>
-        <!--     -->
+          </li></ul>
+  </div>
+</div>
 
-      </ul>
+
+
+</li></ul>
+
 
     </nav>
   </div>
 
-
 </header>
+<div id="top" tabindex=-1></div>
 
+
+<div class="container">
+  <ol class="breadcrumb">
+  
+  <li><a href="/sdg-indicators/">Start</a></li>
+  <li class="active">Ziel 11</li>
+  
+</ol>
+
+</div>
 
 <div class="heading goal-banner goal-11">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" />
+      <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
+        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/11.png" alt="Nachhaltige Städte und Gemeinden - Ziel 11" id="goal-11" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -296,14 +319,9 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-11 goal-by-target">
+<div id="main-content" class="container goal-indicators goal-11 goal-by-target" role="main">
 
   
-
-  <ol class="breadcrumb">
-    <li><a href="/sdg-indicators/">Start</a></li>
-    <li class="active">Ziel 11</li>
-  </ol>
 
   
 
@@ -342,7 +360,7 @@ var translations = {
   
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.1
@@ -361,23 +379,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-1-1">
-          <span>
-            11.1.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.1.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-1-1">
           Anteil der städtischen Bevölkerung, der in Slums, informellen Siedlungen oder unzureichendem Wohnraum lebt
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.2
@@ -396,23 +414,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-2-1">
-          <span>
-            11.2.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.2.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-2-1">
           Anteil der Bevölkerung mit angemessenem Zugang zu öffentlichen Verkehrsmitteln, nach Geschlecht, Alter und Menschen mit Behinderungen
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.3
@@ -431,17 +449,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-3-1">
-          <span>
-            11.3.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.3.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-3-1">
           Verhältnis der Flächennutzungs- zur Bevölkerungswachstumsrate
-          
         </a>
+        
       </div>
     
 
@@ -454,23 +472,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-3-2">
-          <span>
-            11.3.2
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.3.2
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-3-2">
           Anteil der Städte mit einer regelmäßig und demokratisch arbeitenden direkten Beteiligungsstruktur der Zivilgesellschaft an der Stadtplanung und -verwaltung
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.4
@@ -489,23 +507,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-4-1">
-          <span>
-            11.4.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.4.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-4-1">
           Gesamtausgaben pro Kopf für die Erhaltung und den Schutz des gesamten Kultur- und Naturerbes, nach Finanzierungsquelle (öffentlich, privat), Art des Erbes (Kulturerbe, Naturerbe) und Verwaltungsebene (national, regional, lokal/kommunal)
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.5
@@ -524,17 +542,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-5-1">
-          <span>
-            11.5.1
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.5.1
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-5-1">
           Anzahl der Katastrophen zugeschriebenen Todesopfer, Vermissten und direkt Betroffenen je 100&nbsp;000 Einwohner
-          
         </a>
+        
       </div>
     
 
@@ -547,23 +565,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-5-2">
-          <span>
-            11.5.2
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.5.2
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-5-2">
           Katastrophen zugeschriebene direkte wirtschaftliche Schäden im Verhältnis zum globalen Bruttoinlandsprodukt (BIP), Schäden an kritischen Infrastrukturen und Zahl der Unterbrechungen der Grundversorgung
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.6
@@ -582,17 +600,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-6-1">
-          <span>
-            11.6.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.6.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-6-1">
           Anteil der in kontrollierten Einrichtungen gesammelten und behandelten festen Siedlungsabfälle an den gesamten Siedlungsabfällen, nach Städten
-          
         </a>
+        
       </div>
     
 
@@ -605,23 +623,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-6-2">
-          <span>
-            11.6.2
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.6.2
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-6-2">
           Bevölkerungsgewichtete Jahresmittelwerte der Feinstaubkonzentration (z. B. PM<sub>2,5</sub> und PM<sub>10</sub>) in Städten
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.7
@@ -640,17 +658,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-7-1">
-          <span>
-            11.7.1
-            <span class="status complete">
-              Daten verfügbar
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.7.1
+          <span class="status complete">
+            Daten verfügbar
           </span>
+        </span>
+        <a href="/sdg-indicators/11-7-1">
           Durchschnittlicher Anteil der bebauten Fläche in Städten, der für alle Personen nach Geschlecht, Alter und Menschen mit Behinderungen, als Freifläche öffentlich zugänglich ist
-          
         </a>
+        
       </div>
     
 
@@ -663,23 +681,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-7-2">
-          <span>
-            11.7.2
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.7.2
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-7-2">
           Anteil der Personen, die in den vorangegangenen 12 Monaten Opfer körperlicher oder sexueller Belästigung wurden, nach Geschlecht, Alter, Behinderungsstatus und Tatort
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.a
@@ -698,23 +716,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-a-1">
-          <span>
-            11.a.1
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.a.1
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-a-1">
           Anzahl der Staaten, die über eine nationale Städtepolitik oder regionale Entwicklungsplanung verfügen, welche (a) auf die Bevölkerungsdynamik reagiert, (b) eine ausgewogene Raumentwicklung gewährleistet und (c) den lokalen Haushaltsspielraum vergrößert
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Unterziel</label>
         11.b
@@ -733,17 +751,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-b-1">
-          <span>
-            11.b.1
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.b.1
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-b-1">
           Anzahl der Staaten, die nationale Strategien zur Katastrophenvorsorge im Einklang mit dem Sendai-Rahmenwerk für Katastrophenvorsorge 2015-2030 beschließen und umsetzen
-          
         </a>
+        
       </div>
     
 
@@ -756,17 +774,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/11-b-2">
-          <span>
-            11.b.2
-            <span class="status notstarted">
-              Datenquellenanalyse
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          11.b.2
+          <span class="status notstarted">
+            Datenquellenanalyse
           </span>
+        </span>
+        <a href="/sdg-indicators/11-b-2">
           Anteil der Gemeinden, die lokale Strategien zur Katastrophenvorsorge im Einklang mit nationalen Strategien zur Katastrophenvorsorge beschließen und umsetzen
-          
         </a>
+        
       </div>
     
     </div>
@@ -779,45 +797,39 @@ var translations = {
       <div class="col-xs-12">
         <div id="footerLinks">
           <ul>
-            <li><a href="https://open-sdg.readthedocs.io/en/latest/">Seite basiert auf Open SDG</a></li>
+            <li><a href="https://open-sdg.org">Seite basiert auf Open SDG</a></li>
             
-              
-                <li>
-                
+              <li>
                 
                   <a href="mailto:sdg-indicators@destatis.de" target="_blank">Kontakt</a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 
                   <a href="https://twitter.com/destatis?lang=de" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 <a href="/sdg-indicators/faq/">FAQ</a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 <a href="/sdg-indicators/imprint/">Im­pres­s­um</a>
                 
                 </li>
               
             
-          </ul>
+            </ul>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
 <!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
 <!-- Google Analytics -->
+
 <!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
@@ -829,6 +841,7 @@ var translations = {
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -838,7 +851,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20201210010903'></script><script src="/sdg-indicators/assets/js/custom.js?v=20201210010903"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20201210111808'></script>
+
+
+    
+    
+    <script src="/sdg-indicators/assets/js/custom.js?v=20201210111808"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -871,15 +889,13 @@ $(function() {
               chartTitle: domData.charttitle,
               chartTitles: domData.charttitles,
               measurementUnit: domData.measurementunit,
-              copyright: domData.copyright,
-              dataSource: domData.datasource,
-              geographicalArea: domData.geographicalarea,
               showData: domData.showdata,
-              footnote: domData.footnote,
               graphType: domData.graphtype,
               startValues: domData.startvalues,
               graphLimits: domData.graphlimits,
               stackedDisaggregation: domData.stackeddisaggregation,
+              graphAnnotations: domData.graphannotations,
+              indicatorDownloads: domData.indicatordownloads,
             }),
             view  = new indicatorView(model, {
               rootElement: '#indicatorData',
@@ -903,6 +919,8 @@ $(function() {
 
 });
 </script>
+
+
 
 
 </body>

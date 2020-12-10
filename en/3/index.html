@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -90,11 +90,10 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
-        <title>
-          
-            Goal 3 - Good health and well-being
-          
-        </title>
+        
+    <title>Goal 3 - Good health and well-being - German Indicators For The Sustainable Development Goals</title>
+
+
 
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -122,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201210010903">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201210111808">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -141,7 +140,7 @@ var translations = {
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
   <div class="container">
-  <div class="disclaimer-alert" role="alert">
+  <div class="disclaimer-alert">
     <strong class="phase-tag">Alpha</strong>
     
     This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
@@ -153,139 +152,163 @@ var translations = {
 <header role="banner">
   <div class="container">
 
-    <a class="navbar-brand" href="/sdg-indicators/en/" id="home">
-      <img src="/sdg-indicators/assets/img/en/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
-    </a>
+    <div class="logo-and-mobile-widgets">
+      <a class="navbar-brand" href="/sdg-indicators/en/" id="home">
+        <img src="/sdg-indicators/assets/img/en/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+      </a>
 
-    <div class='hidden visible-xs float-right'>
-      <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
-        <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">English</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
+      <div class="mobile-widgets">
+        <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+          <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/3/">
+              Deutsch
+            </a>
+          </li></ul>
+  </div>
+</div>
 
-<ul class="language-options language-toggle"><li><a href="/sdg-indicators/3/">Deutsch</a></li></ul>
-
-      </div></div>
+        </div></div>
+    </div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
         <li id="menuToggle"
-            aria-label="Menu toggle. Click to expand or collapse the menu."
-            aria-haspopup="true"
-            aria-expanded="false">
-          <span data-target="menu" tabindex="0"
-          role="navigation">Menu</span>
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="menu-mobile" aria-expanded="false">Menu</button>
+          <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
+    <a href="/sdg-indicators/en/">17 Goals</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/reporting-status/">Availability&nbspof&nbspData</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_platform/">The&nbspSDG&#8209;Online&nbspplatform</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_navigation/">Navigation</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_guidance/">Guidance</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/facts_agenda/">Agenda 2030</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/facts_dns/">DNS</a>
+    </li><li class="language-toggle-menu-header">
+    
+
+
+
+
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/3/">
+              Deutsch
+            </a>
+          </li></ul>
+  </div>
+</div>
+
+
+
+</li></ul>
+
         </li>
-        <li><span data-target="search">Search</span></li>
+        <li id="searchToggle"
+            aria-label=""
+            aria-haspopup="true">
+          <button data-target="search-mobile" aria-expanded="false">Search</button>
+          <div id="search-mobile" class="menu-target">
+  <form action="/sdg-indicators/en/search">
+    <input type="text" name="q" id="indicator_search-mobile" title="Search" />
+    <label class="sr-only" for="indicator_search-mobile">Search</label>
+    <button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
+  </form>
+</div>
+
+        </li>
       </ul>
 
       <div id="search" class="menu-target">
   <form action="/sdg-indicators/en/search">
-    <input name="q" id="indicator_search" title="Search" />
-    <label for="indicator_search">
-      <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button><span>Search:</span>
-    </label>
+    <input type="text" name="q" id="indicator_search" title="Search" />
+    <label class="sr-only" for="indicator_search">Search</label>
+    <button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
   </form>
 </div>
 
 
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-              <li class="nav-link ">
-                <a href="/sdg-indicators/en/">17 Goals</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/sdg-indicators/en/reporting-status/">Availability&nbspof&nbspData</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/en/about_platform/">About: The&nbspSDG&#8209;Online&nbspplatform</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/en/about_navigation/">About: Navigation</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/en/about_guidance/">About: Guidance</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/en/facts_agenda/">Interesting Facts: Agenda 2030</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/sdg-indicators/en/facts_dns/">Interesting Facts: DNS</a>
-              </li>
-            <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;" style="margin-right: 0px;">
-            <span class="language-toggle-text">About</span>
-            <i class="language-toggle fa fa-chevron-down"></i>
-          </a>
-          <ul class="language-options language-toggle"><li class="nav-link ">
-                    <a href="/sdg-indicators/en/about_platform/">The&nbspSDG&#8209;Online&nbspplatform</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/en/about_navigation/">Navigation</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/en/about_guidance/">Guidance</a>
-                  </li>
-              </ul>
-        </li>
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+    <a href="/sdg-indicators/en/">17 Goals</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/reporting-status/">Availability&nbspof&nbspData</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_platform/">The&nbspSDG&#8209;Online&nbspplatform</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_navigation/">Navigation</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/about_guidance/">Guidance</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/facts_agenda/">Agenda 2030</a>
+    </li><li class="nav-link ">
+    <a href="/sdg-indicators/en/facts_dns/">DNS</a>
+    </li><li class="language-toggle-menu-header">
+    
 
-        <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;" style="margin-right: 0px;">
-            <span class="language-toggle-text">Interesting Facts</span>
-            <i class="language-toggle fa fa-chevron-down"></i>
-          </a>
-          <ul class="language-options language-toggle"><li class="nav-link ">
-                    <a href="/sdg-indicators/en/facts_agenda/">Agenda 2030</a>
-                  </li>
-              <li class="nav-link ">
-                    <a href="/sdg-indicators/en/facts_dns/">DNS</a>
-                  </li>
-              </ul>
 
-        </li><li>
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">English</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
 
-<ul class="language-options language-toggle"><li><a href="/sdg-indicators/3/">Deutsch</a></li></ul>
 
-        </li><!--Add Btn to link to DNS Page-->
-        <li class="nav-link">
-          
-            <a href="https://sustainabledevelopment-deutschland.github.io/en">
-              <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/>
-              <span class="hidden-sm hidden-md hidden-lg">DNS-platform</span>
+
+  <div class="language-toggle-container">
+  
+  <div class="btn-group language-toggle-dropdown ">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">English</span>
+      <span class="language-abbreviation">en</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
+    <ul class="dropdown-menu"><li>
+            <a href="/sdg-indicators/3/">
+              Deutsch
             </a>
-          
-        </li>
-        <!--     -->
+          </li></ul>
+  </div>
+</div>
 
-      </ul>
+
+
+</li></ul>
+
 
     </nav>
   </div>
 
-
 </header>
+<div id="top" tabindex=-1></div>
 
+
+<div class="container">
+  <ol class="breadcrumb">
+  
+  <li><a href="/sdg-indicators/en/">Home</a></li>
+  <li class="active">Goal 3</li>
+  
+</ol>
+
+</div>
 
 <div class="heading goal-banner goal-3">
   <div class="container">
     <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/en/3.png" alt="Good health and well-being - Goal 3" />
+      <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
+        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/en/3.png" alt="Good health and well-being - Goal 3" id="goal-3" />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
@@ -296,14 +319,9 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-indicators goal-3 goal-by-target">
+<div id="main-content" class="container goal-indicators goal-3 goal-by-target" role="main">
 
   
-
-  <ol class="breadcrumb">
-    <li><a href="/sdg-indicators/en/">Home</a></li>
-    <li class="active">Goal 3</li>
-  </ol>
 
   
 
@@ -342,7 +360,7 @@ var translations = {
   
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.1
@@ -361,17 +379,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-1-1">
-          <span>
-            3.1.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.1.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-1-1">
           Maternal mortality ratio
-          
         </a>
+        
       </div>
     
 
@@ -384,23 +402,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-1-2">
-          <span>
-            3.1.2
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.1.2
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-1-2">
           Proportion of births attended by skilled health personnel
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.2
@@ -419,17 +437,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-2-1">
-          <span>
-            3.2.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.2.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-2-1">
           Under-five mortality rate
-          
         </a>
+        
       </div>
     
 
@@ -442,23 +460,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-2-2">
-          <span>
-            3.2.2
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.2.2
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-2-2">
           Neonatal mortality rate
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.3
@@ -477,17 +495,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.3.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-3-1">
-          <span>
-            3.3.1
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Number of new HIV infections per 1,000 uninfected population, by sex, age and key populations
-          
         </a>
+        
       </div>
     
 
@@ -500,17 +518,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.3.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-3-2">
-          <span>
-            3.3.2
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Tuberculosis incidence per 100,000 population
-          
         </a>
+        
       </div>
     
 
@@ -523,17 +541,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.3.3
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-3-3">
-          <span>
-            3.3.3
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Malaria incidence per 1,000 population
-          
         </a>
+        
       </div>
     
 
@@ -546,17 +564,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.3.4
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-3-4">
-          <span>
-            3.3.4
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Hepatitis B incidence per 100,000 population
-          
         </a>
+        
       </div>
     
 
@@ -569,23 +587,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-3-5">
-          <span>
-            3.3.5
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.3.5
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-3-5">
           Number of people requiring interventions against neglected tropical diseases
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.4
@@ -604,17 +622,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-4-1">
-          <span>
-            3.4.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.4.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-4-1">
           Mortality rate attributed to cardiovascular disease, cancer, diabetes or chronic respiratory disease
-          
         </a>
+        
       </div>
     
 
@@ -627,23 +645,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-4-2">
-          <span>
-            3.4.2
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.4.2
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-4-2">
           Suicide mortality rate
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.5
@@ -662,17 +680,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-5-1">
-          <span>
-            3.5.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.5.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-5-1">
           Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders
-          
         </a>
+        
       </div>
     
 
@@ -685,23 +703,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-5-2">
-          <span>
-            3.5.2
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.5.2
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-5-2">
           Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.6
@@ -720,23 +738,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-6-1">
-          <span>
-            3.6.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.6.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-6-1">
           Death rate due to road traffic injuries
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.7
@@ -755,17 +773,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-7-1">
-          <span>
-            3.7.1
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.7.1
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-7-1">
           Proportion of women of reproductive age (aged 15-49 years) who have their need for family planning satisfied with modern methods
-          
         </a>
+        
       </div>
     
 
@@ -778,23 +796,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-7-2">
-          <span>
-            3.7.2
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.7.2
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-7-2">
           Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.8
@@ -813,17 +831,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-8-1">
-          <span>
-            3.8.1
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.8.1
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-8-1">
           Proportion of target population covered by essential health services
-          
         </a>
+        
       </div>
     
 
@@ -836,23 +854,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-8-2">
-          <span>
-            3.8.2
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.8.2
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-8-2">
           Proportion of population with large household expenditures on health as a share of total household expenditure or income
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.9
@@ -871,17 +889,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.9.1
+          <span class="status notstarted">
+            Exploring data sources
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-9-1">
-          <span>
-            3.9.1
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
-          </span>
           Mortality rate attributed to household and ambient air pollution
-          
         </a>
+        
       </div>
     
 
@@ -894,17 +912,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.9.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-9-2">
-          <span>
-            3.9.2
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services)
-          
         </a>
+        
       </div>
     
 
@@ -917,23 +935,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-9-3">
-          <span>
-            3.9.3
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.9.3
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-9-3">
           Mortality rate attributed to unintentional poisoning
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.a
@@ -952,23 +970,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-a-1">
-          <span>
-            3.a.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.a.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-a-1">
           Age-standardized prevalence of current tobacco use among persons aged 15 years and older
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.b
@@ -987,17 +1005,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.b.1
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-b-1">
-          <span>
-            3.b.1
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Proportion of the target population covered by all vaccines included in their national programme
-          
         </a>
+        
       </div>
     
 
@@ -1010,17 +1028,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.b.2
+          <span class="status complete">
+            Reported online
+          </span>
+        </span>
         <a href="/sdg-indicators/en/3-b-2">
-          <span>
-            3.b.2
-            <span class="status complete">
-              Reported online
-            </span>
-          </span>
           Total net official development assistance to medical research and basic health sectors
-          
         </a>
+        
       </div>
     
 
@@ -1033,23 +1051,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-b-3">
-          <span>
-            3.b.3
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.b.3
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-b-3">
           Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.c
@@ -1068,23 +1086,23 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-c-1">
-          <span>
-            3.c.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.c.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-c-1">
           Health worker density and distribution
-          
         </a>
+        
       </div>
     
     </div>
   
     
-    <div class="indicator-cards target col-md-6">
+    <div class="indicator-cards target goal-target col-md-6">
       <span>
         <label class="hidden-md hidden-lg">Target</label>
         3.d
@@ -1103,17 +1121,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-d-1">
-          <span>
-            3.d.1
-            <span class="status complete">
-              Reported online
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.d.1
+          <span class="status complete">
+            Reported online
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-d-1">
           International Health Regulations (IHR) capacity and health emergency preparedness
-          
         </a>
+        
       </div>
     
 
@@ -1126,17 +1144,17 @@ var translations = {
       
       
 
-      <div class="col-md-12 ">
-        <a href="/sdg-indicators/en/3-d-2">
-          <span>
-            3.d.2
-            <span class="status notstarted">
-              Exploring data sources
-            </span>
+      <div class="col-md-12  goal-indicator">
+        <span>
+          3.d.2
+          <span class="status notstarted">
+            Exploring data sources
           </span>
+        </span>
+        <a href="/sdg-indicators/en/3-d-2">
           Percentage of bloodstream infections due to selected antimicrobial-resistant organisms
-          
         </a>
+        
       </div>
     
     </div>
@@ -1149,45 +1167,39 @@ var translations = {
       <div class="col-xs-12">
         <div id="footerLinks">
           <ul>
-            <li><a href="https://open-sdg.readthedocs.io/en/latest/">Built using Open SDG</a></li>
+            <li><a href="https://open-sdg.org">Built using Open SDG</a></li>
             
-              
-                <li>
-                
+              <li>
                 
                   <a href="mailto:sdg-indicators@destatis.de" target="_blank">Contact us</a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 
                   <a href="https://twitter.com/destatis?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 <a href="/sdg-indicators/en/faq/">FAQ</a>
                 
                 </li>
-              
-                <li>
-                
+              <li>
                 <a href="/sdg-indicators/en/imprint/">Legal Notice</a>
                 
                 </li>
               
             
-          </ul>
+            </ul>
         </div>
       </div>
     </div>
   </div>
 </footer>
+
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
 <!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
 <!-- Google Analytics -->
+
 <!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
@@ -1199,6 +1211,7 @@ var translations = {
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -1208,7 +1221,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20201210010903'></script><script src="/sdg-indicators/assets/js/custom.js?v=20201210010903"></script><script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20201210111808'></script>
+
+
+    
+    
+    <script src="/sdg-indicators/assets/js/custom.js?v=20201210111808"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1241,15 +1259,13 @@ $(function() {
               chartTitle: domData.charttitle,
               chartTitles: domData.charttitles,
               measurementUnit: domData.measurementunit,
-              copyright: domData.copyright,
-              dataSource: domData.datasource,
-              geographicalArea: domData.geographicalarea,
               showData: domData.showdata,
-              footnote: domData.footnote,
               graphType: domData.graphtype,
               startValues: domData.startvalues,
               graphLimits: domData.graphlimits,
               stackedDisaggregation: domData.stackeddisaggregation,
+              graphAnnotations: domData.graphannotations,
+              indicatorDownloads: domData.indicatordownloads,
             }),
             view  = new indicatorView(model, {
               rootElement: '#indicatorData',
@@ -1273,6 +1289,8 @@ $(function() {
 
 });
 </script>
+
+
 
 
 </body>
