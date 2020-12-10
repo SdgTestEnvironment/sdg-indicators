@@ -415,8 +415,6 @@ opensdg.autotrack = function(preset, category, action, label) {
           .classes(plugin.options.colorRange[parseInt(goal)-1].length);
         //#1 map color depending on goal --- stop  ---
 
-          .domain(plugin.valueRange)
-          .classes(plugin.options.colorRange.length);
         plugin.years = _.uniq(availableYears).sort();
         plugin.currentYear = plugin.years[0];
 
