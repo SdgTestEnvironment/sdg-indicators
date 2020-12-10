@@ -372,16 +372,17 @@
 
 
         //#1 map color depending on goal --- start ---
-        var start = plugin.indicatorId.indexOf("_") + 1;
-        var stop = plugin.indicatorId.indexOf("-");
-        var goal = plugin.indicatorId.slice(start, stop);
+
+        //var start = plugin.indicatorId.indexOf("_") + 1;
+        //var stop = plugin.indicatorId.indexOf("-");
+        //var goal = plugin.indicatorId.slice(start, stop);
 
 
-        //plugin.colorScale = chroma.scale(plugin.options.colorRange)
-        plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
+        plugin.colorScale = chroma.scale(plugin.options.colorRange)
+        //plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
           .domain(plugin.valueRange)
-          //.classes(plugin.options.colorRange.length);
-          .classes(plugin.options.colorRange[parseInt(goal)-1].length);
+          .classes(plugin.options.colorRange.length);
+          //.classes(plugin.options.colorRange[parseInt(goal)-1].length);
         //#1 map color depending on goal --- stop  ---
 
         plugin.years = _.uniq(availableYears).sort();
