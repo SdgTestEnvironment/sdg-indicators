@@ -369,7 +369,21 @@
 
         // Calculate the ranges of values, years and colors.
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
-        plugin.colorScale = chroma.scale(plugin.options.colorRange)
+
+
+        //#1 map color depending on goal --- start ---
+        var start = plugin.indicatorId.indexOf("_") + 1;
+        var stop = plugin.indicatorId.indexOf("-");
+        var goal = plugin.indicatorId.slice(start, stop);
+
+
+        //plugin.colorScale = chroma.scale(plugin.options.colorRange)
+        plugin.colorScale = chroma.scale(plugin.options.colorRange[parseInt(goal)-1])
+          .domain(plugin.valueRange)
+          //.classes(plugin.options.colorRange.length);
+          .classes(plugin.options.colorRange[parseInt(goal)-1].length);
+        //#1 map color depending on goal --- stop  ---
+
           .domain(plugin.valueRange)
           .classes(plugin.options.colorRange.length);
         plugin.years = _.uniq(availableYears).sort();
