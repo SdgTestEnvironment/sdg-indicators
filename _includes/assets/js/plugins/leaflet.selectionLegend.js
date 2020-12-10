@@ -111,6 +111,3 @@
     return new L.Control.SelectionLegend(plugin);
   };
 }());
-© 2020 GitHub, Inc.
-Terms
-Priva
