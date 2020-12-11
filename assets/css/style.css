@@ -2830,3 +2830,7 @@ body {
 
 .status {
   border-radius: 3px; }
+
+.breadcrumb {
+  padding-top: 20px;
+  padding-bottom: 10px; }
