@@ -98,7 +98,7 @@ menu:
       - path: /facts_dns/
         translation_key: menu.facts_dns
   - path: https://sustainabledevelopment-deutschland.github.io
-    translation_key: LinkToDnsPlatform
+    translation_key: menu.linkToDnsPlatform
 
 
 
