@@ -2834,3 +2834,55 @@ body {
 .breadcrumb {
   padding-top: 20px;
   padding-bottom: 10px; }
+
+.btn-group.menu-dropdown .dropdown-toggle {
+  margin: 0 0 2px 15px;
+  padding: 2px;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  border-bottom: 2px solid transparent;
+  color: #595959; }
+  .btn-group.menu-dropdown .dropdown-toggle:hover {
+    background: none;
+    border-bottom: 2px solid #aaaaaa; }
+.btn-group.menu-dropdown .dropdown-menu {
+  border-radius: 0;
+  margin-left: 15px; }
+  .btn-group.menu-dropdown .dropdown-menu a {
+    color: #595959; }
+  .btn-group.menu-dropdown .dropdown-menu .active a {
+    background: none;
+    color: #595959; }
+    .btn-group.menu-dropdown .dropdown-menu .active a:hover {
+      background: #f5f5f5; }
+
+body.contrast-high .navbar #menu li a, body.contrast-high .navbar #menu-mobile li a {
+  color: white; }
+  body.contrast-high .navbar #menu li a:hover, body.contrast-high .navbar #menu li a:focus, body.contrast-high .navbar #menu-mobile li a:hover, body.contrast-high .navbar #menu-mobile li a:focus {
+    color: yellow; }
+body.contrast-high .navbar #menu li.active a, body.contrast-high .navbar #menu-mobile li.active a {
+  color: yellow;
+  border-color: yellow; }
+  body.contrast-high .navbar #menu li.active a:hover, body.contrast-high .navbar #menu-mobile li.active a:hover {
+    color: yellow; }
+  body.contrast-high .navbar #menu li.active a:focus, body.contrast-high .navbar #menu-mobile li.active a:focus {
+    color: yellow; }
+body.contrast-high .navbar #menu-mobile li a {
+  background-color: black; }
+body.contrast-high .navbar #search input, body.contrast-high .navbar #search button, body.contrast-high .navbar #search-mobile input, body.contrast-high .navbar #search-mobile button {
+  color: black; }
+body.contrast-high .navbar .top-level > li.active button {
+  color: black; }
+body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle {
+  color: white !important;
+  background: black !important; }
+  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle:hover {
+    color: yellow !important; }
+  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle:focus {
+    background: #ffdd00 !important;
+    color: #0b0c0c !important; }
+body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
+  color: black; }
+  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a:hover {
+    text-decoration: underline; }
