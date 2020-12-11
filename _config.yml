@@ -83,7 +83,7 @@ menu:
     translation_key: general.seventeen_goals
   - path: /reporting-status/
     translation_key: menu.reporting_status
-  - translation_key: menu.about_short
+  - translation_key: menu.about
     dropdown:
       - path: /about_platform/
         translation_key: menu.about_platform
@@ -94,7 +94,7 @@ menu:
   - translation_key: menu.facts
     dropdown:
       - path: /facts_agenda/
-        ranslation_key: menu.facts_agenda
+        translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
 
