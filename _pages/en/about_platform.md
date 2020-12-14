@@ -9,7 +9,7 @@ The online platform comprises two components, namely the German set of indicator
 
 The time series of the indicators of both online platforms are available for download.
 
-A direct link to the homepage of the DNS online platform can be found at the top right of this page next to the search field: [<img src="https://g205sdgs.github.io/sdg-indicators/assets/img/about/DNS Wheel.png" alt="Wheel">](https://sustainabledevelopment-deutschland.github.io)
+A direct link to the homepage of the DNS online platform can be found at the top right of this page next to the search field: [<img src="https://g205sdgs.github.io/sdg-indicators/assets/img/about/DNS Wheel.png" alt="Wheel">](https://sustainabledevelopment-deutschland.github.io/en)
 
 Both sets of indicators are structured according to the 17 goals of the United Nations 2030 Agenda. Accordingly, the icons and the colours chosen for the 17 goals (Fig. 1 and Fig. 2) which are used here and on the DNS online platform correspond to those of the United Nations. The icons are protected by copyright.
 
