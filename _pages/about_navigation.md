@@ -24,9 +24,9 @@ Die SDG-Online Plattform gliedert sich in Ziele, Unterziele und den dazugehörig
 
 ## Darstellung einzelner SDG-Indikatoren
 
-Jeder SDG-Indikator wird auf einer eigenen Seite dargestellt. Linkerhand werden, je nach Indikator, verschiedene Auswahlmenüs angezeigt. Das erste Auswahlmenü enthält alle Zeitreihen, die für den Indikator zur Verfügung stehen. In den Untermenüs können Sie je nach Datenreihe verschiedene Ausprägungen auswählen – z. B. verschiedene Altersklassen.
+Jeder SDG-Indikator wird auf einer eigenen Seite dargestellt. Linkerhand werden, je nach Indikator, verschiedene Auswahlmenüs angezeigt. Das erste Auswahlmenü enthält alle Zeitreihen, die für den Indikator zur Verfügung stehen. In den Untermenüs können Sie je nach Datenreihe verschiedene Ausprägungen auswählen – z.&nbspB. verschiedene Altersklassen.
 
-Die Entwicklung der Zeitreihe wird in einer Grafik visualisiert. Auf dem zweiten Reiter neben „Grafik“ können zugrundeliegende Daten hinter der Grafik und alle anderen verfügbaren Daten der Auswahlmenüs als Tabelle eingesehen werden (Abb. 2).
+Die Entwicklung der Zeitreihe wird in einer Grafik visualisiert. Auf dem zweiten Reiter neben „Grafik“ können zugrundeliegende Daten hinter der Grafik und alle anderen verfügbaren Daten der Auswahlmenüs als Tabelle eingesehen werden (Abb.&nbsp2).
 
 <br>
 <img src="https://g205SDGs.github.io/sdg-indicators/assets/img/about/indicator_page.PNG" alt="Abbildung 2: Aufbau der Indikator-Seiten" class="responsiveImg">
