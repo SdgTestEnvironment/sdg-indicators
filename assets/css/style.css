@@ -2829,6 +2829,7 @@ body {
   margin-right: auto; }
 
 .status {
+  display: inline-block;
   border-radius: 3px; }
 
 .breadcrumb {
