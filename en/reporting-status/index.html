@@ -121,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201214124635">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201214130428">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -361,6 +361,11 @@ var translations = {
   
 </h1>
 
+
+<div class="reporting-status-description">
+  <p>The reporting status gives you an overview of how many Sustainable Development Goal global indicators (Sustainable Development Goals, SDGs) of the United Nations 2030 Agenda can currently be calculated for Germany. The time series for the calculation of the indicators are mainly based on data from official statistics, but also use data collected by many other institutions. Where data are available, the indicator is marked as <span class="status complete">&amp;nbspReported online </span>. A suitable data source is still being sought for other indicators. These indicators are marked as <span class="status notstarted">&amp;nbspExploring data sources </span>. Time series are not available for all globally agreed indicators. There can be various reasons for this: the calculation of certain internationally relevant indicators for Germany alone makes little sense or the indicators can only be compiled in a global context. Such indicators are marked as <span class="status notapplicable">&amp;nbspNot applicable </span>.</p>
+
+</div>
 
 
 
@@ -1313,12 +1318,12 @@ data-event-label="Change reporting status view to un_designated_tier"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20201214124635'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20201214130428'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20201214124635"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20201214130428"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
