@@ -63,6 +63,6 @@ However, there are also differences. The names of the DNS indicators and especia
 <img src="https://g205SDGs.github.io/sdg-indicators/assets/img/about/en/navigation_dns.PNG" alt="Abbildung 3: Position des Direktlinks zu ähnlichen oder deckungsgleichen Indikatoren zwischen den Sustainable Development Goals und der Deutschen Nachhaltigkeitsstrategie" class="responsiveImg">
 
 <p style="text-align:center">
-<small> Fig. 3: Position of the direct link to similar or congruent indicators of the UN Sustainable Development Goals and the German Sustainable Development Strategy (as of July 2020)/small>
+<small> Fig. 3: Position of the direct link to similar or congruent indicators of the UN Sustainable Development Goals and the German Sustainable Development Strategy (as of July 2020)</small>
 </p>
 <br>

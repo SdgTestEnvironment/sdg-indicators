@@ -23,7 +23,7 @@ In addition, the SDGs online platform has been developed according to recognised
 
 The Federal Statistical Office (Destatis) actively supports the development of national online platforms, in particular as open source solutions for the presentation of SDG indicators. Pioneers in this area are the USA and Great Britain. The current version of the German online platform was developed on the basis of an earlier version of the British online platform and adapted to the needs of German statistics. The project code for the SDGs online platform is publicly available in the [Github repository](https://github.com/G205SDGs/sdg-indicators).
 
-A universal version of the codes for an online platform developed by the United States, Great Britain and the Center for Open Data Enterprise is available. The SDGs online platform is based on this. If you are interested, we recommend that you familiarise yourself with the SDGs online platforms of the United States and Great Britain and the relevant[Open SDG project documentation](https://open-sdg.readthedocs.io/en/latest/). This contains technical instructions on how to make a copy of the Open SDGs online platform.
+A universal version of the codes for an online platform developed by the United States, Great Britain and the Center for Open Data Enterprise is available. The SDGs online platform is based on this. If you are interested, we recommend that you familiarise yourself with the SDGs online platforms of the United States and Great Britain and the relevant [Open SDG project documentation](https://open-sdg.readthedocs.io/en/latest/). This contains technical instructions on how to make a copy of the Open SDGs online platform.
 
 
 - [SDGs online platform of the United States](https://sdg.data.gov/)

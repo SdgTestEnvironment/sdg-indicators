@@ -48,7 +48,7 @@ In some cases the data for Germany include minor methodological deviations from 
 
 The existing set of indicators is undergoing two major revisions in 2020 (already completed) and 2025. The [IAEG-SDGs](https://unstats.un.org/sdgs/iaeg-sdgs) (Inter-Agency and Expert Group on Sustainable Development Goal Indicators) has been commissioned to coordinate these revisions. During the revisions, new indicators may be added to the set, and existing indicators may be replaced or removed. The changes will be incorporated as quickly as possible on the SDGs online platform.
 
-## Comparison of SDG and DNS indicators3
+## Comparison of SDG and DNS indicators
 
 The United Nations SDG indicators and their numbering are not identical to the DNS indicators. If an SDG indicator is comparable to a DNS indicator, this is indicated by a button with a direct link to the respective indicator.
 
