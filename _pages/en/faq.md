@@ -13,7 +13,7 @@ There are three differently colour-coded reporting statuses for each indicator:
 
 * Reported online (green) – As a minimum the headline national data are available for this indicator on this website, but the data might not be fully disaggregated yet. We are seeking to fill this data gap.
 * Exploring data sources (red) – We are still looking for a suitable data source for this indicator of this.
-* Not applicable (grey) – The calculation of certain internationally relevant indicator for Germany alone makes little sense or the indicators can only be compiled in a global context.
+* Not applicable (grey) – The calculation of this internationally relevant indicator for Germany alone makes little sense or the indicators can only be compiled in a global context.
 
 Where there is additional information about the status of indicator data collection and reporting, this will be displayed at the top of the indicator page.
 
