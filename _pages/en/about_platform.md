@@ -16,7 +16,7 @@ Both sets of indicators are structured according to the 17 goals of the United N
 <div class="container" style="padding-left: 0px;">
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/en/sdgIcons.PNG" alt="Abbildung 1: SDG Icons" class="responsiveImg" style="width: 100%;">
-<small> Fig. 1: 17 SDG icons of the United Nations used on the <b>SDGs online platform for Germany</b></small>
+<small> Fig. 1: 17 SDG icons of the United Nations used on the <b>SDG online platform for Germany</b></small>
 </div>
 
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
@@ -28,11 +28,11 @@ Both sets of indicators are structured according to the 17 goals of the United N
 
 ## Aim and background
 
-The aim of the SDGs online platform is to present the indicators of the United Nations Sustainable Development Goals for Germany.
+The aim of the SDG online platform is to present the indicators of the United Nations Sustainable Development Goals for Germany.
 
 The SDGs are anchored in the 2030 Agenda for Sustainable Development, which was adopted by the General Assembly of the United Nations in September 2015 and thus agreed by all Member States. The Agenda has provided the basis for shaping global economic progress in accordance with social justice and within the ecological limits of the earth.
 
-The Federal Statistical Office is responsible for coordinating and publishing national SDG indicator data for Germany. The SDGs online platform enables the competent international organisations (custodian agencies) to directly download the data for individual SDG indicators and use them, for example, for global reporting assignments given to them by the United Nations (Fig. 3). It also provides constantly updated information on the status of the German SDG indicators and detailed information on the methodology used for calculating these indicators.
+The Federal Statistical Office is responsible for coordinating and publishing national SDG indicator data for Germany. The SDG online platform enables the competent international organisations (custodian agencies) to directly download the data for individual SDG indicators and use them, for example, for global reporting assignments given to them by the United Nations (Fig. 3). It also provides constantly updated information on the status of the German SDG indicators and detailed information on the methodology used for calculating these indicators.
 
 <img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/en/agenda2.png" alt="Abbildung 3: Datenfluss Diagramm" class="responsiveImg">
 
@@ -46,7 +46,7 @@ In some cases the data for Germany include minor methodological deviations from 
 
 ## Possible amendments until 2030
 
-The existing set of indicators is undergoing two major revisions in 2020 (already completed) and 2025. The [IAEG-SDGs](https://unstats.un.org/sdgs/iaeg-sdgs) (Inter-Agency and Expert Group on Sustainable Development Goal Indicators) has been commissioned to coordinate these revisions. During the revisions, new indicators may be added to the set, and existing indicators may be replaced or removed. The changes will be incorporated as quickly as possible on the SDGs online platform.
+The existing set of indicators is undergoing two major revisions in 2020 (already completed) and 2025. The [IAEG-SDGs](https://unstats.un.org/sdgs/iaeg-sdgs) (Inter-Agency and Expert Group on Sustainable Development Goal Indicators) has been commissioned to coordinate these revisions. During the revisions, new indicators may be added to the set, and existing indicators may be replaced or removed. The changes will be incorporated as quickly as possible on the SDG online platform.
 
 ## Comparison of SDG and DNS indicators
 

@@ -53,7 +53,7 @@ In addition to information of its own, the Federal Statistical Office provides l
 
 With these notes, we meet our information obligations regarding the collection of personal data, as laid down in Article 13 of the General Data Protection Regulation (GDPR).
 
-The Federal Statistical Office does not collect any personal data when the SDGs online platform is accessed. However, you are also using the services of the provider GitHub. The GitHub privacy statement is here: [https://help.github.com/en/articles/github-privacy-statement](https://help.github.com/en/articles/github-privacy-statement).
+The Federal Statistical Office does not collect any personal data when the SDG online platform is accessed. However, you are also using the services of the provider GitHub. The GitHub privacy statement is here: [https://help.github.com/en/articles/github-privacy-statement](https://help.github.com/en/articles/github-privacy-statement).
 
 Technical information from website visitors is recorded, including the IP address: this can be a personal date. Personal data are collected when you create an account.
 

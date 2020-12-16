@@ -21,7 +21,7 @@ Where there is additional information about the status of indicator data collect
 Disaggregation is used to break an existing indicator down into subcategories for closer examination. The best known are age or sex. However, the disaggregations used differ from indicator to indicator and are referenced in the indicator name or defined by the international organisation responsible for the indicator.
 
 ## What are you doing to fill data gaps?
-If no data are available for an indicator, we need to look for possible data sources and check them for quality. If the quality meets our requirements, the data will be included in the SDGs online platform.
+If no data are available for an indicator, we need to look for possible data sources and check them for quality. If the quality meets our requirements, the data will be included in the SDG online platform.
 
 For some indicators data are available at the national level, but the underlying data sources do not allow disaggregation by all required categories.
 
