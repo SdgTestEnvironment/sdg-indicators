@@ -2088,6 +2088,7 @@ function sortData(rows, selectedUnit) {
     dataHasGeoCodes: dataHasGeoCodes,
     dataHasSerieses: dataHasSerieses,
     getFirstUnitInData: getFirstUnitInData,
+    getFirstSeriesInData: getFirstSeriesInData,
     getDataByUnit: getDataByUnit,
     getDataBySeries: getDataBySeries,
     getDataBySelectedFields: getDataBySelectedFields,
