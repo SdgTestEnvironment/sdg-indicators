@@ -50,7 +50,7 @@ The existing set of indicators is undergoing two major revisions in 2020 (alread
 
 ## Comparison of SDG and DNS indicators
 
-The United Nations SDG indicators and their numbering are not identical to the DNS indicators. If an SDG indicator is comparable to a DNS indicator, this is indicated by a button with a direct link to the respective indicator.
+The United Nations SDG indicators and their numbering are not identical to the DNS indicators. If an SDG indicator is comparable to a DNS indicator, this is indicated by a button with a direct link to the respective indicator (Fig. 4).
 
 <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/about/en/sdgIndicatorPage.PNG" alt="Abbildung 4: Schaltfläche zu verwandtem DNS-Indikator (hervorgehoben)" class="responsiveImg">
 
