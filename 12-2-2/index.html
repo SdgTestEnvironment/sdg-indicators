@@ -121,7 +121,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201218143021">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20201218161914">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -458,17 +458,24 @@ var translations = {
 <!---3 Btns if there is a corresponding Indicator-->
 
   
-    <div class="col-xs-6 col-md-6 col-lg-6">
+    <div class="col-xs-3 col-md-3 col-lg-4">
       <a href="/sdg-indicators//12-2-1" class="btn btn-primary btn-block goal-12 navigation-btn" role="button">
         <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriger Indikator </b>
       </a>
     </div>
 
-    <div class="col-xs-6 col-md-6 col-lg-6">
-      <a href="/sdg-indicators//12-3-1" class="btn btn-primary btn-block goal-12 navigation-btn" role="button">
-        <b class="btn-label hidden-sm hidden-xs">Nächster Indikator </b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <div class="col-xs-6 col-md-6 col-lg-4">
+      <a href="https://sustainabledevelopment-deutschland.github.io///8-1-a/" class="btn btn-primary btn-block goal-12 navigation-btn" title="" role="button">
+        <b class="btn-label hidden-sm hidden-xs">Verwandter nationaler Indikator:</b> <b>DNS-8.1.a</b>
       </a>
     </div>
+
+    <div class="col-xs-3 col-md-3 col-lg-4">
+      <a href="/sdg-indicators//12-3-1" class="btn btn-primary btn-block goal-12 navigation-btn" role="button">
+        <b class="btn-label hidden-sm hidden-xs">Nächster Indikator</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  <!---2 Btns if there is no corresponding Indicator-->
   
 <!--#8 addNavigationButtons---stop-------------------------------------->
 
@@ -1520,8 +1527,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/c6f8a555a7baa761bf10197604357b9b5883ba62" target="_blank">
-                2020-11-25: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/a7af781ce66c29eb0731fcc53e925b670af2d569" target="_blank">
+                2020-12-18: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -2442,12 +2449,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20201218143021'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20201218161914'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20201218143021"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20201218161914"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
