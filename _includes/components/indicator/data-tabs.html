@@ -16,7 +16,7 @@
   {%- if page.indicator.embedded_feature_url or page.indicator.embedded_feature_html -%}
     {%- if page.indicator.embedded_feature_url != '' or page.indicator.embedded_feature_html != '' -%}
     <li role="presentation" class="nav-item embedded-map">
-      <a data-no-disagg="true" class="nav-link" data-toggle="tab" id="tab-embeddedmapview" href="#embeddedmapview" aria-controls="embeddedmapview" role="tab" {% include autotrack.html preset="tab_data_embed" category="Tab change" action="Change data view" label="Change to embedded item tab" %}><i class="fa fa-plus-square" aria-hidden="true"></i><span class="hidden-xs"style="color:black">{{ page.indicator.embedded_feature_tab_title }}</span></a>
+      <a data-no-disagg="true" class="nav-link" data-toggle="tab" id="tab-embeddedmapview" href="#embeddedmapview" aria-controls="embeddedmapview" role="tab" {% include autotrack.html preset="tab_data_embed" category="Tab change" action="Change data view" label="Change to embedded item tab" %}><i class="fa fa-plus-square" aria-hidden="true"></i> <span class="hidden-xs"style="color:black">{{ page.indicator.embedded_feature_tab_title }}</span></a>
     </li>
     {%- endif -%}
   {%- endif -%}
