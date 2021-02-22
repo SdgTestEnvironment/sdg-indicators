@@ -133,7 +133,7 @@ footer_menu:
 non_global_metadata: indicator.national_metadata
 
 search_index_extra_fields:
-  - indicator_number
+  #- indicator_number
   - national_indicator_available
   - indicator_name
   - target_name
