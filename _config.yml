@@ -137,6 +137,7 @@ search_index_extra_fields:
   - national_indicator_available
   - indicator_name
   - target_name
+  - target_idS
   - data_keywords
   - graph_title
 
