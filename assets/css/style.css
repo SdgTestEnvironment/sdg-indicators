@@ -2513,6 +2513,18 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
       margin-top: 20px; } }
 .layout-goal-by-target-vertical .status, .layout-goal-by-target-vertical .tags {
   margin-left: 60px; }
+.layout-goal-by-target-vertical.contrast-high .status.complete {
+  color: black;
+  border: 1px solid transparent; }
+.layout-goal-by-target-vertical.contrast-high .status.inprogress {
+  color: white;
+  border: 1px solid transparent; }
+.layout-goal-by-target-vertical.contrast-high .status.notstarted {
+  color: white;
+  border: 1px solid white; }
+.layout-goal-by-target-vertical.contrast-high .status.notapplicable {
+  color: black;
+  border: 1px solid white; }
 
 .layout-frontpage .goal-tiles .row > div {
   margin-bottom: 10px; }
