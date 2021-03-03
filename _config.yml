@@ -153,8 +153,8 @@ plugins:
   - jekyll-open-sdg-plugins
 
 # Use a remote Jekyll theme.
-remote_theme: brockfanning/open-sdg@multilingual-indicator-id-search
-#remote_theme: open-sdg/open-sdg@master
+#remote_theme: brockfanning/open-sdg@multilingual-indicator-id-search
+remote_theme: open-sdg/open-sdg@master
 #remote_theme: brockfanning/open-sdg@goal-page-status-css
 goal_image_base: https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals
 
