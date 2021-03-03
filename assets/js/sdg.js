@@ -610,7 +610,7 @@ Chart.plugins.register({
       return meta && meta.visible;
     });
 
-    var ranges = _.chain(datasets).map('allData').map(function (data) {
+    var ranges = _.chain(datasets).pluck('allData').map(function (data) {
       return {
         min: _.findIndex(data, function(val) { return val !== null }),
         max: _.findLastIndex(data, function(val) { return val !== null })
@@ -618,8 +618,8 @@ Chart.plugins.register({
     }).value();
 
     var dataRange = ranges.length ? {
-      min: _.chain(ranges).map('min').min().value(),
-      max: _.chain(ranges).map('max').max().value()
+      min: _.chain(ranges).pluck('min').min().value(),
+      max: _.chain(ranges).pluck('max').max().value()
     } : undefined;
 
     if (dataRange) {
@@ -731,7 +731,7 @@ Chart.plugins.register({
             $(this.chart.canvas)
                 .attr('role', 'application')
                 .attr('aria-describedby', 'chart-keyboard ' + describedBy)
-                .html('<span class="hide-during-image-download">Chart. ' + keyboardInstructions + '</span>')
+                .text('Chart. ' + keyboardInstructions)
         }
     },
     afterDatasetsDraw: function() {
@@ -969,7 +969,6 @@ var accessibilitySwitcher = function() {
 
 
   function imageFix(contrast) {
-    
     if (contrast == 'high')  {
       _.each($('img:not([src*=high-contrast])'), function(goalImage){
         if ($(goalImage).attr('src').slice(0, 35) != "https://platform-cdn.sharethis.com/") {
@@ -981,7 +980,6 @@ var accessibilitySwitcher = function() {
         $(goalImage).attr('src', $(goalImage).attr('src').replace('high-contrast/', ''));
       })
     }
-    
   };
 
 };
@@ -1081,11 +1079,20 @@ function isElementUniqueInArray(element, index, arr) {
 }
 
 /**
- * @param {Array} columns
+ * @param {Array} rows
  * @return {boolean}
  */
-function dataHasGeoCodes(columns) {
-  return columns.includes(GEOCODE_COLUMN);
+function dataHasGeoCodes(rows) {
+  return dataHasColumn(GEOCODE_COLUMN, rows);
+}
+
+/**
+ * @param {string} column
+ * @param {Array} rows
+ * @return {boolean}
+ */
+function dataHasColumn(column, rows) {
+  return getColumnsFromData(rows).includes(column);
 }
 
 /**
@@ -1093,18 +1100,16 @@ function dataHasGeoCodes(columns) {
  * @return {Array} Columns from first row
  */
 function getColumnsFromData(rows) {
-  return Object.keys(rows.reduce(function(result, obj) {
-    return Object.assign(result, obj);
-  }, {}));
+  return Object.keys(rows[0]);
 }
 
 /**
- * @param {Array} columns
- * @return {Array} Columns without non-fields
+ * @param {Array} rows
+ * @return {Array} Columns from first row, omitting non-fields
  */
-function getFieldColumnsFromData(columns) {
+function getFieldColumnsFromData(rows) {
   var omitColumns = nonFieldColumns();
-  return columns.filter(function(col) {
+  return getColumnsFromData(rows).filter(function(col) {
     return !omitColumns.includes(col);
   });
 }
@@ -1130,72 +1135,6 @@ function nonFieldColumns() {
   return columns;
 }
 
-/**
- * @param {Array} items Objects optionally containing 'unit' and/or 'series'
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {object|false} The first match given the selected unit/series, or false
- */
-function getMatchByUnitSeries(items, selectedUnit, selectedSeries) {
-  if (!items || items.length < 0) {
-    return false;
-  }
-  if (!selectedUnit && !selectedSeries) {
-    return items[0];
-  }
-  var match = items.find(function(item) {
-    if (selectedUnit && selectedSeries) {
-      return item.unit === selectedUnit && item.series === selectedSeries;
-    }
-    else if (selectedUnit) {
-      return item.unit === selectedUnit;
-    }
-    else if (selectedSeries) {
-      return item.series === selectedSeries;
-    }
-  });
-  if (!match) {
-    // If no match was found, allow for a partial match (eg, unit only).
-    match = items.find(function(item) {
-      if (selectedUnit) {
-        return item.unit === selectedUnit;
-      }
-      else if (selectedSeries) {
-        return item.series === selectedSeries;
-      }
-    });
-  }
-  return match || false;
-}
-
-/**
- * Move an item from one position in an array to another, in place.
- */
-function arrayMove(arr, fromIndex, toIndex) {
-  while (fromIndex < 0) {
-    fromIndex += arr.length;
-  }
-  while (toIndex < 0) {
-    toIndex += arr.length;
-  }
-  var paddingAdded = [];
-  if (toIndex >= arr.length) {
-    var k = toIndex - arr.length;
-    while ((k--) + 1) {
-      arr.push(undefined);
-      paddingAdded.push(arr.length - 1);
-    }
-  }
-  arr.splice(toIndex, 0, arr.splice(fromIndex, 1)[0]);
-
-  // Get rid of the undefined elements that were added.
-  paddingAdded.sort();
-  while (paddingAdded.length > 0) {
-    var paddingIndex = paddingAdded.pop() - 1;
-    arr.splice(paddingIndex, 1);
-  }
-}
-
   /**
  * Model helper functions related to units.
  */
@@ -1204,8 +1143,8 @@ function arrayMove(arr, fromIndex, toIndex) {
  * @param {Array} rows
  * @return {boolean}
  */
-function dataHasUnits(columns) {
-  return columns.includes(UNIT_COLUMN);
+function dataHasUnits(rows) {
+  return dataHasColumn(UNIT_COLUMN, rows);
 }
 
 /**
@@ -1213,8 +1152,8 @@ function dataHasUnits(columns) {
  * @return {boolean}
  */
 function dataHasUnitSpecificFields(fieldsUsedByUnit) {
-  return !_.every(_.map(fieldsUsedByUnit, 'fields'), function(fields) {
-    return _.isEqual(_.sortBy(_.map(fieldsUsedByUnit, 'fields')[0]), _.sortBy(fields));
+  return !_.every(_.pluck(fieldsUsedByUnit, 'fields'), function(fields) {
+    return _.isEqual(_.sortBy(_.pluck(fieldsUsedByUnit, 'fields')[0]), _.sortBy(fields));
   });
 }
 
@@ -1223,8 +1162,8 @@ function dataHasUnitSpecificFields(fieldsUsedByUnit) {
  * @param {Array} rows
  * @return {Array} Field names
  */
-function fieldsUsedByUnit(units, rows, columns) {
-  var fields = getFieldColumnsFromData(columns);
+function fieldsUsedByUnit(units, rows) {
+  var fields = getFieldColumnsFromData(rows);
   return units.map(function(unit) {
     return {
       unit: unit,
@@ -1283,11 +1222,11 @@ function getUnitFromStartValues(startValues) {
  */
 
 /**
- * @param {Array} columns
+ * @param {Array} rows
  * @return {boolean}
  */
-function dataHasSerieses(columns) {
-  return columns.includes(SERIES_COLUMN);
+function dataHasSerieses(rows) {
+  return dataHasColumn(SERIES_COLUMN, rows);
 }
 
 /**
@@ -1295,8 +1234,8 @@ function dataHasSerieses(columns) {
  * @return {boolean}
  */
 function dataHasSeriesSpecificFields(fieldsUsedBySeries) {
-  return !_.every(_.map(fieldsUsedBySeries, 'fields'), function(fields) {
-    return _.isEqual(_.sortBy(_.map(fieldsUsedBySeries, 'fields')[0]), _.sortBy(fields));
+  return !_.every(_.pluck(fieldsUsedBySeries, 'fields'), function(fields) {
+    return _.isEqual(_.sortBy(_.pluck(fieldsUsedBySeries, 'fields')[0]), _.sortBy(fields));
   });
 }
 
@@ -1305,8 +1244,8 @@ function dataHasSeriesSpecificFields(fieldsUsedBySeries) {
  * @param {Array} rows
  * @return {Array} Field names
  */
-function fieldsUsedBySeries(serieses, rows, columns) {
-  var fields = getFieldColumnsFromData(columns);
+function fieldsUsedBySeries(serieses, rows) {
+  var fields = getFieldColumnsFromData(rows);
   return serieses.map(function(series) {
     return {
       series: series,
@@ -1369,8 +1308,8 @@ function getSeriesFromStartValues(startValues) {
  * @param {Array} edges
  * @return {Array} Field item states
  */
-function getInitialFieldItemStates(rows, edges, columns) {
-  var initial = getFieldColumnsFromData(columns).map(function(field) {
+function getInitialFieldItemStates(rows, edges) {
+  var initial = getFieldColumnsFromData(rows).map(function(field) {
     return {
       field: field,
       hasData: true,
@@ -1492,10 +1431,9 @@ function getChildFieldNames(edges) {
  * @param {boolean} dataHasSeriesSpecificFields
  * @param {Array} selectedFields Field items
  * @param {Array} edges
- * @param {string} compositeBreakdownLabel Alternate label for COMPOSITE_BREAKDOWN fields
- * @return {Array} Field item states (with additional "label" properties)
+ * @return {Array} Field item states
  */
-function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dataHasUnitSpecificFields, fieldsBySeries, selectedSeries, dataHasSeriesSpecificFields, selectedFields, edges, compositeBreakdownLabel) {
+function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dataHasUnitSpecificFields, fieldsBySeries, selectedSeries, dataHasSeriesSpecificFields, selectedFields, edges) {
   var states = fieldItemStates.map(function(item) { return item; });
   if (dataHasUnitSpecificFields && dataHasSeriesSpecificFields) {
     states = fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSeries);
@@ -1524,13 +1462,7 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
     });
   }
   sortFieldsForView(states, edges);
-  return states.map(function(item) {
-    item.label = item.field;
-    if (item.field === 'COMPOSITE_BREAKDOWN' && compositeBreakdownLabel !== '') {
-      item.label = compositeBreakdownLabel;
-    }
-    return item;
-  });
+  return states;
 }
 
 /**
@@ -1538,18 +1470,35 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
  * @param {Array} edges
  */
 function sortFieldsForView(fieldItemStates, edges) {
-  if (edges.length > 0 && fieldItemStates.length > 0) {
+  var grandparents = [],
+      parents = [];
+  if (edges) {
     edges.forEach(function(edge) {
-      // This makes sure children are right after their parents.
-      var parentIndex = fieldItemStates.findIndex(function(fieldItem) {
-        return fieldItem.field == edge.From;
-      });
-      var childIndex = fieldItemStates.findIndex(function(fieldItem) {
-        return fieldItem.field == edge.To;
-      });
-      arrayMove(fieldItemStates, childIndex, parentIndex + 1);
+      if (!parents.includes(edge.From)) {
+        parents.push(edge.From);
+      }
+    });
+    edges.forEach(function(edge) {
+      if (parents.includes(edge.To)) {
+        grandparents.push(edge.From);
+      }
     });
   }
+  fieldItemStates.sort(function(a, b) {
+    if (grandparents.includes(a.field) && !grandparents.includes(b.field)) {
+      return -1;
+    }
+    else if (grandparents.includes(b.field) && !grandparents.includes(a.field)) {
+      return 1;
+    }
+    else if (parents.includes(a.field) && !parents.includes(b.field)) {
+      return -1;
+    }
+    else if (parents.includes(b.field) && !parents.includes(a.field)) {
+      return 1;
+    }
+    return 0;
+  });
 }
 
 /**
@@ -1559,10 +1508,10 @@ function sortFieldsForView(fieldItemStates, edges) {
  * @return {Array} Field item states
  */
 function fieldItemStatesForUnit(fieldItemStates, fieldsByUnit, selectedUnit) {
-  var fieldsBySelectedUnit = fieldsByUnit.filter(function(fieldByUnit) {
-    return fieldByUnit.unit === selectedUnit;
-  })[0];
   return fieldItemStates.filter(function(fis) {
+    var fieldsBySelectedUnit = fieldsByUnit.filter(function(fieldByUnit) {
+      return fieldByUnit.unit === selectedUnit;
+    })[0];
     return fieldsBySelectedUnit.fields.includes(fis.field);
   });
 }
@@ -1574,10 +1523,10 @@ function fieldItemStatesForUnit(fieldItemStates, fieldsByUnit, selectedUnit) {
  * @return {Array} Field item states
  */
 function fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSeries) {
-  var fieldsBySelectedSeries = fieldsBySeries.filter(function(fieldBySeries) {
-    return fieldBySeries.series === selectedSeries;
-  })[0];
   return fieldItemStates.filter(function(fis) {
+    var fieldsBySelectedSeries = fieldsBySeries.filter(function(fieldBySeries) {
+      return fieldBySeries.series === selectedSeries;
+    })[0];
     return fieldsBySelectedSeries.fields.includes(fis.field);
   });
 }
@@ -1678,10 +1627,6 @@ function selectMinimumStartingFields(rows, selectableFieldNames, selectedUnit) {
   // rows. In other words we want the row with the fewest number of fields.
   filteredData = _.sortBy(filteredData, function(row) { return Object.keys(row).length; });
 
-  if (filteredData.length === 0) {
-    return [];
-  }
-
   // Convert to an array of objects with 'field' and 'values' keys, omitting
   // any non-field columns.
   return Object.keys(filteredData[0]).filter(function(key) {
@@ -1699,9 +1644,6 @@ function selectMinimumStartingFields(rows, selectableFieldNames, selectedUnit) {
  * @param {Array} fieldItemStates
  * @param {Array} rows
  * @return {Object} Arrays of parents keyed to children
- *
- * @TODO: This function can be a bottleneck in large datasets with a lot of
- * disaggregation values. Can this be further optimized?
  */
 function validParentsByChild(edges, fieldItemStates, rows) {
   var parentFields = getParentFieldNames(edges);
@@ -1715,17 +1657,18 @@ function validParentsByChild(edges, fieldItemStates, rows) {
       return value.value;
     });
     var parentField = parentFields[fieldIndex];
-    var childRows = rows.filter(function(row) {
-      var childNotEmpty = row[childField];
-      var parentNotEmpty = row[parentField];
-      return childNotEmpty && parentNotEmpty;
-    })
     validParentsByChild[childField] = {};
     childValues.forEach(function(childValue) {
-      var rowsWithParentValues = childRows.filter(function(row) {
-        return row[childField] == childValue;
+      var rowsWithParentValues = rows.filter(function(row) {
+        var childMatch = row[childField] == childValue;
+        var parentNotEmpty = row[parentField];
+        return childMatch && parentNotEmpty;
       });
-      validParentsByChild[childField][childValue] = getUniqueValuesByProperty(parentField, rowsWithParentValues);
+      var parentValues = rowsWithParentValues.map(function(row) {
+        return row[parentField];
+      });
+      parentValues = parentValues.filter(isElementUniqueInArray);
+      validParentsByChild[childField][childValue] = parentValues;
     });
   });
   return validParentsByChild;
@@ -1804,19 +1747,27 @@ function getDataBySelectedFields(rows, selectedFields) {
  * @return {String} Updated title
  */
 function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
-  var match = getMatchByUnitSeries(allTitles, selectedUnit, selectedSeries);
-  return (match) ? match.title : currentTitle;
-}
-
-/**
- * @param {Array} graphLimits Objects containing 'unit' and 'title'
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {Object|false} Graph limit object, if any
- */
-function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
-  var match = getMatchByUnitSeries(graphLimits, selectedUnit, selectedSeries);
-  return (match) ? match : false;
+  var newTitle = currentTitle;
+  if (allTitles && allTitles.length > 0) {
+    var matchedTitle;
+    if (selectedUnit && selectedSeries) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.unit === selectedUnit && title.series === selectedSeries;
+      });
+    }
+    if (!matchedTitle && selectedSeries) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.series === selectedSeries;
+      });
+    }
+    if (!matchedTitle && selectedUnit) {
+      matchedTitle = allTitles.find(function(title) {
+        return title.unit === selectedUnit;
+      });
+    }
+    newTitle = (matchedTitle) ? matchedTitle.title : allTitles[0].title;
+  }
+  return newTitle;
 }
 
 /**
@@ -1827,86 +1778,27 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {string} defaultLabel
  * @param {Array} colors
  * @param {Array} selectableFields Field names
- * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment;
-  var numColors = colors.length,
-      maxColorAssignments = numColors * 2;
-
-  prepareColorAssignments(colorAssignments, maxColorAssignments);
-  setAllColorAssignmentsReadyForEviction(colorAssignments);
-
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields) {
+  var datasets = [], index = 0, dataset, color, background, border;
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
     if (filteredData.length > 0) {
-      excess = (index >= maxColorAssignments);
-      if (excess) {
-        // This doesn't really matter: excess datasets won't be displayed.
-        color = getHeadlineColor();
-        striped = false;
-      }
-      else {
-        combinationKey = JSON.stringify(combination);
-        colorAssignment = getColorAssignmentByCombination(colorAssignments, combinationKey);
-        if (colorAssignment !== undefined) {
-          colorIndex = colorAssignment.colorIndex;
-          striped = colorAssignment.striped;
-          colorAssignment.readyForEviction = false;
-        }
-        else {
-          if (colorAssignmentsAreFull(colorAssignments)) {
-            evictColorAssignment(colorAssignments);
-          }
-          var openColorInfo = getOpenColorInfo(colorAssignments, colors);
-          colorIndex = openColorInfo.colorIndex;
-          striped = openColorInfo.striped;
-          colorAssignment = getAvailableColorAssignment(colorAssignments);
-          assignColor(colorAssignment, combinationKey, colorIndex, striped);
-        }
-      }
-
-      color = getColor(colorIndex, colors);
-      background = getBackground(color, striped);
-      border = getBorderDash(striped);
-
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess);
+      color = getColor(index, colors);
+      background = getBackground(index, colors);
+      border = getBorderDash(index, colors);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border);
       datasets.push(dataset);
       index++;
     }
   }, this);
-
-  datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
+  datasets.sort(function(a, b) { return a.label > b.label; });
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel);
     datasets.unshift(dataset);
   }
   return datasets;
-}
-
-/**
- * @param {Array} colorAssignments
- * @param {int} maxColorAssignments
- */
-function prepareColorAssignments(colorAssignments, maxColorAssignments) {
-  while (colorAssignments.length < maxColorAssignments) {
-    colorAssignments.push({
-      combination: null,
-      colorIndex: null,
-      striped: false,
-      readyForEviction: false,
-    });
-  }
-}
-
-/**
- * @param {Array} colorAssignments
- */
-function setAllColorAssignmentsReadyForEviction(colorAssignments) {
-  for (var i = 0; i < colorAssignments.length; i++) {
-    colorAssignments[i].readyForEviction = true;
-  }
 }
 
 /**
@@ -1924,113 +1816,32 @@ function getDataMatchingCombination(data, combination, selectableFields) {
 }
 
 /**
- * @param {Array} colorAssignments
- * @param {string} combination
- * @return {Object|undefined} Color assignment object if found.
- */
-function getColorAssignmentByCombination(colorAssignments, combination) {
-  return colorAssignments.find(function(assignment) {
-    return assignment.combination === combination;
-  });
-}
-
-/**
- * @param {Array} colorAssignments
- * @return {boolean}
- */
-function colorAssignmentsAreFull(colorAssignments) {
-  for (var i = 0; i < colorAssignments.length; i++) {
-    if (colorAssignments[i].combination === null) {
-      return false;
-    }
-  }
-  return true;
-}
-
-/**
- * @param {Array} colorAssignments
- */
-function evictColorAssignment(colorAssignments) {
-  for (var i = 0; i < colorAssignments.length; i++) {
-    if (colorAssignments[i].readyForEviction) {
-      colorAssignments[i].combination = null;
-      colorAssignments[i].colorIndex = null;
-      colorAssignments[i].striped = false;
-      colorAssignments[i].readyForEviction = false;
-      return;
-    }
-  }
-  throw 'Could not evict color assignment';
-}
-
-/**
- * @param {Array} colorAssignments
- * @param {Array} colors
- * @return {Object} Object with 'colorIndex' and 'striped' properties.
- */
-function getOpenColorInfo(colorAssignments, colors) {
-  // First look for normal colors, then striped.
-  var stripedStates = [false, true];
-  for (var i = 0; i < stripedStates.length; i++) {
-    var stripedState = stripedStates[i];
-    var assignedColors = colorAssignments.filter(function(colorAssignment) {
-      return colorAssignment.striped === stripedState && colorAssignment.colorIndex !== null;
-    }).map(function(colorAssignment) {
-      return colorAssignment.colorIndex;
-    });
-    if (assignedColors.length < colors.length) {
-      for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
-        if (!(assignedColors.includes(colorIndex))) {
-          return {
-            colorIndex: colorIndex,
-            striped: stripedState,
-          }
-        }
-      }
-    }
-  }
-  throw 'Could not find open color';
-}
-
-/**
- * @param {Array} colorAssignments
- * @return {Object|undefined} Color assignment object if found.
- */
-function getAvailableColorAssignment(colorAssignments) {
-  return colorAssignments.find(function(assignment) {
-    return assignment.combination === null;
-  });
-}
-
-/**
- * @param {Object} colorAssignment
- * @param {string} combination
- * @param {int} colorIndex
- * @param {boolean} striped
- */
-function assignColor(colorAssignment, combination, colorIndex, striped) {
-  colorAssignment.combination = combination;
-  colorAssignment.colorIndex = colorIndex;
-  colorAssignment.striped = striped;
-  colorAssignment.readyForEviction = false;
-}
-
-/**
- * @param {int} colorIndex
+ * @param {int} datasetIndex
  * @param {Array} colors
  * @return Color from a list
  */
-function getColor(colorIndex, colors) {
-  return '#' + colors[colorIndex];
+function getColor(datasetIndex, colors) {
+  if (datasetIndex >= colors.length) {
+    // Support double the number of colors, because we'll use striped versions.
+    return '#' + colors[datasetIndex - colors.length];
+  } else {
+    return '#' + colors[datasetIndex];
+  }
 }
 
 /**
- * @param {string} color
- * @param {boolean} striped
+ * @param {int} datasetIndex
+ * @param {Array} colors
  * @return Background color or pattern
  */
-function getBackground(color, striped) {
-  return striped ? getStripes(color) : color;
+function getBackground(datasetIndex, colors) {
+  var color = getColor(datasetIndex, colors);
+
+  if (datasetIndex >= colors.length) {
+    color = getStripes(color);
+  }
+
+  return color;
 }
 
 /**
@@ -2045,11 +1856,12 @@ function getStripes(color) {
 }
 
 /**
- * @param {boolean} striped
+ * @param {int} datasetIndex
+ * @param {Array} colors
  * @return {Array|undefined} An array produces dashed lines on the chart
  */
-function getBorderDash(striped) {
-  return striped ? [5, 5] : undefined;
+function getBorderDash(datasetIndex, colors) {
+  return datasetIndex >= colors.length ? [5, 5] : undefined;
 }
 
 /**
@@ -2062,7 +1874,7 @@ function getBorderDash(striped) {
  * @param {Array} border
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
@@ -2074,7 +1886,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderDash: border,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
-    excess: excess,
   });
 }
 
@@ -2196,7 +2007,7 @@ function convertJsonFormatToRows(data) {
   }
 
   return data[keys[0]].map(function(item, index) {
-    return _.zipObject(keys, keys.map(function(key) {
+    return _.object(keys, keys.map(function(key) {
       return data[key][index];
     }));
   });
@@ -2214,7 +2025,7 @@ function getHeadline(selectableFields, rows) {
     });
   }).map(function (row) {
     // Remove null fields in each row.
-    return _.pickBy(row, function(val) { return val !== null });
+    return _.pick(row, function(val) { return val !== null });
   });
 }
 
@@ -2255,17 +2066,6 @@ function prepareData(rows) {
 function sortData(rows, selectedUnit) {
   var column = selectedUnit ? UNIT_COLUMN : YEAR_COLUMN;
   return _.sortBy(rows, column);
-}
-
-/**
- * @param {Array} precisions Objects containing 'unit' and 'title'
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {int|false} number of decimal places, if any
- */
-function getPrecision(precisions, selectedUnit, selectedSeries) {
-  var match = getMatchByUnitSeries(precisions, selectedUnit, selectedSeries);
-  return (match) ? match.decimals : false;
 }
 
 
@@ -2315,9 +2115,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
     tableDataFromDatasets: tableDataFromDatasets,
-    getPrecision: getPrecision,
-    getGraphLimits: getGraphLimits,
-    getColumnsFromData: getColumnsFromData,
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }
@@ -2625,14 +2422,12 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(indicatorId, precision, decimalSeparator) {
+  this.initialise = function(indicatorId) {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
       mapOptions: {"minZoom":5,"maxZoom":10,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2020</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2020</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0","styleNormal":{"weight":1,"opacity":1,"color":"#888","fillOpacity":0.7},"styleHighlighted":{"weight":1,"opacity":1,"color":"#111","fillOpacity":0.7},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":55}},
       mapLayers: [{"subfolder":"regions","label":"Region","min_zoom":0,"max_zoom":20,"staticBorders":true}],
-      precision: precision,
-      decimalSeparator: decimalSeparator,
     });
   };
 };
@@ -3642,14 +3437,6 @@ var indicatorSearch = function() {
       }
     }
 
-    // Recognize an indicator id as a special case that does not need Lunr.
-    var searchWords = searchTermsToUse.split(' '),
-        indicatorIdParts = searchWords[0].split('.'),
-        isIndicatorSearch = (searchWords.length === 1 && indicatorIdParts.length >= 3);
-    if (isIndicatorSearch) {
-      useLunr = false;
-    }
-
     var results = [];
     var alternativeSearchTerms = [];
 
@@ -3748,9 +3535,6 @@ var indicatorSearch = function() {
       resultsCount: resultItems.length,
       didYouMean: (alternativeSearchTerms.length > 0) ? alternativeSearchTerms : false,
     }));
-
-    // Hide the normal header search.
-    $('#search').css('visibility', 'hidden');
   }
 
   // Helper function to make a search query "fuzzier", using the ~ syntax.
@@ -4074,14 +3858,7 @@ $(function() {
 
     // Hijack the displayed date format.
     _getDisplayDateFormat: function(date){
-      var time = date.toISOString().slice(0, 10);
-      var match = this.options.years.find(function(y) { return y.time == time; });
-      if (match) {
-        return match.display;
-      }
-      else {
-        return date.getFullYear();
-      }
+      return date.getFullYear();
     },
 
     // Override the _createButton method to prevent the date from being a link.
@@ -4156,7 +3933,6 @@ $(function() {
 
   // Helper function to compose the full widget.
   L.Control.yearSlider = function(options) {
-    var years = getYears(options.years);
     // Extend the defaults.
     options = L.Util.extend(defaultOptions, options);
     // Hardcode the timeDimension to year intervals.
@@ -4164,8 +3940,8 @@ $(function() {
       // We pad our years to at least January 2nd, so that timezone issues don't
       // cause any problems. This converts the array of years into a comma-
       // delimited string of YYYY-MM-DD dates.
-      times: years.map(function(y) { return y.time }).join(','),
-      currentTime: new Date(years[0].time).getTime(),
+      times: options.years.join('-01-02,') + '-01-02',
+      currentTime: new Date(options.years[0] + '-01-02').getTime(),
     });
     // Create the player.
     options.player = new L.TimeDimension.Player(options.playerOptions, options.timeDimension);
@@ -4173,45 +3949,9 @@ $(function() {
     if (typeof options.yearChangeCallback === 'function') {
       options.timeDimension.on('timeload', options.yearChangeCallback);
     };
-    // Pass in our years for later use.
-    options.years = years;
     // Return the control.
     return new L.Control.YearSlider(options);
   };
-
-  function isYear(year) {
-    var parsedInt = parseInt(year, 10);
-    return /^\d+$/.test(year) && parsedInt > 1900 && parsedInt < 3000;
-  }
-
-  function getYears(years) {
-    // Support an array of years or an array of strings starting with years.
-    var day = 2;
-    return years.map(function(year) {
-      var mapped = {
-        display: year,
-        time: year,
-      };
-      // Usually this is a year.
-      if (isYear(year)) {
-        mapped.time = year + '-01-02';
-        // Start over that day variable.
-        day = 2;
-      }
-      // Otherwise we get the year from the beginning of the string.
-      else {
-        for (var delimiter of ['-', '.', ' ', '/']) {
-          var parts = year.split(delimiter);
-          if (parts.length > 1 && isYear(parts[0])) {
-            mapped.time = parts[0] + '-01-0' + day;
-            day += 1;
-            break;
-          }
-        }
-      }
-      return mapped;
-    });
-  }
 }());
 /*
  * Leaflet fullscreenAccessible.
