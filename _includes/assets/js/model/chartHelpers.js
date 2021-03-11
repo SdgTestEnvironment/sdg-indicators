@@ -60,6 +60,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
     datasets.unshift(dataset);
+    index++;
   }
   return datasets;
 }
