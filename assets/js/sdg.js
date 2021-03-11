@@ -1795,7 +1795,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   }, this);
   datasets.sort(function(a, b) { return a.label > b.label; });
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -1946,14 +1946,14 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label) {
+function makeHeadlineDataset(years, rows, label, colors) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: getHeadlineColor(),
-    backgroundColor: getHeadlineColor(),
-    pointBorderColor: getHeadlineColor(),
-    pointBackgroundColor: getHeadlineColor(),
+    borderColor: getColor(0, colors), //getHeadlineColor(),
+    backgroundColor: getColor(0, colors), //getHeadlineColor(),
+    pointBorderColor: getColor(0, colors), //getHeadlineColor(),
+    pointBackgroundColor: getColor(0, colors), //getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
   });
