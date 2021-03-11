@@ -363,7 +363,7 @@ var indicatorView = function (model, options) {
     var that = this;
     var gridColor = that.getGridColor();
     var tickColor = that.getTickColor();
-
+    console.log("CahrtInfo: ", chartInfo);
     var chartConfig = {
       type: this._model.graphType,
       data: chartInfo,
@@ -371,6 +371,7 @@ var indicatorView = function (model, options) {
         responsive: true,
         maintainAspectRatio: false,
         spanGaps: true,
+        showLine: true,
         scrollX: true,
         scrollCollapse: true,
         sScrollXInner: '150%',
