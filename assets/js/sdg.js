@@ -1053,7 +1053,7 @@ var GEOCODE_COLUMN = 'GeoCode';
 var YEAR_COLUMN = 'Year';
 var VALUE_COLUMN = 'Value';
 var HEADLINE_COLOR = '#777777';
-var SERIES_TOGGLE = false;
+var SERIES_TOGGLE = true;
 
   /**
  * Model helper functions with general utility.
@@ -2808,7 +2808,7 @@ var indicatorView = function (model, options) {
         responsive: true,
         maintainAspectRatio: false,
         spanGaps: true,
-        showLine: chartInfo.showLine ? chrtInfo.showLine : true,
+        showLine: chartInfo.showLine != "" ? chartInfo.showLine : true,
         scrollX: true,
         scrollCollapse: true,
         sScrollXInner: '150%',
