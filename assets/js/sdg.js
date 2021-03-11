@@ -2162,6 +2162,7 @@ function sortData(rows, selectedUnit) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
+  this.showLine = options.showLine;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
 
@@ -2403,6 +2404,7 @@ function sortData(rows, selectedUnit) {
       selectedSeries: this.selectedSeries,
       graphLimits: this.graphLimits,
       stackedDisaggregation: this.stackedDisaggregation,
+      showLines: this.showLine,
       graphAnnotations: this.graphAnnotations,
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
