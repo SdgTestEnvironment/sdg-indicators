@@ -45,6 +45,11 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
  */
 function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields) {
   var datasets = [], index = 0, dataset, color, background, border;
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
+    datasets.unshift(dataset);
+    index++;
+  }
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
     if (filteredData.length > 0) {
@@ -57,11 +62,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
   datasets.sort(function(a, b) { return a.label > b.label; });
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
-    datasets.unshift(dataset);
-    index++;
-  }
+
   return datasets;
 }
 
