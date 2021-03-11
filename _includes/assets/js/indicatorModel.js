@@ -41,6 +41,7 @@ var indicatorModel = function (options) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
+  this.showLine = options.showLine;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
 
@@ -282,6 +283,7 @@ var indicatorModel = function (options) {
       selectedSeries: this.selectedSeries,
       graphLimits: this.graphLimits,
       stackedDisaggregation: this.stackedDisaggregation,
+      showLines: this.showLine,
       graphAnnotations: this.graphAnnotations,
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
