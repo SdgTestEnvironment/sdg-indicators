@@ -43,10 +43,10 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
  * @param {Array} selectableFields Field names
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields) {
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, showLine) {
   var datasets = [], index = 0, dataset, color, background, border;
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine);
     datasets.unshift(dataset);
     index++;
   }
@@ -56,7 +56,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(index, colors);
       background = getBackground(index, colors);
       border = getBorderDash(index, colors);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, showLine);
       datasets.push(dataset);
       index++;
     }
@@ -139,7 +139,7 @@ function getBorderDash(datasetIndex, colors) {
  * @param {Array} border
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, showLine) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
@@ -151,6 +151,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderDash: border,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
+    showLine: showLine,
   });
 }
 
@@ -211,7 +212,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, colors) {
+function makeHeadlineDataset(years, rows, label, colors, showLine) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
@@ -221,5 +222,6 @@ function makeHeadlineDataset(years, rows, label, colors) {
     pointBackgroundColor: getColor(0, colors), //getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
+    showLine: showLine,
   });
 }
