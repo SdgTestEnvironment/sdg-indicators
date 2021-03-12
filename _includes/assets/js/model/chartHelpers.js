@@ -61,8 +61,8 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       index++;
     }
   }, this);
-  datasets.sort(function(a, b) { return a.label > b.label; });
-  console.log("Datasets :", datasets);
+  //datasets.sort(function(a, b) { return a.label > b.label; });
+  
   return datasets;
 }
 
