@@ -1799,7 +1799,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
   //datasets.sort(function(a, b) { return a.label > b.label; });
-
+  console.log(datasets);
   return datasets;
 }
 
@@ -2381,7 +2381,7 @@ function sortData(rows, selectedUnit) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
+    
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine, this.spanGaps);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
@@ -2821,15 +2821,13 @@ var indicatorView = function (model, options) {
         scrollCollapse: true,
         sScrollXInner: '150%',
         scales: {
-          x: {
-            suggestedMin: 2010,
-          },
           xAxes: [{
             maxBarThickness: 150,
             gridLines: {
               color: gridColor,
             },
             ticks: {
+              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
