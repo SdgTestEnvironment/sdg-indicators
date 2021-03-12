@@ -2817,6 +2817,9 @@ var indicatorView = function (model, options) {
         scrollCollapse: true,
         sScrollXInner: '150%',
         scales: {
+          x: {
+            suggestedMin: 2010,
+          },
           xAxes: [{
             maxBarThickness: 150,
             gridLines: {
