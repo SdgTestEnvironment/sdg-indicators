@@ -41,7 +41,7 @@ var indicatorModel = function (options) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
-  this.showLine = options.showLine;
+  this.showLine = options.showLine ? options.showLine : true;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
 
