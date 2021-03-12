@@ -62,7 +62,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
   datasets.sort(function(a, b) { return a.label > b.label; });
-
+  console.log("Datasets :", datasets);
   return datasets;
 }
 
