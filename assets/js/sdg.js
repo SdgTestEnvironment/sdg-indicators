@@ -2378,7 +2378,7 @@ function sortData(rows, selectedUnit) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    //console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields);
+    console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
@@ -2804,7 +2804,7 @@ var indicatorView = function (model, options) {
     var that = this;
     var gridColor = that.getGridColor();
     var tickColor = that.getTickColor();
-    console.log("CahrtInfo: ", chartInfo);
+    //console.log("CahrtInfo: ", chartInfo);
     var chartConfig = {
       type: this._model.graphType,
       data: chartInfo,
