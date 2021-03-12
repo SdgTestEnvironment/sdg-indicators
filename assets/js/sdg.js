@@ -2827,7 +2827,7 @@ var indicatorView = function (model, options) {
               color: gridColor,
             },
             ticks: {
-              suggestedMin: 2010,
+              min: 2010,
               fontColor: tickColor,
             },
           }],
