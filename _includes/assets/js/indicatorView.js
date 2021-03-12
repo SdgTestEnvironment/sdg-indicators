@@ -370,7 +370,7 @@ var indicatorView = function (model, options) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        spanGaps: true,
+        spanGaps: false,
         showLine: false, //chartInfo.showLine != "" ? chartInfo.showLine : true,
         scrollX: true,
         scrollCollapse: true,
