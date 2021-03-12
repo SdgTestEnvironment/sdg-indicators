@@ -382,7 +382,7 @@ var indicatorView = function (model, options) {
               color: gridColor,
             },
             ticks: {
-              min: 2010,
+              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
@@ -391,7 +391,7 @@ var indicatorView = function (model, options) {
               color: gridColor,
             },
             ticks: {
-              suggestedMin: -10,
+              suggestedMin: 0,
               fontColor: tickColor,
             },
             scaleLabel: {
