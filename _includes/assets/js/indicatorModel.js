@@ -42,6 +42,7 @@ var indicatorModel = function (options) {
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.showLine = options.showLine; // ? options.showLine : true;
+  this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
 
@@ -255,7 +256,7 @@ var indicatorModel = function (options) {
 
     var combinations = helpers.getCombinationData(this.selectedFields);
     console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine, this.spanGaps);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
@@ -285,6 +286,7 @@ var indicatorModel = function (options) {
       graphLimits: this.graphLimits,
       stackedDisaggregation: this.stackedDisaggregation,
       showLine: this.showLine,
+      spanGaps: this.spanGaps,
       graphAnnotations: this.graphAnnotations,
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
