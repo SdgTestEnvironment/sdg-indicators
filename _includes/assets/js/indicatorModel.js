@@ -254,7 +254,7 @@ var indicatorModel = function (options) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    //console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields);
+    console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.showLine);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
