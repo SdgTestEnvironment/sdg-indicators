@@ -1781,7 +1781,7 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
  * @return {Array} Datasets suitable for Chart.js
  */
 function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, showLine) {
-  var datasets = [], index = 0, dataset, color, background, border;
+  var datasets = [], index = 0, dataset, color, background, border, showLine;
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine);
     datasets.unshift(dataset);
@@ -1901,7 +1901,7 @@ function getBaseDataset() {
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
-    spanGaps: true,
+    spanGaps: false,
   });
 }
 
