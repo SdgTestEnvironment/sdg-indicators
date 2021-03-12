@@ -1900,8 +1900,7 @@ function getBaseDataset() {
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
-    spanGaps: false,
-    showLine: false
+    spanGaps: true;
   });
 }
 
@@ -2376,6 +2375,7 @@ function sortData(rows, selectedUnit) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
+    console.log("Input getDataset: ", headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
