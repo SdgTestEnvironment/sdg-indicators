@@ -377,12 +377,12 @@ var indicatorView = function (model, options) {
         sScrollXInner: '150%',
         scales: {
           xAxes: [{
-            suggestedMin: 2010,
             maxBarThickness: 150,
             gridLines: {
               color: gridColor,
             },
             ticks: {
+              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
