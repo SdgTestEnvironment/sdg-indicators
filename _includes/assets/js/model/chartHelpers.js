@@ -56,7 +56,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(index, colors);
       background = getBackground(index, colors);
       border = getBorderDash(index, colors);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, showLine);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, showLine);
       datasets.push(dataset);
       index++;
     }
