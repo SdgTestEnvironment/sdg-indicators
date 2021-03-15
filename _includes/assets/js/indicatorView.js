@@ -590,7 +590,7 @@ var indicatorView = function (model, options) {
     else{
       var goal = indicator[10,11]
     }
-    console.log('goal' + goal );
+    console.log('{{ site.graph_color_headline[' + goal + '] }}' );
     return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
   };
 
