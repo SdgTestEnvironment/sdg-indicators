@@ -65,8 +65,8 @@
       //---#2 TimeSeriesNameDisplayedInMaps---stop--------------------------------------------------------------
 
       div.innerHTML = L.Util.template(controlTpl, {
-        lowValue: this.plugin.valueRange[0],
-        highValue: this.plugin.valueRange[1],
+        lowValue: this.plugin.alterData(opensdg.dataRounding(this.plugin.valueRange[0])),
+        highValue: this.plugin.alterData(opensdg.dataRounding(this.plugin.valueRange[1])),
         legendSwatches: swatches,
         //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
         title: headline,
@@ -103,7 +103,7 @@
           name: selection.feature.properties.name,
           valueStatus: valueStatus,
           percentage: percentage,
-          value: value,
+          value: plugin.alterData(opensdg.dataRounding(value)),
         });
       }).join('');
 
