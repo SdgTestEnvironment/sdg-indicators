@@ -1909,6 +1909,13 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
+    if (headline.length > 0) {
+      dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
+      datasets.unshift(dataset);
+
+      index ++;
+    }
+
     if (filteredData.length > 0) {
       excess = (index >= maxColorAssignments);
       if (excess) {
@@ -1946,11 +1953,8 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
 
-  datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel);
-    datasets.unshift(dataset);
-  }
+  //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
+
   return datasets;
 }
 
@@ -2204,14 +2208,14 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label) {
+function makeHeadlineDataset(years, rows, label, colors) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: getHeadlineColor(),
-    backgroundColor: getHeadlineColor(),
-    pointBorderColor: getHeadlineColor(),
-    pointBackgroundColor: getHeadlineColor(),
+    borderColor: getColor(0, colors),// getHeadlineColor(),
+    backgroundColor: getColor(0, colors),// getHeadlineColor(),
+    pointBorderColor: getColor(0, colors),// getHeadlineColor(),
+    pointBackgroundColor: getColor(0, colors),// getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
   });
@@ -2673,7 +2677,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields, this.colorAssignments);//, this.showLine, this.spanGaps);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments);//, this.showLine, this.spanGaps);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
