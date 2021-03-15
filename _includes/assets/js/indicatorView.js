@@ -583,7 +583,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast, goal) {
-    console.log('{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}');
+    console.log('site.graph_color_headline' + goal );
     return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
   };
 
