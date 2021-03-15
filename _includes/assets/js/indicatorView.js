@@ -585,10 +585,10 @@ var indicatorView = function (model, options) {
 
   this.getHeadlineColor = function(contrast, indicator) {
     if (indicator[11]=='-'){
-      goal = indicator[10]
+      var goal = indicator[10]
     }
     else{
-      goal = indicator[10,11]
+      var goal = indicator[10,11]
     }
     console.log('goal' + goal );
     return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
