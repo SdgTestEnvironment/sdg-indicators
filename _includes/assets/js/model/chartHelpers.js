@@ -55,6 +55,13 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
+    if (headline.length > 0) {
+      dataset = makeHeadlineDataset(years, headline, defaultLabel);
+      datasets.unshift(dataset);
+
+      index ++;
+    }
+
     if (filteredData.length > 0) {
       excess = (index >= maxColorAssignments);
       if (excess) {
@@ -92,11 +99,8 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     }
   }, this);
 
-  datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel);
-    datasets.unshift(dataset);
-  }
+  //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
+
   return datasets;
 }
 
