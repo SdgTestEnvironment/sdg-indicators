@@ -2215,10 +2215,10 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: colors[0], //getHeadlineColor(),
-    backgroundColor: colors[0], //getHeadlineColor(),
-    pointBorderColor: colors[0], //getHeadlineColor(),
-    pointBackgroundColor: colors[0], //getHeadlineColor(),
+    borderColor: '#' + colors[0], //getHeadlineColor(),
+    backgroundColor: '#' + colors[0], //getHeadlineColor(),
+    pointBorderColor: '#' + colors[0], //getHeadlineColor(),
+    pointBackgroundColor: '#' + colors[0], //getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
@@ -3329,7 +3329,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#004466';
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#004466'
   }
 
   this.getGridColor = function(contrast) {
