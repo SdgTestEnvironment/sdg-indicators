@@ -1906,15 +1906,16 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
+    datasets.unshift(dataset);
+
+    index ++;
+  },
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
-    if (headline.length > 0) {
-      dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
-      datasets.unshift(dataset);
 
-      index ++;
-    }
 
     if (filteredData.length > 0) {
       excess = (index >= maxColorAssignments);
@@ -2895,7 +2896,7 @@ var indicatorView = function (model, options) {
       fieldGroupElement.attr('data-has-data', fieldGroup.hasData);
       var fieldGroupButton = fieldGroupElement.find('> button'),
           describedByCurrent = fieldGroupButton.attr('aria-describedby') || '',
-          noDataHintId = 'no-data-hint-' + fieldGroup.field.replace(/ /g, '-');
+          noDataHintId = 'no-data-hint-' + fieldGroup.field.replace(/ /g, '.');
       if (!fieldGroup.hasData && !describedByCurrent.includes(noDataHintId)) {
         fieldGroupButton.attr('aria-describedby', describedByCurrent + ' ' + noDataHintId);
       }
@@ -3666,7 +3667,7 @@ var indicatorView = function (model, options) {
           var isYear = (index == 0);
           var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
           var cell_suffix = (isYear) ? '</th>' : '</td>';
-          row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '-') + cell_suffix;
+          row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '.') + cell_suffix;
         });
         row_html += '</tr>';
         currentTable.find('tbody').append(row_html);
