@@ -53,6 +53,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
   console.log("H", headline);
+  console.log("C", colors);
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
     datasets.unshift(dataset);
