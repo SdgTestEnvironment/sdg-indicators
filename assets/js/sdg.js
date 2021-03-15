@@ -1943,7 +1943,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      colors =  headline.length > 0 ? colors[1,-1] : colors;
+      //colors =  headline.length > 0 ? colors[1,-1] : colors;
       color = headline.length > 0 ? getColor(colorIndex + 1 , colors) : getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
@@ -2447,6 +2447,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.showLine = options.showLine; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
+  this.sdgGoal = options.sdgGoal;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
@@ -3331,9 +3332,9 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast) {
+  this.getHeadlineColor = function(contrast, goal) {
     return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
-  }
+  };
 
   this.getGridColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#222' : '#ddd';
@@ -3341,7 +3342,7 @@ var indicatorView = function (model, options) {
 
   this.getTickColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#fff' : '#000';
-  }
+  };
 
   this.isHighContrast = function(contrast) {
     if (contrast) {
@@ -3371,7 +3372,7 @@ var indicatorView = function (model, options) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast, chartInfo.data.shortIndicatorId[0]);
+        var newColor = this.getHeadlineColor(contrast, chartInfo.options.sdgGoal);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;
