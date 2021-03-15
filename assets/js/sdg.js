@@ -3325,8 +3325,8 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast, goal) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#007a1c';
+  this.getHeadlineColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '#FFDD00' : 'e5243bdda63a4c9f38c5192dff3a2126bde2fcc30ba21942fd6925dd1367fd9d24bf8b2e3f7e440a97d956c02b00689d19486a';
   }
 
   this.getGridColor = function(contrast) {
