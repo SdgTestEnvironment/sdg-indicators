@@ -57,7 +57,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     datasets.unshift(dataset);
 
     index ++;
-  },
+  };
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
