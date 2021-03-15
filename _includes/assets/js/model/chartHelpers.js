@@ -353,7 +353,7 @@ function prepareDataForDataset(years, rows) {
  *
  * TODO: Make this dynamic to support high-contrast.
  */
-function getHeadlineColor() {
+function getHeadlineColor(colors) {
   //return HEADLINE_COLOR;
   return getColor(0, colors);
 }
