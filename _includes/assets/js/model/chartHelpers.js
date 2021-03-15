@@ -361,10 +361,10 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: colors[0], //getHeadlineColor(),
-    backgroundColor: colors[0], //getHeadlineColor(),
-    pointBorderColor: colors[0], //getHeadlineColor(),
-    pointBackgroundColor: colors[0], //getHeadlineColor(),
+    borderColor: '#' + colors[0], //getHeadlineColor(),
+    backgroundColor: '#' + colors[0], //getHeadlineColor(),
+    pointBorderColor: '#' + colors[0], //getHeadlineColor(),
+    pointBackgroundColor: '#' + colors[0], //getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
