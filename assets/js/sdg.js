@@ -3223,10 +3223,10 @@ var indicatorView = function (model, options) {
           scaler: {}
         },
         tooltips: {
-          callbacks: {
-            label: function(tooltipItems, data) {
-              return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
-            },
+          // callbacks: {
+          //   label: function(tooltipItems, data) {
+          //     return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
+          //   },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
               if (typeof unit !== 'undefined' && unit !== '') {
@@ -3329,7 +3329,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : 'e5243bdda63a4c9f38c5192dff3a2126bde2fcc30ba21942fd6925dd1367fd9d24bf8b2e3f7e440a97d956c02b00689d19486a';
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#007a1c';
   }
 
   this.getGridColor = function(contrast) {
