@@ -52,12 +52,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
-  console.log("H", headline);
-  console.log("C", colors);
+
   if (headline.length > 0) {
+    console.log("H", headline);
+    console.log("C", colors);
+
     dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
     datasets.unshift(dataset);
-
+    console.log("D1", datasets);
     index ++;
   }
 
