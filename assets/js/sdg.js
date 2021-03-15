@@ -1943,6 +1943,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
+      colors =  headline.length > 0 ? colors[1,-1] : colors;
       color = headline.length > 0 ? getColor(colorIndex + 1 , colors) : getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
@@ -2225,6 +2226,7 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
     showLine: showLine,
     spanGaps: spanGaps,
   });
+  console.log("makeHeadlineDataset:", dataset);
 }
 
   /**
