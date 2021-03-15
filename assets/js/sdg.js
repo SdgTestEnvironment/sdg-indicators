@@ -3333,8 +3333,14 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast, goal) {
-    console.log('site.graph_color_headline' + goal );
+  this.getHeadlineColor = function(contrast, indicator) {
+    if (indicator[11]=='-'){
+      goal = indicator[10]
+    }
+    else{
+      goal = indicator[10,11]
+    }
+    console.log('goal' + goal );
     return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
   };
 
@@ -3374,7 +3380,7 @@ var indicatorView = function (model, options) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast, chartInfo.options.sdgGoal);
+        var newColor = this.getHeadlineColor(contrast, chartInfo.data.indicatorId);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;
