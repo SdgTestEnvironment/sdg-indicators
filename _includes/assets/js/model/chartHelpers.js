@@ -46,7 +46,7 @@ function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
  * @return {Array} Datasets suitable for Chart.js
  */
 function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, colorIndexOfset = 0;
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -74,7 +74,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
           if (colorAssignmentsAreFull(colorAssignments)) {
             evictColorAssignment(colorAssignments);
           }
-          var openColorInfo = getOpenColorInfo(colorAssignments, colors, colorIndexOfset);
+          var openColorInfo = getOpenColorInfo(colorAssignments, colors);
           colorIndex = openColorInfo.colorIndex;
           striped = openColorInfo.striped;
           colorAssignment = getAvailableColorAssignment(colorAssignments);
@@ -97,7 +97,6 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel);
     datasets.unshift(dataset);
-    colorIndexOfset = 1;
   }
   return datasets;
 }
@@ -185,7 +184,7 @@ function evictColorAssignment(colorAssignments) {
  * @param {Array} colors
  * @return {Object} Object with 'colorIndex' and 'striped' properties.
  */
-function getOpenColorInfo(colorAssignments, colors, colorIndexOfset) {
+function getOpenColorInfo(colorAssignments, colors) {
   // First look for normal colors, then striped.
   var stripedStates = [false, true];
   for (var i = 0; i < stripedStates.length; i++) {
@@ -199,7 +198,7 @@ function getOpenColorInfo(colorAssignments, colors, colorIndexOfset) {
       for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
         if (!(assignedColors.includes(colorIndex))) {
           return {
-            colorIndex: colorIndex + colorIndexOfset,
+            colorIndex: colorIndex,
             striped: stripedState,
           }
         }
@@ -359,10 +358,10 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor:'#f848f3', //getHeadlineColor(),
-    backgroundColor: '#f848f3', //getHeadlineColor(),
-    pointBorderColor: '#f848f3', //getHeadlineColor(),
-    pointBackgroundColor: '#f848f3', //getHeadlineColor(),
+    borderColor: getHeadlineColor(),
+    backgroundColor: getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
