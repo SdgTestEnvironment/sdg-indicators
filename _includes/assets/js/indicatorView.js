@@ -430,6 +430,7 @@ var indicatorView = function (model, options) {
               zeroLineColor: '#757575',
             },
             ticks: {
+              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
