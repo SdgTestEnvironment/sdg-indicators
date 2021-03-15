@@ -1943,7 +1943,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      color = getColor(colorIndex, colors);
+      color = headline.length > 0 ? getColor(colorIndex + 1 , colors) : getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
@@ -2056,7 +2056,7 @@ function getOpenColorInfo(colorAssignments, colors) {
       for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
         if (!(assignedColors.includes(colorIndex))) {
           return {
-            colorIndex: colorIndex + 1,
+            colorIndex: colorIndex,
             striped: stripedState,
           }
         }
@@ -3330,7 +3330,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#004466'
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
   }
 
   this.getGridColor = function(contrast) {
