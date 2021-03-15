@@ -105,6 +105,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
   return datasets;
+  console.log("D", datasets);
 }
 
 /**
