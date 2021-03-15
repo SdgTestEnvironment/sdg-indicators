@@ -3181,6 +3181,7 @@ var indicatorView = function (model, options) {
               zeroLineColor: '#757575',
             },
             ticks: {
+              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
@@ -3335,10 +3336,10 @@ var indicatorView = function (model, options) {
 
   this.getHeadlineColor = function(contrast, indicator) {
     if (indicator[11]=='-'){
-      goal = indicator[10]
+      var goal = indicator[10]
     }
     else{
-      goal = indicator[10,11]
+      var goal = indicator[10,11]
     }
     console.log('goal' + goal );
     return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
