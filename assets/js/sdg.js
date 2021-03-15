@@ -1925,7 +1925,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       excess = (index >= maxColorAssignments);
       if (excess) {
         // This doesn't really matter: excess datasets won't be displayed.
-        color = getHeadlineColor();
+        color = getHeadlineColor(colors);
         striped = false;
       }
       else {
@@ -2208,7 +2208,8 @@ function prepareDataForDataset(years, rows) {
  * TODO: Make this dynamic to support high-contrast.
  */
 function getHeadlineColor() {
-  return HEADLINE_COLOR;
+  //return HEADLINE_COLOR;
+  return getColor(0, colors);
 }
 
 /**
@@ -2221,10 +2222,10 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: getColor(0, colors),// getHeadlineColor(),
-    backgroundColor: getColor(0, colors),// getHeadlineColor(),
-    pointBorderColor: getColor(0, colors),// getHeadlineColor(),
-    pointBackgroundColor: getColor(0, colors),// getHeadlineColor(),
+    borderColor: getHeadlineColor(colors),// getHeadlineColor(),
+    backgroundColor: getHeadlineColor(colors),// getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(colors),// getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(colors),// getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
