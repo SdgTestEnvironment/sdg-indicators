@@ -582,9 +582,9 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
-  }
+  this.getHeadlineColor = function(contrast, goal) {
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
+  };
 
   this.getGridColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#222' : '#ddd';
@@ -592,7 +592,7 @@ var indicatorView = function (model, options) {
 
   this.getTickColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#fff' : '#000';
-  }
+  };
 
   this.isHighContrast = function(contrast) {
     if (contrast) {
@@ -622,7 +622,7 @@ var indicatorView = function (model, options) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast, chartInfo.data.shortIndicatorId[0]);
+        var newColor = this.getHeadlineColor(contrast, chartInfo.options.sdgGoal);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;
