@@ -52,15 +52,16 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
+    datasets.unshift(dataset);
+
+    index ++;
+  },
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
-    if (headline.length > 0) {
-      dataset = makeHeadlineDataset(years, headline, defaultLabel, colors);
-      datasets.unshift(dataset);
 
-      index ++;
-    }
 
     if (filteredData.length > 0) {
       excess = (index >= maxColorAssignments);
