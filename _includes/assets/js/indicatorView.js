@@ -582,8 +582,8 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
+  this.getHeadlineColor = function(contrast, goal) {
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal-1 + '] | default: "#007a1c" }}';
   }
 
   this.getGridColor = function(contrast) {
@@ -622,7 +622,7 @@ var indicatorView = function (model, options) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast);
+        var newColor = this.getHeadlineColor(contrast, chartInfo.data.shortIndicatorId[0]);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;
