@@ -1907,6 +1907,12 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
+    datasets.unshift(dataset);
+    index ++;
+  }
+
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
     if (filteredData.length > 0) {
@@ -1948,10 +1954,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel);
-    datasets.unshift(dataset);
-  }
+
   return datasets;
 }
 
@@ -2199,7 +2202,7 @@ function prepareDataForDataset(years, rows) {
  * TODO: Make this dynamic to support high-contrast.
  */
 function getHeadlineColor() {
-  return '#74007a'; //HEADLINE_COLOR;
+  return HEADLINE_COLOR;
 }
 
 /**
@@ -2212,10 +2215,10 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: getHeadlineColor(),
-    backgroundColor: getHeadlineColor(),
-    pointBorderColor: getHeadlineColor(),
-    pointBackgroundColor: getHeadlineColor(),
+    borderColor: colors[0], //getHeadlineColor(),
+    backgroundColor: colors[0], //getHeadlineColor(),
+    pointBorderColor: colors[0], //getHeadlineColor(),
+    pointBackgroundColor: colors[0], //getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
