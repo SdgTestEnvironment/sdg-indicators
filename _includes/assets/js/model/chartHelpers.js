@@ -57,6 +57,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
     datasets.unshift(dataset);
     index ++;
+    console.log("hDs:", datasets);
   }
 
   combinations.forEach(function(combination) {
