@@ -2056,7 +2056,7 @@ function getOpenColorInfo(colorAssignments, colors) {
       for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
         if (!(assignedColors.includes(colorIndex))) {
           return {
-            colorIndex: colorIndex,
+            colorIndex: colorIndex + 1,
             striped: stripedState,
           }
         }
