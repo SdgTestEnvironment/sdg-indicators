@@ -3333,6 +3333,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast, goal) {
+    console.log('#00006a');
     return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
   };
 
