@@ -582,8 +582,8 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast, goal) {
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal-1 + '] | default: "#007a1c" }}';
+  this.getHeadlineColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#007a1c" }}';
   }
 
   this.getGridColor = function(contrast) {
