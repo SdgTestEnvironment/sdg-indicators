@@ -1900,7 +1900,7 @@ function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
  * @return {Array} Datasets suitable for Chart.js
  */
 function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, colorIndexOfset = 0;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -1928,7 +1928,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
           if (colorAssignmentsAreFull(colorAssignments)) {
             evictColorAssignment(colorAssignments);
           }
-          var openColorInfo = getOpenColorInfo(colorAssignments, colors);
+          var openColorInfo = getOpenColorInfo(colorAssignments, colors, colorIndexOfset);
           colorIndex = openColorInfo.colorIndex;
           striped = openColorInfo.striped;
           colorAssignment = getAvailableColorAssignment(colorAssignments);
@@ -1951,6 +1951,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel);
     datasets.unshift(dataset);
+    colorIndexOfset = 1;
   }
   return datasets;
 }
@@ -2038,7 +2039,7 @@ function evictColorAssignment(colorAssignments) {
  * @param {Array} colors
  * @return {Object} Object with 'colorIndex' and 'striped' properties.
  */
-function getOpenColorInfo(colorAssignments, colors) {
+function getOpenColorInfo(colorAssignments, colors, colorIndexOfset) {
   // First look for normal colors, then striped.
   var stripedStates = [false, true];
   for (var i = 0; i < stripedStates.length; i++) {
@@ -2052,7 +2053,7 @@ function getOpenColorInfo(colorAssignments, colors) {
       for (var colorIndex = 0; colorIndex < colors.length; colorIndex++) {
         if (!(assignedColors.includes(colorIndex))) {
           return {
-            colorIndex: colorIndex,
+            colorIndex: colorIndex + colorIndexOfset,
             striped: stripedState,
           }
         }
