@@ -2199,7 +2199,7 @@ function prepareDataForDataset(years, rows) {
  * TODO: Make this dynamic to support high-contrast.
  */
 function getHeadlineColor() {
-  return HEADLINE_COLOR;
+  return '#74007a'; //HEADLINE_COLOR;
 }
 
 /**
