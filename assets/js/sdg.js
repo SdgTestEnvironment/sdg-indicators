@@ -3341,7 +3341,7 @@ var indicatorView = function (model, options) {
     else{
       var goal = indicator[10,11]
     }
-    console.log(' site.graph_color_headline[' + goal +'] ', goal-1  );
+    console.log('', goal-1  );
     return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
   };
 
