@@ -590,8 +590,8 @@ var indicatorView = function (model, options) {
     else{
       var goal = indicator[10,11]
     }
-    console.log(' site.graph_color_headline[' + goal +'] ', goal-1  );
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '-1] | default: "#00006a" }}';
+    console.log('{{ site.graph_color_headline[' + goal +'] }}', goal-1  );
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
   };
 
   this.getGridColor = function(contrast) {
