@@ -1943,8 +1943,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      //colors =  headline.length > 0 ? colors[1,-1] : colors;
-      color = headline.length > 0 ? getColor(colorIndex + 1 , colors) : getColor(colorIndex, colors);
+      color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
@@ -1957,6 +1956,10 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
 
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel);
+    datasets.unshift(dataset);
+  }
   return datasets;
 }
 
@@ -2217,16 +2220,15 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: '#' + colors[0], //getHeadlineColor(),
-    backgroundColor: '#' + colors[0], //getHeadlineColor(),
-    pointBorderColor: '#' + colors[0], //getHeadlineColor(),
-    pointBackgroundColor: '#' + colors[0], //getHeadlineColor(),
+    borderColor: getHeadlineColor(),
+    backgroundColor: getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
   });
-  console.log("makeHeadlineDataset:", dataset);
 }
 
   /**
@@ -2447,7 +2449,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.showLine = options.showLine; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
-  this.sdgGoal = options.sdgGoal;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
@@ -2716,7 +2717,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
       graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries),
-      sdgGoal: this.sdgGoal,
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
@@ -3181,7 +3181,6 @@ var indicatorView = function (model, options) {
               zeroLineColor: '#757575',
             },
             ticks: {
-              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
@@ -3230,9 +3229,9 @@ var indicatorView = function (model, options) {
         },
         tooltips: {
           callbacks: {
-            // label: function(tooltipItems, data) {
-            //   return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
-            // },
+            label: function(tooltipItems, data) {
+              return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
+            },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
               if (typeof unit !== 'undefined' && unit !== '') {
@@ -3334,16 +3333,9 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast, indicator) {
-    if (indicator[11]=='-'){
-      var goal = indicator[10]
-    }
-    else{
-      var goal = indicator[10,11]
-    }
-    console.log('', goal-1  );
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
-  };
+  this.getHeadlineColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
+  }
 
   this.getGridColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#222' : '#ddd';
@@ -3351,7 +3343,7 @@ var indicatorView = function (model, options) {
 
   this.getTickColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#fff' : '#000';
-  };
+  }
 
   this.isHighContrast = function(contrast) {
     if (contrast) {
@@ -3376,12 +3368,11 @@ var indicatorView = function (model, options) {
   };
 
   this.updateHeadlineColor = function(contrast, chartInfo) {
-    console.log("CI", chartInfo);
     if (chartInfo.data.datasets.length > 0) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast, chartInfo.data.indicatorId);
+        var newColor = this.getHeadlineColor(contrast);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;
