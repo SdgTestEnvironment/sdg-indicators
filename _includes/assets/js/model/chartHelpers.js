@@ -96,7 +96,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
 
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -355,7 +355,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
