@@ -430,7 +430,6 @@ var indicatorView = function (model, options) {
               zeroLineColor: '#757575',
             },
             ticks: {
-              suggestedMin: 2010,
               fontColor: tickColor,
             },
           }],
@@ -479,9 +478,9 @@ var indicatorView = function (model, options) {
         },
         tooltips: {
           callbacks: {
-            // label: function(tooltipItems, data) {
-            //   return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
-            // },
+            label: function(tooltipItems, data) {
+              return tooltipItems.label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
+            },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
               if (typeof unit !== 'undefined' && unit !== '') {
@@ -583,16 +582,9 @@ var indicatorView = function (model, options) {
     $(this._legendElement).html(view_obj._chartInstance.generateLegend());
   };
 
-  this.getHeadlineColor = function(contrast, indicator) {
-    if (indicator[11]=='-'){
-      var goal = indicator[10]
-    }
-    else{
-      var goal = indicator[10,11]
-    }
-    console.log('{{ site.graph_color_headline[' + goal +'] }}', goal-1  );
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[' + goal + '] | default: "#00006a" }}';
-  };
+  this.getHeadlineColor = function(contrast) {
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
+  }
 
   this.getGridColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#222' : '#ddd';
@@ -600,7 +592,7 @@ var indicatorView = function (model, options) {
 
   this.getTickColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#fff' : '#000';
-  };
+  }
 
   this.isHighContrast = function(contrast) {
     if (contrast) {
@@ -625,12 +617,11 @@ var indicatorView = function (model, options) {
   };
 
   this.updateHeadlineColor = function(contrast, chartInfo) {
-    console.log("CI", chartInfo);
     if (chartInfo.data.datasets.length > 0) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
       if (isHeadline) {
-        var newColor = this.getHeadlineColor(contrast, chartInfo.data.indicatorId);
+        var newColor = this.getHeadlineColor(contrast);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
         firstDataset.pointBackgroundColor = newColor;

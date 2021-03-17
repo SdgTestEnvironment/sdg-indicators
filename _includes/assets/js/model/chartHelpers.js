@@ -89,8 +89,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      //colors =  headline.length > 0 ? colors[1,-1] : colors;
-      color = headline.length > 0 ? getColor(colorIndex + 1 , colors) : getColor(colorIndex, colors);
+      color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
@@ -103,6 +102,10 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
 
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel);
+    datasets.unshift(dataset);
+  }
   return datasets;
 }
 
@@ -363,14 +366,13 @@ function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: '#' + colors[0], //getHeadlineColor(),
-    backgroundColor: '#' + colors[0], //getHeadlineColor(),
-    pointBorderColor: '#' + colors[0], //getHeadlineColor(),
-    pointBackgroundColor: '#' + colors[0], //getHeadlineColor(),
+    borderColor: getHeadlineColor(),
+    backgroundColor: getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
   });
-  console.log("makeHeadlineDataset:", dataset);
 }

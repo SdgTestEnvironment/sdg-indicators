@@ -43,7 +43,6 @@ var indicatorModel = function (options) {
   this.stackedDisaggregation = options.stackedDisaggregation;
   this.showLine = options.showLine; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
-  this.sdgGoal = options.sdgGoal;
   this.graphAnnotations = options.graphAnnotations;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
@@ -312,7 +311,6 @@ var indicatorModel = function (options) {
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
       graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries),
-      sdgGoal: this.sdgGoal,
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
