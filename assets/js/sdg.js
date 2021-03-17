@@ -3324,7 +3324,7 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#b8b8b8';
   }
 
   this.getGridColor = function(contrast) {
