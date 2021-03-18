@@ -494,10 +494,10 @@ var indicatorView = function (model, options) {
     this.alterChartConfig(chartConfig, chartInfo);
     if (this.isHighContrast()) {
       this.updateGraphAnnotationColors('high', chartConfig);
-      this.updateHeadlineColor('high', chartConfig);
+      //this.updateHeadlineColor('high', chartConfig);
     }
     else {
-      this.updateHeadlineColor('default', chartConfig);
+      //this.updateHeadlineColor('default', chartConfig);
     }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
@@ -505,7 +505,7 @@ var indicatorView = function (model, options) {
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
-      that.updateHeadlineColor(e.detail, view_obj._chartInstance);
+      //that.updateHeadlineColor(e.detail, view_obj._chartInstance);
       that.updateGraphAnnotationColors(e.detail, view_obj._chartInstance);
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.fontColor = tickColor;
       view_obj._chartInstance.options.scales.yAxes[0].gridLines.color = gridColor;
