@@ -376,7 +376,7 @@ var indicatorView = function (model, options) {
     this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
     view_obj._chartInstance.data.labels = chartInfo.labels;
-    //this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
+    this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
     // TODO: Investigate assets/js/chartjs/rescaler.js and why "allLabels" is needed.
     view_obj._chartInstance.data.allLabels = chartInfo.labels;
 
@@ -494,10 +494,10 @@ var indicatorView = function (model, options) {
     this.alterChartConfig(chartConfig, chartInfo);
     if (this.isHighContrast()) {
       this.updateGraphAnnotationColors('high', chartConfig);
-      //this.updateHeadlineColor('high', chartConfig);
+      this.updateHeadlineColor('high', chartConfig);
     }
     else {
-      //this.updateHeadlineColor('default', chartConfig);
+      this.updateHeadlineColor('default', chartConfig);
     }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
@@ -505,7 +505,7 @@ var indicatorView = function (model, options) {
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
-      //that.updateHeadlineColor(e.detail, view_obj._chartInstance);
+      that.updateHeadlineColor(e.detail, view_obj._chartInstance);
       that.updateGraphAnnotationColors(e.detail, view_obj._chartInstance);
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.fontColor = tickColor;
       view_obj._chartInstance.options.scales.yAxes[0].gridLines.color = gridColor;
@@ -584,7 +584,7 @@ var indicatorView = function (model, options) {
 
   this.getHeadlineColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#FFDD00' : '#004466'
-    //return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
   }
 
   this.getGridColor = function(contrast) {

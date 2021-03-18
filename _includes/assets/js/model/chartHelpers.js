@@ -49,17 +49,9 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-  var offSet = 0;
 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
-
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
-    datasets.unshift(dataset);
-    var offSet = 1;
-  }
-
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
@@ -90,7 +82,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      color = getColor(colorIndex, colors, offSet);
+      color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
@@ -103,10 +95,10 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
 
-  // if (headline.length > 0) {
-  //   dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
-  //   datasets.unshift(dataset);
-  // }
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
+    datasets.unshift(dataset);
+  }
   return datasets;
 }
 
@@ -245,8 +237,8 @@ function assignColor(colorAssignment, combination, colorIndex, striped) {
  * @param {Array} colors
  * @return Color from a list
  */
-function getColor(colorIndex, colors, offSet) {
-  return '#' + colors[colorIndex + offSet];
+function getColor(colorIndex, colors) {
+  return '#' + colors[colorIndex];
 }
 
 /**
@@ -300,8 +292,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
     excess: excess,
-    showLine: showLine,
-    spanGaps: spanGaps,
   });
 }
 
@@ -315,7 +305,8 @@ function getBaseDataset() {
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true,
-    showLine: true
+    showLine: showLine,
+    spanGaps: spanGaps,
   });
 }
 
@@ -363,14 +354,14 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: colors[0], //getHeadlineColor(),
-    backgroundColor: colors[0], //getHeadlineColor(),
-    pointBorderColor: colors[0], //getHeadlineColor(),
-    pointBackgroundColor: colors[0], //getHeadlineColor(),
+    borderColor: getHeadlineColor(),
+    backgroundColor: getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
