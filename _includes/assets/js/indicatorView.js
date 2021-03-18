@@ -376,7 +376,7 @@ var indicatorView = function (model, options) {
     this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
     view_obj._chartInstance.data.labels = chartInfo.labels;
-    this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
+    //this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
     // TODO: Investigate assets/js/chartjs/rescaler.js and why "allLabels" is needed.
     view_obj._chartInstance.data.allLabels = chartInfo.labels;
 
@@ -617,19 +617,19 @@ var indicatorView = function (model, options) {
     }
   };
 
-  // this.updateHeadlineColor = function(contrast, chartInfo) {
-  //   if (chartInfo.data.datasets.length > 0) {
-  //     var firstDataset = chartInfo.data.datasets[0];
-  //     var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
-  //     if (isHeadline) {
-  //       var newColor = this.getHeadlineColor(contrast);
-  //       firstDataset.backgroundColor = newColor;
-  //       firstDataset.borderColor = newColor;
-  //       firstDataset.pointBackgroundColor = newColor;
-  //       firstDataset.pointBorderColor = newColor;
-  //     }
-  //   }
-  // }
+  this.updateHeadlineColor = function(contrast, chartInfo) {
+    if (chartInfo.data.datasets.length > 0) {
+      var firstDataset = chartInfo.data.datasets[0];
+      var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
+      if (isHeadline) {
+        var newColor = this.getHeadlineColor(contrast);
+        firstDataset.backgroundColor = newColor;
+        firstDataset.borderColor = newColor;
+        firstDataset.pointBackgroundColor = newColor;
+        firstDataset.pointBorderColor = newColor;
+      }
+    }
+  }
 
   this.toCsv = function (tableData) {
     var lines = [],
