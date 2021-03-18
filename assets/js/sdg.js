@@ -2146,6 +2146,8 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
     excess: excess,
+    spanGaps: spanGaps,
+    showLine: showLine,
   });
 }
 
