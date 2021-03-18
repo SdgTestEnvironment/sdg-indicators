@@ -316,7 +316,7 @@ function getBaseDataset() {
  */
 function getCombinationDescription(combination, fallback) {
   console.log("Combination for legend: ", combination);
-  var keys = Object.keys(combination);//.sort();
+  var keys = Object.keys(combination).sort();
   if (keys.length === 0) {
     return fallback;
   }
