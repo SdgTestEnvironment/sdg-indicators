@@ -305,8 +305,7 @@ function getBaseDataset() {
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true,
-    showLine: showLine,
-    spanGaps: spanGaps,
+    showLine: true,
   });
 }
 
