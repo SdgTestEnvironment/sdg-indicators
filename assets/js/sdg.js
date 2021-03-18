@@ -1903,17 +1903,9 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-  var offSet = 0;
 
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
-
-  if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
-    datasets.unshift(dataset);
-    var offSet = 1;
-  }
-
 
   combinations.forEach(function(combination) {
     var filteredData = getDataMatchingCombination(data, combination, selectableFields);
@@ -1944,7 +1936,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
         }
       }
 
-      color = getColor(colorIndex, colors, offSet);
+      color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
@@ -1957,10 +1949,10 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
 
 
-  // if (headline.length > 0) {
-  //   dataset = makeHeadlineDataset(years, headline, defaultLabel, colors, showLine, spanGaps);
-  //   datasets.unshift(dataset);
-  // }
+  if (headline.length > 0) {
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
+    datasets.unshift(dataset);
+  }
   return datasets;
 }
 
@@ -2099,8 +2091,8 @@ function assignColor(colorAssignment, combination, colorIndex, striped) {
  * @param {Array} colors
  * @return Color from a list
  */
-function getColor(colorIndex, colors, offSet) {
-  return '#' + colors[colorIndex + offSet];
+function getColor(colorIndex, colors) {
+  return '#' + colors[colorIndex];
 }
 
 /**
@@ -2154,8 +2146,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderWidth: 2,
     data: prepareDataForDataset(years, rows),
     excess: excess,
-    showLine: showLine,
-    spanGaps: spanGaps,
   });
 }
 
@@ -2169,7 +2159,8 @@ function getBaseDataset() {
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true,
-    showLine: true
+    showLine: showLine,
+    spanGaps: spanGaps,
   });
 }
 
@@ -2217,14 +2208,14 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, colors, showLine, spanGaps) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
-    borderColor: colors[0], //getHeadlineColor(),
-    backgroundColor: colors[0], //getHeadlineColor(),
-    pointBorderColor: colors[0], //getHeadlineColor(),
-    pointBackgroundColor: colors[0], //getHeadlineColor(),
+    borderColor: getHeadlineColor(),
+    backgroundColor: getHeadlineColor(),
+    pointBorderColor: getHeadlineColor(),
+    pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
@@ -3125,7 +3116,7 @@ var indicatorView = function (model, options) {
     this.updateIndicatorDataViewStatus(view_obj._chartInstance.data.datasets, chartInfo.datasets);
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
     view_obj._chartInstance.data.labels = chartInfo.labels;
-    //this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
+    this.updateHeadlineColor(this.isHighContrast() ? 'high' : 'default', view_obj._chartInstance);
     // TODO: Investigate assets/js/chartjs/rescaler.js and why "allLabels" is needed.
     view_obj._chartInstance.data.allLabels = chartInfo.labels;
 
@@ -3243,10 +3234,10 @@ var indicatorView = function (model, options) {
     this.alterChartConfig(chartConfig, chartInfo);
     if (this.isHighContrast()) {
       this.updateGraphAnnotationColors('high', chartConfig);
-      //this.updateHeadlineColor('high', chartConfig);
+      this.updateHeadlineColor('high', chartConfig);
     }
     else {
-      //this.updateHeadlineColor('default', chartConfig);
+      this.updateHeadlineColor('default', chartConfig);
     }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
@@ -3254,7 +3245,7 @@ var indicatorView = function (model, options) {
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
-      //that.updateHeadlineColor(e.detail, view_obj._chartInstance);
+      that.updateHeadlineColor(e.detail, view_obj._chartInstance);
       that.updateGraphAnnotationColors(e.detail, view_obj._chartInstance);
       view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.fontColor = tickColor;
       view_obj._chartInstance.options.scales.yAxes[0].gridLines.color = gridColor;
@@ -3333,7 +3324,7 @@ var indicatorView = function (model, options) {
 
   this.getHeadlineColor = function(contrast) {
     return this.isHighContrast(contrast) ? '#FFDD00' : '#004466'
-    //return this.isHighContrast(contrast) ? '#FFDD00' : '#00006a';
+    return this.isHighContrast(contrast) ? '#FFDD00' : '#b8b8b8';
   }
 
   this.getGridColor = function(contrast) {
