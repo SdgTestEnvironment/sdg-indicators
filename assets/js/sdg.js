@@ -2732,7 +2732,7 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(indicatorId, precision, decimalSeparator) {
+  this.initialise = function(indicatorId, precision, decimalSeparator, goalNr) {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
@@ -2740,6 +2740,7 @@ var mapView = function () {
       mapLayers: [{"subfolder":"regions","label":"Region","min_zoom":0,"max_zoom":20,"staticBorders":true}],
       precision: precision,
       decimalSeparator: decimalSeparator,
+      goal: goalNr,
     });
   };
 };
@@ -2818,9 +2819,29 @@ var indicatorView = function (model, options) {
   this._model.onFieldsComplete.attach(function(sender, args) {
     view_obj.initialiseFields(args);
 
+    //---#1 GoalDependendMapColor---start--------------------------
+    if (args.indicatorId.indexOf('_1-') != -1){var goalNr = 0;}
+    else if (args.indicatorId.indexOf('_2-') != -1) {var goalNr = 1;}
+    else if (args.indicatorId.indexOf('_3-') != -1) {var goalNr = 2;}
+    else if (args.indicatorId.indexOf('_4-') != -1) {var goalNr = 3;}
+    else if (args.indicatorId.indexOf('_5-') != -1) {var goalNr = 4;}
+    else if (args.indicatorId.indexOf('_6-') != -1) {var goalNr = 5;}
+    else if (args.indicatorId.indexOf('_7-') != -1) {var goalNr = 6;}
+    else if (args.indicatorId.indexOf('_8-') != -1) {var goalNr = 7;}
+    else if (args.indicatorId.indexOf('_9-') != -1) {var goalNr = 8;}
+    else if (args.indicatorId.indexOf('_10-') != -1) {var goalNr = 9;}
+    else if (args.indicatorId.indexOf('_11-') != -1) {var goalNr = 10;}
+    else if (args.indicatorId.indexOf('_12-') != -1) {var goalNr = 11;}
+    else if (args.indicatorId.indexOf('_13-') != -1) {var goalNr = 12;}
+    else if (args.indicatorId.indexOf('_14-') != -1) {var goalNr = 13;}
+    else if (args.indicatorId.indexOf('_15-') != -1) {var goalNr = 14;}
+    else if (args.indicatorId.indexOf('_16-') != -1) {var goalNr = 15;}
+    else if (args.indicatorId.indexOf('_17-') != -1) {var goalNr = 16;}
+    //---#1 GoalDependendMapColor---stop---------------------------
+
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
-      view_obj._mapView.initialise(args.indicatorId, args.precision, view_obj._decimalSeparator);
+      view_obj._mapView.initialise(args.indicatorId, args.precision, view_obj._decimalSeparator, goalNr);
     }
   });
 
@@ -4184,7 +4205,7 @@ $(function() {
         '</div>';
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
       var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
-      var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) {
+      var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) { //[this.plugin.goalNr]
         return L.Util.template(swatchTpl, {
           width: swatchWidth,
           color: swatchColor,
