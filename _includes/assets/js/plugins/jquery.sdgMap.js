@@ -83,6 +83,8 @@
     this._decimalSeparator = options.decimalSeparator;
     this.currentDisaggregation = 0;
 
+    this.goalNr = options.goal;
+
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
       console.log('Map disabled - please add "map_layers" in site configuration.');
