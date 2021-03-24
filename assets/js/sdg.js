@@ -1665,25 +1665,24 @@ function getCombinationData(fieldItems) {
   var fieldValuePairCombinations = {};
   fieldValuePairs.forEach(function(fieldValuePair) {                                              // gehe alle Disaggregationen durch
     var combinationsForCurrentPair = Object.assign({}, fieldValuePair);                           // definiere ein Objekt und füge die aktuelle Disagg hinzu
+    console.log("loop1: ", combinationsForCurrentPair);
     fieldValuePairs.forEach(function(fieldValuePairToAdd) {                                       // gehe wieder alle Disaggs durch
       // The following conditional reflects that we're not interested in combinations
       // within the same field. (Eg, not interested in combination of Female and Male).
       if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {               // wenn wir uns nicht für beide Disaggs (FieldValuePair & FieldValuePairToAdd) in der selben Kategorie befinden...
         Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);                           // füge die ...ToAdd Disagg dem Objekt hinzu???
+        console.log("loop2: ", combinationsForCurrentPair);
         var combinationKeys = Object.keys(combinationsForCurrentPair).sort();                     // such alle keys
         var combinationValues = Object.values(combinationsForCurrentPair).sort();                 // und alle values
         var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));      // erzeugt eine Auflistung der fields und values
         if (!(combinationUniqueId in fieldValuePairCombinations)) {                               // prüft ob diese Auflistung schon einmal vorkam
           fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair); // wenn nicht wir sie in List aufgenommen
+          console.log("Added to fieldValuePairCombinations");
         }
       }
       //console.log("combinationsForCurrentPair", combinationsForCurrentPair, Object.keys(combinationsForCurrentPair).length);
       if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
-        var a = {};
-
-        console.log("empty combinationsForCurrentPair", a);
-        a = Object.assign({}, fieldValuePair);
-        console.log("Fill combinationsForCurrentPair", a);
+        console.log("Here we sould reset");
       }
     });
   });
