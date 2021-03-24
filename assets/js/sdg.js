@@ -1677,9 +1677,10 @@ function getCombinationData(fieldItems) {
           fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair); // wenn nicht wir sie in List aufgenommen
         }
       }
-      console.log("combinationsForCurrentPair", combinationsForCurrentPair, combinationsForCurrentPair.values, Object.keys(combinationsForCurrentPair).length);
-      if (Object.keys(combinationsForCurrentPair).length == Object.keys(fieldItems).length) {
-        var combinationsForCurrentPair = Object.assign({}, fieldValuePair);
+      //console.log("combinationsForCurrentPair", combinationsForCurrentPair, Object.keys(combinationsForCurrentPair).length);
+      if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
+        console.log("empty combinationsForCurrentPair", combinationsForCurrentPair = {};
+        console.log("Fill combinationsForCurrentPair", combinationsForCurrentPair = Object.assign({}, fieldValuePair);
       }
     });
   });
