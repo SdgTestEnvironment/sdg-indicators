@@ -1679,11 +1679,8 @@ function getCombinationData(fieldItems) {
       }
       //console.log("combinationsForCurrentPair", combinationsForCurrentPair, Object.keys(combinationsForCurrentPair).length);
       if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
-        var a = {};
-
-        console.log("empty combinationsForCurrentPair", a);
-        a = Object.assign({}, fieldValuePair);
-        console.log("Fill combinationsForCurrentPair", a);
+        var combinationsForCurrentPair = {};
+        combinationsForCurrentPair = Object.assign({}, fieldValuePair);
       }
     });
   });
