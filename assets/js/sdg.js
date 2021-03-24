@@ -1653,6 +1653,7 @@ function getCombinationData(fieldItems) {
   // First get a list of all the single field/value pairs.
   var fieldValuePairs = [];
   fieldItems.forEach(function(fieldItem) {
+    console.log("X ",fieldItem, fieldItems.indexOf(fieldItem));
     fieldItem.values.forEach(function(value) {
       var pair = {};
       pair[fieldItem.field] = value;
