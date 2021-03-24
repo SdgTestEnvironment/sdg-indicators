@@ -229,7 +229,7 @@ function getCombinationData(fieldItems) {
   // First get a list of all the single field/value pairs.
   var fieldValuePairs = [];
   fieldItems.forEach(function(fieldItem) {
-    console.log("X ",fieldItem, fieldItems.indexOf(fieldItem));
+    console.log("X ",fieldItem.field, fieldItems.indexOf(fieldItem));
     fieldItem.values.forEach(function(value) {
       var pair = {};
       pair[fieldItem.field] = value;
@@ -256,7 +256,8 @@ function getCombinationData(fieldItems) {
     });
   });
   fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
-
+  
+  console.log("fieldValuePairs ",fieldValuePairs.concat(fieldValuePairCombinations));
   // Return a combination of both.
   return fieldValuePairs.concat(fieldValuePairCombinations);
 }

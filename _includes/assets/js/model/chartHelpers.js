@@ -46,7 +46,7 @@ function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
  * @return {Array} Datasets suitable for Chart.js
  */
 function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps) {
-  console.log("combinations: ", combinations)
+  //console.log("combinations: ", combinations)
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
@@ -318,7 +318,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  console.log("Combination for legend: ", combination);
+  //console.log("Combination for legend: ", combination);
   var keys = Object.keys(combination); //.sort();
   if (keys.length === 0) {
     return fallback;
