@@ -1670,6 +1670,7 @@ function getCombinationData(fieldItems) {
       // within the same field. (Eg, not interested in combination of Female and Male).
       if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {               // wenn wir uns nicht für beide Disaggs (FieldValuePair & FieldValuePairToAdd) in der selben Kategorie befinden...
         Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);                           // füge die ...ToAdd Disagg dem Objekt hinzu???
+        console.log("combinationsForCurrentPair ",combinationsForCurrentPair);
         var combinationKeys = Object.keys(combinationsForCurrentPair).sort();                     // such alle keys
         console.log("combinationKeys ",combinationKeys);
         var combinationValues = Object.values(combinationsForCurrentPair).sort();                 // und alle values
