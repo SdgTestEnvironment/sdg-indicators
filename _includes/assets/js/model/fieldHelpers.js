@@ -253,7 +253,7 @@ function getCombinationData(fieldItems) {
           fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair); // wenn nicht wir sie in List aufgenommen
         }
       }
-      console.log("combinationsForCurrentPair", combinationsForCurrentPair, combinationsForCurrentPair.values, combinationsForCurrentPair.length);
+      console.log("combinationsForCurrentPair", combinationsForCurrentPair, combinationsForCurrentPair.values, Object.keys(combinationsForCurrentPair).length);
     });
   });
   fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
