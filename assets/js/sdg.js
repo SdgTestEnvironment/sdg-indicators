@@ -1662,36 +1662,52 @@ function getCombinationData(fieldItems) {
   });
 
   console.log(fieldValuePairs);
-  // Next get a list of each single pair combined with every other.
-  var fieldValuePairCombinations = {};
-  fieldValuePairs.forEach(function(fieldValuePair) {                                              // gehe alle Disaggregationen durch
-    var combinationsForCurrentPair = Object.assign({}, fieldValuePair);                           // definiere ein Objekt und füge die aktuelle Disagg hinzu
-    console.log("loop1: ", combinationsForCurrentPair);
-    fieldValuePairs.forEach(function(fieldValuePairToAdd) {                                       // gehe wieder alle Disaggs durch
-      // The following conditional reflects that we're not interested in combinations
-      // within the same field. (Eg, not interested in combination of Female and Male).
-      if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {               // wenn wir uns nicht für beide Disaggs (FieldValuePair & FieldValuePairToAdd) in der selben Kategorie befinden...
-        Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);                           // füge die ...ToAdd Disagg dem Objekt hinzu???
-        console.log("loop2: ", combinationsForCurrentPair);
-        var combinationKeys = Object.keys(combinationsForCurrentPair).sort();                     // such alle keys
-        var combinationValues = Object.values(combinationsForCurrentPair).sort();                 // und alle values
-        var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));      // erzeugt eine Auflistung der fields und values
-        if (!(combinationUniqueId in fieldValuePairCombinations)) {                               // prüft ob diese Auflistung schon einmal vorkam
-          fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair); // wenn nicht wir sie in List aufgenommen
-          console.log("Added to fieldValuePairCombinations");
-        }
-      }
-      //
-      // if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
-      //   console.log("Here we sould reset");
-      // }
-    });
-  });
-  fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
 
-  // Return a combination of both.
-  return fieldValuePairs.concat(fieldValuePairCombinations);
+  function getCombinations(array) {
+  var result = [];
+  var f = function(prefix=[], array) {
+    for (var i = 0; i < array.length; i++) {
+      result.push([...prefix,array[i]]);
+      f([...prefix,array[i]], array.slice(i + 1));
+    }
+  }
+  f('', array);
+return result; };
+
+var re = getCombinations(fieldValuePairs);
+return re;
 }
+
+//   // Next get a list of each single pair combined with every other.
+//   var fieldValuePairCombinations = {};
+//   fieldValuePairs.forEach(function(fieldValuePair) {                                              // gehe alle Disaggregationen durch
+//     var combinationsForCurrentPair = Object.assign({}, fieldValuePair);                           // definiere ein Objekt und füge die aktuelle Disagg hinzu
+//     console.log("loop1: ", combinationsForCurrentPair);
+//     fieldValuePairs.forEach(function(fieldValuePairToAdd) {                                       // gehe wieder alle Disaggs durch
+//       // The following conditional reflects that we're not interested in combinations
+//       // within the same field. (Eg, not interested in combination of Female and Male).
+//       if (Object.keys(fieldValuePair)[0] !== Object.keys(fieldValuePairToAdd)[0]) {               // wenn wir uns nicht für beide Disaggs (FieldValuePair & FieldValuePairToAdd) in der selben Kategorie befinden...
+//         Object.assign(combinationsForCurrentPair, fieldValuePairToAdd);                           // füge die ...ToAdd Disagg dem Objekt hinzu???
+//         console.log("loop2: ", combinationsForCurrentPair);
+//         var combinationKeys = Object.keys(combinationsForCurrentPair).sort();                     // such alle keys
+//         var combinationValues = Object.values(combinationsForCurrentPair).sort();                 // und alle values
+//         var combinationUniqueId = JSON.stringify(combinationKeys.concat(combinationValues));      // erzeugt eine Auflistung der fields und values
+//         if (!(combinationUniqueId in fieldValuePairCombinations)) {                               // prüft ob diese Auflistung schon einmal vorkam
+//           fieldValuePairCombinations[combinationUniqueId] = Object.assign({}, combinationsForCurrentPair); // wenn nicht wir sie in List aufgenommen
+//           console.log("Added to fieldValuePairCombinations");
+//         }
+//       }
+//       //
+//       // if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
+//       //   console.log("Here we sould reset");
+//       // }
+//     });
+//   });
+//   fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
+//
+//   // Return a combination of both.
+//   return fieldValuePairs.concat(fieldValuePairCombinations);
+// }
 
 /**
  * @param {Array} startValues Objects containing 'field' and 'value'
