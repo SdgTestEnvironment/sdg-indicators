@@ -1661,6 +1661,7 @@ function getCombinationData(fieldItems) {
     });
   });
 
+  console.log(fieldValuePairs);
   // Next get a list of each single pair combined with every other.
   var fieldValuePairCombinations = {};
   fieldValuePairs.forEach(function(fieldValuePair) {                                              // gehe alle Disaggregationen durch
@@ -1680,10 +1681,10 @@ function getCombinationData(fieldItems) {
           console.log("Added to fieldValuePairCombinations");
         }
       }
-      //console.log("combinationsForCurrentPair", combinationsForCurrentPair, Object.keys(combinationsForCurrentPair).length);
-      if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
-        console.log("Here we sould reset");
-      }
+      //
+      // if (Object.keys(combinationsForCurrentPair).length === Object.keys(fieldItems).length) {
+      //   console.log("Here we sould reset");
+      // }
     });
   });
   fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
