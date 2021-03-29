@@ -2180,7 +2180,7 @@ body.contrast-high #main-content.goal-indicators.goal-by-target .indicator-cards
       border: none;
       color: black; }
       #main-content .statuses > div .status.notapplicable .status-inner {
-        background-color: rgba(255, 255, 255, 0.8); }
+        background-color: #B7B7B7; }
 #main-content .value {
   color: #0b0c0c;
   font-weight: bold;
