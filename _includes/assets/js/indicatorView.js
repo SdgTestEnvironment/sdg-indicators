@@ -506,7 +506,8 @@ var indicatorView = function (model, options) {
               if (typeof unit !== 'undefined' && unit !== '') {
                 return '\n' + translations.indicator.unit + ': ' + unit;
               }
-            }
+            },
+            caretSize: 0
           }
         }
       }
