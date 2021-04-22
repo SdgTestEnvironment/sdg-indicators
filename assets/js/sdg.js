@@ -1693,8 +1693,24 @@ function getCombinationData(fieldItems) {
   });
   fieldValuePairCombinations = Object.values(fieldValuePairCombinations);
 
-  // Return a combination of both.
-  return fieldValuePairs.concat(fieldValuePairCombinations);
+  var unsortedFieldValuePairCombinations = fieldValuePairs.concat(fieldValuePairCombinations);
+
+  // Due to the forEach loops above the Combinations are in a more or less random order right now.
+  // The following sorts the combinations depending on the order of the "fieldItems".
+  sortedFieldValuePairs = [];
+  unsortedFieldValuePairCombinations.forEach(function(combination){
+    var sortedCombinations = {};
+    fieldItems.forEach(function(fieldItem) {
+      if (Object.keys(combination).indexOf(fieldItem.field) != -1){
+        var pair = {};
+        pair[fieldItem.field] = combination[fieldItem.field];
+        Object.assign(sortedCombinations, pair);
+      }
+    });
+    sortedFieldValuePairs.push(sortedCombinations);
+  });
+
+  return sortedFieldValuePairs;
 }
 
 /**
@@ -2181,7 +2197,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
-  var keys = Object.keys(combination).sort();
+  var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
   }
