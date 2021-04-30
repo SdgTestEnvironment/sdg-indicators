@@ -226,4 +226,8 @@ body.contrast-high {
    > table, td, th {
         border: 1px solid black;
         }
+        td{
+          vertical-align: top;
+          text-align: left;
+        }
 }
