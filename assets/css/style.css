@@ -3134,3 +3134,6 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   border-collapse: collapse; }
   .mytablestyle > table, .mytablestyle td, .mytablestyle th {
     border: 1px solid black; }
+  .mytablestyle td {
+    vertical-align: top;
+    text-align: left; }
