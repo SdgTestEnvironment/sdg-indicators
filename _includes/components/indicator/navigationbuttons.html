@@ -3,6 +3,12 @@
 {% else %}
   {% assign language = page.language %}
 {% endif %}
+
+{% if page.indicator.dns_button_label %}
+  {% assign buttonLabel = page.indicator.dns_buttn_label %}
+{% else %}
+  {% assign buttonLabel = page.indicator.dns_indicator | replace: "/", "" | replace: "-", "." %}
+{% endif %}
 <!---
 {% if site.environment == 'staging' %}
   {% assign baseurl = 'https://g205sdgs.github.io/sdg-indicators' %}
@@ -22,7 +28,7 @@
 
     <div class="col-xs-6 col-md-6 col-lg-4">
       <a href="https://sustainabledevelopment-deutschland.github.io/{{ language }}/{{ page.indicator.dns_indicator }}" class="btn btn-primary btn-block goal-{{ page.goal.number }} navigation-btn" title="{{ t.general.link_dns_indicator }}" role="button">
-        <b class="btn-label hidden-sm hidden-xs">{{ page.t.general.indicator_link_dns }}</b> <b>DNS-{{ page.indicator.dns_indicator | replace: "/", "" | replace: "-", "."}}</b>
+        <b class="btn-label hidden-sm hidden-xs">{{ page.t.general.indicator_link_dns }}</b> <b>DNS-{{ buttonLabel }}</b>
       </a>
     </div>
 
