@@ -4,23 +4,23 @@
   {% assign language = page.language %}
 {% endif %}
 
-{% if page.indicator.dns_button_label %}
-  {% assign buttonLabel = page.indicator.dns_button_label %}
+{% if page.indicator.dns_indicator_label %}
+  {% assign buttonLabel = page.indicator.dns_indicator_label %}
 {% else %}
   {% assign buttonLabel = page.indicator.dns_indicator | replace: "/", "" | replace: "-", "." %}
 {% endif %}
 
 {% if page.indicator.dns_indicator2 %}
-  {% if page.indicator.dns_button_label_2 %}
-    {% assign buttonLabel2 = page.indicator.dns_button_label_2 %}
+  {% if page.indicator.dns_indicator_label_2 %}
+    {% assign buttonLabel2 = page.indicator.dns_indicator_label_2 %}
   {% else %}
     {% assign buttonLabel2 = page.indicator.dns_indicator2 | replace: "/", "" | replace: "-", "." %}
   {% endif %}
 {% endif %}
 
 {% if page.indicator.dns_indicator3 %}
-  {% if page.indicator.dns_button_label_3 %}
-    {% assign buttonLabel3 = page.indicator.dns_button_label_3 %}
+  {% if page.indicator.dns_indicator_label_3 %}
+    {% assign buttonLabel3 = page.indicator.dns_indicator_label_3 %}
   {% else %}
     {% assign buttonLabel3 = page.indicator.dns_indicator3 | replace: "/", "" | replace: "-", "." %}
   {% endif %}
