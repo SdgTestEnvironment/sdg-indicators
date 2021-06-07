@@ -183,7 +183,7 @@
         },
         {
           "id": "2-5-1",
-          "title": "Anzahl der für Ernährung und Landwirtschaft nutzbaren pflanzlichen und tierischen genetischen Ressourcen, die zu deren Erhalt entweder mittel- oder langfristig in Einrichtungen gesichert werden",
+          "title": "Anzahl der für Ernährung und Landwirtschaft nutzbaren a) pflanzen- und b) tiergenetischen Ressourcen, die mittel- oder langfristig in Konservierungseinrichtungen sicher aufbewahrt werden",
           "description": "",
           "keywords": "Indikator 2.5.1, Tiergenetische Ressourcen, Pflanzengenetische Ressourcen",
           "href": "/sdg-indicators/2-5-1",
@@ -455,7 +455,7 @@
         },
         {
           "id": "3-d-2",
-          "title": "Anteil von Infektionen des Blutkreislaufs durch ausgewählte antimikrobiell-resistente Organismen",
+          "title": "Prozentanteil der Blutvergiftungen, die von bestimmten gegen antimikrobielle Wirkstoffe resistenten Organismen verursacht werden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/3-d-2",
@@ -487,7 +487,7 @@
         },
         {
           "id": "4-2-1",
-          "title": "Anteil der Kinder im Alter von 24-59 Monaten mit altersgemäßer Entwicklung hinsichtlich Gesundheit, Lernen und psychosozialem Wohlbefinden, nach Geschlecht",
+          "title": "Anteil der Kinder im Alter zwischen 24 und 59 Monaten mit altersgemäßer Entwicklung hinsichtlich Gesundheit, Lernens und psychosozialen Wohlbefindens, nach Geschlecht",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-2-1",
@@ -559,7 +559,7 @@
         },
         {
           "id": "4-c-1",
-          "title": "Anteil der Lehrkräfte mit den erforderlichen Mindestqualifikationen, nach Bildungsstand",
+          "title": "Anteil der Lehrkräfte mit den erforderlichen Mindestqualifikationen, nach Bildungsstufe",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/4-c-1",
@@ -779,7 +779,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/6-b-1",
-          "status": "inprogress"
+          "status": "complete"
         }]
     }
   },
@@ -1159,7 +1159,7 @@
         },
         {
           "id": "10-7-3",
-          "title": "Anzahl der Personen, die im Laufe ihrer Migration zu einem internationalen Zielort gestorben oder verschwunden sind",
+          "title": "Anzahl der Menschen, die im Laufe ihrer Migration zu einem internationalen Zielort gestorben oder verschwunden sind",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/10-7-3",
@@ -1299,7 +1299,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-a-1",
-          "status": "inprogress"
+          "status": "complete"
         },
         {
           "id": "11-b-1",
@@ -1463,11 +1463,11 @@
         },
         {
           "id": "13-2-1",
-          "title": "Anzahl der Staaten mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Strategien, die in Anpassungsmitteilungen und nationalen Mitteilungen gemeldet werden",
+          "title": "Anzahl der Länder mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Anpassungsmitteilungen, die dem Sekretariat des Rahmenübereinkommens der Vereinten Nationen über Klimaänderungen gemeldet wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-2-1",
-          "status": "inprogress"
+          "status": "complete"
         },
         {
           "id": "13-2-2",
@@ -1495,7 +1495,7 @@
         },
         {
           "id": "13-b-1",
-          "title": "Anzahl der am wenigsten entwickelten Länder und kleinen Inselentwicklungsländer mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Strategien, die in Anpassungsmitteilungen und nationalen Mitteilungen gemeldet werden",
+          "title": "Anzahl der am wenigsten entwickelten Länder und kleinen Inselentwicklungsländer mit national festgelegten Beiträgen, langfristigen Strategien, nationalen Anpassungsplänen und Anpassungsmitteilungen, die dem Sekretariat des Rahmenübereinkommens der Vereinten Nationen über Klimaänderungen gemeldet wurden",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/13-b-1",
@@ -1511,7 +1511,7 @@
         
         {
           "id": "14-1-1",
-          "title": "(a) Küsteneutrophierungsindex und (b) Konzentration von Plastikmüll",
+          "title": "a) Küsteneutrophierungsindex und b) Konzentration von Plastikmüll",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/14-1-1",
