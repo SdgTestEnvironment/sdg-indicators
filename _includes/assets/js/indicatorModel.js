@@ -88,6 +88,9 @@ var indicatorModel = function (options) {
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
       console.log("startValues: ", this.startValues, "series from startvalues: ", helpers.getSeriesFromStartValues(this.startValues));
     }
+    else {
+      console.log("has no startValues");
+    }
     this.refreshSeries();
   }
   else {
