@@ -138,7 +138,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610132236">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610142513">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -528,7 +528,7 @@ layout-indicator
   data-indicatorid='indicator_12-4-2'
   data-id="12-4-2"
   data-country="Germany"
-  data-charttitle=""
+  data-charttitle="Hazardous waste"
   data-charttitles="null"
   data-measurementunit=""
   data-showdata="true"
@@ -536,7 +536,7 @@ layout-indicator
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Hazardous waste generated per capita&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Hazardous waste treated&quot;},{&quot;field&quot;:&quot;Type of waste treatment&quot;,&quot;value&quot;:&quot;Energy recovery&quot;},{&quot;field&quot;:&quot;Type of waste treatment&quot;,&quot;value&quot;:&quot;Deposit onto or into land and land treatment and release into water bodies&quot;},{&quot;field&quot;:&quot;Type of waste treatment&quot;,&quot;value&quot;:&quot;Incineration&quot;},{&quot;field&quot;:&quot;Type of waste treatment&quot;,&quot;value&quot;:&quot;Recovery other than energy recovery&quot;}]"
-  data-graphlimits="null"
+  data-graphlimits="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation="Type of waste treatment"
   data-showline="true"
   data-spangaps="true"
@@ -575,7 +575,7 @@ layout-indicator
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption></caption>
+      <caption>Hazardous waste</caption>
       <thead>
         
       </thead>
@@ -596,7 +596,7 @@ layout-indicator
     <p>Unit of measurement: </p>
     
     
-    <p>Comment: </p>
+    <p>Comment: 2016 revised data.</p>
     
   </div>
 
@@ -642,7 +642,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title"></h4>
+          <h4 id="chart-heading" class="chart-title">Hazardous waste</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -882,6 +882,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
+        <dt>Comment:</dt>
+        <dd>2016 revised data.</dd>
+        
 
         
         <dt>Copyright:</dt>
@@ -926,6 +929,9 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
 
+        
+        <dt>Comment:</dt>
+        <dd>2016 revised data.</dd>
         
 
         
@@ -1109,8 +1115,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/c9fe84b3ed0fa08904535801c96d2517e5e20c20" target="_blank">
-                2021-05-31: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/2d69b75a50c22e8d251b2d3fcc4c15a8df7258a1" target="_blank">
+                2021-06-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1140,8 +1146,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/ce3be42d0ec5e66c8ad41292f017e36aee61b689" target="_blank">
-                2021-05-26: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/2d69b75a50c22e8d251b2d3fcc4c15a8df7258a1" target="_blank">
+                2021-06-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2033,7 +2039,35 @@ data-event-label="Change to Sources tab"
           
       
         
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
           
+            
+            
+            
+            
+
+            
+              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_wasgen&lang=en" target="_blank">
+                Generation of waste - Eurostat table [env_wasgen] <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
       
         
           
@@ -2051,13 +2085,35 @@ data-event-label="Change to Sources tab"
           
       
         
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
           
+            
+            
+            
+            
+
+            
+              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=env_wastrt&lang=en" target="_blank">
+                Treatment of waste - Eurostat table [env_wastrt] <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
         
-          
       
-        
-          
+      
+      
+  
       
         
           
@@ -2247,12 +2303,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210610132236'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210610142513'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210610132236"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210610142513"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

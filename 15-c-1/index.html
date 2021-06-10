@@ -138,7 +138,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610132236">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210610142513">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -528,14 +528,14 @@ layout-indicator
   data-indicatorid='indicator_15-c-1'
   data-id="15-c-1"
   data-country="Deutschland"
-  data-charttitle=""
+  data-charttitle="Umsetzung von Maßnahmen im Rahmed des Artenschutzes"
   data-charttitles="null"
   data-measurementunit="Anzahl"
   data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="&quot;&quot;"
+  data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Aufgriffe aufgrund des Artenschutzes&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
   data-showline="true"
@@ -575,7 +575,7 @@ layout-indicator
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption></caption>
+      <caption>Umsetzung von Maßnahmen im Rahmed des Artenschutzes</caption>
       <thead>
         
       </thead>
@@ -596,7 +596,7 @@ layout-indicator
     <p>Einheit: Anzahl</p>
     
     
-    <p>Anmerkung: </p>
+    <p>Anmerkung: 2016 bis 2018 Daten teilweise korrigiert.</p>
     
   </div>
 
@@ -642,7 +642,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title"></h4>
+          <h4 id="chart-heading" class="chart-title">Umsetzung von Maßnahmen im Rahmed des Artenschutzes</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -893,6 +893,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
+        <dt>Anmerkung:</dt>
+        <dd>2016 bis 2018 Daten teilweise korrigiert.</dd>
+        
 
         
         <dt>Copyright:</dt>
@@ -940,6 +943,9 @@ opensdg.chartConfigAlter(function(config, info) {
         <dd>Anzahl</dd>
         
 
+        
+        <dt>Anmerkung:</dt>
+        <dd>2016 bis 2018 Daten teilweise korrigiert.</dd>
         
 
         
@@ -1030,7 +1036,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Verfügbare Zeitreihenbezeichnung </th>
         <td>
           
-            <ul style="padding-left: 25px;"><li>Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten</li> <li> Aufgriffe aufgrund des Artenschutzes</li></ul>
+            <ul style="padding-left: 25px;"><li>Ausgestellte Dokumente für die Ein- und Ausfuhr von geschützten Arten</li> <li> Beschlagnahmungen durch Behörden im Rahmen des Artenschutzes</li></ul>
 
           
         </td>
@@ -1154,8 +1160,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/ce3be42d0ec5e66c8ad41292f017e36aee61b689" target="_blank">
-                2021-05-26: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/2d69b75a50c22e8d251b2d3fcc4c15a8df7258a1" target="_blank">
+                2021-06-10: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -2084,7 +2090,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www.zoll.de/DE/Service/Publikationen/Broschueren/statistiken.html" target="_blank">
+              <a href="https://www.zoll.de/DE/Service/Publikationen/Broschueren/broschueren_node.html" target="_blank">
                 Deutsche Zollbehörde Jahresstatistik <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2311,12 +2317,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210610132236'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210610142513'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210610132236"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210610142513"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
