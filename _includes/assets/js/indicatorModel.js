@@ -86,10 +86,6 @@ var indicatorModel = function (options) {
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
-      console.log("startValues: ", this.startValues, "series from startvalues: ", helpers.getSeriesFromStartValues(this.startValues));
-    }
-    else {
-      console.log("has no startValues");
     }
     this.refreshSeries();
   }
@@ -325,6 +321,7 @@ var indicatorModel = function (options) {
     });
   };
 };
+console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
 
 indicatorModel.prototype = {
   initialise: function () {
