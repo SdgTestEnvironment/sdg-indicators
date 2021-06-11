@@ -1246,6 +1246,7 @@ function getMatchesByUnitSeries(items, selectedUnit, selectedSeries) {
     });
   }
   return matches;
+  console.log("matches: ", matches);
 }
 
 /**
@@ -2531,10 +2532,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
-      console.log("startValues: ", this.startValues, "series from startvalues: ", helpers.getSeriesFromStartValues(this.startValues));
-    }
-    else {
-      console.log("has no startValues");
     }
     this.refreshSeries();
   }
@@ -2770,6 +2767,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     });
   };
 };
+console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
 
 indicatorModel.prototype = {
   initialise: function () {
