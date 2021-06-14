@@ -63,7 +63,7 @@ var indicatorModel = function (options) {
         this.chartTitle = this.selectedSeries;
       }
       this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
-      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
       this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data, this.allColumns);
       this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
     }
@@ -91,7 +91,7 @@ var indicatorModel = function (options) {
   }
   else {
     this.data = this.allData;
-    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
   }
 
   // calculate some initial values:
@@ -283,7 +283,6 @@ var indicatorModel = function (options) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    console.log("selectedFields: ", this.selectedFields);
     var combinations = helpers.getCombinationData(this.selectedFields);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
@@ -319,9 +318,10 @@ var indicatorModel = function (options) {
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
     });
+    console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
   };
 };
-console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
+
 
 indicatorModel.prototype = {
   initialise: function () {
