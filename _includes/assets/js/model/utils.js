@@ -133,7 +133,6 @@ function getMatchesByUnitSeries(items, selectedUnit, selectedSeries) {
     });
   }
   return matches;
-  console.log("matches: ", matches);
 }
 
 /**
