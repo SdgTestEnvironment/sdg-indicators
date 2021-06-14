@@ -159,9 +159,6 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-datapackage:
-  sorting: default
-
 
 # Use a remote Jekyll theme.
 remote_theme: brockfanning/open-sdg@data-schema
