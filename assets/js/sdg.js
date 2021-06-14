@@ -1450,12 +1450,17 @@ function getSeriesFromStartValues(startValues) {
  * @param {Array} edges
  * @return {Array} Field item states
  */
-function getInitialFieldItemStates(rows, edges, columns) {
-  var initial = getFieldColumnsFromData(columns).map(function(field) {
+
+function getInitialFieldItemStates(rows, edges, columns, dataSchema) {
+  var fields = getFieldColumnsFromData(columns);
+  sortFieldNames(fields, dataSchema);
+  var initial = fields.map(function(field) {
+    var values = getUniqueValuesByProperty(field, rows);
+    sortFieldValueNames(field, values, dataSchema);
     return {
       field: field,
       hasData: true,
-      values: getUniqueValuesByProperty(field, rows).map(function(value) {
+      values: values.map(function(value) {
         return {
           value: value,
           state: 'default',
@@ -1466,7 +1471,7 @@ function getInitialFieldItemStates(rows, edges, columns) {
     };
   }, this);
 
-  return sortFieldItemStates(initial, edges);
+  return sortFieldItemStates(initial, edges, dataSchema);
 }
 
 /**
@@ -1474,15 +1479,16 @@ function getInitialFieldItemStates(rows, edges, columns) {
  * @param {Array} edges
  * return {Array} Sorted field item states
  */
-function sortFieldItemStates(fieldItemStates, edges) {
+function sortFieldItemStates(fieldItemStates, edges, dataSchema) {
   if (edges.length > 0) {
-    var froms = getUniqueValuesByProperty('From', edges);
-    var tos = getUniqueValuesByProperty('To', edges);
+    var froms = getUniqueValuesByProperty('From', edges).sort();
+    var tos = getUniqueValuesByProperty('To', edges).sort();
     var orderedEdges = froms.concat(tos);
     var fieldsNotInEdges = fieldItemStates
       .map(function(fis) { return fis.field; })
       .filter(function(field) { return !orderedEdges.includes(field); });
     var customOrder = orderedEdges.concat(fieldsNotInEdges);
+    sortFieldNames(customOrder, dataSchema);
 
     return _.sortBy(fieldItemStates, function(item) {
       return customOrder.indexOf(item.field);
@@ -1897,6 +1903,44 @@ function getDataBySelectedFields(rows, selectedFields) {
       return field.values.includes(row[field.field]);
     });
   });
+}
+
+/**
+ * @param {Array} fieldNames
+ * @param {Object} dataSchema
+ */
+function sortFieldNames(fieldNames, dataSchema) {
+  if (dataSchema && dataSchema.fields) {
+    var schemaFieldNames = dataSchema.fields.map(function(field) { return field.name; });
+    fieldNames.sort(function(a, b) {
+      return schemaFieldNames.indexOf(a) - schemaFieldNames.indexOf(b);
+    });
+  }
+  else {
+    fieldNames.sort();
+  }
+}
+
+/**
+ * @param {string} fieldName
+ * @param {Array} fieldValues
+ * @param {Object} dataSchema
+ */
+function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
+  if (dataSchema && dataSchema.fields) {
+    var fieldSchema = dataSchema.fields.find(function(x) { return x.name == fieldName; });
+    if (fieldSchema && fieldSchema.constraints && fieldSchema.constraints.enum) {
+      fieldValues.sort(function(a, b) {
+        return fieldSchema.constraints.enum.indexOf(a) - fieldSchema.constraints.enum.indexOf(b);
+      });
+    }
+    else {
+      fieldValues.sort();
+    }
+  }
+  else {
+    fieldValues.sort();
+  }
 }
 
   /**
@@ -2438,6 +2482,8 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
     tableDataFromDatasets: tableDataFromDatasets,
+    sortFieldNames: sortFieldNames,
+    sortFieldValueNames: sortFieldValueNames,
     getPrecision: getPrecision,
     getGraphLimits: getGraphLimits,
     getGraphAnnotations: getGraphAnnotations,
@@ -2509,7 +2555,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
         this.chartTitle = this.selectedSeries;
       }
       this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
-      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+      this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
       this.fieldsBySeries = helpers.fieldsUsedBySeries(this.serieses, this.data, this.allColumns);
       this.dataHasSeriesSpecificFields = helpers.dataHasSeriesSpecificFields(this.fieldsBySeries);
     }
@@ -2537,7 +2583,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   }
   else {
     this.data = this.allData;
-    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data);
+    this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
   }
 
   // calculate some initial values:
@@ -2729,7 +2775,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    console.log("selectedFields: ", this.selectedFields);
     var combinations = helpers.getCombinationData(this.selectedFields);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
@@ -2765,9 +2810,10 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
     });
+    console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
   };
 };
-console.log("selectedSeries: ", this.selectedSeries,"  selectedUnit: ", this.selectedUnit);
+
 
 indicatorModel.prototype = {
   initialise: function () {
