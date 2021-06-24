@@ -4354,6 +4354,10 @@ $(function() {
         '</li>';
       var plugin = this.plugin;
       var valueRange = this.plugin.valueRange;
+      if (valueRange[0] =='NaN'){
+        valueRange.shift()
+      }
+      
       selectionList.innerHTML = this.selections.map(function(selection) {
         var value = plugin.getData(selection.feature.properties);
         var percentage, valueStatus;
