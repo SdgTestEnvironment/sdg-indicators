@@ -4389,7 +4389,7 @@ $(function() {
 
   });
 
-  console.log("VR: ", valueRange, "rounded first value: ", plugin.alterData(opensdg.dataRounding(valueRange[0])));
+  console.log("VR: ", this.plugin.valueRange, "rounded first value: ", plugin.alterData(opensdg.dataRounding(this.plugin.valueRange[0])));
 
   // Factory function for this class.
   L.Control.selectionLegend = function(plugin) {
