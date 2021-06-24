@@ -4317,6 +4317,8 @@ $(function() {
           '<span class="legend-value right">{highValue}</span>' +
           '<span class="arrow right"></span>' +
         '</div>';
+
+      console.log("VR: ", this.plugin.valueRange, "rounded first value: ", plugin.alterData(opensdg.dataRounding(this.plugin.valueRange[0])));
       var swatchTpl = '<span class="legend-swatch" style="width:{width}%; background:{color};"></span>';
       var swatchWidth = 100 / this.plugin.options.colorRange[this.plugin.goalNr].length;
       var swatches = this.plugin.options.colorRange[this.plugin.goalNr].map(function(swatchColor) { //[this.plugin.goalNr]
@@ -4389,7 +4391,6 @@ $(function() {
 
   });
 
-  console.log("VR: ", this.plugin.valueRange, "rounded first value: ", plugin.alterData(opensdg.dataRounding(this.plugin.valueRange[0])));
 
   // Factory function for this class.
   L.Control.selectionLegend = function(plugin) {
