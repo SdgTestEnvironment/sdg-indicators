@@ -87,10 +87,6 @@
       var plugin = this.plugin;
       var valueRange = this.plugin.valueRange;
 
-      console.log("VR: ", valueRange);
-      if (valueRange[0] =='NaN'){
-        valueRange.shift()
-      }
 
       selectionList.innerHTML = this.selections.map(function(selection) {
         var value = plugin.getData(selection.feature.properties);
@@ -124,6 +120,8 @@
     }
 
   });
+
+  console.log("VR: ", valueRange, "rounded first value: ", plugin.alterData(opensdg.dataRounding(valueRange[0])));
 
   // Factory function for this class.
   L.Control.selectionLegend = function(plugin) {
