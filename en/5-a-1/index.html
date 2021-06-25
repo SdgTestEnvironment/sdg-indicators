@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210625012028">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210625124434">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -525,16 +525,16 @@ layout-indicator
   data-indicatorid='indicator_5-a-1'
   data-id="5-a-1"
   data-country="Germany"
-  data-charttitle="Ownership over agricultural land and farms"
+  data-charttitle="Ownership over agricultural land and holdings"
   data-charttitles="null"
   data-measurementunit="Percentage"
   data-showdata="true"
-  data-graphtype="line"
+  data-graphtype="bar"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="&quot;&quot;"
-  data-graphlimits="null"
-  data-stackeddisaggregation=""
+  data-graphlimits="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
+  data-stackeddisaggregation="Ownership"
   data-showline="true"
   data-spangaps="true"
   data-graphannotations="null"
@@ -573,7 +573,7 @@ layout-indicator
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Ownership over agricultural land and farms</caption>
+      <caption>Ownership over agricultural land and holdings</caption>
       <thead>
         
       </thead>
@@ -640,7 +640,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Ownership over agricultural land and farms</h4>
+          <h4 id="chart-heading" class="chart-title">Ownership over agricultural land and holdings</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -829,40 +829,32 @@ opensdg.chartConfigAlter(function(config, info) {
 </script>
 
 <script>
-// For line charts, add the vertical line hover functionality.
 opensdg.chartConfigAlter(function(config, info) {
+  if (info.stackedDisaggregation) {
     var overrides = {
-        options: {
-            tooltips: {
-                intersect: false,
-                axis: 'x'
-            },
-        },
-        plugins: [{
-            beforeDatasetsDraw: function(chart) {
-                if (chart.tooltip._active && chart.tooltip._active.length) {
-                    var activePoint = chart.tooltip._active[0],
-                        ctx = chart.ctx,
-                        x = activePoint.tooltipPosition().x,
-                        topY = chart.scales['y-axis-0'].top,
-                        bottomY = chart.scales['y-axis-0'].bottom;
-
-                    // draw line
-                    ctx.save();
-                    ctx.beginPath();
-                    ctx.moveTo(x, topY);
-                    ctx.lineTo(x, bottomY);
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = '#757575';
-                    ctx.setLineDash([5, 2]);
-                    ctx.stroke();
-                    ctx.restore();
-                }
-            }
-        }],
+      options: {
+        scales: {
+          xAxes: [{ stacked: true }],
+          yAxes: [{ stacked: true }],
+        }
+      }
     };
+    // If we have stackedDisaggregation, we need to group datasets into stacks.
+    config.data.datasets.forEach(function(dataset) {
+      var disaggregation = $.extend({}, dataset.disaggregation);
+      // We're going to "stringify" each combination of disaggregations in order
+      // to place them in their own "stacks". To place "stacked" disaggregations
+      // into the same stack, we set them as "samestack" before stringifying.
+      // Note that the string "samestack" is completely arbitrary.
+      if (typeof disaggregation[info.stackedDisaggregation] !== 'undefined') {
+        disaggregation[info.stackedDisaggregation] = 'samestack';
+      }
+      // Use the disaggregation as a unique id for each stack.
+      dataset.stack = JSON.stringify(disaggregation);
+    });
     // Add these overrides onto the normal config, and return it.
     $.extend(true, config, overrides);
+  }
 });
 </script>
 
@@ -1029,7 +1021,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Time series available </th>
         <td>
           
-            <ul style="padding-left: 25px;"><li>Owned and leased agricultural land</li> <li> Female owners of agricultural holdings with the legal form of a sole proprietorship</li> <li> Agricultural holdings with the legal of a form sole proprietorship</li></ul>
+            <ul style="padding-left: 25px;"><li>Owned and leased agricultural land</li> <li> Female owners of agricultural holdings with the legal form of a sole proprietorship</li> <li> Agricultural holdings with the legal form of a sole proprietorship</li></ul>
 
           
         </td>
@@ -1100,8 +1092,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/c6081be9659052ceb9994323f8fe1cdc90628527" target="_blank">
-                2021-06-23: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/1498c4a4414a1ef591368eb4a351693caf6fd38c" target="_blank">
+                2021-06-25: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1131,8 +1123,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/bde1b018dc933d56916ba5bbf37d128d75b5503b" target="_blank">
-                2021-06-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/1498c4a4414a1ef591368eb4a351693caf6fd38c" target="_blank">
+                2021-06-25: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1702,8 +1694,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41141-0001&bypass=true&language=en" target="_blank">
-                Agricultural holdings, area: Germany, years, types of land use – GENESIS online 41141-0001 <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftliche-Betriebe/_inhalt.html#sprg239572" target="_blank">
+                Agricultural structure survey: ownership and leasehold structure – Fachserie 3, series 2.1.6 (only available in German) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1748,8 +1740,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41141-0009&bypass=true&language=en" target="_blank">
-                Agricultural holdings, utilised agricultural area, area in relevant type of ownership: Germany, years, ownership structure, legal forms, size classes of the utilised agricultural area – GENESIS online 41141-0009 <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftliche-Betriebe/_inhalt.html#sprg239572" target="_blank">
+                Census of Agriculture: ownership and leasehold structure – Fachserie 3, Heft 3 (only available in German) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1798,10 +1790,35 @@ data-event-label="Change to Sources tab"
   
       
         
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
           
+            
+            
+            
+            
+
+            
+              <a href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftliche-Betriebe/_inhalt.html#sprg239572" target="_blank">
+                Census of Agriculture: persons employed – Fachserie 3, Heft 2 (only available in German) <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
         
-          
+      
+      
+      
+  
       
         
           
@@ -2064,12 +2081,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210625012028'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210625124434'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210625012028"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210625124434"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
