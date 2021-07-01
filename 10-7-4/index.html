@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210701011748">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210701070246">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -713,7 +713,7 @@ layout-indicator
 
   <div id="datatableFooter">
     
-    <p>Datenquelle: Bundesverwaltungsamt (BVA) – Ausländerzentralregister</p>
+    <p>Datenquelle: Statistisches Bundesamt (Destatis)</p>
     
     
     <p>Geographische Abdeckung: Deutschland</p>
@@ -722,7 +722,7 @@ layout-indicator
     <p>Einheit: Anzahl</p>
     
     
-    <p>Anmerkung: </p>
+    <p>Anmerkung: Ab 2010 basieren die Daten zur Gesamtbevölkerung der Bevölkerungsfortschreibung auf der Volkszählung 1987 und ab 2011 auf dem Zensus 2011. Im Jahr 2015 eingereiste Schutzsuchende wurden teilweise erst im Laufe des Jahres 2016 registriert. Die Zahlen zu Schutzsuchenden zum 31.12.2015 sind demnach als zu niedrig einzustufen.</p>
     
   </div>
 
@@ -1005,7 +1005,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Datenquelle:</dt>
-        <dd>Bundesverwaltungsamt (BVA) – Ausländerzentralregister</dd>
+        <dd>Statistisches Bundesamt (Destatis)</dd>
         
 
         
@@ -1018,6 +1018,9 @@ opensdg.chartConfigAlter(function(config, info) {
         <dd>Anzahl</dd>
         
 
+        
+        <dt>Anmerkung:</dt>
+        <dd>Ab 2010 basieren die Daten zur Gesamtbevölkerung der Bevölkerungsfortschreibung auf der Volkszählung 1987 und ab 2011 auf dem Zensus 2011. Im Jahr 2015 eingereiste Schutzsuchende wurden teilweise erst im Laufe des Jahres 2016 registriert. Die Zahlen zu Schutzsuchenden zum 31.12.2015 sind demnach als zu niedrig einzustufen.</dd>
         
 
         
@@ -1053,7 +1056,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Datenquelle:</dt>
-        <dd>Bundesverwaltungsamt (BVA) – Ausländerzentralregister</dd>
+        <dd>Statistisches Bundesamt (Destatis)</dd>
         
 
         
@@ -1066,6 +1069,9 @@ opensdg.chartConfigAlter(function(config, info) {
         <dd>Anzahl</dd>
         
 
+        
+        <dt>Anmerkung:</dt>
+        <dd>Ab 2010 basieren die Daten zur Gesamtbevölkerung der Bevölkerungsfortschreibung auf der Volkszählung 1987 und ab 2011 auf dem Zensus 2011. Im Jahr 2015 eingereiste Schutzsuchende wurden teilweise erst im Laufe des Jahres 2016 registriert. Die Zahlen zu Schutzsuchenden zum 31.12.2015 sind demnach als zu niedrig einzustufen.</dd>
         
 
         
@@ -1246,8 +1252,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/bde1b018dc933d56916ba5bbf37d128d75b5503b" target="_blank">
-                2021-06-24: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/a71a752c510f2e5c4b63f5557c952da1b42c2629" target="_blank">
+                2021-07-01: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
 
@@ -1757,7 +1763,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.bva.bund.de/DE/Das-BVA/Aufgaben/A/Auslaenderzentralregister/azr_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/bva.png" alt="Logo bva" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.destatis.de"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -1773,7 +1779,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Bundesverwaltungsamt (BVA) – Ausländerzentralregister</p>
+            <p>Statistisches Bundesamt (Destatis)</p>
 
           
         </td>
@@ -1792,35 +1798,10 @@ data-event-label="Change to Sources tab"
           
       
         
-      
-      
-      <tr>
-        <th scope="row">Datenquelle </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Tabellen/liste-schutzsuchende-migrationsstruktur-demografie-schutzsuchende-zeitreihe.html" target="_blank">
-                Migrationsstruktur der Schutzsuchenden <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
-      
-      
-      
-  
+          
       
         
           
@@ -2116,12 +2097,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210701011748'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210701070246'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210701011748"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210701070246"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
