@@ -589,7 +589,8 @@ var indicatorView = function (model, options) {
   };
 
   this.getHeadlineColor = function(contrast) {
-    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
+    //return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline | default: "#00006a" }}';
+    return this.isHighContrast(contrast) ? '{{ site.graph_color_headline_high_contrast | default: "#FFDD00" }}' : '{{ site.graph_color_headline[goalNr] | default: "#11116a" }}';
   }
 
   this.getGridColor = function(contrast) {
@@ -626,7 +627,7 @@ var indicatorView = function (model, options) {
     if (chartInfo.data.datasets.length > 0) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
-      if (isHeadline && '{{site.useHeadlineColor}}' == true) {
+      if (isHeadline) {
         var newColor = this.getHeadlineColor(contrast);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
