@@ -3498,7 +3498,7 @@ var indicatorView = function (model, options) {
     if (chartInfo.data.datasets.length > 0) {
       var firstDataset = chartInfo.data.datasets[0];
       var isHeadline = (typeof firstDataset.disaggregation === 'undefined');
-      if (isHeadline && site.useHeadlineColor) {
+      if (isHeadline && 'false') {
         var newColor = this.getHeadlineColor(contrast);
         firstDataset.backgroundColor = newColor;
         firstDataset.borderColor = newColor;
