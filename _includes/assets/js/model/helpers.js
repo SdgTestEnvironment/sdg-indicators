@@ -102,6 +102,7 @@
     getGraphAnnotations: getGraphAnnotations,
     getColumnsFromData: getColumnsFromData,
     getGraphStepsize: getGraphStepsize,
+    getGraphAxisPrecision: getGraphAxisPrecision,
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }

@@ -35,6 +35,18 @@ function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
 }
 
 /**
+ * @param {Array} graphAxisPrecision Objects containing 'unit' and 'title'
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Object|false} Graph limit object, if any
+ */
+function getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries) {
+  return getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries);
+}
+
+
+
+/**
  * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
  * @param {String} selectedUnit
  * @param {String} selectedSeries
