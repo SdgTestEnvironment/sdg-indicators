@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210712113102">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210712114915">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -410,7 +410,7 @@ layout-indicator
 </script>
 
 <script type="text/template" id="units_template">
-  <% if(units.length>1) { %>
+  <% if(units.length) { %>
     <h4>Units type</h4>
     <fieldset>
       <legend class="sr-only">Units type</legend>
@@ -532,7 +532,7 @@ layout-indicator
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Units&quot;,&quot;value&quot;:&quot;Tonnes per capita&quot;}]"
+  data-startvalues="null"
   data-graphlimits="[{&quot;unit&quot;:&quot;Million tonnes&quot;,&quot;minimum&quot;:1000.0,&quot;maximum&quot;:1500.0},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;minimum&quot;:90.0,&quot;maximum&quot;:120.0},{&quot;unit&quot;:&quot;Tonnes per capita&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:20.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
@@ -1124,7 +1124,7 @@ layout-indicator
           
           
           
-          <td>104.3</td>
+          <td>104.0</td>
           
           
           
@@ -1395,7 +1395,7 @@ opensdg.chartConfigAlter(function(config, info) {
           yAxes: [{
             ticks: {
               stepSize: info.graphStepsize.step,
-              precision: info.graphAxisPrecision.decimals,
+              precision: 3,//info.graphAxisPrecision.decimals,
             }
           }]
         }
@@ -1702,7 +1702,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/5271a028ea2c59eefbb1f3c15ab2448e877999c4" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/26a661b66df95e73f5dbaa76b707baed1ea27852" target="_blank">
                 2021-07-12: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1733,7 +1733,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/62cc4f89c4bdaa025b350653af6b720b42c9869d" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/d3fef074d79e070b4c6cbb9b8260593fd9f6f690" target="_blank">
                 2021-07-12: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2665,12 +2665,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210712113102'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210712114915'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210712113102"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210712114915"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
