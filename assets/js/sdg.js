@@ -2004,6 +2004,7 @@ function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
   return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
 }
 
+
 /**
  * @param {Array} graphAxisPrecision Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
@@ -2011,7 +2012,7 @@ function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
  * @return {Object|false} Graph limit object, if any
  */
 function getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries) {
-  return getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries);
+  return getMatchByUnitSeries(graphAxisPrecision, selectedUnit, selectedSeries);
 }
 
 
