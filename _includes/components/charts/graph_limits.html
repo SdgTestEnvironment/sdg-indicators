@@ -9,7 +9,7 @@ opensdg.chartConfigAlter(function(config, info) {
             ticks: {
               min: info.graphLimits.minimum,
               max: info.graphLimits.maximum,
-              //stepSize: 2,
+              stepSize: info.graphLimits,
             }
           }]
         }

@@ -101,6 +101,7 @@
     getGraphLimits: getGraphLimits,
     getGraphAnnotations: getGraphAnnotations,
     getColumnsFromData: getColumnsFromData,
+    getGraphStepsize: getGraphStepsize:
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }
