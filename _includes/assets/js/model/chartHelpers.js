@@ -30,9 +30,9 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {String} selectedSeries
  * @return {Object|false} Graph limit object, if any
  */
-//function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
-  //return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
-//}
+function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
+  return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
+}
 
 /**
  * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
