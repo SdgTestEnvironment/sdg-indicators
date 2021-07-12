@@ -450,7 +450,6 @@ var indicatorView = function (model, options) {
               callback: function(value) {
                 return view_obj.alterDataDisplay(value, undefined, 'chart y-axis tick');
               },
-              scaleStepWidth:1,
             },
             scaleLabel: {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
