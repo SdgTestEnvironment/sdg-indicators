@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210712102735">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210712104739">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -778,7 +778,6 @@ opensdg.chartConfigAlter(function(config, info) {
             ticks: {
               min: info.graphLimits.minimum,
               max: info.graphLimits.maximum,
-              stepSize: info.graphStepsize.step,
             }
           }]
         }
@@ -945,6 +944,27 @@ opensdg.chartConfigAlter(function(config, info) {
     }
 });
 </script>
+
+<script>
+opensdg.chartConfigAlter(function(config, info) {
+  if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
+    var overrides = {
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              stepSize: info.graphStepsize.step,
+            }
+          }]
+        }
+      }
+    }
+    // Add these overrides onto the normal config.
+    $.extend(true, config, overrides);
+  }
+});
+</script>
+
 
 <script>
 opensdg.chartConfigAlter(function(config, info) {
@@ -2574,12 +2594,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210712102735'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210712104739'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210712102735"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210712104739"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
