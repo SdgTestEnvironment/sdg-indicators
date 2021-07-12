@@ -16,7 +16,7 @@ opensdg.chartConfigAlter(function(config, info) {
     $.extend(true, config, overrides);
   }
 
-  if (info.precision && Object.keys(info.precision).length > 0) {
+  //if (info.precision && Object.keys(info.precision).length > 0) {
     var overrides = {
       options: {
         scales: {
@@ -30,6 +30,6 @@ opensdg.chartConfigAlter(function(config, info) {
     }
     // Add these overrides onto the normal config.
     $.extend(true, config, overrides);
-  }
+  //}
 });
 </script>
