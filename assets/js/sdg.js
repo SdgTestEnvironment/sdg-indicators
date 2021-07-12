@@ -2853,7 +2853,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
-      //graphStepsize:helpers.getGraphStepsize( this.graphStepsize, this.selectedUnit, this.selectedSeries),
+      graphStepsize:helpers.getGraphStepsize( this.graphStepsize, this.selectedUnit, this.selectedSeries),
     });
   };
 };
