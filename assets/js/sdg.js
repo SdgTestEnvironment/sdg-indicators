@@ -2005,6 +2005,18 @@ function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
 }
 
 /**
+ * @param {Array} graphAxisPrecision Objects containing 'unit' and 'title'
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Object|false} Graph limit object, if any
+ */
+function getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries) {
+  return getGraphAxisPrecision(graphAxisPrecision, selectedUnit, selectedSeries);
+}
+
+
+
+/**
  * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
  * @param {String} selectedUnit
  * @param {String} selectedSeries
@@ -2528,6 +2540,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
     getGraphAnnotations: getGraphAnnotations,
     getColumnsFromData: getColumnsFromData,
     getGraphStepsize: getGraphStepsize,
+    getGraphAxisPrecision: getGraphAxisPrecision,
     // Backwards compatibility.
     footerFields: deprecated('helpers.footerFields'),
   }
@@ -2581,6 +2594,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.precision = options.precision;
   this.dataSchema = options.dataSchema;
   this.graphStepsize = options.graphStepsize;
+  this.graphAxisPrecision = options.graphAxisPrecision;
 
   this.initialiseUnits = function() {
     if (this.hasUnits) {
@@ -2853,7 +2867,8 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
-      graphStepsize:helpers.getGraphStepsize( this.graphStepsize, this.selectedUnit, this.selectedSeries),
+      graphStepsize: helpers.getGraphStepsize( this.graphStepsize, this.selectedUnit, this.selectedSeries),
+      graphAxisPrecision: helpers.getGraphAxisPrecision( this.graphAxisPrecision, this.selectedUnit, this.selectedSeries),
     });
   };
 };
