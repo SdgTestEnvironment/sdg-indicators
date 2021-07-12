@@ -15,21 +15,5 @@ opensdg.chartConfigAlter(function(config, info) {
     // Add these overrides onto the normal config.
     $.extend(true, config, overrides);
   }
-
-  //if (info.precision && Object.keys(info.precision).length > 0) {
-    var overrides = {
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              precision: 3,//info.graphAxisPrecision.decimals,
-            }
-          }]
-        }
-      }
-    }
-    // Add these overrides onto the normal config.
-    $.extend(true, config, overrides);
-  //}
 });
 </script>
