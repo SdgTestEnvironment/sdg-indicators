@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210713051748">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210713113846">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -525,14 +525,14 @@ layout-indicator
   data-indicatorid='indicator_12-2-1'
   data-id="12-2-1"
   data-country="Germany"
-  data-charttitle="Raw material consumption (RMC)"
-  data-charttitles="null"
+  data-charttitle="Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP"
+  data-charttitles="[{&quot;series&quot;:&quot;Raw material consumption (RMC)&quot;,&quot;title&quot;:&quot;Raw material consumption (RMC)&quot;},{&quot;series&quot;:&quot;Raw material consumption per real GDP&quot;,&quot;title&quot;:&quot;Raw material consumption per real GDP&quot;}]"
   data-measurementunit=""
   data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Raw material consumption (RMC)&quot;}]"
+  data-startvalues="&quot;&quot;"
   data-graphlimits="[{&quot;unit&quot;:&quot;Million tonnes&quot;,&quot;minimum&quot;:1000.0,&quot;maximum&quot;:1500.0},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;minimum&quot;:90.0,&quot;maximum&quot;:120.0},{&quot;unit&quot;:&quot;Tonnes per capita&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:20.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
@@ -542,7 +542,7 @@ layout-indicator
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Million tonnes&quot;,&quot;Tonnes per capita&quot;,&quot;2015 = 100&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Raw material consumption (RMC)&quot;,&quot;Raw material consumption per real GDP&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;unit&quot;:&quot;Million tonnes&quot;,&quot;decimals&quot;:0},{&quot;unit&quot;:&quot;Tonnes per capita&quot;,&quot;decimals&quot;:1},{&quot;unit&quot;:&quot;Per real GDP (2010 = 100)&quot;,&quot;decimals&quot;:1}]"
-  data-graphstepsize="null"
+  data-graphstepsize="[{&quot;unit&quot;:&quot;Million tonnes&quot;,&quot;step&quot;:100.0},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;step&quot;:20.0},{&quot;unit&quot;:&quot;Tonnes per capita&quot;,&quot;step&quot;:4.0}]"
 >
   
   <span role="status" class="sr-only" id="indicator-data-view-status"></span>
@@ -574,7 +574,7 @@ layout-indicator
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Raw material consumption (RMC)</caption>
+      <caption>Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP</caption>
       <thead>
         
         
@@ -1731,8 +1731,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/3e7d8eb3859b9a7a2b3602cc0b35515ad482900b" target="_blank">
-                2021-07-12: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/6b52e66f64677c473518efa52ce9cde0ccab9452" target="_blank">
+                2021-07-13: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2290,29 +2290,7 @@ data-event-label="Change to Sources tab"
           
       
         
-      
-      
-      <tr>
-        <th scope="row">Data source </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Umwelt/UGR/rohstoffe-materialfluesse-wasser/_inhalt.html" target="_blank">
-                Raw materials, material flows, water -supply and use in raw material equivalents (RMC) (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
       
         
       
@@ -2663,12 +2641,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210713051748'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210713113846'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210713051748"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210713113846"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
