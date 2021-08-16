@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210816085611">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210816090959">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -539,7 +539,7 @@ layout-indicator
   data-spangaps="true"
   data-graphannotations="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Units&quot;,&quot;Percentage&quot;,&quot;Number&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Value&quot;,&quot;1&quot;,&quot;3&quot;,&quot;2&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;Number&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
   data-graphstepsize="null"
@@ -599,31 +599,11 @@ layout-indicator
         <tr>
           
           
-          <td>Year</td>
-          
-          
-          
-          <td>Time series</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Value</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
           <td>2015</td>
           
           
           
-          <td>A</td>
+          <td>1</td>
           
           
           
@@ -631,7 +611,7 @@ layout-indicator
           
           
           
-          <td class="table-value">1</td>
+          <td class="table-value">A</td>
           
           
         </tr>
@@ -643,7 +623,7 @@ layout-indicator
           
           
           
-          <td>B</td>
+          <td>3</td>
           
           
           
@@ -651,7 +631,7 @@ layout-indicator
           
           
           
-          <td class="table-value">3</td>
+          <td class="table-value">B</td>
           
           
         </tr>
@@ -663,7 +643,7 @@ layout-indicator
           
           
           
-          <td>C</td>
+          <td>2</td>
           
           
           
@@ -671,7 +651,7 @@ layout-indicator
           
           
           
-          <td class="table-value">2</td>
+          <td class="table-value">C</td>
           
           
         </tr>
@@ -683,7 +663,7 @@ layout-indicator
           
           
           
-          <td>A</td>
+          <td>1</td>
           
           
           
@@ -691,7 +671,7 @@ layout-indicator
           
           
           
-          <td class="table-value">1</td>
+          <td class="table-value">A</td>
           
           
         </tr>
@@ -703,7 +683,7 @@ layout-indicator
           
           
           
-          <td>B</td>
+          <td>3</td>
           
           
           
@@ -711,7 +691,7 @@ layout-indicator
           
           
           
-          <td class="table-value">3</td>
+          <td class="table-value">B</td>
           
           
         </tr>
@@ -723,7 +703,7 @@ layout-indicator
           
           
           
-          <td>C</td>
+          <td>2</td>
           
           
           
@@ -731,7 +711,7 @@ layout-indicator
           
           
           
-          <td class="table-value">2</td>
+          <td class="table-value">C</td>
           
           
         </tr>
@@ -1265,7 +1245,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/d1a79264d8bfdf7176291a8dd9abc43dae63db71" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/d1c34d4342ea781a35439f824a3aea619dde0034" target="_blank">
                 2021-08-16: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2432,12 +2412,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210816085611'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210816090959'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210816085611"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210816090959"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
