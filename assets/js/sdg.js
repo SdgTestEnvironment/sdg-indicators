@@ -1091,9 +1091,11 @@ opensdg.maptitles = function(indicatorId) {
   return [this.mapTitle, this.mapUnit] ;
 
 };
+//Last check: 16.08.2021
 var indicatorModel = function (options) {
 
-  var helpers = 
+  var helpers = //Last check: 16.08.2021
+
 (function() {
 
   /**
@@ -1958,7 +1960,8 @@ function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
   }
 }
 
-  /**
+  //Last check: 16.08.2021
+/**
  * Model helper functions related to charts and datasets.
  */
 
@@ -2874,6 +2877,7 @@ var mapView = function () {
     });
   };
 };
+//Last check: 16.08.2021
 var indicatorView = function (model, options) {
 
   "use strict";
