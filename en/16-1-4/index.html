@@ -134,7 +134,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210818100826">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210818102906">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -532,11 +532,11 @@ layout-indicator
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Feelings of insecurity in the neighbourhood (at night)&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Very safe&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Safe&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Unsafe&quot;},{&quot;field&quot;:&quot;A_FEELINSECURITY_4&quot;,&quot;value&quot;:&quot;K_FEELINSECURITY&quot;}]"
+  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Feelings of insecurity in the neighbourhood (at night)&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Very safe&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Safe&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Unsafe&quot;},{&quot;field&quot;:&quot;Feelings of insecurity&quot;,&quot;value&quot;:&quot;Very unsafe&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
   data-showline="true"
-  data-spangaps="true"
+  data-spangaps="false"
   data-graphannotations="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Population not living in an area with crime, violence or vandalism&quot;,&quot;Feelings of insecurity in the neighbourhood (at night)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;feelings of insecurity&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Very safe&quot;,&quot;Safe&quot;,&quot;Unsafe&quot;,&quot;Very unsafe&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Feelings of insecurity&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
@@ -1153,7 +1153,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/07ea3c16a4d203e2a5b4fbb4348236fd19b46248" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/5058c8f73ff985ee49fb829c56ffc598e710bb19" target="_blank">
                 2021-08-18: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2592,12 +2592,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210818100826'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210818102906'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210818100826"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210818102906"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
