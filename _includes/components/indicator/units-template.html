@@ -3,7 +3,9 @@
   <% if(units.length > 1) { %>
   {% endif %}
     <h4>{{ page.t.indicator.unit_of_measurement }}</h4>
-    console.log("units: ", units);
+    <script>
+      console.log("units: ", units);
+    </script>
     <fieldset>
       <legend class="sr-only">{{ page.t.indicator.unit_of_measurement }}</legend>
       <% _.each(units, function(unitsItem, index) { %>
