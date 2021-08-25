@@ -3180,9 +3180,6 @@ var indicatorView = function (model, options) {
     if (units.length < 1) {
     
       $(this._rootElement).addClass('no-units');
-      console.log("1");
-    } else {
-      console.log("2");
     }
   };
 
