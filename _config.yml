@@ -159,6 +159,7 @@ reporting_status:
     disaggregation_tabs: false
 
 hide_empty_metadata: true
+hide_single_unit: false
 
 plugins:
   - jekyll-remote-theme
