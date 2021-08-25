@@ -1,11 +1,10 @@
 <script type="text/template" id="units_template">
+  <% units.splice(units.indexOf("no unit"), units.indexOf("no unit")); %>
   {% if site.hide_single_unit %}
   <% if(units.length > 1) { %>
   {% endif %}
     <h4>{{ page.t.indicator.unit_of_measurement }}</h4>
-    <script>
-      console.log("units: ", units);
-    </script>
+
     <fieldset>
       <legend class="sr-only">{{ page.t.indicator.unit_of_measurement }}</legend>
       <% _.each(units, function(unitsItem, index) { %>
@@ -13,6 +12,8 @@
         <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
       <% }); %>
     </fieldset>
+
+
   {% if site.hide_single_unit %}
   <% } %>
   {% endif %}
