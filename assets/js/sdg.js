@@ -3346,7 +3346,15 @@ var indicatorView = function (model, options) {
                   return 'X';
                 }
               },
-              labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              //labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              labelString: function(){
+                var unit = this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit;
+                if (unit !== trnslations.t('no unit')){
+                  return unit;
+                } else {
+                  return 'X';
+                }
+              },
               fontColor: tickColor,
             }
           }]
