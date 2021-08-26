@@ -1,5 +1,4 @@
 <script type="text/template" id="units_template">
-  //<% units.splice(units.indexOf("no unit"), units.indexOf("no unit")); %>
   {% if site.hide_single_unit %}
   <% if(units.length > 1) { %>
   {% endif %}
@@ -9,7 +8,9 @@
       <legend class="sr-only">{{ page.t.indicator.unit_of_measurement }}</legend>
       <% _.each(units, function(unitsItem, index) { %>
         <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
-        <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
+        <% if(unitsItem != 'nu unit') { %>
+          <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
+        <% }; %>
       <% }); %>
     </fieldset>
 
