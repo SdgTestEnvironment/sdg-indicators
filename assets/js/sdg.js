@@ -3342,6 +3342,8 @@ var indicatorView = function (model, options) {
                 var unit = this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit;
                 if (unit !== trnslations.t('no unit')){
                   return unit;
+                } else {
+                  return 'X';
                 }
               },
               labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
