@@ -3337,24 +3337,8 @@ var indicatorView = function (model, options) {
             },
 
             scaleLabel: {
-              //display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
-              display: function(){
-                var unit = this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit;
-                if (unit !== trnslations.t('no unit')){
-                  return unit;
-                } else {
-                  return 'X';
-                }
-              },
-              //labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
-              labelString: function(){
-                var unit = this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit;
-                if (unit !== trnslations.t('no unit')){
-                  return unit;
-                } else {
-                  return 'X';
-                }
-              },
+              display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
             }
           }]
