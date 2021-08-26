@@ -3170,6 +3170,9 @@ var indicatorView = function (model, options) {
     var template = _.template($('#units_template').html()),
         units = args.units || [],
         selectedUnit = args.selectedUnit || null;
+        if (selectedUnit === 'no unit'){
+          selectedUnit = ''
+        };
 
     $('#units').html(template({
       units: units,
@@ -3337,7 +3340,7 @@ var indicatorView = function (model, options) {
             },
             scaleLabel: {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
-              labelString: this._model.selectedUnit ? (this._model.selectedUnit == 'Keine Einheit' ? '' : translations.t(this._model.selectedUnit)) : this._model.measurementUnit,
+              labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
             }
           }]
@@ -3373,7 +3376,7 @@ var indicatorView = function (model, options) {
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
-              if (typeof unit !== 'undefined' && unit !== '') {
+              if (typeof unit !== 'undefined' && unit !== '' && unit !== translations.t('no unit') {
                 return '\n' + translations.indicator.unit + ': ' + unit;
               }
             }
