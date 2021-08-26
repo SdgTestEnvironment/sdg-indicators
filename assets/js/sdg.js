@@ -3376,7 +3376,7 @@ var indicatorView = function (model, options) {
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
-              if (typeof unit !== 'undefined' && unit !== '' && unit !== translations.t('no unit') {
+              if (typeof unit !== 'undefined' && unit !== '' && unit !== translations.t('no unit')) {
                 return '\n' + translations.indicator.unit + ': ' + unit;
               }
             }
