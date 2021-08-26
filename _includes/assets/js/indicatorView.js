@@ -291,9 +291,6 @@ var indicatorView = function (model, options) {
     var template = _.template($('#units_template').html()),
         units = args.units || [],
         selectedUnit = args.selectedUnit || null;
-        if (selectedUnit === 'no unit'){
-          selectedUnit = ''
-        };
 
     $('#units').html(template({
       units: units,
@@ -463,8 +460,15 @@ var indicatorView = function (model, options) {
                 //return view_obj.alterDataDisplay(value, undefined, 'chart y-axis tick');
               //},
             },
+
             scaleLabel: {
-              display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              //display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
+              display: function(){
+                var unit = this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit;
+                if (unit !== trnslations.t('no unit')){
+                  return unit
+                }
+              },
               labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
             }
