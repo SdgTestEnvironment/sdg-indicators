@@ -97,6 +97,10 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
+      - translation_key: menu.international
+        dropdown:
+          - path: https://armstat.github.io/sdg-site-armenia/
+            translation_key: menu.armenia
       #- path: /publications/
         #translation_key: menu.publications
   - path: /publications/
