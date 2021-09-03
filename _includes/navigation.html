@@ -11,7 +11,7 @@
                 <ul class="dropdown-menu">
                 {%- for dropdown_item in item.dropdown -%}
 
-                    {%- if include.dropdowns and dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
+                    {%- if dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
                     <li class="nav-link">
                         <div class="btn-group menu-dropdown">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,17 +25,12 @@
                             </ul>
                         </div>
                     </li>
-                    {%- elsif dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
-                        {%- for double_dropdown_item in dropdown_item.dropdown -%}
-                            {% include navigation-link.html item=double_dropdown_item %}
-                        {%- endfor -%}
                     {%- else -%}
                         {% include navigation-link.html item=dropdown_item %}
                     {%- endif -%}
 
 
 
-                    //{% include navigation-link.html item=dropdown_item %}
                 {%- endfor -%}
                 </ul>
             </div>
