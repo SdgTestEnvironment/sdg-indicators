@@ -14,10 +14,10 @@
                     {%- if dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
                     <li class="nav-link dropdown-submenu">
 
-                            <div class="btn-group dropdown-submenu">
+
                                 {{ dropdown_item.translation_key | t }}
                                 <i class="fa fa-chevron-down"></i>
-                            </div>
+
                             <ul class="dropdown-submenu" style="top:0; left:100%: margin-top: -1px;">
                             {%- for double_dropdown_item in dropdown_item.dropdown -%}
                                 {% include navigation-link.html item=double_dropdown_item %}
@@ -55,3 +55,12 @@
 {% include components/contrast-toggle.html %}
 {% endunless %}
 </ul>
+<script>
+  $(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+</script>
