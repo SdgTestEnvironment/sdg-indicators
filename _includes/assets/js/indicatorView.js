@@ -495,7 +495,38 @@ var indicatorView = function (model, options) {
         tooltips: {
           callbacks: {
             label: function(tooltipItems, data) {
-              return data.datasets[tooltipItems.datasetIndex].label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
+              
+              var label = data.datasets[tooltipItems.datasetIndex].label
+              if (label.length > 100){
+                var labelFirstLine = '';
+                var labelSecondLine = '';
+                label = label.split(' ');
+                for(var i=0; i<label.length; i++){
+                  if (labelFirstLine.length < 70){
+                    labelFirstLine = labelFirstLine.concat(label[i] + ' ');
+                  }
+                }
+                return labelFirstLine;
+              } else {
+                return label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
+              }
+            },
+            afterLabel: function(tooltipItems, data) {
+              
+              var label = data.datasets[tooltipItems.datasetIndex].label
+              if (label.length > 100){
+                var labelFirstLine = '';
+                var labelSecondLine = '';
+                label = label.split(' ');
+                for(var i=0; i<label.length; i++){
+                  if (labelFirstLine.length < 70){
+                    labelFirstLine = labelFirstLine.concat(label[i] + ' ')
+                  } else {
+                    labelSecondLine = labelSecondLine.concat(label[i] + ' ');
+                  }
+                }
+                return [labelSecondLine + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')];
+              }
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
