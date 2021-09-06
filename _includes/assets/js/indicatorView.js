@@ -502,7 +502,7 @@ var indicatorView = function (model, options) {
                 var labelSecondLine = '';
                 label = label.split(' ');
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 70){
+                  if (labelFirstLine.length < 50){
                     labelFirstLine = labelFirstLine.concat(label[i] + ' ');
                   }
                 }
@@ -519,7 +519,7 @@ var indicatorView = function (model, options) {
                 var labelSecondLine = '';
                 label = label.split(' ');
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 70){
+                  if (labelFirstLine.length < 50){
                     labelFirstLine = labelFirstLine.concat(label[i] + ' ')
                   } else {
                     labelSecondLine = labelSecondLine.concat(label[i] + ' ');
