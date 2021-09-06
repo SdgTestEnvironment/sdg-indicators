@@ -497,12 +497,11 @@ var indicatorView = function (model, options) {
             label: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
-              if (label.length > 100){
+              if (label.length > 60){
                 var labelFirstLine = '';
-                var labelSecondLine = '';
                 label = label.split(' ');
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 50){
+                  if (labelFirstLine.length < 60){
                     labelFirstLine = labelFirstLine.concat(label[i] + ' ');
                   }
                 }
@@ -514,18 +513,21 @@ var indicatorView = function (model, options) {
             afterLabel: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
-              if (label.length > 100){
+              if (label.length > 60){
                 var labelFirstLine = '';
                 var labelSecondLine = '';
                 label = label.split(' ');
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 50){
+                  if (labelFirstLine.length < 60){
                     labelFirstLine = labelFirstLine.concat(label[i] + ' ')
-                  } else {
+                  } else if (labelSecondLine.length < 60){
                     labelSecondLine = labelSecondLine.concat(label[i] + ' ');
+                  } else {
+                    var labelThirdLine = '';
+                    labelThirdLine = labelThirdLine.concat(label[i] + ' ');
                   }
                 }
-                return [labelSecondLine + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')];
+                return labelThirdLine ? [labelSecondLine, labelThirdLine + ':' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')] : [labelSecondLine + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')];
               }
             },
             afterBody: function() {
