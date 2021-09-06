@@ -498,14 +498,16 @@ var indicatorView = function (model, options) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
               if (label.length > 60){
-                var labelFirstLine = '';
+                
                 label = label.split(' ');
+                var line = '';
+                
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 60){
-                    labelFirstLine = labelFirstLine.concat(label[i] + ' ');
+                  if (line.length < 60){
+                    line = line.concat(label[i] + ' ');
                   }
                 }
-                return labelFirstLine;
+                return line;
               } else {
                 return label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
               }
