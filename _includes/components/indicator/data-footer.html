@@ -31,6 +31,11 @@
         <dt>{{ page.t.indicator.footnote }}:</dt>
         <dd>{{ page.indicator.data_footnote }}</dd>
         {% endif %}
+        
+        {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
+        <dt>{{ page.t.indicator.footnotes }}:</dt>
+        <dd>{{ page.indicator.data_footnotes }}</dd>
+        {% endif %}
 
         {% if page.indicator.copyright and page.indicator.copyright != '' %}
         <dt>{{ page.t.metadata_fields.copyright }}:</dt>
