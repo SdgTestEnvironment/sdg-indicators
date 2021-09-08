@@ -497,36 +497,41 @@ var indicatorView = function (model, options) {
             label: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
-              if (label.length > 100){
-                var labelFirstLine = '';
-                var labelSecondLine = '';
+              if (label.length > 45){
+                
                 label = label.split(' ');
+                var line = '';
+                
                 for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 50){
-                    labelFirstLine = labelFirstLine.concat(label[i] + ' ');
+                  if (line.concat(label[i]).length < 45){
+                    line = line.concat(label[i] + ' ');
                   }
                 }
-                return labelFirstLine;
+                return line;
               } else {
                 return label + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip');
               }
             },
             afterLabel: function(tooltipItems, data) {
               
-              var label = data.datasets[tooltipItems.datasetIndex].label
-              if (label.length > 100){
-                var labelFirstLine = '';
-                var labelSecondLine = '';
+              var label = data.datasets[tooltipItems.datasetIndex].label;       
+              if (label.length > 45){
                 label = label.split(' ');
-                for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 50){
-                    labelFirstLine = labelFirstLine.concat(label[i] + ' ')
+                var re = [];
+                var line = '';
+                for (var i=0; i<label.length; i++){
+                  if (line.concat(label[i]).length < 45){
+                    line = line.concat(label[i] + ' ');
                   } else {
-                    labelSecondLine = labelSecondLine.concat(label[i] + ' ');
+                    re.push(line);
+                    line = '';
+                    line = line.concat(label[i] + ' ');
                   }
-                }
-                return [labelSecondLine + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')];
+                };
+                re.push(line.slice(0, -1) + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
+                re.shift();
               }
+              return re;              
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
