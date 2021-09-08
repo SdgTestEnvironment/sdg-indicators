@@ -529,7 +529,7 @@ var indicatorView = function (model, options) {
                   }
                 }
                 re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
-                re.shift;
+                re.shift();
               }
               return re;              
             },
