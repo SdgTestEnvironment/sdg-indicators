@@ -31,11 +31,16 @@
         <dd>{{ page.indicator.computation_units }}</dd>
         {% endif %}
 
+        {% if page.indicator.computation_units_plural and page.indicator.computation_units_plural != '' %}
+        <dt>{{ page.t.indicator.computation_units_plural }}:</dt>
+        <dd>{{ page.indicator.computation_units }}</dd>
+        {% endif %}
+
         {% if page.indicator.data_footnote and page.indicator.data_footnote != '' %}
         <dt>{{ page.t.indicator.footnote }}:</dt>
         <dd>{{ page.indicator.data_footnote }}</dd>
         {% endif %}
-        
+
         {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
         <dt>{{ page.t.indicator.footnotes }}:</dt>
         <dd>{{ page.indicator.data_footnotes }}</dd>
