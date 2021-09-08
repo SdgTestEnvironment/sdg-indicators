@@ -527,7 +527,7 @@ var indicatorView = function (model, options) {
                     line = '';
                     line.concat(label[i]);
                   }
-                }
+                };
                 re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
                 re.shift();
               }
