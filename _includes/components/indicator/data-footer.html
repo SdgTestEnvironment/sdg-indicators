@@ -13,7 +13,11 @@
   <h5 class="sr-only">Chart details</h5>
     <dl>
         {% if uniqSources != '' %}
-        <dt>{{ page.t.indicator.source }}:</dt>
+          {% if sources_list.size < 2 %}
+          <dt>{{ page.t.indicator.source }}:</dt>
+          {% else %}
+          <dt>{{ page.t.indicator.sources }}:</dt>
+          {% endif %}
         <dd>{{ uniqSources }}</dd>
         {% endif %}
 
