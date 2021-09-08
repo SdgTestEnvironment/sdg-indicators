@@ -497,13 +497,13 @@ var indicatorView = function (model, options) {
             label: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
-              if (label.length > 60){
+              if (label.length > 40){
                 
                 label = label.split(' ');
                 var line = '';
                 
                 for(var i=0; i<label.length; i++){
-                  if (line.concat(label[i]).length < 70){
+                  if (line.concat(label[i]).length < 50){
                     line = line.concat(label[i] + ' ');
                   }
                 }
@@ -515,12 +515,12 @@ var indicatorView = function (model, options) {
             afterLabel: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label;       
-              if (label.length > 60){
+              if (label.length > 40){
                 label = label.split(' ');
                 var re = [];
                 var line = '';
                 for (var i=0; i<label.length; i++){
-                  if (line.concat(label[i]).length < 70){
+                  if (line.concat(label[i]).length < 50){
                     line = line.concat(label[i] + ' ');
                   } else {
                     re.push(line);
@@ -528,7 +528,7 @@ var indicatorView = function (model, options) {
                     line = line.concat(label[i] + ' ');
                   }
                 };
-                re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
+                re.push(line.slice(0, -1) + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
                 re.shift();
               }
               return re;              
