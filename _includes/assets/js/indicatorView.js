@@ -521,11 +521,11 @@ var indicatorView = function (model, options) {
                 var line = '';
                 for (var i=0; i<label.length; i++){
                   if (line.concat(label[i]).length < 70){
-                    line.concat(label[i]);
+                    line = line.concat(label[i]);
                   } else {
                     re.push(line);
                     line = '';
-                    line.concat(label[i]);
+                    line = line.concat(label[i]);
                   }
                 };
                 re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
