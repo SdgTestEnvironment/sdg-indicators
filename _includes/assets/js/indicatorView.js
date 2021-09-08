@@ -514,7 +514,7 @@ var indicatorView = function (model, options) {
             },
             afterLabel: function(tooltipItems, data) {
               
-              var label = data.datasets[tooltipItems.datasetIndex].label
+              var label = data.datasets[tooltipItems.datasetIndex].label;
               label = label.split(' ');
               if (label.length > 60){
                 var re = [];
