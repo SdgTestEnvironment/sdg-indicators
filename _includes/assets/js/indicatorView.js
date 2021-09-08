@@ -503,7 +503,7 @@ var indicatorView = function (model, options) {
                 var line = '';
                 
                 for(var i=0; i<label.length; i++){
-                  if (line.length < 60){
+                  if (line.concat(label[i]).length < 70){
                     line = line.concat(label[i] + ' ');
                   }
                 }
@@ -515,22 +515,27 @@ var indicatorView = function (model, options) {
             afterLabel: function(tooltipItems, data) {
               
               var label = data.datasets[tooltipItems.datasetIndex].label
+              label = label.split(' ');
               if (label.length > 60){
-                var labelFirstLine = '';
-                var labelSecondLine = '';
-                label = label.split(' ');
-                for(var i=0; i<label.length; i++){
-                  if (labelFirstLine.length < 60){
-                    labelFirstLine = labelFirstLine.concat(label[i] + ' ')
-                  } else if (labelSecondLine.length < 60){
-                    labelSecondLine = labelSecondLine.concat(label[i] + ' ');
+                var re = [];
+                var line = '';
+                for (var i=0; i<label.length; i++){
+                  if (line.concat(label[i]).length < 70){
+                    line.concat(label[i]);
                   } else {
-                    var labelThirdLine = '';
-                    labelThirdLine = labelThirdLine.concat(label[i] + ' ');
+                    re.push(line);
+                    line = '';
+                    line.concat(label[i]);
                   }
                 }
-                return labelThirdLine ? [labelSecondLine, labelThirdLine + ':' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')] : [labelSecondLine + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip')];
-              }
+                re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
+                re.shift;
+                
+                return re;
+              
+  
+              
+              
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
