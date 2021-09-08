@@ -530,12 +530,8 @@ var indicatorView = function (model, options) {
                 }
                 re.push(line + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
                 re.shift;
-                
-                return re;
-              
-  
-              
-              
+              }
+              return re;              
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
