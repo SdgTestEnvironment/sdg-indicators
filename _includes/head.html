@@ -50,27 +50,14 @@
           {%- endfor -%}
         {%- endif -%}
 
+        {% if site.analytics.gtag and site.analytics.gtag != '' %}
+          {% include components/analytics/ga-gtag.html %}
+        {% endif %}
+        {% if site.analytics.gtm and site.analytics.gtm != '' %}
+          {% include components/analytics/ga-gtm.html %}
+        {% endif %}
+
         {% include head-custom.html %}
-
-        <!-- Matomo -->
-        <script>
-          var _paq = window._paq = window._paq || [];
-          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="https://testsite.matomo.cloud/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src='//cdn.matomo.cloud/testsite.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Matomo Code -->
-
-
-
-
     </head>
 <body class="{% include body-classes.html %}">
 <!-- <div class="container"> -->

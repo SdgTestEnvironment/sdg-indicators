@@ -1,4 +1,4 @@
-//Last check: 16.08.2021
+//Last check: 09.09.2021
 /**
  * Model helper functions related to charts and datasets.
  */
@@ -29,20 +29,55 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {Array} graphStepsize Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
- * @return {Object|false} Graph limit object, if any
  */
 function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
   return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
 }
 
+  /**
+   * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
+   * @param {String} selectedUnit
+   * @param {String} selectedSeries
+   * @return {Array} Graph annotations objects, if any
+   */
+function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks) {
+  var annotations = getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+  if (graphTargetLines) {
+    annotations = annotations.concat(getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries));
+  }
+  if (graphSeriesBreaks) {
+    annotations = annotations.concat(getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries));
+  }
+  return annotations;
+}
+
 /**
- * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
+ * @param {Array} graphTargetLines Objects containing 'unit' or 'series' or more
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {Array} Graph annotations objects, if any
  */
-function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
-  return getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+function getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphTargetLines, selectedUnit, selectedSeries).map(function(targetLine) {
+    targetLine.preset = 'target_line';
+    targetLine.label = { content: targetLine.label_content };
+    return targetLine;
+  });
+
+}
+
+/**
+ * @param {Array} graphSeriesBreaks Objects containing 'unit' or 'series' or more
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Array} Graph annotations objects, if any
+ */
+function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphSeriesBreaks, selectedUnit, selectedSeries).map(function(seriesBreak) {
+    seriesBreak.preset = 'series_break';
+    seriesBreak.label = { content: seriesBreak.label_content };
+    return seriesBreak;
+  });
 }
 
 /**

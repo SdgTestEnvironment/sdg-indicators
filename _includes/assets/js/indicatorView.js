@@ -1,4 +1,4 @@
-//Last check: 16.08.2021
+//Last check: 09.09.2021
 var indicatorView = function (model, options) {
 
   "use strict";
@@ -446,6 +446,13 @@ var indicatorView = function (model, options) {
             ticks: {
               fontColor: tickColor,
             },
+            scaleLabel: {
+              display: this._model.xAxisLabel ? true : false,
+              labelString: this._model.xAxisLabel,
+              fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
+            }
           }],
           yAxes: [{
             gridLines: {
@@ -465,6 +472,8 @@ var indicatorView = function (model, options) {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
             }
           }]
         },
@@ -493,15 +502,15 @@ var indicatorView = function (model, options) {
           scaler: {}
         },
         tooltips: {
+          backgroundColor: 'rgba(0,0,0,0.7)',
           callbacks: {
             label: function(tooltipItems, data) {
-              
               var label = data.datasets[tooltipItems.datasetIndex].label
               if (label.length > 45){
-                
+
                 label = label.split(' ');
                 var line = '';
-                
+
                 for(var i=0; i<label.length; i++){
                   if (line.concat(label[i]).length < 45){
                     line = line.concat(label[i] + ' ');
@@ -513,8 +522,8 @@ var indicatorView = function (model, options) {
               }
             },
             afterLabel: function(tooltipItems, data) {
-              
-              var label = data.datasets[tooltipItems.datasetIndex].label;       
+
+              var label = data.datasets[tooltipItems.datasetIndex].label;
               if (label.length > 45){
                 label = label.split(' ');
                 var re = [];
@@ -531,7 +540,7 @@ var indicatorView = function (model, options) {
                 re.push(line.slice(0, -1) + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
                 re.shift();
               }
-              return re;              
+              return re;
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
