@@ -3229,7 +3229,7 @@ var indicatorView = function (model, options) {
     }));
 
     
-    if (units.length < 1) {
+    if (units.length <= 1) {
     
       $(this._rootElement).addClass('no-units');
     }
