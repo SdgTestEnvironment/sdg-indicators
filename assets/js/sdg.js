@@ -29,6 +29,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
   return obj;
 };
+//Last check: 09.09.2021
 /**
  * TODO:
  * Integrate with high-contrast switcher.
@@ -255,6 +256,11 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     // Alter data before displaying it.
     alterData: function(value) {
+      // @deprecated start
+      if (typeof opensdg.dataDisplayAlterations === 'undefined') {
+        opensdg.dataDisplayAlterations = [];
+      }
+      // @deprecated end
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
@@ -572,7 +578,11 @@ opensdg.autotrack = function(preset, category, action, label) {
           }
           // Make sure the map is not too high.
           var heightPadding = 75;
+          var minHeight = 400;
           var maxHeight = $(window).height() - heightPadding;
+          if (maxHeight < minHeight) {
+            maxHeight = minHeight;
+          }
           if ($('#map').height() > maxHeight) {
             $('#map').height(maxHeight);
           }
@@ -1096,7 +1106,7 @@ opensdg.maptitles = function(indicatorId) {
   return [this.mapTitle, this.mapUnit] ;
 
 };
-//Last check: 16.08.2021
+//Last check: 09.09.2021
 var indicatorModel = function (options) {
 
   var helpers = //Last check: 16.08.2021
@@ -1965,7 +1975,7 @@ function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
   }
 }
 
-  //Last check: 16.08.2021
+  //Last check: 09.09.2021
 /**
  * Model helper functions related to charts and datasets.
  */
@@ -1996,20 +2006,55 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {Array} graphStepsize Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
- * @return {Object|false} Graph limit object, if any
  */
 function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
   return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
 }
 
+  /**
+   * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
+   * @param {String} selectedUnit
+   * @param {String} selectedSeries
+   * @return {Array} Graph annotations objects, if any
+   */
+function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks) {
+  var annotations = getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+  if (graphTargetLines) {
+    annotations = annotations.concat(getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries));
+  }
+  if (graphSeriesBreaks) {
+    annotations = annotations.concat(getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries));
+  }
+  return annotations;
+}
+
 /**
- * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
+ * @param {Array} graphTargetLines Objects containing 'unit' or 'series' or more
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {Array} Graph annotations objects, if any
  */
-function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries) {
-  return getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
+function getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphTargetLines, selectedUnit, selectedSeries).map(function(targetLine) {
+    targetLine.preset = 'target_line';
+    targetLine.label = { content: targetLine.label_content };
+    return targetLine;
+  });
+
+}
+
+/**
+ * @param {Array} graphSeriesBreaks Objects containing 'unit' or 'series' or more
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Array} Graph annotations objects, if any
+ */
+function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
+  return getMatchesByUnitSeries(graphSeriesBreaks, selectedUnit, selectedSeries).map(function(seriesBreak) {
+    seriesBreak.preset = 'series_break';
+    seriesBreak.label = { content: seriesBreak.label_content };
+    return seriesBreak;
+  });
 }
 
 /**
@@ -2574,6 +2619,8 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.showLine = options.showLine; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
+  this.graphTargetLines = options.graphTargetLines;
+  this.graphSeriesBreaks = options.graphSeriesBreaks;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
   this.precision = options.precision;
@@ -2847,7 +2894,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
       selectedSeries: this.selectedSeries,
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
-      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries),
+      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks),
       chartTitle: this.chartTitle,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
@@ -2882,7 +2929,7 @@ var mapView = function () {
     });
   };
 };
-//Last check: 16.08.2021
+//Last check: 09.09.2021
 var indicatorView = function (model, options) {
 
   "use strict";
@@ -3326,6 +3373,13 @@ var indicatorView = function (model, options) {
             ticks: {
               fontColor: tickColor,
             },
+            scaleLabel: {
+              display: this._model.xAxisLabel ? true : false,
+              labelString: this._model.xAxisLabel,
+              fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
+            }
           }],
           yAxes: [{
             gridLines: {
@@ -3345,6 +3399,8 @@ var indicatorView = function (model, options) {
               display: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               labelString: this._model.selectedUnit ? translations.t(this._model.selectedUnit) : this._model.measurementUnit,
               fontColor: tickColor,
+              fontSize: 14,
+              fontFamily: "'Open Sans', Helvetica, Arial, sans-serif",
             }
           }]
         },
@@ -3373,15 +3429,15 @@ var indicatorView = function (model, options) {
           scaler: {}
         },
         tooltips: {
+          backgroundColor: 'rgba(0,0,0,0.7)',
           callbacks: {
             label: function(tooltipItems, data) {
-              
               var label = data.datasets[tooltipItems.datasetIndex].label
               if (label.length > 45){
-                
+
                 label = label.split(' ');
                 var line = '';
-                
+
                 for(var i=0; i<label.length; i++){
                   if (line.concat(label[i]).length < 45){
                     line = line.concat(label[i] + ' ');
@@ -3393,8 +3449,8 @@ var indicatorView = function (model, options) {
               }
             },
             afterLabel: function(tooltipItems, data) {
-              
-              var label = data.datasets[tooltipItems.datasetIndex].label;       
+
+              var label = data.datasets[tooltipItems.datasetIndex].label;
               if (label.length > 45){
                 label = label.split(' ');
                 var re = [];
@@ -3411,7 +3467,7 @@ var indicatorView = function (model, options) {
                 re.push(line.slice(0, -1) + ': ' + view_obj.alterDataDisplay(tooltipItems.yLabel, data, 'chart tooltip'));
                 re.shift();
               }
-              return re;              
+              return re;
             },
             afterBody: function() {
               var unit = view_obj._model.selectedUnit ? translations.t(view_obj._model.selectedUnit) : view_obj._model.measurementUnit;
@@ -4790,28 +4846,6 @@ $(function() {
     }
   });
 }());
-function initialiseGoogleAnalytics(){
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    sendPageviewToGoogleAnalytics();
-}
-
-function sendPageviewToGoogleAnalytics(){
-    ga('create', '', 'auto');
-    ga('require', 'eventTracker', {
-        attributePrefix: 'data-'
-    });
-    // anonymize user IPs (chops off the last IP triplet)
-    ga('set', 'anonymizeIp', true);
-    // forces SSL even if the page were somehow loaded over http://
-    ga('set', 'forceSSL', true);
-    ga('send', 'pageview');
-}
-
-
 $(document).ready(function() {
     $('a[href="#top"]').prepend('<i class="fa fa-arrow-up"></i>');
 });

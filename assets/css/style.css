@@ -1345,6 +1345,9 @@ body.contrast-high #map .selection-legend .legend-values li, body.contrast-high 
 
 .klaro .cookie-notice .cn-body strong {
   text-transform: lowercase; }
+.klaro .cookie-notice .cn-body .cn-changes {
+  text-decoration: none !important;
+  font-weight: bold; }
 
 body {
   background: white url("../img/sdgbg.png") top left repeat-x;
