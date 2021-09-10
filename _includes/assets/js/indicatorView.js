@@ -68,7 +68,7 @@ var indicatorView = function (model, options) {
 
     view_obj.createSelectionsTable(args);
 
-    view_obj.updateChartTitle(args.chartTitle);
+    view_obj.updateChartTitle(args.chartTitle.replace("<sub>","").replace("</sub>",""));
   });
 
   this._model.onFieldsComplete.attach(function(sender, args) {
