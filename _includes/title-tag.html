@@ -3,11 +3,7 @@
         {% unless page.indicator.standalone %}
         {{ page.t.general.indicator | escape }} {{ page.indicator.number }} -
         {% endunless %}
-<<<<<<< HEAD
         {{ page.indicator.name | escape | replace "sub", "" | replace "<>", "" | replace "</>", ""}} - {{ site.title | t | escape }}
-=======
-        {{ page.indicator.name | escape | replace /"<sub>"/, "" | replace "</sub>", "" }} - {{ site.title | t | escape }}
->>>>>>> a4c9a14d57b7fb04577b3083b58c4f581c3405de
     </title>
 {% elsif page.goal %}
     <title>{{ page.t.general.goal | escape }} {{ page.goal.number }} - {{ page.goal.short | escape }} - {{ site.title | t | escape }}</title>
