@@ -1,4 +1,4 @@
-{% assign sources_list = '' | split: ',' %}
+</b></b></u>{% assign sources_list = '' | split: ',' %}
 {% for i in (1..12) %}
   {% assign src_active = "source_active_" | append: i %}
   {% if page.indicator[src_active] == true %}
@@ -14,40 +14,40 @@
     <dl>
         {% if uniqSources != '' %}
           {% if sources_list.size < 2 %}
-          <dt>{{ page.t.indicator.source }}:</dt>
+          <dt><u><b>{{ page.t.indicator.source }}</b></u>:</dt>
           {% else %}
-          <dt>{{ page.t.indicator.sources }}:</dt>
+          <dt><u><b>{{ page.t.indicator.sources }}</b></u>:</dt>
           {% endif %}
         <dd><br>• {{ uniqSources }}</dd>
         {% endif %}
 
         {% if page.indicator.national_geographical_coverage and page.indicator.national_geographical_coverage != '' %}
-        <dt>{{ page.t.indicator.geographical_area }}:</dt>
+        <dt><u>{{ page.t.indicator.geographical_area }}</b></u>:</dt>
         <dd><br>• {{ page.indicator.national_geographical_coverage }}</dd>
         {% endif %}
 
         {% if page.indicator.computation_units and page.indicator.computation_units != '' %}
-        <dt>{{ page.t.indicator.unit_of_measurement }}:</dt>
+        <dt><u><b>{{ page.t.indicator.unit_of_measurement }}</b></u>:</dt>
         <dd><br>• {{ page.indicator.computation_units }}</dd>
         {% endif %}
 
         {% if page.indicator.computation_units_plural and page.indicator.computation_units_plural != '' %}
-        <dt>{{ page.t.indicator.computation_units_plural }}:</dt>
+        <dt><u><b>{{ page.t.indicator.computation_units_plural }}</b></u>:</dt>
         <dd><br>• {{ page.indicator.computation_units_plural }}</dd>
         {% endif %}
 
         {% if page.indicator.data_footnote and page.indicator.data_footnote != '' %}
-        <dt>{{ page.t.indicator.footnote }}:</dt>
+        <dt><u><b>{{ page.t.indicator.footnote }}</b></u>:</dt>
         <dd><br>• {{ page.indicator.data_footnote }}</dd>
         {% endif %}
 
         {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
-        <dt>{{ page.t.indicator.footnotes }}:</dt>
+        <dt><u><b>{{ page.t.indicator.footnotes }}</b></u>:</dt>
         <dd><br>• {{ page.indicator.data_footnotes }}</dd>
         {% endif %}
 
         {% if page.indicator.copyright and page.indicator.copyright != '' %}
-        <dt>{{ page.t.metadata_fields.copyright }}:</dt>
+        <dt><u><b>{{ page.t.metadata_fields.copyright }}</u>:</dt>
         <dd><br>• {{ page.indicator.copyright }}</dd>
         {% endif %}
     <dl>
