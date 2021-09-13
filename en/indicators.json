@@ -51,7 +51,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/1-4-2",
-          "status": "inprogress"
+          "status": "notstarted"
         },
         {
           "id": "1-5-1",
@@ -107,7 +107,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/1-b-1",
-          "status": "inprogress"
+          "status": "complete"
         }]
     }
   },
@@ -643,7 +643,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/5-6-1",
-          "status": "inprogress"
+          "status": "notstarted"
         },
         {
           "id": "5-6-2",
