@@ -406,7 +406,8 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
-  }
+  )};
+}
 
   /**
    * @param {Array} graphStepsize Objects containing 'unit' and 'title'
@@ -415,5 +416,4 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
    */
   function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
     return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
-  });
 }
