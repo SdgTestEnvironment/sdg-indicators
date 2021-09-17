@@ -29,7 +29,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
   return obj;
 };
-//Last check: 09.09.2021
+//Last check: 17.09.2021
 /**
  * TODO:
  * Integrate with high-contrast switcher.
@@ -1110,7 +1110,7 @@ opensdg.maptitles = function(indicatorId) {
   return [this.mapTitle, this.mapUnit] ;
 
 };
-//Last check: 09.09.2021
+//Last check: 17.09.2021
 var indicatorModel = function (options) {
 
   var helpers = //Last check: 16.08.2021
@@ -1979,7 +1979,7 @@ function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
   }
 }
 
-  //Last check: 09.09.2021
+  //Last check: 17.09.2021
 /**
  * Model helper functions related to charts and datasets.
  */
@@ -2006,12 +2006,12 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
   return getMatchByUnitSeries(graphLimits, selectedUnit, selectedSeries);
 }
 
-  /**
-   * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
-   * @param {String} selectedUnit
-   * @param {String} selectedSeries
-   * @return {Array} Graph annotations objects, if any
-   */
+/**
+ * @param {Array} graphAnnotations Objects containing 'unit' or 'series' or more
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {Array} Graph annotations objects, if any
+ */
 function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks) {
   var annotations = getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
   if (graphTargetLines) {
@@ -2110,9 +2110,6 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       index++;
     }
   }, this);
-
-  //datasets.sort(function(a, b) { return (a.label > b.label) ? 1 : -1; });
-
 
   if (headline.length > 0) {
     dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
@@ -2604,6 +2601,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.chartTitles = options.chartTitles;
   this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
+  this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
   this.selectedFields = [];
@@ -2933,7 +2931,7 @@ var mapView = function () {
     });
   };
 };
-//Last check: 09.09.2021
+//Last check: 17.09.2021
 var indicatorView = function (model, options) {
 
   "use strict";
