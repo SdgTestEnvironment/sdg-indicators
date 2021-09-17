@@ -403,11 +403,6 @@
         }
         minimumValues = _.reject(minimumValues, isMapValueInvalid);
         maximumValues = _.reject(maximumValues, isMapValueInvalid);
-        function isMapValueInvalid(val) {
-          return _.isNaN(val) || val === '';
-        }
-        minimumValues = _.reject(minimumValues, isMapValueInvalid);
-        maximumValues = _.reject(maximumValues, isMapValueInvalid);
         plugin.valueRange = [_.min(minimumValues), _.max(maximumValues)];
 
 
