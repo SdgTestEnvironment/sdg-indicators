@@ -399,6 +399,7 @@
               maximumValues.push(_.max(Object.values(feature.properties.values[0])));
             }
           });
+          console.log("minArray: ", minimumValues);
         }
 
         // Calculate the ranges of values, years and colors.
