@@ -297,6 +297,7 @@
       var minimumValues = [],
           maximumValues = [],
           availableYears = [];
+          avaialbleValues = [];
 
       // At this point we need to load the GeoJSON layer/s.
       var geoURLs = this.mapLayers.map(function(item) {
@@ -394,14 +395,12 @@
               //availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
               _.each(feature.properties.values[0], function(year){
                 if (!Number.isNaN(Object.values(year)){
-                  return Object.key(year);
+                  availableYears.concat(Object.key(year));
+                  avaialbleValues.push(Object.values(year));
                 }
               });
-              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
-              minimumValues = minimumValues.filter(function (value) {
-                return !Number.isNaN(value);
-              });
-              maximumValues.push(_.max(Object.values(feature.properties.values[0])));
+              minimumValues.push(_.min(avaialbleValues));
+              maximumValues.push(_.max(avaialbleValues));
             }
           });
           console.log("minArray: ", minimumValues);
