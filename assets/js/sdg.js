@@ -423,10 +423,10 @@ opensdg.autotrack = function(preset, category, action, label) {
           console.log("features: ", geoJson.features);
           _.each(geoJson.features, function(feature) {
             if (feature.properties.values && feature.properties.values.length) {
-              //availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
+              availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
               for (var year in feature.properties.values[0]){
                 if (! _.isNaN(feature.properties.values[0][year]) && feature.properties.values[0][year]!="") {
-                  availableYears.concat(year);
+                  //availableYears.concat(year);
                   avaialbleValues.push(feature.properties.values[0][year]);
                 }
               };
@@ -436,12 +436,13 @@ opensdg.autotrack = function(preset, category, action, label) {
               //     avaialbleValues.push(Object.values(year));
               //   }
               // });
-              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
-              maximumValues.push(_.max(Object.values(feature.properties.values[0])));
+              minimumValues.push(_.min(avaialbleValues));
+              maximumValues.push(_.max(avaialbleValues));
             }
           });
           console.log("minArray: ", minimumValues);
           console.log("Values: ", avaialbleValues);
+          console.log("Years: ", availableYears);
         }
 
         // Calculate the ranges of values, years and colors.
