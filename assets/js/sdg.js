@@ -328,6 +328,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       var minimumValues = [],
           maximumValues = [],
           availableYears = [];
+          avaialbleValues = [];
 
       // At this point we need to load the GeoJSON layer/s.
       var geoURLs = this.mapLayers.map(function(item) {
@@ -422,12 +423,15 @@ opensdg.autotrack = function(preset, category, action, label) {
           console.log("features: ", geoJson.features);
           _.each(geoJson.features, function(feature) {
             if (feature.properties.values && feature.properties.values.length) {
-              availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
-              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
-              minimumValues = minimumValues.filter(function (value) {
-                return !Number.isNaN(value);
+              //availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
+              _.each(feature.properties.values[0], function(year){
+                if (!Number.isNaN(Object.values(year)){
+                  availableYears.concat(Object.key(year));
+                  avaialbleValues.push(Object.values(year));
+                }
               });
-              maximumValues.push(_.max(Object.values(feature.properties.values[0])));
+              minimumValues.push(_.min(avaialbleValues));
+              maximumValues.push(_.max(avaialbleValues));
             }
           });
           console.log("minArray: ", minimumValues);
