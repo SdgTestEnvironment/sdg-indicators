@@ -423,13 +423,14 @@ opensdg.autotrack = function(preset, category, action, label) {
           _.each(geoJson.features, function(feature) {
             if (feature.properties.values && feature.properties.values.length) {
               availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
-              if (! _.isNaN(feature.properties.values[0])){
-                minimumValues.push(_.min(Object.values(feature.properties.values[0])))
-              };
-              //minimumValues.push(_.min(Object.values(feature.properties.values[0])));
+              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
+              minimumValues = minimumValues.filter(function (value) {
+                return !Number.isNaN(value);
+              });
               maximumValues.push(_.max(Object.values(feature.properties.values[0])));
             }
           });
+          console.log("minArray: ", minimumValues);
         }
 
         // Calculate the ranges of values, years and colors.
