@@ -2387,7 +2387,8 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
-  }
+  )};
+}
 
   /**
    * @param {Array} graphStepsize Objects containing 'unit' and 'title'
@@ -2396,7 +2397,6 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
    */
   function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
     return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
-  });
 }
 
   /**
@@ -2601,7 +2601,7 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
   this.chartTitles = options.chartTitles;
   this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
-  this.xAxisLabel = options.xAxisLabel;
+//  this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
   this.selectedFields = [];
