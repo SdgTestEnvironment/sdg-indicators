@@ -430,11 +430,12 @@ opensdg.autotrack = function(preset, category, action, label) {
                   avaialbleValues.push(Object.values(year));
                 }
               });
-              minimumValues.push(_.min(avaialbleValues));
-              maximumValues.push(_.max(avaialbleValues));
+              minimumValues.push(_.min(Object.values(feature.properties.values[0])));
+              maximumValues.push(_.max(Object.values(feature.properties.values[0])));
             }
           });
           console.log("minArray: ", minimumValues);
+          console.log("Values: ",avaialbleValues);
         }
 
         // Calculate the ranges of values, years and colors.
