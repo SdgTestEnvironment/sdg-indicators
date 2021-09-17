@@ -425,7 +425,7 @@ opensdg.autotrack = function(preset, category, action, label) {
             if (feature.properties.values && feature.properties.values.length) {
               //availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
               _.each(feature.properties.values[0], function(year){
-                if (!Number.isNaN(Object.values(year)){
+                if (!Number.isNaN(Object.values(year))) {
                   availableYears.concat(Object.key(year));
                   avaialbleValues.push(Object.values(year));
                 }
