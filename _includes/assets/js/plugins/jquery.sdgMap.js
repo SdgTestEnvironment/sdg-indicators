@@ -388,6 +388,7 @@
           $(plugin.element).parent().append(downloadButton);
 
           // Keep track of the minimums and maximums.
+          console.log("features: ", geoJson.features);
           _.each(geoJson.features, function(feature) {
             if (feature.properties.values && feature.properties.values.length) {
               availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
