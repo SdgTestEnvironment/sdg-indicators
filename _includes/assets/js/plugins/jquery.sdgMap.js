@@ -391,7 +391,12 @@
           console.log("features: ", geoJson.features);
           _.each(geoJson.features, function(feature) {
             if (feature.properties.values && feature.properties.values.length) {
-              availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
+              //availableYears = availableYears.concat(Object.keys(feature.properties.values[0]));
+              _.each(feature.properties.values[0], function(year){
+                if (!Number.isNaN(Object.values(year)){
+                  return Object.key(year);
+                }
+              });
               minimumValues.push(_.min(Object.values(feature.properties.values[0])));
               minimumValues = minimumValues.filter(function (value) {
                 return !Number.isNaN(value);
