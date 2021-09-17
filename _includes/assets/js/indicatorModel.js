@@ -1,4 +1,4 @@
-//Last check: 09.09.2021
+//Last check: 17.09.2021
 var indicatorModel = function (options) {
 
   var helpers = {% include assets/js/model/helpers.js %}
@@ -26,6 +26,7 @@ var indicatorModel = function (options) {
   this.chartTitles = options.chartTitles;
   this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
+  this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
   this.selectedFields = [];

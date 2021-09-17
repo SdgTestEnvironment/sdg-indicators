@@ -1,4 +1,4 @@
-//Last check: 09.09.2021
+//Last check: 17.09.2021
 var indicatorView = function (model, options) {
 
   "use strict";
