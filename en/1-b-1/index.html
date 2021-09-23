@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210923110253">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20210923120331">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -581,7 +581,7 @@ data-event-label="high"
   data-indicatorid='indicator_1-b-1'
   data-id="1-b-1"
   data-country="Germany"
-  data-charttitle=""
+  data-charttitle="At-risk-of-poverty rate and government expenditure on social protection"
   data-charttitles="null"
   data-measurementunit="Percentage"
   data-xaxislabel=""
@@ -589,8 +589,8 @@ data-event-label="high"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="&quot;&quot;"
-  data-graphlimits="null"
+  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Government expenditure on social protection&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;At-risk-of-poverty rate&quot;}]"
+  data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
   data-spangaps="true"
@@ -633,7 +633,7 @@ data-event-label="high"
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption></caption>
+      <caption>At-risk-of-poverty rate and government expenditure on social protection</caption>
       <thead>
         
       </thead>
@@ -645,6 +645,8 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
+    <p>Data source: <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></p>
+    
     
     <p>Geographic coverage: Germany</p>
     
@@ -652,7 +654,7 @@ data-event-label="high"
     <p>Unit of measurement: Percentage</p>
     
     
-    <p>Note: </p>
+    <p>Note: Government expenditure on social protection: 2017 to 2020 preliminary data.</p>
     
   </div>
 
@@ -698,7 +700,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title"></h4>
+          <h4 id="chart-heading" class="chart-title">At-risk-of-poverty rate and government expenditure on social protection</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -969,6 +971,11 @@ opensdg.chartConfigAlter(function(config, info) {
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+          <dt><u>Data sources</u>:</dt>
+          
+        <dd><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+        
 
         
         <dt><u>Geographic coverage</u>:</dt>
@@ -982,6 +989,9 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
 
+        
+        <dt><u>Note</u>:</dt>
+        <dd>Government expenditure on social protection: 2017 to 2020 preliminary data.</dd>
         
 
         
@@ -1018,6 +1028,11 @@ opensdg.chartConfigAlter(function(config, info) {
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+          <dt><u>Data sources</u>:</dt>
+          
+        <dd><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+        
 
         
         <dt><u>Geographic coverage</u>:</dt>
@@ -1031,6 +1046,9 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
 
+        
+        <dt><u>Note</u>:</dt>
+        <dd>Government expenditure on social protection: 2017 to 2020 preliminary data.</dd>
         
 
         
@@ -1140,7 +1158,20 @@ data-event-label="Change to Sources tab"
           
       
         
+      
+      
+      <tr>
+        <th scope="row">Comparability with the global metadata </th>
+        <td>
           
+            <p>Global metadata for the time series “Government expenditure on social protection” are still missing.<br />The time series “At-risk-of-poverty rate” is not compliant with the global metadata, but provides additional information.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
         
       
@@ -1238,8 +1269,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/4a53692b0d08bad0ca737adec8d679e1e4a6f6b0" target="_blank">
-                2021-09-16: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/b53efbc243f62acf8536c8e08183cf3f3a2fa119" target="_blank">
+                2021-09-23: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1706,6 +1737,662 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Data source 1</h4>
+      
+      <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://ec.europa.eu/eurostat"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=ilc_li02&lang=en" target="_blank">
+                EU-SILC survey: At-risk-of-poverty rate by poverty threshold - Eurostat table [ilc_li02] <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Data source 2</h4>
+      
+      <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de/EN"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/_inhalt.html#sprg233586" target="_blank">
+                EU-SILC, Income and Living Conditions in Germany and the European Union (only available in German) - Fachserie 15, series 3 <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=63411-0001&bypass=true&language=en" target="_blank">
+                EU-SILC - Persons covered, persons extrapolated, equivalised net income, at-risk-of-poverty rate – GENESIS online 63411-0001 <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0138&bypass=true&language=en" target="_blank">
+                National accounts - General government expenditure: functions of government (COFOG) – GENESIS online 81000-0138 <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
 
@@ -1808,12 +2495,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20210923110253'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20210923120331'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20210923110253"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20210923120331"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

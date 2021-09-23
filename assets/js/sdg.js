@@ -2935,7 +2935,6 @@ indicatorModel.prototype = {
 };
 var mapView = function () {
 
-
   "use strict";
 
   this.initialise = function(indicatorId, precision, decimalSeparator, goalNr) {
