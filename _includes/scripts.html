@@ -134,8 +134,8 @@ $(function() {
 <script>
   var generatePDF = function () {
     // Choose the element that our invoice is rendered in.
-    var element = document.getElementById('headerBanner');
-    var opt = {
+    const element = document.getElementById('headerBanner');
+    const opt = {
       margin:       1,
       filename:     'myfile.pdf',
       html2canvas:  { scale: 2 },
