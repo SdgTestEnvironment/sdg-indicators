@@ -2949,6 +2949,12 @@ var mapView = function () {
     });
   };
 };
+generatePDF = function () {
+  // Choose the element that our invoice is rendered in.
+  const element = getElementById('headerBanner');
+  // Choose the element and save the PDF for our user.
+  html2pdf().from(element).save();
+}
 //Last check: 17.09.2021
 var indicatorView = function (model, options) {
 
