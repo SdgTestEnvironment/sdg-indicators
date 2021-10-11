@@ -1,4 +1,4 @@
-generatePDF = function () {
+var generatePDF = function () {
   // Choose the element that our invoice is rendered in.
   const element = document.getElementById('headerBanner');
   //<div class="container">
