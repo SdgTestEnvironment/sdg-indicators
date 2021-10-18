@@ -131,12 +131,22 @@ $(function() {
 });
 
 </script>
-
-
 <script>
   var generatePDF = function () {
     // Choose the element that our invoice is rendered in.
-    var element = <div>"element" </div> //document.getElementById('ttt');
+    const element = document.getElementById('headerBanner');
+    //<div class="container">
+    //document.getElementById('chart-canvas'),
+    // Choose the element and save the PDF for our user.
     html2pdf().from(element).save();
   }
 </script>
+
+
+<!-- jQuery library -->
+<script src="js/jquery.min.js"></script>
+
+<!-- jsPDF library -->
+<script src="js/jsPDF/dist/jspdf.min.js"></script>
+<!-- https://github.com/MrRio/jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
