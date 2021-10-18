@@ -1,9 +1,2 @@
-<button onclick="generatePDF()">Download as PDF 2.0</button>
+<button onclick="generatePDF()">Download as PDF 2.2</button>
 <div id="ttt">Test</div>
-<script>
-  var generatePDF = function () {
-    // Choose the element that our invoice is rendered in.
-    var element = document.getElementById('ttt');
-    html2pdf().from(element).save();
-  }
-</script>

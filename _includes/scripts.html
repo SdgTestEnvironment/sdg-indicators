@@ -131,3 +131,11 @@ $(function() {
 });
 
 </script>
+
+<script>
+  var generatePDF = function () {
+    // Choose the element that our invoice is rendered in.
+    var element = document.getElementById('ttt');
+    html2pdf().from(element).save();
+  }
+</script>
