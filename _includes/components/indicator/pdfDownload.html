@@ -1,11 +1,8 @@
-<button onclick="generatePDF()">Download as PDF 10 restored</button>
+<button onclick="generatePDF()">Download as PDF 2.0</button>
 <script>
   var generatePDF = function () {
     // Choose the element that our invoice is rendered in.
     var element = document.getElementById('headerBanner');
-    //<div class="container">
-    //document.getElementById('chart-canvas'),
-    // Choose the element and save the PDF for our user.
     html2pdf().from(element).save();
   }
 </script>
