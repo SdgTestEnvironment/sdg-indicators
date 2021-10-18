@@ -138,7 +138,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211018093848">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211018094739">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -508,12 +508,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211018093848'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211018094739'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211018093848"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211018094739"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -591,10 +591,8 @@ $(function() {
   var generatePDF = function () {
     // Choose the element that our invoice is rendered in.
     const element = document.getElementById('headerBanner');
-    //<div class="container">
-    //document.getElementById('chart-canvas'),
-    // Choose the element and save the PDF for our user.
-    html2pdf().from(element).save();
+    var elementTets = <div>"Test"</div>
+    html2pdf().from(elementTets).save();
   }
 </script>
 
