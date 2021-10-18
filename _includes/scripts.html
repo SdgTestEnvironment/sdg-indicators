@@ -139,6 +139,13 @@ $(function() {
   function generatePDF() {
     // Choose the element that our invoice is rendered in.
     const element = document.getElementById('headerBanner');
-    html2pdf(element);
+
+    var opt = {
+      margin:       1,
+      filename:     'myfile.pdf',
+    };
+
+    // New Promise-based usage:
+    html2pdf().from(element).set(opt).save();
   }
 </script>
