@@ -22,10 +22,10 @@ metadata_edit_url: http://prose.io/#SdgTestEnvironment/sdg-data/edit/develop/met
 logos:
   - language: de
     src: assets/img/de/SDG_logo.png
-    alt: {{ page.t.general.sdg }} - {{ page.t.header.tag_line }
+    alt: 'Zum Hauptinhalt springen'
   - language: en
     src: assets/img/en/SDG_logo.png
-    alt: {{ page.t.general.sdg }} - {{ page.t.header.tag_line }
+    alt: To main menu
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
@@ -112,6 +112,10 @@ menu:
     translation_key: menu.linkToDnsPlatform
 
 contrast_type: single
+
+header_language_toggle: links
+header:
+    include: header-default.html
 
 
 footer_menu:
