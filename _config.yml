@@ -19,6 +19,13 @@ data_edit_url: http://prose.io/#SdgTestEnvironment/sdg-data/edit/develop/data/in
 metadata_edit_url: http://prose.io/#SdgTestEnvironment/sdg-data/edit/develop/meta/[id].md
 # permalink: /news/:year/:month/:day/:title.html
 
+logos:
+  - language: de
+    src: assets/img/de/SDG_logo.png
+    alt: {{ page.t.general.sdg }} - {{ page.t.header.tag_line }
+  - language: en
+    src: assets/img/en/SDG_logo.png
+    alt: {{ page.t.general.sdg }} - {{ page.t.header.tag_line }
 
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
