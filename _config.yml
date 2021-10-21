@@ -115,13 +115,12 @@ contrast_type: single
 
 header_language_toggle: links
 header:
-    include: header-default.html
-
+    include: header-menu-left-aligned.html
 
 footer_menu:
-  - path: 'mailto:sdg-indicators@destatis.de' #menu.contactPath
+  - path: 'mailto:sdg-indicators@destatis.de' 
     translation_key: menu.contact_us
-  - path: menu.twitterPath #https://twitter.com/destatis?lang=de
+  - path: menu.twitterPath
     translation_key:  general.twitter
   - path: /faq/
     translation_key: menu.faq
