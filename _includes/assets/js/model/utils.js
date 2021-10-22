@@ -133,4 +133,4 @@ function getMatchesByUnitSeries(items, selectedUnit, selectedSeries) {
     });
   }
   return matches;
-}S
+}
