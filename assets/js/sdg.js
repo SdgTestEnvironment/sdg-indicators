@@ -1282,7 +1282,7 @@ function getMatchesByUnitSeries(items, selectedUnit, selectedSeries) {
     });
   }
   return matches;
-}S
+}
 
   /**
  * Model helper functions related to units.
