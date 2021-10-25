@@ -104,14 +104,19 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
-      - translation_key: menu.publications
+      - translation_key: other open-sdg pages
         dropdown:
-          - path: https://open-sdg.readthedocs.io/en/latest/
-            tranlastion_key: menu.publications
+          - path: https://armstat.github.io/sdg-site-armenia/
+            tranlastion_key: Armenia
+          - path: https://sdg.bhas.gov.ba/
+            tranlastion_key: Bosnia and Herzegovina
+          - path: https://sdgcif-data-canada-oddcic-donnee.github.io/
+            tranlastion_key: Canada
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
     translation_key: menu.linkToDnsPlatform
+
 
 contrast_type: single
 
