@@ -3554,7 +3554,7 @@ body {
 .chart-title {
   text-align: center; }
 
-.dropdown-submenu {
+dropdown-submenu {
   position: relative; }
 
 .dropdown-submenu .dropdown-menu {
