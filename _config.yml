@@ -114,6 +114,9 @@ menu:
             translation_key: Canada
           - path: https://visar.hagstofa.is/heimsmarkmidin/
             translation_key: Iceland
+          - path: https://sustainabledevelopment-kyrgyzstan.github.io/
+            translation_key: Kyrgyzstan
+
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
