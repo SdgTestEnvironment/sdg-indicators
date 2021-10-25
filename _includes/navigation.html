@@ -11,11 +11,11 @@
                 <ul class="dropdown-menu">
                 {%- for dropdown_item in item.dropdown -%}
                     {%- if include.dropdowns and dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
-                      <li class="nav-link">
-                        <span class="expand dropdown-toggle"">
-                            {{ item.translation_key | t }}
+                      <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">
+                            {{ dropdown_item.translation_key | t }}
                             <i class="fa fa-chevron-down"></i>
-                        </span>
+                        </a>
                         <ul class="dropdown-menu">
                         {%- for double_dropdown_item in item.dropdown -%}
                           {% include navigation-link.html item=double_dropdown_item %}

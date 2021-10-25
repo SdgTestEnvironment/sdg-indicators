@@ -191,3 +191,15 @@ body{
   //margin-left: 20px;
  text-align: center
 }
+
+
+// for multiple levels of dropdowns
+dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
