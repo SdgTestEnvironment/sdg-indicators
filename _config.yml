@@ -104,8 +104,10 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
-      #- path: /publications/
-        #translation_key: menu.publications
+      - path: translation_key: menu.publications
+        dropdown:
+          - path: https://open-sdg.readthedocs.io/en/latest/
+            tranlastion_key: menu.publications
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
