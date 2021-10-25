@@ -107,13 +107,13 @@ menu:
       - translation_key: SDGs weltweit
         dropdown:
           - path: https://armstat.github.io/sdg-site-armenia/
-            tranlastion_key: Armenia
+            translation_key: Armenia
           - path: https://sdg.bhas.gov.ba/
-            tranlastion_key: Bosnia and Herzegovina
+            translation_key: Bosnia and Herzegovina
           - path: https://sdgcif-data-canada-oddcic-donnee.github.io/
-            tranlastion_key: Canada
+            translation_key: Canada
           - path: https://visar.hagstofa.is/heimsmarkmidin/
-            tranlastion_key: Iceland
+            translation_key: Iceland
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
