@@ -112,6 +112,8 @@ menu:
             tranlastion_key: Bosnia and Herzegovina
           - path: https://sdgcif-data-canada-oddcic-donnee.github.io/
             tranlastion_key: Canada
+          - path: https://visar.hagstofa.is/heimsmarkmidin/
+            tranlastion_key: Iceland
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
