@@ -19,7 +19,7 @@
                         <ul class="dropdown-submenu">
                           {%- for double_dropdown_item in item.dropdown -%}
                             <li class="nav-link ">
-                              <a href="{{ double_dropdown_item.path }}">{{ double_dropdown_item.translation_key | t }}</a>
+                              <a href="{{ double_dropdown_item.path }}">{{ double_dropdown_item.translation_key }}</a>
                             </li>
                           {%- endfor -%}
                         </ul>
