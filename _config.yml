@@ -104,7 +104,7 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
-      - translation_key: other open-sdg pages
+      - translation_key: SDGs weltweit
         dropdown:
           - path: https://armstat.github.io/sdg-site-armenia/
             tranlastion_key: Armenia
