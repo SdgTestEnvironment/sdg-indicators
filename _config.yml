@@ -104,7 +104,7 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
-      - path: translation_key: menu.publications
+      - translation_key: menu.publications
         dropdown:
           - path: https://open-sdg.readthedocs.io/en/latest/
             tranlastion_key: menu.publications
