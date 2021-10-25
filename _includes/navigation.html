@@ -17,13 +17,11 @@
                             <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                        {%- for double_dropdown_item in item.dropdown -%}
-                          {% include navigation-link.html item=double_dropdown_item %}
-                        {%- endfor -%}
-                      </ul>
-
-                    </li>
-
+                          {%- for double_dropdown_item in item.dropdown -%}
+                            {% include navigation-link.html item=double_dropdown_item %}
+                          {%- endfor -%}
+                        </ul>
+                      </li>
 
                     {%- elsif dropdown_item.dropdown and dropdown_item.dropdown.size > 0 -%}
                       {%- for double_dropdown_item in item.dropdown -%}
