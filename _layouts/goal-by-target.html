@@ -38,14 +38,13 @@
   {% if site.create_goals.previous_next_links %}
     {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
   {% endif %}
-</div>
+
 
   {% if page.language == 'de' %}
     {% assign language = '' %}
   {% else %}
     {% assign language = page.language %}
   {% endif %}
-
 
   <div class="col-xs-3 col-md-3 col-lg-4">
     <a href="{{ site.baseurl }}/{{ language }}/{{ previous_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn" role="button">
@@ -66,7 +65,7 @@
   </div>
 
 
-<div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
+
 
   {% include components/goal/goal-content.html content=content %}
 
