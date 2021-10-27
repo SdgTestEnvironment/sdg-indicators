@@ -18,6 +18,8 @@
   {% else %}
     {% assign previous_goal = page.sdg_goal | minus: 1 %}
     {% assign next_goal = page.sdg_goal | plus: 1 %}
+  {% endif %}
+    
   {% if site.create_goals.previous_next_links %}
     {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
   {% endif %}
