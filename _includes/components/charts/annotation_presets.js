@@ -57,7 +57,7 @@ opensdg.annotationPresets = {
         label: {
             position: 'top',
             content: translations.indicator.annotation_series_break,
-            xAdjust: -70,
+            xAdjust: -10,
         },
 
     },
