@@ -519,6 +519,9 @@ var indicatorView = function (model, options) {
                   if (line.concat(label[i]).length < 45){
                     line = line.concat(label[i] + ' ');
                   }
+                  else {
+                    break
+                  }
                 }
                 return line;
               } else {
