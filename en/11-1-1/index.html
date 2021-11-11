@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211111130541">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211111132540">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -611,7 +611,7 @@ data-event-label="high"
   data-graphtype="line"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Material deprivation for the housing dimension, total (1-4 items)&quot;}]"
+  data-startvalues="[{&quot;series&quot;:&quot;Wohnverhältnisse&quot;,&quot;field&quot;:&quot;xx&quot;,&quot;value&quot;:&quot;Overcrowding rate&quot;},{&quot;series&quot;:&quot;Wohnverhältnisse&quot;,&quot;field&quot;:&quot;xx&quot;,&quot;value&quot;:&quot;Rate of overburdening by housing costs&quot;},{&quot;field&quot;:&quot;Typification&quot;,&quot;value&quot;:&quot;Cities&quot;},{&quot;series&quot;:&quot;Deprivation der Unterkunft&quot;,&quot;field&quot;:&quot;xx&quot;,&quot;value&quot;:&quot;Population that considers their accommodation too dark&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
   data-showline="true"
@@ -620,7 +620,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Housing conditions&quot;,&quot;Housing deprivation&quot;,&quot;&quot;]},&quot;title&quot;:&quot;series&quot;},{&quot;name&quot;:&quot;typification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Cities&quot;,&quot;Smaller towns and suburbs&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Typification&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Overcrowding rate&quot;,&quot;Rate of overburdening by housing costs&quot;,&quot;Population living in a dwelling with a leaky roof, moisture in the walls, floors, foundation, or rot in the window frames or floor&quot;,&quot;Population that has neither a bath, nor a shower in their home&quot;,&quot;Population that does not have a toilet for the sole use of their household&quot;,&quot;Population that considers their accommodation too dark&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;typification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Cities&quot;,&quot;Smaller towns and suburbs&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Typification&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;xx&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Overcrowding rate&quot;,&quot;Rate of overburdening by housing costs&quot;,&quot;Population living in a dwelling with a leaky roof, moisture in the walls, floors, foundation, or rot in the window frames or floor&quot;,&quot;Population that has neither a bath, nor a shower in their home&quot;,&quot;Population that does not have a toilet for the sole use of their household&quot;,&quot;Population that considers their accommodation too dark&quot;,&quot;&quot;]},&quot;title&quot;:&quot;xx&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Wohnverhältnisse&quot;,&quot;Deprivation der Unterkunft&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
   data-graphstepsize="null"
@@ -1231,7 +1231,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/9815475f1b84ddf6e1504c87266485d8694e7992" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/0d08171828b09b44f0f7811a22d7b3854fc1c33a" target="_blank">
                 2021-11-11: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1262,7 +1262,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/9815475f1b84ddf6e1504c87266485d8694e7992" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/0d08171828b09b44f0f7811a22d7b3854fc1c33a" target="_blank">
                 2021-11-11: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1837,12 +1837,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211111130541'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211111132540'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211111130541"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211111132540"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
