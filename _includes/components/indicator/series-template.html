@@ -3,9 +3,8 @@
   <% if(serieses.length > 1) { %>
   {% endif %}
     <h4>{{ page.t.indicator.series }}</h4>
-//    {% if page.indicator.topic %}
-      <h4>{{ page.t.indicator.topic }}</h4>
-  //  {% endif %}
+    <h4>{{ page.t.indicator.topic }}</h4>
+
     <fieldset>
       <legend class="sr-only">{{ page.t.indicator.series }}</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
