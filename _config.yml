@@ -104,18 +104,23 @@ menu:
         translation_key: menu.facts_agenda
       - path: /facts_dns/
         translation_key: menu.facts_dns
-      - translation_key: SDGs weltweit
+      - translation_key: menu.other_countries
         dropdown:
           - path: https://armstat.github.io/sdg-site-armenia/
-            translation_key: Armenia
+            translation_key: menu.armenia
           - path: https://sdg.bhas.gov.ba/
-            translation_key: Bosnia and Herzegovina
+            translation_key: menu.bosnia and herzegovina
           - path: https://sdgcif-data-canada-oddcic-donnee.github.io/
-            translation_key: Canada
+            translation_key: menu.canada
           - path: https://visar.hagstofa.is/heimsmarkmidin/
-            translation_key: Iceland
+            translation_key: menu.iceland
           - path: https://sustainabledevelopment-kyrgyzstan.github.io/
-            translation_key: Kyrgyzstan
+            translation_key: menu.kyrgyzstan
+          - path: https://www.lsb.gov.la/sdg/
+            translation_key: menu.lao
+          - path: https://sustainabledevelopment-rwanda.github.io/
+            translation_key: menu.rwanda
+
 
   - path: /publications/
     translation_key: menu.publications
@@ -175,7 +180,7 @@ plugins:
 
 # Use a remote Jekyll theme.
 #remote_theme: brockfanning/open-sdg@data-schema
-remote_theme: open-sdg/open-sdg@1.5.2
+remote_theme: open-sdg/open-sdg@1.6.0
 
 #remote_theme: brockfanning/open-sdg@goal-page-status-css
 goal_image_base: https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals
