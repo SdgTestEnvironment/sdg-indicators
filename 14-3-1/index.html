@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211117130751">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211117145652">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -245,7 +245,7 @@ data-event-label="high"
     <a href="/sdg-indicators/facts_dns/">DNS</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/">SDGs weltweit</a>
+    <a href="/sdg-indicators/">Open SDG Plattformen anderer Staaten</a>
 </li>
 <li class="nav-link ">
     <a href="/sdg-indicators/publications/">Publikationen</a>
@@ -351,23 +351,29 @@ data-event-label="high"
 </li>
 <li class="dropdown-submenu">
                         <a class="test" tabindex="-1" href="#">
-                            SDGs weltweit
+                            Open SDG Plattformen anderer Staaten
                             <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu" style="margin-left: 0px"><li class="nav-link ">
-    <a href="https://armstat.github.io/sdg-site-armenia/">Armenia</a>
+    <a href="https://armstat.github.io/sdg-site-armenia/">Armenien</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina</a>
+    <a href="https://sdg.bhas.gov.ba/">menu.bosnia and herzegovina</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdgcif-data-canada-oddcic-donnee.github.io/">Canada</a>
+    <a href="https://sdgcif-data-canada-oddcic-donnee.github.io/">menu.canada</a>
 </li>
 <li class="nav-link ">
-    <a href="https://visar.hagstofa.is/heimsmarkmidin/">Iceland</a>
+    <a href="https://visar.hagstofa.is/heimsmarkmidin/">menu.iceland</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kyrgyzstan</a>
+    <a href="https://sustainabledevelopment-kyrgyzstan.github.io/">menu.kyrgyzstan</a>
+</li>
+<li class="nav-link ">
+    <a href="https://www.lsb.gov.la/sdg/">menu.lao</a>
+</li>
+<li class="nav-link ">
+    <a href="https://sustainabledevelopment-rwanda.github.io/">menu.rwanda</a>
 </li>
 </ul>
                       </li></ul>
@@ -427,14 +433,22 @@ data-event-label="high"
 
 <script type="text/template" id="item_template">
   <% _.each(fields, function(fieldItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=fieldItem.field%>">
-      <button class='accessBtn' tabindex='0' aria-expanded='false' style='display: block'
+    <div class="variable-selector
+      <% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed <% }%>
+      <% if (typeof childFields !== 'undefined' && childFields.indexOf(fieldItem.field) !== -1) { %> child <% }%>
+      <% // @deprecated start %>
+      <% if (typeof childFields === 'undefined' && allowedFields.indexOf(fieldItem.field) == -1) { %> child <% }%>
+      <% // @deprecated end %>
+      "
+      data-field="<%=fieldItem.field%>"
+    >
+      <button class='accessBtn' tabindex='0' aria-expanded='false'
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %>
         aria-describedby='variable-hint-<%=fieldItem.field.replace(/ /g, '-')%>'
         <% }%>
       >
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %><h6><% } else { %><h5><% } %>
-          <span aria-hidden="false"><%=translations.t(fieldItem.label)%><i class="fa fa-chevron-down"></i></span>
+          <span aria-hidden="true"><%=translations.t(fieldItem.label)%><i class="fa fa-chevron-down"></i></span>
           <span class="sr-only"> <%=translations.t(fieldItem.label)%></span>
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %></h6><% } else { %></h5><% } %>
       </button>
@@ -572,6 +586,8 @@ data-event-label="high"
 
 </div>
 <div id="main-content" class="container goal-14" role="main">
+  
+
   
 
   
@@ -1177,6 +1193,7 @@ opensdg.chartConfigAlter(function(config, info) {
       <span id="column-sort-info"></span>
     </div>
     <div id="selectionsTable"></div>
+<dl id="tableTargetLines" class="clearfix"></dl>
 </u>
 
 
@@ -2301,12 +2318,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211117130751'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211117145652'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211117130751"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211117145652"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
