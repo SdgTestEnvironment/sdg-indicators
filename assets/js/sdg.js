@@ -1612,7 +1612,9 @@ function fieldItemStatesForView(fieldItemStates, fieldsByUnit, selectedUnit, dat
           var fieldItemValue = fieldItem.values.find(function(valueItem) {
             return valueItem.value === selectedValue;
           });
-          fieldItemValue.checked = true;
+          if (fieldItemValue) {
+            fieldItemValue.checked = true;
+          }
         })
       }
     });
