@@ -23,3 +23,14 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
     return value.toFixed(dcmplc)
   }
 };
+
+
+const countEl = document.getElementById('count');
+updateVisitCount();
+function updateVisitCount(){
+  fetch('https://api.countapi.xyz/update/mobosse.github.iotestSite/test/?amount=1')
+    .then(res => res.json())
+    .then(res => {
+      countEl.innerHTML = res.value;
+    });
+}
