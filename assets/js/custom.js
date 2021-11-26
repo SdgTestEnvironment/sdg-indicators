@@ -34,7 +34,7 @@ function updateVisitCount(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
     .then(res => res.json())
     .then(res => {
-      totalCalls.innerHTML = res.value;
+      visits.innerHTML = res.value;
     });
 }
 
