@@ -25,12 +25,22 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
 };
 
 
-const countEl = document.getElementById('count');
+const totalCalls = document.getElementById('totalCalls');
 updateVisitCount();
 function updateVisitCount(){
-  fetch('https://api.countapi.xyz/update/mobosse.github.iotestSite/test/?amount=1')
+  fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
     .then(res => res.json())
     .then(res => {
-      countEl.innerHTML = res.value;
+      totalCalls.innerHTML = res.value;
+    });
+}
+
+
+const btnClicks = document.getElemntById('btnClicks')
+function updateVisitCountMinus(){
+  fetch('https://api.countapi.xyz/update/sdgtestenvironment/goalitems?amount=1')
+    .then(res => res.json())
+    .then(res => {
+      btnClicks.innerHTML = res.value;
     });
 }
