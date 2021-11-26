@@ -42,7 +42,7 @@ function updateVisitCount(){
       btnClicks.innerHTML = res.value;
       var substract = res.value;
     });
-  visits.innerHTML = total - substract;
+  visits.innerHTML = total;
 }
 
 
