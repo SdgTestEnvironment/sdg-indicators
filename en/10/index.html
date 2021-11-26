@@ -135,7 +135,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126112108">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126114504">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -219,34 +219,34 @@ data-event-label="high"
         aria-haspopup="true">
         <button data-target="menu-mobile" aria-expanded="false">Menu</button>
         <ul class="nav navbar-nav menu-target contrast-switcher" id="menu-mobile"><li class="nav-link ">
-    <a href="/sdg-indicators/en/">17 Goals</a>
+    <a href="/sdg-indicators/en/" onclick="updateVisitCountMinus()">17 Goals</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/reporting-status/">Data&nbspavailability</a>
+    <a href="/sdg-indicators/en/reporting-status/" onclick="updateVisitCountMinus()">Data&nbspavailability</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/about_platform/">SDG&nbsponline&nbspplatform</a>
+    <a href="/sdg-indicators/en/about_platform/" onclick="updateVisitCountMinus()">SDG&nbsponline&nbspplatform</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/about_navigation/">Navigation</a>
+    <a href="/sdg-indicators/en/about_navigation/" onclick="updateVisitCountMinus()">Navigation</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/about_guidance/">Technical instructions</a>
+    <a href="/sdg-indicators/en/about_guidance/" onclick="updateVisitCountMinus()">Technical instructions</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/facts_agenda/">2030 Agenda</a>
+    <a href="/sdg-indicators/en/facts_agenda/" onclick="updateVisitCountMinus()">2030 Agenda</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/facts_dns/">German Sustainable Development Strategy (DNS)</a>
+    <a href="/sdg-indicators/en/facts_dns/" onclick="updateVisitCountMinus()">German Sustainable Development Strategy (DNS)</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/">Open SDG platforms of other countries</a>
+    <a href="/sdg-indicators/en/" onclick="updateVisitCountMinus()">Open SDG platforms of other countries</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/publications/">Publications</a>
+    <a href="/sdg-indicators/en/publications/" onclick="updateVisitCountMinus()">Publications</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/><span class="hidden-sm hidden-md hidden-lg">DNS-Platform</span></a>
+    <a href="https://sustainabledevelopment-deutschland.github.io" onclick=""><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/><span class="hidden-sm hidden-md hidden-lg">DNS-Platform</span></a>
 </li>
 <li class="language-toggle-menu-header">
     
@@ -310,10 +310,10 @@ data-event-label="high"
 </div>
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-    <a href="/sdg-indicators/en/">17 Goals</a>
+    <a href="/sdg-indicators/en/" onclick="updateVisitCountMinus()">17 Goals</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/reporting-status/">Data&nbspavailability</a>
+    <a href="/sdg-indicators/en/reporting-status/" onclick="updateVisitCountMinus()">Data&nbspavailability</a>
 </li>
 <li class="nav-link">
             <div class="btn-group menu-dropdown">
@@ -322,13 +322,13 @@ data-event-label="high"
                     <i class="fa fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu"><li class="nav-link ">
-    <a href="/sdg-indicators/en/about_platform/">SDG&nbsponline&nbspplatform</a>
+    <a href="/sdg-indicators/en/about_platform/" onclick="updateVisitCountMinus()">SDG&nbsponline&nbspplatform</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/about_navigation/">Navigation</a>
+    <a href="/sdg-indicators/en/about_navigation/" onclick="updateVisitCountMinus()">Navigation</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/about_guidance/">Technical instructions</a>
+    <a href="/sdg-indicators/en/about_guidance/" onclick="updateVisitCountMinus()">Technical instructions</a>
 </li>
 </ul>
             </div>
@@ -339,10 +339,10 @@ data-event-label="high"
                     <i class="fa fa-chevron-down"></i>
                 </button>
                 <ul class="dropdown-menu"><li class="nav-link ">
-    <a href="/sdg-indicators/en/facts_agenda/">2030 Agenda</a>
+    <a href="/sdg-indicators/en/facts_agenda/" onclick="updateVisitCountMinus()">2030 Agenda</a>
 </li>
 <li class="nav-link ">
-    <a href="/sdg-indicators/en/facts_dns/">German Sustainable Development Strategy (DNS)</a>
+    <a href="/sdg-indicators/en/facts_dns/" onclick="updateVisitCountMinus()">German Sustainable Development Strategy (DNS)</a>
 </li>
 <li class="dropdown-submenu">
                         <a class="test" tabindex="-1" href="#">
@@ -350,43 +350,43 @@ data-event-label="high"
                             <i class="fa fa-chevron-down"></i>
                         </a>
                         <ul class="dropdown-menu" style="margin-left: 0px"><li class="nav-link ">
-    <a href="https://armstat.github.io/sdg-site-armenia/">Armenia</a>
+    <a href="https://armstat.github.io/sdg-site-armenia/" onclick="">Armenia</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina</a>
+    <a href="https://sdg.bhas.gov.ba/" onclick="">Bosnia and Herzegovina</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdgcif-data-canada-oddcic-donnee.github.io/">Canada</a>
+    <a href="https://sdgcif-data-canada-oddcic-donnee.github.io/" onclick="">Canada</a>
 </li>
 <li class="nav-link ">
-    <a href="https://visar.hagstofa.is/heimsmarkmidin/">Iceland</a>
+    <a href="https://visar.hagstofa.is/heimsmarkmidin/" onclick="">Iceland</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kyrgyzstan</a>
+    <a href="https://sustainabledevelopment-kyrgyzstan.github.io/" onclick="">Kyrgyzstan</a>
 </li>
 <li class="nav-link ">
-    <a href="https://www.lsb.gov.la/sdg/">Lao PDR</a>
+    <a href="https://www.lsb.gov.la/sdg/" onclick="">Lao PDR</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sustainabledevelopment-rwanda.github.io/">Rwanda</a>
+    <a href="https://sustainabledevelopment-rwanda.github.io/" onclick="">Rwanda</a>
 </li>
 <li class="nav-link ">
-    <a href="http://kostat.go.kr/sdg">South korea</a>
+    <a href="http://kostat.go.kr/sdg" onclick="">South korea</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdgdata.gov.uk/">United Kingdom</a>
+    <a href="https://sdgdata.gov.uk/" onclick="">United Kingdom</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sdg.data.gov/">United States</a>
+    <a href="https://sdg.data.gov/" onclick="">United States</a>
 </li>
 </ul>
                       </li></ul>
             </div>
         </li><li class="nav-link ">
-    <a href="/sdg-indicators/en/publications/">Publications</a>
+    <a href="/sdg-indicators/en/publications/" onclick="updateVisitCountMinus()">Publications</a>
 </li>
 <li class="nav-link ">
-    <a href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/><span class="hidden-sm hidden-md hidden-lg">DNS-Platform</span></a>
+    <a href="https://sustainabledevelopment-deutschland.github.io" onclick=""><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/><span class="hidden-sm hidden-md hidden-lg">DNS-Platform</span></a>
 </li>
 <li class="language-toggle-menu-header">
     
@@ -472,7 +472,7 @@ data-event-label="high"
   
 
   <div class="col-xs-3 col-md-3 col-lg-4">
-    <a href="/sdg-indicators/en/9" class="btn btn-primary btn-block goal-10 navigation-btn" role="button">
+    <a href="/sdg-indicators/en/9" class="btn btn-primary btn-block goal-10 navigation-btn" role="button" onclick="updateVisitCountMinus()">
       <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Previous goal</b>
     </a>
   </div>
@@ -484,7 +484,7 @@ data-event-label="high"
   </div>
 
   <div class="col-xs-3 col-md-3 col-lg-4">
-    <a href="/sdg-indicators/en/11" class="btn btn-primary btn-block goal-10 navigation-btn" role="button">
+    <a href="/sdg-indicators/en/11" class="btn btn-primary btn-block goal-10 navigation-btn" role="button" onclick="updateVisitCountMinus()">
       <b class="btn-label hidden-sm hidden-xs">Next goal</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
     </a>
   </div>
@@ -536,7 +536,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-1-1">
+        <a href="/sdg-indicators/en/10-1-1" onclick="updateVisitCountMinus()">
           Growth rates of household expenditure or income per capita among the bottom 40 per cent of the population and the total population
         </a>
         
@@ -579,7 +579,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-2-1">
+        <a href="/sdg-indicators/en/10-2-1" onclick="updateVisitCountMinus()">
           Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
         </a>
         
@@ -622,7 +622,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-3-1">
+        <a href="/sdg-indicators/en/10-3-1" onclick="updateVisitCountMinus()">
           Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law
         </a>
         
@@ -665,7 +665,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-4-1">
+        <a href="/sdg-indicators/en/10-4-1" onclick="updateVisitCountMinus()">
           Labour share of GDP
         </a>
         
@@ -696,7 +696,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-4-2">
+        <a href="/sdg-indicators/en/10-4-2" onclick="updateVisitCountMinus()">
           Redistributive impact of fiscal policy
         </a>
         
@@ -739,7 +739,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-5-1">
+        <a href="/sdg-indicators/en/10-5-1" onclick="updateVisitCountMinus()">
           Financial Soundness Indicators
         </a>
         
@@ -782,7 +782,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-6-1">
+        <a href="/sdg-indicators/en/10-6-1" onclick="updateVisitCountMinus()">
           Proportion of members and voting rights of developing countries in international organizations
         </a>
         
@@ -825,7 +825,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-7-1">
+        <a href="/sdg-indicators/en/10-7-1" onclick="updateVisitCountMinus()">
           Recruitment cost borne by employee as a proportion of monthly income earned in country of destination
         </a>
         
@@ -856,7 +856,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-7-2">
+        <a href="/sdg-indicators/en/10-7-2" onclick="updateVisitCountMinus()">
           Number of countries with migration policies that facilitate orderly, safe, regular and responsible migration and mobility of people
         </a>
         
@@ -887,7 +887,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-7-3">
+        <a href="/sdg-indicators/en/10-7-3" onclick="updateVisitCountMinus()">
           Number of people who died or disappeared in the process of migration towards an international destination
         </a>
         
@@ -918,7 +918,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-7-4">
+        <a href="/sdg-indicators/en/10-7-4" onclick="updateVisitCountMinus()">
           Proportion of the population who are refugees, by country of origin
         </a>
         
@@ -961,7 +961,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-a-1">
+        <a href="/sdg-indicators/en/10-a-1" onclick="updateVisitCountMinus()">
           Proportion of tariff lines applied to imports from least developed countries and developing countries with zero-tariff
         </a>
         
@@ -1004,7 +1004,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-b-1">
+        <a href="/sdg-indicators/en/10-b-1" onclick="updateVisitCountMinus()">
           Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)
         </a>
         
@@ -1047,7 +1047,7 @@ data-event-label="high"
 
 
         </span>
-        <a href="/sdg-indicators/en/10-c-1">
+        <a href="/sdg-indicators/en/10-c-1" onclick="updateVisitCountMinus()">
           Remittance costs as a proportion of the amount remitted
         </a>
         
@@ -1133,12 +1133,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211126112108'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211126114504'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211126112108"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211126114504"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
