@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126150538">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126151912">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -264,7 +264,7 @@ data-event-label="high"
   <div class="language-toggle-container">
   <i class="fa fa-globe language-toggle-globe-links"></i>
   <ul class="language-toggle-links"><li class="language-option-en">
-      <a class="language-toggle-link" href="/sdg-indicators/en/6-3-1/"><span class="language-name">English</span>
+      <a class="language-toggle-link" href="/sdg-indicators/en/6-3-1/" onclick="updateVisitCountMinus()"><span class="language-name">English</span>
         <span class="language-abbreviation">en</span></a>
     </li></ul>
 </div>
@@ -404,7 +404,7 @@ data-event-label="high"
   <div class="language-toggle-container">
   <i class="fa fa-globe language-toggle-globe-links"></i>
   <ul class="language-toggle-links"><li class="language-option-en">
-      <a class="language-toggle-link" href="/sdg-indicators/en/6-3-1/"><span class="language-name">English</span>
+      <a class="language-toggle-link" href="/sdg-indicators/en/6-3-1/" onclick="updateVisitCountMinus()"><span class="language-name">English</span>
         <span class="language-abbreviation">en</span></a>
     </li></ul>
 </div>
@@ -622,7 +622,7 @@ data-event-label="high"
   data-indicatorid='indicator_6-3-1'
   data-id="6-3-1"
   data-country="Deutschland"
-  data-charttitle="Anteil der sicher behandelten Haushalts- und Industrieabwässer"
+  data-charttitle=""
   data-charttitles="null"
   data-measurementunit=""
   data-xaxislabel=""
@@ -674,7 +674,7 @@ data-event-label="high"
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Anteil der sicher behandelten Haushalts- und Industrieabwässer</caption>
+      <caption></caption>
       <thead>
         
         
@@ -893,7 +893,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Anteil der sicher behandelten Haushalts- und Industrieabwässer</h4>
+          <h4 id="chart-heading" class="chart-title"></h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -1435,7 +1435,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/7701ef35fd34a6bd099bf620804fb78e81b1fa34" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/ea45e7b810bbb63c0bd0e000cda06d6ca65a43db" target="_blank">
                 2021-11-26: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1466,7 +1466,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/a7d6b469bda836a3408efbd390c2b67e21870fc6" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/ea45e7b810bbb63c0bd0e000cda06d6ca65a43db" target="_blank">
                 2021-11-26: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2650,12 +2650,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211126150538'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211126151912'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211126150538"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211126151912"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
