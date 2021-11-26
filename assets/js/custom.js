@@ -26,19 +26,23 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
 
 
 const totalCalls = document.getElementById('totalCalls');
-const btnClicks = document.getElementById('btnClicks')
+const btnClicks = document.getElementById('btnClicks');
+const visits = document.getElementById('visits');
 updateVisitCount();
 function updateVisitCount(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
     .then(res => res.json())
     .then(res => {
       totalCalls.innerHTML = res.value;
+      var total = res.value;
     });
   fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
     .then(res => res.json())
     .then(res => {
       btnClicks.innerHTML = res.value;
+      var substract = res.value;
     });
+  visits.innerHTML = total - substract;
 }
 
 
