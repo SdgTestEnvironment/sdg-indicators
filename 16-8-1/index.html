@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126121318">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211126122600">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -536,7 +536,7 @@ data-event-label="high"
     <div class="row">
       
       <div class="col-xs-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="/sdg-indicators/16" title="Zeigt die Indikatorenliste zum SDG-Ziel an.">
+        <a href="/sdg-indicators/16" title="Zeigt die Indikatorenliste zum SDG-Ziel an." onclick="updateVisitCountMinus()">
           <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/16.png" alt="Frieden, Gerechtigkeit und starke Institutionen - Ziel 16" id="goal-16" class="goal-icon-image goal-icon-image-"/>
         </a>
       </div>
@@ -559,8 +559,8 @@ data-event-label="high"
   
 <ol class="breadcrumb">
   
-  <li><a href="/sdg-indicators/">Start</a></li>
-  <li><a href="/sdg-indicators/16" title="Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen">Ziel 16</a></li>
+  <li><a href="/sdg-indicators/" onclick="updateVisitCountMinus()">Start</a></li>
+  <li><a href="/sdg-indicators/16" title="Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen" onclick="updateVisitCountMinus()">Ziel 16</a></li>
   <li class="active">Indikator 16.8.1</li>
   
 </ol>
@@ -1381,12 +1381,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211126121318'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211126122600'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211126121318"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211126122600"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

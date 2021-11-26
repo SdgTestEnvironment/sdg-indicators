@@ -34,13 +34,13 @@ function updateVisitCount(){
     .then(res => res.json())
     .then(res => {
       totalCalls.innerHTML = res.value;
-      var total = res.value;
+      const total = res.value;
     });
   fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
     .then(res => res.json())
     .then(res => {
       btnClicks.innerHTML = res.value;
-      var substract = res.value;
+      const substract = res.value;
     });
   visits.innerHTML = total;
 }
