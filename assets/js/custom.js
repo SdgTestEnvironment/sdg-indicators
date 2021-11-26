@@ -36,7 +36,7 @@ function updateVisitCount(){
     .then(res => {
       totalCalls.innerHTML = res.value;
 
-    });
+    })
     .then(data => total = data);
 
   fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
