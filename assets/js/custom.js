@@ -26,7 +26,7 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
 
 
 const totalCalls = document.getElementById('totalCalls');
-const btnClicks = document.getElemntById('btnClicks')
+const btnClicks = document.getElementById('btnClicks')
 updateVisitCount();
 function updateVisitCount(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
