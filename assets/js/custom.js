@@ -25,31 +25,20 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
 };
 
 
-const totalCalls = document.getElementById('totalCalls');
-const btnClicks = document.getElementById('btnClicks');
+
 const visits = document.getElementById('visits');
-var total;
+
 updateVisitCount();
+
 function updateVisitCount(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
     .then(res => res.json())
     .then(res => {
       totalCalls.innerHTML = res.value;
-
-    })
-    .then(data => total = data);
-
-  fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
-    .then(res => res.json())
-    .then(res => {
-      btnClicks.innerHTML = res.value;
-      const substract = res.value;
     });
-  visits.innerHTML = total;
 }
 
 
-
 function updateVisitCountMinus(){
-  fetch('https://api.countapi.xyz/update/sdgtestenvironment/goalitems?amount=1')
+  fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=-2')
 }
