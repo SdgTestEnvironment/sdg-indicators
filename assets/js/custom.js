@@ -34,8 +34,10 @@ function updateVisitCount(){
     .then(res => res.json())
     .then(res => {
       totalCalls.innerHTML = res.value;
-      const total = res.value;
+
     });
+    .then(data => total = data);
+    
   fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
     .then(res => res.json())
     .then(res => {
