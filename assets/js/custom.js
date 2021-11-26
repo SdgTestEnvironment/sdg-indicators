@@ -26,6 +26,7 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
 
 
 const totalCalls = document.getElementById('totalCalls');
+const btnClicks = document.getElemntById('btnClicks')
 updateVisitCount();
 function updateVisitCount(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=1')
@@ -33,14 +34,15 @@ function updateVisitCount(){
     .then(res => {
       totalCalls.innerHTML = res.value;
     });
-}
-
-
-const btnClicks = document.getElemntById('btnClicks')
-function updateVisitCountMinus(){
-  fetch('https://api.countapi.xyz/update/sdgtestenvironment/goalitems?amount=1')
+  fetch('https://api.countapi.xyz/get/sdgtestenvironment/goalitems')
     .then(res => res.json())
     .then(res => {
       btnClicks.innerHTML = res.value;
     });
+}
+
+
+
+function updateVisitCountMinus(){
+  fetch('https://api.countapi.xyz/update/sdgtestenvironment/goalitems?amount=1')
 }
