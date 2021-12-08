@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211208102517">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211208103759">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -646,9 +646,9 @@ data-event-label="high"
   data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
-  data-graphseriesbreaks="[{&quot;series&quot;:&quot;Housing conditions&quot;,&quot;value&quot;:1.5},{&quot;value&quot;:9.5}]"
+  data-graphseriesbreaks="[{&quot;series&quot;:&quot;Housing deprivation&quot;,&quot;value&quot;:9.5},{&quot;series&quot;:&quot;Housing conditions&quot;,&quot;value&quot;:9.5}]"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Overcrowding rate&quot;,&quot;Housing cost overburden rate&quot;,&quot;Population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor&quot;,&quot;Population having neither a bath, nor a shower in their dwelling&quot;,&quot;Population not having indoor flushing toilet for the sole use of their household&quot;,&quot;Population considering their dwelling as too dark&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Housing conditions&quot;,&quot;Housing deprivation&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;typification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Cities&quot;,&quot;Towns and suburbs&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Degree of urbanisation&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Overcrowding rate&quot;,&quot;Housing cost overburden rate&quot;,&quot;Population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor&quot;,&quot;Population having neither a bath, nor a shower in their dwelling&quot;,&quot;Population not having indoor flushing toilet for the sole use of their household&quot;,&quot;Population considering their dwelling as too dark&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Housing conditions&quot;,&quot;Housing deprivation&quot;,&quot;&quot;]},&quot;title&quot;:&quot;series&quot;},{&quot;name&quot;:&quot;urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Cities&quot;,&quot;Towns and suburbs&quot;,&quot;Rural areas&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Degree of urbanisation&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
   data-graphstepsize="null"
@@ -695,7 +695,7 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
-    <p>Data source: <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></p>
+    <p>Data source: <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
     
     
     <p>Geographic coverage: Germany</p>
@@ -704,7 +704,7 @@ data-event-label="high"
     <p>Unit of measurement: Percentage</p>
     
     
-    <p>Note: Comparisons with previous year's results are not possible for methodological reasons, as the EU-SILC survey 2020 was newly integrated into the microcensus.</p>
+    <p>Note: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</p>
     
   </div>
 
@@ -1032,9 +1032,9 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
           
-          <dt><u>Data source</u>:</dt>
+          <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -1051,7 +1051,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt><u>Note</u>:</dt>
-        <dd>Comparisons with previous year's results are not possible for methodological reasons, as the EU-SILC survey 2020 was newly integrated into the microcensus.</dd>
+        <dd>The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
 
         
@@ -1090,9 +1090,9 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
           
-          <dt><u>Data source</u>:</dt>
+          <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -1109,7 +1109,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt><u>Note</u>:</dt>
-        <dd>Comparisons with previous year's results are not possible for methodological reasons, as the EU-SILC survey 2020 was newly integrated into the microcensus.</dd>
+        <dd>The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
 
         
@@ -1206,7 +1206,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Time series available </th>
         <td>
           
-            <ul style="padding-left: 25px;"><li>Overcrowding rate</li> <li> Housing cost overburden rate</li> <li> Population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames of floor</li> <li> Population having neither a bath, nor a shower in their dwelling</li> <li> Population not having indoor flushing toilet for the sole use of their household</li> <li> Population considering their dwelling as too dark</li></ul>
+            <ul style="padding-left: 25px;"><li>Overcrowding rate</li> <li> Housing cost overburden rate</li> <li> Population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor</li> <li> Population having neither a bath, nor a shower in their dwelling</li> <li> Population not having indoor flushing toilet for the sole use of their household</li> <li> Population considering their dwelling as too dark</li></ul>
 
           
         </td>
@@ -1219,7 +1219,20 @@ data-event-label="Change to Sources tab"
           
       
         
+      
+      
+      <tr>
+        <th scope="row">Comparability with the global metadata </th>
+        <td>
           
+            <p>The time series are not compliant with the global metadata, but provide additional information.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
         
       
@@ -1286,8 +1299,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/635c99b0ac7a797fa4d92a337842abf61acf3e62" target="_blank">
-                2021-11-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/00bdca970961240c4be5d651834ad27514a5c54d" target="_blank">
+                2021-12-08: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1317,8 +1330,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/fe5ad3faeeaec366ff1d04798e250e65aa2bd0e2" target="_blank">
-                2021-11-29: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/00bdca970961240c4be5d651834ad27514a5c54d" target="_blank">
+                2021-12-08: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1791,7 +1804,307 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
+        <h4>Data source 1</h4>
+      
       <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de/EN"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/_inhalt.html#sprg233586" target="_blank">
+                EU-SILC, Income and Living Conditions in Germany and the European Union (only available in German) - Fachserie 15, series 3 <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+        
+      
+      
+      
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Data source 2</h4>
+      
+      <table class="table">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1971,7 +2284,7 @@ data-event-label="Change to Sources tab"
 
             
               <a href="https://ec.europa.eu/eurostat/databrowser/view/tessi292/default/table" target="_blank">
-                EU-SILC survey: Share of total population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames of floor - Eurostat table [TESSI292] <span class="visuallyhidden">opens in a new window</span>
+                EU-SILC survey: Share of total population living in a dwelling with a leaking roof, damp walls, floors or foundation, or rot in window frames or floor - Eurostat table [TESSI292] <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2210,25 +2523,6 @@ data-event-label="Change to Sources tab"
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 </table>
 
     </div>
@@ -2347,12 +2641,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211208102517'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211208103759'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211208102517"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211208103759"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
