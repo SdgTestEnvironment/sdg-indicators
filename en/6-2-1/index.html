@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211210012335">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211210112959">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -631,7 +631,7 @@ data-event-label="high"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Access to toilet&quot;},{&quot;field&quot;:&quot;Availability&quot;,&quot;value&quot;:&quot;Available&quot;},{&quot;field&quot;:&quot;Availability&quot;,&quot;value&quot;:&quot;Not available&quot;}]"
-  data-graphlimits="&quot;&quot;"
+  data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation="Availability"
   data-showline="true"
   data-spangaps="true"
@@ -1184,7 +1184,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Time series available </th>
         <td>
           
-            <ul style="padding-left: 25px;"><li>Access to toilet</li> <li> Access to bathtub or shower</li></ul>
+            <ul style="padding-left: 25px;"><li>Population with (own) toilet</li> <li> Population with (own) bathtub or shower</li></ul>
 
           
         </td>
@@ -1308,8 +1308,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/29100a406a182961c2b28fbe42b577a60036bba1" target="_blank">
-                2021-12-09: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/0bfa3612c89120bc9a565925f7c7959613909c08" target="_blank">
+                2021-12-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2519,12 +2519,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211210012335'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211210112959'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211210012335"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211210112959"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
