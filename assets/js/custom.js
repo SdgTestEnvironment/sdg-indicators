@@ -41,4 +41,5 @@ function updateVisitCount(){
 
 function updateVisitCountMinus(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=-1')
+  fetch('https://api.countapi.xyz/update/sdgtestenvironment/tstNegative?amount=-1')
 }
