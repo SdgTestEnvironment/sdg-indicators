@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211215012220">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20211215125932">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -637,7 +637,7 @@ data-event-label="high"
   data-spangaps="false"
   data-graphannotations="null"
   data-graphtargetlines="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;feelings of insecurity&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Very safe&quot;,&quot;Safe&quot;,&quot;Unsafe&quot;,&quot;Very unsafe&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Feelings of insecurity&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Feeling of (in)security of the population in its neighbourhood (at night)&quot;,&quot;Population not living in an area with crime, violence or vandalism&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
@@ -867,7 +867,7 @@ data-event-label="high"
     <p>Unit of measurement: Percentage</p>
     
     
-    <p>Note: </p>
+    <p>Note: Population not living in an area with crime, violence or vandalism: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</p>
     
   </div>
 
@@ -1197,7 +1197,7 @@ opensdg.chartConfigAlter(function(config, info) {
           
           <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://www.bka.de/EN/Home/home_node.htm"> Federal Criminal Police Office </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.bka.de/EN/Home/home_node.htm"> Federal Criminal Police Office </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -1212,6 +1212,9 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
 
+        
+        <dt><u>Note</u>:</dt>
+        <dd>Population not living in an area with crime, violence or vandalism: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
 
         
@@ -1252,7 +1255,7 @@ opensdg.chartConfigAlter(function(config, info) {
           
           <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://www.bka.de/EN/Home/home_node.htm"> Federal Criminal Police Office </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.bka.de/EN/Home/home_node.htm"> Federal Criminal Police Office </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -1267,6 +1270,9 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
 
+        
+        <dt><u>Note</u>:</dt>
+        <dd>Population not living in an area with crime, violence or vandalism: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
 
         
@@ -1382,7 +1388,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Comparability with the global metadata </th>
         <td>
           
-            <p>The time series “Feelings of insecurity in the neighbourhood (at night)” is compliant with the global metadata. The time series “Population not living in an area with crime, violence or vandalism” is not compliant with the global metadata, but provides additional information.</p>
+            <p>The time series “Feeling of (in)security of the population in its neighbourhood (at night)” is compliant with the global metadata. The time series “Population not living in an area with crime, violence or vandalism” provides additional information.</p>
 
           
         </td>
@@ -1487,8 +1493,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/2d7201bab525eaf59a99a46169e395e78c76248d" target="_blank">
-                2021-10-15: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/d2fde27da11315d65549af9faed26e94e033ed64" target="_blank">
+                2021-12-15: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2705,7 +2711,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://ec.europa.eu/eurostat/en/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -2721,7 +2727,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat"> Statistical office of the European Union (Eurostat) </a></p>
+            <p><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></p>
 
           
         </td>
@@ -2958,6 +2964,8 @@ data-event-label="Change to Sources tab"
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js" integrity="sha512-9hzM/Gfa9KP1hSBlq3/zyNF/dfbcjAYwUTBWYX+xi8fzfAPHL3ILwS1ci0CTVeuXTGkRAWgRMZZwtSNV7P+nfw==" crossorigin="anonymous"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2975,12 +2983,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20211215012220'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20211215125932'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20211215012220"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20211215125932"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
