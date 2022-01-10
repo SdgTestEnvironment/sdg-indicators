@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220110154819">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220110160231">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -2136,7 +2136,7 @@ data-event-label="Change to Sources tab"
 
 </div>
 <div class="container">
-  <button onclick="generatePDF()">Download as PDF 8.2</button>
+  <button onclick="generatePDF()">Download as PDF 8.3</button>
 
 </div>
 
@@ -2211,12 +2211,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220110154819'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220110160231'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220110154819"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220110160231"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -2296,48 +2296,24 @@ $(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
 <script type="text/javascript">
   function generatePDF() {
-    var filename = chartInfo.indicatorId + '.png',
-        element = document.getElementById('chart-canvas'),
-        footer = document.getElementById('selectionChartFooter'),
-        height = element.clientHeight + 25 + ((footer) ? footer.clientHeight : 0),
-        width = element.clientWidth + 25;
+    // Choose the element that our invoice is rendered in.
+    var element = document.getElementById('chart-canvas');
+    var filename = chartInfo.indicatorId + '.png';
     var options = {
       // These options fix the height, width, and position.
-      height: height,
-      width: width,
-      windowHeight: height,
-      windowWidth: width,
-      x: 0,
-      y: 0,
-      scrollX: 0,
-      scrollY: 0,
-      // Allow a chance to alter the screenshot's HTML.
-      onclone: function(clone) {
-        // Add a body class so that the screenshot style can be custom.
-        clone.body.classList.add('image-download-in-progress');
-      },
-      // Decide which elements to skip.
-      ignoreElements: function(el) {
-        // Keep all style, head, and link elements.
-        var keepTags = ['STYLE', 'HEAD', 'LINK'];
-        if (keepTags.indexOf(el.tagName) !== -1) {
-          return false;
-        }
-        // Keep all elements contained by (or containing) the screenshot
-        // target element.
-        if (element.contains(el) || el.contains(element)) {
-          return false;
-        }
-        // Leave out everything else.
-        return true;
-      }
+      margin: [20, 20, 20, 20],
+      filename: filename,
+      width: 500
     };
-    // First convert the target to a canvas.
-    html2canvas(element, options).then(function(canvas) {
-      // Then download that canvas as a PNG file.
-      canvas.toBlob(function(blob) {
-        saveAs(blob, filename);
-      });
+
+    // New Promise-based usage:
+    //html2pdf(element, options);
+    html2pdf(element, {
+      margin:       1,
+      filename:     'myfile.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { dpi: 192, letterRendering: true },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
     });
 
   }
