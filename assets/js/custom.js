@@ -24,7 +24,7 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
   }
 };
 
-
+//------------------------------------------------
 
 const visits = document.getElementById('visits');
 
@@ -42,4 +42,22 @@ function updateVisitCount(){
 function updateVisitCountMinus(){
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/main?amount=-1')
   fetch('https://api.countapi.xyz/update/sdgtestenvironment/tstNegative?amount=-1')
+}
+//-------------------------------------------------
+
+function printDiv() 
+{
+
+  var divToPrint=document.getElementById('main-content');
+
+  var newWin=window.open('','Print-Window');
+
+  newWin.document.open();
+
+  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+
+  newWin.document.close();
+
+  setTimeout(function(){newWin.close();},10);
+
 }
