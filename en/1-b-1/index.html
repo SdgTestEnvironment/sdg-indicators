@@ -140,7 +140,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220126090453">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220126113102">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -637,7 +637,7 @@ data-event-label="high"
   data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;At-risk-of-poverty rate&quot;,&quot;Government expenditure on social protection&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
@@ -686,7 +686,7 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
-    <p>Data source: <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
+    <p>Data source: <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></p>
     
     
     <p>Geographic coverage: Germany</p>
@@ -694,8 +694,6 @@ data-event-label="high"
     
     <p>Unit of measurement: Percentage</p>
     
-    
-    <p>Note: Government expenditure on social protection: 2017 to 2020 preliminary data.</p>
     
   </div>
 
@@ -1025,7 +1023,7 @@ opensdg.chartConfigAlter(function(config, info) {
           
           <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
@@ -1041,15 +1039,15 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-        <dt><u>Note</u>:</dt>
-        <dd>Government expenditure on social protection: 2017 to 2020 preliminary data.</dd>
-        
 
+        
+        <dt><u>Notes</u>:</dt>
+        <dd><br>• Government expenditure on social protection: 2017 to 2020 preliminary data.<br>• At-risk-of-poverty rate: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.<br>• 2019 estimated data.</dd>
         
 
         
         <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2021</dd>
+        <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
         
     <dl>
 </div>
@@ -1083,7 +1081,7 @@ opensdg.chartConfigAlter(function(config, info) {
           
           <dt><u>Data sources</u>:</dt>
           
-        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>; <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a>; <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
@@ -1099,15 +1097,15 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-        <dt><u>Note</u>:</dt>
-        <dd>Government expenditure on social protection: 2017 to 2020 preliminary data.</dd>
-        
 
+        
+        <dt><u>Notes</u>:</dt>
+        <dd><br>• Government expenditure on social protection: 2017 to 2020 preliminary data.<br>• At-risk-of-poverty rate: The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.<br>• 2019 estimated data.</dd>
         
 
         
         <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2021</dd>
+        <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
         
     <dl>
 </div>
@@ -1290,8 +1288,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/4a53692b0d08bad0ca737adec8d679e1e4a6f6b0" target="_blank">
-                2021-09-16: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/0d3d3061aa143653853a0a68467db8328b4cfe2c" target="_blank">
+                2022-01-26: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1321,8 +1319,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/d2fde27da11315d65549af9faed26e94e033ed64" target="_blank">
-                2021-12-15: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/0d3d3061aa143653853a0a68467db8328b4cfe2c" target="_blank">
+                2022-01-26: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1888,7 +1886,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.destatis.de/EN"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://ec.europa.eu/eurostat/en/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -1904,7 +1902,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
+            <p><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></p>
 
           
         </td>
@@ -1935,8 +1933,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/_inhalt.html#sprg233586" target="_blank">
-                EU-SILC, Income and Living Conditions in Germany and the European Union (only available in German) - Fachserie 15, series 3 <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=en" target="_blank">
+                EU-SILC survey: At-risk-of-poverty rate - Eurostat table [ilc_li02] <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1969,66 +1967,16 @@ data-event-label="Change to Sources tab"
           
       
         
-      
-      
-      <tr>
-        <th scope="row"> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=63411-0001&bypass=true&language=en" target="_blank">
-                EU-SILC - Persons covered, persons extrapolated, equivalised net income, at-risk-of-poverty rate – GENESIS online 63411-0001 <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+      
+        
           
-        </td>
-        </tr>
-        
-      
-  
       
         
-      
-      
-      
-  
-      
-        
-      
-      
-      <tr>
-        <th scope="row"> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0138&bypass=true&language=en" target="_blank">
-                National accounts - General government expenditure: functions of government (COFOG) – GENESIS online 81000-0138 <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+      
+        
           
-        </td>
-        </tr>
-        
-      
-  
-      
-        
-      
-      
-      
-  
       
         
           
@@ -2308,7 +2256,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat/en/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.destatis.de/EN"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -2324,7 +2272,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></p>
+            <p><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
 
           
         </td>
@@ -2355,8 +2303,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=en" target="_blank">
-                EU-SILC survey: At-risk-of-poverty rate - Eurostat table [ilc_li02] <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0138&bypass=true&language=en" target="_blank">
+                National accounts - General government expenditure: functions of government (COFOG) – GENESIS online 81000-0138 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2646,6 +2594,8 @@ data-event-label="Change to Sources tab"
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.min.js" integrity="sha512-9hzM/Gfa9KP1hSBlq3/zyNF/dfbcjAYwUTBWYX+xi8fzfAPHL3ILwS1ci0CTVeuXTGkRAWgRMZZwtSNV7P+nfw==" crossorigin="anonymous"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2663,12 +2613,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220126090453'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220126113102'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220126090453"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220126113102"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
