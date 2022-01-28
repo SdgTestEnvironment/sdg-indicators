@@ -166,10 +166,10 @@ search_index_extra_fields:
 footer_fields:
   - unit: '%'
     label: metadata_fields.computation_units
-    content: data.%
+    value: data.%
   - unit: number
     label: metadata_fields.computation_units
-    content: data.number
+    value: data.number
 
 series_toggle: true
 graph_title_from_series: true
