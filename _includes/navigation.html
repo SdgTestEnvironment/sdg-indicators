@@ -16,9 +16,9 @@
                             {{ dropdown_item.translation_key | t }}
                             <i class="fa fa-chevron-down"></i>
                         </a>
-                        <ul class="dropdown-menu" style="margin-left: 0px">
+                        <ul class="dropdown-menu">
                           {%- for double_dropdown_item in dropdown_item.dropdown -%}
-                            x{% include navigation-link.html item=double_dropdown_item %}
+                            {% include navigation-link.html item=double_dropdown_item %}
                           {%- endfor -%}
                         </ul>
                       </li>
@@ -30,6 +30,9 @@
                     {%- else -%}
                       {% include navigation-link.html item=dropdown_item %}
                     {%- endif -%}
+
+
+
 
                 {%- endfor -%}
                 </ul>
