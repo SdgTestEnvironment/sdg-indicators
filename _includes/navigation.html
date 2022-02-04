@@ -18,7 +18,7 @@
                         </a>
                         <ul class="dropdown-menu" style="margin-left: 0px">
                           {%- for double_dropdown_item in dropdown_item.dropdown -%}
-                            {% include navigation-link.html item=double_dropdown_item %}
+                            x{% include navigation-link.html item=double_dropdown_item %}
                           {%- endfor -%}
                         </ul>
                       </li>
@@ -30,9 +30,6 @@
                     {%- else -%}
                       {% include navigation-link.html item=dropdown_item %}
                     {%- endif -%}
-
-
-
 
                 {%- endfor -%}
                 </ul>
