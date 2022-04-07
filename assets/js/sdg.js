@@ -296,7 +296,6 @@ opensdg.autotrack = function(preset, category, action, label) {
     getGeoJsonUrl: function(subfolder) {
       var fileName = this.indicatorId + '.geojson';
       return [opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/');
-      console.log("x",[opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/'));
     },
 
     // Initialize the map itself.
@@ -335,6 +334,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       var geoURLs = this.mapLayers.map(function(item) {
         return $.getJSON(plugin.getGeoJsonUrl(item.subfolder));
       });
+      console.log("geoURLs: ",geoURLs);
       $.when.apply($, geoURLs).done(function() {
 
         // Apparently "arguments" can either be an array of responses, or if
