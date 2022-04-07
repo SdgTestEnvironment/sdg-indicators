@@ -296,6 +296,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     getGeoJsonUrl: function(subfolder) {
       var fileName = this.indicatorId + '.geojson';
       return [opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/');
+      console.log([opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/'));
     },
 
     // Initialize the map itself.
