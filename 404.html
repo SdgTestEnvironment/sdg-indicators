@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="de" class="no-js">
     <head>
-      <meta charset="utf-8">
+        <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-
-
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -105,7 +102,6 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
-
         
     <title>404 - Deutschlands Indikatoren der VN Sustainable Development Goals</title>
 
@@ -132,10 +128,12 @@ var translations = {
 
 
         
+        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220407120454">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220407123751">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -168,14 +166,17 @@ layout-page-not-found
 
     </div>
 </div>
-<!-- Last check: 09.09.2021 -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -195,112 +196,14 @@ layout-page-not-found
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220407120454'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220407123751'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220407120454"></script><script>
-$(function() {
-    if($('#indicatorData').length) {
-      var domData = $('#indicatorData').data();
-
-      if (domData.showdata) {
-
-        $('.async-loading').each(function(i, obj) {
-            $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
-        });
-
-        var remoteUrl = '/comb/' + domData.id + '.json';
-        if (opensdg.remoteDataBaseUrl !== '/') {
-          remoteUrl = opensdg.remoteDataBaseUrl + remoteUrl;
-        }
-
-        $.ajax({
-          url: remoteUrl,
-          success: function(res) {
-
-            $('.async-loading').remove();
-            $('.async-loaded').show();
-
-            var model = new indicatorModel({
-              data: res.data,
-              edgesData: res.edges,
-              showMap: domData.showmap,
-              country: domData.country,
-              indicatorId: domData.indicatorid,
-              shortIndicatorId: domData.id,
-              chartTitle: domData.charttitle,
-              chartTitles: domData.charttitles,
-              measurementUnit: domData.measurementunit,
-              xAxisLabel: domData.xaxislabel,
-              showData: domData.showdata,
-              graphType: domData.graphtype,
-              startValues: domData.startvalues,
-              graphLimits: domData.graphlimits,
-              stackedDisaggregation: domData.stackeddisaggregation,
-              showLine: domData.showline,
-              spanGaps: domData.spangaps,
-              graphAnnotations: domData.graphannotations,
-              graphTargetLines: domData.graphtargetlines,
-              graphSeriesBreaks: domData.graphseriesbreaks,
-              indicatorDownloads: domData.indicatordownloads,
-              dataSchema: domData.dataschema,
-              compositeBreakdownLabel: domData.compositebreakdownlabel,
-              precision: domData.precision,
-              graphStepsize: domData.graphstepsize,
-            }),
-            view  = new indicatorView(model, {
-              rootElement: '#indicatorData',
-              legendElement: '#plotLegend',
-              decimalSeparator: ',',
-              maxChartHeight: 420,
-              tableColumnDefs: [
-                { maxCharCount: 25 }, // nowrap
-                { maxCharCount: 35, width: 200 },
-                { maxCharCount: Infinity, width: 250 }
-              ]
-            }),
-            controller = new indicatorController(model, view);
-            controller.initialise();
-          }
-        });
-      }
-    }
-
-    var switcher = new accessibilitySwitcher();
-
-
-});
-
-</script>
-
-<script src="html2pdf.bundle.min.js"></script>
-<script src="/html2pdf/js/html2pdf.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
-<script type="text/javascript">
-  function generatePDF() {
-    // Choose the element that our invoice is rendered in.
-    var element = document.getElementById('chart-canvas');
-    var filename = chartInfo.indicatorId + '.png';
-    var options = {
-      // These options fix the height, width, and position.
-      margin: [20, 20, 20, 20],
-      filename: filename,
-      width: 500
-    };
-
-    // New Promise-based usage:
-    //html2pdf(element, options);
-    html2pdf(element, {
-      margin:       1,
-      filename:     'myfile.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { dpi: 192, letterRendering: true },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    });
-
-  }
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220407123751"></script><script>
+    new indicatorInit();
+    new accessibilitySwitcher();
 </script>
 
 </body>
