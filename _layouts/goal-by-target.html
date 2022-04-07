@@ -1,28 +1,18 @@
 {% include head.html %}
 {% include header.html %}
 
-<div class="heading goal-banner goal-{{ page.goal.number }}">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2 goal-tiles">
-        <img src="{{ page.goal.icon }}" alt="{{ page.goal.short | escape }} - {{ page.t.general.goal }} {{ page.goal.number }}" id="goal-{{ page.goal.number }}" />
-      </div>
-      <div class="col-xs-8 col-md-9 col-lg-10">
-        <h1>
-          <span class="hidden-sm hidden-md hidden-lg">{{ page.t.general.goal }} {{ page.goal.number }}: </span>{{ page.goal.name }}
-        </h1>
-      </div>
-    </div>
-  </div>
-</div>
+{% include components/goal/header.html %}
 
 <div class="container">
   {% include components/goal/breadcrumbs.html %}
+  {% if site.create_goals.previous_next_links %}
+    {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
+  {% endif %}
 </div>
 
 <div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
 
-  {{ content }}
+  {% include components/goal/goal-content.html content=content %}
 
   {% if page.sdg_goal == '1' %}
     {% assign next_goal = '2' %}
@@ -33,17 +23,6 @@
   {% else %}
     {% assign previous_goal = page.sdg_goal | minus: 1 %}
     {% assign next_goal = page.sdg_goal | plus: 1 %}
-  {% endif %}
-
-  {% if site.create_goals.previous_next_links %}
-    {% include components/previous-next-links.html previous_label=page.t.goal.previous next_label=page.t.goal.next %}
-  {% endif %}
-
-
-  {% if page.language == 'de' %}
-    {% assign language = '' %}
-  {% else %}
-    {% assign language = page.language %}
   {% endif %}
 
   <div class="col-xs-3 col-md-3 col-lg-4">
@@ -65,9 +44,6 @@
   </div>
 
 
-
-
-  {% include components/goal/goal-content.html content=content %}
 
   <div class="visible-md-block visible-lg-block">
     <div class="col-md-6">
@@ -111,7 +87,7 @@
           {{ indicator.number }}
           {% include components/reportingstatus/reporting-status-label.html indicator=indicator %}
         </span>
-        <a href="{{ indicator.url }}" onclick="updateVisitCountMinus()">
+        <a href="{{ indicator.url }}">
           {{ indicator.name }}
         </a>
         {% include components/indicator/tags.html tags=indicator.tags %}
