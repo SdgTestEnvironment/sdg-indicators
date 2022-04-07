@@ -265,7 +265,7 @@
     getGeoJsonUrl: function(subfolder) {
       var fileName = this.indicatorId + '.geojson';
       return [opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/');
-      console.log([opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/'));
+      console.log("x",[opensdg.remoteDataBaseUrl, 'geojson', subfolder, fileName].join('/'));
     },
 
     // Initialize the map itself.
