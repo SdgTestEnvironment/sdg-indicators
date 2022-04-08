@@ -177,9 +177,9 @@ graph_color_headline: '#b8b8b8' #
 useHeadlineColor: false
 no_value_character: '.'
 
-time_series_attributes:
-  - field: COMMENT_TS
-    label: indicator.footnote
+# time_series_attributes:
+#   - field: COMMENT_TS
+#     label: indicator.footnote
 
 reporting_status:
     title: status.reporting_status
