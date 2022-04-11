@@ -22,33 +22,19 @@
         {% endif %}
 
         {% if page.indicator.national_geographical_coverage and page.indicator.national_geographical_coverage != '' %}
-        <dt><u>{{ page.t.indicator.geographical_area }}</u>:</dt>
+        <dt>{{ page.t.indicator.geographical_area }}:</dt>
         <dd>{{ page.indicator.national_geographical_coverage }}</dd>
         {% endif %}
 
         {% if page.indicator.computation_units and page.indicator.computation_units != '' %}
-        <dt class="data-controlled-footer-field unit-from-data"><u>{{ page.t.indicator.unit_of_measurement }}</u>:</dt>
+        <dt class="data-controlled-footer-field unit-from-data">{{ page.t.indicator.unit_of_measurement }}:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
         {% endif %}
 
-        {% if page.indicator.computation_units_plural and page.indicator.computation_units_plural != '' %}
-        <dt class="data-controlled-footer-field unit-from-data"><u>{{ page.t.indicator.computation_unit }}</u>:</dt>
-        <dd class="data-controlled-footer-field unit-from-data">{{ page.indicator.computation_units_plural }}</dd>
-        {% endif %}
 
         {% if page.indicator.data_footnote and page.indicator.data_footnote != '' %}
-        <dt><u>{{ page.t.indicator.footnote }}</u>:</dt>
+        <dt>{{ page.t.indicator.footnote }}:</dt>
         <dd>{{ page.indicator.data_footnote }}</dd>
-        {% endif %}
-
-        {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
-        <dt><u>{{ page.t.indicator.footnotes }}</u>:</dt>
-        <dd><br>• {{ page.indicator.data_footnotes }}</dd>
-        {% endif %}
-
-        {% if page.indicator.copyright and page.indicator.copyright != '' %}
-        <dt><u>{{ page.t.metadata_fields.copyright }}</u>:</dt>
-        <dd>{{ page.indicator.copyright }}</dd>
         {% endif %}
 
         {% if page.indicator.footer_fields and page.indicator.footer_fields.size > 0 %}
@@ -56,7 +42,7 @@
         <dt
           data-for-series={{ footer_field.series | jsonify }}
           data-for-unit={{ footer_field.unit | jsonify }}
-        ><u>{{ footer_field.label | t  }}</u>:</dt>
+        >{{ footer_field.label | t  }}:</dt>
         <dd
           data-for-series={{ footer_field.series | jsonify }}
           data-for-unit={{ footer_field.unit | jsonify }}
@@ -69,12 +55,18 @@
         <dt
           class="data-controlled-footer-field"
           data-ts-attribute={{ ts_attribute.field | jsonify }}
-        ><u>{{ ts_attribute.label | t  }}</u>:</dt>
+        >{{ ts_attribute.label | t  }}:</dt>
         <dd
           class="data-controlled-footer-field"
           data-ts-attribute={{ ts_attribute.field | jsonify }}
         ></dd>
         {% endfor %}
+        {% endif %}
+
+
+        {% if page.indicator.copyright and page.indicator.copyright != '' %}
+        <dt>{{ page.t.metadata_fields.copyright }}:</dt>
+        <dd>{{ page.indicator.copyright }}</dd>
         {% endif %}
     <dl>
 </div>
