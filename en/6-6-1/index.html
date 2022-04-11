@@ -138,7 +138,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220411095255">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220411101152">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -590,7 +590,7 @@ data-event-label="high"
   data-country="Germany"
   data-charttitle="Water-related ecosystems"
   data-charttitles="null"
-  data-measurementunit=""
+  data-measurementunit="Percentage; km²"
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -658,6 +658,8 @@ data-event-label="high"
     
     <p>Geographic coverage: Germany</p>
     
+    
+    <p>Unit of measurement: Percentage; km²</p>
     
     
     <p>Note: </p>
@@ -1044,7 +1046,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-
+        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+        
 
         
 
@@ -1121,7 +1125,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-
+        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+        
 
         
 
@@ -1368,8 +1374,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/c437cb948101115aed9d64991de4d00a9524ed9b" target="_blank">
-                2022-02-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/31cd2c770e4fff5088939364efbd1cbf74317f10" target="_blank">
+                2022-04-11: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2359,12 +2365,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220411095255'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220411101152'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220411095255"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220411101152"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -138,7 +138,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220411095255">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220411101152">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -590,7 +590,7 @@ data-event-label="high"
   data-country="Deutschland"
   data-charttitle="Anzahl der Staaten, die rechtliche, administrative und politische Rahmenbedingungen geschaffen haben, um Vorteile gerecht und gleichmäßig zu verteilen"
   data-charttitles="[{&quot;series&quot;:&quot;Vertragsparteien des Internationalen Saatgutvertrags&quot;,&quot;title&quot;:&quot;Vertragsparteien des Internationalen Saatgutvertrags&quot;},{&quot;series&quot;:&quot;Vertragsparteien des Nagoya-Protokolls&quot;,&quot;title&quot;:&quot;Vertragsparteien des Nagoya-Protokoll&quot;},{&quot;series&quot;:&quot;Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden&quot;,&quot;title&quot;:&quot;Länder, die über gesetzliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden&quot;},{&quot;series&quot;:&quot;Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die dem Access and Benefit-Sharing Clearing-House gemeldet wurden&quot;,&quot;title&quot;:&quot;Länder, die über gesetzliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die dem Access and Benefit-Sharing Clearing-House gemeldet wurden&quot;},{&quot;series&quot;:&quot;Anzahl standardisierter Materialübertragungs-vereinbarungen&quot;,&quot;title&quot;:&quot;Anzahl standardisierter Materialübertragungsvereinbarungen (kumulierte Werte)&quot;}]"
-  data-measurementunit=""
+  data-measurementunit="ja=1, nein=0; Anzahl"
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -1875,6 +1875,8 @@ data-event-label="high"
     <p>Geographische Abdeckung: Deutschland</p>
     
     
+    <p>Einheit: ja=1, nein=0; Anzahl</p>
+    
     
   </div>
 
@@ -2258,7 +2260,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-
+        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+        
 
         
 
@@ -2266,29 +2270,29 @@ opensdg.chartConfigAlter(function(config, info) {
         
         <dt
           data-for-series="Vertragsparteien des Nagoya-Protokolls"
-          data-for-unit="ja=1, nein=0"
-        >footnote:</dt>
+          data-for-unit=null
+        >Anmerkung:</dt>
         <dd
           data-for-series="Vertragsparteien des Nagoya-Protokolls"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         >Daten sind erst ab 2016 verfügbar.</dd>
         
         <dt
           data-for-series="Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden"
-          data-for-unit="ja=1, nein=0"
-        >footnotes:</dt>
+          data-for-unit=null
+        >Anmerkungen:</dt>
         <dd
           data-for-series="Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         ><br>• Die Zeitreihe bezieht sich auf das Online-Berichtssystem. Die Rahmenbedingungen und Maßnahmen bestanden schon vorher. <br>• Daten sind erst ab 2016 verfügbar.</dd>
         
         <dt
           data-for-series="Anzahl standardisierter Materialübertragungs-vereinbarungen"
-          data-for-unit="ja=1, nein=0"
-        >footnote:</dt>
+          data-for-unit=null
+        >Anmerkung:</dt>
         <dd
           data-for-series="Anzahl standardisierter Materialübertragungs-vereinbarungen"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         >Daten sind erst ab 2012 verfügbar.</dd>
         
         
@@ -2364,7 +2368,9 @@ opensdg.chartConfigAlter(function(config, info) {
         
 
         
-
+        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+        
 
         
 
@@ -2372,29 +2378,29 @@ opensdg.chartConfigAlter(function(config, info) {
         
         <dt
           data-for-series="Vertragsparteien des Nagoya-Protokolls"
-          data-for-unit="ja=1, nein=0"
-        >footnote:</dt>
+          data-for-unit=null
+        >Anmerkung:</dt>
         <dd
           data-for-series="Vertragsparteien des Nagoya-Protokolls"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         >Daten sind erst ab 2016 verfügbar.</dd>
         
         <dt
           data-for-series="Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden"
-          data-for-unit="ja=1, nein=0"
-        >footnotes:</dt>
+          data-for-unit=null
+        >Anmerkungen:</dt>
         <dd
           data-for-series="Länder, die über rechtliche, administrative und politische Rahmenbedingungen oder Maßnahmen verfügen, die über das Online-Berichtssystem zur Einhaltung des Internationalen Saatgutvertrag gemeldet wurden"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         ><br>• Die Zeitreihe bezieht sich auf das Online-Berichtssystem. Die Rahmenbedingungen und Maßnahmen bestanden schon vorher. <br>• Daten sind erst ab 2016 verfügbar.</dd>
         
         <dt
           data-for-series="Anzahl standardisierter Materialübertragungs-vereinbarungen"
-          data-for-unit="ja=1, nein=0"
-        >footnote:</dt>
+          data-for-unit=null
+        >Anmerkung:</dt>
         <dd
           data-for-series="Anzahl standardisierter Materialübertragungs-vereinbarungen"
-          data-for-unit="ja=1, nein=0"
+          data-for-unit=null
         >Daten sind erst ab 2012 verfügbar.</dd>
         
         
@@ -2640,7 +2646,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/ff4ca9d3743377dd0a93c501575fce72ef51fe3c" target="_blank">
+              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/31cd2c770e4fff5088939364efbd1cbf74317f10" target="_blank">
                 2022-04-11: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -3874,12 +3880,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220411095255'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220411101152'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220411095255"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220411101152"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
