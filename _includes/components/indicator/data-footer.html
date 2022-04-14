@@ -22,22 +22,22 @@
         {% endif %}
 
         {% if page.indicator.national_geographical_coverage and page.indicator.national_geographical_coverage != '' %}
-        <dt>{{ page.t.indicator.geographical_area }}:</dt>
+        <dt><u>{{ page.t.indicator.geographical_area }</u>:</dt>
         <dd>{{ page.indicator.national_geographical_coverage }}</dd>
         {% endif %}
 
         {% if page.indicator.computation_units and page.indicator.computation_units != '' %}
-        <dt class="data-controlled-footer-field unit-from-data">{{ page.t.indicator.unit_of_measurement }}:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>{{ page.t.indicator.unit_of_measurement }</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
         {% endif %}
 
         {% if page.indicator.data_footnote and page.indicator.data_footnote != '' %}
-        <dt>{{ page.t.indicator.footnote }}:</dt>
+        <dt><u>{{ page.t.indicator.footnote }</u>:</dt>
         <dd>{{ page.indicator.data_footnote }}</dd>
         {% endif %}
 
         {% if page.indicator.data_footnotes and page.indicator.data_footnotes != '' %}
-        <dt>{{ page.t.indicator.footnotes }}:</dt>
+        <dt><u>{{ page.t.indicator.footnotes }</u>:</dt>
         <dd><br>• {{ page.indicator.data_footnotes }}</dd>
         {% endif %}
 
@@ -46,7 +46,7 @@
         <dt
           data-for-series={{ footer_field.series | jsonify }}
           data-for-unit={{ footer_field.unit | jsonify }}
-        >{{ footer_field.label | t  }}:</dt>
+        >{{ footer_field.label | t  }</u>:</dt>
         <dd
           data-for-series={{ footer_field.series | jsonify }}
           data-for-unit={{ footer_field.unit | jsonify }}
@@ -59,7 +59,7 @@
         <dt
           class="data-controlled-footer-field"
           data-ts-attribute={{ ts_attribute.field | jsonify }}
-        >{{ ts_attribute.label | t  }}:</dt>
+        >{{ ts_attribute.label | t  }</u>:</dt>
         <dd
           class="data-controlled-footer-field"
           data-ts-attribute={{ ts_attribute.field | jsonify }}
@@ -69,7 +69,7 @@
 
 
         {% if page.indicator.copyright and page.indicator.copyright != '' %}
-        <dt>{{ page.t.metadata_fields.copyright }}:</dt>
+        <dt><u>{{ page.t.metadata_fields.copyright }</u>:</dt>
         <dd>{{ page.indicator.copyright }}</dd>
         {% endif %}
     <dl>
