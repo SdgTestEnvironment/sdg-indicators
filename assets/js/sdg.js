@@ -3030,6 +3030,7 @@ function getTimeSeriesAttributes(rows) {
       graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
     });
+    console.log('dataset: ', datasets);
   };
 };
 
