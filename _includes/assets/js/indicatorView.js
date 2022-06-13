@@ -864,10 +864,20 @@ var indicatorView = function (model, options) {
     $targetLines.empty();
     targetLines.forEach(function(targetLine) {
       var targetLineLabel = targetLine.label.content;
+      if (view_obj._precision) {
+        var targetLineValue = String(Number.parseFloat(targetLine.value).toFixed(view_obj._precision));
+      }
+      else {
+        var targetLineValue = String(targetLine.value);
+      }
       if (!targetLineLabel) {
         targetLineLabel = opensdg.annotationPresets.target_line.label.content;
       }
-      $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + targetLine.value + '</dd>');
+      if (view_obj._decimalSeparator) {
+        var seperator = view_obj._decimalSeparator;
+        targetLineValue = targetLineValue.replace('.', seperator);
+      }
+      $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + targetLineValue + '</dd>');
     });
     if (targetLines.length === 0) {
       $targetLines.hide();
