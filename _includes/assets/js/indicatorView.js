@@ -483,7 +483,6 @@ var indicatorView = function (model, options) {
   };
 
 
-
   this.createPlot = function (chartInfo) {
 
     var that = this;
