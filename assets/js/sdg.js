@@ -2092,7 +2092,6 @@ function getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries) {
     targetLine.label = { content: targetLine.label_content };
     return targetLine;
   });
-
 }
 
 /**
