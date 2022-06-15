@@ -2134,8 +2134,8 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -2175,14 +2175,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -2365,7 +2365,7 @@ function getBorderDash(striped) {
  * @param {Array} border
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
@@ -2380,6 +2380,8 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: prepareDataForDataset(years, rows),
     excess: excess,
+    spanGaps: spanGaps,
+    showLine: showLine,
   });
 }
 
@@ -2393,6 +2395,7 @@ function getBaseDataset() {
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true,
+    showLine: true,
     maxBarThickness: 150,
   });
 }
@@ -2441,7 +2444,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
   var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
@@ -2450,10 +2453,21 @@ function makeHeadlineDataset(years, rows, label) {
     pointBorderColor: getHeadlineColor(),
     pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
-    headline: true,
-    pointStyle: 'rect',
+    headline: false,
+    pointStyle: 'circle',
     data: prepareDataForDataset(years, rows),
+    showLine: showLine,
+    spanGaps: spanGaps,
   });
+}
+
+  /**
+   * @param {Array} graphStepsize Objects containing 'unit' and 'title'
+   * @param {String} selectedUnit
+   * @param {String} selectedSeries
+   */
+  function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
+    return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
 }
 
   /**
