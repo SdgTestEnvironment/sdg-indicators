@@ -25,7 +25,7 @@ opensdg.chartConfigAlter(function(config, info) {
                 annotation.mode = 'horizontal';
             }
             // Provide the obscure scaleID properties on user's behalf.
-            if (!annotation.scaleID && annotation.type === 'line') {
+            if (!annotation.scaleID && annotation.type === 'line' && !annotation.xScaleID && !annotation.yScaleID) {
                 if (annotation.mode === 'horizontal') {
                     annotation.scaleID = 'y-axis-0';
                 }

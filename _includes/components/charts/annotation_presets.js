@@ -70,7 +70,14 @@ opensdg.annotationPresets = {
         },
     },
     error_bar: {
-        mode: 'vertical',
+        adjustScaleRange: true,
+        type: 'line',
+        xScaleID: 'x',
+        yScaleID: 'y',
+        xMin: 0,
+        xMax: 0,
+        yMin: 25000,
+        yMax: 15000,
         borderDash: [2, 2],
         borderColor: 'blue',
         label: {
