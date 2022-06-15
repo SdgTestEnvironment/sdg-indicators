@@ -58,12 +58,13 @@ opensdg.annotationPresets = {
             position: {% if site.chartjs_3 %}'end'{% else %}'right'{% endif %},
             content: translations.indicator.annotation_2030_target,
         },
-      series_break: {
-          mode: 'vertical',
-          borderDash: [2, 2],
-          label: {
-              position: 'top',
-              content: translations.indicator.annotation_series_break,
-          },
-      },
+    },
+    series_break: {
+        mode: 'vertical',
+        borderDash: [2, 2],
+        label: {
+            position: 'top',
+            content: translations.indicator.annotation_series_break,
+        },
+    },
 };
