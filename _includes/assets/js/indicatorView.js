@@ -631,7 +631,8 @@ var indicatorView = function (model, options) {
     }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
-
+    console.log("chrtConfig: ", chartConfig);
+    
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
