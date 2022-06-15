@@ -49,6 +49,7 @@ var indicatorModel = function (options) {
   this.graphAnnotations = options.graphAnnotations;
   this.graphTargetLines = options.graphTargetLines;
   this.graphSeriesBreaks = options.graphSeriesBreaks;
+  this.graphErrorBars = options.graphErrorBars;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
   this.precision = options.precision;
@@ -335,7 +336,7 @@ var indicatorModel = function (options) {
       selectedSeries: this.selectedSeries,
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
-      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks),
+      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, , this.graphErrorBars),
       chartTitle: this.chartTitle,
       chartType: this.graphType,
       indicatorDownloads: this.indicatorDownloads,
