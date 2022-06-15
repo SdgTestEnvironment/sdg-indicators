@@ -343,7 +343,7 @@ var indicatorModel = function (options) {
       graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
     });
-    console.log('dataset: ', datasets);
+    console.log('graphAnnotations: ', graphAnnotations);
   };
 };
 
