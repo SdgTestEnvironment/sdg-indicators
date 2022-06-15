@@ -39,6 +39,13 @@ opensdg.chartConfigAlter(function(config, info) {
             if (!annotation.yScaleID && annotation.type === 'box') {
                 annotation.yScaleID = 'y-axis-0';
             }
+            if (!annotation.xScaleID && annotation.type === 'line') {
+                annotation.xScaleID = 'x';
+            }
+            if (!annotation.yScaleID && annotation.type === 'line') {
+                annotation.yScaleID = 'y';
+            }
+
             // Provide the "enabled" label property on the user's behalf.
             if (annotation.label && annotation.label.content) {
                 annotation.label.enabled = true;
