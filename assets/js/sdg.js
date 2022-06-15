@@ -3045,7 +3045,7 @@ function getTimeSeriesAttributes(rows) {
       graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
     });
-    console.log('graphAnnotations: ', graphAnnotations);
+    console.log('graphAnnotations: ', helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars));
   };
 };
 
@@ -3704,7 +3704,8 @@ var indicatorView = function (model, options) {
     }
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
-
+    console.log("chrtConfig: ", chartConfig);
+    
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
