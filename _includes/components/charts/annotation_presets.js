@@ -71,8 +71,6 @@ opensdg.annotationPresets = {
     },
     error_bar: {
         mode: 'vertical',
-        xScaleID: 'x',
-        yScaleID: 'y',
         xMin: 0,
         xMax: 0,
         yMin: 25000,
