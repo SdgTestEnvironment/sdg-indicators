@@ -8,9 +8,10 @@
 {% include multilingual-js.html key="data" %}
 
 {% include bootstrap5/components/indicator/header.html %}
-{% include components/indicator/navigationbuttons.html %}
+
 <div class="container">
   {% include bootstrap5/components/indicator/breadcrumbs.html %}
+  {% include components/indicator/navigationbuttons.html %}
   {% if site.create_indicators.previous_next_links %}
     {% include bootstrap5/components/previous-next-links.html previous_label=page.t.indicator.previous next_label=page.t.indicator.next %}
   {% endif %}
