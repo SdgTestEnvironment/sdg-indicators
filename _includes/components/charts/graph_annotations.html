@@ -8,7 +8,7 @@ opensdg.chartConfigAlter(function(config, info) {
         var annotations = info.graphAnnotations.map(function(annotationOverrides) {
             var annotation = {};
             // Apply the "common" preset.
-            if (opensdg.annotationPresets.common) {
+            if (opensdg.annotationPresets.common && annotation.preset !== 'error_bar') {
                 $.extend(true, annotation, opensdg.annotationPresets.common);
             }
             // Apply any specified presets.
