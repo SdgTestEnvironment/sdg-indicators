@@ -207,6 +207,8 @@ custom_js:
 graph_color_set: 'goal'
 graph_color_number: 9
 
+bootstrap_5: true
+chartjs_3: true
 
 # Mapping
 map_options:
