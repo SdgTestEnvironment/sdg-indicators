@@ -134,7 +134,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220616091322">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220616095000">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -260,6 +260,32 @@ data-event-label="high"
 
 
 
+<div class="heading goal-banner indicator goal-4">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+                <a href="/sdg-indicators/4" title="Zeigt die Indikatorenliste zum SDG-Ziel an.">
+                    <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/4.png"
+                        alt="Hochwertige Bildung - Ziel 4"
+                        id="goal-4"
+                        class="goal-icon-image goal-icon-image-" />
+                </a>
+            </div>
+            <div class="col-8 col-md-9 col-lg-10 indicator-details">
+            
+                <div>
+                    <h1>
+                        
+                        Indikator 
+                        
+                        <span class="lead-copy"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
   <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
@@ -274,42 +300,61 @@ data-event-label="high"
   
 </div>
 
-<div class="heading goal-banner goal-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-tiles">
-                <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/4.png" alt="Hochwertige Bildung - Ziel 4" id="goal-4" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10">
-                <h1>Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div id="main-content" class="container" role="main">
 
   
 
 
 
+  
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators//3" class="btn btn-primary btn-block goal-4 navigation-btn" role="button" onclick="updateVisitCountMinus()">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriges Ziel</b>
+    </a>
+  </div>
+
+  <div class="col-xs-6 col-md-6 col-lg-4">
+    <a href="https://sustainabledevelopment-deutschland.github.io//4" class="btn btn-primary btn-block goal-4 navigation-btn" title="" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Nationale Indikatoren zu Ziel 4 </b><b class="btn-label visible-sm visible-xs">Ziel 4 - National</b>
+    </a>
+  </div>
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators//5" class="btn btn-primary btn-block goal-4 navigation-btn" role="button" onclick="updateVisitCountMinus()">
+      <b class="btn-label hidden-sm hidden-xs">Nächstes Ziel</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
   <div class="container g-0">
+    <div class="visible-md-block visible-lg-block">
+      <div class="col-md-6">
+        <h2>Unterziele</h2>
+      </div>
+      <div class="col-md-6">
+        <h2>Indikatoren</h2>
+      </div>
+    </div>
+
+
     <h2 class="goal-page-heading"></h2>
 
     
     
+
+
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.1</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 sicherstellen, dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und hochwertige Grund- und Sekundarschulbildung abschließen, die zu brauchbaren und effektiven Lernergebnissen führt</span>
-          </div>
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.1
+        </span>
+        Bis 2030 sicherstellen, dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und hochwertige Grund- und Sekundarschulbildung abschließen, die zu brauchbaren und effektiven Lernergebnissen führt
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -317,17 +362,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.1.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.1.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-1-1">Anteil der Kinder und Jugendlichen a) in der 2./3. Klasse, b) am Ende der Grundschule und c) am Ende der Sekundarstufe I mit einem Mindestniveau in i) Lesen und ii) Mathematik, nach Geschlecht</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-1-1">
+              Anteil der Kinder und Jugendlichen a) in der 2./3. Klasse, b) am Ende der Grundschule und c) am Ende der Sekundarstufe I mit einem Mindestniveau in i) Lesen und ii) Mathematik, nach Geschlecht
+            </a>
+            
 
 
 
@@ -346,8 +398,6 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
@@ -357,17 +407,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.1.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.1.2
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-1-2">Schulabschlussquote (Grundschule, Sekundarstufe I und Sekundarstufe II)</a></span>
-              
+
+
+
+<span class="status notstarted">
+    <span class="status-inner">Nicht verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-1-2">
+              Schulabschlussquote (Grundschule, Sekundarstufe I und Sekundarstufe II)
+            </a>
+            
 
 
 
@@ -386,24 +443,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.2</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 sicherstellen, dass alle Mädchen und Jungen Zugang zu hochwertiger frühkindlicher Erziehung, Betreuung und Vorschulbildung erhalten, damit sie auf die Grundschule vorbereitet sind</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.2
+        </span>
+        Bis 2030 sicherstellen, dass alle Mädchen und Jungen Zugang zu hochwertiger frühkindlicher Erziehung, Betreuung und Vorschulbildung erhalten, damit sie auf die Grundschule vorbereitet sind
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -411,17 +468,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.2.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.2.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-2-1">Anteil der Kinder im Alter von 24-59 Monaten mit altersgemäßer Entwicklung hinsichtlich Gesundheit, Lernens und psychosozialen Wohlbefindens, nach Geschlecht</a></span>
-              
+
+
+
+<span class="status inprogress">
+    <span class="status-inner">In Bearbeitung</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-2-1">
+              Anteil der Kinder im Alter von 24-59 Monaten mit altersgemäßer Entwicklung hinsichtlich Gesundheit, Lernens und psychosozialen Wohlbefindens, nach Geschlecht
+            </a>
+            
 
 
 
@@ -440,8 +504,6 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
@@ -451,17 +513,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.2.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.2.2
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-2-2">Teilnahmequote an organisiertem Lernen (ein Jahr vor dem offiziellen Einschulungsalter), nach Geschlecht</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-2-2">
+              Teilnahmequote an organisiertem Lernen (ein Jahr vor dem offiziellen Einschulungsalter), nach Geschlecht
+            </a>
+            
 
 
 
@@ -480,24 +549,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.3</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 den gleichberechtigten Zugang aller Frauen und Männer zu einer erschwinglichen und hochwertigen fachlichen, beruflichen und tertiären Bildung einschließlich universitärer Bildung gewährleisten</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.3
+        </span>
+        Bis 2030 den gleichberechtigten Zugang aller Frauen und Männer zu einer erschwinglichen und hochwertigen fachlichen, beruflichen und tertiären Bildung einschließlich universitärer Bildung gewährleisten
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -505,17 +574,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.3.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.3.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-3-1">Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vorangegangenen 12 Monaten, nach Geschlecht</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-3-1">
+              Teilnahmequote von Jugendlichen und Erwachsenen an formaler und non-formaler Bildung und Ausbildung in den vorangegangenen 12 Monaten, nach Geschlecht
+            </a>
+            
 
 
 
@@ -534,24 +610,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.4</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 die Zahl der Jugendlichen und Erwachsenen wesentlich erhöhen, die über die entsprechenden Qualifikationen einschließlich fachlicher und beruflicher Qualifikationen für eine Beschäftigung, eine menschenwürdige Arbeit und Unternehmertum verfügen</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.4
+        </span>
+        Bis 2030 die Zahl der Jugendlichen und Erwachsenen wesentlich erhöhen, die über die entsprechenden Qualifikationen einschließlich fachlicher und beruflicher Qualifikationen für eine Beschäftigung, eine menschenwürdige Arbeit und Unternehmertum verfügen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -559,17 +635,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.4.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.4.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-4-1">Anteil der Jugendlichen und Erwachsenen mit Kompetenzen in Informations- und Kommunikationstechnologie (IKT), nach Art der Kompetenz</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-4-1">
+              Anteil der Jugendlichen und Erwachsenen mit Kompetenzen in Informations- und Kommunikationstechnologie (IKT), nach Art der Kompetenz
+            </a>
+            
 
 
 
@@ -588,24 +671,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.5</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 geschlechtsspezifische Disparitäten in der Bildung beseitigen und den gleichberechtigen Zugang der Schwachen in der Gesellschaft, namentlich von Menschen mit Behinderungen, Angehörigen indigener Völker und Kindern in prekären Situationen, zu allen Bildungs- und Ausbildungsebenen gewährleisten</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.5
+        </span>
+        Bis 2030 geschlechtsspezifische Disparitäten in der Bildung beseitigen und den gleichberechtigen Zugang der Schwachen in der Gesellschaft, namentlich von Menschen mit Behinderungen, Angehörigen indigener Völker und Kindern in prekären Situationen, zu allen Bildungs- und Ausbildungsebenen gewährleisten
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -613,17 +696,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.5.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.5.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-5-1">Paritätsindizes (weiblich/ männlich, ländlich/ städtisch, unterstes/ oberstes Vermögensquintil und sonstige, wie Behinderungsstatus, Zugehörigkeit zu einer indigenen Bevölkerungsgruppe und Beeinträchtigung durch Konflikte, je nach Datenverfügbarkeit) für alle genannten Bildungsindikatoren, die sich aufschlüsseln lassen</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-5-1">
+              Paritätsindizes (weiblich/ männlich, ländlich/ städtisch, unterstes/ oberstes Vermögensquintil und sonstige, wie Behinderungsstatus, Zugehörigkeit zu einer indigenen Bevölkerungsgruppe und Beeinträchtigung durch Konflikte, je nach Datenverfügbarkeit) für alle genannten Bildungsindikatoren, die sich aufschlüsseln lassen
+            </a>
+            
 
 
 
@@ -642,24 +732,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.6</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 sicherstellen, dass alle Jugendlichen und ein erheblicher Anteil der männlichen und weiblichen Erwachsenen lesen, schreiben und rechnen lernen</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.6
+        </span>
+        Bis 2030 sicherstellen, dass alle Jugendlichen und ein erheblicher Anteil der männlichen und weiblichen Erwachsenen lesen, schreiben und rechnen lernen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -667,17 +757,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.6.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.6.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-6-1">Anteil der Bevölkerung einer bestimmten Altersgruppe, der ein festgelegtes Mindestniveau an funktionalen a) Lese-, Schreib- und b) Rechenkompetenzen besitzt, nach Geschlecht</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-6-1">
+              Anteil der Bevölkerung einer bestimmten Altersgruppe, der ein festgelegtes Mindestniveau an funktionalen a) Lese-, Schreib- und b) Rechenkompetenzen besitzt, nach Geschlecht
+            </a>
+            
 
 
 
@@ -696,24 +793,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.7</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 sicherstellen, dass alle Lernenden die notwendigen Kenntnisse und Qualifikationen zur Förderung nachhaltiger Entwicklung erwerben, unter anderem durch Bildung für nachhaltige Entwicklung und nachhaltige Lebensweisen, Menschenrechte, Geschlechtergleichstellung, eine Kultur des Friedens und der Gewaltlosigkeit, Weltbürgerschaft und die Wertschätzung kultureller Vielfalt und des Beitrags der Kultur zu nachhaltiger Entwicklung</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.7
+        </span>
+        Bis 2030 sicherstellen, dass alle Lernenden die notwendigen Kenntnisse und Qualifikationen zur Förderung nachhaltiger Entwicklung erwerben, unter anderem durch Bildung für nachhaltige Entwicklung und nachhaltige Lebensweisen, Menschenrechte, Geschlechtergleichstellung, eine Kultur des Friedens und der Gewaltlosigkeit, Weltbürgerschaft und die Wertschätzung kultureller Vielfalt und des Beitrags der Kultur zu nachhaltiger Entwicklung
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -721,17 +818,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.7.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.7.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-7-1">Umfang, in dem i) Bildung zur Weltbürgerschaft (Global Citizenship Education) und ii) Bildung für nachhaltige Entwicklung in a) nationale Bildungspolitik, b) Lehrpläne, c) Ausbildung von Lehrkräften und d) Leistungsbewertung der Lernenden integriert sind</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-7-1">
+              Umfang, in dem i) Bildung zur Weltbürgerschaft (Global Citizenship Education) und ii) Bildung für nachhaltige Entwicklung in a) nationale Bildungspolitik, b) Lehrpläne, c) Ausbildung von Lehrkräften und d) Leistungsbewertung der Lernenden integriert sind
+            </a>
+            
 
 
 
@@ -750,24 +854,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.a</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bildungseinrichtungen bauen und ausbauen, die kinder-, behinderten- und geschlechtergerecht sind und eine sichere, gewaltfreie, inklusive und effektive Lernumgebung für alle bieten</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.a
+        </span>
+        Bildungseinrichtungen bauen und ausbauen, die kinder-, behinderten- und geschlechtergerecht sind und eine sichere, gewaltfreie, inklusive und effektive Lernumgebung für alle bieten
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -775,17 +879,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.a.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.a.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-a-1">Anteil der Schulen mit Basisversorgung, nach Art der Versorgungsleistung</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-a-1">
+              Anteil der Schulen mit Basisversorgung, nach Art der Versorgungsleistung
+            </a>
+            
 
 
 
@@ -804,24 +915,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.b</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2020 weltweit die Zahl der verfügbaren Stipendien für Entwicklungsländer, insbesondere für die am wenigsten entwickelten Länder, die kleinen Inselentwicklungsländer und die afrikanischen Länder, zum Besuch einer Hochschule, einschließlich zur Berufsbildung und zu Informations- und Kommunikationstechnik-, Technik-, Ingenieurs- und Wissenschaftsprogrammen, in entwickelten Ländern und in anderen Entwicklungsländern wesentlich erhöhen</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.b
+        </span>
+        Bis 2020 weltweit die Zahl der verfügbaren Stipendien für Entwicklungsländer, insbesondere für die am wenigsten entwickelten Länder, die kleinen Inselentwicklungsländer und die afrikanischen Länder, zum Besuch einer Hochschule, einschließlich zur Berufsbildung und zu Informations- und Kommunikationstechnik-, Technik-, Ingenieurs- und Wissenschaftsprogrammen, in entwickelten Ländern und in anderen Entwicklungsländern wesentlich erhöhen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -829,17 +940,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.b.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.b.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-b-1">Umfang der Ausgaben der öffentlichen Entwicklungszusammenarbeit (ODA) für Stipendien, nach Sektor und Art des Studiums</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-b-1">
+              Umfang der Ausgaben der öffentlichen Entwicklungszusammenarbeit (ODA) für Stipendien, nach Sektor und Art des Studiums
+            </a>
+            
 
 
 
@@ -858,24 +976,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 4.c</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 das Angebot an qualifizierten Lehrkräften unter anderem durch internationale Zusammenarbeit im Bereich der Lehrerausbildung in den Entwicklungsländern und insbesondere in den am wenigsten entwickelten Ländern und kleinen Inselentwicklungsländern wesentlich erhöhen</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          4.c
+        </span>
+        Bis 2030 das Angebot an qualifizierten Lehrkräften unter anderem durch internationale Zusammenarbeit im Bereich der Lehrerausbildung in den Entwicklungsländern und insbesondere in den am wenigsten entwickelten Ländern und kleinen Inselentwicklungsländern wesentlich erhöhen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -883,17 +1001,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 4.c.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              4.c.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/4-c-1">Anteil der Lehrkräfte mit den erforderlichen Mindestqualifikationen, nach Bildungsstufe</a></span>
-              
+
+
+
+<span class="status notstarted">
+    <span class="status-inner">Nicht verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/4-c-1">
+              Anteil der Lehrkräfte mit den erforderlichen Mindestqualifikationen, nach Bildungsstufe
+            </a>
+            
 
 
 
@@ -912,17 +1037,13 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
+      
     </div>
   </div>
-
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -992,12 +1113,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220616091322'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220616095000'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220616091322"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220616095000"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

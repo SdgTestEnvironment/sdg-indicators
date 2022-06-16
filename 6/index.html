@@ -134,7 +134,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220616091322">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220616095000">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -260,6 +260,32 @@ data-event-label="high"
 
 
 
+<div class="heading goal-banner indicator goal-6">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+                <a href="/sdg-indicators/6" title="Zeigt die Indikatorenliste zum SDG-Ziel an.">
+                    <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/6.png"
+                        alt="Sauberes Wasser und Sanitärversorgung - Ziel 6"
+                        id="goal-6"
+                        class="goal-icon-image goal-icon-image-" />
+                </a>
+            </div>
+            <div class="col-8 col-md-9 col-lg-10 indicator-details">
+            
+                <div>
+                    <h1>
+                        
+                        Indikator 
+                        
+                        <span class="lead-copy"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container">
   <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
@@ -274,42 +300,61 @@ data-event-label="high"
   
 </div>
 
-<div class="heading goal-banner goal-6">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-tiles">
-                <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/6.png" alt="Sauberes Wasser und Sanitärversorgung - Ziel 6" id="goal-6" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10">
-                <h1>Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <div id="main-content" class="container" role="main">
 
   
 
 
 
+  
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators//5" class="btn btn-primary btn-block goal-6 navigation-btn" role="button" onclick="updateVisitCountMinus()">
+      <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Vorheriges Ziel</b>
+    </a>
+  </div>
+
+  <div class="col-xs-6 col-md-6 col-lg-4">
+    <a href="https://sustainabledevelopment-deutschland.github.io//6" class="btn btn-primary btn-block goal-6 navigation-btn" title="" role="button">
+      <b class="btn-label hidden-sm hidden-xs">Nationale Indikatoren zu Ziel 6 </b><b class="btn-label visible-sm visible-xs">Ziel 6 - National</b>
+    </a>
+  </div>
+
+  <div class="col-xs-3 col-md-3 col-lg-4">
+    <a href="/sdg-indicators//7" class="btn btn-primary btn-block goal-6 navigation-btn" role="button" onclick="updateVisitCountMinus()">
+      <b class="btn-label hidden-sm hidden-xs">Nächstes Ziel</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+  </div>
+
+
   <div class="container g-0">
+    <div class="visible-md-block visible-lg-block">
+      <div class="col-md-6">
+        <h2>Unterziele</h2>
+      </div>
+      <div class="col-md-6">
+        <h2>Indikatoren</h2>
+      </div>
+    </div>
+
+
     <h2 class="goal-page-heading"></h2>
 
     
     
+
+
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.1</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 den allgemeinen und gerechten Zugang zu einwandfreiem und bezahlbarem Trinkwasser für alle erreichen</span>
-          </div>
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.1
+        </span>
+        Bis 2030 den allgemeinen und gerechten Zugang zu einwandfreiem und bezahlbarem Trinkwasser für alle erreichen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -317,17 +362,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.1.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.1.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-1-1">Anteil der Bevölkerung, der eine sicher verwaltete Trinkwasserversorgung nutzt</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-1-1">
+              Anteil der Bevölkerung, der eine sicher verwaltete Trinkwasserversorgung nutzt
+            </a>
+            
 
 
 
@@ -346,78 +398,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.2</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 den Zugang zu einer angemessenen und gerechten Sanitärversorgung und Hygiene für alle erreichen und der Notdurftverrichtung im Freien ein Ende setzen, unter besonderer Beachtung der Bedürfnisse von Frauen und Mädchen und von Menschen in prekären Situationen</span>
-          </div>
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.2.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/6-2-1">Anteil der Bevölkerung, der a) eine sicher verwaltete Sanitärversorgung und b) eine Gelegenheit zum Händewaschen mit Wasser und Seife nutzt</a></span>
-              
 
 
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.3</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 die Wasserqualität durch Verringerung der Verschmutzung, Beendigung des Einbringens und Minimierung der Freisetzung gefährlicher Chemikalien und Stoffe, Halbierung des Anteils unbehandelten Abwassers und eine beträchtliche Steigerung der Wiederaufbereitung und gefahrlosen Wiederverwendung weltweit verbessern</span>
-          </div>
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.2
+        </span>
+        Bis 2030 den Zugang zu einer angemessenen und gerechten Sanitärversorgung und Hygiene für alle erreichen und der Notdurftverrichtung im Freien ein Ende setzen, unter besonderer Beachtung der Bedürfnisse von Frauen und Mädchen und von Menschen in prekären Situationen
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -425,17 +423,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.3.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.2.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-3-1">Anteil der sicher behandelten Haushalts- und Industrieabwässer</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-2-1">
+              Anteil der Bevölkerung, der a) eine sicher verwaltete Sanitärversorgung und b) eine Gelegenheit zum Händewaschen mit Wasser und Seife nutzt
+            </a>
+            
 
 
 
@@ -454,158 +459,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.3.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/6-3-2">Anteil der Gewässer mit guter Wasserqualität</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.4</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 die Effizienz der Wassernutzung in allen Sektoren wesentlich steigern und eine nachhaltige Entnahme und Bereitstellung von Süßwasser gewährleisten, um der Wasserknappheit zu begegnen und die Zahl der unter Wasserknappheit leidenden Menschen erheblich zu verringern</span>
-          </div>
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.4.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/6-4-1">Veränderung der Wassernutzungseffizienz im Zeitverlauf</a></span>
-              
 
 
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.4.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/6-4-2">Grad an Wasserstress: Süßwasserentnahme im Verhältnis zu den vorhandenen Süßwasserressourcen</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.5</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 auf allen Ebenen eine integrierte Bewirtschaftung der Wasserressourcen umsetzen, gegebenenfalls auch mittels grenzüberschreitender Zusammenarbeit</span>
-          </div>
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.3
+        </span>
+        Bis 2030 die Wasserqualität durch Verringerung der Verschmutzung, Beendigung des Einbringens und Minimierung der Freisetzung gefährlicher Chemikalien und Stoffe, Halbierung des Anteils unbehandelten Abwassers und eine beträchtliche Steigerung der Wiederaufbereitung und gefahrlosen Wiederverwendung weltweit verbessern
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -613,17 +484,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.5.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.3.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-5-1">Grad der integrierten Wasserbewirtschaftung</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-3-1">
+              Anteil der sicher behandelten Haushalts- und Industrieabwässer
+            </a>
+            
 
 
 
@@ -642,8 +520,6 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
@@ -653,17 +529,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.5.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.3.2
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-5-2">Anteil der grenzüberschreitenden Wassereinzugsgebiete mit einer operativen Vereinbarung zur Wasserkooperation</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-3-2">
+              Anteil der Gewässer mit guter Wasserqualität
+            </a>
+            
 
 
 
@@ -682,78 +565,24 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.6</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2020 wasserverbundene Ökosysteme schützen und wiederherstellen, darunter Berge, Wälder, Feuchtgebiete, Flüsse, Grundwasserleiter und Seen</span>
-          </div>
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.6.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/6-6-1">Veränderung des Umfangs wasserbezogener Ökosysteme im Zeitverlauf</a></span>
-              
 
 
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.a</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Bis 2030 die internationale Zusammenarbeit und die Unterstützung der Entwicklungsländer beim Kapazitätsaufbau für Aktivitäten und Programme im Bereich der Wasser- und Sanitärversorgung ausbauen, einschließlich der Wassersammlung und -speicherung, Entsalzung, effizienten Wassernutzung, Abwasserbehandlung, Wiederaufbereitungs- und Wiederverwendungstechnologien</span>
-          </div>
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.4
+        </span>
+        Bis 2030 die Effizienz der Wassernutzung in allen Sektoren wesentlich steigern und eine nachhaltige Entnahme und Bereitstellung von Süßwasser gewährleisten, um der Wasserknappheit zu begegnen und die Zahl der unter Wasserknappheit leidenden Menschen erheblich zu verringern
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -761,17 +590,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.a.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.4.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-a-1">Umfang der öffentlichen Entwicklungszusammenarbeit (ODA) für Wasser- und Sanitärversorgung, die Teil eines geregelten öffentlichen Haushaltsplans ist</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-4-1">
+              Veränderung der Wassernutzungseffizienz im Zeitverlauf
+            </a>
+            
 
 
 
@@ -790,24 +626,69 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+
+          
+          
+          
+          
+
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.4.2
+              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-4-2">
+              Grad an Wasserstress: Süßwasserentnahme im Verhältnis zu den vorhandenen Süßwasserressourcen
+            </a>
+            
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            
+          </div>
+        
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Unterziel</span> 6.b</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">Die Mitwirkung lokaler Gemeinwesen an der Verbesserung der Wasserbewirtschaftung und der Sanitärversorgung unterstützen und verstärken</span>
-          </div>
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.5
+        </span>
+        Bis 2030 auf allen Ebenen eine integrierte Bewirtschaftung der Wasserressourcen umsetzen, gegebenenfalls auch mittels grenzüberschreitender Zusammenarbeit
       </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
         
 
           
@@ -815,17 +696,24 @@ data-event-label="high"
           
           
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 6.b.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.5.1
               
-              <span class="indicator-name"><a href="/sdg-indicators/6-b-1">Anteil der lokalen Verwaltungseinheiten mit etablierten und operativen Strategien und Verfahren zur Beteiligung der Gemeinden am Wasser- und Abwassermanagement</a></span>
-              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-5-1">
+              Grad der integrierten Wasserbewirtschaftung
+            </a>
+            
 
 
 
@@ -844,17 +732,241 @@ data-event-label="high"
         </li></ul>
 
 
-            </div>
-            
             
           </div>
         
-        <hr class="goal-page-target-rule" />
-    
+
+          
+          
+          
+          
+
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.5.2
+              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-5-2">
+              Anteil der grenzüberschreitenden Wassereinzugsgebiete mit einer operativen Vereinbarung zur Wasserkooperation
+            </a>
+            
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            
+          </div>
+        
+        </div>
+      
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.6
+        </span>
+        Bis 2020 wasserverbundene Ökosysteme schützen und wiederherstellen, darunter Berge, Wälder, Feuchtgebiete, Flüsse, Grundwasserleiter und Seen
+      </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
+        
+
+          
+          
+          
+          
+
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.6.1
+              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-6-1">
+              Veränderung des Umfangs wasserbezogener Ökosysteme im Zeitverlauf
+            </a>
+            
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            
+          </div>
+        
+        </div>
+      
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.a
+        </span>
+        Bis 2030 die internationale Zusammenarbeit und die Unterstützung der Entwicklungsländer beim Kapazitätsaufbau für Aktivitäten und Programme im Bereich der Wasser- und Sanitärversorgung ausbauen, einschließlich der Wassersammlung und -speicherung, Entsalzung, effizienten Wassernutzung, Abwasserbehandlung, Wiederaufbereitungs- und Wiederverwendungstechnologien
+      </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
+        
+
+          
+          
+          
+          
+
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.a.1
+              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-a-1">
+              Umfang der öffentlichen Entwicklungszusammenarbeit (ODA) für Wasser- und Sanitärversorgung, die Teil eines geregelten öffentlichen Haushaltsplans ist
+            </a>
+            
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            
+          </div>
+        
+        </div>
+      
+
+
+      
+
+      <div class="indicator-cards target goal-target col-md-6">
+        <span class="indicator-card-number">
+          <label class="hidden-md hidden-lg">Unterziel</label>
+          6.b
+        </span>
+        Die Mitwirkung lokaler Gemeinwesen an der Verbesserung der Wasserbewirtschaftung und der Sanitärversorgung unterstützen und verstärken
+      </div>
+      <div class="indicator-cards col-md-6 row no-gutters">
+
+        
+
+          
+          
+          
+          
+
+          <div class="col-md-12  goal-indicator">
+            
+            <span class="indicator-card-number">
+              6.b.1
+              
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+            </span>
+            <a href="/sdg-indicators/6-b-1">
+              Anteil der lokalen Verwaltungseinheiten mit etablierten und operativen Strategien und Verfahren zur Beteiligung der Gemeinden am Wasser- und Abwassermanagement
+            </a>
+            
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            
+          </div>
+        
+        </div>
+      
     </div>
   </div>
-
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -924,12 +1036,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220616091322'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220616095000'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220616091322"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220616095000"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
