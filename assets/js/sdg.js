@@ -3415,6 +3415,7 @@ var indicatorView = function (model, options) {
       callback(config, info);
     });
   };
+  console.log("alterChartConfig: ",alterChartConfig);
 
   this.alterTableConfig = function(config, info) {
     // deprecated start
@@ -3705,7 +3706,7 @@ var indicatorView = function (model, options) {
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
     console.log("chrtConfig: ", chartConfig);
-    
+
     window.addEventListener('contrastChange', function(e) {
       var gridColor = that.getGridColor(e.detail);
       var tickColor = that.getTickColor(e.detail);
