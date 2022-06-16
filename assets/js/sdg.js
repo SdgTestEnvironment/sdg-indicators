@@ -3415,7 +3415,7 @@ var indicatorView = function (model, options) {
       callback(config, info);
     });
   };
-  console.log("alterChartConfig: ",alterChartConfig);
+  console.log("alterChartConfig: ", this.alterChartConfig);
 
   this.alterTableConfig = function(config, info) {
     // deprecated start
