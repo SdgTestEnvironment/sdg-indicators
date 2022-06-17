@@ -76,9 +76,5 @@ opensdg.annotationPresets = {
         backgroundColor: 'blue',
         xScaleID: 'x',
         yScaleID: 'y',
-        xMin: 2,
-        xMax: 2,
-        yMin: 15000,
-        yMax: 25000,
     },
 };
