@@ -64,7 +64,7 @@
       {% assign target = group.name | sdg_lookup %}
       <div class="row visible-md-block visible-lg-block">
         <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" Style="display: block; margin-bottom: 0.5rem; font-weight: bold; border-bottom-width: 2px; border-bottom-style: solid; position: relative; padding: 5px 0;">
+          <span class="indicator-card-number">
             {{ target.number }}
           </span>
           <p>
@@ -88,7 +88,7 @@
               {% assign indicator_has_progress = true %}
             {% endif %}
 
-            <div class="row {{ tag_classes }} goal-indicator">
+            <div class="row">
               {% if indicator.placeholder and indicator.placeholder != '' %}
               <span class="indicator-card-number">
                 {{ indicator.number }}
