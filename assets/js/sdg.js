@@ -3584,13 +3584,16 @@ function generateChartLegend(chart) {
         },
     },
     series_break: {
-        mode: 'vertical',
-        borderDash: [2, 2],
-        borderColor: 'orange',
-        label: {
-            position: 'top',
-            content: translations.indicator.annotation_series_break,
-        },
+        adjustScaleRange: true,
+        drawTime: 'afterDatasetsDraw',
+        type: 'line',
+        backgroundColor: 'blue',
+        xScaleID: 'x',
+        yScaleID: 'y',
+        xMin: 2,
+        xMax: 2,
+        yMin: 15000,
+        yMax: 25000,
     },
     error_bar: {
         adjustScaleRange: true,
