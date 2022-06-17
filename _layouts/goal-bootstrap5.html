@@ -65,13 +65,14 @@
       <div class="row visible-md-block visible-lg-block">
         <div class="col indicator-cards target goal-target">
           <span class="indicator-card-number">
-            <label class="hidden-md hidden-lg">{{ page.t.general.target }}</label>
             {{ target.number }}
           </span>
-          {{ target.name }}
+          <span>
+            {{ target.name }}
+          </span>
         </div>
 
-        <div class="indicator-cards col no-gutters">
+        <div class="col indicator-cards no-gutters">
 
           {% for indicator in group.items %}
 
