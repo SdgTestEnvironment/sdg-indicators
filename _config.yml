@@ -33,7 +33,28 @@ create_indicators:
   layout: indicator
 create_goals:
   layout: goal-by-target
-create_pages: true
+
+ccreate_pages:
+  - filename: ''
+    folder: /
+    layout: goals
+    title: ''
+  - filename: ''
+    folder: /goals
+    layout: goals
+    title: ''
+  - filename: ''
+    folder: /reporting-status
+    layout: reportingstatus
+    title: ''
+  - filename: indicators.json
+    folder: /
+    layout: indicator-json
+    title: ''
+  - filename: ''
+    folder: /search
+    layout: search
+    title: ''
 
 
 analytics:
