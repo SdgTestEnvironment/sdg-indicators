@@ -203,7 +203,6 @@ function createPlot(chartInfo) {
         updateHeadlineColor('default', chartConfig);
     }
     console.log('chartConfig!: ', chartConfig);
-    console.log('alterChartConfig!: ', alterChartConfig);
     VIEW._chartInstance = new Chart($(OPTIONS.rootElement).find('canvas'), chartConfig);
     $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
 };
