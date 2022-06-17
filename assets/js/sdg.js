@@ -3585,16 +3585,13 @@ function generateChartLegend(chart) {
         },
     },
     series_break: {
-        adjustScaleRange: true,
-        drawTime: 'afterDatasetsDraw',
-        type: 'line',
-        backgroundColor: 'blue',
-        xScaleID: 'x',
-        yScaleID: 'y',
-        xMin: 2,
-        xMax: 2,
-        yMin: 15000,
-        yMax: 25000,
+        mode: 'vertical',
+        borderDash: [2, 2],
+        borderColor: 'orange',
+        label: {
+            position: 'top',
+            content: translations.indicator.annotation_series_break,
+        },
     },
     error_bar: {
         adjustScaleRange: true,
@@ -3783,11 +3780,11 @@ opensdg.chartTypes.base = function(info) {
             // Now add any more annotation config.
             $.extend(true, annotation, annotationOverrides);
             // Default to horizontal lines.
-            if (!annotation.mode && annotation.type === 'line') {
+            if (!annotation.mode && annotation.type === 'line' && annotation.preset !== 'error_bar') {
                 annotation.mode = 'horizontal';
             }
             // Provide the obscure scaleID properties on user's behalf.
-            if (!annotation.scaleID && annotation.type === 'line') {
+            if (!annotation.scaleID && annotation.type === 'line' && annotation.preset !== 'error_bar') {
                 if (annotation.mode === 'horizontal') {
                     annotation.scaleID = 'y';
                 }
@@ -3828,6 +3825,7 @@ opensdg.chartTypes.base = function(info) {
                     }
                 }
             }
+            console.log("a: ", annotation);
             return annotation;
         });
         if (annotations.length > 0) {
