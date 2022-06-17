@@ -48,7 +48,7 @@
 
 
   <div class="container g-0">
-    <div class="visible-md-block visible-lg-block">
+    <div class="row visible-md-block visible-lg-block">
       <div class="col">
         <h2>{{ page.t.general.targets }}</h2>
       </div>
@@ -57,55 +57,54 @@
       </div>
     </div>
 
-
-    <h2 class="goal-page-heading">{{ page.t.general.targets_and_indicators }}</h2>
-
     {% assign goal_indicators = page.indicators | where: 'goal_number', page.goal.number | group_by: 'target_number' %}
     {% for group in goal_indicators %}
 
 
       {% assign target = group.name | sdg_lookup %}
+      <div class="row visible-md-block visible-lg-block">
+        <div class="col indicator-cards target goal-target">
+          <span class="indicator-card-number">
+            <label class="hidden-md hidden-lg">{{ page.t.general.target }}</label>
+            {{ target.number }}
+          </span>
+          {{ target.name }}
+        </div>
 
-      <div class="indicator-cards target goal-target col">
-        <span class="indicator-card-number">
-          <label class="hidden-md hidden-lg">{{ page.t.general.target }}</label>
-          {{ target.number }}
-        </span>
-        {{ target.name }}
-      </div>
-      <div class="indicator-cards col no-gutters">
+        <div class="indicator-cards col no-gutters">
 
-        {% for indicator in group.items %}
+          {% for indicator in group.items %}
 
-          {% assign tag_classes = "" | split: "," %}
-          {% if indicator.tags %}
-            {% for tag in indicator.tags %}
-              {% assign tag_slug = "indicator-" | append: tag | slugify %}
-              {% assign tag_classes = tag_classes | push: tag_slug %}
-            {% endfor %}
-          {% endif %}
-          {% assign tag_classes = tag_classes | join: " " %}
-          {% if indicator.progress_status and indicator.progress_status != '' %}
-            {% assign indicator_has_progress = true %}
-          {% endif %}
-
-          <div class="row {{ tag_classes }} goal-indicator">
-            {% if indicator.placeholder and indicator.placeholder != '' %}
-            <span class="indicator-card-number">
-              {{ indicator.number }}
-            </span>
-            {{ indicator.placeholder }}
-            {% else %}
-            <span class="indicator-card-number">
-              {{ indicator.number }}
-            </span>
-            <a href="{{ indicator.url }}">
-              {{ indicator.name }}
-            </a>
-            {% include bootstrap5/components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}
+            {% assign tag_classes = "" | split: "," %}
+            {% if indicator.tags %}
+              {% for tag in indicator.tags %}
+                {% assign tag_slug = "indicator-" | append: tag | slugify %}
+                {% assign tag_classes = tag_classes | push: tag_slug %}
+              {% endfor %}
             {% endif %}
+            {% assign tag_classes = tag_classes | join: " " %}
+            {% if indicator.progress_status and indicator.progress_status != '' %}
+              {% assign indicator_has_progress = true %}
+            {% endif %}
+
+            <div class="row {{ tag_classes }} goal-indicator">
+              {% if indicator.placeholder and indicator.placeholder != '' %}
+              <span class="indicator-card-number">
+                {{ indicator.number }}
+              </span>
+              {{ indicator.placeholder }}
+              {% else %}
+              <span class="indicator-card-number">
+                {{ indicator.number }}
+              </span>
+              <a href="{{ indicator.url }}">
+                {{ indicator.name }}
+              </a>
+              {% include bootstrap5/components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}
+              {% endif %}
+            </div>
+          {% endfor %}
           </div>
-        {% endfor %}
         </div>
       {% endfor %}
     </div>
