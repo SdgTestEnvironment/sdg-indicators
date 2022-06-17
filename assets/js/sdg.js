@@ -3586,7 +3586,7 @@ function generateChartLegend(chart) {
     series_break: {
         mode: 'vertical',
         borderDash: [2, 2],
-        borderColor: 'green',
+        borderColor: 'orange',
         label: {
             position: 'top',
             content: translations.indicator.annotation_series_break,
