@@ -98,8 +98,9 @@
               {% else %}
               <span class="indicator-card-number">
                 {{ indicator.number }}
+                {% include bootstrap5/components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}
               </span>
-              <a href="{{ indicator.url }}">
+              <a href="{{ indicator.url }}" style="padding-left: 0px">
                 {{ indicator.name }}
               </a>
               {% endif %}

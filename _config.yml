@@ -34,7 +34,7 @@ create_indicators:
 create_goals:
   layout: goal-by-target
 
-ccreate_pages: true
+create_pages: true
 
 frontpage_goals_grid:
     title: title goes here
