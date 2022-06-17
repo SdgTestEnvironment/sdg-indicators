@@ -49,10 +49,10 @@
 
   <div class="container g-0">
     <div class="visible-md-block visible-lg-block">
-      <div class="col-md-6">
+      <div class="col">
         <h2>{{ page.t.general.targets }}</h2>
       </div>
-      <div class="col-md-6">
+      <div class="col">
         <h2>{{ page.t.general.indicators }}</h2>
       </div>
     </div>
@@ -73,7 +73,7 @@
         </span>
         {{ target.name }}
       </div>
-      <div class="indicator-cards col row no-gutters">
+      <div class="indicator-cards col no-gutters">
 
         {% for indicator in group.items %}
 
@@ -89,7 +89,7 @@
             {% assign indicator_has_progress = true %}
           {% endif %}
 
-          <div class="col {{ tag_classes }} goal-indicator">
+          <div class="row {{ tag_classes }} goal-indicator">
             {% if indicator.placeholder and indicator.placeholder != '' %}
             <span class="indicator-card-number">
               {{ indicator.number }}
@@ -98,7 +98,6 @@
             {% else %}
             <span class="indicator-card-number">
               {{ indicator.number }}
-              {% include components/reportingstatus/reporting-status-label.html indicator=indicator %}
             </span>
             <a href="{{ indicator.url }}">
               {{ indicator.name }}
