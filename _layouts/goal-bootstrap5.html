@@ -63,13 +63,13 @@
 
       {% assign target = group.name | sdg_lookup %}
       <div class="row visible-md-block visible-lg-block">
-        <div class="col indicator-cards target goal-target">
+        <div class="col indicator-cards no-gutters">
           <span class="indicator-card-number">
             {{ target.number }}
           </span>
-          <span>
+          <p>
             {{ target.name }}
-          </span>
+          </p>
         </div>
 
         <div class="col indicator-cards no-gutters">
