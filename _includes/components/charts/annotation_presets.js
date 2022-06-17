@@ -63,7 +63,7 @@ opensdg.annotationPresets = {
     series_break: {
         mode: 'vertical',
         borderDash: [2, 2],
-        borderColor: 'orange',
+        borderColor: '757575',
         label: {
             position: 'top',
             content: translations.indicator.annotation_series_break,
@@ -73,8 +73,11 @@ opensdg.annotationPresets = {
         adjustScaleRange: true,
         drawTime: 'afterDatasetsDraw',
         type: 'line',
-        backgroundColor: 'blue',
+        backgroundColor: '757575',
         xScaleID: 'x',
         yScaleID: 'y',
+        arrowHeads: {
+          enabled: true,
+        }
     },
 };
