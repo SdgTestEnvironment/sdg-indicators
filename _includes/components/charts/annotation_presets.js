@@ -78,6 +78,7 @@ opensdg.annotationPresets = {
         yScaleID: 'y',
         arrowHeads: {
           enabled: true,
+          display: true,
         }
     },
 };
