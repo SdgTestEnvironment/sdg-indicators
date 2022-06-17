@@ -3602,6 +3602,7 @@ function generateChartLegend(chart) {
         yScaleID: 'y',
         arrowHeads: {
           enabled: true,
+          display: true,
         }
     },
 };
