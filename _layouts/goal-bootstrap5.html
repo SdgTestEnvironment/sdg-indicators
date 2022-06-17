@@ -92,6 +92,7 @@
               {% if indicator.placeholder and indicator.placeholder != '' %}
               <span class="indicator-card-number">
                 {{ indicator.number }}
+                {% include bootstrap5/components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}
               </span>
               {{ indicator.placeholder }}
               {% else %}
@@ -101,7 +102,6 @@
               <a href="{{ indicator.url }}">
                 {{ indicator.name }}
               </a>
-              {% include bootstrap5/components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}
               {% endif %}
             </div>
           {% endfor %}
