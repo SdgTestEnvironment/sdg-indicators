@@ -34,28 +34,14 @@ create_indicators:
 create_goals:
   layout: goal-by-target
 
-ccreate_pages:
-  - filename: ''
-    folder: /
-    layout: goals
-    title: ''
-  - filename: ''
-    folder: /goals
-    layout: goals
-    title: ''
-  - filename: ''
-    folder: /reporting-status
-    layout: reportingstatus
-    title: ''
-  - filename: indicators.json
-    folder: /
-    layout: indicator-json
-    title: ''
-  - filename: ''
-    folder: /search
-    layout: search
-    title: ''
+ccreate_pages: true
 
+frontpage_goals_grid:
+    title: title goes here
+    description: description goes here
+
+frontpage_heading: Australian data for Sustainable Development Goal indicators
+frontpage_instructions: Click on each goal for Australian statistics for Sustainable Development Goal global indicators.
 
 analytics:
   ga_prod: ''
