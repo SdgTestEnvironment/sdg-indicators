@@ -3595,7 +3595,7 @@ function generateChartLegend(chart) {
     },
     error_bar: {
         adjustScaleRange: true,
-        borderWidth: 4,
+        borderWidth: 3,
         drawTime: 'afterDatasetsDraw',
         type: 'line',
         borderDash: [2, 2],
@@ -3605,9 +3605,9 @@ function generateChartLegend(chart) {
         arrowHeads: {
             display: true,
             enabled: true,
-            fill:true,
-            length:  2,
-            width: 20,
+            fill: true,
+            length: 80,
+            width: 80,
           },
     },
 };
