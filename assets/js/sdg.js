@@ -3595,6 +3595,7 @@ function generateChartLegend(chart) {
     },
     error_bar: {
         adjustScaleRange: true,
+        borderWidth: 2,
         drawTime: 'afterDatasetsDraw',
         type: 'line',
         borderDash: [2, 2],
