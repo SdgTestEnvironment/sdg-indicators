@@ -3602,13 +3602,6 @@ function generateChartLegend(chart) {
         backgroundColor: '#757575',
         xScaleID: 'x',
         yScaleID: 'y',
-        arrowHeads: {
-            display: true,
-            enabled: true,
-            fill: true,
-            length: 80,
-            width: 80,
-          },
     },
 };
 
