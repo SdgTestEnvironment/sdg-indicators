@@ -71,7 +71,7 @@ opensdg.annotationPresets = {
     },
     error_bar: {
         adjustScaleRange: true,
-        borderWidth: 4,
+        borderWidth: 3,
         drawTime: 'afterDatasetsDraw',
         type: 'line',
         borderDash: [2, 2],
@@ -81,9 +81,9 @@ opensdg.annotationPresets = {
         arrowHeads: {
             display: true,
             enabled: true,
-            fill:true,
-            length:  2,
-            width: 20,
+            fill: true,
+            length: 80,
+            width: 80,
           },
     },
 };
