@@ -29,7 +29,7 @@
   <div class="row justify-content-md-center">
     <div class="col d-grid gap-2">
       <a href="{{ site.baseurl }}/{{ language }}/{{ previous_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn text-nowrap" role="button">
-        <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label d-none d-md-block">{{ page.t.general.prev_goal }}</b>
+        <span><i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label d-none d-md-block">{{ page.t.general.prev_goal }}</b></span>
       </a>
     </div>
 
@@ -41,7 +41,7 @@
 
     <div class="col d-grid gap-2">
       <a href="{{ site.baseurl }}/{{ language }}/{{ next_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn text-nowrap" role="button">
-        <b class="btn-label d-none d-md-block">{{ page.t.general.next_goal }}</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        <span><b class="btn-label d-none d-md-block">{{ page.t.general.next_goal }}</b> <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
       </a>
     </div>
   </div>
