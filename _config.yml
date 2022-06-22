@@ -37,8 +37,8 @@ create_goals:
 create_pages: true
 
 frontpage_goals_grid:
-    title: title goes here
-    description: description goes here
+    title: frontpage.heading
+    description: frontpage.instructions
 
 frontpage_heading: Australian data for Sustainable Development Goal indicators
 frontpage_instructions: Click on each goal for Australian statistics for Sustainable Development Goal global indicators.
