@@ -139,7 +139,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220623102118">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220623105242">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -463,13 +463,17 @@ data-event-label="high"
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;(1) (a) Nationale Rechtsvorschriften, die als relevant für die Verhinderung der Einschleppung invasiver gebietsfremder Arten und deren Bekämpfung angesehen werden&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;(1) (b) Angleichung der Ziele des Nationalen Strategie- und Aktionsplans für biologische Vielfalt (NBSAP) an das Aichi-Biodiversitätsziel 9 des Strategieplans für biologische Vielfalt 2011-2020&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Z_15081_3&quot;},{&quot;field&quot;:&quot;Rechtsvorschrift&quot;,&quot;value&quot;:&quot;Übereinkommen über die biologische Vielfalt&quot;}]"
   data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:1.0}]"
   data-stackeddisaggregation=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;(1) (a) Nationale Rechtsvorschriften, die als relevant für die Verhinderung der Einschleppung invasiver gebietsfremder Arten und deren Bekämpfung angesehen werden&quot;,&quot;(1) (b) Angleichung der Ziele des Nationalen Strategie- und Aktionsplans für biologische Vielfalt (NBSAP) an das Aichi-Biodiversitätsziel 9 des Strategieplans für biologische Vielfalt 2011-2020&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;legislation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Übereinkommen über die biologische Vielfalt&quot;,&quot;Cartagena-Protokoll&quot;,&quot;Internationales Pflanzenschutzübereinkommen&quot;,&quot;Übereinkommen über gesundheitspolizeiliche und pflanzenschutzrechtliche Maßnahmen der Welthandelsorganisation&quot;,&quot;Weltorganisation für Tiergesundheit&quot;,&quot;Übereinkommen über den internationalen Handel mit gefährdeten Arten freilebender Tiere und Pflanzen&quot;,&quot;Ramsar-Konvention&quot;,&quot;Übereinkommen zur Erhaltung wandernder wild lebender Tierarten&quot;,&quot;Welterbekonvention&quot;,&quot;Ballastwasser-Übereinkommen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Rechtsvorschrift&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
+  data-graphstepsize="[{&quot;step&quot;:1.0}]"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -561,8 +565,9 @@ data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
+          ><i class="fa fa-line-chart" aria-hidden="true"></i>
         
-      >Grafik</button>
+      <span class="hidden-xs" style="color:black">Grafik</span></button>
     </li>
     
     <li role="presentation"
@@ -585,8 +590,9 @@ data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
+          ><i class="fa fa-table" aria-hidden="true"></i>
         
-      >Tabelle</button>
+      <span class="hidden-xs" style="color:black">Tabelle</span></button>
     </li>
     
     <li role="presentation"
@@ -610,12 +616,13 @@ data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to embedded item tab"
 
+          ><i class="fa fa-plus-square" aria-hidden="true"></i>
         
-      >Weitere Informationen</button>
+      <span class="hidden-xs" style="color:black">Weitere Informationen</span></button>
     </li>
     
   </ul>
-  
+
     <div class="tab-content data-view">
     
       
@@ -1963,12 +1970,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220623102118'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220623105242'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220623102118"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220623105242"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
