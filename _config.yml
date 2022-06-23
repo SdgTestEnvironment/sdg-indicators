@@ -133,8 +133,6 @@ menu:
             translation_key: menu.united_kingdom
           - path: https://sdg.data.gov/
             translation_key: menu.unites_states
-
-
   - path: /publications/
     translation_key: menu.publications
   - path: https://sustainabledevelopment-deutschland.github.io
