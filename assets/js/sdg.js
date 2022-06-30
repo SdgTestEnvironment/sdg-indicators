@@ -4214,8 +4214,7 @@ function createTable(table, indicatorId, el) {
             'width': '100%'
         });
 
-        currentTable.append('<caption>' + MODEL.chartTitle + '</caption>');
-        currentTable.append('<caption>' + MODEL.chartSubTitle + '</caption>');
+        currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>'+ MODEL.chartSubTitle +'</small></caption>');
 
         var table_head = '<thead><tr>';
 
