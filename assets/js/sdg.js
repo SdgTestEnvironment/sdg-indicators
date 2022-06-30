@@ -2024,6 +2024,19 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
 }
 
 /**
+ * @param {string} currentSubTitle
+ * @param {Array} allSubTitles Objects containing 'unit' and 'title'
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {String} Updated title
+ */
+function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedSeries) {
+  var match = getMatchByUnitSeries(allSubTitles, selectedUnit, selectedSeries);
+  return (match) ? match.subtitle : currentSubTitle;
+}
+
+
+/**
  * @param {string} currentType
  * @param {Array} allTypes Objects containing 'unit', 'series', and 'type'
  * @param {String} selectedUnit
@@ -2676,6 +2689,7 @@ function getTimeSeriesAttributes(rows) {
     getUpdatedFieldItemStates: getUpdatedFieldItemStates,
     fieldItemStatesForView: fieldItemStatesForView,
     getChartTitle: getChartTitle,
+    getChartSubTitle: getChartSubTitle,
     getChartType: getChartType,
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
@@ -2717,6 +2731,8 @@ function getTimeSeriesAttributes(rows) {
   this.shortIndicatorId = options.shortIndicatorId;
   this.chartTitle = options.chartTitle,
   this.chartTitles = options.chartTitles;
+  this.chartSubTitle = options.chartSubTitle,
+  this.chartSubTitles = options.chartSubTitles;
   this.graphType = options.graphType;
   this.graphTypes = options.graphTypes;
   this.measurementUnit = options.measurementUnit;
@@ -2829,6 +2845,10 @@ function getTimeSeriesAttributes(rows) {
 
   this.updateChartTitle = function() {
     this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit, this.selectedSeries);
+  }
+
+  this.updateChartSubTitle = function() {
+    this.chartSubTitle = helpers.getChartSubTitle(this.chartSubTitle, this.chartSubTitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateChartType = function() {
@@ -3009,6 +3029,7 @@ function getTimeSeriesAttributes(rows) {
     }
 
     this.updateChartTitle();
+    this.updateChartSubTitle();
     this.updateChartType();
 
     this.onFieldsStatusUpdated.notify({
@@ -3031,6 +3052,7 @@ function getTimeSeriesAttributes(rows) {
       stackedDisaggregation: this.stackedDisaggregation,
       graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars),
       chartTitle: this.chartTitle,
+      chartSubTitle: this.chartSubTitle,
       chartType: this.graphType,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
@@ -3264,6 +3286,16 @@ function alterChartConfig(config, info) {
 function updateChartTitle(chartTitle) {
     if (typeof chartTitle !== 'undefined') {
         $('.chart-title').text(chartTitle);
+    }
+}
+
+/**
+ * @param {String} chartSubTitle
+ * @return null
+ */
+function updateChartSubTitle(chartSubTitle) {
+    if (typeof chartSubTitle !== 'undefined') {
+        $('.chart-subtitle').text(chartSubTitle);
     }
 }
 
@@ -4140,7 +4172,7 @@ function createTableTargetLines(graphAnnotations) {
         if (!targetLineLabel) {
             targetLineLabel = opensdg.annotationPresets.target_line.label.content;
         }
-        $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + targetLine.value + '</dd>');
+        $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + alterDataDisplay(targetLine.value, targetLine, 'target line') + '</dd>');
     });
     if (targetLines.length === 0) {
         $targetLines.hide();
@@ -4183,13 +4215,14 @@ function createTable(table, indicatorId, el) {
         });
 
         currentTable.append('<caption>' + MODEL.chartTitle + '</caption>');
+        currentTable.append('<caption>' + MODEL.chartSubTitle + '</caption>');
 
         var table_head = '<thead><tr>';
 
         var getHeading = function (heading, index) {
-            var arrows = '<span class="sort"><i class="fa fa-sort-down"></i><i class="fa fa-sort-up"></i></span>';
+            var arrows = '<span class="sort"><i class="fa fa-sort"></i><i class="fa fa-sort-down"></i><i class="fa fa-sort-up"></i></span>';
             var button = '<span tabindex="0" role="button" aria-describedby="column-sort-info">' + translations.t(heading) + '</span>';
-            return (!index) ? button + arrows : arrows + button;
+            return button + arrows;
         };
 
         table.headings.forEach(function (heading, index) {
@@ -4585,6 +4618,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
 
         helpers.createSelectionsTable(args);
         helpers.updateChartTitle(args.chartTitle);
+        helpers.updateChartSubTitle(args.chartSubTitle);
         helpers.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
         helpers.updateUnitElements(args.selectedUnit);
         helpers.updateTimeSeriesAttributes(args.timeSeriesAttributes);
@@ -4796,6 +4830,8 @@ var indicatorInit = function () {
                         shortIndicatorId: domData.id,
                         chartTitle: domData.charttitle,
                         chartTitles: domData.charttitles,
+                        chartSubTitle: domData.chartsubtitle,
+                        chartSubTitles: domData.chartsubtitles,
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
