@@ -71,6 +71,7 @@ var indicatorView = function (model, options) {
     view_obj.createSelectionsTable(args);
 
     view_obj.updateChartTitle(args.chartTitle.replace("<sub>","").replace("</sub>",""));
+    view_obj.updateChartSubTitle(args.chartSubTitle);
     view_obj.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
     view_obj.updateUnitElements(args.selectedUnit);
     view_obj.updateTimeSeriesAttributes(args.timeSeriesAttributes);
@@ -393,6 +394,12 @@ var indicatorView = function (model, options) {
   this.updateChartTitle = function(chartTitle) {
     if (typeof chartTitle !== 'undefined') {
       $('.chart-title').text(chartTitle);
+    }
+  }
+
+  this.updateChartSubTitle = function(chartSubTitle) {
+    if (typeof chartSubTitle !== 'undefined') {
+      $('.chart-subtitle').text(chartSubTitle);
     }
   }
 

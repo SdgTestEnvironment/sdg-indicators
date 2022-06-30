@@ -20,6 +20,16 @@ function updateChartTitle(chartTitle) {
 }
 
 /**
+ * @param {String} chartSubTitle
+ * @return null
+ */
+function updateChartSubTitle(chartSubTitle) {
+    if (typeof chartSubTitle !== 'undefined') {
+        $('.chart-subtitle').text(chartSubTitle);
+    }
+}
+
+/**
  * @param {Array} oldDatasets
  * @param {Array} newDatasets
  * @return null

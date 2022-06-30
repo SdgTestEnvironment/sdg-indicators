@@ -23,6 +23,8 @@ var indicatorModel = function (options) {
   this.shortIndicatorId = options.shortIndicatorId;
   this.chartTitle = options.chartTitle,
   this.chartTitles = options.chartTitles;
+  this.chartSubTitle = options.chartSubTitle,
+  this.chartSubTitles = options.chartSubTitles;
   this.graphType = options.graphType;
   this.graphTypes = options.graphTypes;
   this.measurementUnit = options.measurementUnit;
@@ -135,6 +137,10 @@ var indicatorModel = function (options) {
 
   this.updateChartTitle = function() {
     this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit, this.selectedSeries);
+  }
+
+  this.updateChartSubTitle = function() {
+    this.chartSubTitle = helpers.getChartSubTitle(this.chartSubTitle, this.chartSubTitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateChartType = function() {
@@ -315,6 +321,7 @@ var indicatorModel = function (options) {
     }
 
     this.updateChartTitle();
+    this.updateChartSubTitle();
     this.updateChartType();
 
     this.onFieldsStatusUpdated.notify({
@@ -337,6 +344,7 @@ var indicatorModel = function (options) {
       stackedDisaggregation: this.stackedDisaggregation,
       graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars),
       chartTitle: this.chartTitle,
+      chartSubTitle: this.chartSubTitle,
       chartType: this.graphType,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),

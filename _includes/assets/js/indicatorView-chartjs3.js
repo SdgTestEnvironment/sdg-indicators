@@ -71,6 +71,7 @@ var indicatorView = function (model, options) {
 
         helpers.createSelectionsTable(args);
         helpers.updateChartTitle(args.chartTitle);
+        helpers.updateChartSubTitle(args.chartSubTitle);
         helpers.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
         helpers.updateUnitElements(args.selectedUnit);
         helpers.updateTimeSeriesAttributes(args.timeSeriesAttributes);
