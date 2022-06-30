@@ -4533,6 +4533,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     alterTableConfig: alterTableConfig,
     alterDataDisplay: alterDataDisplay,
     updateChartTitle: updateChartTitle,
+    updateChartSubTitle: updateChartSubTitle,
     updateWithSelectedFields: updateWithSelectedFields,
     updateSeriesAndUnitElements: updateSeriesAndUnitElements,
     updateUnitElements: updateUnitElements,
