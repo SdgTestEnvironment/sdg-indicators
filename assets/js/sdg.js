@@ -2013,7 +2013,7 @@ function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
 
 /**
  * @param {string} currentTitle
- * @param {Array} allTitles Objects containing 'unit' and 'title'
+ * @param {Array} allTitles
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {String} Updated title
@@ -2025,10 +2025,10 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
 
 /**
  * @param {string} currentSubTitle
- * @param {Array} allSubTitles Objects containing 'unit' and 'title'
+ * @param {Array} allSubTitles
  * @param {String} selectedUnit
  * @param {String} selectedSeries
- * @return {String} Updated title
+ * @return {String} Updated subtitle
  */
 function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedSeries) {
   var match = getMatchByUnitSeries(allSubTitles, selectedUnit, selectedSeries);
@@ -2056,7 +2056,7 @@ function getChartType(currentType, allTypes, selectedUnit, selectedSeries, chart
 }
 
 /**
- * @param {Array} graphLimits Objects containing 'unit' and 'title'
+ * @param {Array} graphLimits
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {Object|false} Graph limit object, if any
@@ -2466,7 +2466,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
 }
 
   /**
-   * @param {Array} graphStepsize Objects containing 'unit' and 'title'
+   * @param {Array} graphStepsize
    * @param {String} selectedUnit
    * @param {String} selectedSeries
    */
@@ -2731,7 +2731,7 @@ function getTimeSeriesAttributes(rows) {
   this.shortIndicatorId = options.shortIndicatorId;
   this.chartTitle = options.chartTitle,
   this.chartTitles = options.chartTitles;
-  this.chartSubTitle = options.chartSubTitle,
+  this.chartSubTitle = options.chartSubTitle;
   this.chartSubTitles = options.chartSubTitles;
   this.graphType = options.graphType;
   this.graphTypes = options.graphTypes;
