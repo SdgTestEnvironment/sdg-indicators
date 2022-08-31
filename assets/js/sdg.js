@@ -4373,7 +4373,7 @@ function alterDataDisplay(value, info, context) {
     }
 
     // set character to seperate thousands
-    altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "-");
+    altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ");
 
     return altered;
 }
