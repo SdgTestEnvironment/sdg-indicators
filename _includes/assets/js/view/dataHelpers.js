@@ -33,7 +33,13 @@ function alterDataDisplay(value, info, context) {
     }
 
     // set character to seperate thousands
-    altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, " ");
+    if (page.language == 'de'){
+      altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "+");
+    }
+    else{
+      altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "-");
+    }
+
 
     return altered;
 }
