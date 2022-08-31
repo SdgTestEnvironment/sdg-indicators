@@ -4371,6 +4371,10 @@ function alterDataDisplay(value, info, context) {
     if (OPTIONS.decimalSeparator) {
         altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
     }
+
+    // set character to seperate thousands
+    altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "-");
+
     return altered;
 }
 
