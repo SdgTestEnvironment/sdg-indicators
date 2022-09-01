@@ -10,20 +10,20 @@
   {% endif %}
 </div>
 
-<div id="main-content" class="container goal-indicators goal-{{ page.sdg_goal }} goal-by-target" role="main">
+<div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
 
 
   {% include components/goal/goal-content.html content=content %}
 
-  {% if page.sdg_goal == '1' %}
+  {% if page.goal.number == '1' %}
     {% assign next_goal = '2' %}
     {% assign previous_goal = '17' %}
-  {% elsif page.sdg_goal == '17' %}
+  {% elsif page.goal.number == '17' %}
     {% assign next_goal = '1' %}
     {% assign previous_goal = '16' %}
   {% else %}
-    {% assign previous_goal = page.sdg_goal | minus: 1 %}
-    {% assign next_goal = page.sdg_goal | plus: 1 %}
+    {% assign previous_goal = page.goal.number | minus: 1 %}
+    {% assign next_goal = page.goal.number | plus: 1 %}
   {% endif %}
 
   <div class="container">
@@ -36,7 +36,7 @@
 
       <div class="col-md-auto">
         <a href="https://sustainabledevelopment-deutschland.github.io/{{ language }}/{{ page.sdg_goal }}" class="btn btn-primary btn-block goal-{{ page.sdg_goal }} navigation-btn" title="{{ t.general.link_sdg_goal }}" role="button">
-          <b class="btn-label d-none d-md-block">{{ page.t.general.target_link_dns }} {{ page.t.general.goal }} {{ page.sdg_goal }} </b><b class="btn-label d-block d-md-none">{{ page.t.general.goal }} {{ page.sdg_goal }} {{ page.t.general.national }}</b>
+          <b class="btn-label d-none d-md-block">{{ page.t.general.target_link_dns }} {{ page.t.general.goal }} {{ page.goal.number }} </b><b class="btn-label d-block d-md-none">{{ page.t.general.goal }} {{ page.sdg_goal }} {{ page.t.general.national }}</b>
         </a>
       </div>
 
