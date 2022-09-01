@@ -63,13 +63,15 @@
     {% for group in goal_indicators %}
       {% assign target = group.name | sdg_lookup %}
       <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            {{ target.number }}
-          </span>
-          <p>
-            {{ target.name }}
-          </p>
+        <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+          <div class="col indicator-cards no-gutters">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              {{ target.number }}
+            </span>
+            <p>
+              {{ target.name }}
+            </p>
+          </div>
         </div>
 
         <div class="col indicator-cards no-gutters">
