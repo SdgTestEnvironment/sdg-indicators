@@ -29,7 +29,7 @@
  }
 
 
- 
+
 //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
 #mapHead {
   display: block;
@@ -419,4 +419,49 @@ body.contrast-high {
 	}
 	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
 	.dropdown-menu > li:hover > .submenu{ display: block; }
+}
+
+
+//---edit head Banner
+$goal-colors : #E52B3D #DDA63A #4C9F38 #C42130 #FF3E24 #28BCE1 #FCC30B #A21942 #FD6925 #DD1367 #FD9C27 #BF8B2E #417D46 #0A96D8 #57BE2F #00689C #1F4A6A;
+@for $i from 1 through length($goal-colors) {
+  $c: nth($goal-colors, $i);
+  $dark-c: darken($c, 10%);
+  .goal-#{$i} {
+    &.heading {
+      background-color: white;//$c;
+      border-bottom: 15px solid $c;
+      border-top: 15px solid $c;//$dark-c;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    &.underline{
+      height: 5px;
+      border-top: 5px solid $dark-c;
+    }
+    &.titles{
+      color: $dark-c;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    &.heading.contrast-high {
+        background: black;
+        a {
+          color: yellow;
+        }
+    }
+    &.goal-indicators {
+      div {
+        span {
+          border-color: $dark-c;
+          color: $dark-c;
+        }
+      }
+    }
+  }
+  .goal-tiles #goal-#{$i} {
+    &:hover {
+      background-color: $c;
+    }
+  }
 }
