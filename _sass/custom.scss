@@ -1,20 +1,19 @@
-.indicator-card-number {
+.breadcrumb{
+  margin-bottom: 0px;
+  padding-top: 10px;
+}
+
+.indicator-card-number{
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+  font-weight: bold;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  font-weight: bold;
+  position: relative;
+  padding: 5px 0;
 }
 
-.chart-title {
-  //margin-left: 20px;
- text-align: center;
- margin-bottom: 1.0rem;
-}
-
-.chart-subtitle {
-  //margin-left: 20px;
- text-align: center;
- color: #777
-}
 
 /**
  * custom.scss
@@ -23,65 +22,24 @@
  * a similarly named file for custom styles.
  */
 
- span.small {
-   font-size: 10px;
-   opacity: 0.5;
- }
-
-
- //---edit head Banner
- $goal-colors : #E52B3D #DDA63A #4C9F38 #C42130 #FF3E24 #28BCE1 #FCC30B #A21942 #FD6925 #DD1367 #FD9C27 #BF8B2E #417D46 #0A96D8 #57BE2F #00689C #1F4A6A;
- @for $i from 1 through length($goal-colors) {
-   $c: nth($goal-colors, $i);
-   $dark-c: darken($c, 10%);
-   $light-c: lighten($c, 10%);
-   .goal-#{$i} {
-     &.heading {
-       background-color: $c;
-       border-bottom: 5px solid $light-c;
-       border-top: 5px solid $dark-c;
-       padding-top: 0px;
-       padding-bottom: 0px;
-     }
-     &.underline{
-       height: 5px;
-       border-top: 5px solid $dark-c;
-     }
-     &.titles{
-       color: white;
-       padding-top: 0px;
-       padding-bottom: 0px;
-     }
-     &.heading.contrast-high {
-         background: black;
-         a {
-           color: yellow;
-         }
-     }
-     &.goal-indicators {
-       div {
-         span {
-           border-color: $dark-c;
-           color: $dark-c;
-         }
-       }
-     }
-   }
-   .goal-tiles #goal-#{$i} {
-     &:hover {
-       background-color: $c;
-     }
-   }
- }
-
-
-
 /*#2.1 Navigation Buttons */
  @for $i from 1 through length($goal-banner-backgroundColors) {
    $background-c: nth($goal-banner-backgroundColors, $i);
    .goal-#{$i} {
      &.goal-banner {
        background-color: $background-c;
+     }
+     &.sup-goal-banner {
+       height: 5px;
+       background-color: lighten($background-c,10%);
+       padding-top: 0px;
+       padding-bottom: 0px;
+     }
+     &.sub-goal-banner {
+       height: 5px;
+       background-color: darken($background-c,10%);
+       padding-top: 0px;
+       padding-bottom: 0px;
      }
      &.navigation-btn {
        background-color: $background-c;
@@ -156,7 +114,8 @@ body{
 .status {
   display: inline-block;
   //margin-right: 3px;
-  //padding: 2px 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 3px;
 
   //width: 40px;
@@ -172,321 +131,103 @@ body{
 }
 
 
-//---delete when open-sdg PR 1016 is merged---
-.btn-group.menu-dropdown {
-  .dropdown-toggle {
-    margin: 0 0 2px 15px;
-    padding: 2px;
-    border: none;
-    border-radius: 0;
-    font-size: 16px;
-    border-bottom: 2px solid transparent;
-    color: $menu-link-color;
-    &:hover {
-      background: none;
-      border-bottom: 2px solid $menu-link-borderBottomColor-hover;
-    }
-  }
-  .dropdown-menu {
-    border-radius: 0;
-    margin-left: 15px;
-    a {
-      color: $menu-link-color;
-    }
-    .active {
-      a {
-        background: none;
-        color: $menu-link-color;
-        &:hover {
-          background: $menu-dropdownLink-backgroundColor-hover;
-        }
-      }
-    }
-  }
-}
 
-
-body.contrast-high {
-  .navbar {
-    #menu, #menu-mobile {
-      li {
-        a {
-          color: $color-light-highContrast;
-          &:hover, &:focus {
-            color: $color-highlight-highContrast;
-          }
-        }
-      }
-      li.active {
-        a {
-          color: $color-highlight-highContrast;
-          border-color: $color-highlight-highContrast;
-          &:hover {
-            color: $color-highlight-highContrast;
-          }
-          &:focus {
-            color: $color-highlight-highContrast;
-          }
-        }
-      }
-    }
-    #menu-mobile {
-      li {
-        a {
-          background-color: $color-dark-highContrast;
-        }
-      }
-    }
-    #search, #search-mobile {
-      input, button {
-        color: $color-dark-highContrast;
-      }
-    }
-    .top-level {
-      > li.active {
-        button {
-          color: $color-dark-highContrast;
-        }
-      }
-    }
-
-    #menu {
-      .btn-group.menu-dropdown {
-        .dropdown-toggle {
-          color: $color-light-highContrast !important;
-          background: $color-dark-highContrast !important;
-          &:hover {
-            color: $color-highlight-highContrast !important;
-          }
-          &:focus {
-            background: $focusBackgroundColor-highContrast !important;
-            color: $focusColor-highContrast !important;
-          }
-        }
-        .dropdown-menu {
-          li {
-            a {
-              color: $color-dark-highContrast;
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
 //---
-.chart-subtitle {
-  margin-left: 20px;
+.mytablestyle {
+  border-collapse: collapse;
+
+   > table, td, th {
+        border: 1px solid black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        }
+        td{
+          vertical-align: top;
+          text-align: left;
+        }
 }
 
 
-
-
-
-
-
-
-//--Copy of reportingstaus layout to use for status
-
-.layout-status_summary {
-    .reporting-status-description {
-        margin-bottom: 25px;
+//-----From sass/layouts/_indicator Line 294
+// ---To avoid a square in headline legend
+#legend {
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    > li {
+      font-size: 13px;
+      list-style-type: none;
+      display: inline-block;
+      color: $indicator-legendSwatch-fillColor;
+      padding: 5px;
     }
+    .swatch {
+      display: inline-block;
+      width: 45px;
+      height: 15px;
+      margin-right: 3px;
 
-    #main-content {
-        .statuses {
-            strong {
-                font-weight: normal;
-            }
-            > div {
-                display: inline-block;
-                margin-bottom: 5px;
-                margin-right: 10px;
-
-                .status {
-                    @include status;
-                    display: inline-block;
-                    margin-right: 3px;
-                    padding: 2px 5px;
-                    border-radius: 4px;
-
-                    width: 40px;
-                    text-align: center;
-                    font-size: $fontSize;
-
-                    .status-inner {
-                        padding: 0 2px;
-                        border-radius: 5px;
-                    }
-                }
-            }
-        }
-        .value {
-            color: $text-color;
-            font-weight: bold;
-            margin-left: 3px;
-        }
-        .goal-stats {
-            @include preserveOriginalColors;
-            border: 1px solid $color-dark;
-            font-size: 0;
-            margin-top: 10px;
-            & span {
-                display: inline-block;
-                height: 10px;
-                font-weight: bold;
-            }
-            .notapplicable {
-                background-color: $status-backgroundColor-notapplicable;
-                background: $status-backgroundColor-notapplicable;
-            }
-            .notstarted {
-                background-color: $status-backgroundColor-notstarted;
-                background: $status-backgroundColor-notstarted;
-            }
-            .inprogress {
-                background-color: $status-backgroundColor-inprogress;
-                background: $status-backgroundColor-inprogress;
-            }
-            .complete {
-                background-color: $status-backgroundColor-complete;
-                background: $status-backgroundColor-complete;
-            }
-        }
-        .divider {
-            height: 15px;
-        }
-        .goal {
-            clear: left;
-            margin-bottom: 4px;
-            padding-bottom: 4px;
-            border-bottom: 10px solid $horizontalRule-color;
-            .total {
-                line-height: 1.2;
-                font-size: $fontSize;
-                width: auto;
-                padding-left: 4px;
-                padding-right: 4px;
-                text-align: center;
-                display: inline-block;
-                margin-bottom: 10px;
-                border-radius: 4px;
-                border: 1px solid $horizontalRule-color;
-                @media screen and (min-width: 520px) {
-                    margin-left: 10px;
-                }
-            }
-        }
-        .frame {
-            width: 115px;
-            float: left;
-            min-height: 1px;
-            > a:focus {
-                outline: 6px $focusOutlineColor solid !important;
-            }
-        }
-        .details {
-            width: calc(100% - 125px);
-            float: left;
-            h2 {
-                margin-top: 0;
-                @media screen and (min-width: 520px) {
-                    display: inline-block;
-                }
-            }
-            h3 {
-                margin-top: 10px;
-                @media screen and (min-width: 520px) {
-                    display: inline-block;
-                }
-                @media only screen and (max-width: 720px) {
-                    margin-top: 3px;
-                }
-                @media only screen and (max-width: 520px) {
-                    margin-bottom: 3px;
-                }
-                line-height: 1.2;
-            }
-        }
-        [data-extra-field] {
-            .details {
-                width: 100%;
-            }
-        }
-        .goal-overall {
-            margin-bottom: 20px;
-
-            .details {
-                width: 100%;
-            }
-        }
+      &.dashed {
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==');
+        background-repeat: repeat;
+        background-position: -5px 0;
+      }
     }
+    &.legend-for-line-chart {
+      .swatch {
+        height: 3px;
+        position: relative;
+        .swatch-inner {
+          position: absolute;
 
-    #main-content .reporting-status-item {
-        margin-bottom: 20px;
-    }
-
-    &.contrast-high {
-        #main-content {
-            .goal-tiles {
-                img {
-                    background-color: black !important;
-                }
-            }
-
-            .goal-stats {
-                border: 1px solid $color-light-highContrast !important;
-                .notapplicable {
-                    background-color: $status-backgroundColor-notapplicable-highContrast;
-                    background: $status-backgroundColor-notapplicable-highContrast;
-                }
-                .notstarted {
-                    background-color: $status-backgroundColor-notstarted-highContrast;
-                    background: $status-backgroundColor-notstarted-highContrast;
-                }
-                .inprogress {
-                    background-color: $status-backgroundColor-inprogress-highContrast;
-                    background: $status-backgroundColor-inprogress-highContrast;
-                }
-                .complete {
-                    background-color: $status-backgroundColor-complete-highContrast;
-                    background: $status-backgroundColor-complete-highContrast;
-                }
-            }
-
-            .statuses {
-                strong {
-                    color: $color-light-highContrast;
-                }
-                .value {
-                    color: $color-light-highContrast !important;
-                }
-                .status {
-                    @include statusHighContrast;
-                    border: none !important;
-                    &.notstarted {
-                        border: $status-border-notstarted-highContrast !important;
-                    }
-                }
-            }
+          width: 11px;
+          height: 11px;
+          display: inline-block;
+          top: -4px;
+          left: 17px;
+          border-radius: 10px;
         }
+        &.headline {
+          height: 6px;
+          .swatch-inner {
+            top: -3px;
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+
+          }
+        }
+      }
     }
+  }
+
+
+
+//--- recenter chart title 25.8.21
+.chart-title {
+  //margin-left: 20px;
+ text-align: center
 }
 
 
-@media all and (min-width: 992px) {
-	.dropdown-menu li{ position: relative; 	}
-	.nav-item .submenu{
-		display: none;
-		position: absolute;
-		left:100%; top:-7px;
-	}
-	.nav-item .submenu-left{
-		right:100%; left:auto;
-	}
-	.dropdown-menu > li:hover{ background-color: #f1f1f1 }
-	.dropdown-menu > li:hover > .submenu{ display: block; }
+// for multiple levels of dropdowns
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  margin-left: 0px;
+}
+
+.dropdown-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+    margin-left: 0px;
 }
