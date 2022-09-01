@@ -28,6 +28,7 @@
   data-graphannotations="{{ page.indicator.graph_annotations | jsonify | xml_escape }}"
   data-graphtargetlines="{{ page.indicator.graph_target_lines | jsonify | xml_escape }}"
   data-graphseriesbreaks="{{ page.indicator.graph_series_breaks | jsonify | xml_escape }}"
+  data-grapherrorbars="{{ page.indicator.graph_error_bars | jsonify | xml_escape }}"
   data-indicatordownloads="{{ site.data[page.language].indicator_downloads[page.indicator.number] | jsonify | xml_escape }}"
   data-dataschema="{{ datapackage_resource.schema | jsonify | xml_escape }}"
   data-compositebreakdownlabel="{{ page.indicator.composite_breakdown_label }}"
