@@ -2520,18 +2520,19 @@ body.contrast-high #search-bar-on-page button:hover {
 body.contrast-high.layout-search form input, body.contrast-high.layout-search form label {
   color: black; }
 
+.breadcrumb {
+  margin-bottom: 0px;
+  padding-top: 10px; }
+
 .indicator-card-number {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-top: 0rem;
+  font-weight: bold;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  font-weight: bold; }
-
-.chart-title {
-  text-align: center;
-  margin-bottom: 1.0rem; }
-
-.chart-subtitle {
-  text-align: center;
-  color: #777; }
+  position: relative;
+  padding: 5px 0; }
 
 /**
  * custom.scss
@@ -2539,421 +2540,19 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
  * This file left blank intentionally. Implementations of Open SDG can use
  * a similarly named file for custom styles.
  */
-span.small {
-  font-size: 10px;
-  opacity: 0.5; }
-
-.goal-1.heading {
-  background-color: #E52B3D;
-  border-bottom: 5px solid #eb5867;
-  border-top: 5px solid #c51829;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-1.underline {
-  height: 5px;
-  border-top: 5px solid #c51829; }
-.goal-1.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-1.heading.contrast-high {
-  background: black; }
-  .goal-1.heading.contrast-high a {
-    color: yellow; }
-.goal-1.goal-indicators div span {
-  border-color: #c51829;
-  color: #c51829; }
-
-.goal-tiles #goal-1:hover {
-  background-color: #E52B3D; }
-
-.goal-2.heading {
-  background-color: #DDA63A;
-  border-bottom: 5px solid #e5ba65;
-  border-top: 5px solid #c28c22;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-2.underline {
-  height: 5px;
-  border-top: 5px solid #c28c22; }
-.goal-2.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-2.heading.contrast-high {
-  background: black; }
-  .goal-2.heading.contrast-high a {
-    color: yellow; }
-.goal-2.goal-indicators div span {
-  border-color: #c28c22;
-  color: #c28c22; }
-
-.goal-tiles #goal-2:hover {
-  background-color: #DDA63A; }
-
-.goal-3.heading {
-  background-color: #4C9F38;
-  border-bottom: 5px solid #61bf4b;
-  border-top: 5px solid #3a792b;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-3.underline {
-  height: 5px;
-  border-top: 5px solid #3a792b; }
-.goal-3.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-3.heading.contrast-high {
-  background: black; }
-  .goal-3.heading.contrast-high a {
-    color: yellow; }
-.goal-3.goal-indicators div span {
-  border-color: #3a792b;
-  color: #3a792b; }
-
-.goal-tiles #goal-3:hover {
-  background-color: #4C9F38; }
-
-.goal-4.heading {
-  background-color: #C42130;
-  border-bottom: 5px solid #de3a49;
-  border-top: 5px solid #981a25;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-4.underline {
-  height: 5px;
-  border-top: 5px solid #981a25; }
-.goal-4.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-4.heading.contrast-high {
-  background: black; }
-  .goal-4.heading.contrast-high a {
-    color: yellow; }
-.goal-4.goal-indicators div span {
-  border-color: #981a25;
-  color: #981a25; }
-
-.goal-tiles #goal-4:hover {
-  background-color: #C42130; }
-
-.goal-5.heading {
-  background-color: #FF3E24;
-  border-bottom: 5px solid #ff6b57;
-  border-top: 5px solid #f01c00;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-5.underline {
-  height: 5px;
-  border-top: 5px solid #f01c00; }
-.goal-5.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-5.heading.contrast-high {
-  background: black; }
-  .goal-5.heading.contrast-high a {
-    color: yellow; }
-.goal-5.goal-indicators div span {
-  border-color: #f01c00;
-  color: #f01c00; }
-
-.goal-tiles #goal-5:hover {
-  background-color: #FF3E24; }
-
-.goal-6.heading {
-  background-color: #28BCE1;
-  border-bottom: 5px solid #55cae7;
-  border-top: 5px solid #1a9bbc;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-6.underline {
-  height: 5px;
-  border-top: 5px solid #1a9bbc; }
-.goal-6.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-6.heading.contrast-high {
-  background: black; }
-  .goal-6.heading.contrast-high a {
-    color: yellow; }
-.goal-6.goal-indicators div span {
-  border-color: #1a9bbc;
-  color: #1a9bbc; }
-
-.goal-tiles #goal-6:hover {
-  background-color: #28BCE1; }
-
-.goal-7.heading {
-  background-color: #FCC30B;
-  border-bottom: 5px solid #fdcf3d;
-  border-top: 5px solid #d1a103;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-7.underline {
-  height: 5px;
-  border-top: 5px solid #d1a103; }
-.goal-7.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-7.heading.contrast-high {
-  background: black; }
-  .goal-7.heading.contrast-high a {
-    color: yellow; }
-.goal-7.goal-indicators div span {
-  border-color: #d1a103;
-  color: #d1a103; }
-
-.goal-tiles #goal-7:hover {
-  background-color: #FCC30B; }
-
-.goal-8.heading {
-  background-color: #A21942;
-  border-bottom: 5px solid #ce2054;
-  border-top: 5px solid #761230;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-8.underline {
-  height: 5px;
-  border-top: 5px solid #761230; }
-.goal-8.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-8.heading.contrast-high {
-  background: black; }
-  .goal-8.heading.contrast-high a {
-    color: yellow; }
-.goal-8.goal-indicators div span {
-  border-color: #761230;
-  color: #761230; }
-
-.goal-tiles #goal-8:hover {
-  background-color: #A21942; }
-
-.goal-9.heading {
-  background-color: #FD6925;
-  border-bottom: 5px solid #fd8c58;
-  border-top: 5px solid #ed4c02;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-9.underline {
-  height: 5px;
-  border-top: 5px solid #ed4c02; }
-.goal-9.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-9.heading.contrast-high {
-  background: black; }
-  .goal-9.heading.contrast-high a {
-    color: yellow; }
-.goal-9.goal-indicators div span {
-  border-color: #ed4c02;
-  color: #ed4c02; }
-
-.goal-tiles #goal-9:hover {
-  background-color: #FD6925; }
-
-.goal-10.heading {
-  background-color: #DD1367;
-  border-bottom: 5px solid #ee3582;
-  border-top: 5px solid #ae0f51;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-10.underline {
-  height: 5px;
-  border-top: 5px solid #ae0f51; }
-.goal-10.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-10.heading.contrast-high {
-  background: black; }
-  .goal-10.heading.contrast-high a {
-    color: yellow; }
-.goal-10.goal-indicators div span {
-  border-color: #ae0f51;
-  color: #ae0f51; }
-
-.goal-tiles #goal-10:hover {
-  background-color: #DD1367; }
-
-.goal-11.heading {
-  background-color: #FD9C27;
-  border-bottom: 5px solid #fdb35a;
-  border-top: 5px solid #ef8402;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-11.underline {
-  height: 5px;
-  border-top: 5px solid #ef8402; }
-.goal-11.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-11.heading.contrast-high {
-  background: black; }
-  .goal-11.heading.contrast-high a {
-    color: yellow; }
-.goal-11.goal-indicators div span {
-  border-color: #ef8402;
-  color: #ef8402; }
-
-.goal-tiles #goal-11:hover {
-  background-color: #FD9C27; }
-
-.goal-12.heading {
-  background-color: #BF8B2E;
-  border-bottom: 5px solid #d4a34c;
-  border-top: 5px solid #966d24;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-12.underline {
-  height: 5px;
-  border-top: 5px solid #966d24; }
-.goal-12.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-12.heading.contrast-high {
-  background: black; }
-  .goal-12.heading.contrast-high a {
-    color: yellow; }
-.goal-12.goal-indicators div span {
-  border-color: #966d24;
-  color: #966d24; }
-
-.goal-tiles #goal-12:hover {
-  background-color: #BF8B2E; }
-
-.goal-13.heading {
-  background-color: #417D46;
-  border-bottom: 5px solid #529f59;
-  border-top: 5px solid #305b33;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-13.underline {
-  height: 5px;
-  border-top: 5px solid #305b33; }
-.goal-13.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-13.heading.contrast-high {
-  background: black; }
-  .goal-13.heading.contrast-high a {
-    color: yellow; }
-.goal-13.goal-indicators div span {
-  border-color: #305b33;
-  color: #305b33; }
-
-.goal-tiles #goal-13:hover {
-  background-color: #417D46; }
-
-.goal-14.heading {
-  background-color: #0A96D8;
-  border-bottom: 5px solid #20b1f5;
-  border-top: 5px solid #0874a7;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-14.underline {
-  height: 5px;
-  border-top: 5px solid #0874a7; }
-.goal-14.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-14.heading.contrast-high {
-  background: black; }
-  .goal-14.heading.contrast-high a {
-    color: yellow; }
-.goal-14.goal-indicators div span {
-  border-color: #0874a7;
-  color: #0874a7; }
-
-.goal-tiles #goal-14:hover {
-  background-color: #0A96D8; }
-
-.goal-15.heading {
-  background-color: #57BE2F;
-  border-bottom: 5px solid #72d34d;
-  border-top: 5px solid #449525;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-15.underline {
-  height: 5px;
-  border-top: 5px solid #449525; }
-.goal-15.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-15.heading.contrast-high {
-  background: black; }
-  .goal-15.heading.contrast-high a {
-    color: yellow; }
-.goal-15.goal-indicators div span {
-  border-color: #449525;
-  color: #449525; }
-
-.goal-tiles #goal-15:hover {
-  background-color: #57BE2F; }
-
-.goal-16.heading {
-  background-color: #00689C;
-  border-bottom: 5px solid #008acf;
-  border-top: 5px solid #004669;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-16.underline {
-  height: 5px;
-  border-top: 5px solid #004669; }
-.goal-16.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-16.heading.contrast-high {
-  background: black; }
-  .goal-16.heading.contrast-high a {
-    color: yellow; }
-.goal-16.goal-indicators div span {
-  border-color: #004669;
-  color: #004669; }
-
-.goal-tiles #goal-16:hover {
-  background-color: #00689C; }
-
-.goal-17.heading {
-  background-color: #1F4A6A;
-  border-bottom: 5px solid #2b6691;
-  border-top: 5px solid #132e43;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-17.underline {
-  height: 5px;
-  border-top: 5px solid #132e43; }
-.goal-17.titles {
-  color: white;
-  padding-top: 0px;
-  padding-bottom: 0px; }
-.goal-17.heading.contrast-high {
-  background: black; }
-  .goal-17.heading.contrast-high a {
-    color: yellow; }
-.goal-17.goal-indicators div span {
-  border-color: #132e43;
-  color: #132e43; }
-
-.goal-tiles #goal-17:hover {
-  background-color: #1F4A6A; }
-
 /*#2.1 Navigation Buttons */
 .goal-1.goal-banner {
   background-color: #E52B3D; }
+.goal-1.sup-goal-banner {
+  height: 5px;
+  background-color: #eb5867;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-1.sub-goal-banner {
+  height: 5px;
+  background-color: #c51829;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-1.navigation-btn {
   background-color: #E52B3D;
   color: white;
@@ -2968,6 +2567,16 @@ span.small {
 
 .goal-2.goal-banner {
   background-color: #DDA63A; }
+.goal-2.sup-goal-banner {
+  height: 5px;
+  background-color: #e5ba65;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-2.sub-goal-banner {
+  height: 5px;
+  background-color: #c28c22;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-2.navigation-btn {
   background-color: #DDA63A;
   color: white;
@@ -2982,6 +2591,16 @@ span.small {
 
 .goal-3.goal-banner {
   background-color: #4C9F38; }
+.goal-3.sup-goal-banner {
+  height: 5px;
+  background-color: #61bf4b;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-3.sub-goal-banner {
+  height: 5px;
+  background-color: #3a792b;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-3.navigation-btn {
   background-color: #4C9F38;
   color: white;
@@ -2996,6 +2615,16 @@ span.small {
 
 .goal-4.goal-banner {
   background-color: #C42130; }
+.goal-4.sup-goal-banner {
+  height: 5px;
+  background-color: #de3a49;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-4.sub-goal-banner {
+  height: 5px;
+  background-color: #981a25;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-4.navigation-btn {
   background-color: #C42130;
   color: white;
@@ -3010,6 +2639,16 @@ span.small {
 
 .goal-5.goal-banner {
   background-color: #FF3E24; }
+.goal-5.sup-goal-banner {
+  height: 5px;
+  background-color: #ff6b57;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-5.sub-goal-banner {
+  height: 5px;
+  background-color: #f01c00;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-5.navigation-btn {
   background-color: #FF3E24;
   color: white;
@@ -3024,6 +2663,16 @@ span.small {
 
 .goal-6.goal-banner {
   background-color: #28BCE1; }
+.goal-6.sup-goal-banner {
+  height: 5px;
+  background-color: #55cae7;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-6.sub-goal-banner {
+  height: 5px;
+  background-color: #1a9bbc;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-6.navigation-btn {
   background-color: #28BCE1;
   color: white;
@@ -3038,6 +2687,16 @@ span.small {
 
 .goal-7.goal-banner {
   background-color: #FCC30B; }
+.goal-7.sup-goal-banner {
+  height: 5px;
+  background-color: #fdcf3d;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-7.sub-goal-banner {
+  height: 5px;
+  background-color: #d1a103;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-7.navigation-btn {
   background-color: #FCC30B;
   color: white;
@@ -3052,6 +2711,16 @@ span.small {
 
 .goal-8.goal-banner {
   background-color: #A21942; }
+.goal-8.sup-goal-banner {
+  height: 5px;
+  background-color: #ce2054;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-8.sub-goal-banner {
+  height: 5px;
+  background-color: #761230;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-8.navigation-btn {
   background-color: #A21942;
   color: white;
@@ -3066,6 +2735,16 @@ span.small {
 
 .goal-9.goal-banner {
   background-color: #FD6925; }
+.goal-9.sup-goal-banner {
+  height: 5px;
+  background-color: #fd8c58;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-9.sub-goal-banner {
+  height: 5px;
+  background-color: #ed4c02;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-9.navigation-btn {
   background-color: #FD6925;
   color: white;
@@ -3080,6 +2759,16 @@ span.small {
 
 .goal-10.goal-banner {
   background-color: #DD1367; }
+.goal-10.sup-goal-banner {
+  height: 5px;
+  background-color: #ee3582;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-10.sub-goal-banner {
+  height: 5px;
+  background-color: #ae0f51;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-10.navigation-btn {
   background-color: #DD1367;
   color: white;
@@ -3094,6 +2783,16 @@ span.small {
 
 .goal-11.goal-banner {
   background-color: #FD9C27; }
+.goal-11.sup-goal-banner {
+  height: 5px;
+  background-color: #fdb35a;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-11.sub-goal-banner {
+  height: 5px;
+  background-color: #ef8402;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-11.navigation-btn {
   background-color: #FD9C27;
   color: white;
@@ -3108,6 +2807,16 @@ span.small {
 
 .goal-12.goal-banner {
   background-color: #BF8B2E; }
+.goal-12.sup-goal-banner {
+  height: 5px;
+  background-color: #d4a34c;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-12.sub-goal-banner {
+  height: 5px;
+  background-color: #966d24;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-12.navigation-btn {
   background-color: #BF8B2E;
   color: white;
@@ -3122,6 +2831,16 @@ span.small {
 
 .goal-13.goal-banner {
   background-color: #417D46; }
+.goal-13.sup-goal-banner {
+  height: 5px;
+  background-color: #529f59;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-13.sub-goal-banner {
+  height: 5px;
+  background-color: #305b33;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-13.navigation-btn {
   background-color: #417D46;
   color: white;
@@ -3136,6 +2855,16 @@ span.small {
 
 .goal-14.goal-banner {
   background-color: #0A96D8; }
+.goal-14.sup-goal-banner {
+  height: 5px;
+  background-color: #20b1f5;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-14.sub-goal-banner {
+  height: 5px;
+  background-color: #0874a7;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-14.navigation-btn {
   background-color: #0A96D8;
   color: white;
@@ -3150,6 +2879,16 @@ span.small {
 
 .goal-15.goal-banner {
   background-color: #57BE2F; }
+.goal-15.sup-goal-banner {
+  height: 5px;
+  background-color: #72d34d;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-15.sub-goal-banner {
+  height: 5px;
+  background-color: #449525;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-15.navigation-btn {
   background-color: #57BE2F;
   color: white;
@@ -3164,6 +2903,16 @@ span.small {
 
 .goal-16.goal-banner {
   background-color: #00689C; }
+.goal-16.sup-goal-banner {
+  height: 5px;
+  background-color: #008acf;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-16.sub-goal-banner {
+  height: 5px;
+  background-color: #004669;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-16.navigation-btn {
   background-color: #00689C;
   color: white;
@@ -3178,6 +2927,16 @@ span.small {
 
 .goal-17.goal-banner {
   background-color: #1F4A6A; }
+.goal-17.sup-goal-banner {
+  height: 5px;
+  background-color: #2b6691;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+.goal-17.sub-goal-banner {
+  height: 5px;
+  background-color: #132e43;
+  padding-top: 0px;
+  padding-bottom: 0px; }
 .goal-17.navigation-btn {
   background-color: #1F4A6A;
   color: white;
@@ -3236,286 +2995,78 @@ body {
 
 .status {
   display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
   border-radius: 3px; }
 
 .breadcrumb {
   padding-top: 20px;
   padding-bottom: 10px; }
 
-.btn-group.menu-dropdown .dropdown-toggle {
-  margin: 0 0 2px 15px;
-  padding: 2px;
-  border: none;
-  border-radius: 0;
-  font-size: 16px;
-  border-bottom: 2px solid transparent;
-  color: #0b0c0c; }
-  .btn-group.menu-dropdown .dropdown-toggle:hover {
-    background: none;
-    border-bottom: 2px solid #0b0c0c; }
-.btn-group.menu-dropdown .dropdown-menu {
-  border-radius: 0;
-  margin-left: 15px; }
-  .btn-group.menu-dropdown .dropdown-menu a {
-    color: #0b0c0c; }
-  .btn-group.menu-dropdown .dropdown-menu .active a {
-    background: none;
-    color: #0b0c0c; }
-    .btn-group.menu-dropdown .dropdown-menu .active a:hover {
-      background: #f5f5f5; }
+.mytablestyle {
+  border-collapse: collapse; }
+  .mytablestyle > table, .mytablestyle td, .mytablestyle th {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .mytablestyle td {
+    vertical-align: top;
+    text-align: left; }
 
-body.contrast-high .navbar #menu li a, body.contrast-high .navbar #menu-mobile li a {
-  color: white; }
-  body.contrast-high .navbar #menu li a:hover, body.contrast-high .navbar #menu li a:focus, body.contrast-high .navbar #menu-mobile li a:hover, body.contrast-high .navbar #menu-mobile li a:focus {
-    color: #FFDD00; }
-body.contrast-high .navbar #menu li.active a, body.contrast-high .navbar #menu-mobile li.active a {
-  color: #FFDD00;
-  border-color: #FFDD00; }
-  body.contrast-high .navbar #menu li.active a:hover, body.contrast-high .navbar #menu-mobile li.active a:hover {
-    color: #FFDD00; }
-  body.contrast-high .navbar #menu li.active a:focus, body.contrast-high .navbar #menu-mobile li.active a:focus {
-    color: #FFDD00; }
-body.contrast-high .navbar #menu-mobile li a {
-  background-color: black; }
-body.contrast-high .navbar #search input, body.contrast-high .navbar #search button, body.contrast-high .navbar #search-mobile input, body.contrast-high .navbar #search-mobile button {
-  color: black; }
-body.contrast-high .navbar .top-level > li.active button {
-  color: black; }
-body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle {
-  color: white !important;
-  background: black !important; }
-  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle:hover {
-    color: #FFDD00 !important; }
-  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-toggle:focus {
-    background: #ffdd00 !important;
-    color: #0b0c0c !important; }
-body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
-  color: black; }
-  body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a:hover {
-    text-decoration: underline; }
-
-.chart-subtitle {
-  margin-left: 20px; }
-
-.layout-status_summary .reporting-status-description {
-  margin-bottom: 25px; }
-.layout-status_summary #main-content .statuses strong {
-  font-weight: normal; }
-.layout-status_summary #main-content .statuses > div {
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-right: 10px; }
-  .layout-status_summary #main-content .statuses > div .status {
-    color: #0b0c0c;
-    font-weight: normal;
-    border: none;
-    padding: 4px;
-    font-size: 12px;
-    display: inline-block;
-    margin-right: 3px;
-    padding: 2px 5px;
-    border-radius: 4px;
-    width: 40px;
-    text-align: center;
-    font-size: 16px; }
-    .layout-status_summary #main-content .statuses > div .status .status-inner {
-      padding: 0 2px;
-      border-radius: 5px; }
-    .layout-status_summary #main-content .statuses > div .status.complete {
-      color: black;
-      border: none;
-      background-color: #5cb85c;
-      background: #5cb85c; }
-      .layout-status_summary #main-content .statuses > div .status.complete .status-inner {
-        background-color: #5cb85c;
-        background: #5cb85c; }
-    .layout-status_summary #main-content .statuses > div .status.inprogress {
-      color: black;
-      border: none;
-      background-color: #f0ad4e;
-      background: #f0ad4e; }
-      .layout-status_summary #main-content .statuses > div .status.inprogress .status-inner {
-        background-color: #f0ad4e;
-        background: #f0ad4e; }
-    .layout-status_summary #main-content .statuses > div .status.notstarted {
-      color: black;
-      border: none;
-      background-color: #E27874;
-      background: #E27874; }
-      .layout-status_summary #main-content .statuses > div .status.notstarted .status-inner {
-        background-color: #E27874;
-        background: #E27874; }
-    .layout-status_summary #main-content .statuses > div .status.notapplicable {
-      color: black;
-      border: none;
-      background-color: #B7B7B7;
-      background: #B7B7B7; }
-      .layout-status_summary #main-content .statuses > div .status.notapplicable .status-inner {
-        background-color: #B7B7B7;
-        background: #B7B7B7; }
-    .layout-status_summary #main-content .statuses > div .status .status-inner {
-      padding: 0 2px;
-      border-radius: 5px; }
-.layout-status_summary #main-content .value {
-  color: #0b0c0c;
-  font-weight: bold;
-  margin-left: 3px; }
-.layout-status_summary #main-content .goal-stats {
-  border: 1px solid #0b0c0c;
-  font-size: 0;
-  margin-top: 10px; }
-  @media (-ms-high-contrast: active), (forced-colors: active) {
-    .layout-status_summary #main-content .goal-stats {
-      -ms-high-contrast-adjust: none;
-      forced-color-adjust: none; } }
-  .layout-status_summary #main-content .goal-stats span {
-    display: inline-block;
-    height: 10px;
-    font-weight: bold; }
-  .layout-status_summary #main-content .goal-stats .notapplicable {
-    background-color: #B7B7B7;
-    background: #B7B7B7; }
-  .layout-status_summary #main-content .goal-stats .notstarted {
-    background-color: #E27874;
-    background: #E27874; }
-  .layout-status_summary #main-content .goal-stats .inprogress {
-    background-color: #f0ad4e;
-    background: #f0ad4e; }
-  .layout-status_summary #main-content .goal-stats .complete {
-    background-color: #5cb85c;
-    background: #5cb85c; }
-.layout-status_summary #main-content .divider {
-  height: 15px; }
-.layout-status_summary #main-content .goal {
-  clear: left;
-  margin-bottom: 4px;
-  padding-bottom: 4px;
-  border-bottom: 10px solid #ccc; }
-  .layout-status_summary #main-content .goal .total {
-    line-height: 1.2;
-    font-size: 16px;
-    width: auto;
-    padding-left: 4px;
-    padding-right: 4px;
-    text-align: center;
-    display: inline-block;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc; }
-    @media screen and (min-width: 520px) {
-      .layout-status_summary #main-content .goal .total {
-        margin-left: 10px; } }
-.layout-status_summary #main-content .frame {
-  width: 115px;
-  float: left;
-  min-height: 1px; }
-  .layout-status_summary #main-content .frame > a:focus {
-    outline: 6px #ffdd00 solid !important; }
-.layout-status_summary #main-content .details {
-  width: calc(100% - 125px);
-  float: left; }
-  .layout-status_summary #main-content .details h2 {
-    margin-top: 0; }
-    @media screen and (min-width: 520px) {
-      .layout-status_summary #main-content .details h2 {
-        display: inline-block; } }
-  .layout-status_summary #main-content .details h3 {
-    margin-top: 10px;
-    line-height: 1.2; }
-    @media screen and (min-width: 520px) {
-      .layout-status_summary #main-content .details h3 {
-        display: inline-block; } }
-    @media only screen and (max-width: 720px) {
-      .layout-status_summary #main-content .details h3 {
-        margin-top: 3px; } }
-    @media only screen and (max-width: 520px) {
-      .layout-status_summary #main-content .details h3 {
-        margin-bottom: 3px; } }
-.layout-status_summary #main-content [data-extra-field] .details {
-  width: 100%; }
-.layout-status_summary #main-content .goal-overall {
+#legend {
+  padding-left: 0;
+  text-align: center;
   margin-bottom: 20px; }
-  .layout-status_summary #main-content .goal-overall .details {
-    width: 100%; }
-.layout-status_summary #main-content .reporting-status-item {
-  margin-bottom: 20px; }
-.layout-status_summary.contrast-high #main-content .goal-tiles img {
-  background-color: black !important; }
-.layout-status_summary.contrast-high #main-content .goal-stats {
-  border: 1px solid white !important; }
-  .layout-status_summary.contrast-high #main-content .goal-stats .notapplicable {
-    background-color: #B7B7B7;
-    background: #B7B7B7; }
-  .layout-status_summary.contrast-high #main-content .goal-stats .notstarted {
-    background-color: black;
-    background: black; }
-  .layout-status_summary.contrast-high #main-content .goal-stats .inprogress {
-    background-color: #767676;
-    background: #767676; }
-  .layout-status_summary.contrast-high #main-content .goal-stats .complete {
-    background-color: white;
-    background: white; }
-.layout-status_summary.contrast-high #main-content .statuses strong {
-  color: white; }
-.layout-status_summary.contrast-high #main-content .statuses .value {
-  color: white !important; }
-.layout-status_summary.contrast-high #main-content .statuses .status {
-  border: none !important; }
-  .layout-status_summary.contrast-high #main-content .statuses .status.complete {
-    border: 1px solid transparent;
-    background-color: white;
-    background: white;
-    color: black !important; }
-    .layout-status_summary.contrast-high #main-content .statuses .status.complete .status-inner {
-      background-color: white !important;
-      background: white !important;
-      color: black !important; }
-  .layout-status_summary.contrast-high #main-content .statuses .status.inprogress {
-    border: 1px solid transparent;
-    background-color: #767676;
-    background: #767676;
-    color: white; }
-    .layout-status_summary.contrast-high #main-content .statuses .status.inprogress .status-inner {
-      background-color: #767676 !important;
-      background: #767676 !important;
-      color: white; }
-  .layout-status_summary.contrast-high #main-content .statuses .status.notstarted {
-    border: 1px solid white;
-    background-color: black;
-    background: black;
-    color: white !important; }
-    .layout-status_summary.contrast-high #main-content .statuses .status.notstarted .status-inner {
-      background-color: black !important;
-      background: black !important;
-      color: white !important; }
-  .layout-status_summary.contrast-high #main-content .statuses .status.notapplicable {
-    border: 1px solid white;
-    background-color: #B7B7B7;
-    background: #B7B7B7;
-    color: black !important; }
-    .layout-status_summary.contrast-high #main-content .statuses .status.notapplicable .status-inner {
-      background-color: #B7B7B7 !important;
-      background: #B7B7B7 !important;
-      color: black !important; }
-  .layout-status_summary.contrast-high #main-content .statuses .status.notstarted {
-    border: 1px solid white !important; }
-
-@media all and (min-width: 992px) {
-  .dropdown-menu li {
+  #legend > li {
+    font-size: 13px;
+    list-style-type: none;
+    display: inline-block;
+    color: #666;
+    padding: 5px; }
+  #legend .swatch {
+    display: inline-block;
+    width: 45px;
+    height: 15px;
+    margin-right: 3px; }
+    #legend .swatch.dashed {
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
+      background-repeat: repeat;
+      background-position: -5px 0; }
+  #legend.legend-for-line-chart .swatch {
+    height: 3px;
     position: relative; }
+    #legend.legend-for-line-chart .swatch .swatch-inner {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      top: -4px;
+      left: 17px;
+      border-radius: 10px; }
+    #legend.legend-for-line-chart .swatch.headline {
+      height: 6px; }
+      #legend.legend-for-line-chart .swatch.headline .swatch-inner {
+        top: -3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px; }
 
-  .nav-item .submenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: -7px; }
+.chart-title {
+  text-align: center; }
 
-  .nav-item .submenu-left {
-    right: 100%;
-    left: auto; }
+.dropdown-submenu {
+  position: relative; }
 
-  .dropdown-menu > li:hover {
-    background-color: #f1f1f1; }
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  margin-left: 0px; }
 
-  .dropdown-menu > li:hover > .submenu {
-    display: block; } }
+.dropdown-menu li:hover > ul {
+  /* On hover, display the next level's menu */
+  display: inline;
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  margin-left: 0px; }
