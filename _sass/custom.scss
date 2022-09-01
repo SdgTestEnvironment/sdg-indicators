@@ -383,30 +383,6 @@ body.contrast-high {
 }
 
 
-
-// // for multiple levels of dropdowns
-// .dropdown-submenu {
-//   position: relative;
-// }
-//
-// .dropdown-submenu .dropdown-menu {
-//   top: 0;
-//   left: 100%;
-//   margin-top: -1px;
-//   margin-left: 0px;
-// }
-//
-// .dropdown-menu li:hover > ul
-// {
-//     /* On hover, display the next level's menu */
-//     display: inline;
-//     position: relative;
-//     top: 0;
-//     left: 100%;
-//     margin-top: -1px;
-//     margin-left: 0px;
-// }
-
 @media all and (min-width: 992px) {
 	.dropdown-menu li{ position: relative; 	}
 	.nav-item .submenu{
@@ -429,11 +405,12 @@ $goal-colors : #E52B3D #DDA63A #4C9F38 #C42130 #FF3E24 #28BCE1 #FCC30B #A21942 #
   $dark-c: darken($c, 10%);
   .goal-#{$i} {
     &.heading {
-      background-color: white;//$c;
-      border-bottom: 15px solid $c;
-      border-top: 15px solid $c;//$dark-c;
+      background-color: $c;
+      border-bottom: 5px solid $c;
+      border-top: 5px solid $dark-c;
       padding-top: 0px;
       padding-bottom: 0px;
+      color: white;
     }
     &.underline{
       height: 5px;
