@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'de',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -123,23 +122,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -150,26 +144,32 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
 <body class="language-de
-layout-indicator-bootstrap5
+layout-indicator
 ">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
     
   </div>
 </div>
@@ -202,22 +202,25 @@ layout-indicator-bootstrap5
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wissenswertes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_dns/">DNS</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/">Open SDG Plattformen anderer Staaten</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG Plattformen anderer Staaten
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenien1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnien und Herzegowina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Färöer1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Island1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kirgisistan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Laos1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Ruanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">Südkorea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">Vereinigtes Königreich1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">USA1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/publications/">Publikationen</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
@@ -248,7 +251,15 @@ layout-indicator-bootstrap5
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/2-2-2/">
+                English
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -263,16 +274,11 @@ data-event-label="high"
 
 
 
-
-
 <script type="text/template" id="item_template">
   <% _.each(fields, function(fieldItem) { %>
     <div class="variable-selector
       <% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed <% }%>
       <% if (typeof childFields !== 'undefined' && childFields.indexOf(fieldItem.field) !== -1) { %> child <% }%>
-      <% // @deprecated start %>
-      <% if (typeof childFields === 'undefined' && allowedFields.indexOf(fieldItem.field) == -1) { %> child <% }%>
-      <% // @deprecated end %>
       "
       data-field="<%=fieldItem.field%>"
     >
@@ -392,8 +398,7 @@ data-event-label="high"
 </nav>
 
 
-  <div class="row justify-content-md-center">
-    
+  
 
 
 
@@ -430,7 +435,6 @@ data-event-label="high"
   
 <!--#8 addNavigationButtons---stop-------------------------------------->
 
-  </div>
   
 </div>
 
@@ -479,7 +483,6 @@ data-event-label="high"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
-  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Übergewicht&quot;,&quot;Auszehrung&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Männlich&quot;,&quot;Weiblich&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Geschlecht&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
@@ -506,38 +509,23 @@ data-event-label="high"
     
 
 
+
+
 <div id="headlineTable">
 
   <div id="datatables">
 
-    <a href="https://SdgTestEnvironment.github.io/sdg-data/de/headline/2-2-2.csv" class="btn btn-primary btn-download" download="indicator_2-2-2.csv" tabindex="0" role="button">Speichern der Headline im CSV-Format</a>
+    
+    <a href="https://SdgTestEnvironment.github.io/sdg-data/de/data/2-2-2.csv" class="btn btn-primary btn-download" download='indicator_2-2-2.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
 
-    <a href="https://SdgTestEnvironment.github.io/sdg-data/de/data/2-2-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_2-2-2.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
+    <p class="no-js-disaggregation-hint"></p>
 
-    <h3>Headline data</h3>
-    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Auszehrung und Übergewicht bei Kindern im Alter von 3 und 4 Jahren</caption>
-      <thead>
-        
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
+    
+    <h3></h3>
+    
   </div>
 
-  <div id="datatableFooter">
-    
-    <p>Datenquelle: <a href="https://www.rki.de/DE/Home/homepage_node.html"> Robert Koch-Institut (RKI) </a></p>
-    
-    
-    <p>Geographische Abdeckung: Deutschland</p>
-    
-    
-    <p>Einheit: Prozent</p>
-    
-    
-  </div>
+  
 
 </div>
 
@@ -550,61 +538,61 @@ data-event-label="high"
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-          ><i class="fa fa-line-chart" aria-hidden="true"></i>
-        
-      <span class="hidden-xs" style="color:black">Grafik</span></button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Grafik</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-          ><i class="fa fa-table" aria-hidden="true"></i>
-        
-      <span class="hidden-xs" style="color:black">Tabelle</span></button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Tabelle</span></button>
+  </li>
+  
+</ul>
 
     <div class="tab-content data-view">
     
@@ -623,16 +611,15 @@ data-event-label="Change to Table tab"
       <figure role="group">
         <div id="chart-canvas">
           <h4 id="chart-heading" class="chart-title">Auszehrung und Übergewicht bei Kindern im Alter von 3 und 4 Jahren</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
-            
-              <canvas
+            <canvas
     role="img"
     aria-labelledby="chart-heading"
     aria-describedby="table-alternative chart-annotations"
     tabindex="0"
  ></canvas>
 
-            
           </div>
           <div id="plotLegend"></div>
           
@@ -644,58 +631,58 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-          <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquelle</u>:</dt>
           
-        <dd><a href="https://www.rki.de/DE/Home/homepage_node.html"> Robert Koch-Institut (RKI) </a></dd>
+          <dd><a href="https://www.rki.de/DE/Home/homepage_node.html"> Robert Koch-Institut (RKI) </a></dd>
         
 
         
-        <dt><u>Geographische Abdeckung</u>:</dt>
-        <dd>Deutschland</dd>
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         
-        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
-        <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
-
-        
-
-        
-        <dt><u>Anmerkungen</u>:</dt>
-        <dd><br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• Die Daten 2003-2006 sind altersstandardisierte Prävalenzen (Bevölkerungsstand: 31. Dezember 2015).</dd>
+          <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+          <dd class="data-controlled-footer-field unit-from-data"></dd>
         
 
         
 
         
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• Die Daten 2003-2006 sind altersstandardisierte Prävalenzen (Bevölkerungsstand: 31. Dezember 2015).</dd>
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Anmerkung</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ><u>Letzte Änderung des Codes <small>(Daten)</small></u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Letzte Änderung des Codes <small>(Daten)</small></u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
 
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Statistisches Bundesamt (Destatis), 2022</dd>
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2022</dd>
         
-    <dl>
+    </dl>
 </div>
 
         </div>
@@ -703,7 +690,7 @@ data-event-label="Change to Table tab"
       <div id="chartSelectionDownload" class="clearfix">
         <button id="btnSave" title="" class='btn btn-primary btn-download'>
           Grafik als Bild speichern
-        </button><!-- 
+        </button><!--
    --></div>
     </div>
 
@@ -728,58 +715,58 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-          <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquelle</u>:</dt>
           
-        <dd><a href="https://www.rki.de/DE/Home/homepage_node.html"> Robert Koch-Institut (RKI) </a></dd>
+          <dd><a href="https://www.rki.de/DE/Home/homepage_node.html"> Robert Koch-Institut (RKI) </a></dd>
         
 
         
-        <dt><u>Geographische Abdeckung</u>:</dt>
-        <dd>Deutschland</dd>
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         
-        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
-        <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
-
-        
-
-        
-        <dt><u>Anmerkungen</u>:</dt>
-        <dd><br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• Die Daten 2003-2006 sind altersstandardisierte Prävalenzen (Bevölkerungsstand: 31. Dezember 2015).</dd>
+          <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+          <dd class="data-controlled-footer-field unit-from-data"></dd>
         
 
         
 
         
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• Die Daten 2003-2006 sind altersstandardisierte Prävalenzen (Bevölkerungsstand: 31. Dezember 2015).</dd>
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Anmerkung</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ><u>Letzte Änderung des Codes <small>(Daten)</small></u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Letzte Änderung des Codes <small>(Daten)</small></u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
 
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Statistisches Bundesamt (Destatis), 2022</dd>
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2022</dd>
         
-    <dl>
+    </dl>
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
@@ -841,7 +828,8 @@ data-event-label="Change to Sources tab"
                 
                 Die für den jeweiligen SDG-Indikator zuständigen internationalen Organisationen (Custodian Agencies) veröffentlichen methodische Erläuterungen zum Indikator - die sogenannten globalen Metadaten.<br><br>Hier werden die am besten dazu geeigneten, national verfügbaren Zeitreihen bereitgestellt und ihre Vergleichbarkeit mit den globalen Metadaten ausgewiesen. Zugehörige methodische und länderspezifische Informationen finden Sie in den nationalen Metadaten.
             </p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -859,11 +847,13 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
         
           
       
-        
+      
       
       
       <tr>
@@ -879,10 +869,12 @@ data-event-label="Change to Sources tab"
       
   
       
+      
+      
         
           
       
-        
+      
       
       
       <tr>
@@ -898,7 +890,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -923,99 +915,76 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
-          
       
-        
-          
       
         
           
       
-        
-          
       
-        
-          
       
         
           
       
-        
-          
       
-        
-          
       
         
           
       
+      
+      
         
-      
-      
-      <tr>
-        <th scope="row">Letzte Änderung des Codes <small>(Daten)</small> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/564b7b022d7054ca5322e3564fbf35cf13ff9f6e" target="_blank">
-                2022-04-08: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
+      
+      
+      
+        
           
-        </td>
-        </tr>
-        
       
-  
+      
       
         
-      
-      
-      
-  
-      
-        
-      
-      
-      <tr>
-        <th scope="row">Letzte Änderung des Codes <small>(Texte)</small> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/5f7c96555f7a3076d6b15435c00b40b5d165825c" target="_blank">
-                2022-06-30: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
-            
-
+      
+      
+      
+        
           
-        </td>
-        </tr>
-        
       
-  
+      
       
         
+          
       
       
       
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
   
   
   
@@ -1181,7 +1150,7 @@ data-event-label="Change to Sources tab"
   
   
   
-  
+  </tbody>
 </table>
 
         </article>
@@ -1192,14 +1161,15 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>Hier werden relevante Informationen zum SDG-Indikator dargestellt - wie das politische Ziel, die international primär zuständige Organisation (Custodian Agency) und ein Link zu den globalen Metadaten. Die <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank”>globalen Metadaten</a> werden durch die Statistische Division der Vereinten Nationen bereitgestellt.</p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
   
   
       
-        
+      
       
       
       <tr>
@@ -1215,7 +1185,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1231,7 +1201,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1247,7 +1217,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1263,10 +1233,12 @@ data-event-label="Change to Sources tab"
       
   
       
+      
+      
         
           
       
-        
+      
       
       
       <tr>
@@ -1291,13 +1263,13 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
+      
       
       
       <tr>
@@ -1322,17 +1294,23 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
+      
+      
+      
+        
+          
+      
+      
       
         
           
       
-        
-          
+      
       
         
           
@@ -1520,6 +1498,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -1537,7 +1516,8 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -1587,7 +1567,7 @@ data-event-label="Change to Sources tab"
   
   
       
-        
+      
       
       
       <tr>
@@ -1603,7 +1583,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1619,16 +1599,22 @@ data-event-label="Change to Sources tab"
       
   
       
-        
-          
+      
       
         
           
       
+      
+      
         
           
       
+      
+      
         
+          
+      
+      
       
       
       <tr>
@@ -1653,28 +1639,38 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
+      
+      
         
           
       
+      
+      
         
+          
+      
+      
+      
+        
+          
+      
+      
       
       
       <tr>
@@ -1699,75 +1695,119 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
-          
       
-        
-          
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
         
           
   
@@ -1887,6 +1927,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -1925,8 +1966,8 @@ data-event-label="Change to Sources tab"
   </div>
 </div>
 
+  <a href="#top"></a>
 </div>
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -1967,16 +2008,12 @@ data-event-label="Change to Sources tab"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -1996,12 +2033,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -2009,4 +2046,3 @@ data-event-label="Change to Sources tab"
 
 </body>
 </html>
-

@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'de',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -118,23 +117,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -145,26 +139,32 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
 <body class="language-de
-layout-goal-bootstrap5
+layout-goal
 ">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
     
   </div>
 </div>
@@ -197,22 +197,25 @@ layout-goal-bootstrap5
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wissenswertes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_dns/">DNS</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/">Open SDG Plattformen anderer Staaten</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG Plattformen anderer Staaten
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenien1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnien und Herzegowina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Färöer1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Island1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kirgisistan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Laos1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Ruanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">Südkorea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">Vereinigtes Königreich1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">USA1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/publications/">Publikationen</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
@@ -243,7 +246,15 @@ layout-goal-bootstrap5
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/2/">
+                English
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -256,22 +267,6 @@ data-event-label="high"
 </header>
 <div id="top" tabindex=-1></div>
 
-
-
-
-
-<div class="heading goal-banner goal-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-tiles">
-                <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/2.png" alt="Kein Hunger - Ziel 2" id="goal-2" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10">
-                <h1>Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern</h1>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
@@ -288,296 +283,69 @@ data-event-label="high"
   
 </div>
 
-<div id="main-content" class="container goal-indicators goal-2 goal-by-target" role="main">
-
-
-  
-
-
-
-  
-
+<div class="heading goal-banner goal-2">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//1" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriges Ziel</b>
-        </a>
+    <div class="row">
+      <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/2.png" alt="Kein Hunger - Ziel 2" id="goal-2" class="goal-icon-image goal-icon-image-" />
       </div>
-
-      <div class="col-md-auto">
-        <a href="https://sustainabledevelopment-deutschland.github.io//2" class="btn btn-primary btn-block goal-2 navigation-btn" title="" role="button">
-          <b class="btn-label d-none d-md-block">Nationale Indikatoren zu Ziel 2 </b><b class="btn-label d-block d-md-none">Ziel 2 - National</b>
-        </a>
-      </div>
-
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//3" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b>Nächstes Ziel <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
+      <div class="col-8 col-md-9 col-lg-10 goal-details">
+        <h1 class="titles goal-2">
+          Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern
+        </h1>
       </div>
     </div>
   </div>
+</div>
+
+
+<div id="main-content" class="container" role="main">
+
+  
+
 
 
   <div class="container g-0">
-    <div class="row">
-      <div class="col" style="padding-right: 0px;">
-        <h2>Unterziele</h2>
-      </div>
-      <div class="col" style="paddig-left: 0px;">
-        <h2>Indikatoren</h2>
-      </div>
-    </div>
+    <h2 class="goal-page-heading"></h2>
 
     
     
       
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.1
-          </span>
-          <p>
-            Bis 2030 den Hunger beenden und sicherstellen, dass alle Menschen, insbesondere die Armen und Menschen in prekären Situationen, einschließlich Kleinkindern, ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.1.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-1-1" style="padding-left: 0px">
-                Prävalenz von Unterernährung
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.1.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-1-2" style="padding-left: 0px">
-                Prävalenz von mittlerer oder schwerer Ernährungsunsicherheit in der Bevölkerung gemäß der Erfahrungsskala für Ernährungsunsicherheit (FIES)
-              </a>
-              
-            </div>
-          
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.1</span>
+            </h3>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.2
-          </span>
-          <p>
-            Bis 2030 alle Formen der Mangelernährung beenden, einschließlich durch Erreichung der international vereinbarten Zielvorgaben in Bezug auf Wachstumshemmung und Auszehrung bei Kindern unter 5&nbsp;Jahren bis 2025, und den Ernährungsbedürfnissen von heranwachsenden Mädchen, schwangeren und stillenden Frauen und älteren Menschen Rechnung tragen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.2.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-2-1" style="padding-left: 0px">
-                Prävalenz von Wachstumshemmung (Körpergröße zum Alter <-2 Standardabweichung vom Median gemäß den Standards der Weltgesundheitsorganisation (WHO) für das Wachstum von Kindern) bei Kindern unter 5 Jahren
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.2.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-2-2" style="padding-left: 0px">
-                Prävalenz von Fehlernährung (Gewicht zur Körpergröße >+2 oder <-2 Standardabweichung vom Median gemäß den Standards der WHO für das Wachstum von Kindern) bei Kindern unter 5 Jahren, nach Art der Fehlernährung (Auszehrung und Übergewicht)
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.2.3
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-2-3" style="padding-left: 0px">
-                Prävalenz von Anämie bei Frauen im Alter von 15-49 Jahren, nach Schwangerschaftsstatus (in Prozent)
-              </a>
-              
-            </div>
-          
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 den Hunger beenden und sicherstellen, dass alle Menschen, insbesondere die Armen und Menschen in prekären Situationen, einschließlich Kleinkindern, ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben</span>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.3
-          </span>
-          <p>
-            Bis 2030 die landwirtschaftliche Produktivität und die Einkommen von kleinen Nahrungsmittel-produzenten, insbesondere von Frauen, Angehörigen indigener Völker, landwirtschaftlichen Familienbetrieben, Weidetierhaltern und Fischern, verdoppeln, unter anderem durch den sicheren und gleichberechtigten Zugang zu Grund und Boden, anderen Produktionsressourcen und Betriebsmitteln, Wissen, Finanzdienstleistungen, Märkten sowie Möglichkeiten für Wertschöpfung und außerlandwirtschaftliche Beschäftigung
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.1.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                2.3.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/2-1-1">Prävalenz von Unterernährung</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -586,34 +354,266 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/2-3-1" style="padding-left: 0px">
-                Produktionsvolumen je Arbeitseinheit, nach Größenklassen der Land-/ Weide-/ Forstwirtschaftsbetriebe
-              </a>
-              
             </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
           
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.1.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                2.3.2
-                
+              <span class="indicator-name"><a href="/sdg-indicators/2-1-2">Prävalenz von mittlerer oder schwerer Ernährungsunsicherheit in der Bevölkerung gemäß der Erfahrungsskala für Ernährungsunsicherheit (FIES)</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.2</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 alle Formen der Mangelernährung beenden, einschließlich durch Erreichung der international vereinbarten Zielvorgaben in Bezug auf Wachstumshemmung und Auszehrung bei Kindern unter 5&nbsp;Jahren bis 2025, und den Ernährungsbedürfnissen von heranwachsenden Mädchen, schwangeren und stillenden Frauen und älteren Menschen Rechnung tragen</span>
+          </div>
+      </div>
+        
+
           
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.2.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-2-1">Prävalenz von Wachstumshemmung (Körpergröße zum Alter <-2 Standardabweichung vom Median gemäß den Standards der Weltgesundheitsorganisation (WHO) für das Wachstum von Kindern) bei Kindern unter 5 Jahren</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.2.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-2-2">Prävalenz von Fehlernährung (Gewicht zur Körpergröße >+2 oder <-2 Standardabweichung vom Median gemäß den Standards der WHO für das Wachstum von Kindern) bei Kindern unter 5 Jahren, nach Art der Fehlernährung (Auszehrung und Übergewicht)</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.2.3</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-2-3">Prävalenz von Anämie bei Frauen im Alter von 15-49 Jahren, nach Schwangerschaftsstatus (in Prozent)</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.3</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 die landwirtschaftliche Produktivität und die Einkommen von kleinen Nahrungsmittel-produzenten, insbesondere von Frauen, Angehörigen indigener Völker, landwirtschaftlichen Familienbetrieben, Weidetierhaltern und Fischern, verdoppeln, unter anderem durch den sicheren und gleichberechtigten Zugang zu Grund und Boden, anderen Produktionsressourcen und Betriebsmitteln, Wissen, Finanzdienstleistungen, Märkten sowie Möglichkeiten für Wertschöpfung und außerlandwirtschaftliche Beschäftigung</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.3.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-3-1">Produktionsvolumen je Arbeitseinheit, nach Größenklassen der Land-/ Weide-/ Forstwirtschaftsbetriebe</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.3.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-3-2">Durchschnittliches Einkommen kleiner Nahrungsmittelproduzenten, nach Geschlecht und Zugehörigkeit zu einer indigenen Bevölkerungsgruppe</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -622,193 +622,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/2-3-2" style="padding-left: 0px">
-                Durchschnittliches Einkommen kleiner Nahrungsmittelproduzenten, nach Geschlecht und Zugehörigkeit zu einer indigenen Bevölkerungsgruppe
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.4
-          </span>
-          <p>
-            Bis 2030 die Nachhaltigkeit der Systeme der Nahrungsmittelproduktion sicherstellen und  resiliente landwirtschaftliche Methoden anwenden, die die Produktivität und den Ertrag steigern, zur Erhaltung der Ökosysteme beitragen, die Anpassungsfähigkeit an Klimaänderungen, extreme Wetterereignisse, Dürren, Überschwemmungen und andere Katastrophen erhöhen und die Flächen- und Bodenqualität schrittweise verbessern
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.4.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-4-1" style="padding-left: 0px">
-                Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger landwirtschaftlicher Bewirtschaftung
-              </a>
-              
-            </div>
-          
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.4</span>
+            </h3>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.5
-          </span>
-          <p>
-            Bis 2020 die genetische Vielfalt von Saatgut, Kulturpflanzen sowie Nutz- und Haustieren und ihren wildlebenden Artverwandten bewahren, unter anderem durch gut verwaltete und diversifizierte Saatgut- und Pflanzenbanken auf nationaler, regionaler und internationaler Ebene, und den Zugang zu den Vorteilen aus der Nutzung der genetischen Ressourcen und des damit verbundenen traditionellen Wissens sowie die ausgewogene und gerechte Aufteilung dieser Vorteile fördern, wie auf internationaler Ebene vereinbart
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.5.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-5-1" style="padding-left: 0px">
-                Anzahl der für Ernährung und Landwirtschaft nutzbaren a) pflanzen- und b) tiergenetischen Ressourcen, die mittel- oder langfristig in Konservierungseinrichtungen sicher aufbewahrt werden
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.5.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-5-2" style="padding-left: 0px">
-                Anteil heimischer Rassen, die als vom Aussterben bedroht eingestuft sind
-              </a>
-              
-            </div>
-          
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 die Nachhaltigkeit der Systeme der Nahrungsmittelproduktion sicherstellen und  resiliente landwirtschaftliche Methoden anwenden, die die Produktivität und den Ertrag steigern, zur Erhaltung der Ökosysteme beitragen, die Anpassungsfähigkeit an Klimaänderungen, extreme Wetterereignisse, Dürren, Überschwemmungen und andere Katastrophen erhöhen und die Flächen- und Bodenqualität schrittweise verbessern</span>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.a
-          </span>
-          <p>
-            Die Investitionen in die ländliche Infrastruktur, die Agrarforschung und landwirtschaftliche Beratungsdienste, die Technologieentwicklung sowie Genbanken für Pflanzen und Nutztiere erhöhen, unter anderem durch verstärkte internationale Zusammenarbeit, um die landwirtschaftliche Produktionskapazität in den Entwicklungsländern und insbesondere den am wenigsten entwickelten Ländern zu verbessern
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.4.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                2.a.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/2-4-1">Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger landwirtschaftlicher Bewirtschaftung</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -817,87 +676,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/2-a-1" style="padding-left: 0px">
-                Agrarorientierungs-Index für Staatsausgaben
-              </a>
-              
             </div>
-          
-
             
             
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                2.a.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/2-a-2" style="padding-left: 0px">
-                Summe der öffentlichen Leistungen (öffentliche Entwicklungszusammenarbeit (ODA) plus sonstige öffentliche Ausgaben) für den Landwirtschaftssektor
-              </a>
-              
-            </div>
-          
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.b
-          </span>
-          <p>
-            Handelsbeschränkungen und -verzerrungen auf den globalen Agrarmärkten korrigieren und verhindern, unter anderem durch die parallele Abschaffung aller Formen von Agrarexportsubventionen und aller Exportmaßnahmen mit gleicher Wirkung im Einklang mit dem Mandat der D<small>OHA-</small>E<small>NTWICKLUNGSRUNDE</small>
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.5</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2020 die genetische Vielfalt von Saatgut, Kulturpflanzen sowie Nutz- und Haustieren und ihren wildlebenden Artverwandten bewahren, unter anderem durch gut verwaltete und diversifizierte Saatgut- und Pflanzenbanken auf nationaler, regionaler und internationaler Ebene, und den Zugang zu den Vorteilen aus der Nutzung der genetischen Ressourcen und des damit verbundenen traditionellen Wissens sowie die ausgewogene und gerechte Aufteilung dieser Vorteile fördern, wie auf internationaler Ebene vereinbart</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.5.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                2.b.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/2-5-1">Anzahl der für Ernährung und Landwirtschaft nutzbaren a) pflanzen- und b) tiergenetischen Ressourcen, die mittel- oder langfristig in Konservierungseinrichtungen sicher aufbewahrt werden</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -906,51 +730,38 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/2-b-1" style="padding-left: 0px">
-                Agrarexportsubventionen
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            2.c
-          </span>
-          <p>
-            Maßnahmen zur Gewährleistung des reibungslosen Funktionierens der Märkte für Nahrungsmittelrohstoffe und ihre Derivate ergreifen und den raschen Zugang zu Marktinformationen, unter anderem über Nahrungsmittelreserven, erleichtern, um zur Begrenzung der extremen Schwankungen der Nahrungsmittelpreise beizutragen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.5.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                2.c.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/2-5-2">Anteil heimischer Rassen, die als vom Aussterben bedroht eingestuft sind</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -959,21 +770,222 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/2-c-1" style="padding-left: 0px">
-                Indikator für Preisanomalien bei Lebensmitteln
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-    </div>
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.a</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Die Investitionen in die ländliche Infrastruktur, die Agrarforschung und landwirtschaftliche Beratungsdienste, die Technologieentwicklung sowie Genbanken für Pflanzen und Nutztiere erhöhen, unter anderem durch verstärkte internationale Zusammenarbeit, um die landwirtschaftliche Produktionskapazität in den Entwicklungsländern und insbesondere den am wenigsten entwickelten Ländern zu verbessern</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.a.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-a-1">Agrarorientierungs-Index für Staatsausgaben</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.a.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-a-2">Summe der öffentlichen Leistungen (öffentliche Entwicklungszusammenarbeit (ODA) plus sonstige öffentliche Ausgaben) für den Landwirtschaftssektor</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.b</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Handelsbeschränkungen und -verzerrungen auf den globalen Agrarmärkten korrigieren und verhindern, unter anderem durch die parallele Abschaffung aller Formen von Agrarexportsubventionen und aller Exportmaßnahmen mit gleicher Wirkung im Einklang mit dem Mandat der D<small>OHA-</small>E<small>NTWICKLUNGSRUNDE</small></span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.b.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-b-1">Agrarexportsubventionen</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 2.c</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Maßnahmen zur Gewährleistung des reibungslosen Funktionierens der Märkte für Nahrungsmittelrohstoffe und ihre Derivate ergreifen und den raschen Zugang zu Marktinformationen, unter anderem über Nahrungsmittelreserven, erleichtern, um zur Begrenzung der extremen Schwankungen der Nahrungsmittelpreise beizutragen</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 2.c.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/2-c-1">Indikator für Preisanomalien bei Lebensmitteln</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
   </div>
+  <a href="#top"></a>
+</div>
+
 
 <footer role="contentinfo">
     <div class="container">
@@ -1014,16 +1026,12 @@ data-event-label="high"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -1043,12 +1051,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -1056,4 +1064,3 @@ data-event-label="high"
 
 </body>
 </html>
-

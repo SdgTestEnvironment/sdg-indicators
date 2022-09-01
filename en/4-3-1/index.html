@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'en',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -123,23 +122,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -150,26 +144,32 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
 <body class="language-en
-layout-indicator-bootstrap5
+layout-indicator
 ">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta</strong>
+    <strong class="phase-tag">beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
+    This is a development website. We welcome your <a href="mailto:%email_address">feedback</a>.
     
   </div>
 </div>
@@ -202,22 +202,25 @@ layout-indicator-bootstrap5
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/about_guidance/">Technical instructions</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Useful information
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/facts_agenda/">2030 Agenda</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/facts_dns/">German Sustainable Development Strategy (DNS)</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/">Open SDG platforms of other countries</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG platforms of other countries
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenia1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Faroe Islands1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Iceland1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kyrgyzstan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Lao PDR1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Rwanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">South korea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">United Kingdom1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">United States1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/en/publications/">Publications</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/en/search/">
@@ -248,7 +251,15 @@ layout-indicator-bootstrap5
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/4-3-1/">
+                Deutsch
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -263,16 +274,11 @@ data-event-label="high"
 
 
 
-
-
 <script type="text/template" id="item_template">
   <% _.each(fields, function(fieldItem) { %>
     <div class="variable-selector
       <% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed <% }%>
       <% if (typeof childFields !== 'undefined' && childFields.indexOf(fieldItem.field) !== -1) { %> child <% }%>
-      <% // @deprecated start %>
-      <% if (typeof childFields === 'undefined' && allowedFields.indexOf(fieldItem.field) == -1) { %> child <% }%>
-      <% // @deprecated end %>
       "
       data-field="<%=fieldItem.field%>"
     >
@@ -392,8 +398,7 @@ data-event-label="high"
 </nav>
 
 
-  <div class="row justify-content-md-center">
-    
+  
 
 
 
@@ -421,7 +426,6 @@ data-event-label="high"
   
 <!--#8 addNavigationButtons---stop-------------------------------------->
 
-  </div>
   
 </div>
 
@@ -470,7 +474,6 @@ data-event-label="high"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
-  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;15 to under 25 years&quot;,&quot;25 to under 65 years&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age group&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
@@ -497,38 +500,23 @@ data-event-label="high"
     
 
 
+
+
 <div id="headlineTable">
 
   <div id="datatables">
 
-    <a href="https://SdgTestEnvironment.github.io/sdg-data/en/headline/4-3-1.csv" class="btn btn-primary btn-download" download="indicator_4-3-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="https://SdgTestEnvironment.github.io/sdg-data/en/data/4-3-1.csv" class="btn btn-primary btn-download" download='indicator_4-3-1.csv' tabindex='0' role='button'>Download Source CSV</a>
 
-    <a href="https://SdgTestEnvironment.github.io/sdg-data/en/data/4-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_4-3-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <p class="no-js-disaggregation-hint"></p>
 
-    <h3>Headline data</h3>
-    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Participation rate in formal and non-formal education and training in the previous 12 months</caption>
-      <thead>
-        
-      </thead>
-      <tbody>
-        
-      </tbody>
-    </table>
+    
+    <h3></h3>
+    
   </div>
 
-  <div id="datatableFooter">
-    
-    <p>Data source: <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
-    
-    
-    <p>Geographic coverage: Germany</p>
-    
-    
-    <p>Unit of measurement: Percentage</p>
-    
-    
-  </div>
+  
 
 </div>
 
@@ -541,61 +529,61 @@ data-event-label="high"
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-          ><i class="fa fa-line-chart" aria-hidden="true"></i>
-        
-      <span class="hidden-xs" style="color:black">Chart</span></button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Chart</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-          ><i class="fa fa-table" aria-hidden="true"></i>
-        
-      <span class="hidden-xs" style="color:black">Table</span></button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
+  
+</ul>
 
     <div class="tab-content data-view">
     
@@ -614,16 +602,15 @@ data-event-label="Change to Table tab"
       <figure role="group">
         <div id="chart-canvas">
           <h4 id="chart-heading" class="chart-title">Participation rate in formal and non-formal education and training in the previous 12 months</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
-            
-              <canvas
+            <canvas
     role="img"
     aria-labelledby="chart-heading"
     aria-describedby="table-alternative chart-annotations"
     tabindex="0"
  ></canvas>
 
-            
           </div>
           <div id="plotLegend"></div>
           
@@ -635,58 +622,58 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-          <dt><u>Data source</u>:</dt>
+            <dt><u>Data source</u>:</dt>
           
-        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
-        <dt><u>Geographic coverage</u>:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         
-        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
-        <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
-
-        
-
-        
-        <dt><u>Notes</u>:</dt>
-        <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
+          <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
+          <dd class="data-controlled-footer-field unit-from-data"></dd>
         
 
         
 
         
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ><u>Last modification of code <small>(data)</small></u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of code <small>(data)</small></u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
 
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
         
-    <dl>
+    </dl>
 </div>
 
         </div>
@@ -694,7 +681,7 @@ data-event-label="Change to Table tab"
       <div id="chartSelectionDownload" class="clearfix">
         <button id="btnSave" title="" class='btn btn-primary btn-download'>
           Download Chart Image
-        </button><!-- 
+        </button><!--
    --></div>
     </div>
 
@@ -719,58 +706,58 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-          <dt><u>Data source</u>:</dt>
+            <dt><u>Data source</u>:</dt>
           
-        <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
-        <dt><u>Geographic coverage</u>:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         
-        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
-        <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
-
-        
-
-        
-        <dt><u>Notes</u>:</dt>
-        <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
+          <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
+          <dd class="data-controlled-footer-field unit-from-data"></dd>
         
 
         
 
         
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• The results from 2020 onwards are only comparable with previous years to a limited extent. For more information see "3. Data description" in the national metadata.</dd>
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ><u>Last modification of code <small>(data)</small></u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of code <small>(data)</small></u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
 
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2022</dd>
         
-    <dl>
+    </dl>
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
@@ -832,7 +819,8 @@ data-event-label="Change to Sources tab"
                 
                 The international organisations (custodian agencies) that are responsible for the respective SDG-indicator publish methodical explanations for the indicator - the so-called global metadata.<br><br>Here, national time series that fit the global metadata best as well as their comparability with the global metadata are presented. Please find further methodical and country-specific information in the related national metadata.
             </p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -851,7 +839,7 @@ data-event-label="Change to Sources tab"
   
   
       
-        
+      
       
       
       <tr>
@@ -867,13 +855,17 @@ data-event-label="Change to Sources tab"
       
   
       
-        
-          
+      
       
         
           
       
+      
+      
         
+          
+      
+      
       
       
       <tr>
@@ -889,7 +881,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -914,99 +906,76 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
-          
       
-        
-          
       
         
           
       
-        
-          
       
-        
-          
       
         
           
       
-        
-          
       
-        
-          
       
         
           
       
+      
+      
         
-      
-      
-      <tr>
-        <th scope="row">Last modification of code <small>(data)</small> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/726d08db629095410fc4a695700c3ecff314b858" target="_blank">
-                2021-10-21: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+      
+      
+      
+        
           
-        </td>
-        </tr>
-        
       
-  
+      
       
         
-      
-      
-      
-  
-      
-        
-      
-      
-      <tr>
-        <th scope="row">Last modification of code <small>(text)</small> </th>
-        <td>
           
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/SdgTestEnvironment/sdg-data/commit/f0737d58e666ef95e28f990f106a152bf78d0d2a" target="_blank">
-                2022-08-05: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+      
+      
+      
+        
           
-        </td>
-        </tr>
-        
       
-  
+      
       
         
+          
       
       
       
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
   
   
   
@@ -1172,7 +1141,7 @@ data-event-label="Change to Sources tab"
   
   
   
-  
+  </tbody>
 </table>
 
         </article>
@@ -1183,14 +1152,15 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This tab provides relevant information on the SDG indicators - such as the political target, the primary responsible organisation (custodian agency) and a link to the global metadata. The <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank”>global metadata</a> is provided by the Uited Nations Statistics Division.</p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
   
   
       
-        
+      
       
       
       <tr>
@@ -1206,7 +1176,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1222,7 +1192,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1238,7 +1208,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1254,10 +1224,12 @@ data-event-label="Change to Sources tab"
       
   
       
+      
+      
         
           
       
-        
+      
       
       
       <tr>
@@ -1282,23 +1254,33 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       
   
       
-        
-          
       
-        
-          
       
         
           
       
+      
+      
         
           
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
       
         
           
@@ -1486,6 +1468,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -1503,7 +1486,8 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -1553,7 +1537,7 @@ data-event-label="Change to Sources tab"
   
   
       
-        
+      
       
       
       <tr>
@@ -1569,7 +1553,7 @@ data-event-label="Change to Sources tab"
       
   
       
-        
+      
       
       
       <tr>
@@ -1585,104 +1569,172 @@ data-event-label="Change to Sources tab"
       
   
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
-        
-          
+      
       
         
           
       
+      
+      
         
           
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
       
         
           
@@ -1803,6 +1855,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -1841,8 +1894,8 @@ data-event-label="Change to Sources tab"
   </div>
 </div>
 
+  <a href="#top"></a>
 </div>
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -1883,21 +1936,15 @@ data-event-label="Change to Sources tab"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
-
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
@@ -1916,12 +1963,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -1929,4 +1976,3 @@ data-event-label="Change to Sources tab"
 
 </body>
 </html>
-

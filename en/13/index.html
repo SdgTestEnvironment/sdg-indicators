@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'en',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -118,23 +117,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -145,26 +139,32 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
 <body class="language-en
-layout-goal-bootstrap5
+layout-goal
 ">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta</strong>
+    <strong class="phase-tag">beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:sdg-indicators@destatis.de">feedback</a>.
+    This is a development website. We welcome your <a href="mailto:%email_address">feedback</a>.
     
   </div>
 </div>
@@ -197,22 +197,25 @@ layout-goal-bootstrap5
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/about_guidance/">Technical instructions</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Useful information
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/facts_agenda/">2030 Agenda</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/facts_dns/">German Sustainable Development Strategy (DNS)</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/">Open SDG platforms of other countries</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG platforms of other countries
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenia1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Faroe Islands1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Iceland1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kyrgyzstan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Lao PDR1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Rwanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">South korea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">United Kingdom1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">United States1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/en/publications/">Publications</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="To the page of the national indicators" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/en/search/">
@@ -243,7 +246,15 @@ layout-goal-bootstrap5
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/13/">
+                Deutsch
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -256,22 +267,6 @@ data-event-label="high"
 </header>
 <div id="top" tabindex=-1></div>
 
-
-
-
-
-<div class="heading goal-banner goal-13">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-tiles">
-                <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/en/13.png" alt="Climate action - Goal 13" id="goal-13" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10">
-                <h1>Take urgent action to combat climate change and its impacts</h1>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
@@ -288,82 +283,69 @@ data-event-label="high"
   
 </div>
 
-<div id="main-content" class="container goal-indicators goal-13 goal-by-target" role="main">
-
-
-  
-
-
-
-  
-
+<div class="heading goal-banner goal-13">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//12" class="btn btn-primary btn-block goal-13 navigation-btn text-nowrap" role="button">
-          <b><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous goal</b>
-        </a>
+    <div class="row">
+      <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/en/13.png" alt="Climate action - Goal 13" id="goal-13" class="goal-icon-image goal-icon-image-" />
       </div>
-
-      <div class="col-md-auto">
-        <a href="https://sustainabledevelopment-deutschland.github.io//13" class="btn btn-primary btn-block goal-13 navigation-btn" title="" role="button">
-          <b class="btn-label d-none d-md-block">National indicators on Goal 13 </b><b class="btn-label d-block d-md-none">Goal 13 - National</b>
-        </a>
-      </div>
-
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//14" class="btn btn-primary btn-block goal-13 navigation-btn text-nowrap" role="button">
-          <b>Next goal <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
+      <div class="col-8 col-md-9 col-lg-10 goal-details">
+        <h1 class="titles goal-13">
+          Take urgent action to combat climate change and its impacts
+        </h1>
       </div>
     </div>
   </div>
+</div>
+
+
+<div id="main-content" class="container" role="main">
+
+  
+
 
 
   <div class="container g-0">
-    <div class="row">
-      <div class="col" style="padding-right: 0px;">
-        <h2>Targets</h2>
-      </div>
-      <div class="col" style="paddig-left: 0px;">
-        <h2>Indicators</h2>
-      </div>
-    </div>
+    <h2 class="goal-page-heading"></h2>
 
     
     
       
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            13.1
-          </span>
-          <p>
-            Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Target</span> 13.1</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.1.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                13.1.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-1-1">Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -372,123 +354,38 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/en/13-1-1" style="padding-left: 0px">
-                Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population
-              </a>
-              
             </div>
-          
-
             
             
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                13.1.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/en/13-1-2" style="padding-left: 0px">
-                Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                13.1.3
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/en/13-1-3" style="padding-left: 0px">
-                Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies
-              </a>
-              
-            </div>
-          
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            13.2
-          </span>
-          <p>
-            Integrate climate change measures into national policies, strategies and planning
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.1.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                13.2.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-1-2">Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -497,87 +394,38 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/en/13-2-1" style="padding-left: 0px">
-                Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
-              </a>
-              
             </div>
-          
-
             
             
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                13.2.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/en/13-2-2" style="padding-left: 0px">
-                Total greenhouse gas emissions per year
-              </a>
-              
-            </div>
-          
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            13.3
-          </span>
-          <p>
-            Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.1.3</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                13.3.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-1-3">Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -586,51 +434,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/en/13-3-1" style="padding-left: 0px">
-                Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            13.a
-          </span>
-          <p>
-            Implement the commitment undertaken by developed-country parties to the U<small>NITED</small> N<small>ATIONS</small> F<small>RAMEWORK</small> C<small>ONVENTION ON</small> C<small>LIMATE</small> C<small>HANGE</small> to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the G<small>REEN</small> C<small>LIMATE</small> F<small>UND</small> through its capitalization as soon as possible
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Target</span> 13.2</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Integrate climate change measures into national policies, strategies and planning</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.2.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                13.a.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-2-1">Number of countries with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -639,51 +488,200 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/en/13-a-1" style="padding-left: 0px">
-                Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            13.b
-          </span>
-          <p>
-            Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.2.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                13.b.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-2-2">Total greenhouse gas emissions per year</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Target</span> 13.3</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Improve education, awareness-raising and human and institutional capacity on climate change mitigation, adaptation, impact reduction and early warning</span>
+          </div>
+      </div>
+        
+
           
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.3.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-3-1">Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Target</span> 13.a</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Implement the commitment undertaken by developed-country parties to the U<small>NITED</small> N<small>ATIONS</small> F<small>RAMEWORK</small> C<small>ONVENTION ON</small> C<small>LIMATE</small> C<small>HANGE</small> to a goal of mobilizing jointly $100 billion annually by 2020 from all sources to address the needs of developing countries in the context of meaningful mitigation actions and transparency on implementation and fully operationalize the G<small>REEN</small> C<small>LIMATE</small> F<small>UND</small> through its capitalization as soon as possible</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.a.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-a-1">Amounts provided and mobilized in United States dollars per year in relation to the continued existing collective mobilization goal of the $100 billion commitment through to 2025</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Target</span> 13.b</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Promote mechanisms for raising capacity for effective climate change-related planning and management in least developed countries and small island developing States, including focusing on women, youth and local and marginalized communities</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 13.b.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/en/13-b-1">Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -692,21 +690,20 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/en/13-b-1" style="padding-left: 0px">
-                Number of least developed countries and small island developing States with nationally determined contributions, long-term strategies, national adaptation plans and adaptation communications, as reported to the secretariat of the United Nations Framework Convention on Climate Change
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
-      
-    </div>
+        
+        <hr class="goal-page-target-rule" />
+    
   </div>
+  <a href="#top"></a>
+</div>
+
 
 <footer role="contentinfo">
     <div class="container">
@@ -747,16 +744,12 @@ data-event-label="high"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -776,12 +769,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -789,4 +782,3 @@ data-event-label="high"
 
 </body>
 </html>
-

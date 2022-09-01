@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'de',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -118,23 +117,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -145,26 +139,32 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
 <body class="language-de
-layout-goal-bootstrap5
+layout-goal
 ">
 <!-- <div class="container"> -->
-
-
 
 <script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
     
   </div>
 </div>
@@ -197,22 +197,25 @@ layout-goal-bootstrap5
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wissenswertes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_dns/">DNS</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/">Open SDG Plattformen anderer Staaten</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG Plattformen anderer Staaten
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenien1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnien und Herzegowina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Färöer1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Island1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kirgisistan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Laos1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Ruanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">Südkorea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">Vereinigtes Königreich1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">USA1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/publications/">Publikationen</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
@@ -243,7 +246,15 @@ layout-goal-bootstrap5
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/12/">
+                English
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -256,22 +267,6 @@ data-event-label="high"
 </header>
 <div id="top" tabindex=-1></div>
 
-
-
-
-
-<div class="heading goal-banner goal-12">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 col-md-3 col-lg-2 goal-tiles">
-                <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/12.png" alt="Verantwortungsvolle Konsum- und Produktionsmuster - Ziel 12" id="goal-12" class="goal-icon-image goal-icon-image-" />
-            </div>
-            <div class="col-8 col-md-9 col-lg-10">
-                <h1>Nachhaltige Konsum- und Produktionsmuster sicherstellen</h1>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="container">
@@ -288,224 +283,217 @@ data-event-label="high"
   
 </div>
 
-<div id="main-content" class="container goal-indicators goal-12 goal-by-target" role="main">
-
-
-  
-
-
-
-  
-
+<div class="heading goal-banner goal-12">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//11" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
-          <b><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriges Ziel</b>
-        </a>
+    <div class="row">
+      <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
+        <img src="https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals/de/12.png" alt="Verantwortungsvolle Konsum- und Produktionsmuster - Ziel 12" id="goal-12" class="goal-icon-image goal-icon-image-" />
       </div>
-
-      <div class="col-md-auto">
-        <a href="https://sustainabledevelopment-deutschland.github.io//12" class="btn btn-primary btn-block goal-12 navigation-btn" title="" role="button">
-          <b class="btn-label d-none d-md-block">Nationale Indikatoren zu Ziel 12 </b><b class="btn-label d-block d-md-none">Ziel 12 - National</b>
-        </a>
-      </div>
-
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//13" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
-          <b>Nächstes Ziel <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
+      <div class="col-8 col-md-9 col-lg-10 goal-details">
+        <h1 class="titles goal-12">
+          Nachhaltige Konsum- und Produktionsmuster sicherstellen
+        </h1>
       </div>
     </div>
   </div>
+</div>
+
+
+<div id="main-content" class="container" role="main">
+
+  
+
 
 
   <div class="container g-0">
-    <div class="row">
-      <div class="col" style="padding-right: 0px;">
-        <h2>Unterziele</h2>
-      </div>
-      <div class="col" style="paddig-left: 0px;">
-        <h2>Indikatoren</h2>
-      </div>
-    </div>
+    <h2 class="goal-page-heading"></h2>
 
     
     
       
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.1
-          </span>
-          <p>
-            Den Z<small>EHNJAHRES-</small>P<small>ROGRAMMRAHMEN FÜR NACHHALTIGE</small> K<small>ONSUM- UND</small> P<small>RODUKTIONSMUSTER</small> umsetzen, wobei alle Länder, an der Spitze die entwickelten Länder, Maßnahmen ergreifen, unter Berücksichtigung des Entwicklungsstands und der Kapazitäten der Entwicklungsländer
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                12.1.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/12-1-1" style="padding-left: 0px">
-                Anzahl der Staaten, die politische Instrumente zur Unterstützung des Übergangs zu nachhaltigem Konsum und nachhaltiger Produktion entwickeln, beschließen und umsetzen
-              </a>
-              
-            </div>
-          
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.1</span>
+            </h3>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.2
-          </span>
-          <p>
-            Bis 2030 die nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen erreichen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                12.2.1
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/12-2-1" style="padding-left: 0px">
-                Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP
-              </a>
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number">
-                12.2.2
-                
-
-
-
-
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
-
-
-
-<span class="status complete">
-    <span class="status-inner">Verfügbar</span>
-</span>
-
-
-          </li></ul>
-
-
-              </span>
-              <a href="/sdg-indicators/12-2-2" style="padding-left: 0px">
-                Inländische Materialnutzung, inländische Materialnutzung pro Kopf und inländische Materialnutzung im Verhältnis zum BIP
-              </a>
-              
-            </div>
-          
+          <div class="col goal-page-target-name">
+            <span class="target-name">Den Z<small>EHNJAHRES-</small>P<small>ROGRAMMRAHMEN FÜR NACHHALTIGE</small> K<small>ONSUM- UND</small> P<small>RODUKTIONSMUSTER</small> umsetzen, wobei alle Länder, an der Spitze die entwickelten Länder, Maßnahmen ergreifen, unter Berücksichtigung des Entwicklungsstands und der Kapazitäten der Entwicklungsländer</span>
           </div>
-        </div>
-      
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.3
-          </span>
-          <p>
-            Bis 2030 die weltweite Nahrungsmittelverschwendung pro Kopf auf Einzelhandels- und Verbraucherebene halbieren und die entlang der Produktions- und Lieferkette entstehenden Nahrungsmittelverluste einschließlich Nachernteverlusten verringern
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.1.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.3.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-1-1">Anzahl der Staaten, die politische Instrumente zur Unterstützung des Übergangs zu nachhaltigem Konsum und nachhaltiger Produktion entwickeln, beschließen und umsetzen</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.2</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 die nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen erreichen</span>
+          </div>
+      </div>
+        
+
           
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.2.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/12-2-1">Rohstoff-Fußabdruck, Rohstoff-Fußabdruck pro Kopf und Rohstoff-Fußabdruck im Verhältnis zum BIP</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.2.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/12-2-2">Inländische Materialnutzung, inländische Materialnutzung pro Kopf und inländische Materialnutzung im Verhältnis zum BIP</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Verfügbar</span>
+</span>
+
+
+        </li></ul>
+
+
+            </div>
+            
+            
+          </div>
+        
+        <hr class="goal-page-target-rule" />
+    
+      
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.3</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 die weltweite Nahrungsmittelverschwendung pro Kopf auf Einzelhandels- und Verbraucherebene halbieren und die entlang der Produktions- und Lieferkette entstehenden Nahrungsmittelverluste einschließlich Nachernteverlusten verringern</span>
+          </div>
+      </div>
+        
+
+          
+          
+          
+          
+
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.3.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
+              
+              <span class="indicator-name"><a href="/sdg-indicators/12-3-1">a) Index der Lebensmittelverluste und b) Index der Lebensmittelverschwendung</a></span>
+              
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -514,51 +502,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-3-1" style="padding-left: 0px">
-                a) Index der Lebensmittelverluste und b) Index der Lebensmittelverschwendung
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.4
-          </span>
-          <p>
-            Bis 2020 einen umweltverträglichen Umgang mit Chemikalien und allen Abfällen während ihres gesamten Lebenszyklus in Übereinstimmung mit den vereinbarten internationalen Rahmenregelungen erreichen und ihre Freisetzung in Luft, Wasser und Boden erheblich verringern, um ihre nachteiligen Auswirkungen auf die menschliche Gesundheit und die Umwelt auf ein Mindestmaß zu beschränken
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.4</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2020 einen umweltverträglichen Umgang mit Chemikalien und allen Abfällen während ihres gesamten Lebenszyklus in Übereinstimmung mit den vereinbarten internationalen Rahmenregelungen erreichen und ihre Freisetzung in Luft, Wasser und Boden erheblich verringern, um ihre nachteiligen Auswirkungen auf die menschliche Gesundheit und die Umwelt auf ein Mindestmaß zu beschränken</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.4.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.4.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-4-1">Anzahl der Vertragsparteien internationaler multilateraler Umweltübereinkommen über gefährliche Abfälle und andere Chemikalien, die ihre Zusagen und Verpflichtungen zur Übermittlung von Informationen nach den einschlägigen Übereinkommen einhalten</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -567,34 +556,38 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-4-1" style="padding-left: 0px">
-                Anzahl der Vertragsparteien internationaler multilateraler Umweltübereinkommen über gefährliche Abfälle und andere Chemikalien, die ihre Zusagen und Verpflichtungen zur Übermittlung von Informationen nach den einschlägigen Übereinkommen einhalten
-              </a>
-              
             </div>
+            
+            
+          </div>
+        
+
+          
+          
+          
           
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.4.2</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.4.2
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-4-2">a) Aufkommen gefährlicher Abfälle pro Kopf und b) Anteil der gefährlichen Abfälle, der behandelt wird, nach Art der Behandlung</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -603,51 +596,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-4-2" style="padding-left: 0px">
-                a) Aufkommen gefährlicher Abfälle pro Kopf und b) Anteil der gefährlichen Abfälle, der behandelt wird, nach Art der Behandlung
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.5
-          </span>
-          <p>
-            Bis 2030 das Abfallaufkommen durch Vermeidung, Verminderung, Wiederverwertung und Wiederverwendung deutlich verringern
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.5</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 das Abfallaufkommen durch Vermeidung, Verminderung, Wiederverwertung und Wiederverwendung deutlich verringern</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.5.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.5.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-5-1">Nationale Recyclingquote, Tonnen an recyceltem Material</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -656,51 +650,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-5-1" style="padding-left: 0px">
-                Nationale Recyclingquote, Tonnen an recyceltem Material
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.6
-          </span>
-          <p>
-            Die Unternehmen, insbesondere große und transnationale Unternehmen, dazu ermutigen, nachhaltige Verfahren einzuführen und in ihre Berichterstattung Nachhaltigkeitsinformationen aufzunehmen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.6</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Die Unternehmen, insbesondere große und transnationale Unternehmen, dazu ermutigen, nachhaltige Verfahren einzuführen und in ihre Berichterstattung Nachhaltigkeitsinformationen aufzunehmen</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.6.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.6.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-6-1">Anzahl der Unternehmen, die Nachhaltigkeitsberichte veröffentlichen</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -709,51 +704,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-6-1" style="padding-left: 0px">
-                Anzahl der Unternehmen, die Nachhaltigkeitsberichte veröffentlichen
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.7
-          </span>
-          <p>
-            In der öffentlichen Beschaffung nachhaltige Verfahren fördern, im Einklang mit den nationalen Politiken und Prioritäten
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.7</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">In der öffentlichen Beschaffung nachhaltige Verfahren fördern, im Einklang mit den nationalen Politiken und Prioritäten</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.7.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.7.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-7-1">Umsetzungsgrad der Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -762,51 +758,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-7-1" style="padding-left: 0px">
-                Umsetzungsgrad der Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.8
-          </span>
-          <p>
-            Bis 2030 sicherstellen, dass die Menschen überall über einschlägige Informationen und das Bewusstsein für nachhaltige Entwicklung und eine Lebensweise in Harmonie mit der Natur verfügen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.8</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Bis 2030 sicherstellen, dass die Menschen überall über einschlägige Informationen und das Bewusstsein für nachhaltige Entwicklung und eine Lebensweise in Harmonie mit der Natur verfügen</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.8.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.8.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-8-1">Umfang, in dem i) Bildung zur Weltbürgerschaft (Global Citizenship Education) und ii) Bildung für nachhaltige Entwicklung in a) nationale Bildungspolitik, b) Lehrpläne, c) Ausbildung von Lehrkräften und d) Leistungsbewertung der Lernenden integriert sind</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -815,51 +812,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-8-1" style="padding-left: 0px">
-                Umfang, in dem i) Bildung zur Weltbürgerschaft (Global Citizenship Education) und ii) Bildung für nachhaltige Entwicklung in a) nationale Bildungspolitik, b) Lehrpläne, c) Ausbildung von Lehrkräften und d) Leistungsbewertung der Lernenden integriert sind
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.a
-          </span>
-          <p>
-            Die Entwicklungsländer bei der Stärkung ihrer wissenschaftlichen und technologischen Kapazitäten im Hinblick auf den Übergang zu nachhaltigeren Konsum- und Produktionsmustern unterstützen
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.a</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Die Entwicklungsländer bei der Stärkung ihrer wissenschaftlichen und technologischen Kapazitäten im Hinblick auf den Übergang zu nachhaltigeren Konsum- und Produktionsmustern unterstützen</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.a.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.a.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-a-1">Installierte Kapazitäten zur Erzeugung erneuerbarer Energie in Entwicklungsländern (in Watt pro Kopf)</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -868,51 +866,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-a-1" style="padding-left: 0px">
-                Installierte Kapazitäten zur Erzeugung erneuerbarer Energie in Entwicklungsländern (in Watt pro Kopf)
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.b
-          </span>
-          <p>
-            Instrumente zur Beobachtung der Auswirkungen eines nachhaltigen Tourismus, der Arbeitsplätze schafft und die lokale Kultur und lokale Produkte fördert, auf die nachhaltige Entwicklung entwickeln und anwenden
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.b</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Instrumente zur Beobachtung der Auswirkungen eines nachhaltigen Tourismus, der Arbeitsplätze schafft und die lokale Kultur und lokale Produkte fördert, auf die nachhaltige Entwicklung entwickeln und anwenden</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.b.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.b.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-b-1">Anwendung von standardisierten Gesamtrechnungssystemen zur Beobachtung der wirtschaftlichen und ökologischen Aspekte der Nachhaltigkeit des Tourismus</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -921,51 +920,52 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-b-1" style="padding-left: 0px">
-                Anwendung von standardisierten Gesamtrechnungssystemen zur Beobachtung der wirtschaftlichen und ökologischen Aspekte der Nachhaltigkeit des Tourismus
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
+        
+        <hr class="goal-page-target-rule" />
+    
       
-      
-      <div class="row">
-        <div class="col indicator-cards no-gutters">
-          <span class="indicator-card-number" style="padding-bottom: 8px;">
-            12.c
-          </span>
-          <p>
-            Die ineffiziente Subventionierung fossiler Brennstoffe, die zu verschwenderischem Verbrauch verleitet, durch Beseitigung von Marktverzerrungen entsprechend den nationalen Gegebenheiten rationalisieren, unter anderem durch eine Umstrukturierung der Besteuerung und die allmähliche Abschaffung dieser schädlichen Subventionen, um ihren Umweltauswirkungen Rechnung zu tragen, wobei die besonderen Bedürfnisse und Gegebenheiten der Entwicklungsländer in vollem Umfang berücksichtigt und die möglichen nachteiligen Auswirkungen auf ihre Entwicklung in einer die Armen und die betroffenen Gemeinwesen schützenden Weise so gering wie möglich gehalten werden
-          </p>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
+      <div class="row align-items-start goal-target">
+          <div class="col-auto goal-page-target-number">
+            <h3 class="goal-target">
+              <span class="target-number"><span class="visually-hidden">Unterziel</span> 12.c</span>
+            </h3>
+          </div>
+          <div class="col goal-page-target-name">
+            <span class="target-name">Die ineffiziente Subventionierung fossiler Brennstoffe, die zu verschwenderischem Verbrauch verleitet, durch Beseitigung von Marktverzerrungen entsprechend den nationalen Gegebenheiten rationalisieren, unter anderem durch eine Umstrukturierung der Besteuerung und die allmähliche Abschaffung dieser schädlichen Subventionen, um ihren Umweltauswirkungen Rechnung zu tragen, wobei die besonderen Bedürfnisse und Gegebenheiten der Entwicklungsländer in vollem Umfang berücksichtigt und die möglichen nachteiligen Auswirkungen auf ihre Entwicklung in einer die Armen und die betroffenen Gemeinwesen schützenden Weise so gering wie möglich gehalten werden</span>
+          </div>
+      </div>
+        
 
           
+          
+          
+          
 
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
+          <div class="row align-items-start goal-indicator">
+          
+            <div class="col-auto goal-page-indicator-number">
+              <h4>
+                <span class="indicator-number"><span class="visually-hidden">Indikator</span> 12.c.1</span>
+              </h4>
+            </div>
+            <div class="col goal-page-indicator-name">
               
-              <span class="indicator-card-number">
-                12.c.1
-                
+              <span class="indicator-name"><a href="/sdg-indicators/12-c-1">Höhe der Subventionen für fossile Brennstoffe je BIP-Einheit (Produktion und Konsum)</a></span>
+              
 
 
 
 
-    <ul class="tags list-inline" style="display:inline; float: right; margin-top: 0px; margin-bottom: 0px;" aria-label=""><li class="list-inline-item">
-          <span class="visually-hidden"></span>
-          
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
 
 
 
@@ -974,21 +974,20 @@ data-event-label="high"
 </span>
 
 
-          </li></ul>
+        </li></ul>
 
 
-              </span>
-              <a href="/sdg-indicators/12-c-1" style="padding-left: 0px">
-                Höhe der Subventionen für fossile Brennstoffe je BIP-Einheit (Produktion und Konsum)
-              </a>
-              
             </div>
-          
+            
+            
           </div>
-        </div>
-      
-    </div>
+        
+        <hr class="goal-page-target-rule" />
+    
   </div>
+  <a href="#top"></a>
+</div>
+
 
 <footer role="contentinfo">
     <div class="container">
@@ -1029,16 +1028,12 @@ data-event-label="high"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -1058,12 +1053,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -1071,4 +1066,3 @@ data-event-label="high"
 
 </body>
 </html>
-

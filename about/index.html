@@ -38,12 +38,11 @@ var opensdg = {
     this.dataDisplayAlterations.push(callback);
   },
 
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
   language: 'de',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -118,23 +117,18 @@ var translations = {
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
+        <link rel="apple-touch-icon" sizes="180x180" href="/sdg-indicators/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/sdg-indicators/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
 
-
-
-<link rel="shortcut icon" type="image/ico" href="/sdg-indicators/assets/img/favicons/favicon.ico">
-<link rel="icon" type="image/png" href="/sdg-indicators/assets/img/favicons/favicon.png">
-
-
-        
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901024839">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220901070037">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -145,6 +139,10 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
+        <!--[if IE]>
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
+        <![endif]-->
+
         
 
     </head>
@@ -153,18 +151,20 @@ layout-page
 ">
 <!-- <div class="container"> -->
 
-
-
 <script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title"></h2>
+    <p class="internet-explorer-message-body"></p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">Beta-Version</strong>
+    <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:sdg-indicators@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
     
   </div>
 </div>
@@ -197,22 +197,25 @@ layout-page
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/about_guidance/">Technische&nbspHinweise</a>
 </li></ul>
-            </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Wissenswertes
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_agenda/">Agenda&nbsp2030</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/facts_dns/">DNS</a>
-</li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/">Open SDG Plattformen anderer Staaten</a>
-</li></ul>
-            </li><li class="nav-item ">
+</li><li>
+                      <a class="dropdown-item dropdown-toggle" href="#">
+                          Open SDG Plattformen anderer Staaten
+                      </a>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenien1</a></li><li><a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnien und Herzegowina1</a></li><li><a class="dropdown-item" href="https://sdg.hagstova.fo/">Färöer1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana1</a></li><li><a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Island1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kirgisistan1</a></li><li><a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Laos1</a></li><li><a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Ruanda1</a></li><li><a class="dropdown-item" href="http://kostat.go.kr/sdg">Südkorea1</a></li><li><a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine1</a></li><li><a class="dropdown-item" href="https://sdgdata.gov.uk/">Vereinigtes Königreich1</a></li><li><a class="dropdown-item" href="https://sdg.data.gov/">USA1</a></li></ul>
+                    </li></ul>
+          </li><li class="nav-item ">
     <a class="nav-link" href="/sdg-indicators/publications/">Publikationen</a>
 </li><li class="nav-item ">
     <a class="nav-link" href="https://sustainabledevelopment-deutschland.github.io"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/DNS Wheel.png" title="Zur Seite der nationalen Indikatoren" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li></ul>
-    
+
                 </div>
                 <div class="header-search-bar">
                     <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
@@ -243,7 +246,15 @@ layout-page
         </li></ul>
 </div>
 
-<a title="" aria-label=""
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/about/">
+                English
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -257,24 +268,32 @@ data-event-label="high"
 <div id="top" tabindex=-1></div>
 
 
-
-
-
-
+<div class="container">
+    <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        <li class="breadcrumb-item" >
+            <a href="/sdg-indicators/">Start</a>
+        </li>
+        <li class="breadcrumb-item active">Über Uns</li>
+    </ol>
+</nav>
+</div>
 <div id="main-content" class="container" role="main">
     <div>
         <h1>Über Uns</h1>
         
-            <p>Ziel der nationalen Berichtsplattform (NRP) ist die Bereitstellung von Daten für Deutschland zu den globalen  Indikatoren der UN-Nachhaltigkeitsziele, den <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">Sustainable Development Goals</a> (SDGs). Das Statistische Bundesamt ist verantwortlich für die Koordinierung und Veröffentlichung deutscher Daten für die SDG-Indikatoren und für die statistische Berichterstattung über die Fortschritte Deutschlands auf diesem Gebiet. Diese Internetseite ermöglicht es den zuständigen internationalen Organisationen (Custodian Agencies) für einzelne SDG-Indikatoren die Daten direkt herunterzuladen und für die globale Berichterstattung zu nutzen. Zudem bietet sie der interessierten Öffentlichkeit stets aktualisierte Informationen über den Stand von Deutschlands SDG-Indikatoren und detaillierte Angaben zu deren Berechnungsmethodik.</p>
+
+
+    <p>Ziel der nationalen Berichtsplattform (NRP) ist die Bereitstellung von Daten für Deutschland zu den globalen  Indikatoren der UN-Nachhaltigkeitsziele, den <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">Sustainable Development Goals</a> (SDGs). Das Statistische Bundesamt ist verantwortlich für die Koordinierung und Veröffentlichung deutscher Daten für die SDG-Indikatoren und für die statistische Berichterstattung über die Fortschritte Deutschlands auf diesem Gebiet. Diese Internetseite ermöglicht es den zuständigen internationalen Organisationen (Custodian Agencies) für einzelne SDG-Indikatoren die Daten direkt herunterzuladen und für die globale Berichterstattung zu nutzen. Zudem bietet sie der interessierten Öffentlichkeit stets aktualisierte Informationen über den Stand von Deutschlands SDG-Indikatoren und detaillierte Angaben zu deren Berechnungsmethodik.</p>
 
 <p>Obwohl die SDG-Indikatoren vorrangig der internationalen und nicht der nationalen Messung der Zielerreichung dienen sollen, lassen sich viele der globalen Indikatoren auch national berechnen. Die hier vorliegende Zusammenstellung der für Deutschland verfügbaren Indikatoren basiert sowohl auf Daten der amtlichen Statistik als auch auf anderen Quellen. Für eine Vielzahl der globalen Indikatoren sind Zeitreihen auf nationaler Ebene verfügbar und werden hier auf der nationalen Berichtsplattform veröffentlicht. Dass nicht zu allen der global vereinbarten Indikatoren statistische Daten vorliegen, hat mehrere Ursachen: Bestimmte international relevante Indikatoren lassen sich nicht sinnvoll für Deutschland berechnen oder können nicht statistisch gemessen, sondern nur politisch beantwortet werden. Für andere Indikatoren liegen noch nicht alle notwendigen statistischen Ausgangsdaten vor.</p>
 
 <p>In einigen Fällen liegen für Deutschland Daten mit geringfügigen methodischen Abweichungen gegenüber den international vereinbarten Definitionen vor. In anderen Fällen sind dagegen nur Zeitreihen mit größeren Abweichungen zur global festgelegten Berechnungsmethodik verfügbar. Dies kann dazu führen, dass die zuständigen internationalen Organisationen zur Sicherstellung der internationalen Vergleichbarkeit Anpassungen an den bereitgestellten Daten vornehmen. Entsprechend können die Zeitreihen, die in der <a href="https://unstats.un.org/sdgs/indicators/database/">globalen SDG-Datenbank</a> für Deutschland zu finden sind, von den hier bereitgestellten Zeitreihen abweichen. Inwiefern die veröffentlichten Daten der globalen Berechnungsmethodik entsprechen, ist unter dem Punkt „Vergleichbarkeit mit UN-Metadaten“ unter jedem Indikator beschrieben.</p>
 
-        
+
+
     </div>
 </div>
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -315,16 +334,12 @@ data-event-label="high"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -344,12 +359,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220901024839'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220901070037'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220901024839"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220901070037"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -357,4 +372,3 @@ data-event-label="high"
 
 </body>
 </html>
-
