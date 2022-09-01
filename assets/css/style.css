@@ -2853,11 +2853,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   .dropdown-menu > li:hover > .submenu {
     display: block; } }
 .goal-1.heading {
-  background-color: white;
-  border-bottom: 15px solid #E52B3D;
-  border-top: 15px solid #E52B3D;
+  background-color: #E52B3D;
+  border-bottom: 5px solid #E52B3D;
+  border-top: 5px solid #c51829;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-1.underline {
   height: 5px;
   border-top: 5px solid #c51829; }
@@ -2877,11 +2878,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #E52B3D; }
 
 .goal-2.heading {
-  background-color: white;
-  border-bottom: 15px solid #DDA63A;
-  border-top: 15px solid #DDA63A;
+  background-color: #DDA63A;
+  border-bottom: 5px solid #DDA63A;
+  border-top: 5px solid #c28c22;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-2.underline {
   height: 5px;
   border-top: 5px solid #c28c22; }
@@ -2901,11 +2903,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #DDA63A; }
 
 .goal-3.heading {
-  background-color: white;
-  border-bottom: 15px solid #4C9F38;
-  border-top: 15px solid #4C9F38;
+  background-color: #4C9F38;
+  border-bottom: 5px solid #4C9F38;
+  border-top: 5px solid #3a792b;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-3.underline {
   height: 5px;
   border-top: 5px solid #3a792b; }
@@ -2925,11 +2928,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #4C9F38; }
 
 .goal-4.heading {
-  background-color: white;
-  border-bottom: 15px solid #C42130;
-  border-top: 15px solid #C42130;
+  background-color: #C42130;
+  border-bottom: 5px solid #C42130;
+  border-top: 5px solid #981a25;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-4.underline {
   height: 5px;
   border-top: 5px solid #981a25; }
@@ -2949,11 +2953,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #C42130; }
 
 .goal-5.heading {
-  background-color: white;
-  border-bottom: 15px solid #FF3E24;
-  border-top: 15px solid #FF3E24;
+  background-color: #FF3E24;
+  border-bottom: 5px solid #FF3E24;
+  border-top: 5px solid #f01c00;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-5.underline {
   height: 5px;
   border-top: 5px solid #f01c00; }
@@ -2973,11 +2978,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #FF3E24; }
 
 .goal-6.heading {
-  background-color: white;
-  border-bottom: 15px solid #28BCE1;
-  border-top: 15px solid #28BCE1;
+  background-color: #28BCE1;
+  border-bottom: 5px solid #28BCE1;
+  border-top: 5px solid #1a9bbc;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-6.underline {
   height: 5px;
   border-top: 5px solid #1a9bbc; }
@@ -2997,11 +3003,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #28BCE1; }
 
 .goal-7.heading {
-  background-color: white;
-  border-bottom: 15px solid #FCC30B;
-  border-top: 15px solid #FCC30B;
+  background-color: #FCC30B;
+  border-bottom: 5px solid #FCC30B;
+  border-top: 5px solid #d1a103;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-7.underline {
   height: 5px;
   border-top: 5px solid #d1a103; }
@@ -3021,11 +3028,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #FCC30B; }
 
 .goal-8.heading {
-  background-color: white;
-  border-bottom: 15px solid #A21942;
-  border-top: 15px solid #A21942;
+  background-color: #A21942;
+  border-bottom: 5px solid #A21942;
+  border-top: 5px solid #761230;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-8.underline {
   height: 5px;
   border-top: 5px solid #761230; }
@@ -3045,11 +3053,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #A21942; }
 
 .goal-9.heading {
-  background-color: white;
-  border-bottom: 15px solid #FD6925;
-  border-top: 15px solid #FD6925;
+  background-color: #FD6925;
+  border-bottom: 5px solid #FD6925;
+  border-top: 5px solid #ed4c02;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-9.underline {
   height: 5px;
   border-top: 5px solid #ed4c02; }
@@ -3069,11 +3078,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #FD6925; }
 
 .goal-10.heading {
-  background-color: white;
-  border-bottom: 15px solid #DD1367;
-  border-top: 15px solid #DD1367;
+  background-color: #DD1367;
+  border-bottom: 5px solid #DD1367;
+  border-top: 5px solid #ae0f51;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-10.underline {
   height: 5px;
   border-top: 5px solid #ae0f51; }
@@ -3093,11 +3103,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #DD1367; }
 
 .goal-11.heading {
-  background-color: white;
-  border-bottom: 15px solid #FD9C27;
-  border-top: 15px solid #FD9C27;
+  background-color: #FD9C27;
+  border-bottom: 5px solid #FD9C27;
+  border-top: 5px solid #ef8402;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-11.underline {
   height: 5px;
   border-top: 5px solid #ef8402; }
@@ -3117,11 +3128,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #FD9C27; }
 
 .goal-12.heading {
-  background-color: white;
-  border-bottom: 15px solid #BF8B2E;
-  border-top: 15px solid #BF8B2E;
+  background-color: #BF8B2E;
+  border-bottom: 5px solid #BF8B2E;
+  border-top: 5px solid #966d24;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-12.underline {
   height: 5px;
   border-top: 5px solid #966d24; }
@@ -3141,11 +3153,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #BF8B2E; }
 
 .goal-13.heading {
-  background-color: white;
-  border-bottom: 15px solid #417D46;
-  border-top: 15px solid #417D46;
+  background-color: #417D46;
+  border-bottom: 5px solid #417D46;
+  border-top: 5px solid #305b33;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-13.underline {
   height: 5px;
   border-top: 5px solid #305b33; }
@@ -3165,11 +3178,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #417D46; }
 
 .goal-14.heading {
-  background-color: white;
-  border-bottom: 15px solid #0A96D8;
-  border-top: 15px solid #0A96D8;
+  background-color: #0A96D8;
+  border-bottom: 5px solid #0A96D8;
+  border-top: 5px solid #0874a7;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-14.underline {
   height: 5px;
   border-top: 5px solid #0874a7; }
@@ -3189,11 +3203,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #0A96D8; }
 
 .goal-15.heading {
-  background-color: white;
-  border-bottom: 15px solid #57BE2F;
-  border-top: 15px solid #57BE2F;
+  background-color: #57BE2F;
+  border-bottom: 5px solid #57BE2F;
+  border-top: 5px solid #449525;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-15.underline {
   height: 5px;
   border-top: 5px solid #449525; }
@@ -3213,11 +3228,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #57BE2F; }
 
 .goal-16.heading {
-  background-color: white;
-  border-bottom: 15px solid #00689C;
-  border-top: 15px solid #00689C;
+  background-color: #00689C;
+  border-bottom: 5px solid #00689C;
+  border-top: 5px solid #004669;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-16.underline {
   height: 5px;
   border-top: 5px solid #004669; }
@@ -3237,11 +3253,12 @@ body.contrast-high .navbar #menu .btn-group.menu-dropdown .dropdown-menu li a {
   background-color: #00689C; }
 
 .goal-17.heading {
-  background-color: white;
-  border-bottom: 15px solid #1F4A6A;
-  border-top: 15px solid #1F4A6A;
+  background-color: #1F4A6A;
+  border-bottom: 5px solid #1F4A6A;
+  border-top: 5px solid #132e43;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 0px;
+  color: white; }
 .goal-17.underline {
   height: 5px;
   border-top: 5px solid #132e43; }
