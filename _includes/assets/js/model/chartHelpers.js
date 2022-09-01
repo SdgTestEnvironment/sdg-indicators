@@ -4,7 +4,7 @@
 
 /**
  * @param {string} currentTitle
- * @param {Array} allTitles
+ * @param {Array} allTitles Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {String} Updated title
@@ -15,30 +15,13 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
 }
 
 /**
- * @param {string} currentSubTitle
- * @param {Array} allSubTitles
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {String} Updated subtitle
- */
-function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedSeries) {
-  var match = getMatchByUnitSeries(allSubTitles, selectedUnit, selectedSeries);
-  return (match) ? match.subtitle : currentSubTitle;
-}
-
-
-/**
  * @param {string} currentType
  * @param {Array} allTypes Objects containing 'unit', 'series', and 'type'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
- * @param {Boolean} chartjs3
  * @return {String} Updated type
  */
-function getChartType(currentType, allTypes, selectedUnit, selectedSeries, chartjs3) {
-  if (!chartjs3) {
-    return currentType;
-  }
+function getChartType(currentType, allTypes, selectedUnit, selectedSeries) {
   if (!currentType) {
     currentType = 'line';
   }
@@ -47,7 +30,7 @@ function getChartType(currentType, allTypes, selectedUnit, selectedSeries, chart
 }
 
 /**
- * @param {Array} graphLimits
+ * @param {Array} graphLimits Objects containing 'unit' and 'title'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {Object|false} Graph limit object, if any
@@ -180,6 +163,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
     dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
     datasets.unshift(dataset);
   }
+  console.log("DATASETS: ", datasets);
   return datasets;
 }
 
@@ -448,7 +432,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
     pointBorderColor: getHeadlineColor(),
     pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
-    headline: false,
+    headline: true,
     pointStyle: 'circle',
     data: prepareDataForDataset(years, rows),
     showLine: showLine,
@@ -457,7 +441,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
 }
 
   /**
-   * @param {Array} graphStepsize
+   * @param {Array} graphStepsize Objects containing 'unit' and 'title'
    * @param {String} selectedUnit
    * @param {String} selectedSeries
    */

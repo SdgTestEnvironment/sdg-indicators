@@ -31,15 +31,10 @@ function alterDataDisplay(value, info, context) {
     if (OPTIONS.decimalSeparator) {
         altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
     }
-
-    // set character to seperate thousands
-    if (page.language == 'de'){
-      altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "+");
+    // Apply thousands seperator if needed
+    if (OPTIONS.thousandsSeparator){
+        altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
     }
-    else{
-      altered = altered.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, "-");
-    }
-
 
     return altered;
 }

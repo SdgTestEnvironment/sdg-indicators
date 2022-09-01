@@ -2,27 +2,19 @@ opensdg.annotationPresets = {
     common: {
         // This "common" preset is applied to all annotations automatically.
         borderColor: '#949494',
-        drawTime: 'afterDraw',
+        //drawTime: 'afterDraw',
         type: 'line',
         borderDash: [10, 5],
         borderWidth: 1,
         label: {
-            backgroundColor: 'white',
-            {% if site.chartjs_3 %}
+            backgroundColor: 'rgba(255,255,255,0.6)',
             color: 'black',
-            {% else %}
-            fontColor: 'black',
-            {% endif %}
         },
         // This "highContrast" overrides colors when in high-contrast mode.
         highContrast: {
             label: {
                 backgroundColor: 'black',
-                {% if site.chartjs_3 %}
                 color: 'white',
-                {% else %}
-                fontColor: 'white',
-                {% endif %}
             },
         },
         // This callback is used to generate a generic description for screenreaders.
@@ -33,7 +25,7 @@ opensdg.annotationPresets = {
         description: function() {
             var descriptionParts = [translations.indicator.chart_annotation];
             if (this.label && this.label.content) {
-                descriptionParts.push(translations.t(this.label.content));
+                descriptionParts.push(translations.t(this.label.content) + ': ' + this.value);
             }
             else {
                 // If there is no label, just specify whether it is a box or line.
@@ -56,14 +48,13 @@ opensdg.annotationPresets = {
         borderDash: [15, 10],
         borderColor: '#757575',
         label: {
-            position: {% if site.chartjs_3 %}'end'{% else %}'right'{% endif %},
+            position: 'end',
             content: translations.indicator.annotation_2030_target,
         },
     },
     series_break: {
         mode: 'vertical',
         borderDash: [2, 2],
-        borderColor: '#757575',
         label: {
             position: 'top',
             content: translations.indicator.annotation_series_break,
@@ -71,19 +62,14 @@ opensdg.annotationPresets = {
     },
     error_bar: {
         adjustScaleRange: true,
-        borderWidth: 3,
         drawTime: 'afterDatasetsDraw',
         type: 'line',
-        borderDash: [2, 2],
-        backgroundColor: '#757575',
+        backgroundColor: 'blue',
         xScaleID: 'x',
         yScaleID: 'y',
-        arrowHeads: {
-            display: true,
-            enabled: true,
-            fill: true,
-            length: 80,
-            width: 80,
-          },
+        xMin: 2,
+        xMax: 2,
+        yMin: 15000,
+        yMax: 25000,
     },
 };

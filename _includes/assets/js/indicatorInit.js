@@ -29,8 +29,8 @@ var indicatorInit = function () {
                         shortIndicatorId: domData.id,
                         chartTitle: domData.charttitle,
                         chartTitles: domData.charttitles,
-                        chartSubTitle: domData.chartsubtitle,
-                        chartSubTitles: domData.chartsubtitles,
+                        chartSubtitle: domData.chartsubtitle,
+                        chartSubtitles: domData.chartsubtitles,
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
@@ -55,6 +55,7 @@ var indicatorInit = function () {
                         rootElement: '#indicatorData',
                         legendElement: '#plotLegend',
                         decimalSeparator: '{{ site.decimal_separator }}',
+                        thousandsSeparator: '{{ site.thousands_separator }}',
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap

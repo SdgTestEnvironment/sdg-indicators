@@ -136,8 +136,11 @@ function createTable(table, indicatorId, el) {
             'width': '100%'
         });
 
-        currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>'+ MODEL.chartSubTitle +'</small></caption>');
-
+        if (MODEL.chartSubtitle) {
+          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
+        } else {
+          currentTable.append('<caption>' + MODEL.chartTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
+        }
         var table_head = '<thead><tr>';
 
         var getHeading = function (heading, index) {
@@ -161,7 +164,7 @@ function createTable(table, indicatorId, el) {
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ? data[index] : '-') + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ? data[index] : '.') + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);

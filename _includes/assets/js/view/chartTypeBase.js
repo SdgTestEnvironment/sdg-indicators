@@ -48,9 +48,9 @@ opensdg.chartTypes.base = function(info) {
                     suggestedMin: 0,
                     ticks: {
                         color: tickColor,
-                        //callback: function (value) {
-                          //  return alterDataDisplay(value, undefined, 'chart y-axis tick');
-                        //},
+                         callback: function (value) {
+                             return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                         },
                     },
                     title: {
                         display: MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit,
@@ -77,7 +77,7 @@ opensdg.chartTypes.base = function(info) {
                     callbacks: {
                         label: function (tooltipItem) {
 
-                          var label =  tooltipItem.dataset.label;
+                          var label =  translations.t(tooltipItem.dataset.label);
                           label = label.replace('<sub>','').replace('</sub>','');
                           if (label.length > 45){
 
@@ -154,6 +154,22 @@ opensdg.chartTypes.base = function(info) {
         catch (e) { }
     }
 
+    if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
+      var overrides = {
+        options: {
+          scales: {
+            y: {
+              ticks: {
+                stepSize: info.graphStepsize.step,
+              }
+            }
+          }
+        }
+      }
+      // Add these overrides onto the normal config.
+      $.extend(true, config, overrides);
+    }
+
     if (info.graphAnnotations && info.graphAnnotations.length > 0) {
         // Apply some helpers/fixes to the annotations.
         var annotations = info.graphAnnotations.map(function(annotationOverrides) {
@@ -217,7 +233,6 @@ opensdg.chartTypes.base = function(info) {
                     }
                 }
             }
-            console.log("a: ", annotation);
             return annotation;
         });
         if (annotations.length > 0) {
@@ -225,7 +240,7 @@ opensdg.chartTypes.base = function(info) {
                 options: {
                     plugins: {
                         annotation: {
-                            drawTime: 'beforeDatasetsDraw',
+                            drawTime: 'afterDatasetsDraw',
                             annotations: annotations
                         }
                     }
