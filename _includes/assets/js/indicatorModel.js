@@ -291,7 +291,7 @@ var indicatorModel = function (options) {
         dataSchema: this.dataSchema,
         chartTitles: this.chartTitles,
         chartSubtitles: this.chartSubtitles,
-        //graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
+        graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       });
     }
 
