@@ -133,7 +133,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220902085232">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20220902092614">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -470,7 +470,7 @@ data-event-label="high"
   data-charttitles="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;title&quot;:&quot;Verdienstabstand&quot;},{&quot;unit&quot;:&quot;EUR pro Stunde&quot;,&quot;title&quot;:&quot;Durchchnittlicher Stundenlohn von Beschäftigten&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="null"
-  data-measurementunit="EUR pro Stunde; Prozent"
+  data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -490,7 +490,7 @@ data-event-label="high"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;EUR pro Stunde&quot;,&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Weiblich&quot;,&quot;Männlich&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Geschlecht&quot;},{&quot;name&quot;:&quot;region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Durchschnittlicher Stundenlohn Beschäftigter&quot;,&quot;Verdienstabstand&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;decimals&quot;:0},{&quot;unit&quot;:&quot;EUR pro Stunde&quot;,&quot;decimals&quot;:2}]"
-  data-graphstepsize="null"
+  data-graphstepsize="[{&quot;unit&quot;:&quot;EUR pro Stunde&quot;,&quot;step&quot;:5.0}]"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -1144,8 +1144,6 @@ data-event-label="high"
     <p>Geographische Abdeckung: Deutschland</p>
     
     
-    <p>Einheit: EUR pro Stunde; Prozent</p>
-    
     
   </div>
   
@@ -1291,9 +1289,6 @@ data-event-label="Change to Map tab"
         
 
         
-          <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
-          <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
 
         
 
@@ -1383,9 +1378,6 @@ data-event-label="Change to Map tab"
         
 
         
-          <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
-          <dd class="data-controlled-footer-field unit-from-data"></dd>
-        
 
         
 
@@ -1465,9 +1457,6 @@ data-event-label="Change to Map tab"
           <dd>Deutschland</dd>
         
 
-        
-          <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
-          <dd class="data-controlled-footer-field unit-from-data"></dd>
         
 
         
@@ -2768,12 +2757,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20220902085232'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20220902092614'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20220902085232"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20220902092614"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
