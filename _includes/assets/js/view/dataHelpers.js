@@ -34,7 +34,7 @@ function alterDataDisplay(value, info, context) {
       console.log("Log/Ln: ", Math.log(1 / VIEW._graphStepsize.step) / Math.LN10);
       console.log("Round: ", Math.ceil(Math.log(1 / VIEW._graphStepsize.step) / Math.LN10));
       precision = Math.ceil(Math.log(1 / VIEW._graphStepsize.step) / Math.LN10);
-      if (precision) < 0 {
+      if (precision < 0) {
         precision = 0
       }
     }
