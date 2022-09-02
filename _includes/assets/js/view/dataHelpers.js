@@ -25,7 +25,12 @@ function alterDataDisplay(value, info, context) {
     });
     // Now apply our custom precision control if needed.
     if (context == 'chart y-axis tick') {
-      precision = 0
+      if (VIEW._graphStepsize || VIEW.graphStepsize === 0){
+        precision = 0
+      }
+      else {
+        precision = 1
+      }
     }
     else {
       var precision = VIEW._precision
