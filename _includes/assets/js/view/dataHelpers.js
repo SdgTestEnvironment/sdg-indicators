@@ -36,6 +36,9 @@ function alterDataDisplay(value, info, context) {
     if (precision || precision === 0) {
         altered = Number.parseFloat(altered).toFixed(precision);
     }
+    else{
+      console.log("Precision: ", precision);
+    }
     // Now apply our custom decimal separator if needed.
     if (OPTIONS.decimalSeparator) {
         altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
