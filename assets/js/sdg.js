@@ -4468,8 +4468,14 @@ function alterDataDisplay(value, info, context) {
         altered = callback(altered, info, context);
     });
     // Now apply our custom precision control if needed.
-    if (VIEW._precision || VIEW._precision === 0) {
-        altered = Number.parseFloat(altered).toFixed(VIEW._precision);
+    if (context == 'chart y-axis tick') {
+      precision = 0
+    }
+    else {
+      var precision = VIEW._precision
+    }
+    if (precision || precision === 0) {
+        altered = Number.parseFloat(altered).toFixed(precision);
     }
     // Now apply our custom decimal separator if needed.
     if (OPTIONS.decimalSeparator) {
