@@ -4469,13 +4469,11 @@ function alterDataDisplay(value, info, context) {
         altered = callback(altered, info, context);
     });
     // Now apply our custom precision control if needed.
-    if (context == 'chart y-axis tick') {
-      if (VIEW._graphStepsize || VIEW.graphStepsize === 0){
-        precision = 0
-      }
-      else {
-        precision = 1
-      }
+
+    // Special treatment for numbers on y axis: If stepSize is defined, they should display decimal places as follows:
+    // StepSize >= 1 --> 0 decimal places, Stepsize >= 0.1 --> 1 decimal place, StepSize >= 0.01 --> 2 decimal places ...
+    if (context == 'chart y-axis tick' && (VIEW._graphStepsize || VIEW.graphStepsize === 0)) {
+      precision = Math.ceil(Math.log(1 / VIEW._graphStepsize) / Math.LN10);
     }
     else {
       var precision = VIEW._precision
