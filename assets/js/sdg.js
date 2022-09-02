@@ -2632,6 +2632,17 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
 }
 
 /**
+ * @param {Array} graphStepsize Objects containing 'unit' and 'title'
+ * @param {String} selectedUnit
+ * @param {String} selectedSeries
+ * @return {int|false} size of steps to set on y axis in chart
+ */
+function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
+  var match = getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
+  return (match) ? match.decimals : false;
+}
+
+/**
  * @param {Object} data Object imported from JSON file
  * @return {Array} Rows
  */
@@ -3037,6 +3048,7 @@ function getTimeSeriesAttributes(rows) {
         dataSchema: this.dataSchema,
         chartTitles: this.chartTitles,
         chartSubtitles: this.chartSubtitles,
+        graphStepsize: helpers.getGraphStepsize(this.graphStepsize. this.selectedUnit, this.selectedSeries),
       });
     }
 
@@ -4469,7 +4481,12 @@ function alterDataDisplay(value, info, context) {
     });
     // Now apply our custom precision control if needed.
     if (context == 'chart y-axis tick') {
-      precision = 0
+      if (VIEW._graphStepsize || VIEW.graphStepsize === 0){
+        precision = 0
+      }
+      else {
+        precision = 1
+      }
     }
     else {
       var precision = VIEW._precision
@@ -4677,6 +4694,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     VIEW._legendElement = OPTIONS.legendElement;
     VIEW._precision = undefined;
     VIEW._chartInstances = {};
+    VIEW._graphStepsize = undefined;
 
     var chartHeight = screen.height < OPTIONS.maxChartHeight ? screen.height : OPTIONS.maxChartHeight;
     $('.plot-container', OPTIONS.rootElement).css('height', chartHeight + 'px');
@@ -4728,6 +4746,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     MODEL.onDataComplete.attach(function (sender, args) {
 
         VIEW._precision = args.precision;
+        VIEW._graphStepsize = args.graphStepsize;
 
         if (MODEL.showData) {
             $('#dataset-size-warning')[args.datasetCountExceedsMax ? 'show' : 'hide']();
