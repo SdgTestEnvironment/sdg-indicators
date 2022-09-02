@@ -4473,6 +4473,11 @@ function alterDataDisplay(value, info, context) {
     // Special treatment for numbers on y axis: If stepSize is defined, they should display decimal places as follows:
     // StepSize >= 1 --> 0 decimal places, Stepsize >= 0.1 --> 1 decimal place, StepSize >= 0.01 --> 2 decimal places ...
     if (context == 'chart y-axis tick' && VIEW._graphStepsize && VIEW.graphStepsize != 0 && VIEW.graphStepsize != '') {
+      console.log("StepSize: ", VIEW._graphStepsize);
+      console.log("1/StepSize: ", (1 / VIEW._graphStepsize));
+      console.log("Log: ", Math.log(1 / VIEW._graphStepsize));
+      console.log("Log/Ln: ", Math.log(1 / VIEW._graphStepsize) / Math.LN10);
+      console.log("Round: ", Math.ceil(Math.log(1 / VIEW._graphStepsize) / Math.LN10));
       precision = Math.ceil(Math.log(1 / VIEW._graphStepsize) / Math.LN10)+5;
     }
     else {
@@ -4480,9 +4485,6 @@ function alterDataDisplay(value, info, context) {
     }
     if (precision || precision === 0) {
         altered = Number.parseFloat(altered).toFixed(precision);
-    }
-    else{
-      console.log("Precision: ", precision);
     }
     // Now apply our custom decimal separator if needed.
     if (OPTIONS.decimalSeparator) {
