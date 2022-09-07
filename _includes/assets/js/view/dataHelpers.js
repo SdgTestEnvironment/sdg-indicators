@@ -44,6 +44,7 @@ function alterDataDisplay(value, info, context) {
     if (precision || precision === 0) {
         //altered = Number.parseFloat(altered).toFixed(precision);
         altered = Math.round(altered*10**precision)/10**precision
+        altered = altered.toFixed(precision)
     }
     // Now apply our custom decimal separator if needed.
     if (OPTIONS.decimalSeparator) {
