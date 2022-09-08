@@ -3733,7 +3733,7 @@ function strToArray (str, limit) {
 
 opensdg.chartTypes = opensdg.chartTypes || {};
 opensdg.chartTypes.base = function(info) {
-
+    console.log('Info: ', info);
     var gridColor = getGridColor();
     var tickColor = getTickColor();
 
