@@ -1,7 +1,7 @@
 {% include components/charts/annotation_presets.js %}
 opensdg.chartTypes = opensdg.chartTypes || {};
 opensdg.chartTypes.base = function(info) {
-    console.log('Info: ', info);
+
     var gridColor = getGridColor();
     var tickColor = getTickColor();
 
@@ -94,7 +94,7 @@ opensdg.chartTypes.base = function(info) {
                             }
                             return line;
                           } else {
-                            return label + ': ' + alterDataDisplay(tooltipItem.formattedValue, tooltipItem.dataset, 'chart tooltip');
+                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip');
                           }
                         },
                         afterLabel: function(tooltipItem) {
