@@ -59,7 +59,7 @@ var indicatorInit = function () {
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
-                            //{ maxCharCount: 35, width: 200 },
+                            { maxCharCount: 35, width: 200 },
                             { maxCharCount: Infinity, width: 300 }
                         ]
                     });
