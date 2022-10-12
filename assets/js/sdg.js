@@ -3733,7 +3733,7 @@ function strToArray (str, limit) {
 
 opensdg.chartTypes = opensdg.chartTypes || {};
 opensdg.chartTypes.base = function(info) {
-    console.log('Info: ', info);
+
     var gridColor = getGridColor();
     var tickColor = getTickColor();
 
@@ -3826,7 +3826,7 @@ opensdg.chartTypes.base = function(info) {
                             }
                             return line;
                           } else {
-                            return label + ': ' + alterDataDisplay(tooltipItem.formattedValue, tooltipItem.dataset, 'chart tooltip');
+                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip');
                           }
                         },
                         afterLabel: function(tooltipItem) {
@@ -5005,8 +5005,8 @@ var indicatorInit = function () {
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
-                            { maxCharCount: 35, width: 200 },
-                            { maxCharCount: Infinity, width: 250 }
+                            //{ maxCharCount: 35, width: 200 },
+                            { maxCharCount: Infinity, width: 300 }
                         ]
                     });
                     var controller = new indicatorController(model, view);
