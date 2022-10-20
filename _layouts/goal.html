@@ -12,7 +12,6 @@
 
 <div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
 
-
   {% include components/goal/goal-content.html content=content %}
 
   {% if page.goal.number == '1' %}
@@ -48,13 +47,12 @@
     </div>
   </div>
 
-
   <div class="container g-0">
     <div class="row">
-      <div class="col" style="padding-right: 0px;">
+      <div class="col heading-goal-page">
         <h2>{{ page.t.general.targets }}</h2>
       </div>
-      <div class="col" style="paddig-left: 0px;">
+      <div class="col heading-goal-page" >
         <h2>{{ page.t.general.indicators }}</h2>
       </div>
     </div>
@@ -64,11 +62,11 @@
       {% assign target = group.name | sdg_lookup %}
       <div class="row">
         <div class="col indicator-cards target goal-target no-gutters">
-          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
-            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
               {{ target.number }}
             </span>
-            <p>
+            <p class="postulate">
               {{ target.name }}
             </p>
           </div>
@@ -100,7 +98,7 @@
               <span class="indicator-card-number" >
                 {{ indicator.number }}
               </span>
-              <a href="{{ indicator.url }}" >
+              <a class="indicator-link-goal-page" href="{{ indicator.url }}" >
                 {{ indicator.name }}
               </a>
               {% endif %}
