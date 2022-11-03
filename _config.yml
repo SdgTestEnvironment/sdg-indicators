@@ -27,6 +27,14 @@ logos:
     src: assets/img/en/SDG_logo.png
     alt: To main menu
 
+date_formats:
+  - type: standard
+    language: de
+    format: "%d.%m.%Y"
+  - type: standard
+    language: en
+    format: "%b %d, %Y"
+
 # Automatically create indicator pages, goal pages,
 # and some other required pages.
 create_indicators:
