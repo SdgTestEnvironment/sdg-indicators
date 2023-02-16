@@ -54,7 +54,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     maxZoom: 10,
     // Visual/choropleth considerations.
     colorRange: chroma.brewer.BuGn,
-    noValueColor: '#f0f0f0',
+    noValueColor: '#66f0f0f0',
     styleNormal: {
       weight: 1,
       opacity: 1,
@@ -164,16 +164,21 @@ opensdg.autotrack = function(preset, category, action, label) {
       var currentSeries = this.disaggregationControls.getCurrentSeries(),
           currentUnit = this.disaggregationControls.getCurrentUnit(),
           newTitle = null;
+          newSubtitle = null;
       if (this.modelHelpers.GRAPH_TITLE_FROM_SERIES) {
         newTitle = currentSeries;
       }
       else {
         var currentTitle = $('#map-heading').text();
+        var currentSubtitle = $('#map-subheading').text();
         newTitle = this.modelHelpers.getChartTitle(currentTitle, this.chartTitles, currentUnit, currentSeries);
-        newSubtitle = this.modelHelpers.getChartTitle(currentTitle, this.chartSubTitles, currentUnit, currentSeries);
+        newSubtitle = this.modelHelpers.getChartTitle(currentSubtitle, this.chartSubtitles, currentUnit, currentSeries);
       }
       if (newTitle) {
         $('#map-heading').text(newTitle);
+      }
+      if (newSubtitle) {
+        $('#map-subheading').text(newSubtitle);
       }
     },
 
@@ -473,6 +478,7 @@ opensdg.autotrack = function(preset, category, action, label) {
             .attr('download', '')
             .attr('class', 'btn btn-primary btn-download')
             .attr('title', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
+            .attr('aria-label', translations.indicator.download_geojson_title + ' - ' + downloadLabel)
             .text(translations.indicator.download_geojson + ' - ' + downloadLabel);
           $(plugin.element).parent().append(downloadButton);
 
@@ -515,19 +521,30 @@ opensdg.autotrack = function(preset, category, action, label) {
         plugin.setColorScale();
 
         plugin.years = _.uniq(availableYears).sort();
-        plugin.currentYear = plugin.years[0];
+        //Start the map with the most recent year
+        plugin.currentYear = plugin.years.slice(-1)[0];
 
         // And we can now update the colors.
         plugin.updateColors();
 
         // Add zoom control.
-        plugin.map.addControl(L.Control.zoomHome());
+        plugin.zoomHome = L.Control.zoomHome({
+          zoomInTitle: translations.indicator.map_zoom_in,
+          zoomOutTitle: translations.indicator.map_zoom_out,
+          zoomHomeTitle: translations.indicator.map_zoom_home,
+        });
+        plugin.map.addControl(plugin.zoomHome);
 
         // Add full-screen functionality.
-        plugin.map.addControl(new L.Control.FullscreenAccessible());
+        plugin.map.addControl(new L.Control.FullscreenAccessible({
+          title: {
+              'false': translations.indicator.map_fullscreen,
+              'true': translations.indicator.map_fullscreen_exit,
+          },
+        }));
 
         // Add the year slider.
-        plugin.map.addControl(L.Control.yearSlider({
+        plugin.yearSlider = L.Control.yearSlider({
           years: plugin.years,
           yearChangeCallback: function(e) {
             plugin.currentYear = plugin.years[e.target._currentTimeIndex];
@@ -535,7 +552,8 @@ opensdg.autotrack = function(preset, category, action, label) {
             plugin.updateTooltips();
             plugin.selectionLegend.update();
           }
-        }));
+        });
+        plugin.map.addControl(plugin.yearSlider);
 
         // Add the selection legend.
         plugin.selectionLegend = L.Control.selectionLegend(plugin);
@@ -649,6 +667,8 @@ opensdg.autotrack = function(preset, category, action, label) {
         plugin.updateTitle();
         plugin.updateFooterFields();
         plugin.updatePrecision();
+        // The year slider does not seem to be correct unless we refresh it here.
+        plugin.yearSlider._timeDimension.setCurrentTimeIndex(plugin.yearSlider._timeDimension.getCurrentTimeIndex());
         // Delay other things to give time for browser to do stuff.
         setTimeout(function() {
           $('#map #loader-container').hide();
@@ -657,6 +677,8 @@ opensdg.autotrack = function(preset, category, action, label) {
           plugin.map.invalidateSize();
           // Also zoom in/out as needed.
           plugin.map.fitBounds(plugin.getVisibleLayers().getBounds());
+          // Set the home button to return to that zoom.
+          plugin.zoomHome.setHomeBounds(plugin.getVisibleLayers().getBounds());
           // Limit the panning to what we care about.
           plugin.map.setMaxBounds(plugin.getVisibleLayers().getBounds());
           // Make sure the info pane is not too wide for the map.
@@ -2808,6 +2830,8 @@ function getTimeSeriesAttributes(rows) {
   this.graphTargetLines = options.graphTargetLines;
   this.graphSeriesBreaks = options.graphSeriesBreaks;
   this.graphErrorBars = options.graphErrorBars;
+  this.graphTargetPoints = options.graphTargetPoints;
+  this.graphTargetLabels = options.graphTargetLabels;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
   this.precision = options.precision;
@@ -3074,7 +3098,7 @@ function getTimeSeriesAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps );
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
@@ -3105,7 +3129,7 @@ function getTimeSeriesAttributes(rows) {
       selectedSeries: this.selectedSeries,
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
-      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars),
+      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars, this.graphTargetPoints, this.graphTargetLabels),
       chartTitle: this.chartTitle,
       chartSubtitle: this.chartSubtitle,
       chartType: this.graphType,
@@ -3772,6 +3796,12 @@ opensdg.chartTypes.base = function(info) {
             labels: info.labels,
         },
         options: {
+            layout: {
+              padding: {
+                top: 5
+              }
+            },
+            clip: false,
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
@@ -3952,7 +3982,7 @@ opensdg.chartTypes.base = function(info) {
                 annotation.mode = 'horizontal';
             }
             // Provide the obscure scaleID properties on user's behalf.
-            if (!annotation.scaleID && annotation.type === 'line' && annotation.preset !== 'error_bar') {
+            if (!annotation.scaleID && annotation.type === 'line' && annotation.preset !== 'error_bar' && annotation.preset !== 'target_point' && annotation.preset !== 'target_label') {
                 if (annotation.mode === 'horizontal') {
                     annotation.scaleID = 'y';
                 }
@@ -3960,10 +3990,10 @@ opensdg.chartTypes.base = function(info) {
                     annotation.scaleID = 'x';
                 }
             }
-            if (!annotation.xScaleID && annotation.type === 'box') {
+            if (!annotation.xScaleID && (annotation.type === 'box' || annotation.type === 'point')) {
                 annotation.xScaleID = 'x';
             }
-            if (!annotation.yScaleID && annotation.type === 'box') {
+            if (!annotation.yScaleID && (annotation.type === 'box' || annotation.type === 'point')) {
                 annotation.yScaleID = 'y';
             }
             // Provide the "enabled" label property on the user's behalf.
@@ -4294,22 +4324,22 @@ function createSelectionsTable(chartInfo) {
  * @return null
  */
 function createTableTargetLines(graphAnnotations) {
-    var targetLines = graphAnnotations.filter(function (a) { return a.preset === 'target_line'; });
-    var $targetLines = $('#tableTargetLines');
-    $targetLines.empty();
-    targetLines.forEach(function (targetLine) {
-        var targetLineLabel = targetLine.label.content;
-        if (!targetLineLabel) {
-            targetLineLabel = opensdg.annotationPresets.target_line.label.content;
-        }
-        $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + alterDataDisplay(targetLine.value, targetLine, 'target line') + '</dd>');
-    });
-    if (targetLines.length === 0) {
-        $targetLines.hide();
-    }
-    else {
-        $targetLines.show();
-    }
+    // var targetLines = graphAnnotations.filter(function (a) { return a.preset === 'target_line'; });
+    // var $targetLines = $('#tableTargetLines');
+    // $targetLines.empty();
+    // targetLines.forEach(function (targetLine) {
+    //     var targetLineLabel = targetLine.label.content;
+    //     if (!targetLineLabel) {
+    //         targetLineLabel = opensdg.annotationPresets.target_line.label.content;
+    //     }
+    //     $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + alterDataDisplay(targetLine.value, targetLine, 'target line') + '</dd>');
+    // });
+    // if (targetLines.length === 0) {
+    //     $targetLines.hide();
+    // }
+    // else {
+    //     $targetLines.show();
+    // }
 }
 
 /**
@@ -4372,7 +4402,9 @@ function createTable(table, indicatorId, el) {
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ? data[index] : '.') + cell_suffix;
+                //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
+                //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null &&  data[index] !== undefined ?  data[index] : '.') + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
@@ -4408,6 +4440,7 @@ function createTable(table, indicatorId, el) {
  * @return null
  */
 function setDataTableWidth(table) {
+
     table.find('thead th').each(function () {
         var textLength = $(this).text().length;
         for (var loop = 0; loop < VIEW._tableColumnDefs.length; loop++) {
@@ -4425,24 +4458,28 @@ function setDataTableWidth(table) {
     });
 
     table.removeAttr('style width');
-
-    var totalWidth = 0;
-    table.find('thead th').each(function () {
-        if ($(this).data('width')) {
-            totalWidth += $(this).data('width');
-        } else {
-            totalWidth += $(this).width();
-        }
-    });
+    table.css('width', '100%');
+    // var totalWidth = 0;
+    // var column = 0;
+    // table.find('thead th').each(function () {
+    //     column += 1;
+    //     if ($(this).data('width')) {
+    //         totalWidth += $(this).data('width');
+    //         console.log('a) Column ', column, ': ',  $(this).data('width'), ', Total: ' + totalWidth);
+    //     } else {
+    //         totalWidth += $(this).width();
+    //         console.log('b) Column ', column + ': ',  $(this).width(), ', Total: ' + totalWidth);
+    //     }
+    // });
 
     // ascertain whether the table should be width 100% or explicit width:
-    var containerWidth = table.closest('.dataTables_wrapper').width();
-
-    if (totalWidth > containerWidth) {
-        table.css('width', totalWidth + 'px');
-    } else {
-        table.css('width', '100%');
-    }
+    // var containerWidth = table.closest('.dataTables_wrapper').width();
+    // console.log('Table: ', totalWidth, 'Container: ', containerWidth);
+    // if (totalWidth > containerWidth) {
+    //     table.css('width', totalWidth + 'px');
+    // } else {
+    //     table.css('width', '100%');
+    // }
 }
 
 /**
@@ -5022,6 +5059,8 @@ var indicatorInit = function () {
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
                         graphErrorBars: domData.grapherrorbars,
+                        graphTargetPoints: domData.graphtargetpoints,
+                        graphTargetLabels: domData.graphtargetlabels,
                         indicatorDownloads: domData.indicatordownloads,
                         dataSchema: domData.dataschema,
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
@@ -5036,7 +5075,7 @@ var indicatorInit = function () {
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
-                            { maxCharCount: 35, width: 200 },
+                            //{ maxCharCount: 35, width: 200 },
                             { maxCharCount: Infinity, width: 300 }
                         ]
                     });
