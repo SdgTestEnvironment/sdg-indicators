@@ -45,6 +45,8 @@ var indicatorInit = function () {
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
                         graphErrorBars: domData.grapherrorbars,
+                        graphTargetPoints: domData.graphtargetpoints,
+                        graphTargetLabels: domData.graphtargetlabels,
                         indicatorDownloads: domData.indicatordownloads,
                         dataSchema: domData.dataschema,
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
@@ -59,7 +61,7 @@ var indicatorInit = function () {
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
-                            { maxCharCount: 35, width: 200 },
+                            //{ maxCharCount: 35, width: 200 },
                             { maxCharCount: Infinity, width: 300 }
                         ]
                     });

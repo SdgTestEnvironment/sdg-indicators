@@ -27,6 +27,8 @@
   data-spangaps="{{ page.indicator.span_gaps }}"
   data-graphannotations="{{ page.indicator.graph_annotations | jsonify | xml_escape }}"
   data-graphtargetlines="{{ page.indicator.graph_target_lines | jsonify | xml_escape }}"
+  data-graphtargetpoints="{{ page.indicator.graph_target_points | jsonify | xml_escape }}"
+  data-graphtargetlabels="{{ page.indicator.graph_target_labels | jsonify | xml_escape }}"
   data-graphseriesbreaks="{{ page.indicator.graph_series_breaks | jsonify | xml_escape }}"
   data-grapherrorbars="{{ page.indicator.graph_error_bars | jsonify | xml_escape }}"
   data-indicatordownloads="{{ site.data[page.language].indicator_downloads[page.indicator.number] | jsonify | xml_escape }}"
