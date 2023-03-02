@@ -32,7 +32,7 @@ Eine universelle Version der von den USA, Großbritannien und dem Center for Ope
 Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an [Open SDG GitHub](https://github.com/open-sdg/open-sdg/issues).
 
 ### Anleitungen
-Auf dieser Plattform heruntergeladenen Daten werden im csv-Format gespeichert. Um diese Dateien in MS-Excel öffnen und bearbeiten zu können sind einige Arbeitsschritte notwendig. Eine entsprechende Anleitung finden Sie [hier](https://G205SGDs.github.io/sdg-indicators/public/HowToCsvDownload.pdf).
+Auf dieser Plattform heruntergeladenen Daten werden im csv-Format gespeichert. Um diese Dateien in MS-Excel öffnen und bearbeiten zu können sind einige Arbeitsschritte notwendig. Eine entsprechende Anleitung finden Sie [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToCsvDownload.pdf).
 
 ### Genutzte Software
 
