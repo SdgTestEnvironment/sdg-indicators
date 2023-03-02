@@ -129,7 +129,7 @@ menu:
         translation_key: menu.about_platform
       - path: /about_navigation/
         translation_key: menu.about_navigation
-      - path: /about_guidance/
+      - path: /guidance/
         translation_key: menu.about_guidance
   - translation_key: menu.facts
     dropdown:
