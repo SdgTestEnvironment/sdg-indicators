@@ -34,7 +34,7 @@ Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SD
 ### Anleitungen
 Auf dieser Plattform heruntergeladenen Daten werden im csv-Format gespeichert. Um diese Dateien in MS-Excel öffnen und bearbeiten zu können sind einige Arbeitsschritte notwendig. Eine entsprechende Anleitung finden Sie [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToCsvDownload.pdf).
 
-Es besteht an diversen Stellen dieser Plattform die Möglichkeit auf Dateien im PDF Format zuzugreifen. Je nach Browsereinstellung kann beim Aufruf solcher Dokumente das entsprechende Dokument entweder direkt im Browser geöffnet oder heruntergeladen werden. Möchten Sie in Ihrem Browser die entsprechende Einstellung ändern finden Sie für asgewählte Browser [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToPdfDownload.pdf) eine Anleitung.
+An diversen Stellen auf dieser Plattform besteht die Möglichkeit auf Dateien im PDF Format zuzugreifen. Je nach Browsereinstellung kann beim Aufruf solcher Dateien das entsprechende Dokument entweder direkt im Browser geöffnet oder heruntergeladen werden. Möchten Sie in Ihrem Browser die entsprechende Einstellung ändern, finden Sie für ausgewählte Browser [hier](https://g205sdgs.github.io/sdg-indicators/public/HowToPdfDownload.pdf) eine Anleitung.
 
 ### Genutzte Software
 
