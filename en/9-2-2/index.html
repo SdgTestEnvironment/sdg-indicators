@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230316015340">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230316072952">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -485,7 +485,7 @@ data-event-label="high"
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;manufacturing persons employed (data from national accounts)&quot;,&quot;manufacturing persons employed (data from labor force survey)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
   data-graphstepsize="[{&quot;step&quot;:10.0}]"
@@ -517,193 +517,15 @@ data-event-label="high"
   <div id="datatables">
 
     
-    <a href="https://SdgTestEnvironment.github.io/sdg-data/en/headline/9-2-2.csv" class="btn btn-primary btn-download" download="indicator_9-2-2.csv" tabindex="0" role="button">Download Headline CSV</a>
-    
     <a href="https://SdgTestEnvironment.github.io/sdg-data/en/data/9-2-2.csv" class="btn btn-primary btn-download" download='indicator_9-2-2.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <p class="no-js-disaggregation-hint"></p>
 
     
     <h3></h3>
-    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Manufacturing persons employed</caption>
-      <thead>
-        
-        
-        <th scope="col">Year</th>
-        
-        
-        
-        <th scope="col" class="table-value">Value</th>
-        
-        
-      </thead>
-      <tbody>
-        
-        <tr>
-          
-          
-          <td>2010</td>
-          
-          
-          
-          <td class="table-value">17.39</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011</td>
-          
-          
-          
-          <td class="table-value">17.54</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2012</td>
-          
-          
-          
-          <td class="table-value">17.64</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2013</td>
-          
-          
-          
-          <td class="table-value">17.56</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2014</td>
-          
-          
-          
-          <td class="table-value">17.51</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2015</td>
-          
-          
-          
-          <td class="table-value">17.41</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td class="table-value">17.25</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2017</td>
-          
-          
-          
-          <td class="table-value">17.16</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2018</td>
-          
-          
-          
-          <td class="table-value">17.21</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2019</td>
-          
-          
-          
-          <td class="table-value">17.15</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2020</td>
-          
-          
-          
-          <td class="table-value">16.87</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2021</td>
-          
-          
-          
-          <td class="table-value">16.63</td>
-          
-          
-        </tr>
-        
-      </tbody>
-    </table>
     
   </div>
 
-  
-  <div id="datatableFooter">
-    
-    <p>Data source: <a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></p>
-    
-    
-    <p>Geographic coverage: Germany</p>
-    
-    
-    <p>Unit of measurement: Percentage</p>
-    
-    
-    <p>Note: 2018 to 2021 preliminary data.</p>
-    
-  </div>
   
 
 </div>
@@ -810,9 +632,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Data source</u>:</dt>
+            <dt><u>Data sources</u>:</dt>
           
-          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -825,7 +647,7 @@ data-event-label="Change to Table tab"
 
         
           <dt><u>Note</u>:</dt>
-          <dd>2018 to 2021 preliminary data.</dd>
+          <dd>2019 to 2022 preliminary data.</dd>
         
 
         
@@ -895,9 +717,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Data source</u>:</dt>
+            <dt><u>Data sources</u>:</dt>
           
-          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a></dd>
+          <dd><a href="https://www.destatis.de/EN"> Federal Statistical Office (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></dd>
         
 
         
@@ -910,7 +732,7 @@ data-event-label="Change to Table tab"
 
         
           <dt><u>Note</u>:</dt>
-          <dd>2018 to 2021 preliminary data.</dd>
+          <dd>2019 to 2022 preliminary data.</dd>
         
 
         
@@ -1027,12 +849,17 @@ data-event-label="Change to Sources tab"
       
       
       
+        
+          
+      
+      
+      
       
       <tr>
         <th scope="row">Time series available </th>
         <td>
           
-            <p>Manufacturing persons employed</p>
+            <ul style="padding-left: 25px;"><li>Manufacturing persons employed (Data from National Accounts)</li> <li> Manufacturing persons employed (Data from labor force survey)</li></ul>
 
           
         </td>
@@ -1048,17 +875,12 @@ data-event-label="Change to Sources tab"
       
       
       
-        
-          
-      
-      
-      
       
       <tr>
         <th scope="row">Comparability with the global metadata </th>
         <td>
           
-            <p>The time series is compliant with the global metadata.</p>
+            <p>The time series are compliant with the global metadata.</p>
 
           
         </td>
@@ -1670,6 +1492,8 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
+        <h4>Data source 1</h4>
+      
       <table class="table metadata-content">
   <tbody>
   
@@ -2064,6 +1888,422 @@ data-event-label="Change to Sources tab"
 
     </div>
     
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Data source 2</h4>
+      
+      <table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://ec.europa.eu/eurostat/en/home"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://ec.europa.eu/eurostat/en/home"> Statistical office of the European Union (Eurostat) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
+          
+            
+            
+            
+            
+            
+              <a href="https://ec.europa.eu/eurostat/databrowser/view/LFSA_EGAN2__custom_5252224/default/table?lang=en" target="_blank">
+                LFS: Employment - Eurostat table [lfsa_egam2] <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
   </div>
 
 
@@ -2165,12 +2405,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230316015340'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230316072952'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230316015340"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230316072952"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

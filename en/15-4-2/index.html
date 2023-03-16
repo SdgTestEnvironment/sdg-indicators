@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230316015340">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230316072952">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -462,8 +462,8 @@ data-event-label="high"
   data-indicatorid='indicator_15-4-2'
   data-id="15-4-2"
   data-country="Germany"
-  data-charttitle="Montain Green Cover Index"
-  data-charttitles="null"
+  data-charttitle="Index der Grünbedeckung in den Bergen"
+  data-charttitles="[{&quot;series&quot;:&quot;(a) \&quot;mountain green cover\&quot; index&quot;,&quot;title&quot;:&quot;Montain Green Cover Index&quot;},{&quot;series&quot;:&quot;(b) proportion of degraded mountain area&quot;,&quot;title&quot;:&quot;Proportion of degraded mountain area&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="null"
   data-measurementunit="Percentage"
@@ -485,10 +485,10 @@ data-event-label="high"
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;classification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Class 3 areas (elavation 2500-3500 meters)&quot;,&quot;Class 4 areas (elavation 1500-2500 meters)&quot;,&quot;Class 5 areas (elavation 1000-1500 meters)&quot;,&quot;Class 6 areas (elavation 300-1000 meters)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Classification&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;'(a) \&quot;mountain green cover\&quot; index'&quot;,&quot;(b) proportion of degraded mountain area&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:2}]"
-  data-graphstepsize="[{&quot;step&quot;:10.0}]"
+  data-graphstepsize="[{&quot;series&quot;:&quot;(a) \&quot;mountain green cover\&quot; index&quot;,&quot;step&quot;:10.0}]"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -526,7 +526,7 @@ data-event-label="high"
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Montain Green Cover Index</caption>
+      <caption>Index der Grünbedeckung in den Bergen</caption>
       <thead>
         
         
@@ -534,7 +534,11 @@ data-event-label="high"
         
         
         
-        <th scope="col" class="table-value">Value</th>
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col" class="table-value">Series</th>
         
         
       </thead>
@@ -547,7 +551,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value">92.2</td>
+          <td>92.2</td>
+          
+          
+          
+          <td class="table-value">'(a) "mountain green cover" index'</td>
           
           
         </tr>
@@ -559,7 +567,27 @@ data-event-label="high"
           
           
           
-          <td class="table-value">92.16</td>
+          <td>92.16</td>
+          
+          
+          
+          <td class="table-value">'(a) "mountain green cover" index'</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>0.14</td>
+          
+          
+          
+          <td class="table-value">(b) proportion of degraded mountain area</td>
           
           
         </tr>
@@ -907,12 +935,17 @@ data-event-label="Change to Sources tab"
       
       
       
+        
+          
+      
+      
+      
       
       <tr>
         <th scope="row">Time series available </th>
         <td>
           
-            <p>“Mountain Green Cover” Index</p>
+            <ul style="padding-left: 25px;"><li>(a) "Mountain Green Cover" Index</li> <li> (b) Proportion of degraded mountain area</li></ul>
 
           
         </td>
@@ -920,11 +953,6 @@ data-event-label="Change to Sources tab"
         
       
   
-      
-      
-      
-        
-          
       
       
       
@@ -2025,12 +2053,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230316015340'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230316072952'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230316015340"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230316072952"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
