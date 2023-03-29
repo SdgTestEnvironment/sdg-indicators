@@ -1820,8 +1820,8 @@ function fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSerie
  * @param {Array} fieldItems
  * @return {Array} Objects representing disaggregation combinations
  */
-function getCombinationData(fieldItems) {
-
+function getCombinationData(fieldItems, dataSchema) {
+  fieldItems = sortFieldNames(fieldItems, dataSchema);
   // First get a list of all the single field/value pairs.
   var fieldValuePairs = [];
   fieldItems.forEach(function(fieldItem) {
@@ -3101,7 +3101,7 @@ function getTimeSeriesAttributes(rows) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    var combinations = helpers.getCombinationData(this.selectedFields);
+    var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
     var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps );
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
 
