@@ -321,7 +321,7 @@ function getCombinationData(fieldItems, dataSchema) {
   // Remove the empty item.
   powerset.shift();
 
-  return powerset.map(function(combinations) {
+  var re = powerset.map(function(combinations) {
     // We want to merge these into a single object.
     var combinedSubset = {};
     combinations.forEach(function(keyValue) {
@@ -329,6 +329,8 @@ function getCombinationData(fieldItems, dataSchema) {
     });
     return combinedSubset;
   });
+  console.log(re);
+  return re;
 }
 
 /**
