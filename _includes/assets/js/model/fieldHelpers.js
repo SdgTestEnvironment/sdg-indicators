@@ -278,8 +278,8 @@ function fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSerie
  * @param {Array} fieldItems
  * @return {Array} Objects representing disaggregation combinations
  */
-function getCombinationData(fieldItems) {
-
+function getCombinationData(fieldItems, dataSchema) {
+  fieldItems = sortFieldNames(fieldItems, dataSchema);
   // First get a list of all the single field/value pairs.
   var fieldValuePairs = [];
   fieldItems.forEach(function(fieldItem) {
