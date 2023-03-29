@@ -2068,6 +2068,9 @@ function sortFieldNames(fieldNames, dataSchema) {
  * @param {Object} dataSchema
  */
 function sortFieldValueNames(fieldName, fieldValues, dataSchema) {
+  console.log("FieldName:", fieldName);
+  console.log("fieldValues:", fieldValues);
+  console.log("dataSchema:", dataSchema);
   if (dataSchema && dataSchema.fields) {
     var fieldSchema = dataSchema.fields.find(function(x) { return x.name == fieldName; });
     // If field names have been translated, we may need to use titles.
