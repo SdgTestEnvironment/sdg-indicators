@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230330120901">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230330123143">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -471,7 +471,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="false"
-  data-showinfo="false"
+  data-showinfo="true"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -495,6 +495,81 @@ data-event-label="high"
 >
   
   <div id="indicator-main" class="indicator-main col-md-12">
+    
+      
+
+
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    
+    <a href="https://SdgTestEnvironment.github.io/sdg-data/de/data/12-1-1.csv" class="btn btn-primary btn-download" download='indicator_12-1-1.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
+
+    <p class="no-js-disaggregation-hint"></p>
+
+    
+    <h3></h3>
+    
+  </div>
+
+  
+
+</div>
+
+
+<section>
+
+  <p class="async-loading" data-img="/sdg-indicators/assets/img/loading-small.gif"></p>
+
+  <div class="async-loaded mt-4" style="display:none;">
+    <p>test</p>
+    <div style="display: none;">
+    <span id="table-alternative"></span>
+</div>
+  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+    <li role="presentation"
+      class="
+        nav-item
+        embedded-map
+      ">
+      <button
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        id="tab-embeddedmapview"
+        data-bs-target="#embeddedmapview"
+        aria-controls="embeddedmapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to embedded item tab"
+
+      ></button>
+    </li>
+  </ul>
+
+    <div class="tab-content data-view">
+    <div role="tabpanel" class="tab-pane active" id="embeddedmapview" class="embedded-map">
+      <div class="row">
+  <div class="col-xs-12">
+    
+    
+    
+    
+  </div>
+</div>
+
+    </div>
+</div>
+
+  </div>
+</section>
+
     
   
   <div class="mt-4">
@@ -1681,12 +1756,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230330120901'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230330123143'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230330120901"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230330123143"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
