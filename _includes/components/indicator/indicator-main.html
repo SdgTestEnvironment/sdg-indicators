@@ -2,9 +2,9 @@
 {% assign show_info = false %}
 {% if page.indicator.reporting_status == "complete" and page.indicator.data_non_statistical != true %}
   {% assign show_data = true %}
-  {% if page.indicator.embedded_feature_html %}
-    {% assign show_info = true %}
-  {% endif %}
+{% endif %}
+{% if page.indicator.reporting_status == "complete" and page.indicator.data_non_statistical == true and page.indicator.embedded_feature_html %}
+  {% assign show_info = true %}
 {% endif %}
 {% assign datapackage_resource = site.data[page.language].data_packages.resources | where: "name", page.indicator.slug | first %}
 
