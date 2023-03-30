@@ -5021,7 +5021,7 @@ var indicatorInit = function () {
     if ($('#indicatorData').length) {
         var domData = $('#indicatorData').data();
 
-        if (domData.showdata or domData.showInfo) {
+        if (domData.showdata || domData.showInfo) {
 
             $('.async-loading').each(function (i, obj) {
                 $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
