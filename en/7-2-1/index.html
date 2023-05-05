@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505145353">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505154422">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -646,7 +646,7 @@ data-event-label="Change to Table tab"
           
             <dt><u>Data sources</u>:</dt>
           
-          <dd><a href="https://unstats.un.org/home/" target="_blank"> United Nations Statistics Division (UNSD) </a>, <a href="https://www.bmwi.de/EN/" target="_blank"> Federal Ministry for Economic Affairs and Climate Action </a></dd>
+          <dd><a href="https://unstats.un.org/home/" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> United Nations Statistics Division (UNSD) </a>, <a href="https://www.bmwi.de/EN/" target="_blank" onclick="return confirm_alert(this);"> Federal Ministry for Economic Affairs and Climate Action </a></dd>
         
 
         
@@ -731,7 +731,7 @@ data-event-label="Change to Table tab"
           
             <dt><u>Data sources</u>:</dt>
           
-          <dd><a href="https://unstats.un.org/home/" target="_blank"> United Nations Statistics Division (UNSD) </a>, <a href="https://www.bmwi.de/EN/" target="_blank"> Federal Ministry for Economic Affairs and Climate Action </a></dd>
+          <dd><a href="https://unstats.un.org/home/" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> United Nations Statistics Division (UNSD) </a>, <a href="https://www.bmwi.de/EN/" target="_blank" onclick="return confirm_alert(this);"> Federal Ministry for Economic Affairs and Climate Action </a></dd>
         
 
         
@@ -1218,7 +1218,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Tier category </th>
         <td>
           
-            <p><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for more information on the UN tier classification." target="_blank">Tier I</a></p>
+            <p><a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" title="Click here for more information on the UN tier classification." target="_blank" onclick="return confirm_alert(this);">Tier I</a></p>
 
           
         </td>
@@ -1564,7 +1564,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://unstats.un.org/home/" target="_blank"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/unsd.png" alt="Logo unsd" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://unstats.un.org/home/" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/unsd.png" alt="Logo unsd" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -1580,7 +1580,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://unstats.un.org/home/" target="_blank"> United Nations Statistics Division (UNSD) </a></p>
+            <p><a href="https://unstats.un.org/home/" target="_blank" onclick="return confirm_alert(this);"> United Nations Statistics Division (UNSD) </a></p>
 
           
         </td>
@@ -2001,7 +2001,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.bmwi.de/EN/" target="_blank"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/bmwk.png" alt="Logo bmwk" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.bmwi.de/EN/" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgEn/bmwk.png" alt="Logo bmwk" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -2017,7 +2017,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://www.bmwi.de/EN/" target="_blank"> Federal Ministry for Economic Affairs and Climate Action </a></p>
+            <p><a href="https://www.bmwi.de/EN/" target="_blank" onclick="return confirm_alert(this);"> Federal Ministry for Economic Affairs and Climate Action </a></p>
 
           
         </td>
@@ -2417,12 +2417,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230505145353'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230505154422'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230505145353"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230505154422"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
