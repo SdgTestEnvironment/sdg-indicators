@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505142931">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505145353">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -1013,7 +1013,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/5.5.1.pdf" target="_blank">
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/5.5.1.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1350,7 +1350,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf" target="_blank">
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadaten zu diesem Indikator (5.5.1 a)) <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1380,7 +1380,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01b.pdf" target="_blank">
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01b.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadaten zu diesem Indikator  (5.5.1 b)) <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1726,7 +1726,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bundestag.de/abgeordnete/" target="_blank">
+              <a href="https://www.bundestag.de/abgeordnete/" target="_blank" onclick="return confirm_alert(this);">
                 Mitglieder <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2163,7 +2163,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bundeswahlleiter.de/bundestagswahlen/2021/publikationen.html" target="_blank">
+              <a href="https://www.bundeswahlleiter.de/bundestagswahlen/2021/publikationen.html" target="_blank" onclick="return confirm_alert(this);">
                 Ergebnisse früherer Bundestagswahlen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2218,7 +2218,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bundeswahlleiter.de/service/landtagswahlen.html" target="_blank">
+              <a href="https://www.bundeswahlleiter.de/service/landtagswahlen.html" target="_blank" onclick="return confirm_alert(this);">
                 Ergebnisse früherer Landtagswahlen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2640,7 +2640,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bundesrat.de/DE/bundesrat/mitglieder/mitglieder-node.html" target="_blank">
+              <a href="https://www.bundesrat.de/DE/bundesrat/mitglieder/mitglieder-node.html" target="_blank" onclick="return confirm_alert(this);">
                 Mitglieder <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2987,7 +2987,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bmfsfj.de/bmfsfj/service/online-rechner/gleichstellungsatlas?indikator=Mandate-kommunale-Vertretungen" target="_blank">
+              <a href="https://www.bmfsfj.de/bmfsfj/service/online-rechner/gleichstellungsatlas?indikator=Mandate-kommunale-Vertretungen" target="_blank" onclick="return confirm_alert(this);">
                 Gleichstellungsatlas: Frauenanteil an den Mandaten in den kommunalen Vertretungen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -3212,12 +3212,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230505142931'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230505145353'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230505142931"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230505145353"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

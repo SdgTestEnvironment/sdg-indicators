@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505142931">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505145353">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -1064,7 +1064,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/14.7.1.pdf" target="_blank">
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/14.7.1.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1411,7 +1411,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-07-01.pdf" target="_blank">
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-07-01.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1767,7 +1767,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41362-0001&bypass=true&language=en" target="_blank">
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41362-0001&bypass=true&language=en" target="_blank" onclick="return confirm_alert(this);">
                 Businesses with aquaculture production, quantity produced <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1822,7 +1822,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://sdg-indicators.de/14-4-1/" target="_blank">
+              <a href="https://sdg-indicators.de/14-4-1/" target="_blank" onclick="return confirm_alert(this);">
                 Proportion of fish stocks within MSY <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1852,7 +1852,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0103&bypass=true&language=en" target="_blank">
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0103&bypass=true&language=en" target="_blank" onclick="return confirm_alert(this);">
                 National accounts – Gross value added (nominal/price-adjusted): industries – GENESIS online 81000-0103 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -1882,7 +1882,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0001&bypass=true&language=en" target="_blank">
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0001&bypass=true&language=en" target="_blank" onclick="return confirm_alert(this);">
                 National accounts – Gross value added, gross domestic product (nominal/price-adjusted) – GENESIS online 81000-0001 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2264,7 +2264,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.ble.de/DE/Themen/Fischerei/Fischwirtschaft/fischwirtschaft_node.html" target="_blank">
+              <a href="https://www.ble.de/DE/Themen/Fischerei/Fischwirtschaft/fischwirtschaft_node.html" target="_blank" onclick="return confirm_alert(this);">
                 Quantity of marine capture from the Federal Office for Agriculture and Food (only available in German) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2721,7 +2721,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.bmel-statistik.de/ernaehrung-fischerei/fischerei/aquakultur" target="_blank">
+              <a href="https://www.bmel-statistik.de/ernaehrung-fischerei/fischerei/aquakultur" target="_blank" onclick="return confirm_alert(this);">
                 Quantity of freshwater capture (only available in German) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -3068,7 +3068,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://stecf.jrc.ec.europa.eu/reports/cfp-monitoring" target="_blank">
+              <a href="https://stecf.jrc.ec.europa.eu/reports/cfp-monitoring" target="_blank" onclick="return confirm_alert(this);">
                 STECF report: Monitoring the performance of the Common Fisheries Policy <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -3284,12 +3284,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230505142931'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230505145353'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230505142931"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230505145353"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

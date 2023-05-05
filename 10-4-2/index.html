@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505142931">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230505145353">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -923,7 +923,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/10.4.2.pdf" target="_blank">
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/10.4.2.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1260,7 +1260,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-10-04-02.pdf" target="_blank">
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-10-04-02.pdf" target="_blank" onclick="return confirm_alert(this);">
                 Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1616,7 +1616,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/Tabellen/einkommensverteilung-mz-silc.html" target="_blank">
+              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Einkommen-Konsum-Lebensbedingungen/Lebensbedingungen-Armutsgefaehrdung/Tabellen/einkommensverteilung-mz-silc.html" target="_blank" onclick="return confirm_alert(this);">
                 Einkommensverteilung (Nettoäquivalenzeinkommen) <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2053,7 +2053,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12B/default/table?lang=de" target="_blank">
+              <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12B/default/table?lang=de" target="_blank" onclick="return confirm_alert(this);">
                 EU-SILC Erhebung:  Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen (Renten in den Sozialleistungen miteingeschlossen) – Eurostat-Tabelle [ilc_di12b] <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2108,7 +2108,7 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/tessi190/default/table?lang=de" target="_blank">
+              <a href="https://ec.europa.eu/eurostat/databrowser/view/tessi190/default/table?lang=de" target="_blank" onclick="return confirm_alert(this);">
                 EU-SILC Erhebung: Gini-Koeffizient des verfügbaren Äquivalenzeinkommens – Eurostat-Tabelle [tessi190] <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2439,12 +2439,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230505142931'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230505145353'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230505142931"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230505145353"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
