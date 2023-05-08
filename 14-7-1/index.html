@@ -134,7 +134,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230508014626">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230508073505">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -683,7 +683,7 @@ data-event-label="high"
   
   <div id="datatableFooter">
     
-    <p>Datenquelle: <a href="https://www.destatis.de" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Statistisches Bundesamt (Destatis) </a></p>
+    <p>Datenquelle: <a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a></p>
     
     
     <p>Geographische Abdeckung: Deutschland</p>
@@ -803,7 +803,7 @@ data-event-label="Change to Table tab"
           
             <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.destatis.de" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a>, <a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert(this);"> Europäische Kommission </a></dd>
+          <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('der Bundesanstalt für Landwirtschaft und Ernährung');"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a>, <a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert('des Bundesministeriums für Ernährung und Landwirtschaft');"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert('der Europäischen Kommission');"> Europäische Kommission </a></dd>
         
 
         
@@ -885,7 +885,7 @@ data-event-label="Change to Table tab"
           
             <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.destatis.de" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a>, <a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert(this);" onclick="return confirm_alert(this);"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert(this);"> Europäische Kommission </a></dd>
+          <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('der Bundesanstalt für Landwirtschaft und Ernährung');"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a>, <a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert('des Bundesministeriums für Ernährung und Landwirtschaft');"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert('der Europäischen Kommission');"> Europäische Kommission </a></dd>
         
 
         
@@ -1073,8 +1073,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/14.7.1.pdf" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/14.7.1.pdf" target="_blank" onclick="return confirm_alert('');">
                 Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1410,8 +1416,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-07-01.pdf" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-07-01.pdf" target="_blank" onclick="return confirm_alert('');">
                 Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1715,7 +1727,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.destatis.de" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.destatis.de" target="_blank"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -1731,7 +1743,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://www.destatis.de" target="_blank" onclick="return confirm_alert(this);"> Statistisches Bundesamt (Destatis) </a></p>
+            <p><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a></p>
 
           
         </td>
@@ -1766,8 +1778,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41362-0001&bypass=true&language=de" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41362-0001&bypass=true&language=de" target="_blank" onclick="return confirm_alert('');">
                 Betriebe mit Erzeugung in Aquakultur, Erzeugte Menge <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1821,8 +1839,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://sdg-indikatoren.de/14-4-1/" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://sdg-indikatoren.de/14-4-1/" target="_blank" onclick="return confirm_alert('');">
                 Anteil der Fischbestände innerhalb biologisch nachhaltiger Grenzen <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1851,8 +1875,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0103&bypass=true&language=de" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0103&bypass=true&language=de" target="_blank" onclick="return confirm_alert('');">
                 VGR des Bundes – Bruttowertschöpfung (nominal/preisbereinigt): Wirtschaftsbereiche – GENESIS online 81000-0103 <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -1881,8 +1911,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0001&bypass=true&language=de" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0001&bypass=true&language=de" target="_blank" onclick="return confirm_alert('');">
                 VGR des Bundes – Bruttowertschöpfung, Bruttoinlandsprodukt (nominal/preisbereinigt) – GENESIS online 81000-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2212,7 +2248,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/ble.png" alt="Logo ble" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('der Bundesanstalt für Landwirtschaft und Ernährung');"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/ble.png" alt="Logo ble" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -2228,7 +2264,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert(this);"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a></p>
+            <p><a href="https://www.ble.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('der Bundesanstalt für Landwirtschaft und Ernährung');"> Bundesanstalt für Landwirtschaft und Ernährung (BLE) </a></p>
 
           
         </td>
@@ -2263,8 +2299,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.ble.de/DE/Themen/Fischerei/Fischwirtschaft/fischwirtschaft_node.html" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://www.ble.de/DE/Themen/Fischerei/Fischwirtschaft/fischwirtschaft_node.html" target="_blank" onclick="return confirm_alert('der Bundesanstalt für Landwirtschaft und Ernährung');">
                 Anlandungen der Meeresfischerei <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -2669,7 +2711,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/bmel.png" alt="Logo bmel" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert('des Bundesministeriums für Ernährung und Landwirtschaft');"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/bmel.png" alt="Logo bmel" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -2685,7 +2727,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert(this);"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a></p>
+            <p><a href="https://www.bmel.de" target="_blank" onclick="return confirm_alert('des Bundesministeriums für Ernährung und Landwirtschaft');"> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a></p>
 
           
         </td>
@@ -2720,8 +2762,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bmel-statistik.de/ernaehrung-fischerei/fischerei/aquakultur" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://www.bmel-statistik.de/ernaehrung-fischerei/fischerei/aquakultur" target="_blank" onclick="return confirm_alert('des Bundesministeriums für Ernährung und Landwirtschaft');">
                 Binnenfischerei <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -3016,7 +3064,7 @@ data-event-label="Change to Sources tab"
         <th scope="row"> </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert(this);"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/europeancommission.png" alt="Logo europeancommission" style="height:60px; width:148px" /></a></p>
+            <p><a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert('der Europäischen Kommission');"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/europeancommission.png" alt="Logo europeancommission" style="height:60px; width:148px" /></a></p>
 
           
         </td>
@@ -3032,7 +3080,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert(this);"> Europäische Kommission </a></p>
+            <p><a href="https://ec.europa.eu/commission/index_en" target="_blank" onclick="return confirm_alert('der Europäischen Kommission');"> Europäische Kommission </a></p>
 
           
         </td>
@@ -3067,8 +3115,14 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://stecf.jrc.ec.europa.eu/reports/cfp-monitoring" target="_blank" onclick="return confirm_alert(this);">
+            
+            
+            
+
+            
+              <a href="https://stecf.jrc.ec.europa.eu/reports/cfp-monitoring" target="_blank" onclick="return confirm_alert('der Europäischen Kommission');">
                 Bericht des STECF zur Beobachtung der Leistung der Gemeinsamen Fischereipolitik (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
               </a>
             
@@ -3284,12 +3338,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230508014626'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230508073505'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230508014626"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230508073505"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
