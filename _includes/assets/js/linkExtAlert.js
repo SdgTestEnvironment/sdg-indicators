@@ -1,3 +1,7 @@
-function confirm_alert(node) {
-    return confirm( "Sie verlassen unsere Webseite! Bitte beachten Sie, dass der folgende Link eine Webseite öffnet, für deren Inhalt wir nicht verantwortlich sind und auf die unsere Datenschutzbestimmung keine Anwendung findet." );
+function confirm_alert(source) {
+  if source && source != '':
+    var text = 'Sie verlassen unsere Webseite!\nDer Link führt Sie zur Webseite '
+    return confirm(text + source + '.');
+  else:
+    return confirm('Sie verlassen unsere Webseite!\nDer Link führt Sie zu einer externen Webseite.')
 }
