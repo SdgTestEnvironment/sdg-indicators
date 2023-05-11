@@ -39,14 +39,11 @@
             {% assign url_alert_name = indicator_metadata.name | replace_first:'_url','_url_alert'  %}
             {% assign url_alert_name = url_alert_name | replace_first:'_link','_link_alert'  %}
             {% assign url_alert = page.indicator[url_alert_name] %}
-            {% unless url_alert %}
-              {% assign url_alert = '' %}
-            {% endunless %}
 
             {% if placeholder_not_needed == false %}
               <span class="empty-metadata-placeholder">{{ metadata_content }}</span>
             {% elsif metadata_content contains "http" or metadata_content contains "mailto" %}
-              {% if metadata_content contains "public/Meta" %}
+              {% if metadata_content contains "public/Meta" or not url_alert %}
                 <a href="{{ metadata_content }}" target="_blank">
                   {{ url_text }} <span class="visuallyhidden">{{ page.t.general.opens_new_window }}</span>
                 </a>
