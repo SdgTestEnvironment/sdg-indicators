@@ -129,7 +129,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230515101128">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230515113024">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -288,7 +288,7 @@ data-event-label="high"
     Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen
 <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="blank" onclick="return confirm_alert('der Vereinten Nationen', 'De');">Sustainable Development Goals, SDGs</a>
 der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der
-<a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie" target="blank" onclick="return confirm_alert('der Bundesregierung', 'De');"> Deutschen Nachhaltigkeitsstrategie</a> (DNS).
+<a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" target="blank" onclick="return confirm_alert('der Bundesregierung', 'De');"> Deutschen Nachhaltigkeitsstrategie</a> (DNS).
 Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
 <br><br>
 Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
@@ -331,13 +331,13 @@ In anderen Fällen sind dagegen nur Zeitreihen mit größeren Abweichungen zur g
 Dies kann dazu führen, dass die jeweiligen Custodian Agencies zur Sicherstellung der internationalen Vergleichbarkeit die bereitgestellten Daten anpassen. Entsprechend können die Zeitreihen, die in der <a href="https://unstats.un.org/sdgs/indicators/database/" target="_blank" onclick="return confirm_alert('der Vereinten Nationen', 'De');">globalen SDG-Datenbank</a>
 zu finden sind, von den hier bereitgestellten Zeitreihen abweichen.
 
-## Mögliche Änderungen bis 2030
+<h3> Mögliche Änderungen bis 2030 </h3>
 
 Das bestehende Indikatorenset durchläuft zwei große Revisionsrunden in den Jahren 2020 (bereits abgeschlossen) und 2025. Die <a href="https://unstats.un.org/sdgs/iaeg-sdgs/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen', 'De');">IAEG-SDG</a> (Inter-Agency and Expert Group on Sustainable Development Goal Indicators) ist mit der Koordination dieser Revisionen beauftragt.
 Durch die Revisionen besteht unter anderem die Möglichkeit, dass zum bestehenden Set neue Indikatoren hinzukommen, ersetzt oder aber auch herausgenommen werden können.
 Die Änderungen werden so zügig wie möglich auf der SDG-Online Plattform eingepflegt.
 
-## Indikatorenvergleich SDG und DNS
+<h3> Indikatorenvergleich SDG und DNS</h3>
 
 Die SDG-Indikatoren der Vereinten Nationen und ihre Nummerierung sind nicht identisch mit den DNS-Indikatoren. Wenn ein vergleichbarer DNS-Indikator zu einem SDG-Indikator vorhanden ist, ist dies über eine Schaltfläche mit Direktlink zum jeweiligen Indikator kenntlich gemacht (Abb.4).
 
@@ -348,12 +348,14 @@ Die SDG-Indikatoren der Vereinten Nationen und ihre Nummerierung sind nicht iden
 </small>
 </p>
 
-Einen Direktlink zur Startseite der DNS-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: <a href="https://dns-indikatoren.de"><img src="https://sdg-indikatoren.de/assets/img/about/DNS Wheel.png" alt="Wheel"></a>
+Einen Direktlink zur Startseite der DNS-Online Plattform finden Sie oben rechts auf dieser Seite neben dem
+Suchfeld: <a href="https://dns-indikatoren.de"><img src="https://sdg-indikatoren.de/assets/img/about/DNS Wheel.png" alt="Wheel"></a>
 
 
-## Technischer Hintergrund
+<h3> Technischer Hintergrund</h3>
 
-Um die Daten von jedem beteiligten Land aufbereitet darstellen zu können, bietet das Open-Source-Projekt Open SDG auf GitHub eine normierte Vorlage einer Online Plattform. Mehr dazu finden Sie unter [Technische Hinweise](https://sustainabledevelopment-germany.github.io/about_guidance).
+Um die Daten von jedem beteiligten Land aufbereitet darstellen zu können, bietet das Open-Source-Projekt Open SDG auf GitHub eine normierte
+Vorlage einer Online Plattform. Mehr dazu finden Sie unter <a href="https://sdg-indikatoren.de/about_guidance">Technische Hinweise</a>.
 
 
 
@@ -425,12 +427,12 @@ Um die Daten von jedem beteiligten Land aufbereitet darstellen zu können, biete
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230515101128'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230515113024'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230515101128"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230515113024"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
