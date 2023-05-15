@@ -172,6 +172,7 @@ footer_menu:
     translation_key: menu.contact_us
   - path: menu.twitterPath
     translation_key:  general.twitter
+    alert: twitter
   - path: /faq/
     translation_key: menu.faq
   - path: /imprint/
