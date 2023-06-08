@@ -1,3 +1,8 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sdg-indicators/service-worker.js');
+    });
+}
 /**
  * This function returns a javascript object containing autotrack.js properties.
  *
@@ -3228,7 +3233,7 @@ var indicatorView = function (model, options) {
 
   var HIDE_SINGLE_SERIES = false;
 var HIDE_SINGLE_UNIT = true;
-var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("indicator.proxy") + '</span>';
+var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("Proxy") + '</span>';
 
   /**
  * @param {Object} args
