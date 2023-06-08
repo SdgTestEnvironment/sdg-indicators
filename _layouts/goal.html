@@ -12,6 +12,7 @@
 
 <div id="main-content" class="container goal-indicators goal-{{ page.goal.number }} goal-by-target" role="main">
 
+
   {% include components/goal/goal-content.html content=content %}
 
   {% if page.goal.number == '1' %}
@@ -62,11 +63,11 @@
       {% assign target = group.name | sdg_lookup %}
       <div class="row">
         <div class="col indicator-cards target goal-target no-gutters">
-          <div class="row range-and-postulate">
-            <span class="indicator-card-number">
-              {{ target.number }}
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">{{ target.number }}</div>
             </span>
-            <p class="postulate">
+            <p style="padding-left: 0px;">
               {{ target.name }}
             </p>
           </div>
@@ -90,17 +91,18 @@
 
             <div class="row" style="margin-bottom: 25px;">
               {% if indicator.placeholder and indicator.placeholder != '' %}
-              <span class="indicator-card-number">
-                {{ indicator.number }}
-              </span>
-              {{ indicator.placeholder }}
+                <span class="indicator-card-number">
+                  {{ indicator.number }}
+                </span>
+                {{ indicator.placeholder }}
               {% else %}
-              <span class="indicator-card-number" >
-                {{ indicator.number }}
-              </span>
-              <a class="indicator-link-goal-page" href="{{ indicator.url }}" >
-                {{ indicator.name }}
-              </a>
+                <span class="indicator-card-number" >
+                  <div class="align-left">{{ indicator.number }}</div>
+                  <div class="align-right">{% include components/indicator/tags.html tags=indicator.tags reporting_status=true indicator=indicator %}</div>
+                </span>
+                <a href="{{ indicator.url }}" style="padding-left: 0px;">
+                  {{ indicator.name }}
+                </a>
               {% endif %}
             </div>
           {% endfor %}

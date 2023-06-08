@@ -314,3 +314,18 @@ map_layers:
     staticBorders: false
     subfolder: kreise
     label: indicator.map
+
+progressive_web_app:
+  enabled: true
+  name: My SDG App Name
+  short_name: SDG App
+  precaching: true
+
+proxy_indicators:
+  label: Proxy
+  description: Diese Zeitreihe entspricht nicht den globalen Metadaten
+
+meta_tags:
+  - path: platform
+    name: description
+    content: asflksduinc euwhcIWEU OEIHc dkfj edj f
