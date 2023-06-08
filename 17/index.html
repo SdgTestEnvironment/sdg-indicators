@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -43,6 +43,20 @@ var opensdg = {
   ignoredDisaggregations: null,
 
   language: 'de',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
 };
 
 </script>
@@ -103,16 +117,15 @@ var translations = {
         ================================================== -->
 
         
+    
     <title>Ziel 17 - Partnerschaften zur Erreichung der Ziele - Deutschlands Indikatoren der VN Sustainable Development Goals</title>
+    
 
 
 
-        <meta name="description" content="">
-        <meta property="og:description" content="">
         
         <meta name="robots" content="noindex, nofollow">
         
-        <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/sdg-indicators/assets/js/lib/classList.js"></script>
@@ -123,13 +136,14 @@ var translations = {
 <link rel="icon" type="image/png" sizes="16x16" href="/sdg-indicators/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/sdg-indicators/assets/img/favicons/favicon.ico" />
 
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230608020726">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230608143102">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -139,6 +153,9 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
+
+        
+
 
         <!--[if IE]>
         <link rel="stylesheet" href="/sdg-indicators/assets/css/ie.css">
@@ -278,7 +295,9 @@ data-event-label="high"
       </div>
       <div class="col-8 col-md-9 col-lg-10 goal-details">
         <h1 class="titles goal-17">
-          Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen
+          
+              Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen
+          
         </h1>
       </div>
     </div>
@@ -369,7 +388,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.1.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-1-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-1-1/" >
                 Gesamte Staatseinnahmen im Verhältnis zum BIP, nach Quelle
               </a>
               
@@ -386,7 +405,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.1.2
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-1-2" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-1-2/" >
                 Durch inländische Steuern finanzierter Anteil des Staatshaushalts
               </a>
               
@@ -422,7 +441,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.2.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-2-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-2-1/" >
                 Öffentliche Netto-Entwicklungsausgaben, insgesamt und an die am wenigsten entwickelten Länder, im Verhältnis zum Bruttonationaleinkommen (BNE) der Geberländer des Ausschusses für Entwicklungshilfe der Organisation für wirtschaftliche Zusammenarbeit und Entwicklung (OECD)
               </a>
               
@@ -458,7 +477,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.3.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-3-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-3-1/" >
                 Aus verschiedenen Quellen mobilisierte zusätzliche finanzielle Mittel für die Entwicklungsländer
               </a>
               
@@ -475,7 +494,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.3.2
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-3-2" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-3-2/" >
                 Umfang der Rücküberweisungen im Verhältnis zum gesamten BIP, in US-Dollar
               </a>
               
@@ -511,7 +530,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.4.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-4-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-4-1/" >
                 Schuldendienst im Verhältnis zu den Waren- und Dienstleistungsexporten
               </a>
               
@@ -547,7 +566,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.5.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-5-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-5-1/" >
                 Anzahl der Staaten, die Investitionsförderprogramme für die Entwicklungsländer, einschließlich der am wenigsten entwickelten Länder, beschließen und umsetzen
               </a>
               
@@ -583,7 +602,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.6.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-6-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-6-1/" >
                 Anzahl der Festnetz-Breitbandanschlüsse je 100 Einwohner/ -innen, nach Geschwindigkeit
               </a>
               
@@ -619,7 +638,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.7.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-7-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-7-1/" >
                 Gesamtbetrag der Finanzmittel für Entwicklungsländer zur Förderung der Entwicklung, des Transfers, der Bereitstellung und der Verbreitung von umweltverträglichen Technologien
               </a>
               
@@ -655,7 +674,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.8.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-8-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-8-1/" >
                 Anteil der Internetnutzerinnen und -nutzer
               </a>
               
@@ -691,7 +710,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.9.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-9-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-9-1/" >
                 Wert der finanziellen und technischen Hilfe für Entwicklungsländer (einschließlich durch Nord-Süd-, Süd-Süd- und Dreieckskooperationen), in US-Dollar
               </a>
               
@@ -727,7 +746,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.10.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-10-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-10-1/" >
                 Gewichtete Durchschnittszölle weltweit
               </a>
               
@@ -763,7 +782,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.11.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-11-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-11-1/" >
                 Anteil der Entwicklungsländer und der am wenigsten entwickelten Länder an den weltweiten Exporten
               </a>
               
@@ -799,7 +818,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.12.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-12-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-12-1/" >
                 Gewichtete Durchschnittszölle für Entwicklungsländer, am wenigsten entwickelte Länder und kleine Inselentwicklungsländer
               </a>
               
@@ -835,7 +854,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.13.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-13-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-13-1/" >
                 Makroökonomisches Dashboard
               </a>
               
@@ -871,7 +890,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.14.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-14-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-14-1/" >
                 Anzahl der Staaten mit Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung
               </a>
               
@@ -907,7 +926,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.15.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-15-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-15-1/" >
                 Umfang der Nutzung ländereigener Ergebnisrahmen und Planungsinstrumente durch Geber von Entwicklungszusammenarbeit
               </a>
               
@@ -943,7 +962,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.16.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-16-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-16-1/" >
                 Anzahl der Staaten, die Fortschritte bei Multi-Akteur-Überwachungsrahmen für entwicklungspolitische Wirksamkeit berichten, die das Erreichen der Ziele für nachhaltige Entwicklung unterstützen
               </a>
               
@@ -979,7 +998,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.17.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-17-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-17-1/" >
                 Zugesagte Beträge für öffentlich-private Partnerschaften im Bereich Infrastruktur, in US-Dollar
               </a>
               
@@ -1015,7 +1034,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.18.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-1/" >
                 Indikator der statistischen Kapazitäten für die Überwachung der Nachhaltigkeitsziele
               </a>
               
@@ -1032,7 +1051,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.18.2
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-2" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-2/" >
                 Anzahl der Staaten, deren nationale statistische Gesetzgebung mit den Grundprinzipien der amtlichen Statistik übereinstimmt
               </a>
               
@@ -1049,7 +1068,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.18.3
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-3" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-18-3/" >
                 Anzahl der Staaten mit einem vollständig finanzierten und in Umsetzung befindlichen nationalen statistischen Plan, nach Finanzierungsquelle
               </a>
               
@@ -1085,7 +1104,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.19.1
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-19-1" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-19-1/" >
                 Wert aller zur Verfügung gestellten Ressourcen zur Stärkung der statistischen Kapazitäten in Entwicklungsländern, in US-Dollar
               </a>
               
@@ -1102,7 +1121,7 @@ data-event-label="high"
               <span class="indicator-card-number" >
                 17.19.2
               </span>
-              <a class="indicator-link-goal-page" href="/sdg-indicators/17-19-2" >
+              <a class="indicator-link-goal-page" href="/sdg-indicators/17-19-2/" >
                 Anteil der Staaten, die a) in den vorangegangenen 10 Jahren mindestens eine Bevölkerungs- und Wohnungszählung durchgeführt haben und b) bei der Geburtenregistrierung 100 Prozent und bei der Registrierung von Todesfällen 80 Prozent erreicht haben
               </a>
               
@@ -1158,12 +1177,12 @@ data-event-label="high"
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
@@ -1184,12 +1203,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230608020726'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230608143102'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230608020726"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230608143102"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
