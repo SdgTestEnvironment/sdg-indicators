@@ -2,7 +2,7 @@ var indicatorInit = function () {
     if ($('#indicatorData').length) {
         var domData = $('#indicatorData').data();
 
-        if (domData.showdata || domData.showinfo) {
+        if (domData.showdata) {
 
             $('.async-loading').each(function (i, obj) {
                 $(obj).append($('<img />').attr('src', $(obj).data('img')).attr('alt', translations.indicator.loading));
@@ -53,6 +53,8 @@ var indicatorInit = function () {
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
                         precision: domData.precision,
                         graphStepsize: domData.graphstepsize,
+                        proxy: domData.proxy,
+                        proxySeries: domData.proxyseries,
                     });
                     var view = new indicatorView(model, {
                         rootElement: '#indicatorData',

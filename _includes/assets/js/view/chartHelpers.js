@@ -15,7 +15,10 @@ function alterChartConfig(config, info) {
  */
 function updateChartTitle(chartTitle) {
     if (typeof chartTitle !== 'undefined') {
-        $('.chart-title').text(chartTitle);
+      if (isProxy) {
+          chartTitle += ' ' + PROXY_PILL;
+      }
+      $('.chart-title').html(chartTitle);
     }
 }
 
@@ -174,6 +177,7 @@ function setPlotEvents(chartInfo) {
             y: 0,
             scrollX: 0,
             scrollY: 0,
+            scale: 2,
             backgroundColor: isHighContrast() ? '#000000' : '#FFFFFF',
             // Allow a chance to alter the screenshot's HTML.
             onclone: function (clone) {
