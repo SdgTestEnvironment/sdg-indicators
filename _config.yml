@@ -191,13 +191,6 @@ search_index_extra_fields:
   - data_keywords
   - graph_title
 
-footer_fields:
-  - unit: '%'
-    label: metadata_fields.computation_units
-    value: data.%
-  - unit: number
-    label: metadata_fields.computation_units
-    value: data.number
 
 series_toggle: true
 graph_title_from_series: true
