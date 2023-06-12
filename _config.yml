@@ -318,6 +318,7 @@ proxy_indicators:
   label: Proxy
   description: Diese Zeitreihe entspricht nicht den globalen Metadaten
 
+
 meta_tags:
   - path: platform
     name: description
