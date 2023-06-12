@@ -3424,7 +3424,7 @@ function alterChartConfig(config, info) {
  * @param {String} chartTitle
  * @return null
  */
-function updateChartTitle(chartTitle) {
+function updateChartTitle(chartTitle, isProxy) {
     if (typeof chartTitle !== 'undefined') {
       if (isProxy) {
           chartTitle += ' ' + PROXY_PILL;
@@ -3758,7 +3758,7 @@ function strToArray (str, limit) {
     }
 
     return aux;
-}
+} 
 
   opensdg.annotationPresets = {
     common: {
