@@ -1445,7 +1445,7 @@ body.contrast-high .proxy-pill {
     padding: 0 2px;
     border-radius: 5px; }
   .status.complete {
-    color: black;
+    color: #111111;
     border: none;
     background-color: #5cb85c;
     background: #5cb85c; }
@@ -1453,7 +1453,7 @@ body.contrast-high .proxy-pill {
       background-color: #5cb85c;
       background: #5cb85c; }
   .status.inprogress {
-    color: black;
+    color: #111111;
     border: none;
     background-color: #f0ad4e;
     background: #f0ad4e; }
@@ -1461,7 +1461,7 @@ body.contrast-high .proxy-pill {
       background-color: #f0ad4e;
       background: #f0ad4e; }
   .status.notstarted {
-    color: black;
+    color: #111111;
     border: none;
     background-color: #E27874;
     background: #E27874; }
@@ -1469,7 +1469,7 @@ body.contrast-high .proxy-pill {
       background-color: #E27874;
       background: #E27874; }
   .status.notapplicable {
-    color: black;
+    color: #111111;
     border: none;
     background-color: #B7B7B7;
     background: #B7B7B7; }
@@ -1760,7 +1760,7 @@ body.contrast-high .indicator.goal-banner .goal-tiles img {
       padding: 0 2px;
       border-radius: 5px; }
     .layout-reportingstatus #main-content .statuses > div .status.complete {
-      color: black;
+      color: #111111;
       border: none;
       background-color: #5cb85c;
       background: #5cb85c; }
@@ -1768,7 +1768,7 @@ body.contrast-high .indicator.goal-banner .goal-tiles img {
         background-color: #5cb85c;
         background: #5cb85c; }
     .layout-reportingstatus #main-content .statuses > div .status.inprogress {
-      color: black;
+      color: #111111;
       border: none;
       background-color: #f0ad4e;
       background: #f0ad4e; }
@@ -1776,7 +1776,7 @@ body.contrast-high .indicator.goal-banner .goal-tiles img {
         background-color: #f0ad4e;
         background: #f0ad4e; }
     .layout-reportingstatus #main-content .statuses > div .status.notstarted {
-      color: black;
+      color: #111111;
       border: none;
       background-color: #E27874;
       background: #E27874; }
@@ -1784,7 +1784,7 @@ body.contrast-high .indicator.goal-banner .goal-tiles img {
         background-color: #E27874;
         background: #E27874; }
     .layout-reportingstatus #main-content .statuses > div .status.notapplicable {
-      color: black;
+      color: #111111;
       border: none;
       background-color: #B7B7B7;
       background: #B7B7B7; }
