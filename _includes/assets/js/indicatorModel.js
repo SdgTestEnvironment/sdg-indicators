@@ -248,7 +248,7 @@ var indicatorModel = function (options) {
 
       // Decide on starting field values.
       var startingFields = this.selectedFields;
-      if (this.hasStartValues && !options.changingSeries) {
+      if (this.hasStartValues) {
         startingFields = helpers.selectFieldsFromStartValues(this.startValues, this.selectableFields);
       }
       else {
