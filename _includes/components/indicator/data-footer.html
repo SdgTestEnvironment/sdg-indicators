@@ -14,9 +14,9 @@
     <dl>
         {% if uniqSources != '' %}
         {% if sources_list.size < 2 %}
-        <dt><u>{{ page.t.indicator.sources }}</u>:</dt>
-        {% else %}
         <dt><u>{{ page.t.indicator.source }}</u>:</dt>
+        {% else %}
+        <dt><u>{{ page.t.indicator.sources }}</u>:</dt>
         <dd>{{ uniqSources }}</dd>
         {% endif %}
         {% endif %}
