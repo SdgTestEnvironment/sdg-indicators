@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230716022959">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230716123152">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -483,7 +483,7 @@ data-event-label="high"
   data-id="5-5-1"
   data-country="Deutschland"
   data-charttitle="Anteil der Sitze von Frauen in a) nationalen Parlamenten und b) Gemeinden"
-  data-charttitles="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;title&quot;:&quot;Frauenanteil in der Politik&quot;},{&quot;unit&quot;:&quot;Anzahl&quot;,&quot;title&quot;:&quot;Frauen in der Politik&quot;}]"
+  data-charttitles="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;title&quot;:&quot;Frauenanteil in nationalen Parlamenten und Gemeinden&quot;},{&quot;unit&quot;:&quot;Anzahl&quot;,&quot;title&quot;:&quot;Frauen in nationalen Parlamenten und Gemeinden&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="null"
   data-measurementunit=""
@@ -660,7 +660,7 @@ data-event-label="Change to Map tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Frauenanteil in der Politik</h4>
+          <h4 id="chart-heading" class="chart-title">Frauenanteil in nationalen Parlamenten und Gemeinden</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -703,12 +703,23 @@ data-event-label="Change to Map tab"
             
               <dt
                 data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkungen</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
                 data-for-unit="Anzahl"
               ><u>Anmerkungen</u>:</dt>
               <dd
                 data-for-series=""
                 data-for-unit="Anzahl"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
             
           
             
@@ -719,7 +730,7 @@ data-event-label="Change to Map tab"
               <dd
                 data-for-series=""
                 data-for-unit="Prozent"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
             
           
         
@@ -809,12 +820,23 @@ data-event-label="Change to Map tab"
             
               <dt
                 data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkungen</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
                 data-for-unit="Anzahl"
               ><u>Anmerkungen</u>:</dt>
               <dd
                 data-for-series=""
                 data-for-unit="Anzahl"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
             
           
             
@@ -825,7 +847,7 @@ data-event-label="Change to Map tab"
               <dd
                 data-for-series=""
                 data-for-unit="Prozent"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
             
           
         
@@ -868,7 +890,7 @@ data-event-label="Change to Map tab"
         <div role="tabpanel" class="tab-pane " id="mapview" class="map">
           
 
-<h4 id="map-heading" class="chart-title">Frauenanteil in der Politik</h4>
+<h4 id="map-heading" class="chart-title">Frauenanteil in nationalen Parlamenten und Gemeinden</h4>
 <h6 id="map-subheading" class="chart-subtitle"></h6>
 <div id="map" aria-describedby="table-alternative">
   <img class="map-loading-image" src="/sdg-indicators/assets/img/loading.gif" alt="Karte wird geladen" />
@@ -904,12 +926,23 @@ data-event-label="Change to Map tab"
             
               <dt
                 data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkungen</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
                 data-for-unit="Anzahl"
               ><u>Anmerkungen</u>:</dt>
               <dd
                 data-for-series=""
                 data-for-unit="Anzahl"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.</dd>
             
           
             
@@ -920,7 +953,7 @@ data-event-label="Change to Map tab"
               <dd
                 data-for-series=""
                 data-for-unit="Prozent"
-              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•  - Stichtag = Wahltag.<br>•  - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
+              ><br>• Angaben zum Deutschen Bundestag und Bundesrat: Stichtag 1. Januar.<br>• Angaben zu den Landtagen: <br>•   - Stichtag = Wahltag.<br>•   - Nachrückerinnen und Nachrücker werden nicht berücksichtigt.<br>• Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten: Wahlergebnis, 2019 bis 2021 ohne Schleswig-Holstein.</dd>
             
           
         
@@ -1067,7 +1100,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Vergleichbarkeit mit den globalen Metadaten </th>
         <td>
           
-            <p>Die Zeitreihen “Frauenanteil im Deutschen Bundestag”, “Frauenanteil im Bundesrat”, “Mitglieder im Deutschen Bundestag” und “Mitglieder im Bundesrat” entsprechen den globalen Metadaten. Die Zeitreihe “Frauenanteil in den Landtagen” entspricht teilweise den globalen Metadaten. Die Zeitreihe “Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten” bietet zusätzliche Informationen.</p>
+            <p>Die Zeitreihe “Frauenanteile im Bundestag, im Bundesrat und in den Landtagen” entspricht den globalen Metadaten. Die Disaggregation “Frauenanteil in den Landtagen” entspricht dabei nur teilweise den globalen Metadaten. <br />Die Zeitreihe “Frauenanteil in Kreistagen und Stadträten von kreisfreien Städten” entspricht nicht den globalen Metadaten, bietet zusätzliche Informationen.</p>
 
           
         </td>
@@ -3391,12 +3424,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230716022959'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230716123152'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230716022959"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230716123152"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
