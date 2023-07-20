@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230720101927">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230720112603">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -482,7 +482,7 @@ data-event-label="high"
   data-indicatorid='indicator_10-7-4'
   data-id="10-7-4"
   data-country="Deutschland"
-  data-charttitle=""
+  data-charttitle="Anteil der Bevölkerung, der auf der Flucht ist"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
@@ -509,7 +509,7 @@ data-event-label="high"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:3}]"
-  data-graphstepsize="[{&quot;step&quot;:25.0}]"
+  data-graphstepsize="[{&quot;step&quot;:0.02}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -549,7 +549,7 @@ data-event-label="high"
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption></caption>
+      <caption>Anteil der Bevölkerung, der auf der Flucht ist</caption>
       <thead>
         
         
@@ -582,7 +582,7 @@ data-event-label="high"
           
           
           
-          <td class="table-value">0.211</td>
+          <td class="table-value">0.21</td>
           
           
         </tr>
@@ -618,7 +618,7 @@ data-event-label="high"
           
           
           
-          <td class="table-value">0.21</td>
+          <td class="table-value">0.209</td>
           
           
         </tr>
@@ -630,7 +630,7 @@ data-event-label="high"
           
           
           
-          <td class="table-value">0.187</td>
+          <td class="table-value">0.186</td>
           
           
         </tr>
@@ -666,7 +666,7 @@ data-event-label="high"
           
           
           
-          <td class="table-value">0.074</td>
+          <td class="table-value">0.073</td>
           
           
         </tr>
@@ -714,7 +714,7 @@ data-event-label="high"
           
           
           
-          <td class="table-value">0.187</td>
+          <td class="table-value">0.186</td>
           
           
         </tr>
@@ -726,6 +726,8 @@ data-event-label="high"
 
   
   <div id="datatableFooter">
+    
+    <p>Datenquelle: <a href="https://www.unhcr.org/" target="_blank"> Hoher Flüchtlingskommissar der Vereinten Nationen (UNHCR) </a></p>
     
     
     <p>Geographische Abdeckung: Deutschland</p>
@@ -822,7 +824,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title"></h4>
+          <h4 id="chart-heading" class="chart-title">Anteil der Bevölkerung, der auf der Flucht ist</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -841,6 +843,11 @@ data-event-label="Change to Table tab"
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
+        
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.unhcr.org/" target="_blank"> Hoher Flüchtlingskommissar der Vereinten Nationen (UNHCR) </a>, <a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a></dd>
         
 
         
@@ -921,6 +928,11 @@ data-event-label="Change to Table tab"
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
+        
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.unhcr.org/" target="_blank"> Hoher Flüchtlingskommissar der Vereinten Nationen (UNHCR) </a>, <a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a></dd>
         
 
         
@@ -1094,9 +1106,19 @@ data-event-label="Change to Sources tab"
       
       
       
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
       
       <tr>
-        <th scope="row">Nationale Metadaten<small> (nur auf Englisch verfügbar)</small> </th>
+        <th scope="row">Nationale Metadaten </th>
         <td>
           
             
@@ -1110,7 +1132,7 @@ data-event-label="Change to Sources tab"
 
             
               
-                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/10.7.4.pdf" target="_blank">
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/10.7.4.pdf" target="_blank">
                   Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
                 </a>
               
@@ -1128,16 +1150,6 @@ data-event-label="Change to Sources tab"
       
       
   
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
       
       
       
@@ -1724,6 +1736,844 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Datenquelle 1</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://www.unhcr.org/" target="_blank"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/unhcr.png" alt="Logo unhcr" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://www.unhcr.org/" target="_blank"> Hoher Flüchtlingskommissar der Vereinten Nationen (UNHCR) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.unhcr.org/refugee-statistics/download/?url=Z5qp0j" target="_blank">
+                  Refugee Data Finder (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+        <h4>Datenquelle 2</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de" target="_blank"><img src="https://g205sdgs.github.io/sdg-indicators/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            <p><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=12411-0001&bypass=true&language=de" target="_blank">
+                  Bevölkerung – GENESIS online 12411-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1783,7 +2633,7 @@ data-event-label="Change to Sources tab"
                         <li>
                               
                                 
-                                  <a href="https://twitter.com/destatis?lang=de" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="https://twitter.com/destatis?lang=de" target="_blank" onclick="return confirm_alert('', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                                 
                               
                           </li>
@@ -1832,12 +2682,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230720101927'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230720112603'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230720101927"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230720112603"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
