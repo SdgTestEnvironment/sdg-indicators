@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230816012633">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230816060242">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -467,38 +467,20 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <ol type="I">
-  <li style="padding-top: 10px;">Reproduktive, mütterliche, neugeborene und kindliche Gesundheit
-    <ol type="1" style="padding-top: 10px;">
-      <li><u>Familienplanung:</u> Anteil der Frauen im reproduktiven Alter (15-49 Jahre), die verheiratet oder in einer Partnerschaft sind und deren Bedarf an Familienplanung durch moderne Methoden gedeckt ist</li>
-      <li><u>Schwangerschafts- und Geburtsvorsorge:</u> Anteil der Frauen im Alter von 15-49 Jahren mit einer Lebendgeburt in einem bestimmten Zeitraum, die viermal oder öfter Schwangerschaftsvorsorge erhalten haben</li>
-      <li><u>Kinderimpfung:</u> <a href="http://sdg-indikatoren.de/3-b-1/">Anteil der Säuglinge, die drei Dosen eines Diphtherie-Tetanus-Pertussis-haltigen Impfstoffs erhalten haben</a></li>
-      <li><u>Behandlung von Kindern:</u> Anteil der Kinder unter 5 Jahren mit Verdacht auf Lungenentzündung (Husten und Atembeschwerden, die NICHT auf ein Problem in der Brust und eine verstopfte Nase zurückzuführen sind) in den zwei Wochen vor der Erhebung, die zu einer geeigneten Gesundheitseinrichtung oder einem Anbieter gebracht wurden</li>
-    </ol>
-  </li>
-  <li style="padding-top: 10px;">Ansteckende Krankheiten
-    <ol type="1" style="padding-top: 10px;" start="5">
-      <li><u>Tuberkulose:</u> Anteil der neu aufgetretenen TB-Fälle, die entdeckt und behandelt werden</li>
-      <li><u>HIV/AIDS:</u> Anteil der Menschen, die mit HIV leben und derzeit eine antiretrovirale Therapie erhalten</li>
-      <li><u>Malaria:</u> Anteil der Bevölkerung in Malaria-endemischen Gebieten, die in der vorangegangenen Nacht unter einem mit Insektiziden behandelten Netz geschlafen haben [nur für Länder mit hoher Malariabelastung].</li>
-      <li><u>Wasser und Sanitärversorgung:</u> <a href="http://sdg-indikatoren.de/6-2-1/">Prozentualer Anteil der Haushalte, die zumindest grundlegende sanitäre Einrichtungen nutzen</a></li>
-    </ol>
-  </li>
-  <li style="padding-top: 10px;">Nichtübertragbare Krankheiten
-    <ol type="1" style="padding-top: 10px;" start="9">
-      <li><u>Hypertonie:</u> Altersstandardisierte Prävalenz von nicht-erhöhtem Blutdruck (systolischer Blutdruck &lt;140 mm Hg oder diastolischer Blutdruck &lt;90 mm Hg) bei Erwachsenen im Alter von 18 Jahren und älter</li>
-      <li><u>Diabetes:</u> Altersstandardisierte mittlere Nüchtern-Plasmaglukose (mmol/L) bei Erwachsenen ab 18 Jahren</li>
-      <li><u>Tabakkonsum:</u> <a href="http://sdg-indikatoren.de/3-a-1/">Altersstandardisierte Prävalenz von Erwachsenen &gt;=15 Jahre, die in den letzten 30 Tagen keinen Tabak geraucht haben</a></li>
-    </ol>
-  </li>
-  <li style="padding-top: 10px;">Dienstleistungskapazität und Zugang
-    <ol type="1" style="padding-top: 10px;" start="12">
-      <li><u>Zugang zu Krankenhäusern:</u> Krankenhausbetten pro Kopf, bezogen auf einen maximalen Schwellenwert von 18 pro 10.000 Einwohner</li>
-      <li><u>Gesundheitspersonal:</u> Gesundheitspersonal (Ärzte, Psychiater und Chirurgen) pro Kopf, bezogen auf die maximalen Schwellenwerte für jeden Kader</li>
-      <li><u>Gesundheitssicherheit:</u> <a href="http://sdg-indikatoren.de/3-d-1/">Kernkapazitätsindex der Internationalen Gesundheitsvorschriften (IHR), der den durchschnittlichen Anteil der Attribute von 13 Kernkapazitäten angibt, die erreicht wurden</a></li>
-    </ol>
-  </li>
-</ol>
+    <table class="mytablestyle">
+   <tr>
+      <th>Versorgung mit grundlegenden Gesundheitsdiensten</th>
+      <th>Zugehöriger SDG-Indikator</th>
+   </tr>
+   <tr>
+      &lt;th colspan=2&gt;I. I. Reproduktive Gesundheit, Gesundheit von Müttern, Neugeborenen und Kindern&lt;/th&gt;
+   </tr>
+   <tr>
+      <td>1. <u>Familienplanung:</u><br />Anteil der verheirateten oder in einer Ehe lebenden Frauen im reproduktiven Alter (15-49 Jahre), deren Bedarf an Familienplanung durch moderne Methoden gedeckt ist
+      </td>
+      <td><span class="status notstarted" style="color:black"><span class="status-inner">Nicht verfügbar</span></span></td>
+   </tr>
+</table>
 
   </div>
 </div>
@@ -1361,12 +1343,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230816012633'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230816060242'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230816012633"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230816060242"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
