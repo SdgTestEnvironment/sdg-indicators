@@ -64,7 +64,6 @@ email_contacts:
   functional: sdg-indicators@destatis.de
 ###################################################################################################
 
-
 # Build settings
 markdown: kramdown
 
