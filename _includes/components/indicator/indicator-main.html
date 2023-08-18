@@ -4,7 +4,6 @@
 {% endif %}
 {% if page.indicator.embedded_feature_html and show_data != true %}
   {% assign show_embedded_only = true %}
-  <p>00000000</p>
 {% endif %}
 {% assign datapackage_resource = site.data[page.language].data_packages.resources | where: "name", page.indicator.slug | first %}
 
@@ -54,7 +53,6 @@
   {% else %}
   <div id="indicator-main" class="indicator-main col-md-12">
     {% if show_embedded_only %}
-    <p>111111</p>
       {% include components/indicator/data-main-embedd.html %}
     {% endif %}
   {% endif %}
