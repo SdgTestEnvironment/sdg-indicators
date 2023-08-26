@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Technische Hinweise - Deutschlands SDG Indikatoren</title>
+    <title>Navigation - Deutschlands SDG Indikatoren</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230826012647">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230826071813">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -212,7 +212,7 @@ layout-page
     <a class="dropdown-item" href="/sdg-indicators/platform/">Die&nbspSDG&#8209;Online&nbspPlattform</a>
 </li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/navigation/">Navigation</a>
-</li><li class=" active">
+</li><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/guidance/">Technische&nbspHinweise</a>
 </li></ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -256,23 +256,31 @@ layout-page
 
 
   <div class="language-toggle-container d-flex">
-    <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/guidance/">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/help/navigation/">
                 English
             </a>
         </li></ul>
 </div>
 
 
+
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/guidance/">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/help/navigation/">
                 English
             </a>
         </li></ul>
-</div></span><a title="" aria-label=""
+</div>
+</span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -292,78 +300,93 @@ data-event-label="high"
         <li class="breadcrumb-item" >
             <a href="/sdg-indicators/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Technische Hinweise</li>
+        <li class="breadcrumb-item active">Navigation</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Technische Hinweise</h1>
+        <h1>Navigation</h1>
         
 
 
-    <h3>Open-Source-Projekt auf GitHub</h3>
+    <h3>Aufbau der SDG-Online Plattform</h3>
 
-Die DNS-Online Plattform ist ein öffentlich zugängliches Instrument zur Verbreitung und Präsentation von Daten zu den
-Indikatoren der Deutschen Nachhaltigkeitsstrategie.
+Die Online Plattform gliedert sich in das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen
+<a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="blank" onclick="return confirm_alert('der Vereinten Nationen', 'De');">Sustainable Development Goals, SDGs</a>
+der Agenda 2030 der Vereinten Nationen sowie das Indikatorenset der
+<a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" target="blank" onclick="return confirm_alert('der Bundesregierung', 'De');"> Deutschen Nachhaltigkeitsstrategie</a> (DNS).
+Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.
 <br><br>
-Um den grundlegenden Prinzipien der Vereinten Nationen für die amtliche Statistik zu entsprechen, sollten die Mindesteigenschaften einer
-SDG-Online Plattform folgende sein:
+Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.
 <br><br>
-Die SDG-Online Plattform<br>
-- wird von den nationalen statistischen Ämtern verwaltet;<br>
-- enthält offizielle Statistiken und Metadaten nach bewährter Standardmethodik;<br>
-- ist öffentlich zugänglich;<br>
-- ermöglicht Rückmeldungen von Datennutzern;<br>
-- wird mit Open-Source (kostenlosen) Technologien betrieben.
-<br><br>
-Darüber hinaus wurde die SDG-Online Plattform nach anerkannten internationalen Richtlinien entwickelt, insbesondere hinsichtlich frei
-zugänglicher Daten und Software.
+Einen Direktlink zur Startseite der DNS-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: <a href="https://dns-indikatoren.de"><img src="https://sdg-indikatoren.de/assets/img/about/DNS Wheel.png" alt="Wheel"></a>
 
+<h3>Struktur der SDG-Online Plattform</h3>
 
-<h3>Quellen</h3>
+Die SDG-Online Plattform gliedert sich in Ziele, Unterziele und den dazugehörigen Indikatoren (Abb. 1).
+<br><br>
+<img src="https://sdg-indikatoren.de/assets/img/about/target_page.PNG" alt="Abbildung 1: Aufbau der Unterziel-Seiten" class="responsiveImg">
 
-Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Online Plattformen, insbesondere als Open-Source
-Lösung zur Darstellung von SDG-Indikatoren. Vorreiter in diesem Bereich sind die USA und Großbritannien. Die aktuelle Version der
-deutschen Online Plattform wurde auf der Grundlage einer früheren Version der britischen Online Plattform entwickelt und an die
-Bedürfnisse der deutschen Statistik angepasst. Der Projektcode für die SDG-Online Plattform ist im folgenden
-<a href="https://github.com/G205SDGs/sdg-indicators" target="_blank" onclick="return confirm_alert('von GitHub', 'De');">GitHub Repository</a> öffentlich zugänglich.
-<br><br>
-Eine universelle Version der von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine
-Online Plattform ist verfügbar.
-Auf diesem basiert die SDG-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA
-und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Open SDG-Projektdokumentation</a>
-vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Online Plattform erstellt werden kann.
-<br><br>
-- <a href="https://sdg.data.gov/" target="_blank" onclick="return confirm_alert('des Nationalen Statistikamtes der USA', 'De');">SDG-Online Plattform USA</a>
+<p style="text-align:center">
+<small> Abb. 1: Beispiel für die Gliederung der SDGs anhand von Ziel 11 „Nachhaltige Städte und Gemeinden“ (Stand: 07/2020)</small>
+</p>
 <br>
-- <a href="https://sustainabledevelopment-uk.github.io" target="_blank" onclick="return confirm_alert('des Nationalen Statistikamtes des UK', 'De');">SDG-Online Plattform Großbritannien</a>
+
+<h3>Darstellung einzelner SDG-Indikatoren</h3>
+
+Jeder SDG-Indikator wird auf einer eigenen Seite dargestellt. Linkerhand werden, je nach Indikator, verschiedene Auswahlmenüs angezeigt.
+Das erste Auswahlmenü enthält alle Zeitreihen, die für den Indikator zur Verfügung stehen.
+In den Untermenüs können Sie je nach Datenreihe verschiedene Ausprägungen auswählen – z. B. verschiedene Altersklassen.
 <br><br>
-Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an
-<a href="https://github.com/open-sdg/open-sdg/issues" target="_blank" onclick="return confirm_alert('von GitHub', 'De');">Open SDG GitHub</a>.
+Die Entwicklung der Zeitreihe wird in einer Grafik visualisiert.
+Auf dem zweiten Reiter neben „Grafik“ können zugrundeliegende Daten hinter der Grafik und alle anderen verfügbaren Daten der Auswahlmenüs als Tabelle
+eingesehen werden (Abb. 2).
+<br><br>
+<img src="https://sdg-indikatoren.de/assets/img/about/indicator_page.PNG" alt="Abbildung 2: Aufbau der Indikator-Seiten" class="responsiveImg">
 
-<h3>Anleitungen</h3>
-<h4>Öffnen von CSV-Dateien:</h4>
-Wenn Sie bei Ihrer Recherche auf interessante Daten gestoßen sind, können Sie diese zur weiteren Verwendung auf Ihren PC als speicherbare
-Version im CSV-Format herunterladen. Eine Anleitung wie Sie die CSV-Dateien in MS-Excel öffnen und bearbeiten können, finden Sie
-<a href="https://sdg-indikatoren.de/public/HowToCsvDownload.pdf">hier</a>.
+<p style="text-align:center">
+<small> Abb. 2: Beispiel für die Darstellung der SDG-Indikatoren anhand von Indikator 11.7.1 (Stand: 04/2020)</small>
+</p>
+<br>
 
-<h4>Öffnen von PDF-Dateien:</h4>
-PDF-Dokumente können Sie sich (je nach Browsereinstellung) direkt in Ihrem Browser anzeigen lassen oder Sie laden das PDF-Dokument herunter
-und öffnen es mit einem PDF-Reader Ihrer Wahl.
-Eine Anleitung wie Sie für ausgewählte Browser die entsprechende Einstellung ändern können, finden Sie
-<a href="https://sdg-indikatoren.de/public/HowToPdfDownload.pdf">hier</a> eine Anleitung.
+Darunter befinden sich grüne Schaltflächen, die den Download der Daten im CSV-Format und im Falle der Grafik auch als PNG-Datei ermöglichen.
 
-<h3>Genutzte Software</h3>
+<h3>Metadaten und Datenquellen</h3>
 
-<h4>Back-end IT-Anforderungen:</h4>
-- GitHub: Hosting der Website, die für die Programmierung von Projekten mit dem Git-Versionskontrollsystem entwickelt wurde.<br>
-- Jekyll: Generator für statische Seiten, die in Ruby geschrieben wurden.
+Im unteren Bereich der Indikatorenseiten sind die folgenden drei Reiter angezeigt: „Nationale Metadaten“, „Globale Metadaten“ und „Datenquellen“.
+<br><br>
+Unter dem Reiter „Nationale Metadaten“ werden die national verfügbaren Zeitreihen aufgegriffen/subsummiert, die den globalen Metadaten am meisten entsprechen.
+Der Vergleich mit den globalen Anforderungen und die jeweiligen zugehörigen methodischen und länderspezifischen Informationen sind dort im nationalen
+Metadatenblatt hinterlegt.
+<br><br>
+Jeder SDG-Indikator wird von ein oder mehreren Custodian Agencies verwaltet. Die Custodian Agencies legen, in Rücksprache mit der IAEG-SDG, einer statistischen
+Arbeitsgruppe der Vereinten Nationen, die genaue Definition und Methodik für den jeweiligen Indikator fest und veröffentlichen diese als globale Metadaten.
+Diese sind unter dem Reiter „Globale Metadaten“ zu finden (Abb. 3). Hier ist neben dem vollständigen Unterziel auch die
+<a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen', 'De');">Tier-Klassifikation</a>
+des Indikators aufgeführt.
+<br><br>
+Unter „Datenquellen“ finden sich Links zu der oder den Organisation(en), die die Daten für die Zeitreihen zur Verfügung gestellt hat, und – wenn möglich –
+sind dort Links direkt zu den konkreten Datenquellen zu finden.
 
-<h4>Front-end IT-Anforderungen:</h4>
-- XHTML, CSS, JavaScript<br>
-- Chartist: JavaScript Bibliothek<br>
-- Bootstrap: framework CSS
+<h3> Indikatorenvergleich SDG und DNS</h3>
+
+Es gibt zahlreiche inhaltliche Überschneidungen zwischen den Indikatoren der UN-Nachhaltigkeitsziele und den Indikatoren der Deutschen Nachhaltigkeitsstrategie.
+<br><br>
+Etwa die Hälfte der DNS-Indikatoren sind ähnlich oder deckungsgleich zu den SDG-Indikatoren.
+Beide Indikatorensets sind zudem nach den 17 Zielen der UN-Agenda 2030 strukturiert, da die DNS die nationale Umsetzung der globalen Agenda darstellt.
+Mehr Informationen zur DNS finden Sie in der Rubrik „Wissenswertes“ unter <a href="https://dns-indikatoren.de/facts_dns">DNS</a>).
+<br><br>
+Es gibt jedoch auch Unterschiede.
+Die Bezeichnung der DNS-Indikatoren und insbesondere ihre Nummerierung sind nicht identisch mit denen der SDG-Indikatoren.
+Wenn ein SDG-Indikator mit einem DNS-Indikator vergleichbar ist, ist dies über eine Schaltfläche mit Direktlink zum jeweiligen Indikator kenntlich gemacht (Abb. 3).
+<br><br>
+<img src="https://sdg-indikatoren.de/assets/img/about/navigation_dns.PNG" alt="Abbildung 3: Position des Direktlinks zu ähnlichen oder deckungsgleichen Indikatoren zwischen den Sustainable Development Goals und der Deutschen Nachhaltigkeitsstrategie" class="responsiveImg">
+
+<p style="text-align:center">
+<small> Abb. 3: Position des Direktlinks zu ähnlichen oder deckungsgleichen Indikatoren zwischen UN-Nachhaltigkeitszielen und der Deutschen Nachhaltigkeitsstrategie (Stand: 07/2020)</small>
+</p>
+<br>
 
 
 
@@ -442,12 +465,12 @@ Eine Anleitung wie Sie für ausgewählte Browser die entsprechende Einstellung �
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230826012647'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230826071813'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230826012647"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230826071813"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
