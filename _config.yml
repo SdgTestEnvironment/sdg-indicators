@@ -152,64 +152,64 @@ menu:
       translation_key: menu.faq
 
 
-
-
-menu:
-  - path: /
-    translation_key: general.seventeen_goals
-  - path: /reporting-status/
-    translation_key: menu.reporting_status
-  - translation_key: menu.about
-    dropdown:
-      - path: /platform/
-        translation_key: menu.about_platform
-      - path: /navigation/
-        translation_key: menu.about_navigation
-      - path: /guidance/
-        translation_key: menu.about_guidance
-  - translation_key: menu.facts
-    dropdown:
-      - path: /facts_agenda/
-        translation_key: menu.facts_agenda
-      - path: /facts_dns/
-        translation_key: menu.facts_dns
-      - translation_key: menu.other_countries
-        dropdown:
-          - path: https://armstat.github.io/sdg-site-armenia/
-            translation_key: menu.armenia
-          - path: https://sdg.bhas.gov.ba/
-            translation_key: menu.bosnia_and_herzegovina
-          - path: https://sdg.hagstova.fo/
-            translation_key: menu.faroe
-          - path: https://odd-dashboard.cd/
-            translation_key: menu.domrepcongo
-          - path: https://sustainabledevelopment-ghana.github.io/
-            translation_key: menu.ghana
-          - path: https://visar.hagstofa.is/heimsmarkmidin/
-            translation_key: menu.iceland
-          - path: https://sustainabledevelopment-kyrgyzstan.github.io/
-            translation_key: menu.kyrgyzstan
-          - path: https://www.lsb.gov.la/sdg/
-            translation_key: menu.lao
-          - path: https://montestat.github.io/site/
-            translation_key: menu.montenegro
-          - path: https://sustainabledevelopment-rwanda.github.io/
-            translation_key: menu.rwanda
-          - path: https://sdg.tuik.gov.tr/
-            translation_key: menu.turkey
-          - path: http://kostat.go.kr/sdg
-            translation_key: menu.south_korea
-          - path: https://sdg.ukrstat.gov.ua/
-            translation_key: menu.ukrain
-          - path: https://sdgdata.gov.uk/
-            translation_key: menu.united_kingdom
-          - path: https://sdg.data.gov/
-            translation_key: menu.unites_states
-  - path: /publications/
-    translation_key: menu.publications
-  - path: https://dns-indikatoren.de
-    translation_key: menu.linkToDnsPlatform
-
+#
+#
+# menu:
+#   - path: /
+#     translation_key: general.seventeen_goals
+#   - path: /reporting-status/
+#     translation_key: menu.reporting_status
+#   - translation_key: menu.about
+#     dropdown:
+#       - path: /platform/
+#         translation_key: menu.about_platform
+#       - path: /navigation/
+#         translation_key: menu.about_navigation
+#       - path: /guidance/
+#         translation_key: menu.about_guidance
+#   - translation_key: menu.facts
+#     dropdown:
+#       - path: /facts_agenda/
+#         translation_key: menu.facts_agenda
+#       - path: /facts_dns/
+#         translation_key: menu.facts_dns
+#       - translation_key: menu.other_countries
+#         dropdown:
+#           - path: https://armstat.github.io/sdg-site-armenia/
+#             translation_key: menu.armenia
+#           - path: https://sdg.bhas.gov.ba/
+#             translation_key: menu.bosnia_and_herzegovina
+#           - path: https://sdg.hagstova.fo/
+#             translation_key: menu.faroe
+#           - path: https://odd-dashboard.cd/
+#             translation_key: menu.domrepcongo
+#           - path: https://sustainabledevelopment-ghana.github.io/
+#             translation_key: menu.ghana
+#           - path: https://visar.hagstofa.is/heimsmarkmidin/
+#             translation_key: menu.iceland
+#           - path: https://sustainabledevelopment-kyrgyzstan.github.io/
+#             translation_key: menu.kyrgyzstan
+#           - path: https://www.lsb.gov.la/sdg/
+#             translation_key: menu.lao
+#           - path: https://montestat.github.io/site/
+#             translation_key: menu.montenegro
+#           - path: https://sustainabledevelopment-rwanda.github.io/
+#             translation_key: menu.rwanda
+#           - path: https://sdg.tuik.gov.tr/
+#             translation_key: menu.turkey
+#           - path: http://kostat.go.kr/sdg
+#             translation_key: menu.south_korea
+#           - path: https://sdg.ukrstat.gov.ua/
+#             translation_key: menu.ukrain
+#           - path: https://sdgdata.gov.uk/
+#             translation_key: menu.united_kingdom
+#           - path: https://sdg.data.gov/
+#             translation_key: menu.unites_states
+#   - path: /publications/
+#     translation_key: menu.publications
+#   - path: https://dns-indikatoren.de
+#     translation_key: menu.linkToDnsPlatform
+#
 
 
 contrast_type: single
