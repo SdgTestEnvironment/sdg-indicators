@@ -104,6 +104,57 @@ languages:
 
 # Menu
 menu:
+  - translation_key: menu.start
+    dropdown:
+    - path: /
+      translation_key: menu.dns_plattform
+    - path: menu.pathtosdg
+      translation_key: menu.sdg_plattform
+  - translation_key: menu.about
+    dropdown:
+    - translation_key: menu.national_indicators
+      dropdown:
+      - path: /about/strategy/
+        translation_key: menu.dns
+      - translation_key: menu.publications
+        dropdown:
+        - path: menu.path_dns_indcator_set
+          translation_key: menu.dns_indcator_set
+        - path: menu.path_indicator_reports
+          translation_key: menu.indicator_reports
+        - path: menu.path_other_publications
+          translation_key: menu.other_publications
+      - translation_key: menu.joint_action
+        path: menu.path_joint_action
+    - translation_key: menu.global_indicators
+      dropdown:
+      - path: about/agenda
+        translation_key: menu.agenda
+      - path: menu.path_un_sdg
+        translation_key: menu.un_sdg
+      - translation_key: menu.publications
+        dropdown:
+        - path:
+          translation_key: menu.sdg_indicator_set
+        - path: menu.path_wista_6_16
+          translation_key: menu.wista_6_16
+        - path:
+          translation_key: menu.report_hlpf
+  - path: /reporting-status/
+    translation_key: menu.reporting_status
+  - translation_key: menu.help
+    dropdown:
+    - path: /help/navigation/
+      translation_key: menu.navigation
+    - path: /help/guidace/
+      translation_key: menu.guidance
+    - path: /help/faq/
+      translation_key: menu.faq
+
+
+
+
+menu:
   - path: /
     translation_key: general.seventeen_goals
   - path: /reporting-status/
@@ -158,6 +209,7 @@ menu:
     translation_key: menu.publications
   - path: https://dns-indikatoren.de
     translation_key: menu.linkToDnsPlatform
+
 
 
 contrast_type: single
