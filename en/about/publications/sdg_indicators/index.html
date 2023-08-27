@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/de',
+  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -42,7 +42,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'de',
+  language: 'en',
 
   mapColors: {
     "default": [
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>HLPF Berichte - Deutschlands SDG Indikatoren</title>
+    <title>SDG-Indikatorenset - German Indicators For The UN Sustainable Development Goals</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230827073415">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230827080023">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -164,17 +164,17 @@ var translations = {
         
 
     </head>
-<body class="language-de
+<body class="language-en
 layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
-<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div class="container internet-explorer-message">
-    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
-    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.</p>
+    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -182,7 +182,7 @@ layout-page
   <div class="disclaimer-alert">
     <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
+    This is a development website. We welcome your <a href="mailto:%email_address">feedback</a>.
     
   </div>
 </div>
@@ -192,8 +192,8 @@ layout-page
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/sdg-indicators/" id="home">
-    <img src="/sdg-indicators/assets/img/de/SDG_logo.png" alt="Zum Hauptinhalt springen" />
+            <a class="navbar-brand" href="/sdg-indicators/en/" id="home">
+    <img src="/sdg-indicators/assets/img/en/SDG_logo.png" alt="To main menu" />
 </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -205,54 +205,88 @@ layout-page
                     Start
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-start"><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/menu.pathtodns">DNS-Online Plattform <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="/sdg-indicators/en/menu.pathtodns">DNS-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Click here to get to the dns indicator page" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/">SDG-Online Plattform <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="/sdg-indicators/en/">SDG-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Click here to get to the dns indicator page" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li></ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Über uns
+                    About us
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Nationale Indikatoren (DNS)
+                          National Indicators (DNS)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/menu.path_dns">Deutsche Nachhaltigkeitsstrategie (DNS)</a></li><li>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/menu.path_dns">German Sustainable Development Strategy (DNS)</a></li><li>
                               <a class="dropdown-item dropdown-toggle" href="#">
-                                  Publikationen
+                                  Publications
                               </a>
-                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/menu.path_dns_indcator_set">DNS-Indikatorenset</a></li><li><a class="dropdown-item" href="/sdg-indicators/menu.path_indicator_reports">Indikatorenberichte</a></li><li><a class="dropdown-item" href="/sdg-indicators/menu.path_other_publications">Weitere Publikationen</a></li></ul>
-                            </li><li><a class="dropdown-item" href="/sdg-indicators/menu.path_joint_action">Gemeinschaftswerk</a></li></ul>
+                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/menu.path_dns_indcator_set">DNS-Indicatorset</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/menu.path_indicator_reports">Indicator reports</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/menu.path_other_publications">Other publications</a></li></ul>
+                            </li><li><a class="dropdown-item" href="/sdg-indicators/en/menu.path_joint_action">Joint Action</a></li></ul>
                     </li><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Globale Indikatoren (SDG)
+                          Global indicators (SDG)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/about/agenda">Agenda&nbsp2030</a></li><li><a class="dropdown-item" href="/sdg-indicators/menu.path_un_sdg">UN-Nachhaltigkeitsziele (SDG)</a></li><li>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/about/agenda">2030 Agenda</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/un_sdg/">UN-Sustainable Development Goals (SDG)</a></li><li>
                               <a class="dropdown-item dropdown-toggle" href="#">
-                                  Publikationen
+                                  Publications
                               </a>
-                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/">SDG-Indikatorenset</a></li><li><a class="dropdown-item" href="/sdg-indicators/menu.path_wista_6_16">Auszug aus der Publikation "WISTA - Wirtschaft und Statistik", 5/2016</a></li><li><a class="dropdown-item" href="/sdg-indicators/">Bericht zum HLPF</a></li></ul>
+                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/sdg_indcators/">SDG-Indicatorset</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/wista">Extract from the publication "WISTA - Wirtschaft und Statistik", 5/2016</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/hlpf_reports">Report on the HLPF</a></li></ul>
                             </li></ul>
                     </li></ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-other-countries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Open SDG platforms of other countries
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-other-countries"><li class=" ">
+    <a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenia</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdg.hagstova.fo/">Faroe Islands</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://odd-dashboard.cd/">Democratic Republic of the Congo</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/">Ghana</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/">Iceland</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/">Kyrgyzstan</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://www.lsb.gov.la/sdg/">Lao PDR</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://montestat.github.io/site/">Montenegro</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/">Rwanda</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdg.tuik.gov.tr/">Turkey</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="http://kostat.go.kr/sdg">South korea</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/">Ukraine</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdgdata.gov.uk/">United Kingdom</a>
+</li><li class=" ">
+    <a class="dropdown-item" href="https://sdg.data.gov/">United States</a>
+</li></ul>
           </li><li class="nav-item ">
-    <a class="nav-link" href="/sdg-indicators/reporting-status/">Datenverfügbarkeit</a>
+    <a class="nav-link" href="/sdg-indicators/en/reporting-status/">Data&nbspavailability</a>
 </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hilfe
+                    Help
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-help"><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/navigation/">Navigation</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/navigation/">Navigation</a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/guidace/">Technische&nbspHinweise</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/guidace/">Guidance</a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/faq/">FAQ</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/faq/">FAQs</a>
 </li></ul>
           </li></ul>
 
                 </div>
                 <div class="header-search-bar">
-                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
+                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/en/search/">
     <div class="input-group">
-        <label class="visually-hidden" for="indicator_search">Suche</label>
-        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
+        <label class="visually-hidden" for="indicator_search">Search</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
@@ -269,28 +303,28 @@ layout-page
 
 
   <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/about/publications/sdg_indicators/">
                 Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/publications/hlpf_reports">
-                English
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
 </div>
 
 
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/about/publications/sdg_indicators/">
                 Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/publications/hlpf_reports">
-                English
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
 </div>
 </span><a title="" aria-label=""
@@ -311,36 +345,19 @@ data-event-label="high"
     <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         <li class="breadcrumb-item" >
-            <a href="/sdg-indicators/">Start</a>
+            <a href="/sdg-indicators/en/">Home</a>
         </li>
-        <li class="breadcrumb-item active">HLPF Berichte</li>
+        <li class="breadcrumb-item active">SDG-Indikatorenset</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>HLPF Berichte</h1>
+        <h1>SDG-Indikatorenset</h1>
         
 
 
-    <div class="flex-container">
-  <div class="rightColumn">
-    <figure style="margin-left: 10px; max-width:480px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
-      <img src="https://sdgtestenvironment/sdg-indicators/assets/img/HLPF-logo.PNG"
-        alt="HLPF logo"
-        style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
-      <figcaption class="cptn" ><small>Fig. 1: HLPF logo</small></figcaption>
-    </figure>
-  </div>
-  <div class="leftColumn">
-    XXXXX Einleitender Text zu den HLPF Berichten XXXXX
-    <h3>2021</h3>
-    <a href="https://sdgtestenvironment.github.io/sdg-indicators/public/HLPF_Bericht_2021.pdf">Bericht der Bundesregierung zum High-Level Political Forum für Nachhaltige Entwicklung 2021</a> (nur auf Englisch verfügbar)
-    <h3>2016</h3>
-    <a href="https://sdgtestenvironment.github.io/sdg-indicators/public/HLPF_Bericht.pdf">Bericht der Bundesregierung zum High-Level Political Forum für Nachhaltige Entwicklung 2016</a> (nur auf Englisch verfügbar)
-
-    </div>
-</div>
+    Englischer Text zum SDG Indikatorenset...
 
 
 
@@ -355,31 +372,31 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
-                              Seite basiert auf Open SDG
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Site built using Open SDG
                             </a>
                         </li>
                         
                         <li>
                               
                                 
-                                  <a href="mailto:sdg-indicators@destatis.de">Kontakt</a>
+                                  <a href="mailto:sdg-indicators@destatis.de">Contact us</a>
                                 
                               
                           </li>
                         <li>
                               
                                 
-                                  <a href="https://twitter.com/destatis?lang=de" target="_blank" onclick="return confirm_alert('', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                  <a href="https://twitter.com/destatis?lang=en" target="_blank" onclick="return confirm_alert('', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                                 
                               
                           </li>
                         <li>
-                              <a href="/sdg-indicators/faq/ ">FAQ</a>
+                              <a href="/sdg-indicators/en/faq/ ">FAQs</a>
                               
                           </li>
                         <li>
-                              <a href="/sdg-indicators/imprint/ ">Im­pres­s­um</a>
+                              <a href="/sdg-indicators/en/imprint/ ">Legal Notice</a>
                               
                           </li>
                         
@@ -417,14 +434,14 @@ data-event-label="high"
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Suche';</script>
+    translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230827073415'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230827080023'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230827073415"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230827080023"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
