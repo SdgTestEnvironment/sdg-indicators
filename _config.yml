@@ -106,15 +106,15 @@ languages:
 menu:
   - translation_key: menu.start
     dropdown:
-    - path: /
+    - path: menu.pathtodns
       translation_key: menu.dns_plattform
-    - path: menu.pathtosdg
+    - path: /
       translation_key: menu.sdg_plattform
   - translation_key: menu.about
     dropdown:
     - translation_key: menu.national_indicators
       dropdown:
-      - path: /about/strategy/
+      - path: menu.path_dns
         translation_key: menu.dns
       - translation_key: menu.publications
         dropdown:
@@ -152,7 +152,6 @@ menu:
       translation_key: menu.faq
 
 
-#
 #
 # menu:
 #   - path: /
