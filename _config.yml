@@ -140,6 +140,8 @@ menu:
           translation_key: menu.wista_6_16
         - path: about/publications/hlpf_reports
           translation_key: menu.report_hlpf
+  - path: /reporting-status/
+    translation_key: menu.reporting_status
   - translation_key: menu.other_countries
     dropdown:
       - path: https://armstat.github.io/sdg-site-armenia/
@@ -172,8 +174,6 @@ menu:
         translation_key: menu.united_kingdom
       - path: https://sdg.data.gov/
         translation_key: menu.unites_states
-  - path: /reporting-status/
-    translation_key: menu.reporting_status
   - translation_key: menu.help
     dropdown:
     - path: /help/navigation/
