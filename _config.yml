@@ -178,7 +178,7 @@ menu:
     dropdown:
     - path: /help/navigation/
       translation_key: menu.navigation
-    - path: /help/guidace/
+    - path: /help/guidance/
       translation_key: menu.guidance
     - path: /help/faq/
       translation_key: menu.faq
