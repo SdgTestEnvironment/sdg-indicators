@@ -134,7 +134,7 @@ menu:
         translation_key: menu.un_sdg
       - translation_key: menu.publications
         dropdown:
-        - path: about/publications/sdg_indcators/
+        - path: about/publications/sdg_indicators/
           translation_key: menu.sdg_indicator_set
         - path: about/publications/wista
           translation_key: menu.wista_6_16
