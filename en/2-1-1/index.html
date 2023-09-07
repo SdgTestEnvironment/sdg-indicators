@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230907012824">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20230907115837">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -206,44 +206,41 @@ layout-indicator
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Start
+                    <ul class="navbar-nav" id="menu"><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-start" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    start
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-start"><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/menu.pathtodns">DNS-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Click here to get to the dns indicator page" alt="Link DNS" style="width:24px;height:24px;"/></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-start"><li class=" ">
+    <a class="dropdown-item" href="/sdg-indicators/en/menu.1_start_2_dns_platform_path">DNS-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Click here to get to the dns platform" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/">SDG-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Click here to get to the dns indicator page" alt="Link SDG" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="/sdg-indicators/en/">SDG-Online platform <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Click here to get to the sdg platform" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li></ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    About us
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          National Indicators (DNS)
+                          DNS: German Sustainable Developmnet Strategy
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/strategy/">German Sustainable Development Strategy (DNS)</a></li><li>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/strategy">Indicators of the German Sustainable Developmnet Strategy (DNS)</a></li><li>
                               <a class="dropdown-item dropdown-toggle" href="#">
                                   Publications
                               </a>
-                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators//about/publications/dns-indicators/">DNS-Indicatorset</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators//about/publications/reports/">Indicator reports</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/publications/other/">Other publications</a></li></ul>
-                            </li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/joint_action/">Joint Action</a></li></ul>
+                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/publications/dns_indicators">DNS-Set of indicators</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/publications/reports/">Indicator Reports</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/publications/other">Other publications</a></li></ul>
+                            </li></ul>
                     </li><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Global indicators (SDG)
+                          SDG: Global indicators
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/about/agenda">2030 Agenda</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/un_sdg/">UN-Sustainable Development Goals (SDG)</a></li><li>
-                              <a class="dropdown-item dropdown-toggle" href="#">
-                                  Publications
-                              </a>
-                              <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/sdg_indicators/">SDG-Indicatorset</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/wista">Extract from the publication "WISTA - Wirtschaft und Statistik", 5/2016</a></li><li><a class="dropdown-item" href="/sdg-indicators/en/about/publications/hlpf_reports">Report on the HLPF</a></li></ul>
-                            </li></ul>
-                    </li></ul>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en//about/sdg/agenda/">menu.1_about_2_sdg_indicators</a></li><li><a class="dropdown-item" href="/sdg-indicators/en//about/sdg/publications/">Publications</a></li></ul>
+                    </li><li class=" ">
+    <a class="dropdown-item" href="/sdg-indicators/en/menu.1_about_2_joint_action_path">Joint Action</a>
+</li></ul>
           </li><li class="nav-item ">
-    <a class="nav-link" href="/sdg-indicators/en/reporting-status/">Data&nbspavailability</a>
-</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-other-countries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Platforms of other countries
+    <a class="nav-link" href="/sdg-indicators/en/reporting-status/">Berichtsstatus</a>
+</li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-other-countries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Weltweit
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-other-countries"><li class=" ">
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-other-countries"><li class=" ">
     <a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/">Armenia</a>
 </li><li class=" ">
     <a class="dropdown-item" href="https://sdg.bhas.gov.ba/">Bosnia and Herzegovina</a>
@@ -274,15 +271,15 @@ layout-indicator
 </li><li class=" ">
     <a class="dropdown-item" href="https://sdg.data.gov/">United States</a>
 </li></ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Help
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-help"><li class=" ">
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
     <a class="dropdown-item" href="/sdg-indicators/en/help/navigation/">Navigation</a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/help/guidance/">Guidance</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/guidance/">Technical guidance</a>
 </li><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/help/faq/">FAQs</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/faq/">FAQ</a>
 </li></ul>
           </li></ul>
 
@@ -2173,12 +2170,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20230907012824'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20230907115837'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20230907012824"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20230907115837"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
