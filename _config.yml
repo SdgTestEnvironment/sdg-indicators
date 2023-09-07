@@ -104,45 +104,37 @@ languages:
 
 # Menu
 menu:
-  - translation_key: menu.start
+  - translation_key: menu.1_start
     dropdown:
-    - path: menu.pathtodns
-      translation_key: menu.dns_plattform
+    - path: menu.1_start_2_dns_platform_path
+      translation_key: menu.1_start_2_dns_platform
     - path: /
-      translation_key: menu.sdg_plattform
-  - translation_key: menu.about
+      translation_key: menu.1_start_2_sdg_platform
+  - translation_key: menu.1_about
     dropdown:
-    - translation_key: menu.national_indicators
+    - translation_key: menu.1_about_2_dns
       dropdown:
-      - path: menu.path_dns
-        translation_key: menu.dns
-      - translation_key: menu.publications
+      - path: menu.1_about_2_dns_3_indicators_path
+        translation_key: menu.1_about_2_dns_3_indicators
+      - translation_key: menu.1_about_2_dns_3_publications
         dropdown:
-        - path: menu.path_dns_indcator_set
-          translation_key: menu.dns_indcator_set
-        - path: menu.path_indicator_reports
-          translation_key: menu.indicator_reports
-        - path: menu.path_other_publications
-          translation_key: menu.other_publications
-      - translation_key: menu.joint_action
-        path: menu.path_joint_action
-    - translation_key: menu.global_indicators
+        - path: menu.1_about_2_dns_3_publications_4_indicatorset_path
+          translation_key: menu.1_about_2_dns_3_publications_4_indicatorset
+        - path: menu.1_about_2_dns_3_publications_4_reports_path
+          translation_key: menu.1_about_2_dns_3_publications_4_reports
+        - path: menu.1_about_2_dns_3_publications_4_others_path
+          translation_key: menu.1_about_2_dns_3_publications_4_others
+    - translation_key: menu.1_about_2_sdg
       dropdown:
-      - path: about/agenda
-        translation_key: menu.agenda
-      - path: about/un_sdg/
-        translation_key: menu.un_sdg
-      - translation_key: menu.publications
-        dropdown:
-        - path: about/publications/sdg_indicators/
-          translation_key: menu.sdg_indicator_set
-        - path: about/publications/wista
-          translation_key: menu.wista_6_16
-        - path: about/publications/hlpf_reports
-          translation_key: menu.report_hlpf
+      - path: /about/sdg/agenda/
+        translation_key: menu.1_about_2_sdg_indicators
+      - path: /about/sdg/publications/
+        translation_key: menu.1_about_2_sdg_3_publications
+    - translation_key: menu.1_about_2_joint_action
+      path: menu.1_about_2_joint_action_path
   - path: /reporting-status/
-    translation_key: menu.reporting_status
-  - translation_key: menu.other_countries
+    translation_key: menu.1_reporting_status
+  - translation_key: menu.1_other_countries
     dropdown:
       - path: https://armstat.github.io/sdg-site-armenia/
         translation_key: menu.armenia
@@ -174,14 +166,14 @@ menu:
         translation_key: menu.united_kingdom
       - path: https://sdg.data.gov/
         translation_key: menu.unites_states
-  - translation_key: menu.help
+  - translation_key: menu.1_help
     dropdown:
     - path: /help/navigation/
-      translation_key: menu.navigation
+      translation_key: menu.1_help_2_navigation
     - path: /help/guidance/
-      translation_key: menu.guidance
+      translation_key: menu.1_help_2_guidance
     - path: /help/faq/
-      translation_key: menu.faq
+      translation_key: menu.1_help_2_faq
 
 
 #
