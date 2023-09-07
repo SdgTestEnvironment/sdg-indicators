@@ -127,7 +127,7 @@ menu:
     - translation_key: menu.1_about_2_sdg
       dropdown:
       - path: /about/sdg/agenda/
-        translation_key: menu.1_about_2_sdg_indicators
+        translation_key: menu.1_about_2_sdg_3_indicators
       - path: /about/sdg/publications/
         translation_key: menu.1_about_2_sdg_3_publications
     - translation_key: menu.1_about_2_joint_action
