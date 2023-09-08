@@ -232,7 +232,6 @@ menu:
 #     translation_key: menu.publications
 #   - path: https://dns-indikatoren.de
 #     translation_key: menu.linkToDnsPlatform
-#
 
 
 contrast_type: single
