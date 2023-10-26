@@ -116,14 +116,8 @@ menu:
       dropdown:
       - path: menu.1_about_2_dns_3_indicators_path
         translation_key: menu.1_about_2_dns_3_indicators
-      - translation_key: menu.1_about_2_dns_3_publications
-        dropdown:
-        - path: menu.1_about_2_dns_3_publications_4_indicatorset_path
-          translation_key: menu.1_about_2_dns_3_publications_4_indicatorset
-        - path: menu.1_about_2_dns_3_publications_4_reports_path
-          translation_key: menu.1_about_2_dns_3_publications_4_reports
-        - path: menu.1_about_2_dns_3_publications_4_others_path
-          translation_key: menu.1_about_2_dns_3_publications_4_others
+      - path: menu.1_about_2_dns_3_publications_path
+        translation_key: menu.1_about_2_dns_3_publications
     - translation_key: menu.1_about_2_sdg
       dropdown:
       - path: /about/sdg/agenda/
