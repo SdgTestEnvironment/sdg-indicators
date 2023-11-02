@@ -106,7 +106,7 @@ languages:
 menu:
   - translation_key: menu.1_start
     dropdown:
-    - path: menu.1_start_2_dns_platform_path
+    - path: menu.xxx
       translation_key: menu.1_start_2_dns_platform
     - path: /
       translation_key: menu.1_start_2_sdg_platform
