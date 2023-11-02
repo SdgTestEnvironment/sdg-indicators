@@ -132,6 +132,8 @@ menu:
     dropdown:
       - path: https://armstat.github.io/sdg-site-armenia/
         translation_key: menu.armenia
+        sourcede: 'von Armenien'
+        sourceen: 'of Armenia'
       - path: https://sdg.bhas.gov.ba/
         translation_key: menu.bosnia_and_herzegovina
       - path: https://sdg.hagstova.fo/
