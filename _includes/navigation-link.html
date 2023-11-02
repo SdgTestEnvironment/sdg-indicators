@@ -15,5 +15,5 @@
 {%- endif -%}
 
 <li class="{% unless include.in_dropdown %}nav-item{% endunless %} {% if current_path_no_slash == item_path_no_slash %}active{% endif %}">
-    <a class="{% if include.in_dropdown %}dropdown-item{% else %}nav-link{% endif %}" href="{% unless item_path contains 'http' %}{{ page.baseurl }}{% endunless %}{{ item_path }}" {% unless source == undefined %} target="_blank" onclick="return confirm_alert('{{ source }}', '{{ language }}');" {% endif %}>{{ include.item.translation_key | t }}</a>
+    <a class="{% if include.in_dropdown %}dropdown-item{% else %}nav-link{% endif %}" href="{% unless item_path contains 'http' %}{{ page.baseurl }}{% endunless %}{{ item_path }}" {% unless source == undefined %} target="_blank" onclick="return confirm_alert('{{ source }}', '{{ language }}');" {% endunless %}>{{ include.item.translation_key | t }}</a>
 </li>
