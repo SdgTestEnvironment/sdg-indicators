@@ -136,26 +136,24 @@ menu:
         sourceen: 'of Armenia'
       - path: https://sdg.bhas.gov.ba/
         translation_key: menu.bosnia_and_herzegovina
-      - path: https://sdg.hagstova.fo/
+      - path: https://sdg.hagstova.fo/sdg-site/en/
         translation_key: menu.faroe
-      - path: https://odd-dashboard.cd/
+      - path: https://odd-dashboard.cd/en/
         translation_key: menu.domrepcongo
       - path: https://sustainabledevelopment-ghana.github.io/
         translation_key: menu.ghana
-      - path: https://visar.hagstofa.is/heimsmarkmidin/
+      - path: https://visar.hagstofa.is/heimsmarkmidin/en/
         translation_key: menu.iceland
-      - path: https://sustainabledevelopment-kyrgyzstan.github.io/
+      - path: https://sustainabledevelopment-kyrgyzstan.github.io/en/
         translation_key: menu.kyrgyzstan
-      - path: https://www.lsb.gov.la/sdg/
+      - path: https://www.lsb.gov.la/sdg/en/
         translation_key: menu.lao
-      - path: https://montestat.github.io/site/
+      - path: https://montestat.github.io/site/en/
         translation_key: menu.montenegro
       - path: https://sustainabledevelopment-rwanda.github.io/
         translation_key: menu.rwanda
-      - path: https://sdg.tuik.gov.tr/
+      - path: https://sdg.tuik.gov.tr/en/
         translation_key: menu.turkey
-      - path: http://kostat.go.kr/sdg
-        translation_key: menu.south_korea
       - path: https://sdg.ukrstat.gov.ua/
         translation_key: menu.ukrain
       - path: https://sdgdata.gov.uk/
