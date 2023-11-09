@@ -294,6 +294,10 @@ reporting_status:
     description: status.status_blurb
     disaggregation_tabs: false
 
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
+
 hide_empty_metadata: true
 hide_single_unit: true
 
