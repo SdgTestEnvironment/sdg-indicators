@@ -124,8 +124,6 @@ menu:
         translation_key: menu.1_about_2_sdg_3_indicators
       - path: /about/sdg/publications/
         translation_key: menu.1_about_2_sdg_3_publications
-    - translation_key: menu.1_about_2_joint_action
-      path: menu.1_about_2_joint_action_path
   - path: /reporting-status/
     translation_key: menu.1_reporting_status
   - translation_key: menu.1_other_countries
