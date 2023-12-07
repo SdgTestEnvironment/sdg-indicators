@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/de',
+  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -42,7 +42,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'de',
+  language: 'en',
 
   mapColors: {
     "default": [
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Gemeinschaftswerk Nachhaltigkeit – und jetzt alle - Deutschlands SDG Indikatoren</title>
+    <title>Joint action - German Indicators For The UN Sustainable Development Goals</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20231207102212">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20231207124839">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -164,17 +164,17 @@ var translations = {
         
 
     </head>
-<body class="language-de
+<body class="language-en
 layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
-<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div class="container internet-explorer-message">
-    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
-    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.</p>
+    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -182,7 +182,7 @@ layout-page
   <div class="disclaimer-alert">
     <strong class="phase-tag">beta</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
+    This is a development website. We welcome your <a href="mailto:%email_address">feedback</a>.
     
   </div>
 </div>
@@ -192,8 +192,8 @@ layout-page
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/sdg-indicators/" id="home">
-    <img src="/sdg-indicators/assets/img/de/SDG_logo.png" alt="Zum Hauptinhalt springen" />
+            <a class="navbar-brand" href="/sdg-indicators/en/" id="home">
+    <img src="/sdg-indicators/assets/img/en/SDG_logo.png" alt="To main menu" />
 </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -205,96 +205,96 @@ layout-page
                     Start
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-start"><li class=" ">
-    <a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators" >Nationale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en" >National indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Click here to get to the dns platform" alt="Link DNS" style="width:24px;height:24px;"/></a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/" >Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="/sdg-indicators/en/" >Global indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Click here to get to the sdg platform" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Themen
+                    Topics
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-about"><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Deutsche Nachhaltigkeitsstrategie (DNS)
+                          German Sustainable Developmnet Strategy (DNS)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/about/dns/strategy">Monitoring</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/about/dns/publications">Publikationen</a></li></ul>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/strategy">Monitoring</a></li><li><a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en/about/dns/publications/">Publications</a></li></ul>
                     </li><li>
                       <a class="dropdown-item dropdown-toggle" href="#">
-                          Agenda 2030 (SDG)
+                          2030 Agenda (SDG)
                       </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators//about/sdg/agenda/">Monitoring</a></li><li><a class="dropdown-item" href="/sdg-indicators//about/sdg/publications/">Publikationen</a></li></ul>
+                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en//about/sdg/agenda/">Monitoring</a></li><li><a class="dropdown-item" href="/sdg-indicators/en//about/sdg/publications/">Publications</a></li></ul>
                     </li></ul>
           </li><li class="nav-item ">
-    <a class="nav-link" href="/sdg-indicators/reporting-status/" >Berichtsstatus</a>
+    <a class="nav-link" href="/sdg-indicators/en/reporting-status/" >Reporting status</a>
 </li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-other-countries" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Weltweit
+                    Worldwide
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-other-countries"><li class=" ">
-    <a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/"  target="_blank" onclick="return confirm_alert('von Armenien', 'De');" >Armenien</a>
+    <a class="dropdown-item" href="https://armstat.github.io/sdg-site-armenia/"  target="_blank" onclick="return confirm_alert('Armenia', 'En');" >Armenia</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdg.bhas.gov.ba/"  target="_blank" onclick="return confirm_alert('der Agentur für Statistik von Bosnien und Herzigovina', 'De');" >Bosnien und Herzegowina</a>
+    <a class="dropdown-item" href="https://sdg.bhas.gov.ba/"  target="_blank" onclick="return confirm_alert('the Agency for Statistics of Bosnia and Herzegovina', 'En');" >Bosnia and Herzegovina</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdg.hagstova.fo/sdg-site/en/"  target="_blank" onclick="return confirm_alert('von Färöer', 'De');" >Färöer</a>
+    <a class="dropdown-item" href="https://sdg.hagstova.fo/sdg-site/en/"  target="_blank" onclick="return confirm_alert('the Faroe Islands', 'En');" >Faroe Islands</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://odd-dashboard.cd/en/"  target="_blank" onclick="return confirm_alert('der Demokratischen Republik Kongo', 'De');" >Demokratische Republik Kongo</a>
+    <a class="dropdown-item" href="https://odd-dashboard.cd/en/"  target="_blank" onclick="return confirm_alert('the Democratic Republic of the Congo', 'En');" >Democratic Republic of the Congo</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/"  target="_blank" onclick="return confirm_alert('des Stistischen Dienstes von Ghana', 'De');" >Ghana</a>
+    <a class="dropdown-item" href="https://sustainabledevelopment-ghana.github.io/"  target="_blank" onclick="return confirm_alert('the Statistical Service of Ghana', 'En');" >Ghana</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/en/"  target="_blank" onclick="return confirm_alert('Statistik Island', 'De');" >Island</a>
+    <a class="dropdown-item" href="https://visar.hagstofa.is/heimsmarkmidin/en/"  target="_blank" onclick="return confirm_alert('Statistics Iceland', 'En');" >Iceland</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/en/"  target="_blank" onclick="return confirm_alert('Kirgisistan ', 'De');" >Kirgisistan</a>
+    <a class="dropdown-item" href="https://sustainabledevelopment-kyrgyzstan.github.io/en/"  target="_blank" onclick="return confirm_alert('Kyrgyzstan', 'En');" >Kyrgyzstan</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://www.lsb.gov.la/sdg/en/"  target="_blank" onclick="return confirm_alert('des Amts für Statistik in Laos', 'De');" >Laos</a>
+    <a class="dropdown-item" href="https://www.lsb.gov.la/sdg/en/"  target="_blank" onclick="return confirm_alert('the Lao Statistics Bureau', 'En');" >Lao PDR</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://montestat.github.io/site/en/"  target="_blank" onclick="return confirm_alert('Montenegro', 'De');" >Montenegro</a>
+    <a class="dropdown-item" href="https://montestat.github.io/site/en/"  target="_blank" onclick="return confirm_alert('Montenegro', 'En');" >Montenegro</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/"  target="_blank" onclick="return confirm_alert('Ruanda', 'De');" >Ruanda</a>
+    <a class="dropdown-item" href="https://sustainabledevelopment-rwanda.github.io/"  target="_blank" onclick="return confirm_alert('Rwanda', 'En');" >Rwanda</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdg.tuik.gov.tr/en/"  target="_blank" onclick="return confirm_alert('des Instituts für Staistik Türkei', 'De');" >Türkei</a>
+    <a class="dropdown-item" href="https://sdg.tuik.gov.tr/en/"  target="_blank" onclick="return confirm_alert('the Turkish Statistical Institute', 'En');" >Turkey</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/"  target="_blank" onclick="return confirm_alert('von Statistik Ukraine', 'De');" >Ukraine</a>
+    <a class="dropdown-item" href="https://sdg.ukrstat.gov.ua/"  target="_blank" onclick="return confirm_alert('Statistics Ucrain', 'En');" >Ukraine</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdgdata.gov.uk/"  target="_blank" onclick="return confirm_alert('des Statistischen Amtes des Vereinigten Königreichs', 'De');" >Vereinigtes Königreich</a>
+    <a class="dropdown-item" href="https://sdgdata.gov.uk/"  target="_blank" onclick="return confirm_alert('the Office for National Statistics UK', 'En');" >United Kingdom</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://sdg.data.gov/"  target="_blank" onclick="return confirm_alert('des Office of Management and Budget, der General Services Administration und des US Office of Science and Technology Policy', 'De');" >USA</a>
+    <a class="dropdown-item" href="https://sdg.data.gov/"  target="_blank" onclick="return confirm_alert('the Office of Management and Budget, the General Services Administration, and the US Office of Science and Technology Policy', 'En');" >United States</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hilfe
+                    Help
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/navigation/" >Navigation</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/navigation/" >Navigation</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/guidance/" >Technische Hinweise</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/guidance/" >Technical guidance</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/help/faq/" >FAQ</a>
+    <a class="dropdown-item" href="/sdg-indicators/en/help/faq/" >FAQ</a>
 </li>
 </ul>
           </li></ul>
 
                 </div>
                 <div class="header-search-bar">
-                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
+                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/en/search/">
     <div class="input-group">
-        <label class="visually-hidden" for="indicator_search">Suche</label>
-        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
+        <label class="visually-hidden" for="indicator_search">Search</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
@@ -311,28 +311,28 @@ layout-page
 
 
   <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/joint_action/">
                 Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/about/joint_action/">
-                English
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
 </div>
 
 
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/joint_action/">
                 Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/en/about/joint_action/">
-                English
             </a>
+        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+            <span>
+                English
+            </span>
         </li></ul>
 </div>
 </span><a title="" aria-label=""
@@ -353,45 +353,44 @@ data-event-label="high"
     <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         <li class="breadcrumb-item" >
-            <a href="/sdg-indicators/">Start</a>
+            <a href="/sdg-indicators/en/">Home</a>
         </li>
-        <li class="breadcrumb-item active">Gemeinschaftswerk Nachhaltigkeit – und jetzt alle</li>
+        <li class="breadcrumb-item active">Joint action</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Gemeinschaftswerk Nachhaltigkeit – und jetzt alle</h1>
+        <h1>Joint action</h1>
         
 
 
     <div class="flex-container">
   <div class="rightColumn">
-    <a href="https://gemeinschaftswerk-nachhaltigkeit.de/" title="Externer Link!" target="_blank" onclick="return confirm_alert('des Gemeinschaftswerks Nachhaltigkeit', 'De');">
+    <a href="https://gemeinschaftswerk-nachhaltigkeit.de/" title="External Link!" target="_blank" onclick="return confirm_alert('the joint action for sustainable development', 'En');">
       <img src="https://dnstestenvironment.github.io/dns-indicators//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png"
           alt="Gemeinschaftswerk Nachhaltigkeit"
           style="width:200px; margin-right:10px; float:left">
     </a>
   </div>
   <div class="leftColumn" >
-  <p>
-    Das Statistische Bundesamt ist Teil des
-    <a href="https://gemeinschaftswerk-nachhaltigkeit.de/app/organisations/1102" target="_blank" onclick="return confirm_alert('des Gemeinschaftswerks Nachhaltigkeit', 'De');">Gemeinschaftswerks Nachhaltigkeit</a>.
-    Dies ist eine offene Plattform für alle, die sich für eine nachhaltige Gesellschaft einsetzen. Das Gemeinschaftswerk Nachhaltigkeit ist eine
-    Initiative von Bund und Ländern und wird vom
-    <a href="http://www.nachhaltigkeitsrat.de" target="_blank" onclick="return confirm_alert('des Rats für nachhaltige Entwicklung', 'De');">Rat für Nachhaltige Entwicklung</a>
-    koordiniert.
-    <br><br>
-    Altbundeskanzlerin Angela Merkel und die Ministerpräsidentinnen und Ministerpräsiden der Länder haben im Jahr 2019 das Gemeinschaftswerk
-    Nachhaltigkeit beschlossen. Der Beschluss legte fest, dass nachhaltige Entwicklung zu einem Gemeinschaftswerk werden soll und bekräftigte damit die
-    gemeinsame Verantwortung für eine nachhaltige Zukunft.
-    <br><br>
-    Die vier
-    <a href="https://www.renn-netzwerk.de/ueber-uns" target="_blank" onclick="return confirm_alert('der Regionalen Netzstellen Nachhaltigkeitsstrategien', 'De');">Regionalen Netzstellen Nachhaltigkeitsstrategien (RENN)</a>
-    sind zentrale Partner für das Gemeinschaftswerk Nachhaltigkeit in den Regionen.<br><br>
-    Die Webplattform bietet Organisationen aus allen gesellschaftlichen Bereichen Sichtbarkeit für ihre Nachhaltigkeitsaktivitäten und einen Ort zum
-    Vernetzen. Sie ist Ende 2022 online gegangen.
-  </p>
+    <p>
+      The Federal Statistical Office is part of the
+      <a href="https://gemeinschaftswerk-nachhaltigkeit.de/app/organisations/1102" target="_blank" onclick="return confirm_alert('the joint action for sustainable development', 'En');">Joint action for sustainable development</a>.
+      This is an open platform for all who are committed to a sustainable society.
+      The "Joint action for sustainable development" is an initiative of the Federal Government and the Länder and is coordinated by the
+      <a href="https://www.nachhaltigkeitsrat.de/en/?cn-reloaded=1" target="_blank" onclick="return confirm_alert('the German Council for Sustainable Development', 'En');">German Council for Sustainable Development</a>.
+      <br><br>
+      Former German Chancellor Angela Merkel and the minister presidents of the federal states adopted the "Joint action for sustainable development"
+      in 2019. The resolution stipulated that sustainable development should become a joint effort and thus affirmed   the joint responsibility for a
+      sustainable future.
+      <br><br>
+      The four <a href="https://www.renn-netzwerk.de/en/about-us" target="_blank" onclick="return confirm_alert('the Regional Hubs for Sustainability Strategies', 'En');">Regional Hubs for Sustainability Strategies</a>
+      (RENN) are central partners for the joint venture Sustainability in the Regions.
+      <br><br>
+      The web platform offers organizations from all sectors of society visibility for their sustainability activities and a place to network.
+      It went online at the end of 2022
+    </p>
   </div>
 </div>
 
@@ -408,20 +407,20 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
-                              Seite basiert auf Open SDG
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Site built using Open SDG
                             </a>
                         </li>
                         
                         <li>
                               
                                 
-                                  <a href="mailto:sdg-indicators@destatis.de">Kontakt</a>
+                                  <a href="mailto:sdg-indicators@destatis.de">Contact us</a>
                                 
                               
                           </li>
                         <li>
-                              <a href="/sdg-indicators/imprint/ ">Im­pres­s­um</a>
+                              <a href="/sdg-indicators/en/imprint/ ">Legal Notice</a>
                               
                           </li>
                         
@@ -459,14 +458,14 @@ data-event-label="high"
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Suche';</script>
+    translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20231207102212'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20231207124839'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20231207102212"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20231207124839"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
