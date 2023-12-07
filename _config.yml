@@ -50,9 +50,15 @@ frontpage_goals_grid:
     description: frontpage.instructions
 
 frontpage_cards:
-    - rule_color: orange
+    - rule_color: grey
       title: ''
       include: components/download-all-data.html
+    - rule_color: grey
+      title: ''
+      include: components/community.html
+    - rule_color: grey
+      title: ''
+      include: components/agenda.html
 
 analytics:
   ga_prod: ''
