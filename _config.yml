@@ -55,10 +55,10 @@ frontpage_cards:
       include: components/download-all-data.html
     - rule_color: grey
       title: ''
-      include: components/community.html
+      include: components/joint_action_column.html
     - rule_color: grey
       title: ''
-      include: components/agenda.html
+      include: components/agenda_column.html
 
 analytics:
   ga_prod: ''
@@ -126,7 +126,7 @@ menu:
         translation_key: menu.1_about_2_dns_3_publications
     - translation_key: menu.1_about_2_sdg
       dropdown:
-      - path: /about/sdg/agenda/
+      - path: /about/sdg/monitoring/
         translation_key: menu.1_about_2_sdg_3_indicators
       - path: /about/sdg/publications/
         translation_key: menu.1_about_2_sdg_3_publications
