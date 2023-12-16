@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-gem install bundler -v 2.4.22
 
 gem "jekyll", "3.8.4"
 gem "html-proofer", "3.19.4"
