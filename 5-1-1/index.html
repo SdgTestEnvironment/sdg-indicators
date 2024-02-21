@@ -148,7 +148,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240221012851">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240221122626">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -567,7 +567,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;value&quot;:1.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;area of law&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Bereich 1: Übergreifende rechtliche Rahmenbedingungen und das öffentliche Leben&quot;,&quot;Bereich 2: Gewalt gegen Frauen&quot;,&quot;Bereich 3: Erwerbstätigkeit und wirtschaftlicher Nutzen&quot;,&quot;Bereich 4: Ehe und Familie&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Rechtsgebiet&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
@@ -733,10 +733,10 @@ data-event-label="Change to Table tab"
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-          <dt><u>Anmerkung</u>:</dt>
-          <dd>Daten sind erst ab 2018 verfügbar.</dd>
-        
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• Daten sind erst ab 2018 verfügbar.<br>• Die Ergebnisse ab 2022 sind nur eingeschränkt mit den Vorjahren vergleichbar. Weiterführende Informationen siehe "3. Beschreibung der Daten" in den nationalen Metadaten.</dd>
         
 
         
@@ -818,10 +818,10 @@ data-event-label="Change to Table tab"
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-          <dt><u>Anmerkung</u>:</dt>
-          <dd>Daten sind erst ab 2018 verfügbar.</dd>
-        
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• Daten sind erst ab 2018 verfügbar.<br>• Die Ergebnisse ab 2022 sind nur eingeschränkt mit den Vorjahren vergleichbar. Weiterführende Informationen siehe "3. Beschreibung der Daten" in den nationalen Metadaten.</dd>
         
 
         
@@ -980,9 +980,19 @@ data-event-label="Change to Sources tab"
       
       
       
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
       
       <tr>
-        <th scope="row">Nationale Metadaten<small> (nur auf Englisch verfügbar)</small> </th>
+        <th scope="row">Nationale Metadaten </th>
         <td>
           
             
@@ -996,7 +1006,7 @@ data-event-label="Change to Sources tab"
 
             
               
-                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/5.1.1.pdf" target="_blank">
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/5.1.1.pdf" target="_blank">
                   Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
                 </a>
               
@@ -1014,16 +1024,6 @@ data-event-label="Change to Sources tab"
       
       
   
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
       
       
       
@@ -2155,7 +2155,7 @@ data-event-label="Change to Sources tab"
 
             
               
-                <a href="https://sdg-indikatoren.de/publicUUN-WOMEN-Survey_2022.pdf" target="_blank">
+                <a href="https://sdg-indikatoren.de/public/UN-WOMEN-Survey_2022.pdf" target="_blank">
                   UN WOMEN-Fragebogen, Bewertung 2022 (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
                 </a>
               
@@ -2555,6 +2555,8 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2572,12 +2574,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240221012851'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240221122626'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240221012851"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240221122626"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
