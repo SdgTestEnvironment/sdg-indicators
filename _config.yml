@@ -180,7 +180,7 @@ menu:
         translation_key: menu.unites_states
         sourcede: 'des Office of Management and Budget, der General Services Administration und des US Office of Science and Technology Policy'
         sourceen: 'the Office of Management and Budget, the General Services Administration, and the US Office of Science and Technology Policy'
-  -path: 1_national_indicators_path
+  - path: 1_national_indicators_path
     translation_key: 1_national_indicators
   - translation_key: menu.1_help
     dropdown:
