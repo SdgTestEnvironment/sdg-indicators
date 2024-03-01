@@ -116,11 +116,11 @@ menu:
     translation_key: menu.1_reporting_status
   - translation_key: menu.1_agenda2030
     dropdown:
-    - path: /about/sdg/monitoring/
+    - path: /agenda2030/monitoring/
       translation_key: menu.1_agenda2030_2_monitoring
-    - path: /about/sdg/publications/
+    - path: /agenda2030/publications/
       translation_key: menu.1_agenda2030_2_publications
-    - path: /about/sdg/links/
+    - path: /agenda2030/links/
       translation_key: menu.1_agenda2030_2_links
   - translation_key: menu.1_other_countries
     dropdown:
