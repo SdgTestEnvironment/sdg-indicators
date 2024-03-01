@@ -110,28 +110,18 @@ languages:
 
 # Menu
 menu:
-  - translation_key: menu.1_start
-    dropdown:
-    - path: menu.1_start_2_dns_platform_path
-      translation_key: menu.1_start_2_dns_platform
-    - path: /
-      translation_key: menu.1_start_2_sdg_platform
-  - translation_key: menu.1_about
-    dropdown:
-    - translation_key: menu.1_about_2_dns
-      dropdown:
-      - path: menu.1_about_2_dns_3_indicators_path
-        translation_key: menu.1_about_2_dns_3_indicators
-      - path: menu.1_about_2_dns_3_publications_path
-        translation_key: menu.1_about_2_dns_3_publications
-    - translation_key: menu.1_about_2_sdg
-      dropdown:
-      - path: /about/sdg/monitoring/
-        translation_key: menu.1_about_2_sdg_3_indicators
-      - path: /about/sdg/publications/
-        translation_key: menu.1_about_2_sdg_3_publications
+  - path: /
+    translation_key: menu.1_start
   - path: /reporting-status/
     translation_key: menu.1_reporting_status
+  - translation_key: menu.1_agenda2030
+    dropdown:
+    - path: /about/sdg/monitoring/
+      translation_key: menu.1_agenda2030_2_monitoring
+    - path: /about/sdg/publications/
+      translation_key: menu.1_agenda2030_2_publications
+    - path: /about/sdg/links/
+      translation_key: menu.1_agenda2030_2_publications
   - translation_key: menu.1_other_countries
     dropdown:
       - path: https://armstat.github.io/sdg-site-armenia/
@@ -190,6 +180,8 @@ menu:
         translation_key: menu.unites_states
         sourcede: 'des Office of Management and Budget, der General Services Administration und des US Office of Science and Technology Policy'
         sourceen: 'the Office of Management and Budget, the General Services Administration, and the US Office of Science and Technology Policy'
+  -path: 1_national_indicators_path
+    translation_key: 1_national_indicators
   - translation_key: menu.1_help
     dropdown:
     - path: /help/navigation/
