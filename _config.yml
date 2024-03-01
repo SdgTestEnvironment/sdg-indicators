@@ -121,7 +121,7 @@ menu:
     - path: /about/sdg/publications/
       translation_key: menu.1_agenda2030_2_publications
     - path: /about/sdg/links/
-      translation_key: menu.1_agenda2030_2_publications
+      translation_key: menu.1_agenda2030_2_links
   - translation_key: menu.1_other_countries
     dropdown:
       - path: https://armstat.github.io/sdg-site-armenia/
