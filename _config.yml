@@ -108,6 +108,7 @@ languages:
   - de
   - en
 
+
 # Menu
 menu:
   - path: /
