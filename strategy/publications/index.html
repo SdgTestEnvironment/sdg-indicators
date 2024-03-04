@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="de" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/en',
+  remoteDataBaseUrl: 'https://SdgTestEnvironment.github.io/sdg-data/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -42,7 +42,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'en',
+  language: 'de',
 
   mapColors: {
     "default": [
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>2030 Agenda - Monitoring by the Federal Statistical Office - German Indicators For The UN Sustainable Development Goals</title>
+    <title>Publikationen - Deutschlands SDG Indikatoren</title>
 
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240304194132">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240304195102">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -164,17 +164,17 @@ var translations = {
         
 
     </head>
-<body class="language-en
+<body class="language-de
 layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
-<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div class="container internet-explorer-message">
-    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
-    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -182,7 +182,7 @@ layout-page
   <div class="disclaimer-alert">
     <strong class="phase-tag">beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:%email_address">feedback</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:%email_address">Kommentare</a>.
     
   </div>
 </div>
@@ -192,8 +192,8 @@ layout-page
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/sdg-indicators/en/" id="home">
-    <img src="/sdg-indicators/assets/img/en/SDG_logo.png" alt="To main menu" />
+            <a class="navbar-brand" href="/sdg-indicators/" id="home">
+    <img src="/sdg-indicators/assets/img/de/SDG_logo.png" alt="Zum Hauptinhalt springen" />
 </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -202,46 +202,54 @@ layout-page
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
-    <a class="nav-link" href="/sdg-indicators/en/" >Start</a>
+    <a class="nav-link" href="/sdg-indicators/" >Start</a>
 </li>
 <li class="nav-item ">
-    <a class="nav-link" href="/sdg-indicators/en/reporting-status/" >Status</a>
+    <a class="nav-link" href="/sdg-indicators/reporting-status/" >Status</a>
 </li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-agenda2030" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Strategy
+                    Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-agenda2030"><li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/agenda2030/agenda/" >2030 agenda</a>
+    <a class="dropdown-item" href="/sdg-indicators/strategy/2030_agenda/" >Agenda 2030</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/agenda2030/monitoring/" >Monitoring</a>
+    <a class="dropdown-item" href="/sdg-indicators/strategy/monitoring/" >Monitoring</a>
+</li>
+<li class=" active">
+    <a class="dropdown-item" href="/sdg-indicators/strategy/publications/" >Publikationen</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/agenda2030/publications/" >Publications</a>
+    <a class="dropdown-item" href="/sdg-indicators/strategy/links/" >Links</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/agenda2030/links/" >Links</a>
+    <a class="dropdown-item" href="/sdg-indicators/worldwide/" >Weltweit</a>
+</li>
+</ul>
+          </li><li class="nav-item ">
+    <a class="nav-link" href="https://dnstestenvironment.github.io/dns-indicators" >Nationale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Klicken Sie hier um zur Seite der DNS Indikatoren zu gelangen" alt="Link DNS" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hilfe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
+    <a class="dropdown-item" href="/sdg-indicators/help/navigation/" >Aufbau der Online Plattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/sdg-indicators/en/worldwide/" >Worldwide</a>
+    <a class="dropdown-item" href="/sdg-indicators/help/guidance/" >Technische Hinweise</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="https://dnstestenvironment.github.io/dns-indicators/en" >National indicators <img class="link_btn" src="https://sdg-indikatoren.de/public/DNS Wheel.png" title="Click here to get to the dns platform" alt="Link DNS" style="width:24px;height:24px;"/></a>
+    <a class="dropdown-item" href="/sdg-indicators/help/faq/" >FAQ</a>
 </li>
-<li>
-                      <a class="dropdown-item dropdown-toggle" href="#">
-                          Help
-                      </a>
-                      <ul class="submenu dropdown-menu"><li><a class="dropdown-item" href="/sdg-indicators/en//help/navigation/">Structure of the online platform</a></li><li><a class="dropdown-item" href="/sdg-indicators/en//help/guidance/">Technical guidance</a></li><li><a class="dropdown-item" href="/sdg-indicators/en//help/faq/">FAQ</a></li></ul>
-                    </li></ul>
+</ul>
           </li></ul>
 
                 </div>
                 <div class="header-search-bar">
-                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/en/search/">
+                    <form class="align-self-lg-end" id="search" action="/sdg-indicators/search/">
     <div class="input-group">
-        <label class="visually-hidden" for="indicator_search">Search</label>
-        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
+        <label class="visually-hidden" for="indicator_search">Suche</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
@@ -258,28 +266,28 @@ layout-page
 
 
   <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/agenda2030/monitoring/">
-                Deutsch
-            </a>
-        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
             <span>
-                English
+                Deutsch
             </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/strategy/publications/">
+                English
+            </a>
         </li></ul>
 </div>
 
 
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/sdg-indicators/agenda2030/monitoring/">
-                Deutsch
-            </a>
-        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
             <span>
-                English
+                Deutsch
             </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/sdg-indicators/en/strategy/publications/">
+                English
+            </a>
         </li></ul>
 </div>
 </span><a title="" aria-label=""
@@ -300,40 +308,75 @@ data-event-label="high"
     <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         <li class="breadcrumb-item" >
-            <a href="/sdg-indicators/en/">Home</a>
+            <a href="/sdg-indicators/">Start</a>
         </li>
-        <li class="breadcrumb-item active">2030 Agenda - Monitoring by the Federal Statistical Office</li>
+        <li class="breadcrumb-item active">Publikationen</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>2030 Agenda - Monitoring by the Federal Statistical Office</h1>
+        <h1>Publikationen</h1>
         
 
 
-    The UN General Assembly adopted the
-<a href="https://undocs.org/A/RES/70/1" target="_blanc" onclick="return confirm_alert('the UN', 'En');">2030 Agenda</a>
-for Sustainable Development in September 2015. The aim of the Agenda, which is based on the Millennium Development Goals,
-is to transform the world for the better until 2030. The 2030 Agenda has an unprecedented range and importance as it
-applies on a global scale and everyone is called upon to contribute. The pledge is to leave no one behind during this journey.
-Therefore, the focus is on those who have the longest way to go. Appropriate indicators are to be used to measure
-progress towards achieving the total 17 Sustainable Development Goals (SDGs) of the 2030 Agenda and the 169 targets included.
-An international working group, namely the
-<a href="https://unstats.un.org/sdgs/iaeg-sdgs/" target="_blanc" onclick="return confirm_alert('the UN Statistical Commission', 'En');">Inter-Agency and Expert Group on SDG Indicators</a>
-(IAEG-SDG) has been tasked with the development of a set of 231 indicators.
-The Federal Statistical Office was a member of this group from mid-2015 to may 2021.
-<br><br>
-The IAEG-SDG is also responsible for reviewing and further developing the set of indicators.
-Annual fine-tuning and two rounds of larger revisions in 2020 and 2025 have been scheduled.
-The <a href="https://unstats.un.org/sdgs/iaeg-sdgs/2020-comp-rev/" target="_blanc" onclick="return confirm_alert('the UN Statistical Commission', 'En');">2020 revision</a>
-has been completed. Among other things, six indicators were deleted, eight new indicators included and 14
-indicators replaced in the set. The 2030 Agenda requires a disaggregation of the individual indicators by dimensions such as
-sex, age, income, migration status, disability, geographic location, and further dimensions. The IAEG-SDG is working on
-facilitating the provision of all these data and, additionally, making them globally comparable.
-<br><br>
-Since July 2019, data for Germany and explanatory indicator information have been provided in a
-processed form and an interactive environment on this online platform on indicators of the UN Sustainable Development Goals.
+    <h3 style="width: 80%;"><a href="https://sdg-indikatoren.de//public/wista_SDG.pdf" target="_blank">Sustainable Development Goals – Indikatoren für die Agenda 2030 für nachhaltige Entwicklung</a></h3>
+<div class="flex-container">
+  <div class="rightColumn">
+    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
+      <img src="https://sdgtestenvironment.github.io/sdg-indicators//assets/img/wista_5_16.PNG"
+      alt="Abbildung 1: WISTA" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;">
+    </figure>
+  </div>
+  <div class="leftColumn">
+    Auszug aus der Publikation „WISTA - Wirtschaft und Statistik“
+    <br>
+    Erschienen im Mai 2016
+    <br><br>
+    <p style="padding-bottom: 30px;">Am Entwicklungsprozess des Indikatorenrahmenwerks der Nachhaltigkeitsziele der
+      Vereinten Nationen waren viele nationale und internationale Akteure beteiligt; ihre
+      gute und intensive Zusammenarbeit führte zu einer Einigung in sehr kurzer Zeit. Das
+      Rahmenwerk selbst soll möglichst viele Aspekte der Agenda 2030 der Vereinten
+      Nationen berücksichtigen; dadurch ist es mit seinen 231 Indikatoren sehr umfangreich.
+      Die amtliche Statistik sieht sich nun vor der Aufgabe, die vielseitigen Indikatoren
+      mit Leben zu füllen. Das Statistische Bundesamt hat im Juli 2016 bereits erste
+      nationale Zahlen veröffentlicht und wird auch künftig aktiv am Weiterentwicklungsprozess
+      des Rahmenwerkes teilnehmen. Damit eröffnet sich für das Statistische
+      Bundesamt die Chance, neue Datenquellen zu erschließen und das Blickfeld der
+      amtlichen Statistik inhaltlich zu erweitern.
+    </p>
+  </div>
+</div>
+
+<h1 style="width: 80%;">HLPF-Berichte</h1>
+<div class="flex-container">
+  <div class="rightColumn">
+    <figure style="margin-left: 10px; max-width:280px; width:100%; border: 1px solid #ddd; border-radius: 4px;">
+      <img src="https://sdgtestenvironment.github.io/sdg-indicators/assets/img/HLPF-Logo.jpg"
+      alt="Abbildung 2: HLPF"
+      style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px; max-width: 350px;">
+    </figure>
+  </div>
+  <div class="leftColumn">
+    Bei dem jährlich in New York stattfindenden High Level Political Forum für Nachhaltige Entwicklung (HLPF) der
+    Vereinten Nationen legen die Mitgliedsstaaten in unregelmäßigen Abständen einen Fortschrittsbericht vor, der Aufschluss über die Erreichung der
+    Sustainable Development Goals auf nationaler Ebene gibt.<br>Deutschland berichtete 2021 nach 2016 bereits zum zweiten mal.
+    <h3>2021</h3>
+    <a href="https://sdgtestenvironment.github.io/sdg-indicators/public/HLPF_Bericht_2021_de.pdf" target="_blank">Freiwilliger Deutscher Staatenbericht zum HLPF 2021</a>
+    <br>
+    <h3>2016</h3>
+    <a href="https://sdgtestenvironment.github.io/sdg-indicators/public/HLPF_Bericht_2016_en.pdf" target="_blank">Freiwilliger Deutscher Staatenbericht zum HLPF 2016</a> <small>(nur auf Englisch verfügbar)</small>
+  </div>
+</div>
+
+<h1 style="width: 80%;">Pressemitteilungen</h1>
+<div class="flex-container">
+  <div class="leftColumn">
+    <h3>Fünf Jahre Berichterstattung: Wie nachhaltig ist Deutschland?</h3>
+    <a href="https://www.destatis.de/DE/Presse/Pressemitteilungen/2021/07/PD21_317_325.html" target="_blank">Pressemitteilung Nr. 317 vom 5. Juli 2021</a>
+    <br>
+  </div>
+</div>
 
 
 
@@ -348,20 +391,20 @@ processed form and an interactive environment on this online platform on indicat
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
-                              Site built using Open SDG
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
+                              Seite basiert auf Open SDG
                             </a>
                         </li>
                         
                         <li>
                               
                                 
-                                  <a href="mailto:sdg-indicators@destatis.de">Contact us</a>
+                                  <a href="mailto:sdg-indicators@destatis.de">Kontakt</a>
                                 
                               
                           </li>
                         <li>
-                              <a href="/sdg-indicators/en/imprint/ ">Legal Notice</a>
+                              <a href="/sdg-indicators/imprint/ ">Im­pres­s­um</a>
                               
                           </li>
                         
@@ -399,14 +442,14 @@ processed form and an interactive environment on this online platform on indicat
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Search';</script>
+    translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240304194132'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240304195102'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240304194132"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240304195102"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
