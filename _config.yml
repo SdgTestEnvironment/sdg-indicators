@@ -117,26 +117,26 @@ menu:
     translation_key: menu.1_reporting_status
   - translation_key: menu.1_agenda2030
     dropdown:
-    - path: /agenda2030/agenda/
+    - path: /strategy/2030_agenda/
       translation_key: menu.1_agenda2030_2_agenda
-    - path: /agenda2030/monitoring/
+    - path: /strategy/monitoring/
       translation_key: menu.1_agenda2030_2_monitoring
-    - path: /agenda2030/publications/
+    - path: /strategy/publications/
       translation_key: menu.1_agenda2030_2_publications
-    - path: /agenda2030/links/
+    - path: /strategy/links/
       translation_key: menu.1_agenda2030_2_links
     - path: /worldwide/
       translation_key: menu.1_worldwide
-    - path: menu.1_national_indicators_path
-      translation_key: menu.1_national_indicators
-    - translation_key: menu.1_help
-      dropdown:
-      - path: /help/navigation/
-        translation_key: menu.1_help_2_navigation
-      - path: /help/guidance/
-        translation_key: menu.1_help_2_guidance
-      - path: /help/faq/
-        translation_key: menu.1_help_2_faq
+  - path: menu.1_national_indicators_path
+    translation_key: menu.1_national_indicators
+  - translation_key: menu.1_help
+    dropdown:
+    - path: /help/navigation/
+      translation_key: menu.1_help_2_navigation
+    - path: /help/guidance/
+      translation_key: menu.1_help_2_guidance
+    - path: /help/faq/
+      translation_key: menu.1_help_2_faq
   #- translation_key: menu.1_other_countries
     # dropdown:
     #   - path: https://armstat.github.io/sdg-site-armenia/
