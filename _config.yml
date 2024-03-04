@@ -117,6 +117,8 @@ menu:
     translation_key: menu.1_reporting_status
   - translation_key: menu.1_agenda2030
     dropdown:
+    - path: /agenda2030/agenda/
+      translation_key: menu.1_agenda2030_2_agenda
     - path: /agenda2030/monitoring/
       translation_key: menu.1_agenda2030_2_monitoring
     - path: /agenda2030/publications/
