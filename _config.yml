@@ -276,6 +276,9 @@ search_index_extra_fields:
   - data_keywords
   - graph_title
 
+hide_wheel: true
+
+
 series_toggle: true
 graph_title_from_series: true
 decimal_separator: ','

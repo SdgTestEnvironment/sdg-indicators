@@ -18,9 +18,9 @@
     {% endunless %}
     <div class="details">
         <h2 class="status-goal">
-            {{ include.title }}
+            {{ include.title }}{{ overall.totals.total }} {{ indicators_plural }}
         </h2>
-        <span class="total"><span>{{ overall.totals.total }}</span> {{ indicators_plural }}</span>
+        <!-- <span class="total"><span>{{ overall.totals.total }}</span> {{ indicators_plural }}</span> -->
         <div class="summary">
             <div class="statuses">
             {%- for status_type in status_types -%}
