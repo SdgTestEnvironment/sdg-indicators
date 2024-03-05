@@ -125,8 +125,8 @@ menu:
       translation_key: menu.1_agenda2030_2_publications
     - path: /strategy/links/
       translation_key: menu.1_agenda2030_2_links
-    - path: /worldwide/
-      translation_key: menu.1_worldwide
+  - path: /worldwide/
+    translation_key: menu.1_worldwide
   - path: menu.1_national_indicators_path
     translation_key: menu.1_national_indicators
   - translation_key: menu.1_help
