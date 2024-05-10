@@ -257,6 +257,9 @@ menu:
 #     translation_key: menu.publications
 #   - path: https://dns-indikatoren.de
 #     translation_key: menu.linkToDnsPlatform
+observation_attributes:
+  - field: COMMENT_OBS
+    label: Comment
 
 
 contrast_type: single
