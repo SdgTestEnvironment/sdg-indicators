@@ -4095,7 +4095,7 @@ opensdg.chartTypes.base = function(info) {
                     ticks: {
                         color: tickColor,
                         callback: function (value) {
-                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                            return alterDataDisplay(value, undefined, 'chart y-axis tick', undefined);
                         },
                     },
                     title: {
@@ -4160,7 +4160,7 @@ opensdg.chartTypes.base = function(info) {
                                 line = line.concat(label[i] + ' ');
                               }
                             };
-                            re.push(line.slice(0, -1) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip'));
+                            re.push(line.slice(0, -1) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', undefined));
                             re.shift();
                           }
                           return re;
