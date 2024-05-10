@@ -9,12 +9,16 @@ opensdg.annotationPresets = {
         label: {
             backgroundColor: 'rgba(255,255,255,0.6)',
             color: 'black',
+            borderWidth: 1,
+            borderColor: 'black',
         },
         // This "highContrast" overrides colors when in high-contrast mode.
         highContrast: {
             label: {
                 backgroundColor: 'black',
                 color: 'white',
+                borderWidth: 1,
+                borderColor: 'white',
             },
         },
         // This callback is used to generate a generic description for screenreaders.
@@ -56,7 +60,7 @@ opensdg.annotationPresets = {
         mode: 'vertical',
         borderDash: [2, 2],
         label: {
-            position: 'top',
+            position: 'start',
             content: translations.indicator.annotation_series_break,
         },
     },

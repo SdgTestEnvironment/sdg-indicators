@@ -4,7 +4,7 @@
  * @param {Object} context
  * @return {null|undefined|Float|String}
  */
-function alterDataDisplay(value, info, context) {
+function alterDataDisplay(value, info, context, additionalInfo) {
     // If value is empty, we will not alter it.
     if (value == null || value == undefined) {
         return value;
@@ -38,6 +38,7 @@ function alterDataDisplay(value, info, context) {
         precision = 0
       }
     }
+
     else {
       var precision = VIEW._precision
     }
@@ -52,6 +53,34 @@ function alterDataDisplay(value, info, context) {
     if (OPTIONS.thousandsSeparator && precision <=3){
         altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
     }
+    // Now let's add any footnotes from observation attributes.
+    var obsAttributes = [];
+    if (context === 'chart tooltip') {
+        var dataIndex = additionalInfo.dataIndex;
+        obsAttributes = info.observationAttributes[dataIndex];
+    }
+    else if (context === 'table cell') {
+        var row = additionalInfo.row,
+            col = additionalInfo.col,
+            obsAttributesTable = additionalInfo.observationAttributesTable;
+        obsAttributes = obsAttributesTable.data[row][col];
+    }
+    if (obsAttributes.length > 0) {
+        var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
+            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+        });
+        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+    }
 
     return altered;
+}
+
+/**
+ * Convert a number into a string for observation atttribute footnotes.
+ *
+ * @param {int} num
+ * @returns {string} Number converted into unicode character for footnotes.
+ */
+function getObservationAttributeFootnoteSymbol(num) {
+    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
