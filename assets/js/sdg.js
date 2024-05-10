@@ -4052,12 +4052,6 @@ opensdg.chartTypes.base = function(info) {
             labels: info.labels,
         },
         options: {
-            layout: {
-              padding: {
-                top: 5
-              }
-            },
-            clip: false,
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
@@ -4095,7 +4089,7 @@ opensdg.chartTypes.base = function(info) {
                     ticks: {
                         color: tickColor,
                         callback: function (value) {
-                            return alterDataDisplay(value, undefined, 'chart y-axis tick', undefined);
+                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
                         },
                     },
                     title: {
@@ -4122,48 +4116,7 @@ opensdg.chartTypes.base = function(info) {
                     backgroundColor: 'rgba(0,0,0,0.7)',
                     callbacks: {
                         label: function (tooltipItem) {
-
-                          var label =  translations.t(tooltipItem.dataset.label);
-                          label = label.replace('<sub>','').replace('</sub>','');
-                          if (label.length > 45){
-
-                            label = label.split(' ');
-                            var line = '';
-
-                            for(var i=0; i<label.length; i++){
-                              if (line.concat(label[i]).length < 45){
-                                line = line.concat(label[i] + ' ');
-                              }
-                              else {
-                                break
-                              }
-                            }
-                            return line;
-                          } else {
-                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
-                          }
-                        },
-                        afterLabel: function(tooltipItem) {
-
-                          var label =  tooltipItem.dataset.label;
-                          label = label.replace('<sub>','').replace('</sub>','');
-                          if (label.length > 45){
-                            label = label.split(' ');
-                            var re = [];
-                            var line = '';
-                            for (var i=0; i<label.length; i++){
-                              if (line.concat(label[i]).length < 45){
-                                line = line.concat(label[i] + ' ');
-                              } else {
-                                re.push(line);
-                                line = '';
-                                line = line.concat(label[i] + ' ');
-                              }
-                            };
-                            re.push(line.slice(0, -1) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', undefined));
-                            re.shift();
-                          }
-                          return re;
+                            return translations.t(tooltipItem.dataset.label) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
                         },
                         afterBody: function () {
                             var unit = MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit;
@@ -4198,22 +4151,6 @@ opensdg.chartTypes.base = function(info) {
             delete config.options.scales.y.max;
         }
         catch (e) { }
-    }
-
-    if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
-      var overrides = {
-        options: {
-          scales: {
-            y: {
-              ticks: {
-                stepSize: info.graphStepsize.step,
-              }
-            }
-          }
-        }
-      }
-      // Add these overrides onto the normal config.
-      $.extend(true, config, overrides);
     }
 
     if (info.graphAnnotations && info.graphAnnotations.length > 0) {
