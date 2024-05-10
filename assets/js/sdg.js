@@ -3766,7 +3766,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit););
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
@@ -3835,9 +3835,9 @@ function createPlot(chartInfo, helpers) {
 
     }
     else {
-      //Override: No headline color
-      //updateHeadlineColor('default', chartConfig);
-      updateHeadlineColor('default', chartConfig, chartInfo.indicatorId);
+        //Override: No headline color
+        //updateHeadlineColor('default', chartConfig);
+        updateHeadlineColor('default', chartConfig, chartInfo.indicatorId);
     }
     refreshChartLineWrapping(chartConfig);
 
@@ -4094,9 +4094,9 @@ opensdg.chartTypes.base = function(info) {
                     suggestedMin: 0,
                     ticks: {
                         color: tickColor,
-                         callback: function (value) {
-                             return alterDataDisplay(value, undefined, 'chart y-axis tick');
-                         },
+                        callback: function (value) {
+                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                        },
                     },
                     title: {
                         display: MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit,
@@ -4583,6 +4583,7 @@ function initialiseDataTable(el, info) {
     for (var i = 1; i < info.table.headings.length; i++) {
         nonYearColumns.push(i);
     }
+
     var datatables_options = OPTIONS.datatables_options || {
         paging: false,
         bInfo: false,
@@ -4594,10 +4595,10 @@ function initialiseDataTable(el, info) {
             {
                 targets: nonYearColumns,
                 createdCell: function (td, cellData, rowData, row, col) {
-                  var additionalInfo = Object.assign({}, info);
-                  additionalInfo.row = row;
-                  additionalInfo.col = col;
-                  $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
+                    var additionalInfo = Object.assign({}, info);
+                    additionalInfo.row = row;
+                    additionalInfo.col = col;
+                    $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
         ],
@@ -4770,7 +4771,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
  * @return null
  */
 function setDataTableWidth(table) {
-
     table.find('thead th').each(function () {
         var textLength = $(this).text().length;
         for (var loop = 0; loop < VIEW._tableColumnDefs.length; loop++) {
@@ -4842,6 +4842,7 @@ function updateChartDownloadButton(table, selectedSeries, selectedUnit) {
  * @param {null|undefined|Float|String} value
  * @param {Object} info
  * @param {Object} context
+ * @param {Object} additionalInfo
  * @return {null|undefined|Float|String}
  */
 function alterDataDisplay(value, info, context, additionalInfo) {
