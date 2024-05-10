@@ -2,6 +2,7 @@
  * @param {null|undefined|Float|String} value
  * @param {Object} info
  * @param {Object} context
+ * @param {Object} additionalInfo
  * @return {null|undefined|Float|String}
  */
 function alterDataDisplay(value, info, context, additionalInfo) {

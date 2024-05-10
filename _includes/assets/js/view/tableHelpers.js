@@ -57,6 +57,7 @@ function initialiseDataTable(el, info) {
     for (var i = 1; i < info.table.headings.length; i++) {
         nonYearColumns.push(i);
     }
+
     var datatables_options = OPTIONS.datatables_options || {
         paging: false,
         bInfo: false,
@@ -68,10 +69,10 @@ function initialiseDataTable(el, info) {
             {
                 targets: nonYearColumns,
                 createdCell: function (td, cellData, rowData, row, col) {
-                  var additionalInfo = Object.assign({}, info);
-                  additionalInfo.row = row;
-                  additionalInfo.col = col;
-                  $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
+                    var additionalInfo = Object.assign({}, info);
+                    additionalInfo.row = row;
+                    additionalInfo.col = col;
+                    $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
         ],
@@ -244,7 +245,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
  * @return null
  */
 function setDataTableWidth(table) {
-
     table.find('thead th').each(function () {
         var textLength = $(this).text().length;
         for (var loop = 0; loop < VIEW._tableColumnDefs.length; loop++) {
