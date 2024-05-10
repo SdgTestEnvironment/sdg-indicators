@@ -131,6 +131,8 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.proxy = options.proxy;
     this.proxySerieses = options.proxySerieses;
     this.startValues = options.startValues;
+    this.configObsAttributes = null;
+    this.allObservationAttributes = options.allObservationAttributes;
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -218,9 +220,27 @@ opensdg.autotrack = function(preset, category, action, label) {
     getTooltipContent: function(feature) {
       var tooltipContent = feature.properties.name;
       var tooltipData = this.getData(feature.properties);
+      var plugin = this;
       if (typeof tooltipData === 'number') {
         tooltipContent += ': ' + this.alterData(tooltipData);
       }
+      if (feature.properties.observation_attributes) {
+        var obsAtts = feature.properties.observation_attributes[plugin.currentDisaggregation][plugin.currentYear],
+            footnoteNumbers = [];
+        if (obsAtts) {
+          Object.keys(obsAtts).forEach(function(field) {
+            if (obsAtts[field]) {
+              var hashKey = field + '|' + obsAtts[field];
+              var footnoteNumber = plugin.allObservationAttributes[hashKey].footnoteNumber;
+              footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
+            }
+          });
+          if (footnoteNumbers.length > 0) {
+            tooltipContent += ' ' + footnoteNumbers.join(' ');
+          }
+        }
+      }
+
       return tooltipContent;
     },
 
@@ -595,7 +615,6 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
         else {
           plugin.updateTitle();
-          plugin.updateFooterFields();
           plugin.updatePrecision();
         }
 
@@ -1045,7 +1064,14 @@ Chart.register({
                     year = this.chart.data.labels[pointIndex],
                     dataset = this.chart.data.datasets[datasetIndex],
                     label = dataset.label,
-                    value = dataset.data[pointIndex];
+                    value = dataset.data[pointIndex],
+                    observationAttributes = dataset.observationAttributes[pointIndex],
+                    helpers = this.chart.config._config.indicatorViewHelpers;
+
+                if (observationAttributes && observationAttributes.length > 0) {
+                    label += ', ' + observationAttributes.map(helpers.getObservationAttributeText).join(', ');
+                }
+
                 if (typeof labels[year] === 'undefined') {
                     labels[year] = [];
                 }
@@ -1338,9 +1364,17 @@ function nonFieldColumns() {
     'Unit measure',
   ];
   var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
-  timeSeriesAttributes.forEach(function(tsAttribute) {
-    columns.push(tsAttribute.field);
-  });
+  if (timeSeriesAttributes && timeSeriesAttributes.length > 0) {
+    timeSeriesAttributes.forEach(function(tsAttribute) {
+      columns.push(tsAttribute.field);
+    });
+  }
+  var observationAttributes = null;
+  if (observationAttributes && observationAttributes.length > 0) {
+    observationAttributes.forEach(function(oAttribute) {
+      columns.push(oAttribute.field);
+    });
+  }
   columns.push(SERIES_COLUMN);
   return columns;
 }
@@ -1809,6 +1843,9 @@ function sortFieldsForView(fieldItemStates, edges) {
       }
     });
     fieldItemStates.forEach(function(fieldItem) {
+      if (typeof tempHierarchyHash[fieldItem.topLevelParent] === 'undefined') {
+        return;
+      }
       if (fieldItem.topLevelParent !== '') {
         tempHierarchyHash[fieldItem.topLevelParent].children.push(fieldItem);
       }
@@ -2003,6 +2040,9 @@ function validParentsByChild(edges, fieldItemStates, rows) {
     var fieldItemState = fieldItemStates.find(function(fis) {
       return fis.field === childField;
     });
+    if (typeof fieldItemState === 'undefined') {
+      return;
+    }
     var childValues = fieldItemState.values.map(function(value) {
       return value.value;
     });
@@ -2244,8 +2284,7 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps) {
-  console.log("Combinations: ", combinations);
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
@@ -2286,14 +2325,15 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes
+    * @param {Array} excess);
     datasets.unshift(dataset);
   }
   console.log("DATASETS: ", datasets);
@@ -2475,10 +2515,14 @@ function getBorderDash(striped) {
  * @param {string} color
  * @param {string} background
  * @param {Array} border
+ * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps) {
-  var dataset = getBaseDataset();
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
+  var dataset = getBaseDataset(),
+      prepared = prepareDataForDataset(years, rows, allObservationAttributes),
+      data = prepared.data,
+      obsAttributes = prepared.observationAttributes;
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
     disaggregation: combination,
@@ -2490,10 +2534,11 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     borderWidth: 2,
     headline: false,
     pointStyle: 'circle',
-    data: prepareDataForDataset(years, rows),
+    data: data,
     excess: excess,
     spanGaps: spanGaps,
     showLine: showLine,
+    observationAttributes: obsAttributes,
   });
 }
 
@@ -2532,13 +2577,38 @@ function getCombinationDescription(combination, fallback) {
  * @param {Array} rows
  * @return {Array} Prepared rows
  */
-function prepareDataForDataset(years, rows) {
-  return years.map(function(year) {
+function prepareDataForDataset(years, rows, allObservationAttributes) {
+  var ret = {
+    data: [],
+    observationAttributes: [],
+  };
+  var configObsAttributes = null;
+  if (configObsAttributes && configObsAttributes.length > 0) {
+    configObsAttributes = configObsAttributes.map(function(obsAtt) {
+      return obsAtt.field;
+    });
+  }
+  else {
+    configObsAttributes = [];
+  }
+  years.forEach(function(year) {
     var found = rows.find(function (row) {
       return row[YEAR_COLUMN] === year;
     });
-    return found ? found[VALUE_COLUMN] : null;
+    ret.data.push(found ? found[VALUE_COLUMN] : null);
+
+    var obsAttributesForRow = [];
+    if (found) {
+      configObsAttributes.forEach(function(field) {
+        if (found[field]) {
+          var hashKey = field + '|' + found[field];
+          obsAttributesForRow.push(allObservationAttributes[hashKey]);
+        }
+      });
+    }
+    ret.observationAttributes.push(obsAttributesForRow);
   });
+  return ret;
 }
 
 /**
@@ -2556,8 +2626,11 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
-  var dataset = getBaseDataset();
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservationAttributes) {
+  var dataset = getBaseDataset(),
+      prepared = prepareDataForDataset(years, rows, allObservationAttributes),
+      data = prepared.data,
+      obsAttributes = prepared.observationAttributes;
   return Object.assign(dataset, {
     label: label,
     borderColor: getHeadlineColor(),
@@ -2567,9 +2640,10 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
     borderWidth: 4,
     headline: true,
     pointStyle: 'circle',
-    data: prepareDataForDataset(years, rows),
+    data: data,
     showLine: showLine,
     spanGaps: spanGaps,
+    observationAttributes: obsAttributes,
   });
 }
 
@@ -2596,6 +2670,21 @@ function tableDataFromDatasets(datasets, years) {
     headings: [YEAR_COLUMN].concat(datasets.map(function(ds) { return ds.label; })),
     data: years.map(function(year, index) {
       return [year].concat(datasets.map(function(ds) { return ds.data[index]; }));
+    }),
+  };
+}
+
+/**
+ * @param {Array} datasets
+ * @param {Array} years
+ * @return {Object} Same as tableDataFromDatasets, except values are arrays of observation attributes
+ */
+function observationAttributesTableFromDatasets(datasets, years) {
+  return {
+    data: years.map(function(year, index) {
+      return [null].concat(datasets.map(function(ds) {
+        return ds.observationAttributes[index] ? ds.observationAttributes[index] : [];
+      }));
     }),
   };
 }
@@ -2760,6 +2849,38 @@ function getTimeSeriesAttributes(rows) {
   return timeSeriesAttributes;
 }
 
+function getAllObservationAttributes(rows) {
+  if (rows.length === 0) {
+    return {};
+  }
+  var obsAttributeHash = {},
+      footnoteNumber = 0,
+      configObsAttributes = null;
+  if (configObsAttributes && configObsAttributes.length > 0) {
+    configObsAttributes = configObsAttributes.map(function(obsAtt) {
+      return obsAtt.field;
+    });
+  }
+  else {
+    configObsAttributes = [];
+  }
+  configObsAttributes.forEach(function(field) {
+    var attributeValues = Object.keys(_.groupBy(rows, field)).filter(function(value) {
+      return value !== 'undefined';
+    });
+    attributeValues.forEach(function(attributeValue) {
+      var hashKey = field + '|' + attributeValue;
+      obsAttributeHash[hashKey] = {
+        field: field,
+        value: attributeValue,
+        footnoteNumber: footnoteNumber,
+      }
+      footnoteNumber += 1;
+    });
+  });
+  return obsAttributeHash;
+}
+
 
   function deprecated(name) {
     return function() {
@@ -2809,6 +2930,7 @@ function getTimeSeriesAttributes(rows) {
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
     tableDataFromDatasets: tableDataFromDatasets,
+    observationAttributesTableFromDatasets: observationAttributesTableFromDatasets,
     sortFieldNames: typeof sortFieldNames !== 'undefined' ? sortFieldNames : function() {},
     sortFieldValueNames: typeof sortFieldValueNames !== 'undefined' ? sortFieldValueNames : function() {},
     getPrecision: getPrecision,
@@ -2818,6 +2940,7 @@ function getTimeSeriesAttributes(rows) {
     getGraphStepsize: getGraphStepsize,
     inputEdges: inputEdges,
     getTimeSeriesAttributes: getTimeSeriesAttributes,
+    getAllObservationAttributes: getAllObservationAttributes,
     inputData: inputData,
   }
 })();
@@ -2883,6 +3006,7 @@ function getTimeSeriesAttributes(rows) {
   this.graphStepsize = options.graphStepsize;
   this.proxy = options.proxy;
   this.proxySerieses = (this.proxy === 'both') ? options.proxySeries : [];
+  this.observationAttributes = [];
 
   this.initialiseUnits = function() {
     if (this.hasUnits) {
@@ -2934,6 +3058,7 @@ function getTimeSeriesAttributes(rows) {
   }
 
   // calculate some initial values:
+  this.allObservationAttributes = helpers.getAllObservationAttributes(this.allData);
   this.hasGeoData = helpers.dataHasGeoCodes(this.allColumns);
   this.hasUnits = helpers.dataHasUnits(this.allColumns);
   this.initialiseUnits();
@@ -3148,8 +3273,9 @@ function getTimeSeriesAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps );
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
+    var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
     var datasetCountExceedsMax = false;
     // restrict count if it exceeds the limit:
@@ -3173,6 +3299,7 @@ function getTimeSeriesAttributes(rows) {
       labels: this.years,
       headlineTable: helpers.getHeadlineTable(headline, this.selectedUnit),
       selectionsTable: selectionsTable,
+      observationAttributesTable: observationAttributesTable,
       indicatorId: this.indicatorId,
       shortIndicatorId: this.shortIndicatorId,
       selectedUnit: this.selectedUnit,
@@ -3187,6 +3314,7 @@ function getTimeSeriesAttributes(rows) {
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
       graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
+      allObservationAttributes: this.allObservationAttributes,
       isProxy: this.proxy === 'proxy' || this.proxySerieses.includes(this.selectedSeries),
     });
   };
@@ -3206,7 +3334,7 @@ var mapView = function () {
 
   "use strict";
 
-  this.initialise = function(indicatorId, precision, precisionItems, decimalSeparator, thousandsSeparator, dataSchema, viewHelpers, modelHelpers, chartTitles, chartSubtitles, startValues, proxy, proxySerieses) {
+  this.initialise = function(indicatorId, precision, precisionItems, decimalSeparator, thousandsSeparator, dataSchema, viewHelpers, modelHelpers, chartTitles, chartSubtitles, startValues, proxy, proxySerieses, allObservationAttributes) {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
@@ -3224,6 +3352,7 @@ var mapView = function () {
       proxy: proxy,
       proxySerieses: proxySerieses,
       startValues: startValues,
+      allObservationAttributes: allObservationAttributes,
     });
   };
 };
@@ -3331,6 +3460,45 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
             $valueElement.show().text(translations.t(value));
         }
     });
+}
+
+/**
+ * @param {Array} obsAttributes
+ *   Array of objects containing 'field' and 'value'.
+ * @return null
+ */
+function updateObservationAttributes(obsAttributes) {
+    var $listElement = $('.observation-attribute-list');
+    $listElement.empty();
+    if (obsAttributes.length === 0) {
+        $listElement.hide();
+        return;
+    }
+    $listElement.show();
+    Object.values(obsAttributes).forEach(function(obsAttribute) {
+        var label = getObservationAttributeText(obsAttribute),
+            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+        var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+        $listElement.append($listItem);
+    });
+}
+
+/**
+ * Gets the text of an observation attribute for display to the end user.
+ */
+function getObservationAttributeText(obsAttribute) {
+    var configuredObsAttributes = null;
+    var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
+        return configuredObsAttribute.field === obsAttribute.field;
+    });
+    if (!attributeConfig) {
+        return '';
+    }
+    var label = translations.t(obsAttribute.value);
+    if (attributeConfig.label) {
+        label = translations.t(attributeConfig.label) + ': ' + label;
+    }
+    return label;
 }
 
   /**
@@ -3493,6 +3661,29 @@ function updateIndicatorDataViewStatus(oldDatasets, newDatasets) {
         $('#indicator-data-view-status').text(status);
     }
 }
+/**
+ * @param {Array} unit
+ * @return null
+ */
+function updateIndicatorDataUnitStatus(unit) {
+    var status = translations.indicator.announce_unit_switched + translations.t(unit);
+    var current = $('#indicator-data-unit-status').text();
+    if (current != status) {
+        $('#indicator-data-unit-status').text(status);
+    }
+}
+
+/**
+ * @param {Array} series
+ * @return null
+ */
+function updateIndicatorDataSeriesStatus(series) {
+    var status = translations.indicator.announce_series_switched + translations.t(series);
+    var current = $('#indicator-data-series-status').text();
+    if (current != status) {
+        $('#indicator-data-series-status').text(status);
+    }
+}
 
 /**
  * @param {String} contrast
@@ -3576,7 +3767,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit););
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
@@ -3632,9 +3823,10 @@ function setPlotEvents(chartInfo) {
  * @param {Object} chartInfo
  * @return null
  */
-function createPlot(chartInfo) {
+function createPlot(chartInfo, helpers) {
 
     var chartConfig = getChartConfig(chartInfo);
+    chartConfig.indicatorViewHelpers = helpers;
     alterChartConfig(chartConfig, chartInfo);
     if (isHighContrast()) {
         updateGraphAnnotationColors('high', chartConfig);
@@ -3667,7 +3859,6 @@ function createPlot(chartInfo) {
         createPlot(chartInfo);
         return;
     }
-
     updateIndicatorDataViewStatus(VIEW._chartInstance.data.datasets, updatedConfig.data.datasets);
     // Override: No headline color
     //updateHeadlineColor(isHighContrast() ? 'high' : 'default', updatedConfig);
@@ -3683,6 +3874,7 @@ function createPlot(chartInfo) {
     VIEW._chartInstance.data.datasets = updatedConfig.data.datasets;
     VIEW._chartInstance.data.labels = updatedConfig.data.labels;
     VIEW._chartInstance.options = updatedConfig.options;
+    updateGraphAnnotationColors(isHighContrast() ? 'high' : 'default', updatedConfig);
 
     // The following is needed in our custom "rescaler" plugin.
     VIEW._chartInstance.data.allLabels = VIEW._chartInstance.data.labels.slice(0);
@@ -3690,7 +3882,7 @@ function createPlot(chartInfo) {
     VIEW._chartInstance.update();
 
     $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
-    updateChartDownloadButton(chartInfo.selectionsTable);
+    updateChartDownloadButton(chartInfo.selectionsTable, chartInfo.selectedSeries, chartInfo.selectedUnit);
 };
 
 /**
@@ -3699,8 +3891,8 @@ function createPlot(chartInfo) {
  * @return null
  */
 function updateGraphAnnotationColors(contrast, chartInfo) {
-    if (chartInfo.options.annotation) {
-        chartInfo.options.annotation.annotations.forEach(function (annotation) {
+    if (chartInfo.options.plugins.annotation) {
+        chartInfo.options.plugins.annotation.annotations.forEach(function (annotation) {
             if (contrast === 'default') {
                 $.extend(true, annotation, annotation.defaultContrast);
             }
@@ -3765,7 +3957,7 @@ function strToArray (str, limit) {
     }
 
     return aux;
-} 
+}
 
   opensdg.annotationPresets = {
     common: {
@@ -3778,12 +3970,16 @@ function strToArray (str, limit) {
         label: {
             backgroundColor: 'rgba(255,255,255,0.6)',
             color: 'black',
+            borderWidth: 1,
+            borderColor: 'black',
         },
         // This "highContrast" overrides colors when in high-contrast mode.
         highContrast: {
             label: {
                 backgroundColor: 'black',
                 color: 'white',
+                borderWidth: 1,
+                borderColor: 'white',
             },
         },
         // This callback is used to generate a generic description for screenreaders.
@@ -3825,7 +4021,7 @@ function strToArray (str, limit) {
         mode: 'vertical',
         borderDash: [2, 2],
         label: {
-            position: 'top',
+            position: 'start',
             content: translations.indicator.annotation_series_break,
         },
     },
@@ -3945,7 +4141,7 @@ opensdg.chartTypes.base = function(info) {
                             }
                             return line;
                           } else {
-                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip');
+                            return label + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem);
                           }
                         },
                         afterLabel: function(tooltipItem) {
@@ -4065,6 +4261,32 @@ opensdg.chartTypes.base = function(info) {
             if (annotation.label && annotation.label.content) {
                 annotation.label.content = translations.t(annotation.label.content);
             }
+            // Fix some keys where there was once a discrepancy between
+            // Open SDG and Chart.js. Eg, we mistakenly used "fontColor"
+            // instead of "color".
+            if (annotation.label && annotation.label.fontColor) {
+                annotation.label.color = annotation.label.fontColor;
+            }
+            if (annotation.highContrast && annotation.highContrast.label) {
+                if (annotation.highContrast.label.fontColor) {
+                    annotation.highContrast.label.color = annotation.highContrast.label.fontColor;
+                }
+            }
+            // We also used the wrong values for label position.
+            if (annotation.label &&
+                annotation.label.position &&
+                (annotation.label.position == 'top' ||
+                 annotation.label.position == 'left')) {
+                // It should be 'start' instead of 'top' or 'left'.
+                annotation.label.position = 'start';
+            }
+            if (annotation.label &&
+                annotation.label.position &&
+                (annotation.label.position == 'bottom' ||
+                 annotation.label.position == 'right')) {
+                // It should be 'start' instead of 'top' or 'left'.
+                annotation.label.position = 'end';
+            }
             // Save some original values for later used when contrast mode is switched.
             if (typeof annotation.defaultContrast === 'undefined') {
                 annotation.defaultContrast = {};
@@ -4076,11 +4298,17 @@ opensdg.chartTypes.base = function(info) {
                 }
                 if (annotation.label) {
                     annotation.defaultContrast.label = {};
-                    if (annotation.label.fontColor) {
-                        annotation.defaultContrast.label.fontColor = annotation.label.fontColor;
+                    if (annotation.label.color) {
+                        annotation.defaultContrast.label.color = annotation.label.color;
                     }
                     if (annotation.label.backgroundColor) {
                         annotation.defaultContrast.label.backgroundColor = annotation.label.backgroundColor;
+                    }
+                    if (annotation.label.borderWidth) {
+                        annotation.defaultContrast.label.borderWidth = annotation.label.borderWidth;
+                    }
+                    if (annotation.label.borderColor) {
+                        annotation.defaultContrast.label.borderColor = annotation.label.borderColor;
                     }
                 }
             }
@@ -4312,18 +4540,33 @@ function alterTableConfig(config, info) {
  * @param {Object} tableData
  * @return {String}
  */
-function toCsv(tableData) {
+function toCsv(tableData, selectedSeries, selectedUnit) {
     var lines = [],
-        headings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; });
+        dataHeadings = _.map(tableData.headings, function (heading) { return '"' + translations.t(heading) + '"'; }),
+        metaHeadings = [];
 
-    lines.push(headings.join(','));
+    if (selectedSeries) {
+        metaHeadings.push(translations.indicator.series);
+    }
+    if (selectedUnit) {
+        metaHeadings.push(translations.indicator.unit);
+    }
+    var allHeadings = dataHeadings.concat(metaHeadings);
+
+    lines.push(allHeadings.join(','));
 
     _.each(tableData.data, function (dataValues) {
         var line = [];
 
-        _.each(headings, function (heading, index) {
+        _.each(dataHeadings, function (heading, index) {
             line.push(dataValues[index]);
         });
+        if (selectedSeries) {
+            line.push(JSON.stringify(translations.t(selectedSeries)));
+        }
+        if (selectedUnit) {
+            line.push(JSON.stringify(translations.t(selectedUnit)));
+        }
 
         lines.push(line.join(','));
     });
@@ -4352,7 +4595,10 @@ function initialiseDataTable(el, info) {
             {
                 targets: nonYearColumns,
                 createdCell: function (td, cellData, rowData, row, col) {
-                    $(td).text(alterDataDisplay(cellData, rowData, 'table cell'));
+                  var additionalInfo = Object.assign({}, info);
+                  additionalInfo.row = row;
+                  additionalInfo.col = col;
+                  $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
         ],
@@ -4372,10 +4618,10 @@ function initialiseDataTable(el, info) {
  * @return null
  */
 function createSelectionsTable(chartInfo) {
-    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy);
+    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy, chartInfo.observationAttributesTable);
     $('#tableSelectionDownload').empty();
     createTableTargetLines(chartInfo.graphAnnotations);
-    createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload');
+    createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
     createSourceButton(chartInfo.shortIndicatorId, '#tableSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#tableSelectionDownload');
 };
@@ -4420,9 +4666,11 @@ function tableHasData(table) {
  * @param {Object} table
  * @param {String} indicatorId
  * @param {Element} el
+ * @param {bool} isProxy
+ * @param {Object} observationAttributesTable
  * @return null
  */
-function createTable(table, indicatorId, el, isProxy) {
+function createTable(table, indicatorId, el, isProxy, observationAttributesTable) {
 
     var table_class = OPTIONS.table_class || 'table table-hover';
 
@@ -4480,6 +4728,7 @@ function createTable(table, indicatorId, el, isProxy) {
         var alterationInfo = {
             table: table,
             indicatorId: indicatorId,
+            observationAttributesTable: observationAttributesTable,
         };
         initialiseDataTable(el, alterationInfo);
 
@@ -4492,6 +4741,24 @@ function createTable(table, indicatorId, el, isProxy) {
                 var sortDirection = $(this).attr('aria-sort');
                 $(this).find('span[role="button"]').attr('aria-sort', sortDirection);
             });
+
+        let tableWrapper = document.querySelector('.dataTables_wrapper');
+        if (tableWrapper) {
+            tableWrapper.addEventListener('scroll', function(e) {
+                if (tableWrapper.scrollLeft > 0) {
+                    tableWrapper.classList.add('scrolled-x');
+                }
+                else {
+                    tableWrapper.classList.remove('scrolled-x');
+                }
+                if (tableWrapper.scrollTop > 0) {
+                    tableWrapper.classList.add('scrolled-y');
+                }
+                else {
+                    tableWrapper.classList.remove('scrolled-y');
+                }
+            });
+        }
     } else {
         $(el).append($('<h3 />').text(translations.indicator.data_not_available));
         $(el).addClass('table-has-no-data');
@@ -4550,9 +4817,9 @@ function setDataTableWidth(table) {
  * @param {Object} table
  * @return null
  */
-function updateChartDownloadButton(table) {
+function updateChartDownloadButton(table, selectedSeries, selectedUnit) {
     if (typeof VIEW._chartDownloadButton !== 'undefined') {
-        var tableCsv = toCsv(table);
+        var tableCsv = toCsv(table, selectedSeries, selectedUnit);
         var blob = new Blob([tableCsv], {
             type: 'text/csv'
         });
@@ -4578,7 +4845,7 @@ function updateChartDownloadButton(table) {
  * @param {Object} context
  * @return {null|undefined|Float|String}
  */
-function alterDataDisplay(value, info, context) {
+function alterDataDisplay(value, info, context, additionalInfo) {
     // If value is empty, we will not alter it.
     if (value == null || value == undefined) {
         return value;
@@ -4612,6 +4879,7 @@ function alterDataDisplay(value, info, context) {
         precision = 0
       }
     }
+
     else {
       var precision = VIEW._precision
     }
@@ -4626,8 +4894,36 @@ function alterDataDisplay(value, info, context) {
     if (OPTIONS.thousandsSeparator && precision <=3){
         altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
     }
+    // Now let's add any footnotes from observation attributes.
+    var obsAttributes = [];
+    if (context === 'chart tooltip') {
+        var dataIndex = additionalInfo.dataIndex;
+        obsAttributes = info.observationAttributes[dataIndex];
+    }
+    else if (context === 'table cell') {
+        var row = additionalInfo.row,
+            col = additionalInfo.col,
+            obsAttributesTable = additionalInfo.observationAttributesTable;
+        obsAttributes = obsAttributesTable.data[row][col];
+    }
+    if (obsAttributes.length > 0) {
+        var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
+            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+        });
+        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+    }
 
     return altered;
+}
+
+/**
+ * Convert a number into a string for observation atttribute footnotes.
+ *
+ * @param {int} num
+ * @returns {string} Number converted into unicode character for footnotes.
+ */
+function getObservationAttributeFootnoteSymbol(num) {
+    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
   /**
@@ -4678,7 +4974,7 @@ function isHighContrast(contrast) {
  * @param {Element} el
  * @return null
  */
-function createDownloadButton(table, name, indicatorId, el) {
+function createDownloadButton(table, name, indicatorId, el, selectedSeries, selectedUnit) {
     if (window.Modernizr.blobconstructor) {
         var downloadKey = 'download_csv';
         if (name == 'Chart') {
@@ -4688,7 +4984,7 @@ function createDownloadButton(table, name, indicatorId, el) {
             downloadKey = 'download_table';
         }
         var gaLabel = 'Download ' + name + ' CSV: ' + indicatorId.replace('indicator_', '');
-        var tableCsv = toCsv(table);
+        var tableCsv = toCsv(table, selectedSeries, selectedUnit);
         var fileName = indicatorId + '.csv';
         var downloadButton = $('<a />').text(translations.indicator[downloadKey])
             .attr(opensdg.autotrack('download_data_current', 'Downloads', 'Download CSV', gaLabel))
@@ -4697,7 +4993,8 @@ function createDownloadButton(table, name, indicatorId, el) {
                 'title': translations.indicator.download_csv_title,
                 'aria-label': translations.indicator.download_csv_title,
                 'class': 'btn btn-primary btn-download',
-                'tabindex': 0
+                'tabindex': 0,
+                'role': 'button',
             });
         var blob = new Blob([tableCsv], {
             type: 'text/csv'
@@ -4729,7 +5026,8 @@ function createDownloadButton(table, name, indicatorId, el) {
                 'title': translations.indicator.download_headline_title,
                 'aria-label': translations.indicator.download_headline_title,
                 'class': 'btn btn-primary btn-download',
-                'tabindex': 0
+                'tabindex': 0,
+                'role': 'button',
             }));
     }
 }
@@ -4749,7 +5047,8 @@ function createSourceButton(indicatorId, el) {
             'title': translations.indicator.download_source_title,
             'aria-label': translations.indicator.download_source_title,
             'class': 'btn btn-primary btn-download',
-            'tabindex': 0
+            'tabindex': 0,
+            'role': 'button',
         }));
 }
 
@@ -4774,7 +5073,8 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                     'download': href.split('/').pop(),
                     'title': buttonLabelTranslated,
                     'class': 'btn btn-primary btn-download',
-                    'tabindex': 0
+                    'tabindex': 0,
+                    'role': 'button',
                 }));
         }
     }
@@ -4788,6 +5088,8 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     initialiseFields: initialiseFields,
     initialiseUnits: initialiseUnits,
     initialiseSerieses: initialiseSerieses,
+    updateIndicatorDataUnitStatus: updateIndicatorDataUnitStatus,
+    updateIndicatorDataSeriesStatus: updateIndicatorDataSeriesStatus,
     alterChartConfig: alterChartConfig,
     alterTableConfig: alterTableConfig,
     alterDataDisplay: alterDataDisplay,
@@ -4797,6 +5099,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     updateSeriesAndUnitElements: updateSeriesAndUnitElements,
     updateUnitElements: updateUnitElements,
     updateTimeSeriesAttributes: updateTimeSeriesAttributes,
+    updateObservationAttributes: updateObservationAttributes,
     updatePlot: updatePlot,
     isHighContrast: isHighContrast,
     getHeadlineColor: getHeadlineColor,
@@ -4811,6 +5114,8 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     createDownloadButton: createDownloadButton,
     createSelectionsTable: createSelectionsTable,
     sortFieldGroup: sortFieldGroup,
+    getObservationAttributeFootnoteSymbol: getObservationAttributeFootnoteSymbol,
+    getObservationAttributeText: getObservationAttributeText,
   }
 })();
 
@@ -4879,7 +5184,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
         if (MODEL.showData) {
             $('#dataset-size-warning')[args.datasetCountExceedsMax ? 'show' : 'hide']();
             if (!VIEW._chartInstance) {
-                helpers.createPlot(args);
+                helpers.createPlot(args, helpers);
                 helpers.setPlotEvents(args);
             } else {
                 helpers.updatePlot(args);
@@ -4892,6 +5197,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
         helpers.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
         helpers.updateUnitElements(args.selectedUnit);
         helpers.updateTimeSeriesAttributes(args.timeSeriesAttributes);
+        helpers.updateObservationAttributes(args.allObservationAttributes);
 
         VIEW._dataCompleteArgs = args;
     });
@@ -4916,6 +5222,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                 args.startValues,
                 args.proxy,
                 args.proxySerieses,
+                MODEL.allObservationAttributes,
             );
         }
     });
@@ -4929,6 +5236,17 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
 
         MODEL.onSeriesesComplete.attach(function (sender, args) {
             helpers.initialiseSerieses(args);
+        });
+    }
+    
+    if (MODEL.onUnitsSelectedChanged) {
+        MODEL.onUnitsSelectedChanged.attach(function (sender, args) {
+            helpers.updateIndicatorDataUnitStatus(args);
+        });
+    }
+    if (MODEL.onSeriesesSelectedChanged) {
+        MODEL.onSeriesesSelectedChanged.attach(function (sender, args) {
+            helpers.updateIndicatorDataSeriesStatus(args);
         });
     }
 
@@ -6062,6 +6380,9 @@ $(function() {
             }
             var disaggregations = features[0].properties.disaggregations,
                 fields = Object.keys(disaggregations[0]),
+                validStartValues = startValues.filter(function(startValue) {
+                    return fields.includes(startValue.field);
+                }),
                 weighted = _.sortBy(disaggregations.map(function(disaggregation, index) {
                     var disaggClone = Object.assign({}, disaggregation);
                     disaggClone.emptyFields = 0;
@@ -6074,7 +6395,7 @@ $(function() {
                     return disaggClone;
                 }), 'emptyFields').reverse(),
                 match = weighted.find(function(disaggregation) {
-                    return _.every(startValues, function(startValue) {
+                    return _.every(validStartValues, function(startValue) {
                         return disaggregation[startValue.field] === startValue.value;
                     });
                 });
@@ -6447,6 +6768,11 @@ $(function() {
                 validFields = Object.keys(disaggregations[0]),
                 invalidFields = [this.seriesColumn, this.unitsColumn],
                 allDisaggregations = [];
+            if (this.plugin.configObsAttributes && this.plugin.configObsAttributes.length > 0) {
+                this.plugin.configObsAttributes.forEach(function(obsAttribute) {
+                    invalidFields.push(obsAttribute.field);
+                });
+            }
 
             this.fieldsInOrder.forEach(function(field) {
                 if (!(invalidFields.includes(field)) && validFields.includes(field)) {
@@ -6457,6 +6783,9 @@ $(function() {
                                 return disaggregation[field];
                             })),
                         };
+                    if (typeof sortedValues === 'undefined') {
+                        return;
+                    }
                     item.values.sort(function(a, b) {
                         return sortedValues.indexOf(a) - sortedValues.indexOf(b);
                     });
