@@ -261,8 +261,7 @@ observation_attributes:
   - field: COMMENT_OBS
     label: ''
 
-ignored_disaggregations:
-- COMMENT_OBS
+
 
 
 contrast_type: single
