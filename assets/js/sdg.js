@@ -2288,7 +2288,7 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
   var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-
+  console.log('COMBINATION: ', combinations);
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
