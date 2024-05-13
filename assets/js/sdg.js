@@ -2932,15 +2932,12 @@ function getAllObservationAttributes(rows) {
   this.shortIndicatorId = options.shortIndicatorId;
   this.chartTitle = options.chartTitle,
   this.chartTitles = options.chartTitles;
-  this.chartSubtitle = options.chartSubtitle;
-  this.chartSubtitles = options.chartSubtitles;
   this.graphType = options.graphType;
   this.graphTypes = options.graphTypes;
   this.measurementUnit = options.measurementUnit;
   this.xAxisLabel = options.xAxisLabel;
   this.startValues = options.startValues;
   this.showData = options.showData;
-  this.showInfo = options.showInfo;
   this.selectedFields = [];
   this.allowedFields = [];
   this.selectedUnit = undefined;
@@ -2955,19 +2952,13 @@ function getAllObservationAttributes(rows) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
-  this.showLine = options.showLine; // ? options.showLine : true;
-  this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
   this.graphTargetLines = options.graphTargetLines;
   this.graphSeriesBreaks = options.graphSeriesBreaks;
-  this.graphErrorBars = options.graphErrorBars;
-  this.graphTargetPoints = options.graphTargetPoints;
-  this.graphTargetLabels = options.graphTargetLabels;
   this.indicatorDownloads = options.indicatorDownloads;
   this.compositeBreakdownLabel = options.compositeBreakdownLabel;
   this.precision = options.precision;
   this.dataSchema = options.dataSchema;
-  this.graphStepsize = options.graphStepsize;
   this.proxy = options.proxy;
   this.proxySerieses = (this.proxy === 'both') ? options.proxySeries : [];
   this.observationAttributes = [];
@@ -2986,7 +2977,6 @@ function getAllObservationAttributes(rows) {
     if (this.hasSerieses) {
       if (helpers.GRAPH_TITLE_FROM_SERIES) {
         this.chartTitle = this.selectedSeries;
-        this.chartSubtitle = helpers.getChartTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
       }
       this.data = helpers.getDataBySeries(this.allData, this.selectedSeries);
       this.years = helpers.getUniqueValuesByProperty(helpers.YEAR_COLUMN, this.data).sort();
@@ -3054,10 +3044,6 @@ function getAllObservationAttributes(rows) {
 
   this.updateChartTitle = function() {
     this.chartTitle = helpers.getChartTitle(this.chartTitle, this.chartTitles, this.selectedUnit, this.selectedSeries);
-  }
-
-  this.updateChartSubtitle = function() {
-    this.chartSubtitle = helpers.getChartTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateChartType = function() {
@@ -3207,8 +3193,6 @@ function getAllObservationAttributes(rows) {
         precisionItems: this.precision,
         dataSchema: this.dataSchema,
         chartTitles: this.chartTitles,
-        chartSubtitles: this.chartSubtitles,
-        graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
         proxy: this.proxy,
         proxySerieses: this.proxySerieses,
       });
@@ -3236,8 +3220,8 @@ function getAllObservationAttributes(rows) {
       headline = helpers.sortData(headline, this.selectedUnit);
     }
 
-    var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes);
+    var combinations = helpers.getCombinationData(this.selectedFields);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, this.country, this.colors, this.selectableFields, this.colorAssignments, this.allObservationAttributes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
@@ -3248,7 +3232,6 @@ function getAllObservationAttributes(rows) {
     }
 
     this.updateChartTitle();
-    this.updateChartSubtitle();
     this.updateChartType();
 
     this.onFieldsStatusUpdated.notify({
@@ -3270,13 +3253,11 @@ function getAllObservationAttributes(rows) {
       selectedSeries: this.selectedSeries,
       graphLimits: helpers.getGraphLimits(this.graphLimits, this.selectedUnit, this.selectedSeries),
       stackedDisaggregation: this.stackedDisaggregation,
-      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks, this.graphErrorBars, this.graphTargetPoints, this.graphTargetLabels),
+      graphAnnotations: helpers.getGraphAnnotations(this.graphAnnotations, this.selectedUnit, this.selectedSeries, this.graphTargetLines, this.graphSeriesBreaks),
       chartTitle: this.chartTitle,
-      chartSubtitle: this.chartSubtitle,
       chartType: this.graphType,
       indicatorDownloads: this.indicatorDownloads,
       precision: helpers.getPrecision(this.precision, this.selectedUnit, this.selectedSeries),
-      graphStepsize: helpers.getGraphStepsize(this.graphStepsize, this.selectedUnit, this.selectedSeries),
       timeSeriesAttributes: timeSeriesAttributes,
       allObservationAttributes: this.allObservationAttributes,
       isProxy: this.proxy === 'proxy' || this.proxySerieses.includes(this.selectedSeries),
@@ -5017,7 +4998,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     VIEW._legendElement = OPTIONS.legendElement;
     VIEW._precision = undefined;
     VIEW._chartInstances = {};
-    VIEW._graphStepsize = undefined;
 
     var chartHeight = screen.height < OPTIONS.maxChartHeight ? screen.height : OPTIONS.maxChartHeight;
     $('.plot-container', OPTIONS.rootElement).css('height', chartHeight + 'px');
@@ -5057,7 +5037,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                 $main.removeClass('indicator-main-full');
                 // Make sure the unit/series items are updated, in case
                 // they were changed while on the map.
-                helpers.updateChartSubtitle(VIEW._dataCompleteArgs.chartSubtitle);
                 helpers.updateChartTitle(VIEW._dataCompleteArgs.chartTitle, VIEW._dataCompleteArgs.isProxy);
                 helpers.updateSeriesAndUnitElements(VIEW._dataCompleteArgs.selectedSeries, VIEW._dataCompleteArgs.selectedUnit);
                 helpers.updateUnitElements(VIEW._dataCompleteArgs.selectedUnit);
@@ -5069,7 +5048,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     MODEL.onDataComplete.attach(function (sender, args) {
 
         VIEW._precision = args.precision;
-        VIEW._graphStepsize = args.graphStepsize;
 
         if (MODEL.showData) {
             $('#dataset-size-warning')[args.datasetCountExceedsMax ? 'show' : 'hide']();
@@ -5082,7 +5060,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
         }
 
         helpers.createSelectionsTable(args);
-        helpers.updateChartSubtitle(args.chartSubtitle);
         helpers.updateChartTitle(args.chartTitle, args.isProxy);
         helpers.updateSeriesAndUnitElements(args.selectedSeries, args.selectedUnit);
         helpers.updateUnitElements(args.selectedUnit);
@@ -5103,12 +5080,10 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
                 args.precision,
                 args.precisionItems,
                 OPTIONS.decimalSeparator,
-                OPTIONS.thousandsSeparator,
                 args.dataSchema,
                 VIEW.helpers,
                 MODEL.helpers,
                 args.chartTitles,
-                args.chartSubtitles,
                 args.startValues,
                 args.proxy,
                 args.proxySerieses,
@@ -5128,7 +5103,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
             helpers.initialiseSerieses(args);
         });
     }
-    
+
     if (MODEL.onUnitsSelectedChanged) {
         MODEL.onUnitsSelectedChanged.attach(function (sender, args) {
             helpers.updateIndicatorDataUnitStatus(args);
@@ -5319,30 +5294,21 @@ var indicatorInit = function () {
                         shortIndicatorId: domData.id,
                         chartTitle: domData.charttitle,
                         chartTitles: domData.charttitles,
-                        chartSubtitle: domData.chartsubtitle,
-                        chartSubtitles: domData.chartsubtitles,
                         measurementUnit: domData.measurementunit,
                         xAxisLabel: domData.xaxislabel,
                         showData: domData.showdata,
-                        showInfo: domData.showinfo,
                         graphType: domData.graphtype,
                         graphTypes: domData.graphtypes,
                         startValues: domData.startvalues,
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
-                        showLine: domData.showline,
-                        spanGaps: domData.spangaps,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,
                         graphSeriesBreaks: domData.graphseriesbreaks,
-                        graphErrorBars: domData.grapherrorbars,
-                        graphTargetPoints: domData.graphtargetpoints,
-                        graphTargetLabels: domData.graphtargetlabels,
                         indicatorDownloads: domData.indicatordownloads,
                         dataSchema: domData.dataschema,
                         compositeBreakdownLabel: domData.compositebreakdownlabel,
                         precision: domData.precision,
-                        graphStepsize: domData.graphstepsize,
                         proxy: domData.proxy,
                         proxySeries: domData.proxyseries,
                     });
@@ -5350,12 +5316,11 @@ var indicatorInit = function () {
                         rootElement: '#indicatorData',
                         legendElement: '#plotLegend',
                         decimalSeparator: ',',
-                        thousandsSeparator: ' ',
                         maxChartHeight: 420,
                         tableColumnDefs: [
                             { maxCharCount: 25 }, // nowrap
-                            //{ maxCharCount: 35, width: 200 },
-                            { maxCharCount: Infinity, width: 300 }
+                            { maxCharCount: 35, width: 200 },
+                            { maxCharCount: Infinity, width: 250 }
                         ]
                     });
                     var controller = new indicatorController(model, view);
