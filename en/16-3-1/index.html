@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -494,6 +494,7 @@ data-event-label="high"
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_16-3-1'
@@ -501,9 +502,12 @@ data-event-label="high"
   data-country="Germany"
   data-charttitle="Reporting rate for violent crimes"
   data-charttitles="null"
+  data-chartsubtitle=""
+  data-chartsubtitles="null"
   data-measurementunit="Percentage"
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo=""
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -511,13 +515,19 @@ data-event-label="high"
   data-startvalues="&quot;&quot;"
   data-graphlimits="null"
   data-stackeddisaggregation=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="[{&quot;value&quot;:1.5}]"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Reporting rate for physical assault&quot;,&quot;Reporting rate for robbery&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;age group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;16 to under 25 years&quot;,&quot;25 to under 35 years&quot;,&quot;35 to under 45 years&quot;,&quot;45 to under 55 years&quot;,&quot;55 to under 65 years&quot;,&quot;65 to under 75 years&quot;,&quot;75 years and older&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age group&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;step&quot;:5.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -572,60 +582,62 @@ data-event-label="high"
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        
-      >Chart</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Chart</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        
-      >Table</button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
   
+</ul>
+
     <div class="tab-content data-view">
     
       
@@ -638,12 +650,12 @@ data-event-label="Change to Table tab"
     </div>
 
     
+    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">
-            Reporting rate for violent crimes
-          </h4>
+          <h4 id="chart-heading" class="chart-title">Reporting rate for violent crimes</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -662,50 +674,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.bka.de/EN/Home/home_node.htm" target="_blank"> Federal Criminal Police Office </a></dd>
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.bka.de/EN/Home/home_node.htm" target="_blank"> Federal Criminal Police Office </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
-
-        
-        <dt>Note:</dt>
-        <dd>Due to methodological changes, the results from 2020 onwards are only comparable with previous years to a limited extend.</dd>
+          <dt><u>Note</u>:</dt>
+          <dd>Due to methodological changes, the results from 2020 onwards are only comparable with previous years to a limited extend.</dd>
         
 
         
 
         
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -746,50 +762,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.bka.de/EN/Home/home_node.htm" target="_blank"> Federal Criminal Police Office </a></dd>
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.bka.de/EN/Home/home_node.htm" target="_blank"> Federal Criminal Police Office </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
-
-        
-        <dt>Note:</dt>
-        <dd>Due to methodological changes, the results from 2020 onwards are only comparable with previous years to a limited extend.</dd>
+          <dt><u>Note</u>:</dt>
+          <dd>Due to methodological changes, the results from 2020 onwards are only comparable with previous years to a limited extend.</dd>
         
 
         
 
         
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -856,7 +876,8 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -930,10 +951,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/16.3.1.pdf" target="_blank">
-                Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/16.3.1.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1189,7 +1217,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1245,10 +1274,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
-                Tier II <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier II <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1290,10 +1326,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-03-01.pdf" target="_blank">
-                Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-03-01.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1538,7 +1581,8 @@ data-event-label="Change to Sources tab"
         <h4 class="sr-only">Data source 1</h4>
       
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1648,10 +1692,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/ViktimisierungssurveyDunkelfeldforschung/viktimisierungssurveyDunkelfeldforschung_node.html" target="_blank">
-                Dark field research / Victimization Surveys (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/ViktimisierungssurveyDunkelfeldforschung/viktimisierungssurveyDunkelfeldforschung_node.html" target="_blank">
+                  Dark field research / Victimization Surveys (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1703,10 +1754,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/Publikationsreihen/Forschungsergebnisse/2019ersteErgebnisseDVS2017EN.pdf" target="_blank">
-                The 2017 German Victimisation Survey – final report <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/Publikationsreihen/Forschungsergebnisse/2019ersteErgebnisseDVS2017EN.pdf" target="_blank">
+                  The 2017 German Victimisation Survey – final report <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1733,10 +1791,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/Publikationsreihen/Forschungsergebnisse/SKiD2020_Ergebnisse_V1.4.pdf" target="_blank">
-                Security and crime in Germany – SKiD 2020 (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bka.de/SharedDocs/Downloads/DE/Publikationen/Publikationsreihen/Forschungsergebnisse/SKiD2020_Ergebnisse_V1.4.pdf" target="_blank">
+                  Security and crime in Germany – SKiD 2020 (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2072,12 +2137,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

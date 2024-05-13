@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -306,6 +306,7 @@ layout-indicator-iframe
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_3-9-1'
@@ -313,9 +314,12 @@ layout-indicator-iframe
   data-country="Germany"
   data-charttitle="Sterblichkeitsrate infolge von Verschmutzung der Raum- bzw. Außenluft"
   data-charttitles="[{&quot;unit&quot;:&quot;Attributable deaths&quot;,&quot;title&quot;:&quot;Fine particulate matter-related burden of disease (attributable deaths)&quot;},{&quot;unit&quot;:&quot;DALYs&quot;,&quot;title&quot;:&quot;Fine particulate matter-related burden of disease (DALYs)&quot;}]"
+  data-chartsubtitle="(mean estimated value)"
+  data-chartsubtitles="null"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo=""
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -323,13 +327,19 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;},{&quot;field&quot;:&quot;Disease&quot;,&quot;value&quot;:&quot;Chronic obstructive pulmonary disease (COPD)&quot;},{&quot;field&quot;:&quot;Disease&quot;,&quot;value&quot;:&quot;Lung cancer&quot;},{&quot;field&quot;:&quot;Disease&quot;,&quot;value&quot;:&quot;Stroke&quot;},{&quot;field&quot;:&quot;Disease&quot;,&quot;value&quot;:&quot;Ischemic heart diseases&quot;},{&quot;field&quot;:&quot;Disease&quot;,&quot;value&quot;:&quot;Diabetes mellitus type 2&quot;}]"
   data-graphlimits="[{&quot;unit&quot;:&quot;Attributable deaths&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:30000.0},{&quot;unit&quot;:&quot;DALYs&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:600000.0}]"
   data-stackeddisaggregation="Disease"
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
+  data-grapherrorbars="[{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:0,&quot;xMax&quot;:0,&quot;yMin&quot;:14073.0,&quot;yMax&quot;:28060.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:1,&quot;xMax&quot;:1,&quot;yMin&quot;:13788.0,&quot;yMax&quot;:27425.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:2,&quot;xMax&quot;:2,&quot;yMin&quot;:11547.0,&quot;yMax&quot;:23593.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:3,&quot;xMax&quot;:3,&quot;yMin&quot;:12388.0,&quot;yMax&quot;:25127.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:4,&quot;xMax&quot;:4,&quot;yMin&quot;:11395.0,&quot;yMax&quot;:23131.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:5,&quot;xMax&quot;:5,&quot;yMin&quot;:10836.0,&quot;yMax&quot;:22316.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:6,&quot;xMax&quot;:6,&quot;yMin&quot;:10147.0,&quot;yMax&quot;:20950.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:7,&quot;xMax&quot;:7,&quot;yMin&quot;:10261.0,&quot;yMax&quot;:21223.0},{&quot;series&quot;:&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:8,&quot;xMax&quot;:8,&quot;yMin&quot;:10390.0,&quot;yMax&quot;:21466.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:0,&quot;xMax&quot;:0,&quot;yMin&quot;:265001.0,&quot;yMax&quot;:511500.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:1,&quot;xMax&quot;:1,&quot;yMin&quot;:258661.0,&quot;yMax&quot;:498293.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:2,&quot;xMax&quot;:2,&quot;yMin&quot;:215693.0,&quot;yMax&quot;:427840.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:3,&quot;xMax&quot;:3,&quot;yMin&quot;:231097.0,&quot;yMax&quot;:454891.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:4,&quot;xMax&quot;:4,&quot;yMin&quot;:216255.0,&quot;yMax&quot;:426240.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:5,&quot;xMax&quot;:5,&quot;yMin&quot;:202522.0,&quot;yMax&quot;:405713.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:6,&quot;xMax&quot;:6,&quot;yMin&quot;:191515.0,&quot;yMax&quot;:385072.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:7,&quot;xMax&quot;:7,&quot;yMin&quot;:190766.0,&quot;yMax&quot;:384495.0},{&quot;series&quot;:&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;xMin&quot;:8,&quot;xMax&quot;:8,&quot;yMin&quot;:194265.0,&quot;yMax&quot;:391112.0}]"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Attributable deaths&quot;,&quot;DALYs&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;disease&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Chronic obstructive pulmonary disease (COPD)&quot;,&quot;Lung cancer&quot;,&quot;Stroke&quot;,&quot;Ischemic heart diseases&quot;,&quot;Diabetes mellitus type 2&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Disease&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease&quot;,&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older&quot;,&quot;DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
+  data-graphstepsize="null"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -782,85 +792,88 @@ layout-indicator-iframe
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        
-      >Chart</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Chart</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        
-      >Table</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        embedded-map
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-embeddedmapview"
-          data-bs-target="#embeddedmapview"
-          aria-controls="embeddedmapview"
-          data-no-disagg="true"
-          data-on="click"
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      embedded-map
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-embeddedmapview"
+        data-bs-target="#embeddedmapview"
+        aria-controls="embeddedmapview"
+        data-no-disagg="true"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to embedded item tab"
 
-        
-      >Additional information</button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-plus-square" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Additional information</span></button>
+  </li>
   
+</ul>
+
     <div class="tab-content data-view">
     
       
@@ -873,12 +886,12 @@ data-event-label="Change to embedded item tab"
     </div>
 
     
+    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">
-            Fine particulate matter-related burden of disease (attributable deaths)
-          </h4>
+          <h4 id="chart-heading" class="chart-title">Fine particulate matter-related burden of disease (attributable deaths)</h4>
+          <h6 id="chart-heading" class="chart-subtitle">(mean estimated value)</h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -897,85 +910,97 @@ data-event-label="Change to embedded item tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.umweltbundesamt.de/en" target="_blank"> German Environment Agency </a>, <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://www.rki.de/EN/Home/homepage_node.html" target="_blank"> Robert Koch Institute </a></dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank"> German Environment Agency </a>, <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://www.rki.de/EN/Home/homepage_node.html" target="_blank"> Robert Koch Institute </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
 
         
 
         
-        
-        <dt
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="Attributable deaths"
-        >Notes:</dt>
-        <dd
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="Attributable deaths"
-        ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="DALYs"
-        >Notes:</dt>
-        <dd
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="DALYs"
-        ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="Attributable deaths"
-        >Note:</dt>
-        <dd
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="Attributable deaths"
-        >Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="DALYs"
-        >Note:</dt>
-        <dd
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="DALYs"
-        >Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
+          
+            
+              <dt
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="Attributable deaths"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="Attributable deaths"
+              ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="DALYs"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="DALYs"
+              ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="Attributable deaths"
+              ><u>Note</u>:</dt>
+              <dd
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="Attributable deaths"
+              >Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="DALYs"
+              ><u>Note</u>:</dt>
+              <dd
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="DALYs"
+              >Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -1016,85 +1041,97 @@ data-event-label="Change to embedded item tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.umweltbundesamt.de/en" target="_blank"> German Environment Agency </a>, <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://www.rki.de/EN/Home/homepage_node.html" target="_blank"> Robert Koch Institute </a></dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank"> German Environment Agency </a>, <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://www.rki.de/EN/Home/homepage_node.html" target="_blank"> Robert Koch Institute </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
 
         
 
         
-        
-        <dt
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="Attributable deaths"
-        >Notes:</dt>
-        <dd
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="Attributable deaths"
-        ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="DALYs"
-        >Notes:</dt>
-        <dd
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
-          data-for-unit="DALYs"
-        ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="Attributable deaths"
-        >Note:</dt>
-        <dd
-          data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="Attributable deaths"
-        >Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
-        <dt
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="DALYs"
-        >Note:</dt>
-        <dd
-          data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
-          data-for-unit="DALYs"
-        >Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
-        
+          
+            
+              <dt
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="Attributable deaths"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="Attributable deaths"
+              ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="DALYs"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older"
+                data-for-unit="DALYs"
+              ><br>• The confidence interval (CI) is shown as a dashed line in the chart.<br>• Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="Attributable deaths"
+              ><u>Note</u>:</dt>
+              <dd
+                data-for-series="Attributable deaths due to long-term exposure to fine particulate matter(PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="Attributable deaths"
+              >Number of attributable deaths: Number of deaths that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
+            
+              <dt
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="DALYs"
+              ><u>Note</u>:</dt>
+              <dd
+                data-for-series="DALYs due to long-term exposure to fine particulate matter (PM₂.₅) in the population aged 25 years and older by type of disease"
+                data-for-unit="DALYs"
+              >Disability-Adjusted Life Years (DALYs): Number of healthy life years lost due to death and morbidity caused by diseases that can be statistically attributed to long-term exposure to fine particulate matter (PM₂.₅).</dd>
+            
+          
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -1185,7 +1222,8 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1259,10 +1297,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/3.9.1.pdf" target="_blank">
-                Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/3.9.1.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1518,7 +1563,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1574,10 +1620,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
-                Tier I <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier I <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1619,10 +1672,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-09-01.pdf" target="_blank">
-                Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-09-01.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1867,7 +1927,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 1</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1977,10 +2038,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.umweltbundesamt.de/daten/umwelt-gesundheit/gesundheitsrisiken-durch-feinstaub" target="_blank">
-                Health relevance of fine particulate matter (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.umweltbundesamt.de/daten/umwelt-gesundheit/gesundheitsrisiken-durch-feinstaub" target="_blank">
+                  Health relevance of fine particulate matter (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2269,7 +2337,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 2</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2416,10 +2485,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.gbe-bund.de/gbe/pkg_isgbe5.prc_menu_olap?p_uid=gast&p_aid=36983234&p_sprache=E&p_help=2&p_indnr=670&p_version=1&p_ansnr=61200143" target="_blank">
-                Number of deaths – GBE <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.gbe-bund.de/gbe/pkg_isgbe5.prc_menu_olap?p_uid=gast&p_aid=36983234&p_sprache=E&p_help=2&p_indnr=670&p_version=1&p_ansnr=61200143" target="_blank">
+                  Number of deaths – GBE <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2471,10 +2547,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.zensus2011.de/DE/Home/Aktuelles/DemografischeGrunddaten.html" target="_blank">
-                Population in 100 meters grid (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.zensus2011.de/DE/Home/Aktuelles/DemografischeGrunddaten.html" target="_blank">
+                  Population in 100 meters grid (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2707,7 +2790,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 3</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2895,10 +2979,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://edoc.rki.de/handle/176904/2783?locale-attribute=en" target="_blank">
-                12-month prevalence of known chronic obstructive pulmonary disease (COPD) in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://edoc.rki.de/handle/176904/2783?locale-attribute=en" target="_blank">
+                  12-month prevalence of known chronic obstructive pulmonary disease (COPD) in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2950,10 +3041,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://edoc.rki.de/handle/176904/2580?locale-attribute=en" target="_blank">
-                12-month prevalence of known diabetes mellitus in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://edoc.rki.de/handle/176904/2580?locale-attribute=en" target="_blank">
+                  12-month prevalence of known diabetes mellitus in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2980,10 +3078,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://edoc.rki.de/handle/176904/2583?locale-attribute=en" target="_blank">
-                12-month prevalence of stroke or chronic complaints resulting from stroke in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://edoc.rki.de/handle/176904/2583?locale-attribute=en" target="_blank">
+                  12-month prevalence of stroke or chronic complaints resulting from stroke in Germany (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -3109,12 +3214,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

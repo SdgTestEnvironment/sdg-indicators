@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -308,6 +308,7 @@ Please contact us if you have any feedback or suggestions on suitable data sourc
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_11-5-2'
@@ -315,9 +316,12 @@ Please contact us if you have any feedback or suggestions on suitable data sourc
   data-country="Germany"
   data-charttitle=""
   data-charttitles="null"
+  data-chartsubtitle=""
+  data-chartsubtitles="null"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="false"
+  data-showinfo=""
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -325,18 +329,25 @@ Please contact us if you have any feedback or suggestions on suitable data sourc
   data-startvalues="&quot;&quot;"
   data-graphlimits="null"
   data-stackeddisaggregation=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;A&quot;,&quot;B&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Group&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
+  data-graphstepsize="null"
   data-proxy=""
   data-proxyseries="null"
 >
   
   <div id="indicator-main" class="indicator-main col-md-12">
+    
   
   <div class="mt-4">
 <ul class="nav nav-tabs" role="tablist">
@@ -380,7 +391,8 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -671,7 +683,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -727,10 +740,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
-                Tier I <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier I <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -772,10 +792,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-05-02.pdf" target="_blank">
-                Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-05-02.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1048,12 +1075,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

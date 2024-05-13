@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -514,6 +514,7 @@ data-event-label="high"
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_11-3-1'
@@ -521,9 +522,12 @@ data-event-label="high"
   data-country="Germany"
   data-charttitle="Verhältnis der Flächennutzungs- zur Bevölkerungswachstumsrate"
   data-charttitles="[{&quot;unit&quot;:&quot;No unit&quot;,&quot;title&quot;:&quot;Ratio of land consumption rate to population growth rate&quot;},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;title&quot;:&quot;Proportion of settlement and transport areas to population&quot;},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;title&quot;:&quot;Land consumption and population&quot;}]"
+  data-chartsubtitle=""
+  data-chartsubtitles="null"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo=""
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -531,13 +535,19 @@ data-event-label="high"
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Ratio of land consumption rate to population growth rate&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Proportion of settlement and transport areas to population&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Land consumption rate&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Population growth rate&quot;},{&quot;field&quot;:&quot;Presentation&quot;,&quot;value&quot;:&quot;Annual values&quot;},{&quot;field&quot;:&quot;Presentation&quot;,&quot;value&quot;:&quot;Moving four-year average&quot;}]"
   data-graphlimits="[{&quot;unit&quot;:&quot;No unit&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:10.0},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;minimum&quot;:95.0,&quot;maximum&quot;:105.0},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:-0.5,&quot;maximum&quot;:1.5}]"
   data-stackeddisaggregation=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="[{&quot;value&quot;:5.5}]"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;No unit&quot;,&quot;2015 = 100&quot;,&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Ratio of land consumption rate to population growth rate&quot;,&quot;Proportion of settlement and transport areas to population&quot;,&quot;Land consumption rate&quot;,&quot;Population growth rate&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;presentation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Annual values&quot;,&quot;Moving four-year average&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Presentation&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;unit&quot;:&quot;No unit&quot;,&quot;step&quot;:1.0},{&quot;unit&quot;:&quot;2015 = 100&quot;,&quot;step&quot;:1.0},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;step&quot;:0.2}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -592,60 +602,62 @@ data-event-label="high"
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        
-      >Chart</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Chart</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        
-      >Table</button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
   
+</ul>
+
     <div class="tab-content data-view">
     
       
@@ -658,12 +670,12 @@ data-event-label="Change to Table tab"
     </div>
 
     
+    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">
-            Ratio of land consumption rate to population growth rate
-          </h4>
+          <h4 id="chart-heading" class="chart-title">Ratio of land consumption rate to population growth rate</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -682,47 +694,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
+
+        
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• For 2009 and 2010, the population was calculated backwards using the 2011 census and migration, birth and death statistics.<br>• Land consumption rate: Due to methodological changes, the results from 2016 onwards are only comparable with previous years to a limited extend. By the end of 2016, the real estate cadastre had been converted to ALKIS. The changeover also introduced a new system of types of use, which has an impact on the comparability of the data over time. The conversion to ALKIS was carried out at different times in the federal states and spanned a total period of nine years.</dd>
         
 
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
+        
 
         
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -763,47 +782,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
+
+        
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• For 2009 and 2010, the population was calculated backwards using the 2011 census and migration, birth and death statistics.<br>• Land consumption rate: Due to methodological changes, the results from 2016 onwards are only comparable with previous years to a limited extend. By the end of 2016, the real estate cadastre had been converted to ALKIS. The changeover also introduced a new system of types of use, which has an impact on the comparability of the data over time. The conversion to ALKIS was carried out at different times in the federal states and spanned a total period of nine years.</dd>
         
 
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
+        
 
         
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -870,7 +896,8 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -944,10 +971,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/11.3.1.pdf" target="_blank">
-                Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/11.3.1.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1203,7 +1237,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1259,10 +1294,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
-                Tier II <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier II <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1304,10 +1346,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-03-01.pdf" target="_blank">
-                Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-03-01.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1552,7 +1601,8 @@ data-event-label="Change to Sources tab"
         <h4 class="sr-only">Data source 1</h4>
       
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1662,10 +1712,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0005&bypass=true&levelindex=1&levelid=1630489451493#abreadcrumb" target="_blank">
-                Housing and transport area – GENESIS online 33111-0005 <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0005&bypass=true&levelindex=1&levelid=1630489451493#abreadcrumb" target="_blank">
+                  Housing and transport area – GENESIS online 33111-0005 <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1717,10 +1774,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=12411-0006&bypass=true&levelindex=1&levelid=1639396599054#abreadcrumb" target="_blank">
-                Population: reference date – GENESIS online 12411-0006 <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=12411-0006&bypass=true&levelindex=1&levelid=1639396599054#abreadcrumb" target="_blank">
+                  Population: reference date – GENESIS online 12411-0006 <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1747,10 +1811,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/_inhalt.html#sprg233540" target="_blank">
-                Population data based on Census 2011 – 1991 to 2011 (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/_inhalt.html#sprg233540" target="_blank">
+                  Population data based on Census 2011 – 1991 to 2011 (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1777,10 +1848,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0003&bypass=true&language=en" target="_blank">
-                Soil area (actual use): reference date (until 2015-12-31), types of use – GENESIS online 33111-0003 <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0003&bypass=true&language=en" target="_blank">
+                  Soil area (actual use): reference date (until 2015-12-31), types of use – GENESIS online 33111-0003 <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1807,10 +1885,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0001&bypass=true&language=en" target="_blank">
-                Soil area (actual use): types of use – GENESIS online 33111-0001 <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=33111-0001&bypass=true&language=en" target="_blank">
+                  Soil area (actual use): types of use – GENESIS online 33111-0001 <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2126,12 +2211,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

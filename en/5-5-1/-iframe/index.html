@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -306,6 +306,7 @@ layout-indicator-iframe
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_5-5-1'
@@ -313,9 +314,12 @@ layout-indicator-iframe
   data-country="Germany"
   data-charttitle="Anteil der Sitze von Frauen in a) nationalen Parlamenten und b) Gemeinden"
   data-charttitles="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;title&quot;:&quot;Women in a) national parliaments and b) local governments&quot;},{&quot;unit&quot;:&quot;Number&quot;,&quot;title&quot;:&quot;Women in a) national parliaments&quot;}]"
+  data-chartsubtitle=""
+  data-chartsubtitles="null"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo=""
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -323,13 +327,19 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Proportion of women in national parliaments and local governments&quot;},{&quot;field&quot;:&quot;Länder&quot;,&quot;value&quot;:&quot;Germany&quot;},{&quot;field&quot;:&quot;Political institution&quot;,&quot;value&quot;:&quot;Bundestag (Lower chamber)&quot;},{&quot;field&quot;:&quot;Political institution&quot;,&quot;value&quot;:&quot;Bundesrat (upper chamber)&quot;},{&quot;field&quot;:&quot;Political institution&quot;,&quot;value&quot;:&quot;Länder parliaments&quot;},{&quot;field&quot;:&quot;Political institution&quot;,&quot;value&quot;:&quot;Councils of districts and district-free cities&quot;},{&quot;field&quot;:&quot;Units&quot;,&quot;value&quot;:&quot;Percentage&quot;}]"
   data-graphlimits="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;sring&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;Number&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;political institutions&quot;,&quot;type&quot;:&quot;sring&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Bundestag (Lower chamber)&quot;,&quot;Bundesrat (upper chamber)&quot;,&quot;Länder parliaments&quot;,&quot;Councils of districts and district-free cities&quot;]},&quot;title&quot;:&quot;political institutions&quot;},{&quot;name&quot;:&quot;region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Germany&quot;,&quot;baden-wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;]},&quot;title&quot;:&quot;region&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;step&quot;:10.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -384,85 +394,88 @@ layout-indicator-iframe
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        
-      >Chart</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Chart</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        
-      >Table</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        map
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-mapview"
-          data-bs-target="#mapview"
-          aria-controls="mapview"
-          data-no-disagg="true"
-          data-on="click"
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Map tab"
 
-        
-      >Map</button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Map</span></button>
+  </li>
   
+</ul>
+
     <div class="tab-content data-view">
     
       
@@ -475,12 +488,12 @@ data-event-label="Change to Map tab"
     </div>
 
     
+    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">
-            Women in a) national parliaments and b) local governments
-          </h4>
+          <h4 id="chart-heading" class="chart-title">Women in a) national parliaments and b) local governments</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -499,67 +512,75 @@ data-event-label="Change to Map tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
 
         
 
         
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Percentage"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Percentage"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Number"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Number"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
-        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Number"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Number"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
+            
+          
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -600,67 +621,75 @@ data-event-label="Change to Map tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
 
         
 
         
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Percentage"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Percentage"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Number"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Number"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
-        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Number"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Number"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
+            
+          
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -676,7 +705,9 @@ data-event-label="Change to Map tab"
       
         <div role="tabpanel" class="tab-pane " id="mapview" class="map">
           
-<h4 id="map-heading" class="map-title">Women in a) national parliaments and b) local governments</h4>
+
+<h4 id="map-heading" class="chart-title">Women in a) national parliaments and b) local governments</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
 <div id="map" aria-describedby="table-alternative">
   <img class="map-loading-image" src="/sdg-indicators/assets/img/loading.gif" alt="Loading map" />
 </div>
@@ -688,67 +719,75 @@ data-event-label="Change to Map tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Data source:</dt>
-        <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.bundestag.de/en" target="_blank"> German Bundestag (Lower chamber) </a>, <a href="https://www.bundesrat.de/EN/homepage/homepage-node.html" target="_blank"> Bundesrat </a>, <a href="https://www.bundeswahlleiter.de/en/bundeswahlleiter.html" target="_blank"> The Federal Returning Officer </a>, <a href="https://www.bmfsfj.de/bmfsfj/meta/en" target="_blank"> Federal Ministry for Family Affairs, Senior Citizens, Women and Youth </a></dd>
         
 
         
-        <dt>Geographic coverage:</dt>
-        <dd>Germany</dd>
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Unit of measurement:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
-        
 
         
 
         
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Percentage"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Percentage"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
-        
-        <dt
-          data-for-series=""
-          data-for-unit="Number"
-        >Notes:</dt>
-        <dd
-          data-for-series=""
-          data-for-unit="Number"
-        ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
-        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.<br>• Proportion of women in councils of districts and district-free cities:  Election result, 2019 to 2021 without Schleswig-Holstein.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Number"
+              ><u>Notes</u>:</dt>
+              <dd
+                data-for-series=""
+                data-for-unit="Number"
+              ><br>• a) National parliaments: German Bundestag, Bundesrat and Länder parliaments.<br>• b) Local governments: Councils of districts and district-free cities.<br>• Figures to the German Bundestag and Bundesrat: Reference date January 1st.<br>• Data to the Länder parliaments:  <br>    - Reference date = election day. <br>    - Subsequent candidates are not taken into account.</dd>
+            
+          
         
 
         
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Note:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Last modification of data:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
-        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
     
@@ -810,7 +849,8 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -884,10 +924,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/5.5.1.pdf" target="_blank">
-                Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/5.5.1.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1143,7 +1190,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1199,10 +1247,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
-                Tier I <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier I <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1244,10 +1299,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf" target="_blank">
-                Metadata on this indicator (5.5.1 (a)) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01a.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator (5.5.1 (a)) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1274,10 +1336,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01b.pdf" target="_blank">
-                Metadata on this indicator  (5.5.1 (b)) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-05-01b.pdf" target="_blank">
+                  Metadata on this indicator  (5.5.1 (b)) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1512,7 +1581,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 1</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1622,10 +1692,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bundestag.de/en/members" target="_blank">
-                Members <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bundestag.de/en/members" target="_blank">
+                  Members <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -1914,7 +1991,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 2</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2061,10 +2139,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bundesrat.de/EN/organisation-en/mitglieder-en/mitglieder-en-node.html" target="_blank">
-                Members <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bundesrat.de/EN/organisation-en/mitglieder-en/mitglieder-en-node.html" target="_blank">
+                  Members <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2332,7 +2417,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 3</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2520,10 +2606,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2021/publikationen.html" target="_blank">
-                Results of earlier elections to the Federal parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2021/publikationen.html" target="_blank">
+                  Results of earlier elections to the Federal parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2575,10 +2668,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bundeswahlleiter.de/en/service/landtagswahlen.html" target="_blank">
-                Results of earlier elections to the Länder parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bundeswahlleiter.de/en/service/landtagswahlen.html" target="_blank">
+                  Results of earlier elections to the Länder parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -2682,7 +2782,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 4</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2889,10 +2990,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bmfsfj.de/bmfsfj/meta/en/equality/equalityatlas?view?indikator=Mandates-Administrative-District" target="_blank">
-                Equality Atlas: Percentage of Mandates in Councils of Districts and District-Free Cities Held by Women <span class="visuallyhidden">opens in a new window</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bmfsfj.de/bmfsfj/meta/en/equality/equalityatlas?view?indikator=Mandates-Administrative-District" target="_blank">
+                  Equality Atlas: Percentage of Mandates in Councils of Districts and District-Free Cities Held by Women <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
             
 
           
@@ -3053,12 +3161,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513141622">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -494,6 +494,7 @@ data-event-label="high"
 
 
 
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_12-b-1'
@@ -501,9 +502,12 @@ data-event-label="high"
   data-country="Deutschland"
   data-charttitle="Standard Gesamtrechnungsinstrumente zum Monitoring der Nachhaltigkeit im Tourismus"
   data-charttitles="null"
+  data-chartsubtitle=""
+  data-chartsubtitles="null"
   data-measurementunit="Anzahl"
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo=""
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -511,13 +515,19 @@ data-event-label="high"
   data-startvalues="[{&quot;field&quot;:&quot;Standard Gesamtrechnungssystem&quot;,&quot;value&quot;:&quot;SEEA Tabellen&quot;},{&quot;field&quot;:&quot;Standard Gesamtrechnungssystem&quot;,&quot;value&quot;:&quot;TSA Tabellen&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation="Standard Gesamtrechnungssystem"
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
+  data-graphtargetpoints="null"
+  data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
+  data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;standard accounting system&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;SEEA Tabellen&quot;,&quot;TSA Tabellen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Standard Gesamtrechnungssystem&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:0}]"
+  data-graphstepsize="null"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -750,60 +760,62 @@ data-event-label="high"
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-  </div>
-  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link active"
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-chartview"
-          data-bs-target="#chartview"
-          aria-controls="chartview"
-          aria-describedby="table-alternative"
-          data-on="click"
+</div>
+<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link active"
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-chartview"
+        data-bs-target="#chartview"
+        aria-controls="chartview"
+        aria-describedby="table-alternative"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        
-      >Grafik</button>
-    </li>
-    
-    <li role="presentation"
-      class="
-        nav-item
-        
-        
-      ">
-      <button
-        class="nav-link "
-        data-bs-toggle="tab"
-        role="tab"
-        type="button"
-        
-          id="tab-tableview"
-          data-bs-target="#tableview"
-          aria-controls="tableview"
-          data-on="click"
+        ><i class="fa fa-line-chart" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Grafik</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-tableview"
+        data-bs-target="#tableview"
+        aria-controls="tableview"
+        data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        
-      >Tabelle</button>
-    </li>
-    
-  </ul>
+        ><i class="fa fa-table" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Tabelle</span></button>
+  </li>
   
+</ul>
+
     <div class="tab-content data-view">
     
       
@@ -816,12 +828,12 @@ data-event-label="Change to Table tab"
     </div>
 
     
+    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">
-            Standard Gesamtrechnungsinstrumente zum Monitoring der Nachhaltigkeit im Tourismus
-          </h4>
+          <h4 id="chart-heading" class="chart-title">Standard Gesamtrechnungsinstrumente zum Monitoring der Nachhaltigkeit im Tourismus</h4>
+          <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -840,50 +852,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Datenquelle:</dt>
-        <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.bmwk.de/Navigation/DE/Home/home.html" target="_blank"> Bundesministerium für Wirtschaft und Klimaschutz (BMWK) </a></dd>
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.bmwk.de/Navigation/DE/Home/home.html" target="_blank"> Bundesministerium für Wirtschaft und Klimaschutz (BMWK) </a></dd>
         
 
         
-        <dt>Geographische Abdeckung:</dt>
-        <dd>Deutschland</dd>
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
-        
-
-        
-        <dt>Anmerkung:</dt>
-        <dd>2020 korrigierte Daten.</dd>
+          <dt><u>Anmerkung</u>:</dt>
+          <dd>2020 korrigierte Daten.</dd>
         
 
         
 
         
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Anmerkung:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Letzte Änderung der Daten</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Letzte Änderung der Daten:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
     
@@ -924,50 +940,54 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-        <dt>Datenquelle:</dt>
-        <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.bmwk.de/Navigation/DE/Home/home.html" target="_blank"> Bundesministerium für Wirtschaft und Klimaschutz (BMWK) </a></dd>
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank"> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.bmwk.de/Navigation/DE/Home/home.html" target="_blank"> Bundesministerium für Wirtschaft und Klimaschutz (BMWK) </a></dd>
         
 
         
-        <dt>Geographische Abdeckung:</dt>
-        <dd>Deutschland</dd>
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-        <dt>Copyright:</dt>
-        <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
-        
-
-        
-        <dt>Anmerkung:</dt>
-        <dd>2020 korrigierte Daten.</dd>
+          <dt><u>Anmerkung</u>:</dt>
+          <dd>2020 korrigierte Daten.</dd>
         
 
         
 
         
+
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        >Anmerkung:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Letzte Änderung der Daten</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
         
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        >Letzte Änderung der Daten:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="DATA_LAST_UPDATE"
-        ></dd>
+
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
     
@@ -1034,7 +1054,8 @@ data-event-label="Change to Sources tab"
                 
                 Diese Übersicht enthält Informationen zu den dargestellten Zeitreihen, die in Deutschland verfügbar sind und ihre Vergleichbarkeit mit den UN-Metadaten. Die nationalen Metadaten enthalten ergänzende methodische und länderspezifische Informationen.
             </p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1108,10 +1129,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/12.b.1.pdf" target="_blank">
-                Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/12.b.1.pdf" target="_blank">
+                  Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1367,7 +1395,8 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>Diese Übersicht enthält Informationen zu den Metadaten des dargestellten SDG-Indikators, wie sie von der Statistischen Kommission der Vereinten Nationen definiert wurden. Die vollständigen <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','De');">UN-Metadaten</a> werden von der Statistischen Abteilung der Vereinten Nationen (UNSD) bereitgestellt.</p>
-            <table class="table metadata-content">
+            
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1423,10 +1452,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank">
-                Tier I</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Tier I</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1468,10 +1504,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-12-0b-01.pdf" target="_blank">
-                Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-12-0b-01.pdf" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1716,7 +1759,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Datenquelle 1</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -1826,10 +1870,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0002&bypass=true&language=de" target="_blank">
-                Wasser: Deutschland, Jahre, Wasserentnahme und -bezug, Produktionsbereiche – GENESIS online 85111-002 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0002&bypass=true&language=de" target="_blank">
+                  Wasser: Deutschland, Jahre, Wasserentnahme und -bezug, Produktionsbereiche – GENESIS online 85111-002 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1881,10 +1932,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0003&bypass=true&language=de" target="_blank">
-                Abwasser: Deutschland, Jahre, Abwassereinleitungsarten, Produktionsbereiche – GENESIS online 85111-0003 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0003&bypass=true&language=de" target="_blank">
+                  Abwasser: Deutschland, Jahre, Abwassereinleitungsarten, Produktionsbereiche – GENESIS online 85111-0003 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1911,10 +1969,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0001&bypass=true&language=de" target="_blank">
-                Energieverbrauch: Deutschland, Jahre, Produktionsbereiche – GENESIS online 85131-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0001&bypass=true&language=de" target="_blank">
+                  Energieverbrauch: Deutschland, Jahre, Produktionsbereiche – GENESIS online 85131-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1941,10 +2006,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0002&bypass=true&language=de" target="_blank">
-                Verwendung von Energie: Deutschland, Jahre, Produktionsbereiche, Energieträger – GENESIS online 85131-0002 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0002&bypass=true&language=de" target="_blank">
+                  Verwendung von Energie: Deutschland, Jahre, Produktionsbereiche, Energieträger – GENESIS online 85131-0002 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -1971,10 +2043,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0003&bypass=true&language=de" target="_blank">
-                Verwendung und Aufkommen von Energie (VGR-Konzept): Deutschland, Jahre, Energieträger – GENESIS online 85131-0003 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85131-0003&bypass=true&language=de" target="_blank">
+                  Verwendung und Aufkommen von Energie (VGR-Konzept): Deutschland, Jahre, Energieträger – GENESIS online 85131-0003 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -2001,10 +2080,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0001&bypass=true&language=de" target="_blank">
-                Luftemissionen: Deutschland, Jahre, Luftemissionsart, Produktionsbereiche – GENESIS online 85111-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online/data?operation=table&code=85111-0001&bypass=true&language=de" target="_blank">
+                  Luftemissionen: Deutschland, Jahre, Luftemissionsart, Produktionsbereiche – GENESIS online 85111-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -2031,10 +2117,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.destatis.de/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/Publikationen/Downloads-Input-Output-Rechnung/aktuelle-daten-tourismuswirtschaft-kurzfasung.pdf" target="_blank">
-                Aktuelle Daten zur Tourismuswirtschaft – Wirtschaftliche Bedeutung und Nachhaltigkeit (Daten ab 2015) <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.destatis.de/DE/Themen/Wirtschaft/Volkswirtschaftliche-Gesamtrechnungen-Inlandsprodukt/Publikationen/Downloads-Input-Output-Rechnung/aktuelle-daten-tourismuswirtschaft-kurzfasung.pdf" target="_blank">
+                  Aktuelle Daten zur Tourismuswirtschaft – Wirtschaftliche Bedeutung und Nachhaltigkeit (Daten ab 2015) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -2061,10 +2154,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www-genesis.destatis.de/genesis/online/statistic/81711/de#abreadcrumb" target="_blank">
-                Tabellen zum Tourismussatellitenkonto <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis/online/statistic/81711/de#abreadcrumb" target="_blank">
+                  Tabellen zum Tourismussatellitenkonto <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -2258,7 +2358,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Datenquelle 2</h4>
       
-      <table class="table metadata-content">
+      
+<table class="table metadata-content">
   <tbody>
   
   
@@ -2405,10 +2506,17 @@ data-event-label="Change to Sources tab"
             
             
             
+
             
-              <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Tourismus/wirtschaftsfaktor-tourismus-deutschland-2012.html" target="_blank">
-                Wirtschaftsfaktor Tourismus in Deutschland – Kennzahlen einer umsatzstarken Querschnittsbranche (Daten von 2010) <span class="visuallyhidden">in neuem Fenster öffnen</span>
-              </a>
+            
+            
+
+            
+              
+                <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Tourismus/wirtschaftsfaktor-tourismus-deutschland-2012.html" target="_blank">
+                  Wirtschaftsfaktor Tourismus in Deutschland – Kennzahlen einer umsatzstarken Querschnittsbranche (Daten von 2010) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
             
 
           
@@ -2766,12 +2874,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513141622'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513141622"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
