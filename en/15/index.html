@@ -144,7 +144,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513133745">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513140458">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -306,20 +306,6 @@ data-event-label="high"
 
 
 
-<div class="container">
-  <nav>
-    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
-        
-        <li class="breadcrumb-item" >
-            <a href="/sdg-indicators/en/">Home</a>
-        </li>
-        <li class="breadcrumb-item active">Goal 15</li>
-        
-    </ol>
-</nav>
-  
-</div>
-
 <div class="heading goal-banner goal-15">
   <div class="container">
     <div class="row">
@@ -342,51 +328,91 @@ data-event-label="high"
 
 
 
-<div id="main-content" class="container" role="main">
+<div class="container">
+  <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        
+        <li class="breadcrumb-item" >
+            <a href="/sdg-indicators/en/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Goal 15</li>
+        
+    </ol>
+</nav>
+  
+</div>
+
+<div id="main-content" class="container goal-indicators goal-15 goal-by-target" role="main">
+
 
   
 
 
 
-  <div class="container g-0 ">
-    <div class="row align-items-end">
-      <div class="col">
-        <h2 class="goal-page-heading"></h2>
+  
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col d-grid gap-2">
+        <a href="https://sdgtestenvironment.github.io/sdg-indicators/en//14" class="btn btn-primary btn-block goal-15 navigation-btn text-nowrap" role="button">
+          <b><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous goal</b>
+        </a>
       </div>
-      
+
+      <div class="col d-grid gap-2">
+        <a href="https://sustainabledevelopment-deutschland.github.io/en//15" class="btn btn-primary btn-block goal-15 navigation-btn" title="" role="button">
+          <b class="btn-label d-none d-md-block">National indicators on Goal 15 </b><b class="btn-label d-block d-md-none">DNS 15</b>
+        </a>
+      </div>
+
+      <div class="col d-grid gap-2">
+        <a href="https://sdgtestenvironment.github.io/sdg-indicators/en//16" class="btn btn-primary btn-block goal-15 navigation-btn text-nowrap" role="button">
+          <b>Next goal <i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+        </a>
+      </div>
     </div>
-    <hr class="goal-page-column-header-rule">
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col" style="padding-left: 0px;">
+        <h2>Targets</h2>
+      </div>
+      <div class="col" style="padding-left: 0px;">
+        <h2>Indicators</h2>
+      </div>
+    </div>
+
+    
     
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.1</span>
-            </h3>
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.1</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
           </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
+        </div>
+
+        <div class="col indicator-cards no-gutters">
 
           
-          
-          
-          
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.1.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
               
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-1-1/">Forest area as a proportion of total land area</a></span>
-              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.1.1</div>
+                  <div class="align-right">
 
 
 
@@ -404,29 +430,25 @@ data-event-label="high"
 
         </li></ul>
 
-
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-1-1/" style="padding-left: 0px;">
+                  Forest area as a proportion of total land area
+                </a>
+              
             </div>
+          
+
             
             
-          </div>
-        
+            
+            
 
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.1.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+            <div class="row" style="margin-bottom: 25px;">
               
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-1-2/">Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type</a></span>
-              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.1.2</div>
+                  <div class="align-right">
 
 
 
@@ -444,44 +466,44 @@ data-event-label="high"
 
         </li></ul>
 
-
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-1-2/" style="padding-left: 0px;">
+                  Proportion of important sites for terrestrial and freshwater biodiversity that are covered by protected areas, by ecosystem type
+                </a>
+              
             </div>
-            
-            
+          
           </div>
-        
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.2</span>
-            </h3>
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.2</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
           </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
+        </div>
+
+        <div class="col indicator-cards no-gutters">
 
           
-          
-          
-          
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.2.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
               
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-2-1/">Progress towards sustainable forest management</a></span>
-              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.2.1</div>
+                  <div class="align-right">
 
 
 
@@ -499,44 +521,44 @@ data-event-label="high"
 
         </li></ul>
 
-
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-2-1/" style="padding-left: 0px;">
+                  Progress towards sustainable forest management
+                </a>
+              
             </div>
-            
-            
+          
           </div>
-        
-        <hr class="goal-page-target-rule" />
-    
+        </div>
       
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.3</span>
-            </h3>
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.3</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
           </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
+        </div>
+
+        <div class="col indicator-cards no-gutters">
 
           
-          
-          
-          
 
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.3.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
               
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-3-1/">Proportion of land that is degraded over total land area</a></span>
-              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.3.1</div>
+                  <div class="align-right">
 
 
 
@@ -554,554 +576,550 @@ data-event-label="high"
 
         </li></ul>
 
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.4</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.4.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-4-1/">Coverage by protected areas of important sites for mountain biodiversity</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.4.2</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-4-2/">(a) Mountain Green Cover Index; and (b) proportion of degraded mountain land</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.5</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.5.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-5-1/">Red List Index</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.6</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.6.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-6-1/">Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.7</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.7.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-7-1/">Proportion of traded wildlife that was poached or illicitly trafficked</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.8</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.8.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-8-1/">Proportion of countries adopting relevant national legislation and adequately resourcing the prevention or control of invasive alien species</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.9</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.9.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-9-1/">(a) Number of countries that have established national targets in accordance with or similar to Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011–2020 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.a</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.a.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-a-1/">(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.b</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.b.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-b-1/">(a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-      
-      <div class="row align-items-start goal-target">
-          <div class="col-auto goal-page-target-number">
-            <h3 class="goal-target">
-              <span class="target-number"><span class="visually-hidden">Target</span> 15.c</span>
-            </h3>
-          </div>
-          <div class="col goal-page-target-name">
-            <span class="target-name">XXX</span>
-          </div>
-          
-      </div>
-        
-
-          
-          
-          
-          
-
-          <div class="row align-items-start goal-indicator">
-          
-            <div class="col-auto goal-page-indicator-number">
-              <h4>
-                <span class="indicator-number"><span class="visually-hidden">Indicator</span> 15.c.1</span>
-              </h4>
-            </div>
-            <div class="col goal-page-indicator-name">
-              
-              <span class="indicator-name"><a href="/sdg-indicators/en/15-c-1/">Proportion of traded wildlife that was poached or illicitly trafficked</a></span>
-              
-
-
-
-
-    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
-        <span class="visually-hidden"></span>
-        
-
-
-
-<span class="status complete">
-    <span class="status-inner">Reported</span>
-</span>
-
-
-        </li></ul>
-
-
-            </div>
-            
-            
-          </div>
-        
-        <hr class="goal-page-target-rule" />
-    
-  </div>
-  <a href="#top"></a>
 </div>
+                </span>
+                <a href="/sdg-indicators/en/15-3-1/" style="padding-left: 0px;">
+                  Proportion of land that is degraded over total land area
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.4</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.4.1</div>
+                  <div class="align-right">
 
 
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-4-1/" style="padding-left: 0px;">
+                  Coverage by protected areas of important sites for mountain biodiversity
+                </a>
+              
+            </div>
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.4.2</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-4-2/" style="padding-left: 0px;">
+                  (a) Mountain Green Cover Index; and (b) proportion of degraded mountain land
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.5</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.5.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-5-1/" style="padding-left: 0px;">
+                  Red List Index
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.6</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.6.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-6-1/" style="padding-left: 0px;">
+                  Number of countries that have adopted legislative, administrative and policy frameworks to ensure fair and equitable sharing of benefits
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.7</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.7.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-7-1/" style="padding-left: 0px;">
+                  Proportion of traded wildlife that was poached or illicitly trafficked
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.8</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.8.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-8-1/" style="padding-left: 0px;">
+                  Proportion of countries adopting relevant national legislation and adequately resourcing the prevention or control of invasive alien species
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.9</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.9.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-9-1/" style="padding-left: 0px;">
+                  (a) Number of countries that have established national targets in accordance with or similar to Aichi Biodiversity Target 2 of the Strategic Plan for Biodiversity 2011–2020 in their national biodiversity strategy and action plans and the progress reported towards these targets; and (b) integration of biodiversity into national accounting and reporting systems, defined as implementation of the System of Environmental-Economic Accounting
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.a</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.a.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-a-1/" style="padding-left: 0px;">
+                  (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.b</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.b.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-b-1/" style="padding-left: 0px;">
+                  (a) Official development assistance on conservation and sustainable use of biodiversity; and (b) revenue generated and finance mobilized from biodiversity-relevant economic instruments
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row" style="margin-bottom: 25px; padding-right: 15px;">
+            <span class="indicator-card-number"> <!-- style="padding-bottom: 8px;">-->
+              <div class="align-left">15.c</div>
+            </span>
+            <p style="padding-left: 0px;">
+              XXX
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+                <span class="indicator-card-number" >
+                  <div class="align-left">15.c.1</div>
+                  <div class="align-right">
+
+
+
+
+    <ul class="tags list-unstyled list-inline" aria-label=""><li class="list-inline-item">
+        <span class="visually-hidden"></span>
+        
+
+
+
+<span class="status complete">
+    <span class="status-inner">Reported</span>
+</span>
+
+
+        </li></ul>
+
+</div>
+                </span>
+                <a href="/sdg-indicators/en/15-c-1/" style="padding-left: 0px;">
+                  Proportion of traded wildlife that was poached or illicitly trafficked
+                </a>
+              
+            </div>
+          
+          </div>
+        </div>
+      
+    </div>
+  </div>
 
 <footer role="contentinfo">
     <div class="container">
@@ -1161,12 +1179,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513133745'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513140458'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513133745"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513140458"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
