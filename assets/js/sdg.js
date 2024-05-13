@@ -1896,9 +1896,8 @@ function fieldItemStatesForSeries(fieldItemStates, fieldsBySeries, selectedSerie
  * @param {Array} fieldItems
  * @return {Array} Objects representing disaggregation combinations
  */
-function getCombinationData(fieldItems, dataSchema) {
-  console.log("fieldItems: ", fieldItems);
-  console.log("dataSchema: ", dataSchema);
+function getCombinationData(fieldItems) {
+
   // First get a list of all the single field/value pairs.
   var fieldValuePairs = [];
   fieldItems.forEach(function(fieldItem) {
@@ -1938,7 +1937,8 @@ function getCombinationData(fieldItems, dataSchema) {
 
   // Remove the empty item.
   powerset.shift();
-  var re = powerset.map(function(combinations) {
+
+  return powerset.map(function(combinations) {
     // We want to merge these into a single object.
     var combinedSubset = {};
     combinations.forEach(function(keyValue) {
@@ -1946,7 +1946,6 @@ function getCombinationData(fieldItems, dataSchema) {
     });
     return combinedSubset;
   });
-  return re;
 }
 
 /**
@@ -2215,16 +2214,13 @@ function getGraphLimits(graphLimits, selectedUnit, selectedSeries) {
  * @param {String} selectedSeries
  * @return {Array} Graph annotations objects, if any
  */
-function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks, graphErrorBars) {
+function getGraphAnnotations(graphAnnotations, selectedUnit, selectedSeries, graphTargetLines, graphSeriesBreaks) {
   var annotations = getMatchesByUnitSeries(graphAnnotations, selectedUnit, selectedSeries);
   if (graphTargetLines) {
     annotations = annotations.concat(getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries));
   }
   if (graphSeriesBreaks) {
     annotations = annotations.concat(getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries));
-  }
-  if (graphErrorBars) {
-    annotations = annotations.concat(getGraphErrorBars(graphErrorBars, selectedUnit, selectedSeries));
   }
   return annotations;
 }
@@ -2241,20 +2237,7 @@ function getGraphTargetLines(graphTargetLines, selectedUnit, selectedSeries) {
     targetLine.label = { content: targetLine.label_content };
     return targetLine;
   });
-}
 
-/**
- * @param {Array} graphErrorBars Objects containing 'unit' or 'series' or more
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {Array} Graph annotations objects, if any
- */
-function getGraphErrorBars(graphErrorBars, selectedUnit, selectedSeries) {
-  return getMatchesByUnitSeries(graphErrorBars, selectedUnit, selectedSeries).map(function(errorBar) {
-    errorBar.preset = 'error_bar';
-    errorBar.label = { content: errorBar.label_content };
-    return errorBar;
-  });
 }
 
 /**
@@ -2282,10 +2265,11 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, allObservationAttributes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
+
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
@@ -2322,17 +2306,16 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, allObservationAttributes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, allObservationAttributes);
     datasets.unshift(dataset);
   }
-  console.log("DATASETS: ", datasets);
   return datasets;
 }
 
@@ -2514,7 +2497,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2532,8 +2515,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    spanGaps: spanGaps,
-    showLine: showLine,
     observationAttributes: obsAttributes,
   });
 }
@@ -2548,7 +2529,6 @@ function getBaseDataset() {
     pointHoverBorderWidth: 1,
     tension: 0,
     spanGaps: true,
-    showLine: true,
     maxBarThickness: 150,
   });
 }
@@ -2622,7 +2602,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2635,21 +2615,10 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservat
     pointBackgroundColor: getHeadlineColor(),
     borderWidth: 4,
     headline: true,
-    pointStyle: 'circle',
+    pointStyle: 'rect',
     data: data,
-    showLine: showLine,
-    spanGaps: spanGaps,
     observationAttributes: obsAttributes,
   });
-}
-
-  /**
-   * @param {Array} graphStepsize Objects containing 'unit' and 'title'
-   * @param {String} selectedUnit
-   * @param {String} selectedSeries
-   */
-  function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
-    return getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
 }
 
   /**
@@ -2933,7 +2902,6 @@ function getAllObservationAttributes(rows) {
     getGraphLimits: getGraphLimits,
     getGraphAnnotations: getGraphAnnotations,
     getColumnsFromData: getColumnsFromData,
-    getGraphStepsize: getGraphStepsize,
     inputEdges: inputEdges,
     getTimeSeriesAttributes: getTimeSeriesAttributes,
     getAllObservationAttributes: getAllObservationAttributes,
@@ -4167,11 +4135,11 @@ opensdg.chartTypes.base = function(info) {
             // Now add any more annotation config.
             $.extend(true, annotation, annotationOverrides);
             // Default to horizontal lines.
-            if (!annotation.mode && annotation.type === 'line' && annotation.preset !== 'error_bar') {
+            if (!annotation.mode && annotation.type === 'line') {
                 annotation.mode = 'horizontal';
             }
             // Provide the obscure scaleID properties on user's behalf.
-            if (!annotation.scaleID && annotation.type === 'line' && annotation.preset !== 'error_bar' && annotation.preset !== 'target_point' && annotation.preset !== 'target_label') {
+            if (!annotation.scaleID && annotation.type === 'line') {
                 if (annotation.mode === 'horizontal') {
                     annotation.scaleID = 'y';
                 }
@@ -4179,10 +4147,10 @@ opensdg.chartTypes.base = function(info) {
                     annotation.scaleID = 'x';
                 }
             }
-            if (!annotation.xScaleID && (annotation.type === 'box' || annotation.type === 'point')) {
+            if (!annotation.xScaleID && annotation.type === 'box') {
                 annotation.xScaleID = 'x';
             }
-            if (!annotation.yScaleID && (annotation.type === 'box' || annotation.type === 'point')) {
+            if (!annotation.yScaleID && annotation.type === 'box') {
                 annotation.yScaleID = 'y';
             }
             // Provide the "enabled" label property on the user's behalf.
@@ -4786,13 +4754,8 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // Before passing to user-defined dataDisplayAlterations, let's
     // do our best to ensure that it starts out as a number.
     var altered = value;
-    // In case the decimal separator has already been applied,
-    // change it back now.
-    if (typeof altered === 'string' && OPTIONS.decimalSeparator) {
-        altered = altered.replace(OPTIONS.decimalSeparator, '.');
-    }
     if (typeof altered !== 'number') {
-        altered = Number(altered);
+        altered = Number(value);
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
@@ -4802,30 +4765,26 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     opensdg.dataDisplayAlterations.forEach(function (callback) {
         altered = callback(altered, info, context);
     });
-    // Now apply our custom precision control if needed.
-
-    // Special treatment for numbers on y axis: If stepSize is defined, they should display decimal places as follows:
-    // StepSize >= 1 --> 0 decimal places, Stepsize >= 0.1 --> 1 decimal place, StepSize >= 0.01 --> 2 decimal places ...
-    if (context == 'chart y-axis tick' && VIEW._graphStepsize && VIEW.graphStepsize != 0 && VIEW.graphStepsize != '') {
-      precision = Math.ceil(Math.log(1 / VIEW._graphStepsize.step) / Math.LN10);
-      if (precision < 0) {
-        precision = 0
-      }
+    // If the returned value is not a number, use the legacy logic for
+    // precision and decimal separator.
+    if (typeof altered !== 'number') {
+        // Now apply our custom precision control if needed.
+        if (VIEW._precision || VIEW._precision === 0) {
+            altered = Number.parseFloat(altered).toFixed(VIEW._precision);
+        }
+        // Now apply our custom decimal separator if needed.
+        if (OPTIONS.decimalSeparator) {
+            altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
+        }
     }
-
+    // Otherwise if we have a number, use toLocaleString instead.
     else {
-      var precision = VIEW._precision
-    }
-    if (precision || precision === 0) {
-        altered = Number.parseFloat(altered).toFixed(precision);
-    }
-    // Now apply our custom decimal separator if needed.
-    if (OPTIONS.decimalSeparator) {
-        altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
-    }
-    // Apply thousands seperator if needed
-    if (OPTIONS.thousandsSeparator && precision <=3){
-        altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
+        var localeOpts = {};
+        if (VIEW._precision || VIEW._precision === 0) {
+            localeOpts.minimumFractionDigits = VIEW._precision;
+            localeOpts.maximumFractionDigits = VIEW._precision;
+        }
+        altered = altered.toLocaleString(opensdg.language, localeOpts);
     }
     // Now let's add any footnotes from observation attributes.
     var obsAttributes = [];
@@ -4840,20 +4799,18 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         obsAttributes = obsAttributesTable.data[row][col];
     }
     if (obsAttributes.length > 0) {
-
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
             return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
-
     return altered;
 }
 
 /**
  * Convert a number into a string for observation atttribute footnotes.
  *
- * @param {int} num
+ * @param {int} num 
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(num) {
@@ -5028,7 +4985,6 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     alterTableConfig: alterTableConfig,
     alterDataDisplay: alterDataDisplay,
     updateChartTitle: updateChartTitle,
-    updateChartSubtitle: updateChartSubtitle,
     updateWithSelectedFields: updateWithSelectedFields,
     updateSeriesAndUnitElements: updateSeriesAndUnitElements,
     updateUnitElements: updateUnitElements,
