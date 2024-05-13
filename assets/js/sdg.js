@@ -133,7 +133,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.proxy = options.proxy;
     this.proxySerieses = options.proxySerieses;
     this.startValues = options.startValues;
-    this.configObsAttributes = [{"field":"COMMENT_OBS","label":""}];
+    this.configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
     this.allObservationAttributes = options.allObservationAttributes;
 
     // Require at least one geoLayer.
@@ -1372,7 +1372,7 @@ function nonFieldColumns() {
       columns.push(tsAttribute.field);
     });
   }
-  var observationAttributes = [{"field":"COMMENT_OBS","label":""}];
+  var observationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
   if (observationAttributes && observationAttributes.length > 0) {
     observationAttributes.forEach(function(oAttribute) {
       columns.push(oAttribute.field);
@@ -2561,7 +2561,7 @@ function prepareDataForDataset(years, rows, allObservationAttributes) {
     data: [],
     observationAttributes: [],
   };
-  var configObsAttributes = [{"field":"COMMENT_OBS","label":""}];
+  var configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
   if (configObsAttributes && configObsAttributes.length > 0) {
     configObsAttributes = configObsAttributes.map(function(obsAtt) {
       return obsAtt.field;
@@ -2823,7 +2823,7 @@ function getAllObservationAttributes(rows) {
   }
   var obsAttributeHash = {},
       footnoteNumber = 0,
-      configObsAttributes = [{"field":"COMMENT_OBS","label":""}];
+      configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
   if (configObsAttributes && configObsAttributes.length > 0) {
     configObsAttributes = configObsAttributes.map(function(obsAtt) {
       return obsAtt.field;
@@ -3433,7 +3433,7 @@ function updateObservationAttributes(obsAttributes) {
  * Gets the text of an observation attribute for display to the end user.
  */
 function getObservationAttributeText(obsAttribute) {
-    var configuredObsAttributes = [{"field":"COMMENT_OBS","label":""}];
+    var configuredObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
     var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
         return configuredObsAttribute.field === obsAttribute.field;
     });
