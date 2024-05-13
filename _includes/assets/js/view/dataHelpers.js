@@ -67,6 +67,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         obsAttributes = obsAttributesTable.data[row][col];
     }
     if (obsAttributes.length > 0) {
+        console.log('obsAttributes: ', obsAttributes);
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
             return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         });
