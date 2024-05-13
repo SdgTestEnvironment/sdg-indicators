@@ -119,7 +119,7 @@ var translations = {
         
     <title>
         
-        SDG Indikator 15.8.1 -
+        Indikator 15.8.1 -
         
         Anteil der Staaten, die relevante nationale Rechtsvorschriften verabschiedet haben und angemessene Mittel für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten bereitstellen - Deutschlands SDG Indikatoren
     </title>
@@ -147,14 +147,14 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513071158">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240513082343">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
 
@@ -312,7 +312,7 @@ layout-indicator-iframe
   data-id="15-8-1"
   data-country="Deutschland"
   data-charttitle="Anteil der Staaten, die relevante nationale Rechtsvorschriften verabschiedet haben und angemessene Mittel für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten bereitstellen"
-  data-charttitles="[{&quot;series&quot;:&quot;b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB&quot;,&quot;title&quot;:&quot;Rechtsvorschriften für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten&quot;},{&quot;series&quot;:&quot;a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS&quot;,&quot;title&quot;:&quot;Rechtsvorschriften für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten&quot;}]"
+  data-charttitles="[{&quot;series&quot;:&quot;a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS&quot;,&quot;title&quot;:&quot;Rechtsvorschriften für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten&quot;},{&quot;series&quot;:&quot;b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB&quot;,&quot;title&quot;:&quot;Rechtsvorschriften für die Bekämpfung oder Kontrolle invasiver gebietsfremder Arten&quot;}]"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
@@ -916,88 +916,85 @@ layout-indicator-iframe
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-</div>
-<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-  
-  <li role="presentation"
-    class="
-      nav-item
-      
-      
-    ">
-    <button
-      class="nav-link active"
-      data-bs-toggle="tab"
-      role="tab"
-      type="button"
-      
-        id="tab-chartview"
-        data-bs-target="#chartview"
-        aria-controls="chartview"
-        aria-describedby="table-alternative"
-        data-on="click"
+  </div>
+  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-chartview"
+          data-bs-target="#chartview"
+          aria-controls="chartview"
+          aria-describedby="table-alternative"
+          data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        ><i class="fa fa-line-chart" aria-hidden="true"></i>
-      
-    <span class="hidden-xs" style="color:black">Grafik</span></button>
-  </li>
-  
-  <li role="presentation"
-    class="
-      nav-item
-      
-      
-    ">
-    <button
-      class="nav-link "
-      data-bs-toggle="tab"
-      role="tab"
-      type="button"
-      
-        id="tab-tableview"
-        data-bs-target="#tableview"
-        aria-controls="tableview"
-        data-on="click"
+        
+      >Grafik</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-tableview"
+          data-bs-target="#tableview"
+          aria-controls="tableview"
+          data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        ><i class="fa fa-table" aria-hidden="true"></i>
-      
-    <span class="hidden-xs" style="color:black">Tabelle</span></button>
-  </li>
-  
-  <li role="presentation"
-    class="
-      nav-item
-      
-      embedded-map
-    ">
-    <button
-      class="nav-link "
-      data-bs-toggle="tab"
-      role="tab"
-      type="button"
-      
-        id="tab-embeddedmapview"
-        data-bs-target="#embeddedmapview"
-        aria-controls="embeddedmapview"
-        data-no-disagg="true"
-        data-on="click"
+        
+      >Tabelle</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        embedded-map
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-embeddedmapview"
+          data-bs-target="#embeddedmapview"
+          aria-controls="embeddedmapview"
+          data-no-disagg="true"
+          data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to embedded item tab"
 
-        ><i class="fa fa-plus-square" aria-hidden="true"></i>
-      
-    <span class="hidden-xs" style="color:black">Weitere Informationen</span></button>
-  </li>
+        
+      >Weitere Informationen</button>
+    </li>
+    
+  </ul>
   
-</ul>
-
     <div class="tab-content data-view">
     
       
@@ -1034,75 +1031,67 @@ data-event-label="Change to embedded item tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          
-            <dt><u>Datenquellen</u>:</dt>
-          
-          <dd><a href="https://www.bmuv.de/" target="_blank"> Bundesministerium für Umwelt, Naturschutz, nukleare Sicherheit und Verbraucherschutz (BMUV) </a>, <a href="https://www.bfn.de/" target="_blank"> Bundesamt für Naturschutz (BfN) </a></dd>
+        <dt>Datenquelle:</dt>
+        <dd><a href="https://www.bmuv.de/" target="_blank"> Bundesministerium für Umwelt, Naturschutz, nukleare Sicherheit und Verbraucherschutz (BMUV) </a>, <a href="https://www.bfn.de/" target="_blank"> Bundesamt für Naturschutz (BfN) </a></dd>
         
 
         
-          <dt><u>Geographische Abdeckung</u>:</dt>
-          <dd>Deutschland</dd>
+        <dt>Geographische Abdeckung:</dt>
+        <dd>Deutschland</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-
+        <dt>Copyright:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
 
         
-          
-            
-              <dt
-                data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
-                data-for-unit=""
-              ><u>Anmerkungen</u>:</dt>
-              <dd
-                data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
-                data-for-unit=""
-              ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• IAS: invasive gebietsfremde Arten (invasive alien species).<br>• Informationen zu den jeweiligen Rechtsvorschriften unter dem Reiter "Weitere Informationen".</dd>
-            
-          
-            
-              <dt
-                data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
-                data-for-unit=""
-              ><u>Anmerkungen</u>:</dt>
-              <dd
-                data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
-                data-for-unit=""
-              ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• NBSAP: Nationale Strategie- und Aktionsplan für biologische Vielfalt (National Biodiversity Strategy and Action Plan).<br>• NSB: Nationale Strategie zur Biologischen Vielfalt.</dd>
-            
-          
+
+        
+        
+        <dt
+          data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
+          data-for-unit=""
+        >Anmerkungen:</dt>
+        <dd
+          data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
+          data-for-unit=""
+        ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• IAS: invasive gebietsfremde Arten (invasive alien species).<br>• Informationen zu den jeweiligen Rechtsvorschriften unter dem Reiter "Weitere Informationen".</dd>
+        
+        <dt
+          data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
+          data-for-unit=""
+        >Anmerkungen:</dt>
+        <dd
+          data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
+          data-for-unit=""
+        ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• NBSAP: Nationale Strategie- und Aktionsplan für biologische Vielfalt (National Biodiversity Strategy and Action Plan).<br>• NSB: Nationale Strategie zur Biologischen Vielfalt.</dd>
+        
         
 
         
-          
-            <dt
-              class="data-controlled-footer-field"
-              data-ts-attribute="COMMENT_TS"
-            ><u>Anmerkung</u>:</dt>
-            <dd
-              class="data-controlled-footer-field"
-              data-ts-attribute="COMMENT_TS"
-            ></dd>
-          
-            <dt
-              class="data-controlled-footer-field"
-              data-ts-attribute="DATA_LAST_UPDATE"
-            ><u>Letzte Änderung der Daten</u>:</dt>
-            <dd
-              class="data-controlled-footer-field"
-              data-ts-attribute="DATA_LAST_UPDATE"
-            ></dd>
-          
         
-
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Anmerkung:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Letzte Änderung der Daten:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
     </dl>
     
@@ -1143,75 +1132,67 @@ data-event-label="Change to embedded item tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          
-            <dt><u>Datenquellen</u>:</dt>
-          
-          <dd><a href="https://www.bmuv.de/" target="_blank"> Bundesministerium für Umwelt, Naturschutz, nukleare Sicherheit und Verbraucherschutz (BMUV) </a>, <a href="https://www.bfn.de/" target="_blank"> Bundesamt für Naturschutz (BfN) </a></dd>
+        <dt>Datenquelle:</dt>
+        <dd><a href="https://www.bmuv.de/" target="_blank"> Bundesministerium für Umwelt, Naturschutz, nukleare Sicherheit und Verbraucherschutz (BMUV) </a>, <a href="https://www.bfn.de/" target="_blank"> Bundesamt für Naturschutz (BfN) </a></dd>
         
 
         
-          <dt><u>Geographische Abdeckung</u>:</dt>
-          <dd>Deutschland</dd>
+        <dt>Geographische Abdeckung:</dt>
+        <dd>Deutschland</dd>
         
 
-        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dt class="data-controlled-footer-field unit-from-data">Einheit:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-
+        <dt>Copyright:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
 
         
-          
-            
-              <dt
-                data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
-                data-for-unit=""
-              ><u>Anmerkungen</u>:</dt>
-              <dd
-                data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
-                data-for-unit=""
-              ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• IAS: invasive gebietsfremde Arten (invasive alien species).<br>• Informationen zu den jeweiligen Rechtsvorschriften unter dem Reiter "Weitere Informationen".</dd>
-            
-          
-            
-              <dt
-                data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
-                data-for-unit=""
-              ><u>Anmerkungen</u>:</dt>
-              <dd
-                data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
-                data-for-unit=""
-              ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• NBSAP: Nationale Strategie- und Aktionsplan für biologische Vielfalt (National Biodiversity Strategy and Action Plan).<br>• NSB: Nationale Strategie zur Biologischen Vielfalt.</dd>
-            
-          
+
+        
+        
+        <dt
+          data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
+          data-for-unit=""
+        >Anmerkungen:</dt>
+        <dd
+          data-for-series="a) Nationale Strategien zur Bekämpfung oder Kontrolle IAS"
+          data-for-unit=""
+        ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• IAS: invasive gebietsfremde Arten (invasive alien species).<br>• Informationen zu den jeweiligen Rechtsvorschriften unter dem Reiter "Weitere Informationen".</dd>
+        
+        <dt
+          data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
+          data-for-unit=""
+        >Anmerkungen:</dt>
+        <dd
+          data-for-series="b) Angleichung der Ziele des NBSAP an das Aichi-Ziel 9 des NSB"
+          data-for-unit=""
+        ><br>• 1 = Ja; 0 = Nein und . = Unbekannt.<br>• NBSAP: Nationale Strategie- und Aktionsplan für biologische Vielfalt (National Biodiversity Strategy and Action Plan).<br>• NSB: Nationale Strategie zur Biologischen Vielfalt.</dd>
+        
         
 
         
-          
-            <dt
-              class="data-controlled-footer-field"
-              data-ts-attribute="COMMENT_TS"
-            ><u>Anmerkung</u>:</dt>
-            <dd
-              class="data-controlled-footer-field"
-              data-ts-attribute="COMMENT_TS"
-            ></dd>
-          
-            <dt
-              class="data-controlled-footer-field"
-              data-ts-attribute="DATA_LAST_UPDATE"
-            ><u>Letzte Änderung der Daten</u>:</dt>
-            <dd
-              class="data-controlled-footer-field"
-              data-ts-attribute="DATA_LAST_UPDATE"
-            ></dd>
-          
         
-
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        >Anmerkung:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        >Letzte Änderung der Daten:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
     </dl>
     
@@ -1295,8 +1276,7 @@ data-event-label="Change to Sources tab"
                 
                 Diese Übersicht enthält Informationen zu den dargestellten Zeitreihen, die in Deutschland verfügbar sind und ihre Vergleichbarkeit mit den UN-Metadaten. Die nationalen Metadaten enthalten ergänzende methodische und länderspezifische Informationen.
             </p>
-            
-<table class="table metadata-content">
+            <table class="table metadata-content">
   <tbody>
   
   
@@ -1370,17 +1350,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/15.8.1.pdf" target="_blank">
-                  Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                </a>
-              
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/15.8.1.pdf" target="_blank">
+                Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              </a>
             
 
           
@@ -1636,8 +1609,7 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>Diese Übersicht enthält Informationen zu den Metadaten des dargestellten SDG-Indikators, wie sie von der Statistischen Kommission der Vereinten Nationen definiert wurden. Die vollständigen <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','De');">UN-Metadaten</a> werden von der Statistischen Abteilung der Vereinten Nationen (UNSD) bereitgestellt.</p>
-            
-<table class="table metadata-content">
+            <table class="table metadata-content">
   <tbody>
   
   
@@ -1693,17 +1665,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
-                  Tier I</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank">
+                Tier I</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              </a>
             
 
           
@@ -1745,17 +1710,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-15-08-01.pdf" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
-                  Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-15-08-01.pdf" target="_blank">
+                Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              </a>
             
 
           
@@ -2000,8 +1958,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Datenquelle 1</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -2111,17 +2068,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.bmuv.de/download/erster-aktionsplan-gemaess-artikel-13-der-verordnung-eu-nummer-1143-2014-des-europaeischen-parlaments-und-des-rates-vom-22-oktober-2014" target="_blank">
-                  Erster Aktionsplan zu invasiven Arten <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                </a>
-              
+              <a href="https://www.bmuv.de/download/erster-aktionsplan-gemaess-artikel-13-der-verordnung-eu-nummer-1143-2014-des-europaeischen-parlaments-und-des-rates-vom-22-oktober-2014" target="_blank">
+                Erster Aktionsplan zu invasiven Arten <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              </a>
             
 
           
@@ -2410,8 +2360,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Datenquelle 2</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -2558,17 +2507,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://biologischevielfalt.bfn.de/nationale-strategie/ueberblick.html" target="_blank">
-                  Nationale Strategie zur biologischen Vielfalt <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                </a>
-              
+              <a href="https://biologischevielfalt.bfn.de/nationale-strategie/ueberblick.html" target="_blank">
+                Nationale Strategie zur biologischen Vielfalt <span class="visuallyhidden">in neuem Fenster öffnen</span>
+              </a>
             
 
           
@@ -2847,8 +2789,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<script type="text/javascript"  src="/sdg-indicators/assets/js/loadash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
@@ -2869,33 +2810,14 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240513071158'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240513082343'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240513071158"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240513082343"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
-</script>
-
-
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight){
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = (content.scrollHeight + 10) + "px";
-    }
-  });
-}
 </script>
 
 <script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
