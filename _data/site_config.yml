@@ -1,5 +1,272 @@
+
+#Dezimaltrenner
+decimal_separator: ','
+
+##Qualitätskennzeichen
 observation_attributes:
   - field: COMMENT_OBS
     label: ''
   - field: test
-    label: "X"
+    label: ''
+
+accessible_charts: true
+accessible_tabs: true
+# analytics:
+#  ua: ''
+#  gtag: ''
+#  gtm: ''
+#  ga_prod: 'G-5V7YNZ06KS'
+breadcrumbs:
+  goal:
+    - path: /
+      label: general.home
+    - path: /goals
+      label: general.goals
+  indicator:
+    - path: /
+      label: general.home
+    - path: /goals
+      label: general.goals
+  post:
+    - path: /
+      label: general.home
+    - path: /news
+      label: menu.updates
+contrast_type: default
+cookie_consent_form:
+  enabled: true
+country:
+  name: Germany
+  adjective: German
+create_goals:
+  layout: goal-by-target
+  previous_next_links: true
+  goals: []
+create_indicators:
+  layout: indicator
+  previous_next_links: true
+
+create_pages:
+  - filename: ''
+    folder: /
+    layout: frontpage-alt
+    title: ''
+  - filename: ''
+    folder: /goals
+    layout: goals
+    title: ''
+  - filename: ''
+    folder: /reporting-status
+    layout: reportingstatus
+    title: ''
+  - filename: indicators.json
+    folder: /
+    layout: indicator-json
+    title: ''
+  - filename: ''
+    folder: /search
+    layout: search
+    title: ''
+custom_css: []
+custom_js:
+  - /assets/js/custom.js
+data_edit_url: data
+data_fields:
+  units: ''
+  series: ''
+#date_formats: []
+date_formats:
+- type: standard
+  language: de
+  format: "%d.%m.%Y"
+disclaimer:
+  phase: ''
+  message: ''
+email_contacts:
+  questions: sdg-indicators@destatis.de
+  suggestions: sdg-indicators@destatis.de
+  functional: sdg-indicators@destatis.de
+environment: staging
+favicons: favicon.io
+footer_language_toggle: none
+footer_menu:
+  - path: /imprint/
+    translation_key: menu.imprint
+frontpage_cards:
+  - title: Alle Daten herunterladen
+    content: |
+      Hier können Sie alle Daten als zip-Datei herunterladen <br>
+    include: components/download-all-data.html
+    button_label: ''
+    button_link: ''
+    rule_color: ''
+frontpage_goals_grid:
+  title: XXX
+  description: >-
+     Einfach einen Indikator anklicken...
+frontpage_heading: ''
+frontpage_instructions: ''
+frontpage_introduction_banner:
+  title: frontpage.intro_title
+  description: frontpage.intro_body
+goal_image_base: https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals
+
+
+goal_image_extension: ''
+goals_page:
+  title: general.goals
+  description: goal.description
+graph_color_headline: '#004466'
+graph_color_headline_high_contrast: '#55a6e5'
+graph_color_set: custom #accessible
+graph_color_list: ['ee0000','436eee','006633','ffd700','ba55d3','66cdaa']
+graph_color_number: 0
+graph_title_from_series: true
+header:
+  include: header-menu-left-aligned.html
+header_language_toggle: dropdown
+hide_empty_metadata: true
+hide_single_series: true
+hide_single_unit: true
+indicator_config_form:
+  enabled: false
+  dropdowns: []
+  repository_link: /tree/develop/indicator-config
+  translation_link: ''
+indicator_data_form:
+  enabled: true
+  repository_link: /tree/develop/data
+indicator_metadata_form:
+  enabled: true
+  dropdowns: []
+  repository_link: /tree/develop/meta
+  translation_link: ''
+  language: ''
+  scopes:
+    - national
+    - global
+  exclude_fields: []
+  translated: false
+languages:
+  - de
+languages_public: []
+logos: []
+#map_layers: []
+map_layers:
+- min_zoom: 0
+  max_zoom: 20
+  staticBorders: false
+  subfolder: map
+  label: indicator.map
+- min_zoom: 0
+  max_zoom: 20
+  staticBorders: false
+  subfolder: Regionale Anpassungsschichten
+  label: Regionale Anpassungsschichten
+- min_zoom: 0
+  max_zoom: 20
+  staticBorders: false
+  subfolder: Mikrozensus
+  label: Mikrozensus
+- min_zoom: 0
+  max_zoom: 20
+  staticBorders: false
+  subfolder: Statistische Region
+  label: Statistische Region
+- min_zoom: 0
+  max_zoom: 20
+  staticBorders: false
+  subfolder: NI_Hannover_Region
+  label: indicator.map
+
+map_options:
+  disaggregation_controls: true
+  minZoom: 5
+  maxZoom: 10
+#  limits: chroma.limits(data, 'e', 5)
+  tileURL: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+  tileOptions:
+    id: 'mapbox.light'
+    accessToken: 'pk.eyJ1IjoiY2hyaXN0b3BoNDcxMSIsImEiOiJjanp1cjdpbzQwMTFwM29tdzJ2ZTh3Ymo4In0.C7_7e3AFcMaF_QBg6MaT0Q'
+    attribution: '<a href="https://www.mapbox.com">Mapbox</a> | <a href="http://www.bkg.bund.de">© GeoBasis-DE / BKG | <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
+  colorRange: chroma.brewer.OrRd
+  noValueColor: '#f0f0f0'
+  styleNormal:
+    weight: 1
+    opacity: 1
+    fillOpacity: 0.7
+    color: '#888888'
+    dashArray: ''
+  styleHighlighted:
+    weight: 1
+    opacity: 1
+    fillOpacity: 0.7
+    color: '#111111'
+    dashArray: ''
+  styleStatic:
+    weight: 2
+    opacity: 1
+    fillOpacity: 0
+    color: '#172d44'
+    dashArray: '5,5'
+menu:
+  - path: /goals
+    translation_key: general.goals
+    dropdown: []
+  - path: /indicator_list
+    translation_key: menu.indicator_list
+    dropdown: []
+  - path: /reporting-status
+    translation_key: menu.reporting_status
+    dropdown: []
+  - path: /about
+    translation_key: menu.about
+    dropdown: []
+#  - path: /faq
+#    translation_key: menu.faq
+#    dropdown: []
+#  - path: /news
+#    translation_key: menu.updates
+#    dropdown: []
+metadata_edit_url: metadata
+metadata_tabs: []
+news:
+  category_links: false
+non_global_metadata: indicator.national_metadata
+progress_status:
+  status_heading: ''
+  status_types: []
+#remote_data_prefix: 'https://wohnungNDS.github.io/IM_Data/'
+remote_data_prefix: 'https://christoph-lsn.github.io/IM_Data/'
+reporting_status:
+  title: status.reporting_status
+  description: status.description
+  disaggregation_tabs: false
+  status_types:
+    - value: complete
+      label: status.reported
+      hide_on_goal_pages: false
+    - value: inprogress
+      label: status.statistics_in_progress
+      hide_on_goal_pages: false
+    - value: notstarted
+      label: status.exploring_data_sources
+      hide_on_goal_pages: false
+    - value: notapplicable
+      label: status.not_applicable
+      hide_on_goal_pages: false
+#repository_url_data: 'https://github.com/WohnungNDS/IM_Data'
+repository_url_data: 'https://github.com/SdgTestEnvironment/sdg-data'
+repository_url_site: 'https://github.com/SdgTestEnvironment/sdg-indicators'
+search_index_boost: []
+search_index_extra_fields: []
+series_toggle: true
+sharethis_property: ''
+site_config_form:
+  enabled: false
+  dropdowns: []
+  repository_link: /tree/develop/_data
+  translation_link: ''
+validate_indicator_config: false
+validate_site_config: false
+x_axis_label: ''
