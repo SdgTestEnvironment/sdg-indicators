@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240515091234">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240515093524">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -384,62 +384,60 @@ layout-indicator-iframe
 
     <div style="display: none;">
     <span id="table-alternative"></span>
-</div>
-<ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
-  
-  <li role="presentation"
-    class="
-      nav-item
-      
-      
-    ">
-    <button
-      class="nav-link active"
-      data-bs-toggle="tab"
-      role="tab"
-      type="button"
-      
-        id="tab-chartview"
-        data-bs-target="#chartview"
-        aria-controls="chartview"
-        aria-describedby="table-alternative"
-        data-on="click"
+  </div>
+  <ul class="nav nav-tabs non-stacking-tabs data-view" role="tablist">
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link active"
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-chartview"
+          data-bs-target="#chartview"
+          aria-controls="chartview"
+          aria-describedby="table-alternative"
+          data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Chart tab"
 
-        ><i class="fa fa-line-chart" aria-hidden="true"></i>
-      
-    <span class="hidden-xs" style="color:black">Chart</span></button>
-  </li>
-  
-  <li role="presentation"
-    class="
-      nav-item
-      
-      
-    ">
-    <button
-      class="nav-link "
-      data-bs-toggle="tab"
-      role="tab"
-      type="button"
-      
-        id="tab-tableview"
-        data-bs-target="#tableview"
-        aria-controls="tableview"
-        data-on="click"
+        
+      >Chart</button>
+    </li>
+    
+    <li role="presentation"
+      class="
+        nav-item
+        
+        
+      ">
+      <button
+        class="nav-link "
+        data-bs-toggle="tab"
+        role="tab"
+        type="button"
+        
+          id="tab-tableview"
+          data-bs-target="#tableview"
+          aria-controls="tableview"
+          data-on="click"
 data-event-category="Tab change"
 data-event-action="Change data view"
 data-event-label="Change to Table tab"
 
-        ><i class="fa fa-table" aria-hidden="true"></i>
-      
-    <span class="hidden-xs" style="color:black">Table</span></button>
-  </li>
+        
+      >Table</button>
+    </li>
+    
+  </ul>
   
-</ul>
-
     <div class="tab-content data-view">
     
       
@@ -666,8 +664,7 @@ data-event-label="Change to Sources tab"
                 
                 This overview contains information on the time series shown that are available in Germany and their compliance with the UN metadata. The national metadata contains supplementary methodological and country-specific information.
             </p>
-            
-<table class="table metadata-content">
+            <table class="table metadata-content">
   <tbody>
   
   
@@ -741,17 +738,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/16.7.1.pdf" target="_blank">
-                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/16.7.1.pdf" target="_blank">
+                Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1007,8 +997,7 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This overview contains information on the metadata of the SDG indicator shown, as defined by the United Nations Statistical Commission. The complete <a href="https://unstats.un.org/sdgs/metadata/" target=”_blank” onclick="return confirm_alert('the United Nations Statistics Division','En');">UN metadata</a> is provided by the United Nations Statistical Division (UNSD).</p>
-            
-<table class="table metadata-content">
+            <table class="table metadata-content">
   <tbody>
   
   
@@ -1064,17 +1053,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
-                  Tier I/II <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank">
+                Tier I/II <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1116,17 +1098,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01a.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
-                  Metadata on this indicator (16.7.1 (a)) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01a.pdf" target="_blank">
+                Metadata on this indicator (16.7.1 (a)) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1153,17 +1128,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01b.pdf" target="_blank">
-                  Metadata on this indicator (16.7.1 (b)) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01b.pdf" target="_blank">
+                Metadata on this indicator (16.7.1 (b)) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1190,17 +1158,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01c.pdf" target="_blank">
-                  Metadata on this indicator (16.7.1 (c)) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-07-01c.pdf" target="_blank">
+                Metadata on this indicator (16.7.1 (c)) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1425,8 +1386,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 1</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -1536,17 +1496,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=12411-0006&bypass=true&levelindex=1&levelid=1639396599054#abreadcrumb" target="_blank">
-                  Population: reference date – GENESIS online 12411-0006 <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=12411-0006&bypass=true&levelindex=1&levelid=1639396599054#abreadcrumb" target="_blank">
+                Population: reference date – GENESIS online 12411-0006 <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1598,17 +1551,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.destatis.de/DE/Themen/Staat/Oeffentlicher-Dienst/_inhalt.html#sprg236406" target="_blank">
-                  Civil service personnel – Fachserie 14 series 6 (until 2021) (only available in German) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www.destatis.de/DE/Themen/Staat/Oeffentlicher-Dienst/_inhalt.html#sprg236406" target="_blank">
+                Civil service personnel – Fachserie 14 series 6 (until 2021) (only available in German) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -1862,8 +1808,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 2</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -2010,17 +1955,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2021/publikationen.html" target="_blank">
-                  Results of earlier elections to the Federal parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www.bundeswahlleiter.de/en/bundestagswahlen/2021/publikationen.html" target="_blank">
+                Results of earlier elections to the Federal parliaments (only available in German) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -2288,8 +2226,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 3</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -2477,17 +2414,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.bundestag.de/en/members" target="_blank">
-                  Members <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www.bundestag.de/en/members" target="_blank">
+                Members <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -2626,8 +2556,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 4</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -2834,17 +2763,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.bundesrat.de/EN/organisation-en/mitglieder-en/mitglieder-en-node.html" target="_blank">
-                  Members <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www.bundesrat.de/EN/organisation-en/mitglieder-en/mitglieder-en-node.html" target="_blank">
+                Members <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -2964,8 +2886,7 @@ data-event-label="Change to Sources tab"
       
         <h4>Data source 5</h4>
       
-      
-<table class="table metadata-content">
+      <table class="table metadata-content">
   <tbody>
   
   
@@ -3191,17 +3112,10 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
-            
-            
-
-            
-              
-                <a href="https://www.bundesjustizamt.de/DE/Themen/Buergerdienste/Justizstatistik/Personal/Personal_node.html" target="_blank">
-                  Judge statistics and number of staff of the branches of jurisdiction (only available in German) <span class="visuallyhidden">opens in a new window</span>
-                </a>
-              
+              <a href="https://www.bundesjustizamt.de/DE/Themen/Buergerdienste/Justizstatistik/Personal/Personal_node.html" target="_blank">
+                Judge statistics and number of staff of the branches of jurisdiction (only available in German) <span class="visuallyhidden">opens in a new window</span>
+              </a>
             
 
           
@@ -3334,12 +3248,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240515091234'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240515093524'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240515091234"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240515093524"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
