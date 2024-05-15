@@ -3878,12 +3878,11 @@ function strToArray (str, limit) {
     common: {
         // This "common" preset is applied to all annotations automatically.
         borderColor: '#949494',
-        //drawTime: 'afterDraw',
         type: 'line',
         borderDash: [10, 5],
         borderWidth: 1,
         label: {
-            backgroundColor: 'rgba(255,255,255,0.6)',
+            backgroundColor: 'white',
             color: 'black',
             borderWidth: 1,
             borderColor: 'black',
@@ -3905,7 +3904,7 @@ function strToArray (str, limit) {
         description: function() {
             var descriptionParts = [translations.indicator.chart_annotation];
             if (this.label && this.label.content) {
-                descriptionParts.push(translations.t(this.label.content) + ': ' + this.value);
+                descriptionParts.push(translations.t(this.label.content));
             }
             else {
                 // If there is no label, just specify whether it is a box or line.
@@ -3939,19 +3938,6 @@ function strToArray (str, limit) {
             position: 'start',
             content: translations.indicator.annotation_series_break,
         },
-    },
-    error_bar: {
-        adjustScaleRange: true,
-        drawTime: 'afterDatasetsDraw',
-        type: 'line',
-        backgroundColor: '#383838',
-        borderColor: '#383838',
-        xScaleID: 'x',
-        yScaleID: 'y',
-        xMin: 2,
-        xMax: 2,
-        yMin: 15000,
-        yMax: 25000,
     },
 };
 
