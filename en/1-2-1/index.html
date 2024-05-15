@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240515063425">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240515065608">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -453,26 +453,17 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-md-center">
     
-      
-        <div class="col d-grid gap-2">
-          <a href="/sdg-indicators/en/1-1-1" class="btn btn-primary btn-block goal-1 navigation-btn" role="button">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Previous indicator </b>
-          </a>
-        </div>
+      <div class="col d-grid gap-2">
+        <a href="/sdg-indicators/en/1-2-2" class="btn btn-primary btn-block goal-1 navigation-btn" role="button">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i> <b class="btn-label hidden-sm hidden-xs">Previous indicator </b>
+        </a>
+      </div>
 
-        <div class="col-md-auto">
-          <a href="https://sustainabledevelopment-deutschland.github.io/en//1-1-ab/" class="btn btn-primary btn-block goal-1 navigation-btn" title="" role="button">
-            <b class="btn-label hidden-sm hidden-xs">Related national indicator:</b> <b>DNS-1.1.a</b>
-          </a>
-        </div>
-
-        <div class="col d-grid gap-2">
-          <a href="/sdg-indicators/en/1-2-2" class="btn btn-primary btn-block goal-1 navigation-btn" role="button">
-            <b class="btn-label hidden-sm hidden-xs">Next indicator</b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </div>
-      
-    <!---2 Btns if there is no corresponding Indicator-->
+      <div class="col d-grid gap-2">
+        <a href="/sdg-indicators/en/1-4-1" class="btn btn-primary btn-block goal-1 navigation-btn" role="button">
+          <b class="btn-label hidden-sm hidden-xs">Next indicator </b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+      </div>
     
   </div>
 </div>
@@ -521,8 +512,8 @@ data-event-label="high"
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="&quot;&quot;"
-  data-graphlimits="null"
+  data-startvalues="null"
+  data-graphlimits="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
   data-spangaps="true"
@@ -530,13 +521,13 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
+  data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;COMMENT_OBS&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;p&quot;,&quot;s&quot;,&quot;e&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
-  data-graphstepsize="[{&quot;step&quot;:1.0}]"
+  data-graphstepsize="[{&quot;step&quot;:10.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -925,8 +916,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Time series available </th>
+        <td>
           
+            <ul style="padding-left: 25px;"><li>Arbeitslose Leistungsbezieher</li> <li> Bevölkerung mit Krankenversicherungsschutz</li></ul>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1342,7 +1344,7 @@ data-event-label="Change to Sources tab"
 
             
               
-                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-01-02-01.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-01-03-01a.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
                   Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
                 </a>
               
@@ -1363,8 +1365,34 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
           
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-01-02-01b.pdf" target="_blank">
+                   <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1692,6 +1720,43 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://statistik.arbeitsagentur.de/SiteGlobals/Forms/Suche/Einzelheftsuche_Formular.html?nn=1184484&topic_f=alo-zeitreihe-dwo" target="_blank">
+                  Arbeitslose und Arbeitslosenquoten – Monats- und Jahreszahlen ab 1950, Tabelle 2.6.1 <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -1717,33 +1782,77 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://statistik.arbeitsagentur.de/SiteGlobals/Forms/Suche/Einzelheftsuche_Formular.html?nn=1524052&topic_f=zeitreihekreise-zr-gruarb" target="_blank">
+                  Grundsicherung für Arbeitsuchende (SGB II) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td>
           
-      
-      
-      
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://statistik.arbeitsagentur.de/SiteGlobals/Forms/Suche/Einzelheftsuche_Formular.html?nn=1524082&topic_f=arbeitslosengeld-zr-alg" target="_blank">
+                  Leistungen SGB III <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
       
       
-      
-        
-          
+  
       
       
       
@@ -2472,8 +2581,6 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2491,12 +2598,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240515063425'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240515065608'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240515063425"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240515065608"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
