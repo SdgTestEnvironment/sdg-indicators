@@ -4246,25 +4246,10 @@ opensdg.chartTypes.base = function(info) {
             }
         }],
     };
-
-
-    if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
-      overrides.options = {
-          scales: {
-            yAxes: [{
-              ticks: {
-                stepSize: info.graphStepsize.step,
-              }
-            }]
-          }
-      };
-    }
-
     // Add these overrides onto the normal config, and return it.
     _.merge(config, overrides);
     return config;
 }
-
   opensdg.chartTypes.bar = function (info) {
     var config = opensdg.chartTypes.base(info);
     var overrides = {
@@ -4291,19 +4276,6 @@ opensdg.chartTypes.base = function(info) {
             dataset.stack = JSON.stringify(disaggregation);
         });
     }
-
-    if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
-      overrides.options = {
-          scales: {
-            yAxes: [{
-              ticks: {
-                stepSize: info.graphStepsize.step,
-              }
-            }]
-          }
-      };
-    }
-
     // Manually set the borderWidths to 0 to avoid a weird border effect on the bars.
     config.data.datasets.forEach(function(dataset) {
         dataset.borderWidth = 0;
@@ -4312,7 +4284,6 @@ opensdg.chartTypes.base = function(info) {
     _.merge(config, overrides);
     return config;
 }
-
   opensdg.convertBinaryValue = function (value) {
     if (typeof value === 'string') {
         value = parseInt(value, 10);
@@ -4488,22 +4459,22 @@ function createSelectionsTable(chartInfo) {
  * @return null
  */
 function createTableTargetLines(graphAnnotations) {
-    // var targetLines = graphAnnotations.filter(function (a) { return a.preset === 'target_line'; });
-    // var $targetLines = $('#tableTargetLines');
-    // $targetLines.empty();
-    // targetLines.forEach(function (targetLine) {
-    //     var targetLineLabel = targetLine.label.content;
-    //     if (!targetLineLabel) {
-    //         targetLineLabel = opensdg.annotationPresets.target_line.label.content;
-    //     }
-    //     $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + alterDataDisplay(targetLine.value, targetLine, 'target line') + '</dd>');
-    // });
-    // if (targetLines.length === 0) {
-    //     $targetLines.hide();
-    // }
-    // else {
-    //     $targetLines.show();
-    // }
+    var targetLines = graphAnnotations.filter(function (a) { return a.preset === 'target_line'; });
+    var $targetLines = $('#tableTargetLines');
+    $targetLines.empty();
+    targetLines.forEach(function (targetLine) {
+        var targetLineLabel = targetLine.label.content;
+        if (!targetLineLabel) {
+            targetLineLabel = opensdg.annotationPresets.target_line.label.content;
+        }
+        $targetLines.append('<dt>' + targetLineLabel + '</dt><dd>' + alterDataDisplay(targetLine.value, targetLine, 'target line') + '</dd>');
+    });
+    if (targetLines.length === 0) {
+        $targetLines.hide();
+    }
+    else {
+        $targetLines.show();
+    }
 }
 
 /**
@@ -4539,15 +4510,13 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             'class': table_class,
             'width': '100%'
         });
+
         var tableTitle = MODEL.chartTitle;
         if (isProxy) {
             tableTitle += ' ' + PROXY_PILL;
         }
-        if (MODEL.chartSubtitle) {
-          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
-        } else {
-          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
-        }
+        currentTable.append('<caption>' + tableTitle + '</caption>');
+
         var table_head = '<thead><tr>';
 
         var getHeading = function (heading, index) {
@@ -4571,9 +4540,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
-                //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
-                //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null &&  data[index] !== undefined ?  data[index] : '.') + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ? data[index] : '-') + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
@@ -4645,28 +4612,24 @@ function setDataTableWidth(table) {
     });
 
     table.removeAttr('style width');
-    table.css('width', '100%');
-    // var totalWidth = 0;
-    // var column = 0;
-    // table.find('thead th').each(function () {
-    //     column += 1;
-    //     if ($(this).data('width')) {
-    //         totalWidth += $(this).data('width');
-    //         console.log('a) Column ', column, ': ',  $(this).data('width'), ', Total: ' + totalWidth);
-    //     } else {
-    //         totalWidth += $(this).width();
-    //         console.log('b) Column ', column + ': ',  $(this).width(), ', Total: ' + totalWidth);
-    //     }
-    // });
+
+    var totalWidth = 0;
+    table.find('thead th').each(function () {
+        if ($(this).data('width')) {
+            totalWidth += $(this).data('width');
+        } else {
+            totalWidth += $(this).width();
+        }
+    });
 
     // ascertain whether the table should be width 100% or explicit width:
-    // var containerWidth = table.closest('.dataTables_wrapper').width();
-    // console.log('Table: ', totalWidth, 'Container: ', containerWidth);
-    // if (totalWidth > containerWidth) {
-    //     table.css('width', totalWidth + 'px');
-    // } else {
-    //     table.css('width', '100%');
-    // }
+    var containerWidth = table.closest('.dataTables_wrapper').width();
+
+    if (totalWidth > containerWidth) {
+        table.css('width', totalWidth + 'px');
+    } else {
+        table.css('width', '100%');
+    }
 }
 
 /**
