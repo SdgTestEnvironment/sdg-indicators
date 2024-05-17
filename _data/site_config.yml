@@ -1,195 +1,472 @@
-
-#Dezimaltrenner
-decimal_separator: ','
-
-##Qualitätskennzeichen
-observation_attributes:
-  - field: COMMENT_OBS
-    label: ''
-  - field: test
-    label: ''
-
-accessible_charts: true
-accessible_tabs: true
-# analytics:
-#  ua: ''
-#  gtag: ''
-#  gtm: ''
-#  ga_prod: 'G-5V7YNZ06KS'
+analytics:
+  ua: ''
+  gtag: ''
+  gtm: ''
 breadcrumbs:
-  goal:
-    - path: /
-      label: general.home
-    - path: /goals
-      label: general.goals
-  indicator:
-    - path: /
-      label: general.home
-    - path: /goals
-      label: general.goals
-  post:
-    - path: /
-      label: general.home
-    - path: /news
-      label: menu.updates
-contrast_type: default
+  goal: []
+  indicator: []
+  post: []
 cookie_consent_form:
   enabled: true
 country:
-  name: Germany
-  adjective: German
+  name: UK
+  adjective: UK
 create_goals:
-  layout: goal-by-target
-  previous_next_links: true
-  goals: []
-create_indicators:
-  layout: indicator
-  previous_next_links: true
+  previous_next_links: false
+  goals:
+    - goal: 1
+      content: >-
 
+        Goal 1 calls for the eradication of poverty in all its forms. It envisions:
+
+        -	shared prosperity
+
+        -	a basic standard of living
+
+        -	social protection benefits for people everywhere - including the poorest and most vulnerable
+
+        It also seeks to ensure equal rights and access to economic and natural resources.
+      heading: Goal 1 - No Poverty
+      content_heading: End poverty in all its forms everywhere
+    - goal: 2
+      content: >-
+
+        Goal 2 seeks to:
+
+        -	end hunger and malnutrition
+
+        -	ensure access to safe, nutritious, and sufficient food
+
+
+        Achieving this goal will largely depend on:
+
+        -	promoting sustainable production systems
+
+        -	increasing investment in rural infrastructure and agricultural research and development
+      heading: Goal 2 - Zero Hunger
+      content_heading: End hunger, achieve food security and improved nutrition and promote sustainable agriculture
+    - goal: 3
+      content: >-
+
+        Goal 3 aims to ensure the health and promote the well-being of everyone (of all ages) by:
+
+        -	improving reproductive, maternal and child health
+
+        -	ending epidemics of major contagious diseases
+
+        -	reducing non-contagious diseases
+
+        -	promoting mental health and well-being
+
+        -	reducing behavioural and environmental health-risk factors
+      heading: Goal 3 - Good Health and Well-Being
+      content_heading: Ensure healthy lives and promote well-being for all at all ages
+    - goal: 4
+      content: >-
+
+        Goal 4 seeks to:
+
+        -	ensure access to fair, impartial and quality education through all stages of life
+
+        -	increase the number of young people and adults who have the relevant skills for employment, decent jobs, and entrepreneurship
+
+        -	eliminate gender and income disparities in access to education
+      heading: Goal 4 - Quality Education
+      content_heading: Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all
+    - goal: 5
+      content: >-
+
+        Goal 5 aims to achieve gender equality by:
+
+        -	ending all forms of discrimination, violence and harmful practices against women and girls
+
+        -	ensuring the full participation of women and equal opportunities for leadership at all levels of political and economic decision making
+      heading: Goal 5 - Gender Equality
+      content_heading: Achieve gender equality and empower all women and girls
+    - goal: 6
+      content: >-
+
+        Goal 6 calls for ensuring universal access to:
+
+        -	safe and affordable drinking water
+
+        -	sanitation and hygiene
+
+        It also aims to:
+
+        -	end defecation in the open
+
+        -	improve water quality and water use efficiency
+
+        -	encourage sustainable abstractions and supply of freshwater
+      heading: Goal 6 - Clean Water and Sanitation
+      content_heading: Ensure availability and sustainable management of water and sanitation for all
+    - goal: 7
+      content: >-
+
+        Goal 7 calls for:
+
+        -	ensuring universal access to modern energy services
+
+        -	improving energy efficiency
+
+        -	increasing the share of renewable energy
+
+
+        To accelerate the transition to an affordable, reliable and sustainable energy system that fulfils these demands countries need to:
+
+        -	 facilitate access to clean energy research and technology
+
+        -	 promote investment in resource and energy-efficient solutions and related infrastructure
+      heading: Goal 7 - Affordable and Clean Energy
+      content_heading: Ensure access to affordable, reliable, sustainable and modern energy for all
+    - goal: 8
+      content: >-
+
+        Goal 8 recognises the importance of sustained economic growth and high levels of economic productivity for:
+
+        -	the creation of well-paid quality jobs
+
+        -	progressive improvement of resource efficiency in consumption and production
+
+
+        It calls for:
+
+        -	opportunities for full employment and decent work for all
+
+        -	the eradication of forced labour, human trafficking and child labour
+
+        -	the promotion of labour rights and safe and secure working environments
+      heading: Goal 8 - Decent Work and Economic Growth
+      content_heading: Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all
+    - goal: 9
+      content: >-
+
+        Goal 9 calls for building resilient and sustainable infrastructure and promotes inclusive and sustainable industrialisation.
+        It also recognises the importance of research and innovation for finding lasting solutions to social, economic, and environmental challenges.
+      heading: Goal 9 - Industry, Innovation and Infrastructure
+      content_heading: Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation
+    - goal: 10
+      content: >-
+
+        Goal 10 addresses inequalities within countries, including:
+
+        -	income
+
+        -	age
+
+        -	sex
+
+        -	disability
+
+        -	race
+
+        -	ethnicity
+
+        -	origin
+
+        -	religion
+
+        -	economic
+
+        -	any other status
+
+
+        It also addresses inequalities among countries (including those related to representation) and calls for the orderly and safe migration
+        and mobility of people.
+      heading: Goal 10 - Reduced Inequalities
+      content_heading: Reduce inequality within and among countries
+    - goal: 11
+      content: >-
+
+        Goal 11 aims to renew and plan cities and other human settlements in a way that offers opportunities for all, whilst reducing resource use
+        and environmental impact. It calls for access for all to:
+
+        -	basic services
+
+        -	energy
+
+        -	housing
+
+        -	transportation
+
+        -	green public spaces
+      heading: Goal 11 - Sustainable Cities and Communities
+      content_heading: Make cities and human settlements inclusive, safe, resilient and sustainable
+    - goal: 12
+      content: >-
+
+        Goal 12 calls for a comprehensive set of actions from businesses, policy-makers, researchers, and consumers to adapt to sustainable practices.
+        It envisions sustainable production and consumption based on advanced technological capacity, resource efficiency and reduced global waste.
+      heading: Goal 12 - Responsible Consumption and Production
+      content_heading: Ensure sustainable consumption and production patterns
+    - goal: 13
+      content: >-
+
+        Goal 13 seeks to implement the commitment of the United Nations Framework Convention on Climate Change to achieving a climate-neutral world.
+
+
+        With a particular focus on supporting the least developed countries, it also aims to strengthen countries’ resilience and adaptive capacity to climate-related natural hazards and the resulting disasters.
+      heading: Goal 13 - Climate Action
+      content_heading: Take urgent action to combat climate change and its impacts
+    - goal: 14
+      content: >-
+
+        Goal 14 aims to protect and ensure the sustainable use of oceans. This includes:
+
+        -	the reduction of marine pollution
+
+        -	the impacts of ocean acidification
+
+        -	the ending of overfishing
+
+        -	the conservation of marine and coastal areas and ecosystems
+
+
+        Goal 14 has strong interdependencies with a broad range of other Sustainable Development Goals (SDGs), as oceans:
+
+        -	sustain coastal economies and livelihoods
+
+        -	contribute to food production
+
+        -	remove carbon dioxide from the atmosphere
+      heading: Goal 14 - Life Below Water
+      content_heading: Conserve and sustainably use the oceans, seas and marine resources for sustainable development
+    - goal: 15
+      content: >-
+
+        Goal 15 seeks to protect, restore, and promote the conservation and sustainable use of terrestrial, inland-water and mountain ecosystems by:
+
+        -	managing forests sustainably
+
+        -	halting deforestation
+
+        -	combating desertification
+
+        -	restoring degraded land and soil
+
+        -	halting biodiversity loss
+
+        -	protecting threatened species
+      heading: Goal 15 - Life on Land
+      content_heading: Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss
+    - goal: 16
+      content: >-
+
+        Goal 16 calls for peaceful and inclusive societies based on:
+
+        -	respect for human rights
+
+        -	the protection of the most vulnerable
+
+        -	the rule of law and good governance at all levels
+
+
+        It also envisions transparent, effective, and accountable institutions.
+      heading: Goal 16 - Peace, Justice and Strong Institutions
+      content_heading: Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels
+    - goal: 17
+      content: >-
+
+        Goal 17 calls for a global partnership for sustainable development. The goal highlights the importance of:
+
+        -	global macroeconomic stability
+
+        -	trade for developing countries
+
+        -	equitable rules for governing international trade
+
+        -	access to science, technology and innovation - particularly internet-based information and communications technology
+
+
+        The goal also highlights the need to mobilise financial resources for developing countries from international sources (and through strengthened
+        domestic capacities) for revenue collection.
+      heading: Goal 17 - Partnerships for the Goals
+      content_heading: Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development
+layout: goal-by-target-vertical
+create_indicators:
+  previous_next_links: false
+  layout: indicator
 create_pages:
-  - filename: ''
-    folder: /
-    layout: frontpage-alt
-    title: ''
   - filename: ''
     folder: /goals
     layout: goals
-    title: ''
+    title: UK data for the Sustainable Development Goals
   - filename: ''
     folder: /reporting-status
     layout: reportingstatus
-    title: ''
-  - filename: indicators.json
-    folder: /
-    layout: indicator-json
-    title: ''
+    title: Reporting Status
   - filename: ''
     folder: /search
     layout: search
-    title: ''
+    title: Search results
 custom_css: []
 custom_js:
   - /assets/js/custom.js
-data_edit_url: data
+data_edit_url: ''
 data_fields:
   units: ''
   series: ''
-#date_formats: []
 date_formats:
-- type: standard
-  language: de
-  format: "%d.%m.%Y"
+  - type: standard
+    language: en
+    format: '%d %B %Y'
 disclaimer:
-  phase: ''
-  message: ''
+  phase: BETA
+  message: >-
+    Your feedback will help us continue to improve the site. Complete the short survey to share your thoughts.
+    <br>
+    <br><b>Since September 2023 we have <a href="https://www.ons.gov.uk/aboutus/whatwedo/statistics/changestoourpublicationsandactivities">paused</a> the uploading of data reported on this site. However, the hyperlinks for the indicator data sources could be used to see where the data is published and whether newer data will become available in future. You can also find up to date SDG data on the <a href="https://unstats.un.org/sdgs/dataportal/">UN SDG website</a> which reports globally comparable data.</b>
+  hidden: false
 email_contacts:
   questions: sdg-indicators@destatis.de
   suggestions: sdg-indicators@destatis.de
   functional: sdg-indicators@destatis.de
 environment: staging
-favicons: favicon.io
 footer_language_toggle: none
 footer_menu:
-  - path: /imprint/
-    translation_key: menu.imprint
+  - path: /contact-us
+    translation_key: menu.contact_us
+  - path: 'https://twitter.com/ONS'
+    translation_key: general.twitter
+  - path: /cookies-no-javascript/
+    translation_key: menu.cookies
+  - path: /privacy-notice/
+    translation_key: Privacy
+  - path: /accessibility-statement/
+    translation_key: Accessibility statement
 frontpage_cards:
-  - title: Alle Daten herunterladen
-    content: |
-      Hier können Sie alle Daten als zip-Datei herunterladen <br>
+  - title: Download all data
+    content: ''
     include: components/download-all-data.html
     button_label: ''
     button_link: ''
     rule_color: ''
+  - title: Publications
+    content: >
+
+      [Leaving no one behind - a review of who has been most affected by the coronavirus pandemic in the UK](https://www.ons.gov.uk/economy/environmentalaccounts/articles/leavingnoonebehindareviewofwhohasbeenmostaffectedbythecoronaviruspandemicintheuk/december2021)
+
+
+      [UK Sustainable Development Goals: use of non-official sources](https://www.ons.gov.uk/economy/environmentalaccounts/methodologies/uksustainabledevelopmentgoalsuseofnonofficialsources)
+
+      <br/><br/>
+
+      <a href="./publications" aria-label="More publications">More
+      publications...</a>
+    include: ''
+    button_label: ''
+    button_link: ''
+    rule_color: ''
+  - title: Useful resources
+    content: >
+
+      [The Global Goals](https://www.globalgoals.org/)
+
+
+      [Implementing the Sustainable Development
+      Goals](https://www.gov.uk/government/publications/implementing-the-sustainable-development-goals/implementing-the-sustainable-development-goals--2)
+
+
+      <a href="./about/#more-resources" aria-label="More resources">More
+      resources...</a>
+    include: ''
+    button_label: ''
+    button_link: ''
+    rule_color: ''
 frontpage_goals_grid:
-  title: XXX
+  title: xx data for the Sustainable Development Goals
   description: >-
-     Einfach einen Indikator anklicken...
-frontpage_heading: ''
-frontpage_instructions: ''
+    Select each goal for indicator data.
 frontpage_introduction_banner:
-  title: frontpage.intro_title
-  description: frontpage.intro_body
-goal_image_base: https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals
-
-
-goal_image_extension: ''
+  title: xx data for the Sustainable Development Goals
+  description: >-
+    xxxx
+goal_image_base: 'https://SdgTestEnvironment.github.io/sdg-indicators/assets/img/goals'
+goal_image_extension: svg
 goals_page:
-  title: general.goals
-  description: goal.description
+  title: UK data for the Sustainable Development Goals
+  description: >-
+    Select each goal for indicator data.
 graph_color_headline: '#004466'
 graph_color_headline_high_contrast: '#55a6e5'
-graph_color_set: custom #accessible
-graph_color_list: ['ee0000','436eee','006633','ffd700','ba55d3','66cdaa']
+graph_color_set: accessible
+graph_color_list: []
 graph_color_number: 0
 graph_title_from_series: true
-header:
-  include: header-menu-left-aligned.html
-header_language_toggle: dropdown
-hide_empty_metadata: true
+header_language_toggle: none
+hide_empty_metadata: false
 hide_single_series: true
 hide_single_unit: true
+ignored_disaggregations:
+  - Activity (default)
+  - Age (default)
+  - Urbanisation (default)
 indicator_config_form:
   enabled: false
   dropdowns: []
-  repository_link: /tree/develop/indicator-config
+  repository_link: ''
   translation_link: ''
 indicator_data_form:
-  enabled: true
-  repository_link: /tree/develop/data
+  enabled: false
+  repository_link: ''
 indicator_metadata_form:
-  enabled: true
+  enabled: false
   dropdowns: []
-  repository_link: /tree/develop/meta
+  repository_link: ''
   translation_link: ''
   language: ''
-  scopes:
-    - national
-    - global
+  scopes: []
   exclude_fields: []
   translated: false
+indicator_tabs:
+  tab_1: ''
+  tab_2: ''
+  tab_3: ''
+  tab_4: ''
 languages:
-  - de
+  - en
 languages_public: []
 logos: []
-#map_layers: []
 map_layers:
-- min_zoom: 0
-  max_zoom: 20
-  staticBorders: false
-  subfolder: map
-  label: indicator.map
-- min_zoom: 0
-  max_zoom: 20
-  staticBorders: false
-  subfolder: Regionale Anpassungsschichten
-  label: Regionale Anpassungsschichten
-- min_zoom: 0
-  max_zoom: 20
-  staticBorders: false
-  subfolder: Mikrozensus
-  label: Mikrozensus
-- min_zoom: 0
-  max_zoom: 20
-  staticBorders: false
-  subfolder: Statistische Region
-  label: Statistische Region
-- min_zoom: 0
-  max_zoom: 20
-  staticBorders: false
-  subfolder: NI_Hannover_Region
-  label: indicator.map
-
+  - subfolder: country
+    label: Country
+    min_zoom: 4
+    max_zoom: 6
+    staticBorders: true
+  - subfolder: regions
+    label: Regions
+    min_zoom: 6
+    max_zoom: 8
+    staticBorders: true
+  - subfolder: local_authorities
+    label: Local Authorities
+    min_zoom: 9
+    max_zoom: 12
+    staticBorders: true
 map_options:
-  disaggregation_controls: true
-  minZoom: 5
+  disaggregation_controls: false
+  minZoom: 4
   maxZoom: 10
-#  limits: chroma.limits(data, 'e', 5)
-  tileURL: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+  tileURL: 'https://{s}.tile.jawg.io/{id}/{z}/{x}/{y}{r}.png?access-token={accessToken}'
   tileOptions:
-    id: 'mapbox.light'
-    accessToken: 'pk.eyJ1IjoiY2hyaXN0b3BoNDcxMSIsImEiOiJjanp1cjdpbzQwMTFwM29tdzJ2ZTh3Ymo4In0.C7_7e3AFcMaF_QBg6MaT0Q'
-    attribution: '<a href="https://www.mapbox.com">Mapbox</a> | <a href="http://www.bkg.bund.de">© GeoBasis-DE / BKG | <a href="https://www.openstreetmap.org/copyright">&copy; OpenStreetMap</a>'
-  colorRange: chroma.brewer.OrRd
+    id: ed56748f-29f9-465e-9269-c715674ee5ff
+    accessToken: yrcGMvxCkRD6zZBF4x3mnAT3OGQJstAj7JvG1iy1UjEdy6JFeDfnzKvXrTK07CxF
+    attribution: >-
+      <a href="http://jawg.io" title="Provider of map tiles"
+      target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a
+      href="https://www.openstreetmap.org/copyright" title="Provider of map visual data copywrite information">OpenStreetMap</a>
+      contributors | <a href="http://geoportal.statistics.gov.uk/" title="The Open Geography portal from the Office for National Statistics">ONS</a>
+  colorRange:
+    -  '#c4e1c6'
+    -  '#b0d1b3'
+    -  '#9bc2a1'
+    -  '#87b28f'
+    -  '#74a37c'
+    -  '#60946b'
+    -  '#4d8559'
+    -  '#3a7747'
+    -  '#276836'
   noValueColor: '#f0f0f0'
   styleNormal:
     weight: 1
@@ -210,63 +487,128 @@ map_options:
     color: '#172d44'
     dashArray: '5,5'
 menu:
+  - path: /
+    translation_key: general.home
+    dropdown: []
   - path: /goals
     translation_key: general.goals
     dropdown: []
-  - path: /indicator_list
-    translation_key: menu.indicator_list
-    dropdown: []
-  - path: /reporting-status
+  - path: /reporting-status/
     translation_key: menu.reporting_status
     dropdown: []
-  - path: /about
+  - path: /publications/
+    translation_key: menu.publications
+    dropdown: []
+  - path: /updates/
+    translation_key: menu.updates
+    dropdown: []
+  - path: /faq/
+    translation_key: menu.faq
+    dropdown: []
+  - path: /about/
     translation_key: menu.about
     dropdown: []
-#  - path: /faq
-#    translation_key: menu.faq
-#    dropdown: []
-#  - path: /news
-#    translation_key: menu.updates
-#    dropdown: []
-metadata_edit_url: metadata
+metadata_edit_url: ''
 metadata_tabs: []
+meta_tags:
+  - path: ''
+    name: description
+    content: UK data for the Sustainable Development Goals (SDGs) – reported by the Office for National Statistics
+  - path: '1'
+    name: description
+    content: Goal 1 - No poverty - UK Indicators For The Sustainable Development Goals
+  - path: '2'
+    name: description
+    content: Goal 2 - Zero hunger - UK Indicators For The Sustainable Development Goals
+  - path: '3'
+    name: description
+    content: Goal 3 - Good Health and Well-Being - UK Indicators For The Sustainable Development Goals
+  - path: '4'
+    name: description
+    content: Goal 4 - Quality Education - UK Indicators For The Sustainable Development Goals
+  - path: '5'
+    name: description
+    content: Goal 5 - Gender Equality - UK Indicators For The Sustainable Development Goals
+  - path: '6'
+    name: description
+    content: Goal 6 - Clean Water and Sanitation - UK Indicators For The Sustainable Development Goals
+  - path: '7'
+    name: description
+    content: Goal 7 - Affordable and Clean Energy - UK Indicators For The Sustainable Development Goals
+  - path: '8'
+    name: description
+    content: Goal 8 - Decent Work and Economic Growth - UK Indicators For The Sustainable Development Goals
+  - path: '9'
+    name: description
+    content: Goal 9 - Industry, Innovation and Infrastructure - UK Indicators For The Sustainable Development Goals
+  - path: '10'
+    name: description
+    content: Goal 10 - Reduced Inequalities - UK Indicators For The Sustainable Development Goals
+  - path: '11'
+    name: description
+    content: Goal 11 - Sustainable Cities and Communities - UK Indicators For The Sustainable Development Goals
+  - path: '12'
+    name: description
+    content: Goal 12 - Responsible Consumption and Production - UK Indicators For The Sustainable Development Goals
+  - path: '13'
+    name: description
+    content: Goal 13 - Climate Action - UK Indicators For The Sustainable Development Goals
+  - path: '14'
+    name: description
+    content: Goal 14 - Life Below Water - UK Indicators For The Sustainable Development Goals
+  - path: '15'
+    name: description
+    content: Goal 15 - Life on Land - UK Indicators For The Sustainable Development Goals
+  - path: '16'
+    name: description
+    content: Goal 16 - Peace, Justice and Strong Institutions - UK Indicators For The Sustainable Development Goals
+  - path: '17'
+    name: description
+    content: Goal 17 - Partnerships for the Goals - UK Indicators For The Sustainable Development Goals
 news:
   category_links: false
-non_global_metadata: indicator.national_metadata
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
 progress_status:
   status_heading: ''
   status_types: []
-#remote_data_prefix: 'https://wohnungNDS.github.io/IM_Data/'
-remote_data_prefix: 'https://christoph-lsn.github.io/IM_Data/'
+progressive_web_app:
+  enabled: true
+  name: UK SDG Data App
+  short_name: UK SDG App
+  precaching: true
+remote_data_prefix: >-
+  https://ONSdigital.github.io/sdg-data
 reporting_status:
-  title: status.reporting_status
-  description: status.description
-  disaggregation_tabs: false
+  title: Reporting status
+  description: "xxx"
+  disaggregation_tabs: true
   status_types:
     - value: complete
       label: status.reported
       hide_on_goal_pages: false
-    - value: inprogress
-      label: status.statistics_in_progress
-      hide_on_goal_pages: false
     - value: notstarted
-      label: status.exploring_data_sources
+      label: status.no_data_available
       hide_on_goal_pages: false
-    - value: notapplicable
-      label: status.not_applicable
-      hide_on_goal_pages: false
-#repository_url_data: 'https://github.com/WohnungNDS/IM_Data'
 repository_url_data: 'https://github.com/SdgTestEnvironment/sdg-data'
 repository_url_site: 'https://github.com/SdgTestEnvironment/sdg-indicators'
 search_index_boost: []
-search_index_extra_fields: []
-series_toggle: true
-sharethis_property: ''
+search_index_extra_fields:
+  - indicator_available
+  - graph_title
+  - data_keywords
 site_config_form:
-  enabled: false
+  enabled: true
   dropdowns: []
-  repository_link: /tree/develop/_data
+  repository_link: '/tree/develop/_data'
   translation_link: ''
+time_series_attributes:
+  - field: COMMENT_TS
+    label: indicator.footnote
+  - field: DATA_LAST_UPDATE
+    label: metadata_fields.national_data_update_url
+use_new_config_forms: true
 validate_indicator_config: false
 validate_site_config: false
 x_axis_label: ''
