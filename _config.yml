@@ -317,7 +317,7 @@ hide_single_unit: true
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
-  - jekyll-toc
+
 
 # Use a remote Jekyll theme.
 #remote_theme: brockfanning/open-sdg@map-series-unit-behaviors
