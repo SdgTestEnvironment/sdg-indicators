@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240517101243">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240517105851">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -259,31 +259,23 @@ layout-indicator
 
 
   <div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
             <a class="language-toggle-link" href="/sdg-indicators/1-2-2/">
                 Deutsch
             </a>
-        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
-            <span>
-                English
-            </span>
         </li></ul>
 </div>
-
 
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
     <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
             <a class="language-toggle-link" href="/sdg-indicators/1-2-2/">
                 Deutsch
             </a>
-        </li><li class="language-option-en list-inline-item" style="opacity:0.3">
-            <span>
-                English
-            </span>
         </li></ul>
-</div>
-</span><a title="" aria-label=""
+</div></span><a title="" aria-label=""
     data-contrast-switch-to="" role="button" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -432,8 +424,26 @@ data-event-label="high"
   
 
   
+<div class="row metadata-available-indicator">
+  <div class="col-xs-12">
+    <h2>Percentage of the population living in households at risk of persistent poverty</h2>
+  </div>
+</div>
+
 
   
+<div class="row proxy-banner my-4 mx-1 px-2 gx-2">
+  <div class="col col-auto align-self-center">
+    <span aria-describedby="proxy-description" class="proxy-pill">Proxy</span>
+  </div>
+  <div class="col col-auto align-self-center">
+    =
+  </div>
+  <div id="proxy-description" class="col">
+    Diese Zeitreihe entspricht nicht den globalen Metadaten
+  </div>
+</div>
+
 
   
 
@@ -465,17 +475,17 @@ data-event-label="high"
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Persons at risk of poverty or social exclusion&quot;}]"
-  data-graphlimits="[{&quot;unit&quot;:&quot;Percentage&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:30.0}]"
+  data-startvalues="null"
+  data-graphlimits="null"
   data-stackeddisaggregation=""
   data-graphannotations="null"
   data-graphtargetlines="null"
-  data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
+  data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Persons at risk of poverty or social exclusion&quot;,&quot;At-risk-of-poverty rate&quot;,&quot;Persons living in households with very low work intensity&quot;,&quot;Severely materially and socially deprived persons&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;17 and under&quot;,&quot;18 to 24&quot;,&quot;25 to 49&quot;,&quot;50 to 64&quot;,&quot;65 and over&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;COMMENT_OBS&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;estimated&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="[{&quot;decimals&quot;:1}]"
-  data-proxy=""
+  data-precision="null"
+  data-proxy="proxy"
   data-proxyseries="null"
 >
   
@@ -507,15 +517,251 @@ data-event-label="high"
   <div id="datatables">
 
     
+    <a role="button" href="https://SdgTestEnvironment.github.io/sdg-data/en/headline/1-2-2.csv" class="btn btn-primary btn-download" download="indicator_1-2-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
     <a role="button" href="https://SdgTestEnvironment.github.io/sdg-data/en/data/1-2-2.csv" class="btn btn-primary btn-download" download='indicator_1-2-2.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <p class="no-js-disaggregation-hint"></p>
 
     
     <h3></h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Persons at risk of poverty or social exclusion</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col">Observation status</th>
+        
+        
+        
+        <th scope="col">Unit multiplier</th>
+        
+        
+        
+        <th scope="col" class="table-value">Unit measure</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>6.9</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>8.6</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>7.8</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>6.5</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>7.3</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>9.4</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>7.8</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>8.6</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Percentage (%)</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
     
   </div>
 
+  
+  <div id="datatableFooter">
+    
+    <p>Data source: <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></p>
+    
+    
+    <p>Geographic coverage: Germany</p>
+    
+    
+    <p>Unit of measurement: Percentage</p>
+    
+    
+  </div>
   
 
 </div>
@@ -620,7 +866,7 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Data source:</dt>
-        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/en/home" target="_blank"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
@@ -701,7 +947,7 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Data source:</dt>
-        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/en/home" target="_blank"> Statistical office of the European Union (Eurostat) </a></dd>
+        <dd><a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></dd>
         
 
         
@@ -851,8 +1097,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Indicator description </th>
+        <td>
           
+            <p>The percentage of people who are living in households which are deemed at risk of poverty in the national context. Monitoring national poverty is important for country-specific development agendas. National poverty lines are used to make more accurate estimates of poverty consistent with the country’s specific economic and social circumstances, and are not intended for international comparisons of poverty rates.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -912,18 +1169,51 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Definitions </th>
+        <td>
           
-      
-      
-      
-        
+            <p>Household - A ‘private household’ means “a person living alone or a group of people who live together in the same private dwelling and share expenditures, including the joint provision of the essentials of living”. EU-SILC implementing regulation number 1983/2003 on updated definitions, defines households in terms of sharing household expenses and (for non-permanent members) in terms of duration of stay and (for temporarily absent members) in terms of duration of absence. Definitions sourced from “Income and Living Conditions” Metadata (Eurostat). <br /> <br /> Household income - The total disposable income of a household is calculated by adding together the personal income received by all of household members plus income received at household level. Missing income information is imputed. <br /> <br /> Disposable household income includes i) All income from work (employee wages and self-employment earnings), ii) Private income from investment and property, iii) Transfers between households, iv) All social transfers received in cash including old-age pensions  Note - Some of the income components are mandatory only from 2007 - Imputed rent, Interest paid on mortgage, and v) Employer’s social insurance contributions. From 2007 onwards, all countries have to supply gross income information. <br /> The current definition of total household disposable income used for the calculation of EU-SILC based indicators excludes i) Imputed rent - i.e. money that one saves on full (market) rent by living in one’s own accommodation or in accommodation rented at a price that is lower than the market rent, and ii) Non monetary income components, in particular value of goods produced for own consumption, social transfers in kind and non-cash employee income except company cars. <br /> <br /> Equivalence scale - To take into account the impact of differences in household size and composition, the total disposable household income is “equivalised”. The equivalised income attributed to each member of the household is calculated by dividing the total disposable income of the household by the equivalisation factor. <br /> <br /> Equivalisation factors can be determined in various ways. Eurostat applies an equivalisation factor calculated according to the OECD-modified scale first proposed in 1994. This gives a weight of 1.0 to the first person aged 14 or more, a weight of 0.5 to other persons aged 14 or more and a weight of 0.3 to persons aged 0-13.</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Calculations </th>
+        <td>
           
+            <p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Other information </th>
+        <td>
+          
+            <p>At persistent risk of poverty rate by age and gender (cut-off point - 60% of median equivalised income) This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1182,8 +1472,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Tier category </th>
+        <td>
           
+            <p>Tier II</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1486,8 +1787,8 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
+        <h4 class="sr-only">Data source 1</h4>
       
-        <h4>Data source 1</h4>
       
       <table class="table metadata-content">
   <tbody>
@@ -1575,399 +1876,12 @@ data-event-label="Change to Sources tab"
       
       
       
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </tbody>
-</table>
-
-    </div>
-    
-    
-    
-    <div class="col-md-6">
-      
-      
-        <h4>Data source 2</h4>
-      
-      <table class="table metadata-content">
-  <tbody>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      
-      
-      
       
       <tr>
-        <th scope="row"> </th>
+        <th scope="row">Periodicity </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat/en/home" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgEn/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+            <p>Annual</p>
 
           
         </td>
@@ -1980,10 +1894,10 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row">Organisation </th>
+        <th scope="row">Earliest available data </th>
         <td>
           
-            <p><a href="https://ec.europa.eu/eurostat/en/home" target="_blank"> Statistical office of the European Union (Eurostat) </a></p>
+            <p>1998</p>
 
           
         </td>
@@ -1994,18 +1908,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Geographical coverage </th>
+        <td>
           
-      
-      
-      
-        
+            <p>United Kingdom</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
@@ -2019,63 +1934,8 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_PEPS01N/default/table?lang=en" target="_blank">
-                EU-SILC survey: People at risk of poverty or social exclusion – Eurostat table [ilc_peps01n] <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-      
-      
-  
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-      
-      <tr>
-        <th scope="row"> </th>
-        <td>
-          
-            
-            
-            
-            
-            
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_li02/default/table?lang=en" target="_blank">
-                EU-SILC survey: At-risk-of-poverty rate – Eurostat table [ilc_li02] <span class="visuallyhidden">opens in a new window</span>
+              <a href="http://ec.europa.eu/eurostat/web/income-and-living-conditions/data/database" target="_blank">
+                Persistent at-risk-of-poverty rate by sex and age - EU-SILC survey (ilc_li21) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2096,29 +1956,14 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row"> </th>
+        <th scope="row">Release date </th>
         <td>
           
-            
-            
-            
-            
-            
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ilc_lvhl11n/default/table?lang=en" target="_blank">
-                Persons living in households with very low work intensity – Eurostat table [ilc_lvhl11n] <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
+            May 06, 2020
           
         </td>
         </tr>
         
-      
-  
-      
-      
-      
-      
       
   
       
@@ -2126,18 +1971,10 @@ data-event-label="Change to Sources tab"
       
       
       <tr>
-        <th scope="row"> </th>
+        <th scope="row">Next release </th>
         <td>
           
-            
-            
-            
-            
-            
-              <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_MDSD11__custom_4946119/default/table?lang=en" target="_blank">
-                EU-SILC survey: SSevere material and social deprivation rate – Eurostat table [ilc_mdsd11] <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
+            <p>TBC</p>
 
           
         </td>
@@ -2149,6 +1986,48 @@ data-event-label="Change to Sources tab"
       
       
       
+      <tr>
+        <th scope="row">Statistical classification </th>
+        <td>
+          
+            <p>Official International</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Contact details </th>
+        <td>
+          
+            <p>http://ec.europa.eu/eurostat/help/support</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Other information </th>
+        <td>
+          
+            <p><a href="http://ec.europa.eu/eurostat/cache/metadata/en/ilc_esms.htm">Income and living conditions (ilc) metadata</a></p>
+
+          
+        </td>
+        </tr>
+        
       
   
       
@@ -2261,6 +2140,57 @@ data-event-label="Change to Sources tab"
       
         
           
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -2416,8 +2346,6 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2435,12 +2363,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240517101243'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240517105851'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240517101243"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240517105851"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
