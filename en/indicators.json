@@ -24,7 +24,7 @@
         {
           "id": "1-2-2",
           "title": "Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions",
-          "description": "The percentage of people who are living in households which are deemed at risk of poverty in the national context. Monitoring national poverty is important for country-specific development agendas. National poverty lines are used to make more accurate estimates of poverty consistent with the country’s specific economic and social circumstances, and are not intended for international comparisons of poverty rates.",
+          "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/1-2-2/",
           "status": "complete"
@@ -2027,7 +2027,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-10-1/",
-          "status": "inprogress"
+          "status": "notstarted"
         },
         {
           "id": "17-11-1",
@@ -2091,7 +2091,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/en/17-18-1/",
-          "status": "inprogress"
+          "status": "complete"
         },
         {
           "id": "17-18-2",

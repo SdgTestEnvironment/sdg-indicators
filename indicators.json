@@ -15,7 +15,7 @@
         },
         {
           "id": "1-2-1",
-          "title": "Anteil der Bevölkerung, der durch sozialen Basisschutz/ Sozialschutzsysteme abgedeckt ist, nach Geschlecht, mit getrennter Ausweisung der Kinder, Arbeitslosen, älteren Menschen, Menschen mit Behinderungen, Schwangeren, Neugeborenen, Opfer von Arbeitsunfällen, Armen und Schwachen",
+          "title": "Anteil der Bevölkerung, der unter der nationalen Armutsgrenze lebt, nach Geschlecht und Alter",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-2-1/",
@@ -24,7 +24,7 @@
         {
           "id": "1-2-2",
           "title": "Anteil der Männer, Frauen und Kinder jeden Alters, die in Armut in all ihren Dimensionen nach der jeweiligen nationalen Definition leben",
-          "description": "The percentage of people who are living in households which are deemed at risk of poverty in the national context. Monitoring national poverty is important for country-specific development agendas. National poverty lines are used to make more accurate estimates of poverty consistent with the country’s specific economic and social circumstances, and are not intended for international comparisons of poverty rates.",
+          "description": "",
           "keywords": "",
           "href": "/sdg-indicators/1-2-2/",
           "status": "complete"
@@ -2027,7 +2027,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-10-1/",
-          "status": "inprogress"
+          "status": "notstarted"
         },
         {
           "id": "17-11-1",
@@ -2091,7 +2091,7 @@
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/17-18-1/",
-          "status": "inprogress"
+          "status": "complete"
         },
         {
           "id": "17-18-2",
