@@ -4,6 +4,7 @@ permalink: /strategy/publications/
 layout: page
 ---
 
+
 <div class="flex-container">
   <div class="leftColumn" >
     <div class=collapsibleElements>
@@ -47,10 +48,10 @@ layout: page
     coll[i].addEventListener("click", function() {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
       } else {
-        content.style.display = "block";
+        content.style.maxHeight = (content.scrollHeight + 10) + "px";
       }
     });
   }
