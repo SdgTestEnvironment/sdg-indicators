@@ -3491,7 +3491,7 @@ function getObservationAttributeText(obsAttribute) {
     }
     var label = translations.t(obsAttribute.value);
     if (attributeConfig.label) {
-        label = translations.t(attributeConfig.label) + ': ' + label;
+        label = label + ': ' + translations.t(attributeConfig.label);
     }
     return label;
 }
