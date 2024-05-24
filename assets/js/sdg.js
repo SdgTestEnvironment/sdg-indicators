@@ -4865,7 +4865,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
             return getObservationAttributeFootnoteSymbol(obsAttribute.value);
         });
-        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+        altered += ' ' + obsAttributeFootnoteNumbers.join('x');
     }
 
     return altered;
@@ -4878,7 +4878,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(value) {
-    return value;
+    return value + ': ' + translations.t(value);
 }
 
   /**
