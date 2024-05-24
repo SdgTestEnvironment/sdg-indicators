@@ -12,6 +12,12 @@ opensdg.chartTypes.base = function(info) {
             labels: info.labels,
         },
         options: {
+            layout: {
+              padding: {
+                top: 5
+              }
+            },
+            clip: false,
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
@@ -111,6 +117,22 @@ opensdg.chartTypes.base = function(info) {
             delete config.options.scales.y.max;
         }
         catch (e) { }
+    }
+
+    if (info.graphStepsize && Object.keys(info.graphStepsize).length > 0) {
+      var overrides = {
+        options: {
+          scales: {
+            y: {
+              ticks: {
+                stepSize: info.graphStepsize.step,
+              }
+            }
+          }
+        }
+      }
+      // Add these overrides onto the normal config.
+      $.extend(true, config, overrides);
     }
 
     if (info.graphAnnotations && info.graphAnnotations.length > 0) {
