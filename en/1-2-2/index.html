@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240527113501">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240527131530">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -533,7 +533,7 @@ data-event-label="high"
   data-graphseriesbreaks="[{&quot;value&quot;:9.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Persons at risk of poverty or social exclusion&quot;,&quot;At-risk-of-poverty rate&quot;,&quot;Persons living in households with very low work intensity&quot;,&quot;Severely materially and socially deprived persons&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;COMMENT_OBS&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;p,s,r&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Persons at risk of poverty or social exclusion&quot;,&quot;At-risk-of-poverty rate&quot;,&quot;Persons living in households with very low work intensity&quot;,&quot;Severely materially and socially deprived persons&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Time series&quot;},{&quot;name&quot;:&quot;COMMENT_OBS&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;p,s,r&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
@@ -569,15 +569,931 @@ data-event-label="high"
   <div id="datatables">
 
     
+    <a role="button" href="https://SdgTestEnvironment.github.io/sdg-data/en/headline/1-2-2.csv" class="btn btn-primary btn-download" download="indicator_1-2-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
     <a role="button" href="https://SdgTestEnvironment.github.io/sdg-data/en/data/1-2-2.csv" class="btn btn-primary btn-download" download='indicator_1-2-2.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <p class="no-js-disaggregation-hint"></p>
 
     
     <h3></h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Persons at risk of poverty or social exclusion</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Value</th>
+        
+        
+        
+        <th scope="col" class="table-value">Series</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>20.0</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>19.8</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>18.8</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>18.5</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>17.3</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>20.4</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>21.0</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>21.1</td>
+          
+          
+          
+          <td class="table-value">Persons at risk of poverty or social exclusion</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>15.6</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>15.8</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>16.1</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>16.1</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>16.7</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>16.7</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>16.5</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>16.1</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>16.0</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>14.8</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>16.1</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>16.0</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>14.8</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>14.3</td>
+          
+          
+          
+          <td class="table-value">At-risk-of-poverty rate</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>9.5</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>9.4</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>8.7</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>8.0</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>7.6</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>8.3</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>9.5</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>9.8</td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Persons living in households with very low work intensity</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>5.7</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>4.7</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>3.7</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>3.4</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>3.0</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>4.4</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>4.3</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>6.2</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>6.9</td>
+          
+          
+          
+          <td class="table-value">Severely materially and socially deprived persons</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
     
   </div>
 
+  
+  <div id="datatableFooter">
+    
+    <p>Data source: <a href="https://www.destatis.de/EN" target="_blank"> Federal Statistical Office (Destatis) </a></p>
+    
+    
+    <p>Geographic coverage: Germany</p>
+    
+    
+    <p>Unit of measurement: Percentage</p>
+    
+    
+  </div>
   
 
 </div>
@@ -2572,12 +3488,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240527113501'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240527131530'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240527113501"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240527131530"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
