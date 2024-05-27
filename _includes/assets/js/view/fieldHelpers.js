@@ -109,7 +109,7 @@ function updateObservationAttributes(obsAttributes) {
         if (label.includes(',')) {
           var single_labels = label.split(',');
           console.log("single_labels",single_labels);
-          for (let i = 0; i < labels.length; i++){
+          for (let i = 0; i < single_labels.length; i++){
             var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + single_labels[i] + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + translations.t(single_labels[i]) + '</dd>');
             $listElement.append($listItem);
           };
