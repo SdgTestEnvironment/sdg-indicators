@@ -106,7 +106,15 @@ function updateObservationAttributes(obsAttributes) {
         var label = getObservationAttributeText(obsAttribute),
             num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
-        var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+        if (',' in label) {
+          var labels = label.split(',');
+          for label in label{
+            var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute.label + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+          }
+        }
+        else {
+          var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute.label + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+        }
 
         $listElement.append($listItem);
     });
@@ -127,5 +135,6 @@ function getObservationAttributeText(obsAttribute) {
     if (attributeConfig.label) {
         label = translations.t(attributeConfig.label) + ': ' + label;
     }
+
     return label;
 }
