@@ -108,7 +108,7 @@ function updateObservationAttributes(obsAttributes) {
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         if (label.includes(',')) {
           var labels = label.split(',');
-          for label in label{
+          for label in labels{
             var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute.label + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
           }
         }
