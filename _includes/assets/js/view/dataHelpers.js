@@ -69,7 +69,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     if (obsAttributes.length > 0) {
 
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            return obsAttribute.value //getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
