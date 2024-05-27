@@ -3476,14 +3476,14 @@ function updateObservationAttributes(obsAttributes) {
         console.log(label);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         if (label.includes(',')) {
-          var labels = label.split(',');
-          console.log(labels);
+          var single_labels = label.split(',');
+          console.log("single_labels",labels);
           for (let i = 0; i < labels.length; i++){
-            var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + labels[i] + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + translations.t(labels[i]) + '</dd>');
+            var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + single_labels[i] + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + translations.t(single_labels[i]) + '</dd>');
           };
         }
         else {
-          var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute.value + ':' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+          var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + obsAttribute.value + '::' + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         }
 
         $listElement.append($listItem);
