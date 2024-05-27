@@ -46,14 +46,14 @@ function getHeadline(selectableFields, rows) {
  * @param {Array} rows
  * @return {Array} Prepared rows
  */
-function prepareData(rows) {
+function prepareData(rows, context) {
   return rows.map(function(item) {
 
     if (item[VALUE_COLUMN] != 0) {
       // For rounding, use a function that can be set on the global opensdg
       // object, for easier control: opensdg.dataRounding()
       if (typeof opensdg.dataRounding === 'function') {
-        item.Value = opensdg.dataRounding(item.Value);
+        item.Value = opensdg.dataRounding(item.Value, context);
       }
     }
 
@@ -90,17 +90,6 @@ function getPrecision(precisions, selectedUnit, selectedSeries) {
 }
 
 /**
- * @param {Array} graphStepsize Objects containing 'unit' and 'title'
- * @param {String} selectedUnit
- * @param {String} selectedSeries
- * @return {int|false} size of steps to set on y axis in chart
- */
-function getGraphStepsize(graphStepsize, selectedUnit, selectedSeries) {
-  var match = getMatchByUnitSeries(graphStepsize, selectedUnit, selectedSeries);
-  return (match) ? match.decimals : false;
-}
-
-/**
  * @param {Object} data Object imported from JSON file
  * @return {Array} Rows
  */
@@ -125,6 +114,16 @@ function inputEdges(edges) {
         return false;
       }
       return true;
+    });
+  }
+  var configuredObservationAttributes = {{ site.observation_attributes | jsonify }};
+  if (configuredObservationAttributes && configuredObservationAttributes.length > 0) {
+    configuredObservationAttributesFlat = configuredObservationAttributes.map(function(att) { return att.field; });
+    edgesData = edgesData.filter(function(edge) {
+      if (configuredObservationAttributesFlat.includes(edge.To) || configuredObservationAttributesFlat.includes(edge.From)) {
+        return false;
+      }
+    return true;
     });
   }
   return edgesData;
@@ -152,4 +151,36 @@ function getTimeSeriesAttributes(rows) {
     }
   });
   return timeSeriesAttributes;
+}
+
+function getAllObservationAttributes(rows) {
+  if (rows.length === 0) {
+    return {};
+  }
+  var obsAttributeHash = {},
+      footnoteNumber = 0,
+      configObsAttributes = {{ site.observation_attributes | jsonify }};
+  if (configObsAttributes && configObsAttributes.length > 0) {
+    configObsAttributes = configObsAttributes.map(function(obsAtt) {
+      return obsAtt.field;
+    });
+  }
+  else {
+    configObsAttributes = [];
+  }
+  configObsAttributes.forEach(function(field) {
+    var attributeValues = Object.keys(_.groupBy(rows, field)).filter(function(value) {
+      return value !== 'undefined';
+    });
+    attributeValues.forEach(function(attributeValue) {
+      var hashKey = field + '|' + attributeValue;
+      obsAttributeHash[hashKey] = {
+        field: field,
+        value: attributeValue,
+        footnoteNumber: footnoteNumber,
+      }
+      footnoteNumber += 1;
+    });
+  });
+  return obsAttributeHash;
 }
