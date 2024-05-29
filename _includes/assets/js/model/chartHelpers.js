@@ -403,38 +403,13 @@ function getCombinationDescription(combination, fallback) {
  * @param {Array} rows
  * @return {Array} Prepared rows
  */
-function prepareDataForDataset(years, rows, allObservationAttributes) {
-  var ret = {
-    data: [],
-    observationAttributes: [],
-  };
-  var configObsAttributes = {{ site.observation_attributes | jsonify }};
-  if (configObsAttributes && configObsAttributes.length > 0) {
-    configObsAttributes = configObsAttributes.map(function(obsAtt) {
-      return obsAtt.field;
-    });
-  }
-  else {
-    configObsAttributes = [];
-  }
-  years.forEach(function(year) {
+function prepareDataForDataset(years, rows) {
+  return years.map(function(year) {
     var found = rows.find(function (row) {
       return row[YEAR_COLUMN] === year;
     });
-    ret.data.push(found ? found[VALUE_COLUMN] : null);
-
-    var obsAttributesForRow = [];
-    if (found) {
-      configObsAttributes.forEach(function(field) {
-        if (found[field]) {
-          var hashKey = field + '|' + found[field];
-          obsAttributesForRow.push(allObservationAttributes[hashKey]);
-        }
-      });
-    }
-    ret.observationAttributes.push(obsAttributesForRow);
+    return found ? found[VALUE_COLUMN] : null;
   });
-  return ret;
 }
 
 /**
@@ -452,11 +427,8 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservationAttributes) {
-  var dataset = getBaseDataset(),
-      prepared = prepareDataForDataset(years, rows, allObservationAttributes),
-      data = prepared.data,
-      obsAttributes = prepared.observationAttributes;
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps) {
+  var dataset = getBaseDataset();
   return Object.assign(dataset, {
     label: label,
     borderColor: getHeadlineColor(),
@@ -466,10 +438,9 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservat
     borderWidth: 4,
     headline: true,
     pointStyle: 'circle',
-    data: data,
+    data: prepareDataForDataset(years, rows),
     showLine: showLine,
     spanGaps: spanGaps,
-    observationAttributes: obsAttributes,
   });
 }
 
