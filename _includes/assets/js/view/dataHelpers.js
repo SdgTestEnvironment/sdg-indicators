@@ -67,13 +67,11 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         obsAttributes = obsAttributesTable.data[row][col];
     }
     if (obsAttributes.length > 0) {
-
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return "(" + obsAttribute.value + ")" //getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
-
     return altered;
 }
 
