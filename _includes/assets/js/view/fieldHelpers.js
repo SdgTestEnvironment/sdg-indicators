@@ -103,10 +103,11 @@ function updateObservationAttributes(obsAttributes) {
     }
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
+        console.log("X", obsAttributes);
         var label = getObservationAttributeText(obsAttribute),
             num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
-        var $listItem = $('<dl><dt><u>' + translations.t('symbols') + '</u></dt></dl>');
+        var $listItem = $('<dl><dt><u>' + translations.t('symbols') + ':</u></dt></dl>');
         $listElement.append($listItem);
         if (label.includes(',')) {
           var single_labels = label.split(',');
