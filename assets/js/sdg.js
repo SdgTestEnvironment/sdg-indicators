@@ -3482,12 +3482,14 @@ function updateObservationAttributes(obsAttributes) {
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
-            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
-        var $listItem = $('<dl><dt><u>' + translations.t('symbols') + ':</u></dt></dl>');
-        $listElement.append($listItem);
-        if (label.includes(',')) {
-          var single_labels = label.split(',');
+        if (num == 0){
+          var $listItem = $('<dl><dt><u>' + translations.t('symbols') + ':</u></dt></dl>');
+          $listElement.append($listItem);
+        };
+        if (label.includes(';')) {
+          var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
             var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t(single_labels[i]) + '</dd>');
             $listElement.append($listItem);
