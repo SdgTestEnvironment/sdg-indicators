@@ -176,7 +176,7 @@ function getAllObservationAttributes(rows) {
       var hashKey = field + '|' + attributeValue;
       obsAttributeHash[hashKey] = {
         field: field,
-        value: attributeValue,
+        value: attributeValue + '!',
         footnoteNumber: footnoteNumber,
       }
       footnoteNumber += 1;
