@@ -2868,7 +2868,6 @@ function getAllObservationAttributes(rows) {
   else {
     configObsAttributes = [];
   }
-  console.log("configObsAttributes",configObsAttributes);
   configObsAttributes.forEach(function(field) {
     var attributeValues = Object.keys(_.groupBy(rows, field)).filter(function(value) {
       return value !== 'undefined';
@@ -3513,9 +3512,9 @@ function getObservationAttributeText(obsAttribute) {
     if (!attributeConfig) {
         return '';
     }
-    var label = translations.t(obsAttribute.value);
+    var label = obsAttribute.value; //translations.t(obsAttribute.value);
     if (attributeConfig.label) {
-        label = translations.t(attributeConfig.label) + ': ' + label;
+        label = label + ':' + translations.t(attributeConfig.label);
     }
     return label;
 }
