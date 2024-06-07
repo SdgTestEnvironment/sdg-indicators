@@ -168,6 +168,7 @@ function getAllObservationAttributes(rows) {
   else {
     configObsAttributes = [];
   }
+  console.log("configObsAttributes",configObsAttributes);
   configObsAttributes.forEach(function(field) {
     var attributeValues = Object.keys(_.groupBy(rows, field)).filter(function(value) {
       return value !== 'undefined';
