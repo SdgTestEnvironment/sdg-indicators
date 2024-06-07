@@ -2876,7 +2876,7 @@ function getAllObservationAttributes(rows) {
       var hashKey = field + '|' + attributeValue;
       obsAttributeHash[hashKey] = {
         field: field,
-        value: attributeValue + '!',
+        value: attributeValue,
         footnoteNumber: footnoteNumber,
       }
       footnoteNumber += 1;
@@ -3480,11 +3480,9 @@ function updateObservationAttributes(obsAttributes) {
     }
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
-        console.log("X", obsAttributes);
         var label = getObservationAttributeText(obsAttribute),
             num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
-        //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
-        var $listItem = $('<dl><dt><u>' + translations.t('symbols') + ':</u></dt></dl>');
+        var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         $listElement.append($listItem);
         if (label.includes(',')) {
           var single_labels = label.split(',');
@@ -3515,7 +3513,6 @@ function getObservationAttributeText(obsAttribute) {
     if (attributeConfig.label) {
         label = translations.t(attributeConfig.label) + ': ' + label;
     }
-
     return label;
 }
 
@@ -4884,13 +4881,11 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         obsAttributes = obsAttributesTable.data[row][col];
     }
     if (obsAttributes.length > 0) {
-
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return "(" + obsAttribute.value + ")" //getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
-
     return altered;
 }
 
