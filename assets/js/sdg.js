@@ -2880,8 +2880,10 @@ function getAllObservationAttributes(rows) {
         footnoteNumber: footnoteNumber,
       }
       footnoteNumber += 1;
+      console.log("obsAttributeHash[hashKey]: ",obsAttributeHash[hashKey]);
     });
   });
+  console.log("obsAttributeHash: ",obsAttributeHash);
   return obsAttributeHash;
 }
 
