@@ -128,6 +128,7 @@ function updateObservationAttributes(obsAttributes) {
  * Gets the text of an observation attribute for display to the end user.
  */
 function getObservationAttributeText(obsAttribute) {
+    console.log("obsAttribute: ",obsAttribute);
     var configuredObsAttributes = {{ site.observation_attributes | jsonify }};
     var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
         return configuredObsAttribute.field === obsAttribute.field;
