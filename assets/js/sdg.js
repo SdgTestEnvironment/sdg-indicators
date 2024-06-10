@@ -3505,6 +3505,7 @@ function updateObservationAttributes(obsAttributes) {
  * Gets the text of an observation attribute for display to the end user.
  */
 function getObservationAttributeText(obsAttribute) {
+    console.log("obsAttribute: ",obsAttribute);
     var configuredObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
     var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
         return configuredObsAttribute.field === obsAttribute.field;
