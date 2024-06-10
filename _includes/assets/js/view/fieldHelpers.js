@@ -95,6 +95,7 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
  * @return null
  */
 function updateObservationAttributes(obsAttributes) {
+    console.log("obsAttributes: ",obsAttributes);
     var $listElement = $('.observation-attribute-list');
     $listElement.empty();
     if (obsAttributes.length === 0) {
@@ -107,7 +108,7 @@ function updateObservationAttributes(obsAttributes) {
             num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         if (num == 0){
-          var $listItem = $('<dl><dt><u>' + translations.t('symbols') + ':</u></dt></dl>');
+          var $listItem = $('<dl><u>' + translations.t('symbols') + ':</u><br></dl>');
           $listElement.append($listItem);
         };
         if (label.includes(';')) {
