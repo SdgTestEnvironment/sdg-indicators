@@ -114,6 +114,7 @@ var indicatorModel = function (options) {
   }
 
   // calculate some initial values:
+  console.log("this.allData: ",this.allData);
   this.allObservationAttributes = helpers.getAllObservationAttributes(this.allData);
   this.hasGeoData = helpers.dataHasGeoCodes(this.allColumns);
   this.hasUnits = helpers.dataHasUnits(this.allColumns);
