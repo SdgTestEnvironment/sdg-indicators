@@ -16,6 +16,7 @@ var indicatorModel = function (options) {
 
   // general members:
   var that = this;
+  console.log("options.data: ",options.data);
   this.data = helpers.inputData(options.data);
   console.log("this.data: ", this.data);
   this.edgesData = helpers.inputEdges(options.edgesData);
