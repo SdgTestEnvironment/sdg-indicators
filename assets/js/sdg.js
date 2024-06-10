@@ -3373,7 +3373,7 @@ var indicatorView = function (model, options) {
     var MODEL = model,
         VIEW = this,
         OPTIONS = options;
-
+    console.log('OPTIONS: ', OPTIONS);
     var helpers = 
 (function() {
 
