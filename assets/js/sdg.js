@@ -3504,14 +3504,14 @@ function updateObservationAttributes(obsAttributes) {
             if (!listedLabels.includes(listedLabels[i])){
               var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
-              listedLabels.append(single_labels[i]);
+              listedLabels.push(single_labels[i]);
             };
           };
         }
         else if (!listedLabels.includes(listedLabels)){
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '">'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
-          listedLabels.append(label);
+          listedLabels.push(label);
         }
     });
 }
@@ -4915,7 +4915,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return '[' + obsAttribute.value.replace(";",",") + ']';
+    return '[' + obsAttribute.value.replace(/;/g, ",") + ']';
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
