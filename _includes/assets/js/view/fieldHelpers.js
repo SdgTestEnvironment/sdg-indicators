@@ -108,18 +108,18 @@ function updateObservationAttributes(obsAttributes) {
             num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         if (num == 0){
-          var $listItem = $('<dl><u>' + translations.t('symbols') + ':</u><br></dl>');
+          var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
-            var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
+            var $listItem = $('<dd id="observation-footnote-desc-' + num + '"><br>' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
             $listElement.append($listItem);
           };
         }
         else {
-          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '"><br>'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
         }
     });
