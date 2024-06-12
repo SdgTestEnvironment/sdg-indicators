@@ -122,6 +122,7 @@ function updateObservationAttributes(obsAttributes) {
               var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
               listedLabels.push(single_labels[i]);
+              console.log("L",listedLabels);
             };
           };
         }
@@ -129,6 +130,7 @@ function updateObservationAttributes(obsAttributes) {
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
           listedLabels.push(label);
+          var x = '';
         }
     });
 }
