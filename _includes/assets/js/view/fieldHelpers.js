@@ -115,7 +115,7 @@ function updateObservationAttributes(obsAttributes) {
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
-            if (!listedLabels.includes(listedLabels)){
+            if (!listedLabels.includes(listedLabels[i])){
               var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
               listedLabels.append(single_labels[i]);
