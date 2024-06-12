@@ -3489,6 +3489,7 @@ function updateObservationAttributes(obsAttributes) {
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            listedLabels = [];
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
@@ -3497,12 +3498,14 @@ function updateObservationAttributes(obsAttributes) {
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
-            var $listItem = $('<dd id="observation-footnote-desc-' + num + '"><br>' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
-            $listElement.append($listItem);
+            if (!listedLabels.includes(listedLabels)){
+              var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
+              $listElement.append($listItem);
+            };
           };
         }
-        else {
-          var $listItem = $('<dd id="observation-footnote-desc-' + num + '"><br>'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
+        else if (!listedLabels.includes(listedLabels)){
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
         }
     });
@@ -4907,7 +4910,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return obsAttribute.value;
+    return '[' + obsAttribute.value + ']';
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
