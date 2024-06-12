@@ -4912,7 +4912,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return '[' + obsAttribute.value + ']';
+    return '[' + obsAttribute.value.replace(";",",") + ']';
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
