@@ -3495,9 +3495,9 @@ function updateObservationAttributes(obsAttributes) {
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
+        var x = '<br>';
         if (label.includes(';')) {
           var single_labels = label.split(';');
-          var x = '<br>';
           for (let i = 0; i < single_labels.length; i++){
             if (i !== 0) {
               var x = ''};
@@ -3508,8 +3508,8 @@ function updateObservationAttributes(obsAttributes) {
             };
           };
         }
-        else if (!listedLabels.includes(listedLabels)){
-          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
+        else if (!listedLabels.includes(label)){
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
           listedLabels.push(label);
         }
