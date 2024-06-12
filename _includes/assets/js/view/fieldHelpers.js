@@ -121,14 +121,14 @@ function updateObservationAttributes(obsAttributes) {
             if (!listedLabels.includes(listedLabels[i])){
               var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
-              listedLabels.append(single_labels[i]);
+              listedLabels.push(single_labels[i]);
             };
           };
         }
         else if (!listedLabels.includes(listedLabels)){
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '">'  + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
-          listedLabels.append(label);
+          listedLabels.push(label);
         }
     });
 }
