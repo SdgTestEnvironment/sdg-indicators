@@ -114,9 +114,12 @@ function updateObservationAttributes(obsAttributes) {
         };
         if (label.includes(';')) {
           var single_labels = label.split(';');
+          var x = '<br>';
           for (let i = 0; i < single_labels.length; i++){
+            if (i !== 0) {
+              var x = ''};
             if (!listedLabels.includes(listedLabels[i])){
-              var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
+              var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + x + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
               listedLabels.append(single_labels[i]);
             };
