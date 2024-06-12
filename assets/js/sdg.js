@@ -2817,17 +2817,17 @@ function inputEdges(edges) {
     });
   }
   var configuredObservationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
-  if (configuredObservationAttributes && configuredObservationAttributes.length > 0) {
-    configuredObservationAttributesFlat = configuredObservationAttributes.map(function(att) { return att.field; });
-    edgesData = edgesData.filter(function(edge) {
-      if (configuredObservationAttributesFlat.includes(edge.To) || configuredObservationAttributesFlat.includes(edge.From)) {
-        return false;
-      }
-    return true;
-    });
-  }
-  return edgesData;
-}
+   if (configuredObservationAttributes && configuredObservationAttributes.length > 0) {
+     configuredObservationAttributesFlat = configuredObservationAttributes.map(function(att) { return att.field; });
+     edgesData = edgesData.filter(function(edge) {
+       if (configuredObservationAttributesFlat.includes(edge.To) || configuredObservationAttributesFlat.includes(edge.From)) {
+         return false;
+       }
+       return true;
+     });
+   }
+
+
 
 /**
  * @param {Array} rows
@@ -3498,7 +3498,7 @@ function updateObservationAttributes(obsAttributes) {
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
-            if (!listedLabels.includes(listedLabels)){
+            if (!listedLabels.includes(listedLabels[i])){
               var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
               $listElement.append($listItem);
               listedLabels.append(single_labels[i]);
