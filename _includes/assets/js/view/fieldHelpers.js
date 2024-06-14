@@ -97,9 +97,9 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
 function updateObservationAttributes(obsAttributes) {
     console.log("obsAttributes: ",obsAttributes);
     var $listElement = $('.observation-attribute-list');
-    console.log("1: ",$listElement);
+    console.log("x1: ",test);
     $listElement.empty();
-    console.log("2: ",$listElement);
+    console.log("x2: ",test);
     if (obsAttributes.length === 0) {
         $listElement.hide();
         return;
@@ -114,25 +114,27 @@ function updateObservationAttributes(obsAttributes) {
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
-        console.log("3: ",$listElement);
+        console.log("x3: ",test);
         var x = '<br>';
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
             if (i !== 0) {
               var x = ''};
-            console.log("4: ",$listElement);
+            console.log("x4: ",test);
             var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
             if (!test.includes($listItem)){
               $listElement.append($listItem);
             };
-            console.log("5: ",$listElement);
+            console.log("x5: ",test);
           };
         }
         else
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
+          console.log("x6: ",test);
           if (!test.includes($listItem)){
             $listElement.append($listItem);
+            console.log("x7: ",test);
           var x = '';
           }
     });
