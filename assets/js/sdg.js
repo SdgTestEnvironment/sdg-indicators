@@ -4891,10 +4891,14 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     else {
         var localeOpts = {};
         if (VIEW._precision || VIEW._precision === 0) {
-            localeOpts.minimumFractionDigits = VIEW._precision;
-            localeOpts.maximumFractionDigits = VIEW._precision;
+            localeOpts.minimumFractionDigits = precision;
+            localeOpts.maximumFractionDigits = precision;
         }
         altered = altered.toLocaleString(opensdg.language, localeOpts);
+        // Apply thousands seperator if needed
+        if (OPTIONS.thousandsSeparator && precision <=3){
+            altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
+        }
     }
     // Now let's add any footnotes from observation attributes.
     var obsAttributes = [];
