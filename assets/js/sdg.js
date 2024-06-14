@@ -3478,11 +3478,11 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
  * @return null
  */
 function updateObservationAttributes(obsAttributes) {
-    console.log("obsAttributes: ",obsAttributes);
+
     var $listElement = $('.observation-attribute-list');
-    console.log("x1: ",test);
+
     $listElement.empty();
-    console.log("x2: ",test);
+
     if (obsAttributes.length === 0) {
         $listElement.hide();
         return;
