@@ -24,27 +24,46 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     opensdg.dataDisplayAlterations.forEach(function (callback) {
         altered = callback(altered, info, context);
     });
+    // Now apply our custom precision control if needed.
+
+    // Special treatment for numbers on y axis: If stepSize is defined, they should display decimal places as follows:
+    // StepSize >= 1 --> 0 decimal places, Stepsize >= 0.1 --> 1 decimal place, StepSize >= 0.01 --> 2 decimal places ...
+    if (context == 'chart y-axis tick' && VIEW._graphStepsize && VIEW.graphStepsize != 0 && VIEW.graphStepsize != '') {
+      precision = Math.ceil(Math.log(1 / VIEW._graphStepsize.step) / Math.LN10);
+      if (precision < 0) {
+        precision = 0
+      }
+    }
+    else {
+      var precision = VIEW._precision
+    };
     // If the returned value is not a number, use the legacy logic for
     // precision and decimal separator.
-    if (typeof altered !== 'number') {
+  //  if (typeof altered !== 'number') {
         // Now apply our custom precision control if needed.
-        if (VIEW._precision || VIEW._precision === 0) {
-            altered = Number.parseFloat(altered).toFixed(VIEW._precision);
+
+        if (precision || precision === 0) {
+            altered = Number.parseFloat(altered).toFixed(precision);
         }
         // Now apply our custom decimal separator if needed.
         if (OPTIONS.decimalSeparator) {
             altered = altered.toString().replace('.', OPTIONS.decimalSeparator);
         }
-    }
-    // Otherwise if we have a number, use toLocaleString instead.
-    else {
-        var localeOpts = {};
-        if (VIEW._precision || VIEW._precision === 0) {
-            localeOpts.minimumFractionDigits = VIEW._precision;
-            localeOpts.maximumFractionDigits = VIEW._precision;
+        // Apply thousands seperator if needed
+        if (OPTIONS.thousandsSeparator && precision <=3){
+            altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
         }
-        altered = altered.toLocaleString(opensdg.language, localeOpts);
-    }
+    //}
+
+    // Otherwise if we have a number, use toLocaleString instead.
+    // else {
+    //     var localeOpts = {};
+    //     if (VIEW._precision || VIEW._precision === 0) {
+    //         localeOpts.minimumFractionDigits = VIEW._precision;
+    //         localeOpts.maximumFractionDigits = VIEW._precision;
+    //     }
+    //     altered = altered.toLocaleString(opensdg.language, localeOpts);
+    // }
     // Now let's add any footnotes from observation attributes.
     var obsAttributes = [];
     if (context === 'chart tooltip') {
