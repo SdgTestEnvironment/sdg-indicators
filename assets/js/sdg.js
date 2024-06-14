@@ -4871,7 +4871,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     };
     // If the returned value is not a number, use the legacy logic for
     // precision and decimal separator.
-  //  if (typeof altered !== 'number') {
+    if (typeof altered !== 'number') {
         // Now apply our custom precision control if needed.
 
         if (precision || precision === 0) {
@@ -4885,17 +4885,17 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         if (OPTIONS.thousandsSeparator && precision <=3){
             altered = altered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, OPTIONS.thousandsSeparator);
         }
-    //}
+    }
 
     // Otherwise if we have a number, use toLocaleString instead.
-    // else {
-    //     var localeOpts = {};
-    //     if (VIEW._precision || VIEW._precision === 0) {
-    //         localeOpts.minimumFractionDigits = VIEW._precision;
-    //         localeOpts.maximumFractionDigits = VIEW._precision;
-    //     }
-    //     altered = altered.toLocaleString(opensdg.language, localeOpts);
-    // }
+    else {
+        var localeOpts = {};
+        if (VIEW._precision || VIEW._precision === 0) {
+            localeOpts.minimumFractionDigits = VIEW._precision;
+            localeOpts.maximumFractionDigits = VIEW._precision;
+        }
+        altered = altered.toLocaleString(opensdg.language, localeOpts);
+    }
     // Now let's add any footnotes from observation attributes.
     var obsAttributes = [];
     if (context === 'chart tooltip') {
