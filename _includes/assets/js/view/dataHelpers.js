@@ -59,7 +59,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
@@ -72,6 +72,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @param {int} num
  * @returns {string} Number converted into unicode character for footnotes.
  */
-function getObservationAttributeFootnoteSymbol(num) {
-    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+ function getObservationAttributeFootnoteSymbol(obsAttribute) {
+     return '[' + obsAttribute.value.replace(/;/g, ",") + ']';
+     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
