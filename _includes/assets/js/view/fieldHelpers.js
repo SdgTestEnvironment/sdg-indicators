@@ -106,6 +106,7 @@ function updateObservationAttributes(obsAttributes) {
     }
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
+        var test = $listElement.toString();
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
@@ -122,7 +123,7 @@ function updateObservationAttributes(obsAttributes) {
               var x = ''};
             console.log("4: ",$listElement);
             var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
-            if (!$listElement.includes($listItem)){
+            if (!test.includes($listItem)){
               $listElement.append($listItem);
             };
             console.log("5: ",$listElement);
@@ -130,7 +131,7 @@ function updateObservationAttributes(obsAttributes) {
         }
         else
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
-          if (!$listElement.includes($listItem)){
+          if (!test.includes($listItem)){
             $listElement.append($listItem);
           var x = '';
           }
