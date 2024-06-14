@@ -3480,7 +3480,9 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
 function updateObservationAttributes(obsAttributes) {
     console.log("obsAttributes: ",obsAttributes);
     var $listElement = $('.observation-attribute-list');
+    console.log("1: ",$listElement);
     $listElement.empty();
+    console.log("2: ",$listElement);
     if (obsAttributes.length === 0) {
         $listElement.hide();
         return;
@@ -3494,16 +3496,19 @@ function updateObservationAttributes(obsAttributes) {
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
+        console.log("3: ",$listElement);
         var x = '<br>';
         if (label.includes(';')) {
           var single_labels = label.split(';');
           for (let i = 0; i < single_labels.length; i++){
             if (i !== 0) {
               var x = ''};
+            console.log("4: ",$listElement);
             var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
             if (!$listElement.includes($listItem)){
               $listElement.append($listItem);
             };
+            console.log("5: ",$listElement);
           };
         }
         else
