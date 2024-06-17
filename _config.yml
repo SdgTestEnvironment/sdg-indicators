@@ -263,7 +263,9 @@ menu:
 observation_attributes:
   - field: COMMENT_OBS
     label: ''
-  - field: test
+  - field: COMMENT_OBS_1
+    label: ''
+  - field: COMMENT_OBS_2
     label: ''
 
 contrast_type: single
