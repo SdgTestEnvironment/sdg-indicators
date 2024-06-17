@@ -95,51 +95,22 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
  * @return null
  */
 function updateObservationAttributes(obsAttributes) {
-
     var $listElement = $('.observation-attribute-list');
-
     $listElement.empty();
-
     if (obsAttributes.length === 0) {
         $listElement.hide();
         return;
     }
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
-        var test = '';
         var label = getObservationAttributeText(obsAttribute),
-            num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
-        //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
-        console.log("x3: ",test);
-        var x = '<br>';
-        if (label.includes(';')) {
-          var single_labels = label.split(';');
-          for (let i = 0; i < single_labels.length; i++){
-            if (i !== 0) {
-              var x = ''};
-            console.log("x4: ",test);
-            var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
-
-            if (!test.includes($listItem)){
-              $listElement.append($listItem);
-              test.append(single_labels[i]);
-            };
-            console.log("x5: ",test);
-          };
-        }
-        else
-          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
-          console.log("x6: ",test);
-          if (!test.includes($listItem)){
-            $listElement.append($listItem);
-            test.append(label);
-            console.log("x7: ",test);
-          var x = '';
-          }
+        var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + label + ': ' +  translations.t('+++' + label) + '</dd>');
+        $listElement.append($listItem);
     });
 }
 
@@ -147,7 +118,6 @@ function updateObservationAttributes(obsAttributes) {
  * Gets the text of an observation attribute for display to the end user.
  */
 function getObservationAttributeText(obsAttribute) {
-    console.log("obsAttribute: ",obsAttribute);
     var configuredObsAttributes = {{ site.observation_attributes | jsonify }};
     var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
         return configuredObsAttribute.field === obsAttribute.field;
@@ -155,9 +125,9 @@ function getObservationAttributeText(obsAttribute) {
     if (!attributeConfig) {
         return '';
     }
-    var label = obsAttribute.value; //translations.t(obsAttribute.value);
+    var label = translations.t(obsAttribute.value);
     if (attributeConfig.label) {
-        label = label + ':' + translations.t(attributeConfig.label);
+        label = translations.t(attributeConfig.label) + ': ' + label;
     }
     return label;
 }
