@@ -131,7 +131,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.proxy = options.proxy;
     this.proxySerieses = options.proxySerieses;
     this.startValues = options.startValues;
-    this.configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+    this.configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
     this.allObservationAttributes = options.allObservationAttributes;
 
     // Require at least one geoLayer.
@@ -1369,7 +1369,7 @@ function nonFieldColumns() {
       columns.push(tsAttribute.field);
     });
   }
-  var observationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+  var observationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
   if (observationAttributes && observationAttributes.length > 0) {
     observationAttributes.forEach(function(oAttribute) {
       columns.push(oAttribute.field);
@@ -2577,7 +2577,7 @@ function prepareDataForDataset(years, rows, allObservationAttributes) {
     data: [],
     observationAttributes: [],
   };
-  var configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+  var configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
   if (configObsAttributes && configObsAttributes.length > 0) {
     configObsAttributes = configObsAttributes.map(function(obsAtt) {
       return obsAtt.field;
@@ -2816,7 +2816,7 @@ function inputEdges(edges) {
       return true;
     });
   }
-  var configuredObservationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+  var configuredObservationAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
   if (configuredObservationAttributes && configuredObservationAttributes.length > 0) {
     configuredObservationAttributesFlat = configuredObservationAttributes.map(function(att) { return att.field; });
     edgesData = edgesData.filter(function(edge) {
@@ -2859,7 +2859,7 @@ function getAllObservationAttributes(rows) {
   }
   var obsAttributeHash = {},
       footnoteNumber = 0,
-      configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+      configObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
   if (configObsAttributes && configObsAttributes.length > 0) {
     configObsAttributes = configObsAttributes.map(function(obsAtt) {
       return obsAtt.field;
@@ -3478,51 +3478,22 @@ function updateTimeSeriesAttributes(tsAttributeValues) {
  * @return null
  */
 function updateObservationAttributes(obsAttributes) {
-
     var $listElement = $('.observation-attribute-list');
-
     $listElement.empty();
-
     if (obsAttributes.length === 0) {
         $listElement.hide();
         return;
     }
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
-        var test = '';
         var label = getObservationAttributeText(obsAttribute),
-            num = obsAttribute.footnoteNumber;//getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
-        //var $listItem = $('<dt id="observation-footnote-title-' + num + '">' + num + '</dt><dd id="observation-footnote-desc-' + num + '">' + label + '</dd>');
+            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
         };
-        console.log("x3: ",test);
-        var x = '<br>';
-        if (label.includes(';')) {
-          var single_labels = label.split(';');
-          for (let i = 0; i < single_labels.length; i++){
-            if (i !== 0) {
-              var x = ''};
-            console.log("x4: ",test);
-            var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + single_labels[i] + ': ' +  translations.t('+++' + single_labels[i]) + '</dd>');
-
-            if (!test.includes($listItem)){
-              $listElement.append($listItem);
-              test.append(single_labels[i]);
-            };
-            console.log("x5: ",test);
-          };
-        }
-        else
-          var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + obsAttribute.value + ': ' + translations.t('+++' + label) + '</dd>');
-          console.log("x6: ",test);
-          if (!test.includes($listItem)){
-            $listElement.append($listItem);
-            test.append(label);
-            console.log("x7: ",test);
-          var x = '';
-          }
+        var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + label + ': ' +  translations.t('+++' + label) + '</dd>');
+        $listElement.append($listItem);
     });
 }
 
@@ -3530,17 +3501,16 @@ function updateObservationAttributes(obsAttributes) {
  * Gets the text of an observation attribute for display to the end user.
  */
 function getObservationAttributeText(obsAttribute) {
-    console.log("obsAttribute: ",obsAttribute);
-    var configuredObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"test","label":""}];
+    var configuredObsAttributes = [{"field":"COMMENT_OBS","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
     var attributeConfig = _.find(configuredObsAttributes, function(configuredObsAttribute) {
         return configuredObsAttribute.field === obsAttribute.field;
     });
     if (!attributeConfig) {
         return '';
     }
-    var label = obsAttribute.value; //translations.t(obsAttribute.value);
+    var label = translations.t(obsAttribute.value);
     if (attributeConfig.label) {
-        label = label + ':' + translations.t(attributeConfig.label);
+        label = translations.t(attributeConfig.label) + ': ' + label;
     }
     return label;
 }
