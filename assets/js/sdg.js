@@ -3487,7 +3487,7 @@ function updateObservationAttributes(obsAttributes) {
     $listElement.show();
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
-            num = getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+            num = obsAttribute.footnoteNumber;
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
@@ -4895,7 +4895,8 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute);
+          console.log("!1: ", obsAttribute);
+          return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
     }
