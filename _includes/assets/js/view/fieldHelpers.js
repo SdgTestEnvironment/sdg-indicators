@@ -108,8 +108,10 @@ function updateObservationAttributes(obsAttributes) {
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
+          var br = '<br>'
         };
-        var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + label + ': ' +  translations.t('+++' + label) + '</dd>');
+        else{var br = ''}
+        var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + br + label + ': ' +  translations.t('+++' + label) + '</dd>');
         $listElement.append($listItem);
     });
 }

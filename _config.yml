@@ -261,7 +261,7 @@ menu:
 
 
 observation_attributes:
-  - field: COMMENT_OBS
+  - field: COMMENT_OBS_0
     label: ''
   - field: COMMENT_OBS_1
     label: ''
