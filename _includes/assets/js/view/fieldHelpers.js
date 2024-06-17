@@ -106,7 +106,7 @@ function updateObservationAttributes(obsAttributes) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
         if (num == 0){
-          var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
           $listElement.append($listItem);
           var br = '<br>'
         }
