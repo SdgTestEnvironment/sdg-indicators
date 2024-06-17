@@ -109,8 +109,9 @@ function updateObservationAttributes(obsAttributes) {
           var $listItem = $('<dt><u>' + translations.t('symbols') + '</u>:</dt>');
           $listElement.append($listItem);
           var br = '<br>'
-        };
-        else{var br = ''}
+        }
+        else
+          {var br = ''}
         var $listItem = $('<dd id="observation-footnote-desc-' + num + '">' + br + label + ': ' +  translations.t('+++' + label) + '</dd>');
         $listElement.append($listItem);
     });
