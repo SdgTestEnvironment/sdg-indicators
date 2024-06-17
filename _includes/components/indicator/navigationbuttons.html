@@ -97,7 +97,7 @@
 
         <div class="col-md-auto">
           <a href="https://sustainabledevelopment-deutschland.github.io/{{ language }}/{{ page.indicator.dns_indicator }}" class="btn btn-primary btn-block goal-{{ page.goal.number }} navigation-btn" title="{{ t.general.link_dns_indicator }}" role="button">
-            <b class="btn-label d-none d-md-block">{{ page.t.general.indicator_link_dns }} >DNS-{{ buttonLabel }}</b><b class="btn-label d-block d-md-none"></b>
+            <b class="btn-label d-none d-md-block">{{ page.t.general.indicator_link_dns }} DNS-{{ buttonLabel }}</b><b class="btn-label d-block d-md-none">DNS-{{ buttonLabel }}</b>
           </a>
         </div>
 
@@ -111,7 +111,7 @@
     {% else  %}
       <div class="col d-grid gap-2">
         <a href="{{ site.baseurl }}/{{ language }}/{{ page.indicator.previous }}" class="btn btn-primary btn-block goal-{{ page.goal.number }} navigation-btn" role="button">
-          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ page.t.general.prev_indicator }} </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> {{ page.t.general.prev_indicator }} </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i><</b>
         </a>
       </div>
 
