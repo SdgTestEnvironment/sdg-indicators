@@ -3519,7 +3519,7 @@ function updateObservationAttributes(obsAttributes) {
           console.log("x6: ",test);
           if (!test.includes($listItem)){
             $listElement.append($listItem);
-            test.append(lable);
+            test.append(label);
             console.log("x7: ",test);
           var x = '';
           }
