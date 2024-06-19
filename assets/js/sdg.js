@@ -4685,14 +4685,16 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
 
         table.data.forEach(function (data) {
             var row_html = '<tr>';
+            console.log("YY", data);
             console.log("XX", observationAttributesTable);
             console.log("XXX", observationAttributesTable.data);
             console.log("XXXX", observationAttributesTable.data[8]);
             console.log("XXXXX", observationAttributesTable.data[8][1]);
-            console.log("XXXXXX", observationAttributesTable.data[8][1][0]);
+            console.log("XXXXXX", observationAttributesTable.data[8][1][0];
+          console.log("XXXXXX", observationAttributesTable.data[8][1][0].value);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
-                console.log("YY", index);
+                console.log("YY", heading);
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
