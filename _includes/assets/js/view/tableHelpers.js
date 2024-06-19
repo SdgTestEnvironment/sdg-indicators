@@ -184,16 +184,18 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table.data.forEach(function (data) {
             var row_html = '<tr>';
             console.log("YY", data);
-            console.log("XXXXXX", observationAttributesTable.data[8][1][0].value);
+            console.log("YYY", data[1]);
+            console.log("XX", observationAttributesTable.data[8][1][0].value);
+            console.log("XXX", observationAttributesTable.data[data[1]][1][0].value);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
-                console.log("YY", heading);
+
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  data[index] : '.') + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  data[index] : (observationAttributesTable.data[data[1]][1][0].value !== undefined ? observationAttributesTable.data[8][1][0].value : '.')) + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
