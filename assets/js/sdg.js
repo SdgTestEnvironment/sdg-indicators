@@ -4687,7 +4687,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             row += 1;
             var row_html = '<tr>';
             console.log("ZZ", row);
-            console.log("ZZZ", observationAttributesTable.data[9][1][0].value);
+            console.log("ZZZ", observationAttributesTable.data[row][1][0].value);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
 
