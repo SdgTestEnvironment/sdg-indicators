@@ -82,7 +82,6 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-          console.log("!1: ", obsAttribute);
           return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
