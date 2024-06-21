@@ -4688,8 +4688,8 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var row_html = '<tr>';
             console.log("ZZ", row);
             var obsVal = '';
-            (observationAttributesTable.data[row][1][0] !== undefined ? console.log("ZZZ", observationAttributesTable.data[row][1][0].value) : console.log("ZZZ", 'UNDEFINED'));
-            (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value) : obsValue = '.');
+            (observationAttributesTable.data[row][1][0] !== undefined ? console.log("ZZZ", observationAttributesTable.data[row][1][0].value : console.log("ZZZ", 'UNDEFINED'));
+            (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             console.log("O", obsValue);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
