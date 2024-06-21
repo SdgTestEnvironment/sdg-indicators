@@ -4686,9 +4686,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table.data.forEach(function (data) {
             row += 1;
             var row_html = '<tr>';
-            console.log("ZZ", row);
             var obsValue = '';
-            (observationAttributesTable.data[row][1][0] !== undefined ? console.log("ZZZ", observationAttributesTable.data[row][1][0].value) : console.log("ZZZ", 'UNDEFINED'));
             (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             console.log("O", obsValue);
             table.headings.forEach(function (heading, index) {
@@ -4905,7 +4903,6 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-          console.log("!1: ", obsAttribute);
           return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
         altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
