@@ -4682,14 +4682,15 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table_head += '</tr></thead>';
         currentTable.append(table_head);
         currentTable.append('<tbody></tbody>');
-
+        var row = -1;
         table.data.forEach(function (data) {
+            row += 1;
             var row_html = '<tr>';
             console.log("YY", data);
             console.log("YYY", data[1]);
             var tableIndex = data[1];
             console.log("ZZ", tableIndex);
-            //console.log("ZZZ", observationAttributesTable.data[tableIndex][1][0].value);
+            console.log("ZZZ", observationAttributesTable.data[row][1][0].value);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
 
