@@ -4687,7 +4687,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             row += 1;
             var row_html = '<tr>';
             console.log("ZZ", row);
-            var obsVal = '';
+            var obsValue = '';
             (observationAttributesTable.data[row][1][0] !== undefined ? console.log("ZZZ", observationAttributesTable.data[row][1][0].value) : console.log("ZZZ", 'UNDEFINED'));
             (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             console.log("O", obsValue);
