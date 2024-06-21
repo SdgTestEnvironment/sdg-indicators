@@ -4686,9 +4686,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         table.data.forEach(function (data) {
             row += 1;
             var row_html = '<tr>';
-            console.log("YY", data);
-            console.log("YYY", data[1]);
-            var tableIndex = data[1];
             console.log("ZZ", row);
             console.log("ZZZ", observationAttributesTable.data[9][1][0].value);
             table.headings.forEach(function (heading, index) {
