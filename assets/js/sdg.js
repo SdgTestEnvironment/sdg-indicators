@@ -6348,6 +6348,7 @@ $(function() {
             // at every update.
             var features = this.getFeatures();
             if (startValues && startValues.length > 0) {
+                console.log("startValues", startValues, startValues.length);
                 this.currentDisaggregation = this.getStartingDisaggregation(features, startValues);
                 this.displayedDisaggregation = this.currentDisaggregation;
                 this.needsMapUpdate = true;
