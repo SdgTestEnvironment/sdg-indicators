@@ -6375,7 +6375,7 @@ $(function() {
             if (features.length === 0) {
                 return;
             }
-            console.log("Startvalues", startValues);
+
             var disaggregations = features[0].properties.disaggregations,
                 fields = Object.keys(disaggregations[0]),
                 validStartValues = startValues.filter(function(startValue) {
