@@ -310,8 +310,7 @@ reporting_status:
     disaggregation_tabs: false
 
 
-ingnored_disaggregations:
-    - COMMENT_OBS
+
 
 hide_empty_metadata: true
 hide_single_unit: true
@@ -323,7 +322,7 @@ plugins:
 
 # Use a remote Jekyll theme.
 #remote_theme: brockfanning/open-sdg@map-series-unit-behaviors
-remote_theme: open-sdg/open-sdg@2.3.0-beta3
+remote_theme: open-sdg/open-sdg@2.3.2
 
 
 #remote_theme: brockfanning/open-sdg@goal-page-status-css
