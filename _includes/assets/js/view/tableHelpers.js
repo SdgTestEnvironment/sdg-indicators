@@ -186,7 +186,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var row_html = '<tr>';
             var obsValue = '';
             (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
-            console.log("O", obsValue);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
 
