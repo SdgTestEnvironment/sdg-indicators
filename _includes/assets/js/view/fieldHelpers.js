@@ -116,8 +116,8 @@ function updateObservationAttributes(obsAttributes) {
         if (listedAttributes.indexOf(label) == 0) {
           listedAttributes.push(label);
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+          $listElement.append($listItem);
         }
-        $listElement.append($listItem);
     });
 }
 
