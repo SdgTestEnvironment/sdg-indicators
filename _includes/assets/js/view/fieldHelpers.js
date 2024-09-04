@@ -107,13 +107,13 @@ function updateObservationAttributes(obsAttributes) {
             num = obsAttribute.footnoteNumber;
         var listedAttributes = ["test", "test2"];
         if (num == 0){
-          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>::</dt>');
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
           $listElement.append($listItem);
           var br = '<br>'
         }
         else
           {var br = ''}
-        if (listedAttributes.indexOf(label) == 0) {
+        if (listedAttributes.indexOf(label) == -1) {
           listedAttributes.push(label);
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
