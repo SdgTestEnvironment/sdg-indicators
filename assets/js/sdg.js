@@ -3495,7 +3495,7 @@ function updateObservationAttributes(obsAttributes) {
         }
         else
           {var br = ''}
-        var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ': ' +  translations.t('+++' + label) + '</dd>');
+        var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
         $listElement.append($listItem);
     });
 }
