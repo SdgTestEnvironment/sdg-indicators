@@ -102,10 +102,11 @@ function updateObservationAttributes(obsAttributes) {
         return;
     }
     $listElement.show();
+    var listedAttributes = ["test", "test2"];
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
-        var listedAttributes = ["test", "test2"];
+
         console.log('LA: ', listedAttributes);
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
