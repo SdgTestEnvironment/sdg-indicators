@@ -3490,13 +3490,13 @@ function updateObservationAttributes(obsAttributes) {
             num = obsAttribute.footnoteNumber;
         var listedAttributes = ["test", "test2"];
         if (num == 0){
-          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>::</dt>');
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
           $listElement.append($listItem);
           var br = '<br>'
         }
         else
           {var br = ''}
-        if (listedAttributes.indexOf(label) == 0) {
+        if (listedAttributes.indexOf(label) == -1) {
           listedAttributes.push(label);
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
           $listElement.append($listItem);
@@ -4687,17 +4687,18 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         currentTable.append(table_head);
         currentTable.append('<tbody></tbody>');
         var row = -1;
-
+        var col = 0;
         table.data.forEach(function (data) {
             row += 1;
             var row_html = '<tr>';
             var obsValue = '';
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
+                col += 1;
                 // For accessibility set the Year column to a "row" scope th.
-                console.log("Row, Col: ", row, index);
+                console.log("Row, Col: ", row, col);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
+                (observationAttributesTable.data[row][col][0] !== undefined ? obsValue = observationAttributesTable.data[row][col][0].value : obsValue = '.');
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
