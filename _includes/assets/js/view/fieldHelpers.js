@@ -105,7 +105,7 @@ function updateObservationAttributes(obsAttributes) {
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
-        var listedAttributes = [];
+        var listedAttributes = ["test", "test2"];
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>::</dt>');
           $listElement.append($listItem);
