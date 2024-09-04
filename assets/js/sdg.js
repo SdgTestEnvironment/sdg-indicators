@@ -4685,17 +4685,15 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         var row = -1;
 
         table.data.forEach(function (data) {
-            var col = -1;
             row += 1;
             var row_html = '<tr>';
             var obsValue = '';
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
-              col += 1;
                 // For accessibility set the Year column to a "row" scope th.
-                console.log("Row, Col: ", row, col);
+                console.log("Row, Col: ", row, index);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
+                (observationAttributesTable.data[row][index][0] !== undefined ? obsValue = observationAttributesTable.data[row][index][0].value : obsValue = '.');
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
