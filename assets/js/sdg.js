@@ -3499,8 +3499,8 @@ function updateObservationAttributes(obsAttributes) {
         if (listedAttributes.indexOf(label) == 0) {
           listedAttributes.push(label);
           var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+          $listElement.append($listItem);
         }
-        $listElement.append($listItem);
     });
 }
 
@@ -4703,7 +4703,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  data[index] : obsValue) + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (obsValue == '.' ? data[index] : (data[index] + obsValue)) : obsValue) + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
