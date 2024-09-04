@@ -4697,7 +4697,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // For accessibility set the Year column to a "row" scope th.
                 console.log("Row, Col: ", row, index);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                (observationAttributesTable.data[row][index][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][index][1][0].value : obsValue = '.');
+                (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
