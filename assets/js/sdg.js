@@ -4687,10 +4687,11 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             row += 1;
             var row_html = '<tr>';
             var obsValue = '';
-            (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
+            //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
-
+                console.log("data: ", data, index);
+                (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
