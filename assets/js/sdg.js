@@ -3513,7 +3513,7 @@ function getObservationAttributeText(obsAttribute) {
     }
     var label = translations.t(obsAttribute.value);
     if (attributeConfig.label) {
-        label = translations.t(attributeConfig.label) + ': ' + label;
+        label = translations.t(attributeConfig.label) + ' = ' + label;
     }
     return label;
 }
@@ -4688,7 +4688,6 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var row_html = '<tr>';
             var obsValue = '';
             (observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
-            console.log("O", obsValue);
             table.headings.forEach(function (heading, index) {
                 // For accessibility set the Year column to a "row" scope th.
 
@@ -4917,7 +4916,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return '[' + obsAttribute.value + ']';
+    return ' ' + obsAttribute.value + '';
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
