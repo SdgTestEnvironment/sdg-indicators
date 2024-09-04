@@ -4687,9 +4687,10 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         currentTable.append(table_head);
         currentTable.append('<tbody></tbody>');
         var row = -1;
-        var col = 0;
+
         table.data.forEach(function (data) {
             row += 1;
+            var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
