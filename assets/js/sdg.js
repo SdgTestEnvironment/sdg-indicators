@@ -3488,14 +3488,18 @@ function updateObservationAttributes(obsAttributes) {
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
+        var listedAttributes = [];
         if (num == 0){
-          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>::</dt>');
           $listElement.append($listItem);
           var br = '<br>'
         }
         else
           {var br = ''}
-        var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+        if (listedAttributes.indexOf(label) == 0) {
+          listedAttributes.push(label);
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+        }
         $listElement.append($listItem);
     });
 }
@@ -4693,7 +4697,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // For accessibility set the Year column to a "row" scope th.
                 console.log("Row, Col: ", row, index);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                (observationAttributesTable.data[row][index][0] !== undefined ? obsValue = observationAttributesTable.data[row][index][0].value : obsValue = '.');
+                (observationAttributesTable.data[row][index][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][index][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
