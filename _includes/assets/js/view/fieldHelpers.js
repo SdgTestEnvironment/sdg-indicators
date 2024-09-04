@@ -105,14 +105,18 @@ function updateObservationAttributes(obsAttributes) {
     Object.values(obsAttributes).forEach(function(obsAttribute) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
+        var listedAttributes = [];
         if (num == 0){
-          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
+          var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>::</dt>');
           $listElement.append($listItem);
           var br = '<br>'
         }
         else
           {var br = ''}
-        var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+        if (listedAttributes.indexOf(label) == 0) {
+          listedAttributes.push(label);
+          var $listItem = $('<dd id="observation-footnote-desc-' + num + '" style="margin-bottom: 0px">' + br + label + ' = ' +  translations.t('+++' + label) + '</dd>');
+        }
         $listElement.append($listItem);
     });
 }
