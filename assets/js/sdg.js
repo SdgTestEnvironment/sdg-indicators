@@ -3489,6 +3489,7 @@ function updateObservationAttributes(obsAttributes) {
         var label = getObservationAttributeText(obsAttribute),
             num = obsAttribute.footnoteNumber;
         var listedAttributes = ["test", "test2"];
+        console.log('LA: ', listedAttributes);
         if (num == 0){
           var $listItem = $('<dt><u>' + translations.t('+++symbols') + '</u>:</dt>');
           $listElement.append($listItem);
@@ -4690,7 +4691,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
 
         table.data.forEach(function (data) {
             row += 1;
-            var col = -1;
+            var col = 0;
             var row_html = '<tr>';
             var obsValue = '';
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
