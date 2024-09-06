@@ -193,7 +193,10 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // For accessibility set the Year column to a "row" scope th.
                 console.log("Row, Col: ", row, col);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                if (observationAttributesTable.data[row][1].length == 0 || col == 0) {
+                if (col == 0) {
+                  obsValue = ''
+                }
+                else if (observationAttributesTable.data[row][col].length == 0) {
                   obsValue = ''
                 }
                 else {
