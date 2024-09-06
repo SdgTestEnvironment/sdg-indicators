@@ -4700,11 +4700,11 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // For accessibility set the Year column to a "row" scope th.
                 console.log("Row, Col: ", row, col);
                 console.log("observationAttributesTable: ", observationAttributesTable);
-                if (observationAttributesTable.data[row][1].length == 0) {
-                  obsValue = '.'
+                if (observationAttributesTable.data[row][1].length == 0 || col == 0) {
+                  obsValue = ''
                 }
                 else {
-                  obsValue = observationAttributesTable.data[row][1][0].value
+                  obsValue = observationAttributesTable.data[row][col][0].value
                 }
                 //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
@@ -4712,7 +4712,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
-                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (obsValue == '.' ? data[index] : (data[index] + obsValue)) : obsValue) + cell_suffix;
+                row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
