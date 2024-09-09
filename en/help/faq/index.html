@@ -142,7 +142,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240909101525">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240909133428">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -343,29 +343,47 @@ are currently being prepared for provision on this platform.<br>
 * Red: Not available - No data is available for this indicator.<br>
 * Grey: Not applicable - This internationally relevant indicator cannot be meaningfully calculated for Germany or can only be answered in a global context.
 
-<h3 class="h3bold">5. Why is there not a weather symbol for every indicator?</h3>
+<h3 class="h3bold">5. Why are some indicators labelled as "available" without actual data being stored?</h3>
 Some indicators cannot be meaningfully populated with data at national level, e.g. indicator 5.c.1 "Proportion of countries with systems to track and make
 public allocations for gender equality and women’s empowerment". Instead of only showing the value 1 or 0 in such cases, further information on the
 context of the indicator is presented.
 
-<h3 class="h3bold">6. Why does some of the data presented on the online platform not correspond to the SDG indicators?</h3>
+<h3 class="h3bold">6. What do the characters and letters on the data in the graphs and tables mean?</h3>
+If individual data points need to be labelled in any way, this is done using one of the symbols below.
+These symbols appear when you move the mouse over the corresponding data point in the chart and are
+attached to the numerical values in the table view. The meanings of the symbols are displayed in the area
+below the graph and table.<br><br>
+The possible labels and their meanings are:<br>
+0 = less than half of 1 in the last digit occupied, but more than zero<br>
+‒ = no figures or magnitude zero<br>
+... = data will be available later<br>
+/ = no data because the numerical value is not sufficiently reliable<br>
+. = numerical value unknown or not be disclosed<br>
+X = cell blocked for logical reasons<br>
+( ) = limited informational value because numerical value is of limited statistical reliability<br>
+| = fundamental change within a series affecting comparisons over time<br>
+p = provisional data<br>
+r = revised data<br>
+s = estimated data
+
+<h3 class="h3bold">7. Why does some of the data presented on the online platform not correspond to the SDG indicators?</h3>
 For some of the SDG indicators, it is not possible to find data that corresponds exactly to the requirements of the indicator. In these cases, where
 possible, data is presented that reflects the subject area of the indicator and thus still provides relevant information,
 even if it differs in wording from the actual SDG indicator.
 
-<h3 class="h3bold">7. What is disaggregation?</h3>
+<h3 class="h3bold">8. What is disaggregation?</h3>
 Disaggregation is used to divide an existing indicator into further subcategories for more detailed analysis.
 The best known are age or gender. For many indicators, however, separate disaggregations apply, which are defined
 in the indicator name or by the international organisation responsible for the indicator.
 
-<h3 class="h3bold">8. Why can there be differences between the data for Germany on this platform and in the UN database?</h3>
+<h3 class="h3bold">9. Why can there be differences between the data for Germany on this platform and in the UN database?</h3>
 National official statistics are the data source for most of the indicators in the global UN database.
 For some indicators, however, the respective international organisations also compile estimated data or
 recalculate the data provided by the individual countries in order to ensure international comparability.
 They use their own methodology for this purpose. If the global database contains recalculated data from the international
 organisations, there may be differences between this data and the data on this platform.
 
-<h3 class="h3bold">9. Can other countries copy this website?</h3>
+<h3 class="h3bold">10. Can other countries copy this website?</h3>
 The website can be used freely to create your own online platform. The terms and conditions for the use of GitHub apply.
 Further information can be found at <a href="https://sdgtestenvironment.github.io/sdg-indicators/en/help/guidance/">Technical guidance</a>.
 
@@ -435,12 +453,12 @@ Further information can be found at <a href="https://sdgtestenvironment.github.i
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240909101525'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240909133428'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240909101525"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240909133428"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
