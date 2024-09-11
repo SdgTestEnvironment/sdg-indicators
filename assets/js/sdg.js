@@ -4694,12 +4694,11 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
+            console.log("observationAttributesTable: ", observationAttributesTable);
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 col += 1;
                 // For accessibility set the Year column to a "row" scope th.
-                console.log("Row, Col: ", row, col);
-                console.log("observationAttributesTable: ", observationAttributesTable);
                 if (col == 0) {
                   obsValue = ''
                 }
