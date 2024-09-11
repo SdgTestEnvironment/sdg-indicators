@@ -142,7 +142,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240911132249">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240911134743">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -350,8 +350,11 @@ Statt in solchen Fällen nur den Wert 1 oder 0 abzubilden, werden weiterführend
 
 <h3 class="h3bold">6. Was bedeuten die Zeichen und Buchstaben an den Daten der Grafiken und Tabellen?</h3>
 Wenn einzelne Datenpunkte in irgendeiner Weise gekennzeichnet werden müssen, erfolgt dies über eines der untenstehenden Zeichen.
-Diese Kennzeichen erscheinen, wenn man mit der Maus in der Grafik über den entsprechenden Datenpunkt fährt und sind in der
-Tabellenansicht an den Zahlenwerten angefügt. In dem Bereich unterhalb der Grafik und Tabelle werden die Bedeutungen der Zeichen angezeigt.<br><br>
+Es wird dabei zwischen sogenannten werterläuternden Zeichen (Zeichen an Zahlen, z.B. p, r, oder s) und wertersetzenden
+Zeichen (Zeichen anstelle von Zahlen; z.B. X oder /) unterscheiden.
+Die werterläuternden Zeichen erscheinen, wenn man mit der Maus in der Grafik über den entsprechenden Datenpunkt fährt und sind in der
+Tabellenansicht an den Zahlenwerten angefügt. Die wertersetzenden Zeichen erscheinen nur in der Tabellenansicht. 
+In dem Bereich unterhalb der Grafik und Tabelle werden die Bedeutungen der Zeichen angezeigt.<br><br>
 Die möglichen Kennzeichnungen und deren Bedeutung sind:<br>
 0 = weniger als die Hälfte von 1 in der letzten besetzten Stelle, jedoch mehr als nichts<br>
 ‒ = nichts vorhanden<br>
@@ -450,12 +453,12 @@ Weitere Informationen finden Sie unter <a href="https://sdgtestenvironment.githu
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240911132249'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240911134743'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240911132249"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240911134743"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

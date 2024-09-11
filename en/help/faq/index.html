@@ -142,7 +142,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240911132249">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240911134743">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -350,8 +350,11 @@ context of the indicator is presented.
 
 <h3 class="h3bold">6. What do the characters and letters on the data in the graphs and tables mean?</h3>
 If individual data points need to be labelled in any way, this is done using one of the symbols below.
-These symbols appear when you move the mouse over the corresponding data point in the chart and are
-attached to the numerical values in the table view. The meanings of the symbols are displayed in the area
+A distinction is made between so-called value-explaining characters (characters next to numbers, e.g. p, r, or s)
+and value-setting characters (characters instead of numbers, e.g. X or /).
+The value-explaining characters appear when you move the mouse over the corresponding data point in the chart and are
+attached to the numerical values in the table view. The value-setting characters only appear in the table view.
+The meanings of the symbols are displayed in the area
 below the graph and table.<br><br>
 The possible labels and their meanings are:<br>
 0 = less than half of 1 in the last digit occupied, but more than zero<br>
@@ -453,12 +456,12 @@ Further information can be found at <a href="https://sdgtestenvironment.github.i
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240911132249'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240911134743'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240911132249"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240911134743"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
