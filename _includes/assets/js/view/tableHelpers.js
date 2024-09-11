@@ -194,13 +194,13 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 console.log("Row, Col: ", row, col);
                 console.log("observationAttributesTable: ", observationAttributesTable);
                 if (col == 0) {
-                  obsValue = ''
+                  obsValue = 'A'
                 }
                 else if (observationAttributesTable.data[row][col].length == 0) {
-                  obsValue = ''
+                  obsValue = 'B'
                 }
                 else {
-                  obsValue = '';
+                  obsValue = 'C';
                   for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
                     obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : ', ' + observationAttributesTable.data[row][col][i].value)
                   };
