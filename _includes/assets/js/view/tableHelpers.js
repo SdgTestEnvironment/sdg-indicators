@@ -200,7 +200,10 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                   obsValue = ''
                 }
                 else {
-                  obsValue = observationAttributesTable.data[row][col][0].value
+                  obsValue = '';
+                  for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
+                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][obs].value : ', ' + observationAttributesTable.data[row][col][obs].value)
+                  };
                 }
                 //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
                 var isYear = (index == 0);
