@@ -4703,12 +4703,12 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                   obsValue = ''
                 }
                 else if (observationAttributesTable.data[row][col].length == 0) {
-                  (data[index] !== null && data[index] !== undefined ?  obsValue = '.' : obsValue)obsValue = '')
+                  (data[index] !== null && data[index] !== undefined ?  obsValue = '.' : obsValue = '')
                 }
                 else {
                   obsValue = '';
                   for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
-                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : ', ' + observationAttributesTable.data[row][col][i].value)
+                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : (', ' + observationAttributesTable.data[row][col][i].value));
                   };
                 }
                 //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
