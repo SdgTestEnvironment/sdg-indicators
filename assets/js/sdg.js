@@ -4703,7 +4703,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                   obsValue = ''
                 }
                 else if (observationAttributesTable.data[row][col].length == 0) {
-                  (data[index] !== null && data[index] !== undefined ?  obsValue = '.' : obsValue = '')
+                  (data[index] !== null && data[index] !== undefined ?  obsValue = '' : obsValue = '.')
                 }
                 else {
                   obsValue = '';
