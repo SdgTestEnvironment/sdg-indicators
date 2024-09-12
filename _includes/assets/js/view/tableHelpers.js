@@ -201,7 +201,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 else {
                   obsValue = '';
                   for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
-                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : ', ' + observationAttributesTable.data[row][col][i].value)
+                    obsValue += (i == 0 ? observationAttributesTable.data[row][col][i].value : (', ' + observationAttributesTable.data[row][col][i].value));
                   };
                 }
                 //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
