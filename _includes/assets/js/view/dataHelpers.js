@@ -14,7 +14,13 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // do our best to ensure that it starts out as a number.
     var altered = value;
     if (typeof altered !== 'number') {
-        altered = Number(value);
+        if (typeof altered == 'string' && context === 'table cell'){
+          var altered = Number(altered.substring(0, indexOf(' ')));
+          var obsValue = altered.substring(indexOf(' ') + 1);
+        }
+      else {
+          altered = Number(value);
+      }
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
@@ -79,6 +85,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             col = additionalInfo.col,
             obsAttributesTable = additionalInfo.observationAttributesTable;
         obsAttributes = obsAttributesTable.data[row][col];
+        altered += ' ' + obsValue;
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
