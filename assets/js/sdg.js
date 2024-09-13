@@ -333,14 +333,6 @@ opensdg.autotrack = function(preset, category, action, label) {
       });
     },
 
-
-    altered = altered.toLocaleString(opensdg.language, localeOpts);
-    // Apply thousands seperator if needed
-    if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
-        altered = altered.replace('.', OPTIONS.thousandsSeparator);
-    }
-
-
     // Alter data before displaying it.
     alterData: function(value) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
