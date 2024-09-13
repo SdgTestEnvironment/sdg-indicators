@@ -4929,7 +4929,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             col = additionalInfo.col,
             obsAttributesTable = additionalInfo.observationAttributesTable;
         obsAttributes = obsAttributesTable.data[row][col];
-        altered += ' ' + obsText;
+        //altered += ' ' + obsText;
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
