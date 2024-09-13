@@ -80,7 +80,6 @@
     if (Array.isArray(options.mapOptions.colorRange[0])) {
       this.goalNumber = parseInt(options.indicatorId.slice(options.indicatorId.indexOf('_')+1,options.indicatorId.indexOf('-')));
       options.mapOptions.colorRange = options.mapOptions.colorRange[this.goalNumber-1];
-      console.log("goal: ",this.goalNumber);
     }
 
 
@@ -303,6 +302,14 @@
       });
     },
 
+
+    altered = altered.toLocaleString(opensdg.language, localeOpts);
+    // Apply thousands seperator if needed
+    if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
+        altered = altered.replace('.', OPTIONS.thousandsSeparator);
+    }
+
+
     // Alter data before displaying it.
     alterData: function(value) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
@@ -312,10 +319,20 @@
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {
-        value = value.toString().replace('.', this._decimalSeparator);
+        if (opensdg.language == 'de') {
+          value = value.toString().replace(' ', this._decimalSeparator);
+        }
+        else {
+          value = value.toString().replace(',', this._decimalSeparator);
+        }
       }
       if (this._thousandsSeparator) {
-        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        if (opensdg.language == 'de') {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        }
+        else {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
       }
       return value;
     },
