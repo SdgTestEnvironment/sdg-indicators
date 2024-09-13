@@ -16,9 +16,8 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     var obsText = '';
     if (typeof altered !== 'number') {
         if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
-
-            altered = Number(altered.substring(0, altered.indexOf(' ')));
             obsText = altered.substring(altered.indexOf(' ') + 1);
+            altered = Number(altered.substring(0, altered.indexOf(' ')));
             console.log("X", altered, obsText);
         }
         else {
