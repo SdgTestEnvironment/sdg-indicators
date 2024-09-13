@@ -13,13 +13,13 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // Before passing to user-defined dataDisplayAlterations, let's
     // do our best to ensure that it starts out as a number.
     var altered = value;
-    var obsText = ''
+    var obsText = '';
     if (typeof altered !== 'number') {
         if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
 
-          altered = Number(altered.substring(0, altered.indexOf(' ')));
-          obsText = altered.substring(altered.indexOf(' ') + 1);
-          console.log("X", altered, obsText);
+            altered = Number(altered.substring(0, altered.indexOf(' ')));
+            obsText = altered.substring(altered.indexOf(' ') + 1);
+            console.log("X", altered, obsText);
         }
         else {
             altered = Number(value);
