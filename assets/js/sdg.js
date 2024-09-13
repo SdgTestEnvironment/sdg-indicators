@@ -343,10 +343,10 @@ opensdg.autotrack = function(preset, category, action, label) {
       }
       if (this._decimalSeparator) {
         if (opensdg.language == 'de') {
-          value = value.toString().replace(' ', this._decimalSeparator);
+          value = value.toString().replace('.', this._decimalSeparator);
         }
         else {
-          value = value.toString().replace(',', this._decimalSeparator);
+          value = value.toString();
         }
       }
       if (this._thousandsSeparator) {
@@ -354,7 +354,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
         }
         else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
       }
       return value;
@@ -471,7 +471,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         }
 
         // Do a quick loop through to see which layers actually have data.
-        for (var i = 0; i < geoJsons.length; i++) {
+        for (var i = 0; i < geoJsons.length; i++) {const module = require('module');
           var layerHasData = true;
           if (typeof geoJsons[i][0].features === 'undefined') {
             layerHasData = false;
