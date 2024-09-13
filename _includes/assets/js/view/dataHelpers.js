@@ -14,13 +14,14 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // do our best to ensure that it starts out as a number.
     var altered = value;
     if (typeof altered !== 'number') {
-        if (typeof altered == 'string' && context === 'table cell'){
+        if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
           var altered = Number(altered.substring(0, altered.indexOf(' ')));
           var obsValue = altered.substring(altered.indexOf(' ') + 1);
+          console.log("X", altered, obsValue);
         }
-      else {
-          altered = Number(value);
-      }
+        else {
+            altered = Number(value);
+        }
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
