@@ -311,10 +311,20 @@
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {
-        value = value.toString().replace('.', this._decimalSeparator);
+        if(opensdg.language == 'de') {
+          value = value.toString().replace('.', this._decimalSeparator);
+        }
+        else {
+          value = value.toString();
+        }
       }
       if (this._thousandsSeparator) {
-        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        if(opensdg.language == 'de') {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+        }
+        else {
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
       }
       return value;
     },
@@ -430,7 +440,7 @@
         }
 
         // Do a quick loop through to see which layers actually have data.
-        for (var i = 0; i < geoJsons.length; i++) {const module = require('module');
+        for (var i = 0; i < geoJsons.length; i++) {
           var layerHasData = true;
           if (typeof geoJsons[i][0].features === 'undefined') {
             layerHasData = false;
