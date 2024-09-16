@@ -311,20 +311,10 @@
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {
-        if (opensdg.language == 'de') {
-          value = value.toString().replace('.', this._decimalSeparator);
-        }
-        else {
-          value = value.toString();
-        }
+        value = value.toString().replace('.', this._decimalSeparator);
       }
       if (this._thousandsSeparator) {
-        if (opensdg.language == 'de') {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
-        }
-        else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-        }
+        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
       }
       return value;
     },
