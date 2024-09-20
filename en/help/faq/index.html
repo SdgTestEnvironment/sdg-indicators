@@ -142,7 +142,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240920075521">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20240920080940">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -349,25 +349,77 @@ public allocations for gender equality and women’s empowerment". Instead of on
 context of the indicator is presented.
 
 <h3 class="h3bold">6. What do the characters and letters on the data in the graphs and tables mean?</h3>
-If individual data points need to be labelled in any way, this is done using one of the symbols below.
-A distinction is made between so-called value-explaining characters (characters next to numbers, e.g. p, r, or s)
-and value-setting characters (characters instead of numbers, e.g. X or /).
-The value-explaining characters appear when you move the mouse over the corresponding data point in the chart and are
-attached to the numerical values in the table view. The value-setting characters only appear in the table view.
-The meanings of the symbols are displayed in the area
-below the graph and table.<br><br>
-The possible labels and their meanings are:<br>
-0 = less than half of 1 in the last digit occupied, but more than zero<br>
-‒ = no figures or magnitude zero<br>
-... = data will be available later<br>
-/ = no data because the numerical value is not sufficiently reliable<br>
-. = numerical value unknown or not be disclosed<br>
-X = cell blocked for logical reasons<br>
-( ) = limited informational value because numerical value is of limited statistical reliability<br>
-| = fundamental change within a series affecting comparisons over time<br>
-p = provisional data<br>
-r = revised data<br>
-s = estimated data
+If numerical values of individual data points cannot be published or cannot be published with their
+original value, a so-called <b>value-replacing character</b> (character instead of numbers) is used
+instead of the actual numerical value, which only appears in the table view.
+In certain constellations, numerical values require an explanation in order to illustrate the
+significance or the origin of the numerical value. In these cases, a so-called <b>value-explanatory
+character</b> (character at numbers) is used in addition to the numerical value. In the chart view,
+value-explanatory symbols appear when you move the mouse over the corresponding data point. In the table
+view, they are attached to the numerical values attached to the numerical values.
+The meaning of the symbols used is shown in the symbol explanation below the chart and table.<br>
+<table class="addinfotable">
+  <tr class="addinfotr">
+  	<th class="addinfoth">Character</th>
+    <th class="addinfoth">Explanation of character</th>
+    <th class="addinfoth">Type of character</th>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">0</td>
+    <td class="addinfotd">less than half of 1 in the last digit occupied, but more than zero</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">-</td>
+    <td class="addinfotd">no figures or magnitude zero</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">...</td>
+    <td class="addinfotd">data will be available later</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">/</td>
+    <td class="addinfotd">no data because the numerical value is not sufficiently reliable</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">.</td>
+    <td class="addinfotd">numerical value unknown or not be disclosed</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">X</td>
+    <td class="addinfotd">cell blocked for logical reasons</td>
+    <td class="addinfotd">value-replacing character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">( )</td>
+    <td class="addinfotd">limited informational value because numerical value is of limited statistical reliability</td>
+    <td class="addinfotd">value-explanatory character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">|</td>
+    <td class="addinfotd">fundamental change within a series affecting comparisons over time</td>
+    <td class="addinfotd">value-explanatory character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">p</td>
+    <td class="addinfotd">provisional data</td>
+    <td class="addinfotd">value-explanatory character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">r</td>
+    <td class="addinfotd">revised data</td>
+    <td class="addinfotd">value-explanatory character</td>
+  </tr>
+  <tr class="addinfotr">
+    <td class="addinfotd">s</td>
+    <td class="addinfotd">estimated data</td>
+    <td class="addinfotd">value-explanatory character</td>
+  </tr>
+</table>
 
 <h3 class="h3bold">7. Why does some of the data presented on the online platform not correspond to the SDG indicators?</h3>
 For some of the SDG indicators, it is not possible to find data that corresponds exactly to the requirements of the indicator. In these cases, where
@@ -456,12 +508,12 @@ Further information can be found at <a href="https://sdgtestenvironment.github.i
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20240920075521'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20240920080940'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20240920075521"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20240920080940"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
