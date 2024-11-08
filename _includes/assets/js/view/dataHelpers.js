@@ -73,8 +73,8 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         }
         altered = altered.toLocaleString(opensdg.language, localeOpts);
         // Apply thousands seperator if needed
-        if (OPTIONS.thousandsSeparator && (precision <=3 || precision == undefined || precision == false || precision == '') && opensdg.language == 'de'){
-            altered = altered.replace('.', OPTIONS.thousandsSeparator);
+        if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
+            altered = altered.replaceAll('.', OPTIONS.thousandsSeparator);
         }
     }
     // Now let's add any footnotes from observation attributes.
