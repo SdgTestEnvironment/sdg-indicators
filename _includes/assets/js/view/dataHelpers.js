@@ -18,11 +18,9 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
             obsText = altered.substring(altered.indexOf(' ') + 1);
             altered = Number(altered.substring(0, altered.indexOf(' ')));
-            console.log("X", altered, obsText);
         }
         else {
             altered = Number(value);
-            console.log("Y", altered, obsText);
         }
     }
     // If that gave us a non-number, return original.
@@ -106,6 +104,6 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return ' ' + obsAttribute.value + '';
+    return ' [' + obsAttribute.value + ']';
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
