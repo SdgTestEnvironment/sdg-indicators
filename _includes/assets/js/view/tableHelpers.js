@@ -217,6 +217,9 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // case: datapoint == 0 --> we do not want 0 plus obsValue in tabel but only 0 (or 0.00) or - feventually ollowed by other obs values
                 console.log("DATA", data);
                 console.log("INDEX",index);
+                console.log("DATA[INDEX]", data[index]);
+                console.log("DATA[INDEX]==0", data[index] == 0);
+                console.log("OBSVALUE",obsValue);
                 if (data[index] == 0 || data[index] === 0){
                   // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
                   if (obsValue.length == 1){
@@ -228,7 +231,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                       var dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
                     }
                     else{
-                      var dateForTable = '0 ' + obsValue.replace('0, ','').replace(', 0','');
+                      var dateForTable = data[index] + ' ' + obsValue.replace('0, ','').replace(', 0','');
                     }
                   }
                 }
