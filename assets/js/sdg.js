@@ -4703,7 +4703,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
-            console.log("observationAttributesTable: ", observationAttributesTable);
+            //console.log("observationAttributesTable: ", observationAttributesTable);
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 col += 1;
@@ -4737,16 +4737,21 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 console.log("DATA[INDEX]==0", data[index] == 0);
                 console.log("OBSVALUE",obsValue);
                 if (data[index] == 0 || data[index] === 0){
+                  console.log("STEP 1 taken");
                   // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
                   if (obsValue.length == 1){
+                    console.log("STEP 2.1 taken");
                     var dateForTable = obsValue;
                   }
                   // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
                   else{
+                    console.log("STEP 2.2 taken");
                     if (obsValue.indexOf('‒') > -1){
+                      console.log("STEP 2.2.1 taken");
                       var dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
                     }
                     else{
+                      console.log("STEP 2.2.2 taken");
                       var dateForTable = data[index] + ' ' + obsValue.replace('0, ','').replace(', 0','');
                     }
                   }
