@@ -211,7 +211,16 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 // if datapoint == 0 we do not want 0 + obsValue tabel but only 0 (or 0.00) or -
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
-                var dateForTable = data[index] == 0 ? obsValue : (data[index] + ' ' + obsValue);
+                if (data[index] == 0){
+                  if (len(obsValue) == 1){
+                    var dateForTable = obsValue;
+                  }
+
+                }
+                else {
+                  var dateForTable = (data[index] + ' ' + obsValue);
+                }
+
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
