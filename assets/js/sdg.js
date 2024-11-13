@@ -4708,12 +4708,15 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             table.headings.forEach(function (heading, index) {
                 col += 1;
                 // For accessibility set the Year column to a "row" scope th.
+                // No observation values for years
                 if (col == 0) {
                   obsValue = ''
                 }
+                // case: no obs attributes defined --> '' if we have a value and '.' if not
                 else if (observationAttributesTable.data[row][col].length == 0) {
                   (data[index] !== null && data[index] !== undefined ?  obsValue = '' : obsValue = '.')
                 }
+                // case: Obs values are defined --> adding up all obs values separated by comma
                 else {
                   obsValue = '';
                   for (var i = 0; i <  observationAttributesTable.data[row][col].length; i++) {
@@ -4724,17 +4727,26 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
-                // if datapoint == 0 we do not want 0 + obsValue tabel but only 0 (or 0.00) or -
+
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
+                // case: datapoint == 0 --> we do not want 0 plus obsValue in tabel but only 0 (or 0.00) or - feventually ollowed by other obs values
                 if (data[index] == 0){
-                  if (obsValue.length) == 1){
+                  // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
+                  if (obsValue.length == 1){
                     var dateForTable = obsValue;
                   }
+                  // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
                   else{
-                    var dateForTable = obsValue.replace('0, ','').replace(', 0','').replace('‒, ','').replace(', ‒','')
+                    if (obsValue.indexOf('‒') > -1){
+                      var dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
+                    }
+                    else{
+                      var dateForTable = '0 ' + obsValue.replace('0, ','').replace(', 0','');
+                    }
                   }
                 }
+                // case: datapoint is not zero --> datapoint plus obs-value
                 else {
                   var dateForTable = (data[index] + ' ' + obsValue);
                 }
