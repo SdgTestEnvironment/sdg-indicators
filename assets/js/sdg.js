@@ -4748,11 +4748,11 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                   else{
                     console.log("STEP 1.2 taken", obsValue.indexOf('‒'));
                     if (obsValue.indexOf('‒') > -1){
-                      dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
+                      dateForTable = '‒ [' + obsValue.replace('‒, ','').replace(', ‒','') + ']';
                       console.log("STEP 1.2.1 taken", dateForTable);
                     }
                     else{
-                      dateForTable = data[index] + ' ' + obsValue.replace('0, ','').replace(', 0','');
+                      dateForTable = data[index] + ' [' + obsValue.replace('0, ','').replace(', 0','') + ']';
                       console.log("STEP 1.2.2 taken", dateForTable);
                     }
                   }
