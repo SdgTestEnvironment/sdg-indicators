@@ -220,12 +220,13 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 console.log("DATA[INDEX]", data[index]);
                 console.log("DATA[INDEX]==0", data[index] == 0);
                 console.log("OBSVALUE",obsValue);
-                if (data[index] == 0 || data[index] === 0){
+                if (data[index] == 0){
                   console.log("STEP 1 taken", obsValue.length);
                   // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
                   if (obsValue.length == 1){
-                    console.log("STEP 1.1 taken");
+
                     var dateForTable = obsValue;
+                    console.log("STEP 1.1 taken", obsValue);
                   }
                   // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
                   else{
