@@ -219,7 +219,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 console.log("INDEX",index);
                 console.log("DATA[INDEX]", data[index]);
                 console.log("DATA[INDEX]==0", data[index] == 0);
-                console.log("OBSVALUE",obsValue);
+                console.log("OBSVALUE",obsValue, typeof obsValue);
                 var dateForTable = ''
                 if (data[index] == 0){
                   console.log("STEP 1 taken", obsValue.length);
