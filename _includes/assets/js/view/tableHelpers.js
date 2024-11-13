@@ -208,7 +208,9 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 var isYear = (index == 0);
                 var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
                 var cell_suffix = (isYear) ? '</th>' : '</td>';
-                var dateForTable = (data[index] == 0 || obsValue == '0') ? (obsValue.replace('[','').replace(']','')) : (data[index] + ' ' + obsValue)
+                // if datapoint == 0 we do not want 0 + obsValue tabel but only 0 (or 0.00) or -
+                obsValue == '[0]' ? obsValue = '' : obsValue = obsValue;
+                var dateForTable = data[index] == 0 ? (obsValue.replace('[','').replace(']','')) : (data[index] + ' ' + obsValue);
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
