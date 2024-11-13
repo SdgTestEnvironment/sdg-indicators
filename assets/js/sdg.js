@@ -4984,7 +4984,12 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
           return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
+        if (context == 'table cell'){
+          obsAttributeFootnoteNumbers.splice(obsAttributeFootnoteNumbers.indexOf('0'),1);
+        }
         altered += ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
+
+
     }
     return altered;
 }
