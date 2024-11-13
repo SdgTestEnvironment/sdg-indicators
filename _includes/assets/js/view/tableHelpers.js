@@ -212,10 +212,12 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
                 if (data[index] == 0){
-                  if (len(obsValue) == 1){
+                  if (obsValue.length) == 1){
                     var dateForTable = obsValue;
                   }
-
+                  else{
+                    var dateForTable = obsValue.replace('0, ','').replace(', 0','').replace('‒, ','').replace(', ‒','')
+                  }
                 }
                 else {
                   var dateForTable = (data[index] + ' ' + obsValue);
