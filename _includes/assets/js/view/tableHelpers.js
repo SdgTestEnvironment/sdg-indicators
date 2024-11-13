@@ -220,40 +220,38 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 console.log("DATA[INDEX]", data[index]);
                 console.log("DATA[INDEX]==0", data[index] == 0);
                 console.log("OBSVALUE",obsValue);
+                var dateForTable = ''
                 if (data[index] == 0){
                   console.log("STEP 1 taken", obsValue.length);
                   // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
                   if (obsValue.length == 1){
-
-                    var dateForTable = obsValue;
-                    console.log("STEP 1.1 taken", obsValue);
+                    dateForTable = obsValue;
+                    console.log("STEP 1.1 taken", dateForTable);
                   }
                   // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
                   else{
                     console.log("STEP 1.2 taken", obsValue.indexOf('‒'));
                     if (obsValue.indexOf('‒') > -1){
-
-                      var dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
+                      dateForTable = '‒ ' + obsValue.replace('‒, ','').replace(', ‒','');
                       console.log("STEP 1.2.1 taken", dateForTable);
                     }
                     else{
-
-                      var dateForTable = data[index] + ' ' + obsValue.replace('0, ','').replace(', 0','');
+                      dateForTable = data[index] + ' ' + obsValue.replace('0, ','').replace(', 0','');
                       console.log("STEP 1.2.2 taken", dateForTable);
                     }
                   }
                 }
                 // case: datapoint is not zero --> datapoint plus obs-value
                 else {
-                  var dateForTable = (data[index] + ' ' + obsValue);
-                  console.log("STEP 1 taken", dateForTable);
+                  dateForTable = (data[index] + ' ' + obsValue);
+                  console.log("STEP 2 taken", dateForTable);
                 }
 
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (cell_content !== null &&  cell_content !== undefined ?  cell_content : '.') + cell_suffix;
                 //row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  (data[index] + ' ' + obsValue) : obsValue) + cell_suffix;
                 row_html += cell_prefix + (isYear ? '' : ' class="table-value"') + '>' + (data[index] !== null && data[index] !== undefined ?  dateForTable : obsValue) + cell_suffix;
-
+                console.log("ROW FIN", row_html);
             });
             row_html += '</tr>';
             currentTable.find('tbody').append(row_html);
