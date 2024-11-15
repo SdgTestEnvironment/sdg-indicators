@@ -4987,10 +4987,27 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         // if (context == 'table cell'){
         //   obsAttributeFootnoteNumbers.splice(obsAttributeFootnoteNumbers.indexOf('0'),1);
         // }
-        altered += ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
-
-
+        var attributes = ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
     }
+    else {
+      var attributes = '';
+    }
+
+    // for table: we do not want "0 [-]" but "-"; and not "0,00 [0]" but "0,00"
+    if (context == 'table cell'){
+      if (parseFloat(altered) == 0){
+        // case: "0"
+        if (attributes.indexOf('0') > -1) {
+          attributes = attributes.replace('[0]','').replace('0, ','').replcae(', 0','');
+        }
+        else if (attribute.indexOf('‒') > -1){
+          altered = '‒';
+          attributes = attributes.replace('[‒]','').replace('‒, ','').replcae(', ‒','');
+        }
+      }
+    }
+    altered += attributes;
+
     return altered;
 }
 
