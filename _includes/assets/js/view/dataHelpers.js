@@ -106,11 +106,11 @@ function alterDataDisplay(value, info, context, additionalInfo) {
       if (parseFloat(altered) == 0){
         // case: "0"
         if (attributes.indexOf('0') > -1) {
-          attributes = attributes.replace('[0]','').replace('0, ','').replcae(', 0','');
+          attributes = attributes.replace('[0]','').replace('0, ','').replace(', 0','');
         }
         else if (attributes.indexOf('‒') > -1){
           altered = '‒';
-          attributes = attributes.replace('[‒]','').replace('‒, ','').replcae(', ‒','');
+          attributes = attributes.replace('[‒]','').replace('‒, ','').replace(', ‒','');
         }
       }
     }
