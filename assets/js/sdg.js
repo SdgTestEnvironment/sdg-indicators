@@ -5000,7 +5000,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         if (attributes.indexOf('0') > -1) {
           attributes = attributes.replace('[0]','').replace('0, ','').replcae(', 0','');
         }
-        else if (attribute.indexOf('‒') > -1){
+        else if (attributes.indexOf('‒') > -1){
           altered = '‒';
           attributes = attributes.replace('[‒]','').replace('‒, ','').replcae(', ‒','');
         }
