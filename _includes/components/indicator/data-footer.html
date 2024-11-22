@@ -33,7 +33,7 @@
           <dt><u>{{ page.t.indicator.footnote }}</u>:</dt>
           {% assign indent = '' %}
           {% if page.indicator.data_footnote contains '-' %}
-            {% assign indent = " style= content: \a; white-space: pre;" %}
+            {% assign indent = ' style= "content: \a; white-space: pre;"' %}
           {% endif %}
           <dd {{ indent }}>{{ page.indicator.data_footnote }}</dd>
         {% endif %}
@@ -42,7 +42,7 @@
           <dt><u>{{ page.t.indicator.footnotes }}</u>:</dt>
           {% assign indent = '' %}
           {% if page.indicator.data_footnotes contains '-' %}
-            {% assign indent = " style= content: \a; white-space: pre;" %}
+            {% assign indent = ' style= "content: \a; white-space: pre;"' %}
           {% endif %}
           <dd {{ indent }}><br>• {{ page.indicator.data_footnotes }}</dd>
         {% endif %}
@@ -56,7 +56,7 @@
               ><u>{{ footer_field.label | t  }}</u>:</dt>
               {% assign indent = '' %}
               {% if footer_field.value contains '-' %}
-                {% assign indent = " style= content: \a; white-space: pre;" %}
+                {% assign indent = ' style= "content: \a; white-space: pre;"' %}
               {% endif %}
 
               <dd
