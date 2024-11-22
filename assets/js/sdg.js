@@ -4731,36 +4731,25 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('‒') > -1) ? ('‒' + obsValue.replace('‒, ','').replace(', ‒','').replace('[‒]','')) : (data[index] + ' ' + obsValue);
                 //var dateForTable = (data[index] == 0 && obsValue.indexOf('0') > -1) ? ('0' + obsValue.replace('0, ','').replace(', 0','').replace('[0]','')) : (data[index] + ' ' + obsValue);
                 // case: datapoint == 0 --> we do not want 0 plus obsValue in tabel but only 0 (or 0.00) or - feventually ollowed by other obs values
-                console.log("DATA", data);
-                console.log("INDEX",index);
-                console.log("DATA[INDEX]", data[index]);
-                console.log("DATA[INDEX]==0", data[index] == 0);
-                console.log("OBSVALUE",obsValue, typeof obsValue);
                 var dateForTable = ''
                 if (data[index] == 0){
-                  console.log("STEP 1 taken", obsValue.length);
                   // case: only one obs-value (0 or -) --> show only the obs-value instead of the value
                   if (obsValue.length == 1){
                     dateForTable = obsValue;
-                    console.log("STEP 1.1 taken", dateForTable);
                   }
                   // case: more than one obs-value --> setting the value to 0 or - and replace it in the obs-value by ''
                   else{
-                    console.log("STEP 1.2 taken", obsValue.indexOf('‒'));
                     if (obsValue.indexOf('‒') > -1){
                       dateForTable = '‒ [' + obsValue.replace('‒, ','').replace(', ‒','') + ']';
-                      console.log("STEP 1.2.1 taken", dateForTable);
                     }
                     else{
                       dateForTable = data[index] + ' [' + obsValue.replace('0, ','').replace(', 0','') + ']';
-                      console.log("STEP 1.2.2 taken", dateForTable);
                     }
                   }
                 }
                 // case: datapoint is not zero --> datapoint plus obs-value
                 else {
                   dateForTable = (data[index] + ' ' + obsValue);
-                  console.log("STEP 2 taken", dateForTable);
                 }
 
                 //var cell_content = (isYear) ? translations.t(data[index]) : data[index];
