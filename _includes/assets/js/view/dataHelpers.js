@@ -134,7 +134,7 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
         return '' + obsAttribute.value + '';
     }
     else{
-        return '' + parseInt(obsAttribute.value) + '';
+        return '' + string(parseInt(obsAttribute.value)) + '';
     }
 
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
