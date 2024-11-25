@@ -5013,7 +5013,7 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
         return '' + obsAttribute.value + '';
     }
     else{
-        return '' + string(parseInt(obsAttribute.value)) + '';
+        return '' + String(parseInt(obsAttribute.value)) + '';
     }
 
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
