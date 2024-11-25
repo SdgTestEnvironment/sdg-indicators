@@ -5010,7 +5010,14 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @returns {string} Number converted into unicode character for footnotes.
  */
 function getObservationAttributeFootnoteSymbol(obsAttribute) {
-    return '' + obsAttribute.value + '';
+    // make sure we do not get 0.000 for obsValue
+    if (isNaN(parseInt(obsAttribute.value))) {
+        return '' + obsAttribute.value + '';
+    }
+    else{
+        return '' + parseInt(obsAttribute.value) + '';
+    }
+
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
