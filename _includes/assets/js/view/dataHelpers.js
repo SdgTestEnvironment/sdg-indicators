@@ -136,6 +136,5 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
     else{
         return '' + String(parseInt(obsAttribute.value)) + '';
     }
-
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
