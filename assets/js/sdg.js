@@ -3067,8 +3067,8 @@ function getAllObservationAttributes(rows) {
     helpers.sortFieldValueNames(helpers.SERIES_COLUMN, this.serieses, this.dataSchema);
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
+      console.log("ABC", helpers.getSeriesFromStartValues(this.startValues), this.startValues, his.selectedSeries);
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
-      console.log("We have startValues:", this.selectedSeries);
     }
     this.refreshSeries();
   }
