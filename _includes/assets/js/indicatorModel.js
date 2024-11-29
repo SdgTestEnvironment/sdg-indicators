@@ -108,6 +108,7 @@ var indicatorModel = function (options) {
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
+      console.log("We have startValues:", this.selectedSeries);
     }
     this.refreshSeries();
   }
