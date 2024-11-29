@@ -1613,6 +1613,7 @@ function getSeriesFromStartValues(startValues) {
   var match = startValues.find(function(startValue) {
     return startValue.field === SERIES_COLUMN;
   }, this);
+  console.log('SeriesStart:', match);
   return (match) ? match.value : false;
 }
 
