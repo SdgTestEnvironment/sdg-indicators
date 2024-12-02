@@ -1613,7 +1613,6 @@ function getSeriesFromStartValues(startValues) {
   var match = startValues.find(function(startValue) {
     return startValue.field === SERIES_COLUMN || startValue.field === translations.t(SERIES_COLUMN);
   }, this);
-  console.log('match, sries column:', match, SERIES_COLUMN, translations.t(SERIES_COLUMN));
   return (match) ? match.value : false;
 }
 
@@ -3067,7 +3066,6 @@ function getAllObservationAttributes(rows) {
     helpers.sortFieldValueNames(helpers.SERIES_COLUMN, this.serieses, this.dataSchema);
     this.selectedSeries = this.serieses[0];
     if (this.hasStartValues) {
-      console.log("ABC", helpers.getSeriesFromStartValues(this.startValues), this.startValues, this.selectedSeries);
       this.selectedSeries = helpers.getSeriesFromStartValues(this.startValues) || this.selectedSeries;
     }
     this.refreshSeries();
