@@ -1611,9 +1611,9 @@ function getFirstSeriesInData(rows) {
  */
 function getSeriesFromStartValues(startValues) {
   var match = startValues.find(function(startValue) {
-    return startValue.field === SERIES_COLUMN;
+    return startValue.field === SERIES_COLUMN || starValue.field === translations.t(SERIES_COLUMN);
   }, this);
-  console.log('match, sries column:', match, SERIES_COLUMN);
+  console.log('match, sries column:', match, SERIES_COLUMN, translations.t(SERIES_COLUMN));
   return (match) ? match.value : false;
 }
 
