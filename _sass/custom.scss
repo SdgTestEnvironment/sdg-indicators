@@ -3,9 +3,9 @@
  @for $i from 1 through length($goal-banner-backgroundColors) {
    $background-c: nth($goal-banner-backgroundColors, $i);
    .goal-#{$i} {
-     // &.goal-banner {
-     //   background-color: $background-c;
-     // }
+     &.goal-banner {
+       background-color: $background-c;
+     }
 
      &.sup-goal-banner {
        height: 5px;
