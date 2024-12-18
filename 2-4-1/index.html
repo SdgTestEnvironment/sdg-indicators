@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218070552">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218072216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -453,17 +453,26 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-md-center">
     
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
-        </a>
-      </div>
+      
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//2-3-2" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+          </a>
+        </div>
 
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
-      </div>
+        <div class="col d-grid gap-2">
+          <a href="https://sustainabledevelopment-deutschland.github.io///2-1-b/" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" title="" role="button">
+            <b class="btn-label d-none d-md-block">Verwandter nationaler Indikator: DNS-2.1.b</b><b class="btn-label d-block d-md-none">DNS-2.1.b</b>
+          </a>
+        </div>
+
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//2-5-1" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+          </a>
+        </div>
+      
+    <!---2 Btns if there is no corresponding Indicator-->
     
   </div>
 </div>
@@ -484,123 +493,7 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p>published: true  <br />
-data_non_statistical: false</p>
-
-<h1 id="nationale-metadaten">Nationale Metadaten</h1>
-<p>national_indicators_available: “&lt;ul style='padding-left: 25px;'&gt;&lt;li&gt;Daten des Statistischen Bundesamtes&lt;/li&gt; &lt;li&gt; Daten des BMEL&lt;/li&gt; &lt;li&gt; Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)&lt;/li&gt;&lt;/ul&gt;”  <br />
-comparison_sdg: ‘Die Zeitreihe “Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)” entspricht den globalen Metadaten. Die Zeitreihen “Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung” entsprechen nicht den UN-Metadaten, bieten aber zusätzliche Informationen.’  <br />
-goal_meta_national_link: https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.4.1.pdf
-goal_meta_national_link_text: Metadaten zu den dargestellten Zeitreihen</p>
-
-<h1 id="globale-metadaten">Globale Metadaten</h1>
-<p>indicator_name: Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger landwirtschaftlicher Bewirtschaftung  <br />
-target_name: Bis 2030 die Nachhaltigkeit der Systeme der Nahrungsmittelproduktion sicherstellen und resiliente landwirtschaftliche Methoden anwenden, die die Produktivität und den Ertrag steigern, zur Erhaltung der Ökosysteme beitragen, die Anpassungsfähigkeit an Klimaänderungen, extreme Wetterereignisse, Dürren, Überschwemmungen und andere Katastrophen erhöhen und die Flächen- und Bodenqualität schrittweise verbessern  <br />
-target_id: ‘2.4’  <br />
-un_designated_tier_url: https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/’  <br />
-un_designated_tier_url_text: Tier II&lt;/a&gt;  <br />
-un_designated_tier_url_alert: der Statistischen Division der Vereinten Nationen  <br />
-un_custodian_agency: Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)  <br />
-goal_meta_link: https://unstats.un.org/sdgs/metadata/files/Metadata-02-04-01.pdf  <br />
-goal_meta_link_text: Metadaten zu diesem Indikator
-goal_meta_2_link: https://unstats.un.org/sdgs/metadata/files/Metadata-02-04-01proxy.pdf
-goal_meta_2_link_text: Metadaten zu diesem Indikator (Proxy)  <br />
-goal_meta_link_alert: der Statistischen Division der Vereinten Nationen</p>
-
-<h1 id="datenquellen">Datenquellen</h1>
-<p>source_active_1: true
-source_organisation_1: <a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>
-source_organisation_logo_1: <a href="https://www.destatis.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a>
-source_url_1: https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=41271-0001&amp;bypass=true&amp;language=de
-source_url_text_1: Landwirtschaftliche Betriebe, Landwirtschaftlich genutzte Fläche – GENESIS online 41271-0001
-source_url_1b: https://www-genesis.destatis.de/genesis//online?operation=table&amp;code=41141-0007&amp;bypass=true&amp;language=de
-source_url_text_1b: Landwirtschaftliche Betriebe mit ökologischem Landbau, Fläche, Ökologisch bewirtschaftete Fläche – GENESIS online 41141-0007
-source_url_1c: https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftliche-Betriebe/_inhalt.html#sprg239572
-source_url_text_1c: Statistischer Bericht –  Landwirtschaftliche Betriebe – Bodennutzung</p>
-
-<p>source_active_2: true
-source_organisation_2: <a href="https://ec.europa.eu/eurostat/de/home" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Amt der Europäischen Union (Eurostat) zu gelangen."> Statistisches Amt der Europäischen Union (Eurostat) </a>
-source_organisation_logo_2: <a href="https://ec.europa.eu/eurostat/de/home" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a>
-source_url_2: https://ec.europa.eu/eurostat/databrowser/view/sdg_02_40/default/table?lang=de
-source_url_text_2: Für ökologische Landwirtschaft genutzte Fläche – Eurostat Tabelle [sdg_02_40]</p>
-
-<p>source_active_3: true
-source_organisation_3: <a href="https://www.bmel.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für Ernährung und Landwirtschaft (BMEL) zu gelangen."> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>
-source_organisation_logo_3: <a href="https://www.bmel.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/bmel.png" alt="Logo bmel" style="height:60px; width:148px" /></a>
-source_url_3: https://www.bmel.de/DE/themen/landwirtschaft/oekologischer-landbau/oekologischer-landbau-deutschland.html
-source_url_text_3: Ökologischer Landbau in Deutschland</p>
-
-<p>source_active_4: true
-source_organisation_4: <a href="http://www.fao.org/home/en/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen zu gelangen."> Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen </a>
-source_organisation_logo_4: <a href="http://www.fao.org/home/en/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/fao.png" alt="Logo fao" style="height:60px; width:148px" /></a>
-source_url_4: https://www.fao.org/sustainable-development-goals-data-portal/data/indicators/indicator-241-proxy-progress-towards-productive-and-sustainable-agriculture/en
-source_url_text_4: Daten zu Indikator 2.4.1 Proxy (nicht auf Deutsch verfügbar)</p>
-
-<p>source_active_5: false</p>
-
-<p>source_active_6: false</p>
-
-<p>data_show_map: True  <br />
-data_start_values:</p>
-<ul>
-  <li>field: timeseries
-value: data from the federal statistical office</li>
-  <li>field: timeseries
-value: progress toward productive and sustainable agriculture (proxy)</li>
-  <li>field: score
-value: trend</li>
-  <li>field: score
-value: currend status</li>
-</ul>
-
-<p>copyright: ‘© Statistisches Bundesamt (Destatis), 2024’  <br />
-footer_fields:</p>
-<ul>
-  <li>unit: percentage
-label: Anmerkungen
-value: ‘<br />• Daten des Statistischen Bundesamtes: 2010, 2013, 2016 und 2020 erhobene Daten (Agrarstrukturerhebung).<br />•  Zwischenjahre sowie 2021 bis 2023 geschätzte Daten.’</li>
-  <li>unit: no unit
-label: Anmerkung
-value: Daten sind erst ab 2015 verfügbar.</li>
-</ul>
-
-<h1 id="grafik-eigenschaften">Grafik Eigenschaften</h1>
-<p>graph_titles:</p>
-<ul>
-  <li>unit: percentage
-title: Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung</li>
-  <li>unit: no unit
-title: Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)
-graph_subtitle:   <br />
-graph_types:</li>
-  <li>unit: percentage
-type: line</li>
-  <li>unit: no unit
-type: bar
-graph_stepsize:</li>
-  <li>step: 1.0</li>
-</ul>
-
-<p>show_line: true
-span_gaps: true</p>
-
-<p>precision:</p>
-<ul>
-  <li>unit: percentage
-decimals: 1</li>
-  <li>unit: no unit
-decimals: 2</li>
-</ul>
-
-<p>dns_indicator: /2-1-b/
-previous: 2-3-2  <br />
-next: 2-5-1</p>
-
-<p>national_geographical_coverage: Deutschland  <br />
-data_last_update: 04.12.2024  <br />
-—</p>
-
-<p><span></span></p>
+    <p><span></span></p>
 
   </div>
 </div>
@@ -615,9 +508,9 @@ data_last_update: 04.12.2024  <br />
   id="indicatorData"
   data-indicatorid='indicator_2-4-1'
   data-id="2-4-1"
-  data-country="Germany"
+  data-country="Deutschland"
   data-charttitle="Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger landwirtschaftlicher Bewirtschaftung"
-  data-charttitles="null"
+  data-charttitles="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;title&quot;:&quot;Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung&quot;},{&quot;unit&quot;:&quot;Keine Einheit&quot;,&quot;title&quot;:&quot;Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="null"
   data-measurementunit=""
@@ -625,14 +518,14 @@ data_last_update: 04.12.2024  <br />
   data-showdata="true"
   data-showinfo=""
   data-graphtype="line"
-  data-graphtypes="null"
+  data-graphtypes="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;type&quot;:&quot;line&quot;},{&quot;unit&quot;:&quot;Keine Einheit&quot;,&quot;type&quot;:&quot;bar&quot;}]"
   data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
+  data-showmap="true"
+  data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Daten des Statistischen Bundesamtes&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;progress toward productive and sustainable agriculture (proxy)&quot;},{&quot;field&quot;:&quot;score&quot;,&quot;value&quot;:&quot;trend&quot;},{&quot;field&quot;:&quot;score&quot;,&quot;value&quot;:&quot;currend status&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
-  data-showline=""
-  data-spangaps=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
@@ -642,8 +535,8 @@ data_last_update: 04.12.2024  <br />
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;Keine Einheit&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Daten des Statistischen Bundesamtes&quot;,&quot;Daten des BMEL&quot;,&quot;progress toward productive and sustainable agriculture (proxy)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;score&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;trend&quot;,&quot;currend status&quot;,&quot;&quot;]},&quot;title&quot;:&quot;score&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;.&quot;,&quot;s&quot;,&quot;r&quot;,&quot;…&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="null"
-  data-graphstepsize="null"
+  data-precision="[{&quot;unit&quot;:&quot;Prozent&quot;,&quot;decimals&quot;:1},{&quot;unit&quot;:&quot;Keine Einheit&quot;,&quot;decimals&quot;:2}]"
+  data-graphstepsize="[{&quot;step&quot;:1.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -752,6 +645,32 @@ data-event-label="Change to Table tab"
     <span class="hidden-xs" style="color:black">Tabelle</span></button>
   </li>
   
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Karte</span></button>
+  </li>
+  
 </ul>
 
     <div class="tab-content data-view">
@@ -770,7 +689,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Anteil der landwirtschaftlichen Fläche unter produktiver und nachhaltiger landwirtschaftlicher Bewirtschaftung</h4>
+          <h4 id="chart-heading" class="chart-title">Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -790,7 +709,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/de/home" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Amt der Europäischen Union (Eurostat) zu gelangen."> Statistisches Amt der Europäischen Union (Eurostat) </a>, <a href="https://www.bmel.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für Ernährung und Landwirtschaft (BMEL) zu gelangen."> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="http://www.fao.org/home/en/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen zu gelangen."> Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -800,6 +727,38 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Prozent"
+              ><u>Anmerkungen</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Prozent"
+                
+              ><br>• Daten des Statistischen Bundesamtes: 2010, 2013, 2016 und 2020 erhobene Daten (Agrarstrukturerhebung).<br>•  Zwischenjahre sowie 2021 bis 2023 geschätzte Daten.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkung</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+                
+              >Daten sind erst ab 2015 verfügbar.</dd>
+            
+          
         
 
         
@@ -828,6 +787,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -865,7 +827,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/de/home" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Amt der Europäischen Union (Eurostat) zu gelangen."> Statistisches Amt der Europäischen Union (Eurostat) </a>, <a href="https://www.bmel.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für Ernährung und Landwirtschaft (BMEL) zu gelangen."> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="http://www.fao.org/home/en/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen zu gelangen."> Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -875,6 +845,38 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Prozent"
+              ><u>Anmerkungen</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Prozent"
+                
+              ><br>• Daten des Statistischen Bundesamtes: 2010, 2013, 2016 und 2020 erhobene Daten (Agrarstrukturerhebung).<br>•  Zwischenjahre sowie 2021 bis 2023 geschätzte Daten.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkung</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+                
+              >Daten sind erst ab 2015 verfügbar.</dd>
+            
+          
         
 
         
@@ -904,10 +906,119 @@ data-event-label="Change to Table tab"
         
 
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
+        
     </dl>
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/sdg-indicators/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>, <a href="https://ec.europa.eu/eurostat/de/home" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Amt der Europäischen Union (Eurostat) zu gelangen."> Statistisches Amt der Europäischen Union (Eurostat) </a>, <a href="https://www.bmel.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für Ernährung und Landwirtschaft (BMEL) zu gelangen."> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a>, <a href="http://www.fao.org/home/en/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen zu gelangen."> Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen </a></dd>
+        
+
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+
+        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Prozent"
+              ><u>Anmerkungen</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Prozent"
+                
+              ><br>• Daten des Statistischen Bundesamtes: 2010, 2013, 2016 und 2020 erhobene Daten (Agrarstrukturerhebung).<br>•  Zwischenjahre sowie 2021 bis 2023 geschätzte Daten.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+              ><u>Anmerkung</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Keine Einheit"
+                
+              >Daten sind erst ab 2015 verfügbar.</dd>
+            
+          
+        
+
+        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Letzte Änderung der Daten</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
+        
+
+        
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -995,6 +1106,80 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Verfügbare Zeitreihen </th>
+        <td style="width: 100%">
+          
+            <ul style="padding-left: 25px;"><li>Daten des Statistischen Bundesamtes</li> <li> Daten des BMEL</li> <li> Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)</li></ul>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Vergleichbarkeit mit den UN-Metadaten </th>
+        <td style="width: 100%">
+          
+            <p>Die Zeitreihe “Fortschritte auf dem Weg zu einer produktiven und nachhaltigen Landwirtschaft (Proxy)” entspricht den globalen Metadaten. Die Zeitreihen “Landwirtschaftliche Fläche unter ökologischer Bewirtschaftung” entsprechen nicht den UN-Metadaten, bieten aber zusätzliche Informationen.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Nationale Metadaten<small> (nur auf Englisch verfügbar)</small> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.4.1.pdf" target="_blank">
+                  Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -1040,33 +1225,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Datenstand </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            <p>04.12.2024</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -1254,8 +1425,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Unterziel </th>
+        <td style="width: 100%">
           
+            <p>Bis 2030 die Nachhaltigkeit der Systeme der Nahrungsmittelproduktion sicherstellen und resiliente landwirtschaftliche Methoden anwenden, die die Produktivität und den Ertrag steigern, zur Erhaltung der Ökosysteme beitragen, die Anpassungsfähigkeit an Klimaänderungen, extreme Wetterereignisse, Dürren, Überschwemmungen und andere Katastrophen erhöhen und die Flächen- und Bodenqualität schrittweise verbessern</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1280,38 +1462,129 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Tier Klassifikation </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Tier II</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Zuständige UN-Organisation </th>
+        <td style="width: 100%">
+          
+            <p>Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen (FAO)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link zu UN-Metadaten </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-04-01.pdf" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
           
-      
-      
-      
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-04-01proxy.pdf" target="_blank">
+                  Metadaten zu diesem Indikator (Proxy) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
       
       
-      
-        
-          
+  
       
       
       
@@ -1520,6 +1793,1564 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 1</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.destatis.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41271-0001&bypass=true&language=de" target="_blank">
+                  Landwirtschaftliche Betriebe, Landwirtschaftlich genutzte Fläche – GENESIS online 41271-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=41141-0007&bypass=true&language=de" target="_blank">
+                  Landwirtschaftliche Betriebe mit ökologischem Landbau, Fläche, Ökologisch bewirtschaftete Fläche – GENESIS online 41141-0007 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Landwirtschaft-Forstwirtschaft-Fischerei/Landwirtschaftliche-Betriebe/_inhalt.html#sprg239572" target="_blank">
+                  Statistischer Bericht –  Landwirtschaftliche Betriebe – Bodennutzung <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 2</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://ec.europa.eu/eurostat/de/home" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/eurostat.png" alt="Logo eurostat" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://ec.europa.eu/eurostat/de/home" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Amt der Europäischen Union (Eurostat) zu gelangen."> Statistisches Amt der Europäischen Union (Eurostat) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://ec.europa.eu/eurostat/databrowser/view/sdg_02_40/default/table?lang=de" target="_blank">
+                  Für ökologische Landwirtschaft genutzte Fläche – Eurostat Tabelle [sdg_02_40] <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 3</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmel.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/bmel.png" alt="Logo bmel" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmel.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für Ernährung und Landwirtschaft (BMEL) zu gelangen."> Bundesministerium für Ernährung und Landwirtschaft (BMEL) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.bmel.de/DE/themen/landwirtschaft/oekologischer-landbau/oekologischer-landbau-deutschland.html" target="_blank">
+                  Ökologischer Landbau in Deutschland <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 4</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="http://www.fao.org/home/en/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/fao.png" alt="Logo fao" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="http://www.fao.org/home/en/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen zu gelangen."> Ernährungs- und Landwirtschaftsorganisation der Vereinten Nationen </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.fao.org/sustainable-development-goals-data-portal/data/indicators/indicator-241-proxy-progress-towards-productive-and-sustainable-agriculture/en" target="_blank">
+                  Daten zu Indikator 2.4.1 Proxy (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1601,6 +3432,15 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -1617,12 +3457,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20241218070552'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20241218072216'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20241218070552"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20241218072216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

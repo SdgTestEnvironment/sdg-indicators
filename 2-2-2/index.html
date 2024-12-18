@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218070552">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218072216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -453,17 +453,26 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-md-center">
     
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
-        </a>
-      </div>
+      
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//2-2-1" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+          </a>
+        </div>
 
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
-      </div>
+        <div class="col d-grid gap-2">
+          <a href="https://sustainabledevelopment-deutschland.github.io///3-1-e/" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" title="" role="button">
+            <b class="btn-label d-none d-md-block">Verwandter nationaler Indikator: DNS-3.1.e</b><b class="btn-label d-block d-md-none">DNS-3.1.e</b>
+          </a>
+        </div>
+
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//2-2-3" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+          </a>
+        </div>
+      
+    <!---2 Btns if there is no corresponding Indicator-->
     
   </div>
 </div>
@@ -484,86 +493,7 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p>published: true  <br />
-data_non_statistical: false</p>
-
-<h1 id="nationale-metadaten">Nationale Metadaten</h1>
-<p>national_indicators_available: “&lt;ul style='padding-left: 25px;'&gt;&lt;li&gt;Übergewicht&lt;/li&gt; &lt;li&gt; Auszehrung&lt;/li&gt;&lt;/ul&gt;”  <br />
-comparison_sdg: Die Zeitreihen entsprechen teilweise den UN-Metadaten.  <br />
-goal_meta_national_link: https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.2.2.pdf
-goal_meta_national_link_text: Metadaten zu den dargestellten Zeitreihen</p>
-
-<h1 id="globale-metadaten">Globale Metadaten</h1>
-<p>indicator_name: Prävalenz von Fehlernährung (Gewicht zur Körpergröße &gt;+2 oder &lt;-2 Standardabweichung vom Median gemäß den Standards der WHO für das Wachstum von Kindern) bei Kindern unter 5 Jahren, nach Art der Fehlernährung (Auszehrung und Übergewicht)  <br />
-target_name: Bis 2030 alle Formen der Fehlernährung beenden, einschließlich durch Erreichung der international vereinbarten Zielvorgaben in Bezug auf Wachstumshemmung und Auszehrung bei Kindern unter 5 Jahren bis 2025, und den Ernährungsbedürfnissen von heranwachsenden Mädchen, schwangeren und stillenden Frauen und älteren Menschen Rechnung tragen  <br />
-target_id: ‘2.2’  <br />
-un_designated_tier_url: https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/’  <br />
-un_designated_tier_url_text: Tier I&lt;/a&gt;  <br />
-un_designated_tier_url_alert: der Statistischen Division der Vereinten Nationen  <br />
-un_custodian_agency: Kinderhilfswerk der Vereinten Nationen (UNICEF)<br />Weltgesundheitsorganisation (WHO)  <br />
-goal_meta_link: https://unstats.un.org/sdgs/metadata/files/Metadata-02-02-02a.pdf  <br />
-goal_meta_link_text: Metadaten zu diesem Indikator (Prävalenz von Übergewicht)
-goal_meta_2_link: https://unstats.un.org/sdgs/metadata/files/Metadata-02-02-02b.pdf
-goal_meta_2_link_text: Metadaten zu diesem Indikator (Prävalenz von Auszehrung)  <br />
-goal_meta_link_alert: der Statistischen Division der Vereinten Nationen</p>
-
-<h1 id="datenquellen">Datenquellen</h1>
-<p>source_active_1: true
-source_organisation_1: <a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Robert Koch-Institut (RKI) zu gelangen."> Robert Koch-Institut (RKI) </a>
-source_organisation_logo_1: <a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/rki.png" alt="Logo rki" style="height:60px; width:148px" /></a>
-source_url_1: https://www.rki.de/DE/Content/Gesundheitsmonitoring/JoHM/2018/JoHM_Inhalt_18_01.html?nn=2377388
-source_url_text_1: Studie zur Gesundheit von Kindern und Jugendlichen in Deutschland (KiGGS) – KiGGS Welle 2
-source_url_1b: https://www.rki.de/DE/Content/Gesundheitsmonitoring/Surveydaten/Surveydaten_node.html
-source_url_text_1b: Public Use Files</p>
-
-<p>source_active_2: false</p>
-
-<p>source_active_3: false</p>
-
-<p>source_active_4: false</p>
-
-<p>source_active_5: false</p>
-
-<p>source_active_6: false</p>
-
-<p>data_show_map: False  <br />
-data_start_values:</p>
-<ul>
-  <li>field: timeseries
-value: overweight</li>
-  <li>field: timeseries
-value: wasting  <br />
-computation_units: “Prozent”  <br />
-copyright: ‘© Statistisches Bundesamt (Destatis), 2024’  <br />
-data_footnotes: ‘Altersstandardisierung: Bevölkerungsstand: 31. Dezember 2015.<br />• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br />• WHO: World Health Organization (Weltgesundheitsorganisation).’</li>
-</ul>
-
-<h1 id="grafik-eigenschaften">Grafik Eigenschaften</h1>
-<p>graph_title: Auszehrung und Übergewicht bei Kindern im Alter von 3 und 4 Jahren
-graph_subtitle:   <br />
-graph_type: bar
-graph_stepsize:</p>
-<ul>
-  <li>step: 0.5</li>
-</ul>
-
-<p>show_line: true
-span_gaps: true</p>
-
-<p>precision:</p>
-<ul>
-  <li>decimals: 1</li>
-</ul>
-
-<p>dns_indicator: /3-1-e/
-previous: 2-2-1  <br />
-next: 2-2-3</p>
-
-<p>national_geographical_coverage: Deutschland  <br />
-data_last_update: 06.10.2021  <br />
-—</p>
-
-<p><span></span></p>
+    <p><span></span></p>
 
   </div>
 </div>
@@ -578,24 +508,24 @@ data_last_update: 06.10.2021  <br />
   id="indicatorData"
   data-indicatorid='indicator_2-2-2'
   data-id="2-2-2"
-  data-country="Germany"
-  data-charttitle="Prävalenz von Fehlernährung (Gewicht zur Körpergröße >+2 oder <-2 Standardabweichung vom Median gemäß den Standards der WHO für das Wachstum von Kindern) bei Kindern unter 5 Jahren, nach Art der Fehlernährung (Auszehrung und Übergewicht)"
+  data-country="Deutschland"
+  data-charttitle="Auszehrung und Übergewicht bei Kindern im Alter von 3 und 4 Jahren"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
-  data-measurementunit=""
+  data-measurementunit="Prozent"
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
-  data-graphtype="line"
+  data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
+  data-showmap="false"
+  data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Übergewicht&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Auszehrung&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
-  data-showline=""
-  data-spangaps=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
@@ -605,8 +535,8 @@ data_last_update: 06.10.2021  <br />
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;timeseries&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Übergewicht&quot;,&quot;Auszehrung&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Männlich&quot;,&quot;Weiblich&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Geschlecht&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;.&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="null"
-  data-graphstepsize="null"
+  data-precision="[{&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;step&quot;:0.5}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -733,7 +663,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Prävalenz von Fehlernährung (Gewicht zur Körpergröße >+2 oder <-2 Standardabweichung vom Median gemäß den Standards der WHO für das Wachstum von Kindern) bei Kindern unter 5 Jahren, nach Art der Fehlernährung (Auszehrung und Übergewicht)</h4>
+          <h4 id="chart-heading" class="chart-title">Auszehrung und Übergewicht bei Kindern im Alter von 3 und 4 Jahren</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -753,7 +683,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquelle</u>:</dt>
+          
+          <dd><a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Robert Koch-Institut (RKI) zu gelangen."> Robert Koch-Institut (RKI) </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -761,6 +699,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          
+          
+          <dd ><br>• Altersstandardisierung: Bevölkerungsstand: 31. Dezember 2015.<br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• WHO: World Health Organization (Weltgesundheitsorganisation).</dd>
         
 
         
@@ -791,6 +734,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -828,7 +774,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquelle</u>:</dt>
+          
+          <dd><a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Robert Koch-Institut (RKI) zu gelangen."> Robert Koch-Institut (RKI) </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -836,6 +790,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          
+          
+          <dd ><br>• Altersstandardisierung: Bevölkerungsstand: 31. Dezember 2015.<br>• Die Daten 2003-2006 basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich. <br>• WHO: World Health Organization (Weltgesundheitsorganisation).</dd>
         
 
         
@@ -866,6 +825,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -958,6 +920,80 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Verfügbare Zeitreihen </th>
+        <td style="width: 100%">
+          
+            <ul style="padding-left: 25px;"><li>Übergewicht</li> <li> Auszehrung</li></ul>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Vergleichbarkeit mit den UN-Metadaten </th>
+        <td style="width: 100%">
+          
+            <p>Die Zeitreihen entsprechen teilweise den UN-Metadaten.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Nationale Metadaten<small> (nur auf Englisch verfügbar)</small> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.2.2.pdf" target="_blank">
+                  Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -1003,33 +1039,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Datenstand </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            <p>06.10.2021</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -1217,8 +1239,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Unterziel </th>
+        <td style="width: 100%">
           
+            <p>Bis 2030 alle Formen der Fehlernährung beenden, einschließlich durch Erreichung der international vereinbarten Zielvorgaben in Bezug auf Wachstumshemmung und Auszehrung bei Kindern unter 5 Jahren bis 2025, und den Ernährungsbedürfnissen von heranwachsenden Mädchen, schwangeren und stillenden Frauen und älteren Menschen Rechnung tragen</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1243,38 +1276,129 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Tier Klassifikation </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Tier I</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Zuständige UN-Organisation </th>
+        <td style="width: 100%">
+          
+            <p>Kinderhilfswerk der Vereinten Nationen (UNICEF)<br />Weltgesundheitsorganisation (WHO)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link zu UN-Metadaten </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-02-02a.pdf" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Metadaten zu diesem Indikator (Prävalenz von Übergewicht) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
           
-      
-      
-      
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-02-02b.pdf" target="_blank">
+                  Metadaten zu diesem Indikator (Prävalenz von Auszehrung) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
       
       
-      
-        
-          
+  
       
       
       
@@ -1483,6 +1607,444 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4 class="sr-only">Datenquelle 1</h4>
+      
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/rki.png" alt="Logo rki" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.rki.de/DE/Home/homepage_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Robert Koch-Institut (RKI) zu gelangen."> Robert Koch-Institut (RKI) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.rki.de/DE/Content/Gesundheitsmonitoring/JoHM/2018/JoHM_Inhalt_18_01.html?nn=2377388" target="_blank">
+                  Studie zur Gesundheit von Kindern und Jugendlichen in Deutschland (KiGGS) – KiGGS Welle 2 <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.rki.de/DE/Content/Gesundheitsmonitoring/Surveydaten/Surveydaten_node.html" target="_blank">
+                  Public Use Files <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1580,12 +2142,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20241218070552'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20241218072216'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20241218070552"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20241218072216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218070552">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218072216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -453,17 +453,26 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-md-center">
     
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators/en/" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous indicator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
-        </a>
-      </div>
+      
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators/en/2-a-1" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous indicator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+          </a>
+        </div>
 
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators/en/" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block">Next indicator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
-      </div>
+        <div class="col d-grid gap-2">
+          <a href="https://sustainabledevelopment-deutschland.github.io/en//2-2/" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" title="" role="button">
+            <b class="btn-label d-none d-md-block">Related national indicator: DNS-2.2</b><b class="btn-label d-block d-md-none">DNS-2.2</b>
+          </a>
+        </div>
+
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators/en/2-b-1" class="btn btn-primary btn-block goal-2 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block">Next indicator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+          </a>
+        </div>
+      
+    <!---2 Btns if there is no corresponding Indicator-->
     
   </div>
 </div>
@@ -484,45 +493,7 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <h1 id="nationale-metadaten">Nationale Metadaten</h1>
-<p>national_indicator_available: ODA (gross disbursements) to the agriculture sector  <br />
-comparison_sdg: The time series is compliant with the UN metadata.  <br />
-goal_meta_national_link_De: 
-goal_meta_national_link_text_De: 
-goal_meta_national_link_text: Metadata on the presented time series
-goal_meta_national_link: https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.a.2.pdf</p>
-
-<h1 id="globale-metadaten">Globale Metadaten</h1>
-<p>indicator_name: Total official flows (official development assistance plus other official flows) to the agriculture sector  <br />
-target_name: Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries  <br />
-un_designated_tier_url: https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/  <br />
-un_designated_tier_url_text: Tier I  <br />
-un_desgnated_tier_alert: the United Nations Statistics Division  <br />
-un_custodian_agency: Organisation for Economic Co-operation and Development (OECD)  <br />
-goal_meta_link_text: Metadata on this indicator  <br />
-goal_meta_link_alert: the Statistical Devision of the UN  <br />
-goal_meta_2_link_text:   <br />
-goal_meta_3_link_text:</p>
-<h1 id="datenquellen">Datenquellen</h1>
-<p>source_organisation_1: <a href="https://www.oecd.org/" target="_blank" title="Click here to go to the website of the organisation Organisation for Economic Co-operation and Development (OECD)."> Organisation for Economic Co-operation and Development (OECD) </a>
-source_organisation_logo_1: <a href="https://www.oecd.org/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgEn/oecd.png" alt="Logo oecd" style="height:60px; width:148px" /></a>
-source_url_1: https://www.oecd.org/dac/financing-sustainable-development/development-finance-data/
-source_url_text_1: OECD – Development Finance Data
-source_url_1b: https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CDevelopment%23DEV%23%7COfficial%20Development%20Assistance%20%28ODA%29%23DEV_ODA%23&amp;fs[1]=Sector%2C4%7CAll%20sectors%231000%23%7CSector%20allocable%23450%23%7CSocial%20infrastructure%20and%20services%23100%23%7COther%20social%20infrastructure%20and%20services%23160%23%7CMultisector%20aid%20for%20basic%20social%20services%2316050%23&amp;pg=0&amp;fc=Sector&amp;snb=8&amp;df[ds]=dsDisseminateFinalDMZ&amp;df[id]=DSD_CRS%40DF_CRS&amp;df[ag]=OECD.DCD.FSD&amp;df[vs]=1.1&amp;dq=DEU.DPGC.311.100._T._T.D.Q._T..&amp;pd=2010%2C&amp;to[TIME_PERIOD]=false&amp;vw=tb
-source_url_text_1b: OECD – ODA to the agriculture sector</p>
-
-<p>copyright: ‘© Federal Statistical Office (Destatis), 2024’  <br />
-data_footnote: ‘ODA: Official Development Assistance.’</p>
-
-<h1 id="grafik-eigenschaften">Grafik Eigenschaften</h1>
-<p>graph_title: ODA (gross disbursements) to the agriculture sector
-graph_subtitle:</p>
-
-<p>national_geographical_coverage: Germany  <br />
-data_last_update: 2024/05/13  <br />
-—</p>
-
-<p><span></span></p>
+    <p><span></span></p>
 
   </div>
 </div>
@@ -538,7 +509,7 @@ data_last_update: 2024/05/13  <br />
   data-indicatorid='indicator_2-a-2'
   data-id="2-a-2"
   data-country="Germany"
-  data-charttitle="Total official flows (official development assistance plus other official flows) to the agriculture sector"
+  data-charttitle="ODA (gross disbursements) to the agriculture sector"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
@@ -546,15 +517,15 @@ data_last_update: 2024/05/13  <br />
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
-  data-graphtype="line"
+  data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
-  data-graphlimits="null"
+  data-showmap="false"
+  data-startvalues="&quot;&quot;"
+  data-graphlimits="[{&quot;unit&quot;:&quot;Million USD, constant prices (2019)&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:1000.0}]"
   data-stackeddisaggregation=""
-  data-showline=""
-  data-spangaps=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
@@ -564,8 +535,8 @@ data_last_update: 2024/05/13  <br />
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Million EUR&quot;,&quot;Million USD, constant prices (2022)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="null"
-  data-graphstepsize="null"
+  data-precision="[{&quot;decimals&quot;:0}]"
+  data-graphstepsize="[{&quot;step&quot;:100.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -607,7 +578,7 @@ data_last_update: 2024/05/13  <br />
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Total official flows (official development assistance plus other official flows) to the agriculture sector</caption>
+      <caption>ODA (gross disbursements) to the agriculture sector</caption>
       <thead>
         
         
@@ -1049,8 +1020,14 @@ data_last_update: 2024/05/13  <br />
   
   <div id="datatableFooter">
     
+    <p>Data source: <a href="https://www.oecd.org/" target="_blank" title="Click here to go to the website of the organisation Organisation for Economic Co-operation and Development (OECD)."> Organisation for Economic Co-operation and Development (OECD) </a></p>
     
     
+    <p>Geographic coverage: Germany</p>
+    
+    
+    
+    <p>Note: ODA: Official Development Assistance.</p>
     
   </div>
   
@@ -1138,7 +1115,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Total official flows (official development assistance plus other official flows) to the agriculture sector</h4>
+          <h4 id="chart-heading" class="chart-title">ODA (gross disbursements) to the agriculture sector</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -1158,12 +1135,25 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.oecd.org/" target="_blank" title="Click here to go to the website of the organisation Organisation for Economic Co-operation and Development (OECD)."> Organisation for Economic Co-operation and Development (OECD) </a></dd>
+        
 
+        
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
+        
+          <dt><u>Note</u>:</dt>
+          
+          
+          <dd >ODA: Official Development Assistance.</dd>
         
 
         
@@ -1196,6 +1186,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -1233,12 +1226,25 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.oecd.org/" target="_blank" title="Click here to go to the website of the organisation Organisation for Economic Co-operation and Development (OECD)."> Organisation for Economic Co-operation and Development (OECD) </a></dd>
+        
 
+        
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
+        
+          <dt><u>Note</u>:</dt>
+          
+          
+          <dd >ODA: Official Development Assistance.</dd>
         
 
         
@@ -1271,6 +1277,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -1358,6 +1367,85 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Time series available </th>
+        <td style="width: 100%">
+          
+            <p>ODA (gross disbursements) to the agriculture sector</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Compliance with the UN metadata </th>
+        <td style="width: 100%">
+          
+            <p>The time series is compliant with the UN metadata.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">National metadata </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/2.a.2.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -1403,38 +1491,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Data state </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            <p>2024/05/13</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -1622,8 +1691,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Target </th>
+        <td style="width: 100%">
           
+            <p>Increase investment, including through enhanced international cooperation, in rural infrastructure, agricultural research and extension services, technology development and plant and livestock gene banks in order to enhance agricultural productive capacity in developing countries, in particular least developed countries</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1648,28 +1728,92 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Tier category </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier I <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">UN custodian agency </th>
+        <td style="width: 100%">
+          
+            <p>Organisation for Economic Co-operation and Development (OECD)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link to UN metadata </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-0A-02.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
+      
+      
+  
       
       
       
@@ -1888,6 +2032,444 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4 class="sr-only">Data source 1</h4>
+      
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.oecd.org/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgEn/oecd.png" alt="Logo oecd" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.oecd.org/" target="_blank" title="Click here to go to the website of the organisation Organisation for Economic Co-operation and Development (OECD)."> Organisation for Economic Co-operation and Development (OECD) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.oecd.org/dac/financing-sustainable-development/development-finance-data/" target="_blank">
+                  OECD – Development Finance Data <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://data-explorer.oecd.org/vis?fs[0]=Topic%2C1%7CDevelopment%23DEV%23%7COfficial%20Development%20Assistance%20%28ODA%29%23DEV_ODA%23&fs[1]=Sector%2C4%7CAll%20sectors%231000%23%7CSector%20allocable%23450%23%7CSocial%20infrastructure%20and%20services%23100%23%7COther%20social%20infrastructure%20and%20services%23160%23%7CMultisector%20aid%20for%20basic%20social%20services%2316050%23&pg=0&fc=Sector&snb=8&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_CRS%40DF_CRS&df[ag]=OECD.DCD.FSD&df[vs]=1.1&dq=DEU.DPGC.311.100._T._T.D.Q._T..&pd=2010%2C&to[TIME_PERIOD]=false&vw=tb" target="_blank">
+                  OECD – ODA to the agriculture sector <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1985,12 +2567,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20241218070552'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20241218072216'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20241218070552"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20241218072216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

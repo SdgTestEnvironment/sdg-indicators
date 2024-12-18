@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218070552">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218072216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -453,17 +453,26 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-md-center">
     
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
-        </a>
-      </div>
+      
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//12-6-1" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator </b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
+          </a>
+        </div>
 
-      <div class="col d-grid gap-2">
-        <a href="/sdg-indicators//" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
-          <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
-        </a>
-      </div>
+        <div class="col d-grid gap-2">
+          <a href="https://sustainabledevelopment-deutschland.github.io///12-3-ab/" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" title="" role="button">
+            <b class="btn-label d-none d-md-block">Verwandter nationaler Indikator: DNS-12.3.a,b</b><b class="btn-label d-block d-md-none">DNS-12.3.a,b</b>
+          </a>
+        </div>
+
+        <div class="col d-grid gap-2">
+          <a href="/sdg-indicators//12-8-1" class="btn btn-primary btn-block goal-12 navigation-btn text-nowrap" role="button">
+            <b class="btn-label d-none d-md-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="btn-label d-block d-md-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
+          </a>
+        </div>
+      
+    <!---2 Btns if there is no corresponding Indicator-->
     
   </div>
 </div>
@@ -484,87 +493,7 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p>published: true  <br />
-data_non_statistical: false</p>
-
-<h1 id="nationale-metadaten">Nationale Metadaten</h1>
-<p>national_indicator_available: Index der nachhaltigen öffentlichen Beschaffung  <br />
-comparison_sdg: Die Zeitreihe entspricht den UN-Metadaten.  <br />
-goal_meta_national_link_De: https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/12.7.1.pdf
-goal_meta_national_link_text_De: Metadaten zu den dargestellten Zeitreihen</p>
-
-<h1 id="globale-metadaten">Globale Metadaten</h1>
-<p>indicator_name: Anzahl der Staaten, die Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung umsetzen  <br />
-target_name: In der öffentlichen Beschaffung nachhaltige Verfahren fördern, im Einklang mit den nationalen Politiken und Prioritäten  <br />
-target_id: ‘12.7’  <br />
-un_designated_tier_url: https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/’  <br />
-un_designated_tier_url_text: Tier II&lt;/a&gt;  <br />
-un_designated_tier_url_alert: der Statistischen Division der Vereinten Nationen  <br />
-un_custodian_agency: Umweltprogramm der Vereinten Nationen (UNEP)  <br />
-goal_meta_link: https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf  <br />
-goal_meta_link_text: Metadaten zu diesem Indikator  <br />
-goal_meta_link_alert: der Statistischen Division der Vereinten Nationen</p>
-
-<h1 id="datenquellen">Datenquellen</h1>
-<p>source_active_1: true
-source_organisation_1: <a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>
-source_organisation_logo_1: <a href="https://www.destatis.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a>
-source_url_1: https://sdg-indikatoren.de/public/UNEP_FINAL_GERMANY_2020.xlsx
-source_url_text_1: UNEP-Fragebogen, Bewertung 2020 (nicht auf Deutsch verfügbar)
-source_url_1b: https://sdg-indikatoren.de/public/UNEP_FINAL_GERMANY_2022.xlsx
-source_url_text_1b: UNEP-Fragebogen, Bewertung 2022 (nicht auf Deutsch verfügbar)
-source_url_1c: https://sdg-indikatoren.de/public/Germany SDG indicator 12.7.1 scorecard 2022.pdf
-source_url_text_1c: UNEP-Scorecard, Bewertung 2022 (nicht auf Deutsch verfügbar)</p>
-
-<p>source_active_2: true
-source_organisation_2: <a href="https://www.umweltbundesamt.de/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Umweltbundesamt (UBA) zu gelangen."> Umweltbundesamt (UBA) </a>
-source_organisation_logo_2: <a href="https://www.umweltbundesamt.de/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/uba.png" alt="Logo uba" style="height:60px; width:148px" /></a></p>
-
-<p>source_active_3: true
-source_organisation_3: <a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Kompetenzstelle für Nachhaltige Beschaffung zu gelangen."> Kompetenzstelle für Nachhaltige Beschaffung </a>
-source_organisation_logo_3: <a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/knb.png" alt="Logo knb" style="height:60px; width:148px" /></a></p>
-
-<p>source_active_4: false</p>
-
-<p>source_active_5: false</p>
-
-<p>source_active_6: false</p>
-
-<p>data_show_map: False  <br />
-data_start_values:   <br />
-computation_units: “Index”  <br />
-copyright: ‘© Statistisches Bundesamt (Destatis), 2024’  <br />
-data_footnotes: ‘0 bis 20: Unzureichende Daten oder unzureichende Umsetzung des Grads an nachhaltiger Beschaffung.<br />• 20 bis 40: Niedriges Niveau des Grads an nachhaltiger Beschaffung.<br />• 40 bis 60: Mittleres Niveau des Grads an nachhaltiger Beschaffung.<br />• 60 bis 80: Hohes Niveau des Grads an nachhaltiger Beschaffung.<br />• 80 bis 100: Sehr hohes Niveau des Grads an nachhaltiger Beschaffung.’</p>
-
-<h1 id="grafik-eigenschaften">Grafik Eigenschaften</h1>
-<p>graph_title: Nachhaltige öffentliche Beschaffung
-graph_subtitle:   <br />
-graph_type: bar
-graph_stepsize:</p>
-<ul>
-  <li>step: 10.0  <br />
-graph_limits:</li>
-  <li>minimum: 0.0
-maximum: 100.0
-show_line: true
-span_gaps: true</li>
-</ul>
-
-<p>precision:</p>
-<ul>
-  <li>decimals: 1</li>
-</ul>
-
-<p>dns_indicator: /12-3-ab/
-dns_indicator_label: 12.3.a,b
-previous: 12-6-1  <br />
-next: 12-8-1</p>
-
-<p>national_geographical_coverage: Deutschland  <br />
-data_last_update: 05.05.2023  <br />
-—</p>
-
-<p>Die Bundesregierung hat am 25. August 2021 die Weiterentwicklung des <a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/massnahmenprogramm-nachhaltigkeit-der-bundesregierung-427896">Maßnahmenprogramms Nachhaltigkeit</a> vom 30. März 2015 verabschiedet, um der Verantwortung für eine nachhaltige Entwicklung Rechnung zu tragen.</p>
+    <p>Die Bundesregierung hat am 25. August 2021 die Weiterentwicklung des <a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/berichte-und-reden-nachhaltigkeit/massnahmenprogramm-nachhaltigkeit-der-bundesregierung-427896">Maßnahmenprogramms Nachhaltigkeit</a> vom 30. März 2015 verabschiedet, um der Verantwortung für eine nachhaltige Entwicklung Rechnung zu tragen.</p>
 
   </div>
 </div>
@@ -579,24 +508,24 @@ data_last_update: 05.05.2023  <br />
   id="indicatorData"
   data-indicatorid='indicator_12-7-1'
   data-id="12-7-1"
-  data-country="Germany"
-  data-charttitle="Anzahl der Staaten, die Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung umsetzen"
+  data-country="Deutschland"
+  data-charttitle="Nachhaltige öffentliche Beschaffung"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
-  data-measurementunit=""
+  data-measurementunit="Index"
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
-  data-graphtype="line"
+  data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
-  data-graphlimits="null"
+  data-showmap="false"
+  data-startvalues="&quot;&quot;"
+  data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
-  data-showline=""
-  data-spangaps=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
@@ -606,8 +535,8 @@ data_last_update: 05.05.2023  <br />
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="null"
-  data-graphstepsize="null"
+  data-precision="[{&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;step&quot;:10.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -649,7 +578,7 @@ data_last_update: 05.05.2023  <br />
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Anzahl der Staaten, die Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung umsetzen</caption>
+      <caption>Nachhaltige öffentliche Beschaffung</caption>
       <thead>
         
         
@@ -695,7 +624,13 @@ data_last_update: 05.05.2023  <br />
   
   <div id="datatableFooter">
     
+    <p>Datenquelle: <a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a></p>
     
+    
+    <p>Geographische Abdeckung: Deutschland</p>
+    
+    
+    <p>Einheit: Index</p>
     
     
   </div>
@@ -784,7 +719,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Anzahl der Staaten, die Politikkonzepte und Aktionspläne für eine nachhaltige öffentliche Beschaffung umsetzen</h4>
+          <h4 id="chart-heading" class="chart-title">Nachhaltige öffentliche Beschaffung</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -804,7 +739,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.umweltbundesamt.de/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Umweltbundesamt (UBA) zu gelangen."> Umweltbundesamt (UBA) </a>, <a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Kompetenzstelle für Nachhaltige Beschaffung zu gelangen."> Kompetenzstelle für Nachhaltige Beschaffung </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -812,6 +755,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          
+          
+          <dd ><br>• 0 bis 20: Unzureichende Daten oder unzureichende Umsetzung des Grads an nachhaltiger Beschaffung.<br>• 20 bis 40: Niedriges Niveau des Grads an nachhaltiger Beschaffung.<br>• 40 bis 60: Mittleres Niveau des Grads an nachhaltiger Beschaffung.<br>• 60 bis 80: Hohes Niveau des Grads an nachhaltiger Beschaffung.<br>• 80 bis 100: Sehr hohes Niveau des Grads an nachhaltiger Beschaffung.</dd>
         
 
         
@@ -842,6 +790,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -879,7 +830,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a>, <a href="https://www.umweltbundesamt.de/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Umweltbundesamt (UBA) zu gelangen."> Umweltbundesamt (UBA) </a>, <a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Kompetenzstelle für Nachhaltige Beschaffung zu gelangen."> Kompetenzstelle für Nachhaltige Beschaffung </a></dd>
+        
 
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
@@ -887,6 +846,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          
+          
+          <dd ><br>• 0 bis 20: Unzureichende Daten oder unzureichende Umsetzung des Grads an nachhaltiger Beschaffung.<br>• 20 bis 40: Niedriges Niveau des Grads an nachhaltiger Beschaffung.<br>• 40 bis 60: Mittleres Niveau des Grads an nachhaltiger Beschaffung.<br>• 60 bis 80: Hohes Niveau des Grads an nachhaltiger Beschaffung.<br>• 80 bis 100: Sehr hohes Niveau des Grads an nachhaltiger Beschaffung.</dd>
         
 
         
@@ -917,6 +881,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -1004,6 +971,95 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Verfügbare Zeitreihe </th>
+        <td style="width: 100%">
+          
+            <p>Index der nachhaltigen öffentlichen Beschaffung</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Vergleichbarkeit mit den UN-Metadaten </th>
+        <td style="width: 100%">
+          
+            <p>Die Zeitreihe entspricht den UN-Metadaten.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Nationale Metadaten </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/MetaDe/12.7.1.pdf" target="_blank">
+                  Metadaten zu den dargestellten Zeitreihen <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -1039,48 +1095,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Datenstand </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            <p>05.05.2023</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -1268,8 +1295,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Unterziel </th>
+        <td style="width: 100%">
           
+            <p>In der öffentlichen Beschaffung nachhaltige Verfahren fördern, im Einklang mit den nationalen Politiken und Prioritäten</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1294,28 +1332,92 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Tier Klassifikation </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/'" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Tier II</a> <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Zuständige UN-Organisation </th>
+        <td style="width: 100%">
+          
+            <p>Umweltprogramm der Vereinten Nationen (UNEP)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link zu UN-Metadaten </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-12-07-01.pdf" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','De');">
+                  Metadaten zu diesem Indikator <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
+      
+      
+  
       
       
       
@@ -1534,6 +1636,1175 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 1</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.destatis.de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/destatis.png" alt="Logo destatis" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.destatis.de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Statistisches Bundesamt (Destatis) zu gelangen."> Statistisches Bundesamt (Destatis) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://sdg-indikatoren.de/public/UNEP_FINAL_GERMANY_2020.xlsx" target="_blank">
+                  UNEP-Fragebogen, Bewertung 2020 (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://sdg-indikatoren.de/public/UNEP_FINAL_GERMANY_2022.xlsx" target="_blank">
+                  UNEP-Fragebogen, Bewertung 2022 (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://sdg-indikatoren.de/public/Germany SDG indicator 12.7.1 scorecard 2022.pdf" target="_blank">
+                  UNEP-Scorecard, Bewertung 2022 (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 2</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.umweltbundesamt.de/" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/uba.png" alt="Logo uba" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.umweltbundesamt.de/" target="_blank" title="Klicken Sie hier um zur Website der Organisation Umweltbundesamt (UBA) zu gelangen."> Umweltbundesamt (UBA) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 3</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/knb.png" alt="Logo knb" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.nachhaltige-beschaffung.info/DE/Home/home_node.html" target="_blank" title="Klicken Sie hier um zur Website der Organisation Kompetenzstelle für Nachhaltige Beschaffung zu gelangen."> Kompetenzstelle für Nachhaltige Beschaffung </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1631,12 +2902,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20241218070552'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20241218072216'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20241218070552"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20241218072216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

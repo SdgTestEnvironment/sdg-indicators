@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218070552">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20241218072216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -296,46 +296,7 @@ layout-indicator-iframe
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <h1 id="nationale-metadaten">Nationale Metadaten</h1>
-<p>national_indicator_available: Households covered by a mobile network  <br />
-comparison_sdg: The time series is partly compliant with the UN metadata.  <br />
-goal_meta_national_link_De: 
-goal_meta_national_link_text_De: 
-goal_meta_national_link_text: Metadata on the presented time series
-goal_meta_national_link: https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/9.c.1.pdf</p>
-
-<h1 id="globale-metadaten">Globale Metadaten</h1>
-<p>indicator_name: Proportion of population covered by a mobile network, by technology  <br />
-target_name: Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020  <br />
-un_designated_tier_url: https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/  <br />
-un_designated_tier_url_text: Tier I  <br />
-un_desgnated_tier_alert: the United Nations Statistics Division  <br />
-un_custodian_agency: International Telecommunication Union (ITU)  <br />
-goal_meta_link_text: Metadata on this indicator  <br />
-goal_meta_link_alert: the Statistical Devision of the UN  <br />
-goal_meta_2_link_text:   <br />
-goal_meta_3_link_text:</p>
-<h1 id="datenquellen">Datenquellen</h1>
-<p>source_organisation_1: <a href="https://www.bmvi.de/EN" target="_blank" title="Click here to go to the website of the organisation Federal Ministry for Digital and Transport."> Federal Ministry for Digital and Transport </a>
-source_organisation_logo_1: <a href="https://www.bmvi.de/EN" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgEn/bmdv.png" alt="Logo bmdv" style="height:60px; width:148px" /></a>
-source_url_1: https://www.gigabitgrundbuch.bund.de/GIGA/DE/Breitbandatlas/start.html
-source_url_text_1: Broadband Atlas (only available in German)
-source_url_1b: https://www.bmvi.de/SharedDocs/DE/Artikel/ZukunftBreitband/aeltere-berichte-zum-breitbandatlas.html
-source_url_text_1b: Older Reports to Broadband Atlas (until 2020) (only available in German)</p>
-
-<p>computation_units: “Percentage”  <br />
-copyright: ‘© Federal Statistical Office (Destatis), 2024’  <br />
-data_footnotes: ‘LTE: Long Term Evolution or 4G.<br />• 3G: Data is only available until 2021. 3G network was deactivated in 2021.<br />• 5G: Data is only available from 2021.<br />• Due to methodological changes, the results from 2021 onwards are only comparable with previous years to a limited extend.<br />• Länder: Data is only available from 2021.’</p>
-
-<h1 id="grafik-eigenschaften">Grafik Eigenschaften</h1>
-<p>graph_title: Households covered by a mobile network
-graph_subtitle:</p>
-
-<p>national_geographical_coverage: Germany  <br />
-data_last_update: 2024/06/26  <br />
-—</p>
-
-<p><span></span></p>
+    <p><span></span></p>
 
   </div>
 </div>
@@ -351,34 +312,34 @@ data_last_update: 2024/06/26  <br />
   data-indicatorid='indicator_9-c-1'
   data-id="9-c-1"
   data-country="Germany"
-  data-charttitle="Proportion of population covered by a mobile network, by technology"
+  data-charttitle="Households covered by a mobile network"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
-  data-measurementunit=""
+  data-measurementunit="Percentage"
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
+  data-showmap="true"
+  data-startvalues="[{&quot;field&quot;:&quot;Technology&quot;,&quot;value&quot;:&quot;3G&quot;},{&quot;field&quot;:&quot;Technology&quot;,&quot;value&quot;:&quot;LTE&quot;},{&quot;field&quot;:&quot;Technology&quot;,&quot;value&quot;:&quot;5G&quot;},{&quot;field&quot;:&quot;Länder&quot;,&quot;value&quot;:&quot;Germany&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
-  data-showline=""
-  data-spangaps=""
+  data-showline="true"
+  data-spangaps="true"
   data-graphannotations="null"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;value&quot;:10.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;technology&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;3G&quot;,&quot;LTE&quot;,&quot;5G&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Technology&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Germany&quot;,&quot;Baden-Württemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Länder&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;|&quot;,&quot;-&quot;,&quot;.&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="null"
-  data-graphstepsize="null"
+  data-precision="[{&quot;decimals&quot;:1}]"
+  data-graphstepsize="[{&quot;step&quot;:10.0}]"
   data-proxy=""
   data-proxyseries="null"
 >
@@ -487,6 +448,32 @@ data-event-label="Change to Table tab"
     <span class="hidden-xs" style="color:black">Table</span></button>
   </li>
   
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Map</span></button>
+  </li>
+  
 </ul>
 
     <div class="tab-content data-view">
@@ -505,7 +492,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Proportion of population covered by a mobile network, by technology</h4>
+          <h4 id="chart-heading" class="chart-title">Households covered by a mobile network</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -525,7 +512,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.bmvi.de/EN" target="_blank" title="Click here to go to the website of the organisation Federal Ministry for Digital and Transport."> Federal Ministry for Digital and Transport </a></dd>
+        
 
+        
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
@@ -533,6 +528,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Notes</u>:</dt>
+          
+          
+          <dd ><br>• LTE: Long Term Evolution or 4G.<br>• 3G: Data is only available until 2021. 3G network was deactivated in 2021.<br>• 5G: Data is only available from 2021.<br>• Due to methodological changes, the results from 2021 onwards are only comparable with previous years to a limited extend.<br>• Länder: Data is only available from 2021.</dd>
         
 
         
@@ -563,6 +563,9 @@ data-event-label="Change to Table tab"
           <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
         
 
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
         
     </dl>
 </div>
@@ -600,7 +603,15 @@ data-event-label="Change to Table tab"
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.bmvi.de/EN" target="_blank" title="Click here to go to the website of the organisation Federal Ministry for Digital and Transport."> Federal Ministry for Digital and Transport </a></dd>
+        
 
+        
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
@@ -608,6 +619,11 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          <dt><u>Notes</u>:</dt>
+          
+          
+          <dd ><br>• LTE: Long Term Evolution or 4G.<br>• 3G: Data is only available until 2021. 3G network was deactivated in 2021.<br>• 5G: Data is only available from 2021.<br>• Due to methodological changes, the results from 2021 onwards are only comparable with previous years to a limited extend.<br>• Länder: Data is only available from 2021.</dd>
         
 
         
@@ -639,10 +655,92 @@ data-event-label="Change to Table tab"
         
 
         
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
+        
     </dl>
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Households covered by a mobile network</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/sdg-indicators/assets/img/loading.gif" alt="Loading map" />
+</div>
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          
+            <dt><u>Data source</u>:</dt>
+          
+          <dd><a href="https://www.bmvi.de/EN" target="_blank" title="Click here to go to the website of the organisation Federal Ministry for Digital and Transport."> Federal Ministry for Digital and Transport </a></dd>
+        
+
+        
+          <dt><u>Geographic coverage</u>:</dt>
+          <dd>Germany</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Notes</u>:</dt>
+          
+          
+          <dd ><br>• LTE: Long Term Evolution or 4G.<br>• 3G: Data is only available until 2021. 3G network was deactivated in 2021.<br>• 5G: Data is only available from 2021.<br>• Due to methodological changes, the results from 2021 onwards are only comparable with previous years to a limited extend.<br>• Länder: Data is only available from 2021.</dd>
+        
+
+        
+
+        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ><u>Last modification of data</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="DATA_LAST_UPDATE"
+            ></dd>
+          
+        
+
+        
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2024</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -721,6 +819,85 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Time series available </th>
+        <td style="width: 100%">
+          
+            <p>Households covered by a mobile network</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Compliance with the UN metadata </th>
+        <td style="width: 100%">
+          
+            <p>The time series is partly compliant with the UN metadata.</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">National metadata </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://SdgTestEnvironment.github.io/sdg-indicators/public/Meta/9.c.1.pdf" target="_blank">
+                  Metadata on the presented time series <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
         
           
       
@@ -766,38 +943,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Data state </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            <p>2024/06/26</p>
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
       
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
-      
-      
-      
-        
-          
+  
   
   
   
@@ -985,8 +1143,19 @@ data-event-label="Change to Sources tab"
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Target </th>
+        <td style="width: 100%">
           
+            <p>Significantly increase access to information and communications technology and strive to provide universal and affordable access to the Internet in least developed countries by 2020</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
       
       
       
@@ -1011,28 +1180,92 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      <tr>
+        <th scope="row">Tier category </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/" target="_blank" onclick="return confirm_alert('der Statistischen Division der Vereinten Nationen','En');">
+                  Tier I <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">UN custodian agency </th>
+        <td style="width: 100%">
+          
+            <p>International Telecommunication Union (ITU)</p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
         
           
       
       
       
-        
+      
+      <tr>
+        <th scope="row">Link to UN metadata </th>
+        <td style="width: 100%">
           
-      
-      
-      
-        
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-09-0C-01.pdf" target="_blank" onclick="return confirm_alert('the Statistical Devision of the UN','En');">
+                  Metadata on this indicator <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
           
-      
-      
-      
+        </td>
+        </tr>
         
-          
+      
+  
       
       
       
-        
-          
+      
+      
+  
       
       
       
@@ -1251,6 +1484,444 @@ data-event-label="Change to Sources tab"
 
 
 
+  <div class="row">
+  
+    
+    
+    <div class="col-md-6">
+      
+        <h4 class="sr-only">Data source 1</h4>
+      
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmvi.de/EN" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgEn/bmdv.png" alt="Logo bmdv" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmvi.de/EN" target="_blank" title="Click here to go to the website of the organisation Federal Ministry for Digital and Transport."> Federal Ministry for Digital and Transport </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Data source </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.gigabitgrundbuch.bund.de/GIGA/DE/Breitbandatlas/start.html" target="_blank">
+                  Broadband Atlas (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://www.bmvi.de/SharedDocs/DE/Artikel/ZukunftBreitband/aeltere-berichte-zum-breitbandatlas.html" target="_blank">
+                  Older Reports to Broadband Atlas (until 2020) (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+  </div>
+
 
 </div>
     
@@ -1273,6 +1944,17 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
+
+
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -1290,12 +1972,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20241218070552'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20241218072216'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20241218070552"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20241218072216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
