@@ -158,6 +158,14 @@
           "status": "complete"
         },
         {
+          "id": "2-2-4",
+          "title": "Prävalenz von minimaler Ernährungsvielfalt, nach Bevölkerungsgruppen (Kinder im Alter von 6 bis 23,9 Monaten und<br>nicht schwangere Frauen im Alter von 15 bis 49 Jahren)",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/2-2-4/",
+          "status": "inprogress"
+        },
+        {
           "id": "2-3-1",
           "title": "Produktionsvolumen je Arbeitseinheit, nach Größenklassen der Land-/ Weide-/ Forstwirtschaftsbetriebe",
           "description": "",
@@ -942,6 +950,14 @@
           "status": "complete"
         },
         {
+          "id": "8-9-2",
+          "title": "Beschäftigte in der Tourismuswirtschaft",
+          "description": "",
+          "keywords": "",
+          "href": "/sdg-indicators/8-9-2/",
+          "status": "inprogress"
+        },
+        {
           "id": "8-10-1",
           "title": "a) Anzahl der Bankfilialen je 100&nbsp;000 Erwachsene und b) Anzahl der Geldautomaten je 100&nbsp;000 Erwachsene",
           "description": "",
@@ -1327,11 +1343,11 @@
         },
         {
           "id": "11-c-1",
-          "title": "global_indicators.11-c-1-title",
+          "title": "Gesamte öffentliche Entwicklungszusammenarbeit (ODA) und sonstige öffentliche Leistungen zur Unterstützung städtischer<br>Infrastruktur oder städtischer Infrastrukturprojekte, nach Sektor",
           "description": "",
           "keywords": "",
           "href": "/sdg-indicators/11-c-1/",
-          "status": "complete"
+          "status": "inprogress"
         }]
     }
   },
