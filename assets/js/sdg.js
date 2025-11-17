@@ -2198,13 +2198,14 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
 
 /**
  * @param {string} currentSubTitle
- * @param {Array} allSubTitles Objects containing 'unit' and 'title'
+ * @param {Array} allSubTitles Objects containing 'unit' and 'subtitle'
  * @param {String} selectedUnit
  * @param {String} selectedSeries
  * @return {String} Updated title
  */
 function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedSeries) {
   var match = getMatchByUnitSeries(allSubTitles, selectedUnit, selectedSeries);
+  console.log("ALLSUBTITLES", allSubTitles);
   return (match) ? match.title : "";
 }
 
