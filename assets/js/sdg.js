@@ -2205,8 +2205,6 @@ function getChartTitle(currentTitle, allTitles, selectedUnit, selectedSeries) {
  */
 function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedSeries) {
   var match = getMatchByUnitSeries(allSubTitles, selectedUnit, selectedSeries);
-  console.log("ALLSUBTITLES", allSubTitles == null);
-  console.log("ALLSUBTITLES", allSubTitles == undefined);
   if (allSubTitles == null) {
     currentSubTitle;
   }
