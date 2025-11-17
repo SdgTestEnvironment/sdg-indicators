@@ -2208,10 +2208,10 @@ function getChartSubTitle(currentSubTitle, allSubTitles, selectedUnit, selectedS
   console.log("ALLSUBTITLES", allSubTitles == null);
   console.log("ALLSUBTITLES", allSubTitles == undefined);
   if (allSubTitles == null) {
-    return (match) ? match.title : "";
+    currentSubTitle;
   }
   else {
-    return currentSubTitle;
+    return (match) ? match.title : '';
   }
 
 }
