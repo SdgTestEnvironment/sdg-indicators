@@ -91,7 +91,7 @@
     getUpdatedFieldItemStates: getUpdatedFieldItemStates,
     fieldItemStatesForView: fieldItemStatesForView,
     getChartTitle: getChartTitle,
-    getChartSubTitle: getCharSubtTitle,
+    getChartSubTitle: getChartSubTitle,
     getChartType: getChartType,
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
