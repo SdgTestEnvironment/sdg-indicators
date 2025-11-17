@@ -2958,6 +2958,7 @@ function getAllObservationAttributes(rows) {
     getUpdatedFieldItemStates: getUpdatedFieldItemStates,
     fieldItemStatesForView: fieldItemStatesForView,
     getChartTitle: getChartTitle,
+    getChartSubTitle: getCharSubtTitle,
     getChartType: getChartType,
     getCombinationData: getCombinationData,
     getDatasets: getDatasets,
@@ -3129,7 +3130,7 @@ function getAllObservationAttributes(rows) {
   }
 
   this.updateChartSubtitle = function() {
-    this.chartSubtitle = helpers.getChartTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
+    this.chartSubtitle = helpers.getChartSubTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateChartType = function() {
