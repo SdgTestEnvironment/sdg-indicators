@@ -153,7 +153,7 @@ var indicatorModel = function (options) {
   }
 
   this.updateChartSubtitle = function() {
-    this.chartSubtitle = helpers.getChartTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
+    this.chartSubtitle = helpers.getChartSubTitle(this.chartSubtitle, this.chartSubtitles, this.selectedUnit, this.selectedSeries);
   }
 
   this.updateChartType = function() {
