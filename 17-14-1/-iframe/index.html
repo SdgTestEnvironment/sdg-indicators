@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20251120105645">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20251120142810">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -312,7 +312,7 @@ layout-indicator-iframe
   data-indicatorid='indicator_17-14-1'
   data-id="17-14-1"
   data-country="Deutschland"
-  data-charttitle="Deutsche Nachhaltigkeitsstrategie"
+  data-charttitle="Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung"
   data-charttitles="null"
   data-chartsubtitle=""
   data-chartsubtitles="null"
@@ -320,12 +320,12 @@ layout-indicator-iframe
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
-  data-graphtype="line"
+  data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
   data-startvalues="&quot;&quot;"
-  data-graphlimits="null"
+  data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
   data-showline="true"
   data-spangaps="true"
@@ -336,7 +336,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Wert&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
   data-graphstepsize="null"
@@ -381,7 +381,7 @@ layout-indicator-iframe
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Deutsche Nachhaltigkeitsstrategie</caption>
+      <caption>Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung</caption>
       <thead>
         
         
@@ -427,7 +427,7 @@ layout-indicator-iframe
   
   <div id="datatableFooter">
     
-    <p>Datenquelle: <a href="https://www.bundesregierung.de/breg-de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Die Bundesregierung zu gelangen."> Die Bundesregierung </a></p>
+    <p>Datenquelle: <a href="https://www.bmz.de/de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) zu gelangen."> Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) </a></p>
     
     
     <p>Geographische Abdeckung: Deutschland</p>
@@ -524,7 +524,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Deutsche Nachhaltigkeitsstrategie</h4>
+          <h4 id="chart-heading" class="chart-title">Mechanismen zur Verbesserung der Politikkohärenz bezogen auf nachhaltige Entwicklung</h4>
           <h6 id="chart-heading" class="chart-subtitle"></h6>
           <div id="chart" class="plot-container">
             <canvas
@@ -545,9 +545,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.bundesregierung.de/breg-de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Die Bundesregierung zu gelangen."> Die Bundesregierung </a></dd>
+          <dd><a href="https://www.bmz.de/de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) zu gelangen."> Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) </a>, <a href="https://www.bundesregierung.de/breg-de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Die Bundesregierung zu gelangen."> Die Bundesregierung </a></dd>
         
 
         
@@ -631,9 +631,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.bundesregierung.de/breg-de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Die Bundesregierung zu gelangen."> Die Bundesregierung </a></dd>
+          <dd><a href="https://www.bmz.de/de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) zu gelangen."> Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) </a>, <a href="https://www.bundesregierung.de/breg-de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Die Bundesregierung zu gelangen."> Die Bundesregierung </a></dd>
         
 
         
@@ -1422,12 +1422,456 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
-        <h4 class="sr-only">Datenquelle 1</h4>
       
+        <h4>Datenquelle 1</h4>
       
       
 <table class="table metadata-content">
   <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row"> </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmz.de/de" target="_blank"><img src="https://sdg-indikatoren.de/public/OrgImgDe/bmz.png" alt="Logo bmz" style="height:60px; width:148px" /></a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td style="width: 100%">
+          
+            <p><a href="https://www.bmz.de/de" target="_blank" title="Klicken Sie hier um zur Website der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) zu gelangen."> Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ) </a></p>
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+      
+      <tr>
+        <th scope="row">Datenquelle </th>
+        <td style="width: 100%">
+          
+            
+            
+            
+            
+
+            
+            
+            
+
+            
+              
+                <a href="https://sdg-indikatoren.de/public/UNEP_PCSD_Questionnaire_2025.xlsx" target="_blank">
+                  UNEP-Fragebogen, Bewertung 2025 (nicht auf Deutsch verfügbar) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+      
+      
+      
+  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+    </div>
+    
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 2</h4>
+      
+      
+<table class="table metadata-content">
+  <tbody>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1757,47 +2201,26 @@ data-event-label="Change to Sources tab"
       
         
           
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
+      
+      
+      
+        
+          
   
   
   
@@ -1920,12 +2343,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20251120105645'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20251120142810'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20251120105645"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20251120142810"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
