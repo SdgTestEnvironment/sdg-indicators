@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20251219132239">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20251219141729">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -312,11 +312,11 @@ layout-indicator-iframe
   data-indicatorid='indicator_8-7-1'
   data-id="8-7-1"
   data-country="Germany"
-  data-charttitle="Victims of exploitation"
-  data-charttitles="null"
-  data-chartsubtitle="5-17-year-olds engaged in child labour"
-  data-chartsubtitles="null"
-  data-measurementunit="Number"
+  data-charttitle="Anteil und Anzahl der Kinder im Alter von 5-17 Jahren, die Kinderarbeit leisten, nach Geschlecht und Alter"
+  data-charttitles="[{&quot;unit&quot;:&quot;Number&quot;,&quot;title&quot;:&quot;Victims of exploitation&quot;},{&quot;unit&quot;:&quot;Per 100,000 inhabitants&quot;,&quot;title&quot;:&quot;Victims of exploitation&quot;},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;title&quot;:&quot;Victims of exploitation&quot;}]"
+  data-chartsubtitle=""
+  data-chartsubtitles="[{&quot;unit&quot;:&quot;Number&quot;,&quot;title&quot;:&quot;5-17-year-olds engaged in child labour&quot;},{&quot;unit&quot;:&quot;Per 100,000 inhabitants&quot;,&quot;title&quot;:&quot;Number of victims per 100,000 (V/100,000)&quot;},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;title&quot;:&quot;Proportion of the population in the respective age group&quot;}]"
+  data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
   data-showinfo=""
@@ -324,7 +324,7 @@ layout-indicator-iframe
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
-  data-startvalues="&quot;&quot;"
+  data-startvalues="[{&quot;field&quot;:&quot;Units&quot;,&quot;value&quot;:&quot;Per 100,000 inhabitants&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
   data-showline="true"
@@ -333,12 +333,12 @@ layout-indicator-iframe
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;unit&quot;:&quot;Per 100,000 inhabitants&quot;,&quot;value&quot;:13.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;age group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;13 years and younger&quot;,&quot;14 to under 18 years&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age group&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_2&quot;,&quot;type&quot;:&quot;number&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_2&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
-  data-precision="[{&quot;decimals&quot;:0}]"
+  data-precision="[{&quot;unit&quot;:&quot;Number&quot;,&quot;decimals&quot;:0},{&quot;unit&quot;:&quot;Per 100,000 inhabitants&quot;,&quot;decimals&quot;:1},{&quot;unit&quot;:&quot;Percentage&quot;,&quot;decimals&quot;:3}]"
   data-graphstepsize="null"
   data-proxy=""
   data-proxyseries="null"
@@ -381,7 +381,7 @@ layout-indicator-iframe
     
     <h3></h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Victims of exploitation</caption>
+      <caption>Anteil und Anzahl der Kinder im Alter von 5-17 Jahren, die Kinderarbeit leisten, nach Geschlecht und Alter</caption>
       <thead>
         
         
@@ -589,10 +589,6 @@ layout-indicator-iframe
     <p>Geographic coverage: Germany</p>
     
     
-    <p>Unit of measurement: Number</p>
-    
-    
-    <p>Note: </p>
     
   </div>
   
@@ -719,6 +715,53 @@ data-event-label="Change to Table tab"
         
 
         
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Per 100,000 inhabitants"
+              ><u>Notes</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Per 100,000 inhabitants"
+                
+              ><br>• Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.<br>• Number of victims per 100,000 inhabitants (V/100,000) based on the population on 31 December of the previous year.<br>• From 2013 onwards, the population is based on the 2011 census, and from 2024 onwards on the 2022 census.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><u>Notes</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Percentage"
+                
+              ><br>• Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.<br>• For 2010, the population was calculated retrospectively on the basis of the 2011 census and migration, birth, and death statistics. For 2012 to 2021, the retrospective calculation was performed in the same way, but on the basis of the 2022 census.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Number"
+              ><u>Note</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Number"
+                
+              >Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.</dd>
+            
+          
+        
 
         
           
@@ -804,6 +847,53 @@ data-event-label="Change to Table tab"
 
         
 
+        
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Per 100,000 inhabitants"
+              ><u>Notes</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Per 100,000 inhabitants"
+                
+              ><br>• Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.<br>• Number of victims per 100,000 inhabitants (V/100,000) based on the population on 31 December of the previous year.<br>• From 2013 onwards, the population is based on the 2011 census, and from 2024 onwards on the 2022 census.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Percentage"
+              ><u>Notes</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Percentage"
+                
+              ><br>• Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.<br>• For 2010, the population was calculated retrospectively on the basis of the 2011 census and migration, birth, and death statistics. For 2012 to 2021, the retrospective calculation was performed in the same way, but on the basis of the 2022 census.</dd>
+            
+          
+            
+              <dt
+                data-for-series=""
+                data-for-unit="Number"
+              ><u>Note</u>:</dt>
+              
+              
+
+              <dd
+                data-for-series=""
+                data-for-unit="Number"
+                
+              >Victims recorded in the reporting year may also originate from an earlier year (initial statistics). Persons who were recorded as victims multiple times in the reporting year are counted multiple times.</dd>
+            
+          
         
 
         
@@ -1047,7 +1137,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data state </th>
         <td style="width: 100%">
           
-            <p>2025/12/17</p>
+            <p>2025/12/19</p>
 
           
         </td>
@@ -2016,6 +2106,8 @@ data-event-label="Change to Sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -2033,12 +2125,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20251219132239'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20251219141729'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20251219132239"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20251219141729"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
