@@ -2313,8 +2313,8 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, showLine, spanGaps, allObservationAttributes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -2354,14 +2354,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, fill, showLine, spanGaps, allObservationAttributes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, fill, showLine, spanGaps, allObservationAttributes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -2545,7 +2545,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, fill, showLine, spanGaps, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2563,6 +2563,7 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
+    fill: fill,
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -2578,6 +2579,7 @@ function getBaseDataset() {
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
+    fill: false,
     spanGaps: true,
     showLine: true,
     maxBarThickness: 150,
@@ -2653,7 +2655,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2668,6 +2670,7 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, allObservat
     headline: true,
     pointStyle: 'circle',
     data: data,
+    fill: fill,
     showLine: showLine,
     spanGaps: spanGaps,
     observationAttributes: obsAttributes,
@@ -3032,7 +3035,8 @@ function getAllObservationAttributes(rows) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
-  this.showLine = options.showLine; // ? options.showLine : true;
+  this.fill = options.fill,
+  this.showLine = options.showLine;
   this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
   this.graphTargetLines = options.graphTargetLines;
@@ -3316,7 +3320,7 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.showLine, this.spanGaps, this.allObservationAttributes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
@@ -5570,6 +5574,7 @@ var indicatorInit = function () {
                         startValues: domData.startvalues,
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
+                        fill: domData.fill,
                         showLine: domData.showline,
                         spanGaps: domData.spangaps,
                         graphAnnotations: domData.graphannotations,
