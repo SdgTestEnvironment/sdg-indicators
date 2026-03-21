@@ -2313,8 +2313,8 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, fillAbove, fillBelow, showLine, spanGaps;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
 
@@ -2354,14 +2354,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       background = getBackground(color, striped);
       border = getBorderDash(striped);
 
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, fill, showLine, spanGaps, allObservationAttributes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, fill, showLine, spanGaps, allObservationAttributes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -2545,7 +2545,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, fill, showLine, spanGaps, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2563,7 +2563,11 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
-    fill: fill,
+    fill: {
+      target: fill,
+      above: fillAbove,
+      below: fillBelow
+    },
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -2575,7 +2579,6 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
  */
 function getBaseDataset() {
   return Object.assign({}, {
-    fill: false,
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
@@ -2655,7 +2658,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes) {
   var dataset = getBaseDataset(),
       prepared = prepareDataForDataset(years, rows, allObservationAttributes),
       data = prepared.data,
@@ -2670,7 +2673,11 @@ function makeHeadlineDataset(years, rows, label, fill, showLine, spanGaps, allOb
     headline: true,
     pointStyle: 'circle',
     data: data,
-    fill: fill,
+    fill: {
+      target: fill,
+      above: fillAbove,
+      below: fillBelow
+    },
     showLine: showLine,
     spanGaps: spanGaps,
     observationAttributes: obsAttributes,
@@ -3035,7 +3042,9 @@ function getAllObservationAttributes(rows) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
-  this.fill = options.fill,
+  this.fill = options.fill;
+  this.fillAbove = options.fillAbove;
+  this.fillBelow = options.fillBelow;
   this.showLine = options.showLine;
   this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
@@ -3320,7 +3329,7 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.showLine, this.spanGaps, this.allObservationAttributes);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.fillAbove, this.fillBelow, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
@@ -4128,6 +4137,7 @@ opensdg.chartTypes.base = function(info) {
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
+            fill: false,
             scrollX: true,
             scrollCollapse: true,
             sScrollXInner: '150%',
@@ -4161,9 +4171,9 @@ opensdg.chartTypes.base = function(info) {
                     suggestedMin: 0,
                     ticks: {
                         color: tickColor,
-                        callback: function (value) {
-                            return alterDataDisplay(value, undefined, 'chart y-axis tick');
-                        },
+                         callback: function (value) {
+                             return alterDataDisplay(value, undefined, 'chart y-axis tick');
+                         },
                     },
                     title: {
                         display: MODEL.selectedUnit ? translations.t(MODEL.selectedUnit) : MODEL.measurementUnit,
@@ -5575,7 +5585,10 @@ var indicatorInit = function () {
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
                         fill: domData.fill,
+                        fillAbove: domData.fillabove,
+                        fillBelow: domData.fillbelow,
                         showLine: domData.showline,
+                        mixedTypes: domData.mixedtypes,
                         spanGaps: domData.spangaps,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,
