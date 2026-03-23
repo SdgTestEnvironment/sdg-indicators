@@ -147,7 +147,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20260323052757">
+        <link rel="stylesheet" href="/sdg-indicators/assets/css/style.css?v=20260323072106">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -296,9 +296,131 @@ layout-indicator-iframe
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p><span class="status notstarted">Not available </span><br />
-No data is available for this indicator.<br />
-Please contact us if you have any feedback or suggestions on suitable data sources.</p>
+    <table class="mytablestyle">
+   <tr>
+      <th>Indikatoren</th>
+      <th>Link</th>
+   </tr>
+   <tr>
+      <td>1. Prevalence of cervical cancer screening among women aged 30-49 years (%)
+      </td>
+      <td><a href="https://www.wido.de/forschung-projekte/ambulante-versorgung/frueherkennung-bei-erwachsenen/" target="_blank"><b>Use of cancer screening services provided by statutory health insurance (GKV)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>2. Women accessing antenatal care (ANC) services who were tested for syphilis (%), reported
+      </td>
+      <td><a href="https://survstat.rki.de/" target="_blank"><b>SurvStat@RKI 2.0: Web-based query on data reported under the German 'Protection against Infection Act'</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>3. New cases tested for RR-/MDR-TB (%)
+      </td>
+      <td><a href="https://survstat.rki.de/" target="_blank"><b>SurvStat@RKI 2.0: Web-based query on data reported under the German 'Protection against Infection Act'</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>4. Tuberculosis treatment coverage
+      </td>
+      <td><span class="status notstarted" style="color:black"><span class="status-inner">Nicht verfügbar</span></span>
+      </td>
+   </tr>
+   <tr>
+      <td>5. Estimated antiretroviral therapy coverage among people living with HIV (%)
+      </td>
+      <td><span class="status notstarted" style="color:black"><span class="status-inner">Nicht verfügbar</span></span>
+      </td>
+   </tr>
+   <tr>
+      <td>6. Antenatal care attendees positive for syphilis who received treatment (%), reported
+      </td>
+      <td><a href="https://survstat.rki.de/" target="_blank"><b>SurvStat@RKI 2.0: Web-based query on data reported under the German 'Protection against Infection Act'</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>7. Tuberculosis effective treatment coverage
+      </td>
+      <td><span class="status notstarted" style="color:black"><span class="status-inner">Not available</span></span>
+      </td>
+   </tr>
+   <tr>
+      <td>8. Women of reproductive age (aged 15-49 years) who have their need for family planning satisfied with modern methods (%)
+      </td>
+      <td><span class="status notstarted" style="color:black"><span class="status-inner">Not available</span></span>
+      </td>
+   </tr>
+   <tr>
+      <td>9. Measles-containing-vaccine second-dose (MCV2) immunization coverage by the nationally recommended age (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/Non_HPV_Maindashboard?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Measles (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>10. Pneumococcal conjugate vaccines (PCV3) immunization coverage among 1-year-olds (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Pneumococci (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>11. HPV immunization coverage estimates among primary target cohort (9-14 years old girls) (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Human papillomaviruses (HPV) (only available in German)</b></a>
+      </td>
+   </tr>
+  <tr>
+      <td>12. Diphtheria tetanus toxoid and pertussis (DTP3) immunization coverage among 1-year-olds (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Diphtheria-Tetanus-Pertussis (Primary Series) (only avaulable in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>13. Hepatitis B (HepB3) immunization coverage among 1-year-olds (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Hepatitis B (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>14. Neonates protected at birth against neonatal tetanus (PAB) (%)
+      </td>
+      <td>The indicator “Neonates protected at birth against neonatal tetanus (PAB) (%)” describes the proportion of newborns who have adequate protection against tetanus based on their mother’s vaccination status at the time of birth.<br />No specific, regularly collected data on the tetanus vaccination status of pregnant women is available for Germany. However, given the overall high vaccination rates in the population and the elimination of neonatal tetanus, a high level of protection can be assumed.<br />This is attributable in particular to the following conditions:
+	<ul>
+		<li>Births take place almost exclusively under hygienic conditions.</li>
+		<li>Tetanus occurs only very rarely.</li>
+		<li>Vaccination programs are established nationwide.</li>
+	</ul>
+      </td>
+   </tr>
+   <tr>
+      <td>15. Hib (Hib3) immunization coverage among 1-year-olds (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Haemophilus influenzae Typ b (Hib) (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>16. Polio (Pol3) immunization coverage among 1-year-olds (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Poliomyelitis (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>17. Measles-containing-vaccine first-dose (MCV1) im-munization coverage by the nationally recommended age (%)
+      </td>
+      <td><a href="https://public.data.rki.de/t/public/views/VacMap/StartdashboardNavigation?%3Aembed=y&amp;%3AisGuestRedirectFromVizportal=y" target="_blank"><b>Vaccinations for Infants, Children, and Adolescents: Measles (only available in German)</b></a>
+      </td>
+   </tr>
+   <tr>
+      <td>18. Population with access to an insecticide-treated bed net (ITN) for malaria protection (%)
+      </td>
+      <td><span class="status notapplicable" style="color:black"><span class="status-inner">Not applicable</span></span>
+      </td>
+   </tr>
+   <tr>
+      <td>19. Prevalence of met need of assistive products (%)
+      </td>
+      <td><a href="https://www.bifg.de/publikationen/reporte/heil-und-hilfsmittelreport-2025" target="_blank"><b>Reports on Medical Devices and Aids from the Statutory Health Insurance (GKV) (only available in German)</b></a>
+      </td>
+   </tr>
+</table>
 
   </div>
 </div>
@@ -1062,12 +1184,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/sdg-indicators/assets/js/sdg.js?v=20260323052757'></script>
+<script src='/sdg-indicators/assets/js/sdg.js?v=20260323072106'></script>
 
 
     
     
-    <script src="/sdg-indicators/assets/js/custom.js?v=20260323052757"></script><script>
+    <script src="/sdg-indicators/assets/js/custom.js?v=20260323072106"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
