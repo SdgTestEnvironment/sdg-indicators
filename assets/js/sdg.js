@@ -2331,11 +2331,10 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, fillAbove, fillBelow, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes, mixedTypes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, fillAbove, fillBelow, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
