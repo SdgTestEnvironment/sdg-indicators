@@ -4855,7 +4855,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
         if (MODEL.chartSubtitle) {
           currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.chartSubtitle + '</small></caption>');
         } else {
-          currentTable.append('<caption>' + tableTitle + '<br><small>' + MODEL.measurementUnit + '</small></caption>');
+          currentTable.append('<caption>' + tableTitle + '<br></caption>');
         }
         var table_head = '<thead><tr>';
 
@@ -4879,7 +4879,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             var col = -1;
             var row_html = '<tr>';
             var obsValue = '';
-            console.log("observationAttributesTable: ", observationAttributesTable);
+
             //(observationAttributesTable.data[row][1][0] !== undefined ? obsValue = observationAttributesTable.data[row][1][0].value : obsValue = '.');
             table.headings.forEach(function (heading, index) {
                 col += 1;
