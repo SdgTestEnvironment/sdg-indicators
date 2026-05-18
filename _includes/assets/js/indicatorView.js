@@ -5,7 +5,7 @@ var indicatorView = function (model, options) {
     var MODEL = model,
         VIEW = this,
         OPTIONS = options;
-    console.log('OPTIONS: ', OPTIONS);
+
     var helpers = {% include assets/js/view/helpers.js %}
     VIEW.helpers = helpers;
 
@@ -15,6 +15,7 @@ var indicatorView = function (model, options) {
     VIEW._legendElement = OPTIONS.legendElement;
     VIEW._precision = undefined;
     VIEW._chartInstances = {};
+    VIEW._browserDecimalSeparator = helpers.getBrowserDecimalSeparator();
     VIEW._graphStepsize = undefined;
 
     var chartHeight = screen.height < OPTIONS.maxChartHeight ? screen.height : OPTIONS.maxChartHeight;
@@ -86,7 +87,6 @@ var indicatorView = function (model, options) {
         helpers.updateUnitElements(args.selectedUnit);
         helpers.updateTimeSeriesAttributes(args.timeSeriesAttributes);
         helpers.updateObservationAttributes(args.allObservationAttributes);
-        console.log("args.allObservationAttributes: ",args.allObservationAttributes);
 
         VIEW._dataCompleteArgs = args;
     });
@@ -197,7 +197,7 @@ var indicatorView = function (model, options) {
             fieldGroupElement.attr('data-has-data', fieldGroup.hasData);
             var fieldGroupButton = fieldGroupElement.find('> button'),
                 describedByCurrent = fieldGroupButton.attr('aria-describedby') || '',
-                noDataHintId = 'no-data-hint-' + fieldGroup.field.replace(/ /g, '-');
+                noDataHintId = 'no-data-hint-' + fieldGroup.field.replace(/ /g, '.');
             if (!fieldGroup.hasData && !describedByCurrent.includes(noDataHintId)) {
                 fieldGroupButton.attr('aria-describedby', describedByCurrent + ' ' + noDataHintId);
             }
