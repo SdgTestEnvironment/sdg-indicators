@@ -93,7 +93,6 @@ opensdg.autotrack = function(preset, category, action, label) {
   function Plugin(element, options) {
 
     this.element = element;
-
     // Support colorRange map option in string format.
     if (typeof options.mapOptions.colorRange === 'string') {
       var colorRangeParts = options.mapOptions.colorRange.split('.'),
@@ -137,6 +136,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.startValues = options.startValues;
     this.configObsAttributes = [{"field":"COMMENT_OBS_0","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
     this.allObservationAttributes = options.allObservationAttributes;
+    this._browserDecimalSeparator = this.viewHelpers.getBrowserDecimalSeparator();
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -232,15 +232,17 @@ opensdg.autotrack = function(preset, category, action, label) {
         var obsAtts = feature.properties.observation_attributes[plugin.currentDisaggregation][plugin.currentYear],
             footnoteNumbers = [];
         if (obsAtts) {
+          var tooltipAtts = []
           Object.keys(obsAtts).forEach(function(field) {
             if (obsAtts[field]) {
-              var hashKey = field + '|' + obsAtts[field];
-              var footnoteNumber = plugin.allObservationAttributes[hashKey].footnoteNumber;
-              footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
+              tooltipAtts.push(obsAtts[field]);
+              //var hashKey = field + '|' + obsAtts[field];
+              //var footnoteNumber = plugin.allObservationAttributes[hashKey].footnoteNumber;
+              //footnoteNumbers.push(plugin.viewHelpers.getObservationAttributeFootnoteSymbol(footnoteNumber));
             }
           });
-          if (footnoteNumbers.length > 0) {
-            tooltipContent += ' ' + footnoteNumbers.join(' ');
+          if (tooltipAtts.length > 0) {
+            tooltipContent += ' [' + tooltipAtts.join(', ') + ']';
           }
         }
       }
@@ -343,23 +345,25 @@ opensdg.autotrack = function(preset, category, action, label) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      if (this._precision || this._precision === 0) {
-        value = Number.parseFloat(value).toFixed(this._precision);
-      }
-      if (this._decimalSeparator) {
-        if(opensdg.language == 'de') {
+
+      if (typeof value !== 'number') {
+        if (this._precision || this._precision === 0) {
+          value = Number.parseFloat(value).toFixed(this._precision);
+        }
+        if (this._decimalSeparator) {
           value = value.toString().replace('.', this._decimalSeparator);
         }
-        else {
-          value = value.toString();
-        }
       }
-      if (this._thousandsSeparator) {
-        if(opensdg.language == 'de') {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+      else {
+        var localeOpts = {};
+        if (this._precision || this._precision === 0) {
+            localeOpts.minimumFractionDigits = this._precision;
+            localeOpts.maximumFractionDigits = this._precision;
         }
-        else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        value = value.toLocaleString(opensdg.language, localeOpts);
+        // Still use the custom decimal separator if it is there.
+        if (this._decimalSeparator) {
+          value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
         }
       }
       return value;
@@ -371,6 +375,11 @@ opensdg.autotrack = function(preset, category, action, label) {
       if (props.values && props.values.length && this.currentDisaggregation < props.values.length) {
         var value = props.values[this.currentDisaggregation][this.currentYear];
         if (typeof value === 'number') {
+          ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
+        }
+        if (typeof value === 'string') {
+          //get rid of observationAttributes
+          value = value.replace(value.match(/\[(.*?)\]/)[0],'')/1;
           ret = opensdg.dataRounding(value, { indicatorId: this.indicatorId });
         }
       }
